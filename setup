@@ -1,0 +1,88 @@
+mkdir work;
+
+
+cd work;
+
+
+echo 'cd $(cat recent_directory);' > resume;
+chmod 755 resume;
+
+echo "cd work; . ./resume;" > ../start;
+chmod 755 ../start;
+echo "cd '$(pwd)'; . ./resume;" > ~/menu_$(echo $(pwd | sed 's/\/work$//g' | sed 's/^.*\///g'));
+chmod 755 ~/menu_$(echo $(pwd | sed 's/\/work$//g' | sed 's/^.*\///g'));
+echo "cd '$(pwd)'; . ./resume; explorer .;" > ~/menux_$(echo $(pwd | sed 's/\/work$//g' | sed 's/^.*\///g'));
+chmod 755 ~/menux_$(echo $(pwd | sed 's/\/work$//g' | sed 's/^.*\///g'));
+
+mkdir 2024_06_June_30_Sunday_02_40_53;
+echo './work/2024_06_June_30_Sunday_02_44_06' > 2024_06_June_30_Sunday_02_40_53/.preceding_directory;
+mkdir 2024_06_June_30_Sunday_02_44_06;
+echo './work/2024_06_June_30_Sunday_02_44_06' > recent_directory;
+echo './work/2024_06_June_30_Sunday_02_40_53' > 2024_06_June_30_Sunday_02_44_06/.preceding_directory;
+
+cd 2024_06_June_30_Sunday_02_44_06/;
+
+echo 'cd $(cat .preceding_directory); mv preceding_directory .preceding_directory; mv succeeding_directory succeeding_directory_reverted; . ./backup; rm succeeding_directory_reverted;' > revert;
+chmod 755 revert;
+
+echo "mv .preceding_directory preceding_directory; echo '../'\$(date +%Y_%m_%B_%d_%A_%H_%M_%S)'/' > succeeding_directory; mkdir \$(echo \$(cat succeeding_directory)); mv preceding_directory tmp; echo \$(pwd) > preceding_directory; cp -r * \$(echo \$(cat succeeding_directory)); mv tmp preceding_directory; cd \$(echo \$(cat succeeding_directory)); rm tmp; rm succeeding_directory; echo \$(pwd) > ../recent_directory; mv preceding_directory .preceding_directory;" > backup;
+chmod 755 backup;
+
+echo 'echo >> ../logfile;' >> log;
+echo 'echo >> ../logfile;' >> log;
+echo 'echo >> ../logfile;' >> log;
+echo "echo ' # # # # # # # # # # # # # # #' >> ../logfile;" >> log;
+echo "echo ' #                           #' >> ../logfile;" >> log;
+echo "echo ' #    '\$(date +'%Y/%m/%d %H:%M:%S')'    #' >> ../logfile;" >> log;
+echo "echo ' #                           #' >> ../logfile;" >> log;
+echo "echo ' # # # # # # # # # # # # # # #' >> ../logfile;" >> log;
+echo "echo >> ../logfile;" >> log;
+echo 'echo $(pwd) >> ../logfile;' >> log;
+echo 'echo >> ../logfile;' >> log;
+echo 'echo >> ../logfile;' >> log;
+echo 'vi + ../logfile;' >> log;
+chmod 755 log;
+
+. ./backup;
+
+echo '                                                                           ' > ../logfile;
+echo ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #      Assalamu Alaikum,                                                # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #              To get back into the most recent directory               # ' >> ../logfile;
+echo ' #              use the following commands at the prompt:                # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                From the BASH startup directory press this:            # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                         . ./menu_   then press <tab>                  # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                         cd ~        will return to the                # ' >> ../logfile;
+echo ' #                                     starting directory.               # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                From /name/ directory press this:                      # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                         . ./start                                     # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                From /name/work/ directory use this:                   # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                         . ./resume                                    # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #              Using the backup and revert scripts is easy,             # ' >> ../logfile;
+echo ' #              just press these from within the directory               # ' >> ../logfile;
+echo ' #              system that has been prepared:                           # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                         . ./backup    (use before experimenting)      # ' >> ../logfile;
+echo ' #                         . ./revert    (use to restore previous )      # ' >> ../logfile;
+echo ' #                         . ./log       (use this to make notes  )      # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ' >> ../logfile;
+cat ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' #                        BEGINNING OF LOGFILE                           # ' >> ../logfile;
+echo ' #                                                                       # ' >> ../logfile;
+echo ' # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # ' >> ../logfile;
+. ./log;

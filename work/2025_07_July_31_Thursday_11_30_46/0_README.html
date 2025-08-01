@@ -1,0 +1,49 @@
+<html>
+<meta charset="UTF-8">
+<body>
+<div>
+
+<h1>Usage notes for the scripts found in this directory.</h1>
+
+<h2>.preceding_directory</h2>
+<p>This is a file used only by the 'revert' script. It stores the name of the preceding directory. This allows reversion to happen. It is best not to alter this file.</p>
+
+<h2>
+
+1_a_clips_update<br>
+2_b_clips_update<br>
+3_c_clips_update<br>
+4_d_clips_update
+
+</h2>
+<p>All four of these scripts are run in the same way. Use '. ./1_a_clips_update' . This will update all of the HTML and PHP files in the WEBSITE directory, organizing them into their organizers. Have a look in there, it is obvious what happens. The reason that there are four of them is that, they correspond, each to it's own header and footer pair. Those pairs are found in the directory 'WEBSITE/b_htmlClipSets' . You can change the defined header and footer information there. Those informations are put before and after the base file that comes from the HW Program. The scripts also put each file into it's own folder in a 'history' type structure so that you never lose any old versions. You also have the latest version always updating to the folder called 'a_latest'. Because of this, when you want to re-open a file at the latest version, you will use the 'a_latest' folder to find it. All version remain accessible in the 'b_history' folder, and have the date and time given following the basic name. This is useful.</p>
+<p>The completely assembled files are put into the 'c_outfiles' folder, which is also set up with dependencies, for example 'd_images'. You must put images used in the files into that folder (unless base64 is used).</p>
+<p>These scripts can be essentially copied to extend and have more header and footer pairs. Simply continue the numbering and then open them and extend the internals (fairly simple).</p>
+
+<h2>backup</h2>
+<p>This backup script is crucial to any project. It is not used only while working on improving the HW project. It can be used for any project. You use it by typing '. ./backup' . You will then be brought into the newest directory level, and there will be a new date-time stamped on to that directory.</p>
+<p>I have also been using 'exp' as an alias for 'explorer .' . If you don't know what that means, just try adding this line to your ~/.bashrc file: alias exp='explorer .'</p>
+<p>If you have it available typing 'exp' will open a new file explorer from the current working directory.</p>
+<p>My short process is, therefore: close all browser windows, close all explorer windows, use '. ./backup', then use 'exp'</p>
+<p>We then have all relevant windows open to correspond to the new BASH working directory. Then testing continues. Inconvenience is minimal.</p>
+
+<h2>chalk</h2>
+<p>This is the most important and useful script of them all, except for the 'backup' script which outranks it. The tasks performed by this script are as follows: Assemble the 'index.html' and 'HW_project_online.html' files including references to all scripts in the directory 'hw'.</p>
+<p>Every file in the 'a_programFunctions' folder is given a reference by this script.</p>
+<p>As long as every file in the 'a_programFunctions' folder (or subfolders) has a function inside of it that matches the name on the outside (excluding the 'a_'), then the system works perfectly.</p>
+<p>This creates a serious level of efficiency when it comes to writing and managing your code. There is no long any need to do the boring and time consuming manual assembly of those Javascript files. We have automated that boring and time wasting part. Now we can just put a new '.js' file into any of the subfolders there, or even make new subfolders, with new files. As long as we follow the rule that we must name the file, ending '.js', and that everything following the 'a_' (any letter can be used) will be used as the exact function name within the file. Then the system works like a dream.</p>
+<p>Never look back, and enjoy this dainty method.</p>
+<p>Use this script by typing '. ./chalk' .</p>
+<p>This script is universal, and can be used for other projects.</p>
+
+<h2>log</h2>
+<p>This script is used by typing '. ./log' . It will open up the 'logfile' which is in the next directory below the current one. This is the best script to use when you want to make project level documentation. It will put a date time stamp into the new log entry, and basically set it all up like a picture.</p>
+
+<h2>revert</h2>
+<p>This script is used by typing '. ./revert' . This will do exactly what it sounds like, and we will end up with the new latest directory but, we will have reverted by one step. There are no multiple reversion steps using this script.</p>
+<p>If we need to revert by more than one step, what we need to do is to manually change directories, which a little bit annoying but, I am pretty sure it's best this way.</p>
+<p>I am still not sure whether the system here, as a whole, would be improved by putting everything up to a continuous directory which doesn't change. I haven't tried that yet.</p>
+
+</div>
+</body>
+</html>

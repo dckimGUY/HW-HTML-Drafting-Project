@@ -1,0 +1,52 @@
+<button
+style="
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+border: 0;
+background-color: transparent;
+"
+onclick="
+const part = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+try {
+if (part.dataset.coinTrip) {
+for (let j = 0; j < part.div.children.length; j++) {
+if (part.div.children[j].lastElementChild.firstElementChild.nextElementSibling.firstElementChild!=this) {
+part.div.children[j].style.display='none';
+}
+}
+this.nextElementSibling.style.display='block';
+this.style.display='none';
+}} catch {}
+"
+>
+<img style="width: 100%; height: 100%;" src="./d_images/hide_button.png" onerror="" />
+</button>
+
+<button
+style="
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+border: 0;
+background-color: transparent;
+"
+onclick="
+const part = this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+try {
+if (part.dataset.coinTrip) {
+for (let j = 0; j < part.div.children.length; j++) {
+if (part.div.children[j].lastElementChild.firstElementChild.nextElementSibling.firstElementChild!=this) {
+part.div.children[j].style.display='block';
+}
+}
+this.previousElementSibling.style.display='block';
+this.style.display='none';
+}
+} catch {}
+"
+>
+<img style="width: 100%; height: 100%;" src="./d_images/show_button.png" onerror="" />
+</button>

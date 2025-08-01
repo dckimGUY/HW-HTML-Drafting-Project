@@ -1,0 +1,1 @@
+cd $(cat recent_directory);

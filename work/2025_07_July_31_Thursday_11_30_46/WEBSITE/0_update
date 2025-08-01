@@ -1,0 +1,78 @@
+mkdir -p a_htmlOrganizer;
+mkdir -p a_htmlOrganizer/a_latest;
+mkdir -p a_htmlOrganizer/b_history;
+mkdir -p a_htmlOrganizer/c_outFiles;
+
+dir -1 | sed '/@/!d' | sed '/\.php/d' | sed 's/^/cp /g' > firstPart;
+dir -1 | sed '/@/!d' | sed '/\.php/d' | sed 's/@.*$//g' | sed 's/$/.html/g' | sed 's/^/a_htmlOrganizer\/a_latest\//g' > lastPart;
+paste -d ' ' firstPart lastPart > pushToLatest;
+rm firstPart lastPart;
+chmod 755 pushToLatest;
+. ./pushToLatest;
+rm pushToLatest;
+
+dir -1 | sed '/@/!d' | sed '/\.php/d' | sed 's/@.*$//g' | sort | uniq | sed 's/^/mkdir -p a_htmlOrganizer\/b_history\//g' | sed 's/$/;/g' > directoryScript;
+chmod 755 directoryScript;
+. ./directoryScript;
+rm directoryScript;
+
+dir -1 | sed '/@/!d' | sed '/\.php/d' | sed 's/^/mv /g' | sed 's/$/ /g' > pasteFile0;
+dir -1 | sed '/@/!d' | sed '/\.php/d' | sed 's/@.*$//g' | sed 's/^/a_htmlOrganizer\/b_history\//g' | sed 's/$/\/;/g' > pasteFile1;
+paste pasteFile0 pasteFile1 > fileMoverScript;
+rm pasteFile0 pasteFile1;
+chmod 755 fileMoverScript;
+. ./filemoverScript;
+rm fileMoverScript;
+
+
+
+
+mkdir -p c_phpOrganizer;
+mkdir -p c_phpOrganizer/a_latest;
+mkdir -p c_phpOrganizer/b_history;
+mkdir -p c_phpOrganizer/c_outFiles;
+mkdir -p c_phpOrganizer/c_outFiles/a_include;
+
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/^/cp /g' > firstPart;
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/@.*$//g' | sed 's/$/.php/g' | sed 's/^/c_phpOrganizer\/a_latest\//g' > lastPart;
+paste -d ' ' firstPart lastPart > pushToLatest;
+rm firstPart lastPart;
+chmod 755 pushToLatest;
+. ./pushToLatest;
+rm pushToLatest;
+
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/^/cp /g' > firstPart;
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/@.*$//g' | sed 's/$/.php/g' | sed 's/^/c_phpOrganizer\/c_outFiles\/a_include\//g' > lastPart;
+paste -d ' ' firstPart lastPart > pushToInclude;
+rm firstPart lastPart;
+chmod 755 pushToInclude;
+. ./pushToInclude;
+rm pushToInclude;
+
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/^/cp /g' > firstPart;
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/@.*$//g' | sed 's/$/.php/g' | sed 's/^/c_phpOrganizer\/c_outFiles\//g' > lastPart;
+paste -d ' ' firstPart lastPart > pushToOutFiles;
+rm firstPart lastPart;
+chmod 755 pushToOutFiles;
+. ./pushToOutFiles;
+rm pushToOutFiles;
+
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/@.*$//g' | sort | uniq | sed 's/^/mkdir -p c_phpOrganizer\/b_history\//g' | sed 's/$/;/g' > directoryScript;
+chmod 755 directoryScript;
+. ./directoryScript;
+rm directoryScript;
+
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/^/mv /g' | sed 's/$/ /g' > pasteFile0;
+dir -1 | sed '/@/!d' | sed '/\.html/d' | sed 's/@.*$//g' | sed 's/^/c_phpOrganizer\/b_history\//g' | sed 's/$/\/;/g' > pasteFile1;
+paste pasteFile0 pasteFile1 > fileMoverScript;
+rm pasteFile0 pasteFile1;
+chmod 755 fileMoverScript;
+. ./filemoverScript;
+rm fileMoverScript;
+
+
+
+
+find . -type f -exec chmod 644 {} +;
+find . -type d -exec chmod 755 {} +;
+echo "... all done! website ready with permissions set ...";

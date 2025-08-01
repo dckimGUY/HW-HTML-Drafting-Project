@@ -1,0 +1,13 @@
+echo >> ../logfile;
+echo >> ../logfile;
+echo >> ../logfile;
+echo ' # # # # # # # # # # # # # # #' >> ../logfile;
+echo ' #                           #' >> ../logfile;
+echo ' #    '$(date +'%Y/%m/%d %H:%M:%S')'    #' >> ../logfile;
+echo ' #                           #' >> ../logfile;
+echo ' # # # # # # # # # # # # # # #' >> ../logfile;
+echo >> ../logfile;
+echo $(pwd) >> ../logfile;
+echo >> ../logfile;
+echo >> ../logfile;
+vi + ../logfile;

@@ -1,0 +1,128 @@
+                                                                           
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+ #                                                                       # 
+ #                                                                       # 
+ #      Assalamu Alaikum,                                                # 
+ #                                                                       # 
+ #              To get back into the most recent directory               # 
+ #              use the following commands at the prompt:                # 
+ #                                                                       # 
+ #                From the BASH startup directory press this:            # 
+ #                                                                       # 
+ #                         . ./menu_   then press <tab>                  # 
+ #                                                                       # 
+ #                         cd ~        will return to the                # 
+ #                                     starting directory.               # 
+ #                                                                       # 
+ #                From /name/ directory press this:                      # 
+ #                                                                       # 
+ #                         . ./start                                     # 
+ #                                                                       # 
+ #                From /name/work/ directory use this:                   # 
+ #                                                                       # 
+ #                         . ./resume                                    # 
+ #                                                                       # 
+ #              Using the backup and revert scripts is easy,             # 
+ #              just press these from within the directory               # 
+ #              system that has been prepared:                           # 
+ #                                                                       # 
+ #                         . ./backup    (use before experimenting)      # 
+ #                         . ./revert    (use to restore previous )      # 
+ #                         . ./log       (use this to make notes  )      # 
+ #                                                                       # 
+ #                                                                       # 
+ #                                                                       # 
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+ #                                                                       # 
+ #                        BEGINNING OF LOGFILE                           # 
+ #                                                                       # 
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
+
+ # # # # # # # # # # # # # # #
+ #                           #
+ #    2025/05/05 14:34:54    #
+ #                           #
+ # # # # # # # # # # # # # # #
+
+/c/Users/all/hdub/work/2025_05_May_05_Monday_14_34_53
+
+I am now beginning with a new folder. I hope that this will help me to negotiate one more corner in my personal programming development. I am now working on the project in a way that is error-free, which is a positive advancement over my previous techniques. The learning process has been time-consuming and difficult but, my personal progress has been steady and increasing. My understanding of the coding practice has developed gradually as I attempt to bring more programming ideas into my project. This way, I have been able to understand how programming can be successful, even in spite of being woefully incorrect by any standard. This could be viewed as a sporadic exploration of obfuscation methods. Using the available structures in non-standard ways essentially renders any structure as a data-structure, which is what my earliest projects demonstrate.
+
+I have briefly attempted again to see how VS-Code could possibly help my programming organisationally but, I can't seem to tear myself away from the wonderful BASH prompt and VI centric environments which I have haphazardly clamoured together. I have instead, following a short look at VS-Code, to simply open multiple GIT-BASH into the several organizational directories which I have set up. I then altered the background colourations in each one. This way there is some minor visual cue, telling me which window is having which role. The background colouration is very minimal, leaving the colour almost completely black but, having a slightest tinge of colour.
+
+rgb(  0,  0,  0)   : completely black.
+rgb(  0,  0, 31)   :            blue   tinge.
+rgb( 31,  0,  0)   :            red    tinge.
+rgb(  0, 31,  0)   :            green  tinge.
+rgb( 31, 31,  0)   :            yellow tinge.
+
+This seems like a good strategy, so I can continue using my backup script, which is so crucial and fundamental to my workflow, I just can not leave it for any so-called development environment.
+
+
+
+ # # # # # # # # # # # # # # #
+ #                           #
+ #    2025/07/02 13:52:43    #
+ #                           #
+ # # # # # # # # # # # # # # #
+
+/c/Users/all/hdub/work/2025_07_July_02_Wednesday_13_40_44
+
+It has been a long time since my last log on this project. Everything has gone so successfully, I have nothing to complain about.
+Just now, I am attempting one interest step. I will be attemping to "dog" all of the program controls, and give a complete,
+"website-alone" interface. This, in-Shallah, will be through using the "enter" key, and will be reversed by the "esc" key.
+
+Wow, I just noticed, I have only ever wrote one log on this whole project!... no reason to change that now...
+
+
+
+
+ # # # # # # # # # # # # # # #
+ #                           #
+ #    2025/07/11 09:30:50    #
+ #                           #
+ # # # # # # # # # # # # # # #
+
+/c/Users/all/hdub/work/2025_07_July_11_Friday_00_12_09
+
+The project has become a monster huge project... How did this happen so fast?
+
+Thanks to The LORD, who has benefitted me throughout my pursuit of this project,
+with constant re-evaluation of it's goals. Every time I think it's nearly done,
+then a new blossom is seen and one step is leading into the next. There is now
+a clear path forming towards a Graphical User Interface Overlay to the program.
+
+I did not see this coming. I always just though, "yuck, I don't want a GUI cluttering
+the screen". Now I can see clearly the benefits as the GUI begins to emerge.
+
+
+
+ # # # # # # # # # # # # # # #
+ #                           #
+ #    2025/07/13 05:43:15    #
+ #                           #
+ # # # # # # # # # # # # # # #
+
+/c/Users/all/hdub/work/2025_07_July_13_Sunday_05_08_10
+
+everything seems okay... I am now on the hunt for errors... The best thing I can do is actually "use" the program.
+That is the best way to produce errors so that I can correct them as they are discovered and found. If only
+"good programming" was available, then I could have devised the code to prevent errors to begin with. Alas, the
+program is somewhat unusual, and so, instead, we need to use the discovery method at the late stages to eliminate
+errors which stop the program from functioning properly.
+
+The most interesting thing that I have done just now: I have "normalized" the deletion regiment. Before it was
+deleting and there was a bit of an interesting behaviour happening, when you paste back out, anywhere the 
+part was already included would somehow disappear and the part would appear in the new location... this is a bit of
+a problem when you can't see where this might be happening. I had left it for a long time, not thinking that it's an
+issue... but, I'm pretty sure that there is no benefit, so, I have just made it "normal", so now, you know where things
+are... better this way, I think.
+
+Now, even so as I do dislike the thought of it, and I have worked almost entirely on writing the program from the
+"keyboard-only" perspective, I might soon begin, in-Shallah, to draw a visual button based interface to the program.
+I hate the idea of this but, most people will expect this kind of shenanigans interface. There are some mild
+benefits that it will have that are not easily accomplished with "keys-only" but, it's presence, even the thought of it
+is quite irritating to me. Then, onwards to widgets and wizards? Maybe it can be very minimal. Just along the top?
+A narrow strip of buttons? Maybe the layers?... it sounds like bargaining now...

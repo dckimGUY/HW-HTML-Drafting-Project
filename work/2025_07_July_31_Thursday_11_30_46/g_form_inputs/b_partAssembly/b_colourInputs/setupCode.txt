@@ -1,0 +1,10 @@
+if (
+() => {
+for (let j = 0; j < this.parentNode.parentNode.parentNode.parentNode.querySelectorAll("input").length; j++) {
+
+if (this.parentNode.parentNode.parentNode.parentNode.querySelectorAll("input")[j].name == "opener") {
+useOpener=true;
+}
+
+}
+}
