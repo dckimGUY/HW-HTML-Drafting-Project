@@ -63,6 +63,8 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 <br>
 <p><span class="xyl5">***If you use the 'ENTER' key here, then you will need to use the 'ESCAPE' key to get back out of here with F1, because we are kinda still inside of the HW program.***</span></p>
 <br>
+<p><span class="xyl5" style="color: magenta;">***NEW: TRY THE 'TAB' KEY TO GET A CLICKABLE USER INTERFACE. (shift + tab will put it into the program as a part!)***</span></p>
+<br>
 
 <p><span class="xyl5">This gives most of the key bindings for the program. It is helpful to notice that many of the key functions are very similar when used with the SHIFT key. The difference will be that, while using the SHIFT key, the function will be applied to an entire colour group, instead of only the item in focus. This is a general rule. Knowing this, you can see that this list of keys is actually very short and you can probably skip over the ones that are basically duplicates. I have helped a little bit by setting the duplicated ones in italics. (mostly in style mode)</span></p>
 <br>

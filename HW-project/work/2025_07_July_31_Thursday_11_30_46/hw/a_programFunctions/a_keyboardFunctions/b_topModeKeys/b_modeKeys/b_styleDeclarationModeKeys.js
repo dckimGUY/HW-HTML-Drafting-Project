@@ -22,7 +22,7 @@ if (shift==false||hauptMode==1) {
 /*    e    */ if (kC ==  69 && cC == 101) {                 makeItContentEditable(keyInfo);         }
 /*    r    */ if (kC ==  82 && cC == 114) { styleKey = "r"; noteStyle("R<br><span style='font-size: 0.5em;'>grid to border-radius</span>",durationS); gridToBorderRadius(keyInfo); lastKey = "r";         }
 /*    t    */ if (kC ==  84 && cC == 116) {                 noteStyle("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationS); modeRouter(e,8); if (lastKey=="T") { swapColours(); } }
-/*    y    */ if (kC ==  89 && cC == 121) {                 promptOutgoingHashLink();               }
+/*    y    */ if (kC ==  89 && cC == 121) {                 copyOutgoingHashLink();                 }
 /*    u    */ if (kC ==  85 && cC == 117) { styleKey = "u"; noteStyle("U<br><span style='font-size: 0.5em;'>grid to box-shadow</span>",durationS); gridToBoxShadow(keyInfo); lastKey = "u";               }
 /*    i    */ if (kC ==  73 && cC == 105) {                                                                                                                                                               }
 /*    o    */ if (kC ==  79 && cC == 111) {                                                                                                                                                               }

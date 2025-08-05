@@ -38,7 +38,7 @@ font-size: 24px;
 font-weight: bold;
 `;
 
-let styleKey = "a";
+var styleKey = "a";
 
 
 /* This is the alignment used for text within the article. */

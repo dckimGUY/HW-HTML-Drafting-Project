@@ -11,6 +11,11 @@ var   gridLayer         ; gridLayer          = document.getElementById("gridLaye
 var   mouseIconLayer    ; mouseIconLayer     = document.getElementById("mouseIconLayer");
 var   pulledText        ; pulledText         = document.createElement("textarea")       ;
 
+
+var   interfaceLayer    ; interfaceLayer     = document.getElementById("interfaceLayer");
+interfaceLayer.innerHTML = defaultUI;
+interfaceLayer.style.display = "none";
+
 const HWworld = true;
 var layerName = "LVL 1";
 
@@ -40,29 +45,6 @@ var topLayer =
 "i_layer8" : { "a_name" : "i_layer8", "b_content" : i_layer8, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 8", "filename" : "100_emptyFile", "echelon" : 1 },
 "j_layer9" : { "a_name" : "j_layer9", "b_content" : j_layer9, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 9", "filename" : "100_emptyFile", "echelon" : 1 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -240,7 +222,7 @@ if (loadReferenceData()) {
 
 
 
-let rev = 0; /* flow reversal */
+var rev = 0; /* flow reversal */
 function visualFlowIndicator() {if (rev==0) {return (`\u21D6`);} else if (rev==1) {return (`\u21D8`);} }
 
 
@@ -529,9 +511,9 @@ S.style.display = "none";
 /* If no part is available for focus, then the spatial cursor should become the new focus.    */
 
 /* a toggle for the edge mode, which will allow us to isolate "right and bottom" or "top and left" for extendEdge. */
-let  eM = 0;
+var  eM = 0;
 /* a toggle for the window edge mode. */
-let  wM = 0;
+var  wM = 0;
 
 /* These enable the rotation between some of the possible arrangements from brick, stepStack and flow. */
 
@@ -579,12 +561,6 @@ insertNewCoin([null,78,110,0,0,0]);
 hauptMode=1;
 if (coinFocus!=null) {
 };
-
-
-
-
-
-
 
 
 /* A refreshed window will start again with mode=0 */
@@ -635,9 +611,33 @@ splashScreenVisible = true;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const z_wizardCode = {};
+
+
+
 /* Completion Message */
 
-const z_coinFocus = coinFocus;
 
 console.log(
 `

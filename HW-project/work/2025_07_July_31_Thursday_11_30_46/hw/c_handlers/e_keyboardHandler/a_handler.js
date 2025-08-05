@@ -16,7 +16,8 @@ if (event.key==='F5'){event.preventDefault(); utilityLayer0.innerHTML = ""; util
 });
 
 /* The mode indicator. */
-let kC = 0, cC = 0;
+var kC = 0, cC = 0;
+
 document.addEventListener("keydown", (event) => { 
 
 if (splashScreenVisible==true) {
@@ -34,6 +35,7 @@ hotDog = false;
 spaceViewOff([e,32,32,es,ec,ea]);
 restorePointerEventsNone(); 
 helpMenuOverlay.style.display="none"; 
+interfaceLayer.style.display="none";
 }
 
 
@@ -44,7 +46,14 @@ if (hotDog) { return; }
 /**************************************************************************/
 /**************************************************************************/
 /*                                                                        */
-/*   tab   */ if (kC ==   9)              {                                }
+/*   tab   */ if (kC ==   9)              {
+event.preventDefault();
+if (!es) {
+toggleInterfaceLayer();
+} else {
+enterWizardMaster();
+}
+}
 /*backspace*/ if (kC ==   8)              { spaceViewToggle(keyInfo);      }
 /*                                                                        */
 /**************************************************************************/
@@ -168,7 +177,7 @@ if (hotDog) { return; }
 /*    7    */ if (kC ==  55 && cC ==  55) { makeTopLayer("h_layer7");      }/*    &    */ if (kC ==  55 && cC ==  38) { openTextareaInNewWindow();     }
 /*    8    */ if (kC ==  56 && cC ==  56) { makeTopLayer("i_layer8");      }/*    *    */ if (kC ==  56 && cC ==  42) { otherFontAndTemplates();       }
 /*    9    */ if (kC ==  57 && cC ==  57) { makeTopLayer("j_layer9");      }/*    (    */ if (kC ==  57 && cC ==  40) { insertNamedColours();          }
-/*    0    */ if (kC ==  48 && cC ==  48) {                                }/*    )    */ if (kC ==  48 && cC ==  41) { insertGrayscale();             }
+/*    0    */ if (kC ==  48 && cC ==  48) { copyFilenameLink();            }/*    )    */ if (kC ==  48 && cC ==  41) { insertGrayscale();             }
 /*    -    */ if (kC == 173 && cC ==  45) { lessG(e);                      }/*    _    */ if (kC == 173 && cC ==  95) { lessG(e);                      }
 /*    =    */ if (kC ==  61 && cC ==  61) { moreG(e);                      }/*    +    */ if (kC ==  61 && cC ==  43) { moreG(e);                      }
 /*                                                                                                                                                    */

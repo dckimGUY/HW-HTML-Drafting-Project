@@ -1,0 +1,9 @@
+.UIwizardButton         { width: 64px; height: 64px; margin: 0px; padding: 0px; border: 0px; border-radius: 1px; }
+.UIwizardButton:hover   { z-index: 100; outline: 8px solid lime;                 }
+.UIwizardButton:active  { z-index: 100; outline: 8px solid magenta;              }
+.xqnBTN                 { background-color: lightgrey;                           }
+.xqnBTN:hover           { background-color: lime;                                }
+.xqnBTN:active          { background-color: yellow;                              }
+
+
+body { font-family: monospace; }

@@ -26,13 +26,14 @@ echo 'body                    {                         width: 98%; height: 98%;
 echo 'p                       { margin: 0;                                             }' >> HW_project_online.html;
 echo 'body::-webkit-scrollbar { display: none;                                         }' >> HW_project_online.html;
 echo '</style>' >> HW_project_online.html;
-echo '<link rel="stylesheet" href="./e_stylesheets/style.css"/>' >> index.html;
+echo '<link rel="stylesheet" href="e_stylesheets/style.css"/>' >> index.html;
 echo '<title id="documentTitle">emptyFile</title>' >> HW_project_online.html;
 echo '</head>' >> HW_project_online.html;
 echo '<body>' >> HW_project_online.html;
 
 echo '<div id="utilityLayer0" ></div>' >> HW_project_online.html;
 echo '<div id="utilityLayer1" ></div>' >> HW_project_online.html;
+echo '<div id="interfaceLayer"></div>' >> HW_project_online.html;
 echo '<div id="gridLayer"     ></div>' >> HW_project_online.html;
 echo '<div id="mouseIconLayer"></div>' >> HW_project_online.html;
 
@@ -69,13 +70,14 @@ echo 'body                    {                         width: 98%; height: 98%;
 echo 'p                       { margin: 0;                                             }' >> index.html;
 echo 'body::-webkit-scrollbar { display: none;                                         }' >> index.html;
 echo '</style>' >> index.html;
-echo '<link rel="stylesheet" href="./e_stylesheets/style.css"/>' >> index.html;
+echo '<link rel="stylesheet" href="e_stylesheets/style.css"/>' >> index.html;
 echo '<title id="documentTitle">emptyFile</title>' >> index.html;
 echo '</head>' >> index.html;
 echo '<body>' >> index.html;
 
 echo '<div id="utilityLayer0" ></div>' >> index.html;
 echo '<div id="utilityLayer1" ></div>' >> index.html;
+echo '<div id="interfaceLayer"></div>' >> index.html;
 echo '<div id="gridLayer"     ></div>' >> index.html;
 echo '<div id="mouseIconLayer"></div>' >> index.html;
 

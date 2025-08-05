@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="">
+<meta name="description" content="DCKIM HW DRAFTING PROJECT is Top-Notch and Open-Source. Learning to use it is quick with seven tutorials ready for you, completed inside of the program. Hands-on, in-action, it's the best way to learn about HTML. Writing your own website is easy now, so, focus on the artistic and written aspects. Those are more important anyhow!">
 <meta name="robots" content="index, follow">
 <meta name="geo.position" content="43.658497;-79.347015">
 <meta name="geo.region" content="CA-ON">
 <meta name="geo.placename" content="Toronto">
 
-<meta property="og:title" content="">
-<meta property="og:description" content="">
+<meta property="og:title" content="DCKIM OPEN SOURCE HTML DRAFTING PROJECT">
+<meta property="og:description" content="DCKIM HW DRAFTING PROJECT is Top-Notch and Open-Source. Learning to use it is quick with seven tutorials ready for you, completed inside of the program. Hands-on, in-action, it's the best way to learn about HTML. Writing your own website is easy now, so, focus on the artistic and written aspects. Those are more important anyhow!">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_CA">
 <!--
-<meta property="og:url" content="">
+<meta property="og:url" content="https://dckim.com/">
 -->
-<meta property="og:image" content="">
+<meta property="og:image" content="https://dckim.com/images/HW_online.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="">
+<meta name="twitter:title" content="DCKIM OPEN SOURCE HTML DRAFTING PROJECT">
+<meta name="twitter:description" content="DCKIM HW DRAFTING PROJECT is Top-Notch and Open-Source. Learning to use it is quick with seven tutorials ready for you, completed inside of the program. Hands-on, in-action, it's the best way to learn about HTML. Writing your own website is easy now, so, focus on the artistic and written aspects. Those are more important anyhow!">
+<meta name="twitter:image" content="https://dckim.com/images/HW_online.png">
 
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="handheldfriendly" content="true">
-<meta name="author" content="">
+<meta name="author" content="dckimMysteryAuthor">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/android-chrome-512x512.png">
 <link rel="apple-touch-icon" sizes="192x192" href="/images/android-chrome-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -31,10 +31,24 @@
 <link rel="icon" type="image/images/png" sizes="16x16" href="/images/favicon-16x16.png">
 
 <!--
-<link rel="canonical" href="">
+<link rel="canonical" href="https://dckim.com">
 -->
 
 <style>
+/*
+@font-face {
+font-family: 'JungYulKim2';
+src: url('JungYulKim2-Regular.woff') format('woff');
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: 'JungYulKim2';
+src: url('JungYulKim2-Bold.woff') format('woff');
+font-weight: 700;
+font-style: normal;
+}
+*/
 html, body              { overflow: scroll; scrollbar-width: none;                          }
 body                    { background-image: url("./images/back_tile.png");
 			  width: 98%; height: 98%;                                          }
@@ -44,7 +58,7 @@ body::-webkit-scrollbar { display: none;                                        
 
 <link rel="stylesheet" href="./e_stylesheets/style.css" />
 
-<title id="documentTitle"></title>
+<title id="documentTitle">DCKIM</title>
 
 </head>
 <body>

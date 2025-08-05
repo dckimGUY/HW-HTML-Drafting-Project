@@ -1,0 +1,13 @@
+echo >> ../logfile_mohammedDavid;
+echo >> ../logfile_mohammedDavid;
+echo >> ../logfile_mohammedDavid;
+echo ' # # # # # # # # # # # # # # #' >> ../logfile_mohammedDavid;
+echo ' #                           #' >> ../logfile_mohammedDavid;
+echo ' #    '$(date +'%Y/%m/%d %H:%M:%S')'    #' >> ../logfile_mohammedDavid;
+echo ' #                           #' >> ../logfile_mohammedDavid;
+echo ' # # # # # # # # # # # # # # #' >> ../logfile_mohammedDavid;
+echo >> ../logfile_mohammedDavid;
+echo $(pwd) >> ../logfile_mohammedDavid;
+echo >> ../logfile_mohammedDavid;
+echo >> ../logfile_mohammedDavid;
+vi + ../logfile_mohammedDavid;

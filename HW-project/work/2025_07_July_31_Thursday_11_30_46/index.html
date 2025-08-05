@@ -8,12 +8,13 @@ body                    {                         width: 98%; height: 98%;      
 p                       { margin: 0;                                             }
 body::-webkit-scrollbar { display: none;                                         }
 </style>
-<link rel="stylesheet" href="./e_stylesheets/style.css"/>
+<link rel="stylesheet" href="e_stylesheets/style.css"/>
 <title id="documentTitle">emptyFile</title>
 </head>
 <body>
 <div id="utilityLayer0" ></div>
 <div id="utilityLayer1" ></div>
+<div id="interfaceLayer"></div>
 <div id="gridLayer"     ></div>
 <div id="mouseIconLayer"></div>
 <div id="scripts">
@@ -55,7 +56,8 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/b_togglePartNames.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/c_externalLink.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/d_promptDownloadLink.js"></script>
-<script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/e_promptOutgoingHashLink.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/e_copyFilenameLink.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/e_copyOutgoingHashLink.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/f_finalizeHTMLandOpen.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/g_wrapParts.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/d_miscellaneous/h_unwrapParts.js"></script>
@@ -176,6 +178,34 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/a_programFunctions/a_keyboardFunctions/q_notificationsSystem/c_noteStyle.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/a_makeTopLayer.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/b_recoverCoinFocus.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/s_interfaceLayer/a_toggleInterfaceLayer.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/s_interfaceLayer/b_enterWizardMaster.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/a_wizarda.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/b_wizardb.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/c_wizardc.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/d_wizardd.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/e_wizarde.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/f_wizardf.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/g_wizardg.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/h_wizardh.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/i_wizardi.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/j_wizardj.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/k_wizardk.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/l_wizardl.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/m_wizardm.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/n_wizardn.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/o_wizardo.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/p_wizardp.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/q_wizardq.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/r_wizardr.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/s_wizards.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/t_wizardt.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/u_wizardu.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/v_wizardv.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/w_wizardw.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/x_wizardx.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/y_wizardy.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/t_wizards/z_wizardz.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/b_mouseFunctions/a_enterNewPartFromMouseInput.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/b_mouseFunctions/b_mouseGiveFocus.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/b_mouseFunctions/c_mousePlaceCursor.js"></script>
@@ -223,12 +253,40 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/c_handlers/c_initialization/b_loadReferenceData.js"></script>
 <script src="./hw/c_handlers/c_initialization/c_insertNewWindow.js"></script>
 <script src="./hw/c_handlers/c_initialization/d_helpMenu.js"></script>
+<script src="./hw/c_handlers/c_initialization/e_defaultUI.js"></script>
+<script src="./hw/c_handlers/c_initialization/f_defaultUIasObjects.js"></script>
 <script src="./hw/c_handlers/d_mouseHandler/a_handler.js"></script>
 <script src="./hw/c_handlers/e_keyboardHandler/a_handler.js"></script>
 <script src="./hw/c_handlers/f_boot/a_boot.js"></script>
 <script src="./hw/c_handlers/f_boot/b_fMan.js"></script>
 <script src="./hw/c_handlers/f_boot/c_setMouseCursorIcon.js"></script>
 <script src="./hw/c_handlers/g_copyAndPaste/a_copyAndPasteHandler.js"></script>
+<script src="./hw/d_wizards/a_wizard.js"></script>
+<script src="./hw/d_wizards/b_wizard.js"></script>
+<script src="./hw/d_wizards/c_wizard.js"></script>
+<script src="./hw/d_wizards/d_wizard.js"></script>
+<script src="./hw/d_wizards/e_wizard.js"></script>
+<script src="./hw/d_wizards/f_wizard.js"></script>
+<script src="./hw/d_wizards/g_wizard.js"></script>
+<script src="./hw/d_wizards/h_wizard.js"></script>
+<script src="./hw/d_wizards/i_wizard.js"></script>
+<script src="./hw/d_wizards/j_wizard.js"></script>
+<script src="./hw/d_wizards/k_wizard.js"></script>
+<script src="./hw/d_wizards/l_wizard.js"></script>
+<script src="./hw/d_wizards/m_wizard.js"></script>
+<script src="./hw/d_wizards/n_wizard.js"></script>
+<script src="./hw/d_wizards/o_wizard.js"></script>
+<script src="./hw/d_wizards/p_wizard.js"></script>
+<script src="./hw/d_wizards/q_wizard.js"></script>
+<script src="./hw/d_wizards/r_wizard.js"></script>
+<script src="./hw/d_wizards/s_wizard.js"></script>
+<script src="./hw/d_wizards/t_wizard.js"></script>
+<script src="./hw/d_wizards/u_wizard.js"></script>
+<script src="./hw/d_wizards/v_wizard.js"></script>
+<script src="./hw/d_wizards/w_wizard.js"></script>
+<script src="./hw/d_wizards/x_wizard.js"></script>
+<script src="./hw/d_wizards/y_wizard.js"></script>
+<script src="./hw/d_wizards/z_wizard.js"></script>
 <script src="./hw/z_hwObject/a_hwObject.js"></script>
 <script src="./hw/z_hwObject/b_hwSpecials.js"></script>
 <script src="./hw/c_handlers/c_initialization/c_insertNewWindow.js"></script>
