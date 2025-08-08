@@ -26,7 +26,7 @@ echo 'body                    {                         width: 98%; height: 98%;
 echo 'p                       { margin: 0;                                             }' >> HW_project_online.html;
 echo 'body::-webkit-scrollbar { display: none;                                         }' >> HW_project_online.html;
 echo '</style>' >> HW_project_online.html;
-echo '<link rel="stylesheet" href="e_stylesheets/style.css"/>' >> index.html;
+echo '<link rel="stylesheet" href="e_stylesheets/style.css"/>' >> HW_project_online.html;
 echo '<title id="documentTitle">emptyFile</title>' >> HW_project_online.html;
 echo '</head>' >> HW_project_online.html;
 echo '<body>' >> HW_project_online.html;

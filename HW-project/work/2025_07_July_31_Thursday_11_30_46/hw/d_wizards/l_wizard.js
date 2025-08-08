@@ -13,6 +13,7 @@ this.nextElementSibling.value = window.opener.coinFocus.anchor.href;
 if (this.value.startsWith('anchor')) {
 this.value = this.value.slice(13,-2);
 }
+this.setAttribute('value',this.value);
 ">
 </div></div><img data-name="img" alt="" style="position: absolute; display: none; z-index: 100; left: 0px; top: 0px; width: 100%; height: 100%; border: none; background-color: transparent;"></div></div>
 
@@ -21,6 +22,7 @@ this.value = this.value.slice(13,-2);
 if (this.value.startsWith('anchor')) {
 this.value = this.value.slice(13,-2);
 }
+this.setAttribute('value',this.value);
 ">
 <button class="xqnBTN" style="width: 10%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
 try {
@@ -41,6 +43,7 @@ this.nextElementSibling.value = window.opener.coinFocus.anchor.href;
 if (this.value.startsWith('anchor')) {
 this.value = this.value.slice(13,-2);
 }
+this.setAttribute('value',this.value);
 ">
 
 <button class="xqnBTN" style="width: 10%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
