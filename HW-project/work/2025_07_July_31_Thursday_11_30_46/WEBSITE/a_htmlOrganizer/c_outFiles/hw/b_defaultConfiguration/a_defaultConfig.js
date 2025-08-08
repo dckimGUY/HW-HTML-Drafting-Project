@@ -91,14 +91,14 @@ let borderBottomRightRadiusHold = 32;
 
 
 
-let boxShadowTop  = " ";
-let boxShadowLeft = " ";
-let boxShadowSize = 2;
-let boxShadowBlur = 2;
-let boxShadowColourTune = "0,0,0";
-let boxShadowAlpha = 0.50;
-let boxTintArrayNumber = 0;
-let boxShadowFactor = 0.50;
+var boxShadowTop  = " ";
+var boxShadowLeft = " ";
+var boxShadowSize = 2;
+var boxShadowBlur = 2;
+var boxShadowColourTune = "0,0,0";
+var boxShadowAlpha = 0.50;
+var boxTintArrayNumber = 0;
+var boxShadowFactor = 0.50;
 
 
 

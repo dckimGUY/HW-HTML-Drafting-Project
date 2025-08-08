@@ -28,12 +28,12 @@ a.href = url;
 
 
 if (rename==0&&filename!=defaultFilename) {
-filename = filename.replace(/ /g, '_');
+filename = filename.replace(/ /g, '-');
 if (codePrep==true) {
 a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".html";
 if (phpSub) { a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
 } else {
-filename = filename.replace(/ /g, '_');
+filename = filename.replace(/ /g, '-');
 a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".html";
 if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
 }
@@ -41,18 +41,18 @@ if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements
 
 
 if (codePrep==true) {
-filename = filename.replace(/ /g, '_');
+filename = filename.replace(/ /g, '-');
 a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".html";
 if (phpSub) { a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
 } else {
-filename = filename.replace(/ /g, '_');
+filename = filename.replace(/ /g, '-');
 a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".html";
 if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
 }
 }
 
 if (js==true) {
-filename = filename.replace(/ /g, '_');
+filename = filename.replace(/ /g, '-');
 a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".html";
 if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
 }

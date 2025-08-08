@@ -114,7 +114,7 @@ enterWizardMaster();
 event.preventDefault();
 spaceViewOn([e,32,32,es,ec,ea]);
 removePointerEventsNone();
-
+interfaceLayer.style.display = "none";
 
 
 
@@ -163,7 +163,7 @@ let keyInfo = [e,kC,cC,es,ec,ea];
 
 if (hotDog) { return; }
 /*                                                                        */
-/*  enter  */ if (kC ==  13 && cC ==  13) { hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone(); }
+/*  enter  */ if (kC ==  13 && cC ==  13) { hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone(); interfaceLayer.style.display = "none"; }
 /*                                                                        */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -240,6 +240,7 @@ let keyInfo = [e,kC,cC,es,ec,ea];
 
 spaceViewOff([e,32,32,es,ec,ea]);
 restorePointerEventsNone();
+interfaceLayer.style.display = "none";
 
 
 }

@@ -136,6 +136,9 @@ evaluateBoxShadow();
 
 }
 
+if (kC == 0 && cC == 0) {
+evaluateBoxShadow();
+}
 
 
 

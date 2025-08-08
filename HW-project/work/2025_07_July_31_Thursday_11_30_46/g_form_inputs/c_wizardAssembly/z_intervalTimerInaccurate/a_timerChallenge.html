@@ -1,0 +1,17 @@
+<button style="width: 100%; height: 100%; font: inherit;" onclick="
+
+setInterval(() => {
+if (this.dataset.stopped == 'false') {
+this.innerText = (parseFloat(this.innerText) + 0.001).toFixed(3)
+}
+}, 1);
+
+       if (this.dataset.stopped == 'true' && this.innerText != '0.000') {
+this.innerText = '0.000';
+} else if (this.dataset.stopped == 'false') {
+this.dataset.stopped =  'true';
+} else {
+this.dataset.stopped = 'false';
+}
+
+">0.000</button>

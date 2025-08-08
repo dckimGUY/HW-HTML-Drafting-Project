@@ -40,16 +40,20 @@ coinFocus.dataset.dragPull="style.transform";
 coinFocus.dataset.dragPull="main.style.borderTopLeftRadius,main.style.borderTopRightRadius,main.style.borderBottomLeftRadius,main.style.borderBottomRightRadius,main.style.outline";
 } else if (styleKey =="u"||styleKey =="U") {
 coinFocus.dataset.dragPull="main.style.boxShadow";
-} else if (styleKey =="i"||styleKey =="I") {
-coinFocus.dataset.dragPull="backgroundColor";
-} else if (styleKey =="o"||styleKey =="O") {
-coinFocus.dataset.dragPull="backgroundColor";
+
+
 } else if (styleKey =="p"||styleKey =="P") {
-coinFocus.dataset.dragPull="backgroundColor";
+coinFocus.dataset.dragPull="div.style.paddingLeft,div.style.paddingRight,div.style.paddingTop,div.style.paddingBottom,div.style.fontStyle,div.style.fontWeight,div.style.fontVariant,div.style.textTransform,div.style.direction,main.style.opacity";
+
+
+
 } else if (styleKey =="a"||styleKey =="A") {
-coinFocus.dataset.dragPull="backgroundColor";
+coinFocus.dataset.dragPull="div.style.textIndent,div.style.fontSize,div.style.lineHeight,div.style.wordSpacing,div.style.letterSpacing,div.style.textAlign";
+
+
+
 } else if (styleKey =="f"||styleKey =="F") {
-coinFocus.dataset.dragPull="backgroundColor";
+coinFocus.dataset.dragPull="div.style.fontSize,div.style.textShadow";
 }
 
 

@@ -11,7 +11,7 @@ if (rename==0&&filename!=defaultFilename) {
 let result = prompt("enter filename, a good format is to use three numbers first (beginning with 100), this will keep organization. Example '100_projectCode.sectionName'. No need to put the extension.", filename);
 if (result!=null) {
 filename = result;
-filename = filename.replace(/ /g, '_');
+filename = filename.replace(/ /g, '-');
 document.getElementById("documentTitle").innerText = filename;
 }
 }

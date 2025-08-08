@@ -24,14 +24,14 @@ if (shift==false||hauptMode==1) {
 /*    t    */ if (kC ==  84 && cC == 116) {                 noteStyle("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationS); modeRouter(e,8); if (lastKey=="T") { swapColours(); } }
 /*    y    */ if (kC ==  89 && cC == 121) {                 copyOutgoingHashLink();                 }
 /*    u    */ if (kC ==  85 && cC == 117) { styleKey = "u"; noteStyle("U<br><span style='font-size: 0.5em;'>grid to box-shadow</span>",durationS); gridToBoxShadow(keyInfo); lastKey = "u";               }
-/*    i    */ if (kC ==  73 && cC == 105) {                                                                                                                                                               }
-/*    o    */ if (kC ==  79 && cC == 111) {                                                                                                                                                               }
+/*    i    */ if (kC ==  73 && cC == 105) { enterImageAltText(keyInfo);                                                                                                                                   }
+/*    o    */ if (kC ==  79 && cC == 111) { enterClassNames(keyInfo);                                                                                                                                     }
 /*    p    */ if (kC ==  80 && cC == 112) { styleKey = "p"; noteStyle("P<br><span style='font-size: 0.5em;'>grid to padding</span>",durationS);    gridToPadding(keyInfo); lastKey = "p";                 }
 /*    a    */ if (kC ==  65 && cC ==  97) { styleKey = "a"; cycleTextAlignment(keyInfo); lastKey = "a";            }
 /*    s    */ if (kC ==  83 && cC == 115) {                 saveParticlePreparation(0,false);       }
 /*    d    */ if (kC ==  68 && cC == 100) {                 promptDownloadLink();                   }
 /*    f    */ if (kC ==  70 && cC == 102) { styleKey = "f"; noteStyle("F<br><span style='font-size: 0.5em;'>grid to font-size</span>",durationS);  gridToFontSize(keyInfo); lastKey = "f";                }
-/*    g    */ if (kC ==  71 && cC == 103) {                 /* SAFE KEY, NO ACTION */               }
+/*    g    */ if (kC ==  71 && cC == 103) { modeRouter(e,1);                                        }
 /*    h    */ if (kC ==  72 && cC == 104) {                 outerScaleDown(keyInfo);                }
 /*    j    */ if (kC ==  74 && cC == 106) {                 rotateZleft();                          }
 /*    k    */ if (kC ==  75 && cC == 107) {                 rotateZright();                         }
@@ -53,14 +53,14 @@ if (shift==true||hauptMode==1) {
 /*    T    */ if (kC ==  84 && cC ==  84) {                 noteStyle("<u>T</u><br><span style='font-size: 0.5em;'>colour all</span>",durationS); assignAllColours();                            }
 /*    Y    */ if (kC ==  89 && cC ==  89) {                 externalLink(); noteStyle("<u>Y</u><br><span style='font-size: 0.5em;'>external link</span>",durationS);                             }
 /*    U    */ if (kC ==  85 && cC ==  85) { styleKey = "U"; noteStyle("<u>U</u><br><span style='font-size: 0.5em;'>grid to box-shadow</span>",durationS,true); gridToBoxShadow(keyInfo); lastKey = "U";         }
-/*    I    */ if (kC ==  73 && cC ==  73) {                                                                                                                                                                     }
-/*    O    */ if (kC ==  79 && cC ==  79) {                                                                                                                                                                     }
+/*    I    */ if (kC ==  73 && cC ==  73) { enterImageAltText(keyInfo);                                                                                                                                         }
+/*    O    */ if (kC ==  79 && cC ==  79) { enterClassNames(keyInfo);                                                                                                                                           }
 /*    P    */ if (kC ==  80 && cC ==  80) { styleKey = "P"; noteStyle("<u>P</u><br><span style='font-size: 0.5em;'>grid to padding</span>",durationS,true);    gridToPadding(keyInfo); lastKey = "P";           }
 /*    A    */ if (kC ==  65 && cC ==  65) { styleKey = "A"; cycleTextAlignment(keyInfo); lastKey = "A";            }
 /*    S    */ if (kC ==  83 && cC ==  83) {                 saveParticlePreparation(1,false);       }
 /*    D    */ if (kC ==  68 && cC ==  68) {                 buttonDiv();                            }
 /*    F    */ if (kC ==  70 && cC ==  70) { styleKey = "F"; noteStyle("<u>F</u><br><span style='font-size: 0.5em;'>grid to font-size</span>",durationS,true); gridToFontSize(keyInfo); lastKey = "F";           }
-/*    G    */ if (kC ==  71 && cC ==  71) {                 /* SAFE KEY, NO ACTION */               }
+/*    G    */ if (kC ==  71 && cC ==  71) { modeRouter(e,1);                                        }
 /*    H    */ if (kC ==  72 && cC ==  72) {                 rotateLeft();                           }
 /*    J    */ if (kC ==  74 && cC ==  74) {                 rotateUnder();                          }
 /*    K    */ if (kC ==  75 && cC ==  75) {                 rotateOver();                           }
