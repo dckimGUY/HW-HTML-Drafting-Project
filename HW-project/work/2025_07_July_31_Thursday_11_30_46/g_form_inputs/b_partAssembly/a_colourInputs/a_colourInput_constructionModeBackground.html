@@ -1,1 +1,54 @@
-<input name="windowSelector" type="color" style="width: 100%; height: 100%; margin: 0; padding: 0; border: 0;" onchange="sL = this.value; spaceViewOn(); spaceViewOff();" />
+<input type="color" style="width: 128px; height: 64px; margin: 0; padding: 0; border: 0;" value="#3F3F3F" onchange="
+sL = this.value;
+this.setAttribute('value',this.value);
+localStorage.setItem('sL',this.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+" />
+
+<input type="color" style="width: 128px; height: 64px; margin: 0; padding: 0; border: 0;" value="#3F3F5F" onchange="
+L = this.value;
+this.setAttribute('value',this.value);
+localStorage.setItem('L',this.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+" />
+
+<input type="color" style="width: 128px; height: 64px; margin: 0; padding: 0; border: 0;" value="#BFBFBF" onchange="
+finishedBackgroundColour = this.value;
+this.setAttribute('value',this.value);
+localStorage.setItem('finishedBackgroundColour',this.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+" />
+
+<input type="color" style="width: 128px; height: 64px; margin: 0; padding: 0; border: 0;" value="#00FFFF" onchange="
+U = this.value;
+D = this.value;
+this.setAttribute('value',this.value);
+localStorage.setItem('UD',this.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+" />
+
+<input type="color" style="width: 128px; height: 64px; margin: 0; padding: 0; border: 0;" value="#00FF00" onchange="
+C = this.value;
+this.setAttribute('value',this.value);
+localStorage.setItem('C',this.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+" />
+
+<input type="color" style="width: 128px; height: 64px; margin: 0; padding: 0; border: 0;" value="#FF0000" onchange="
+bU = this.value;
+this.setAttribute('value',this.value);
+localStorage.setItem('bU',this.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+" />

@@ -7,6 +7,33 @@ let useBase64forImages = true;
 let useBase64forAudio  = true;
 let useBase64forVideo  = true;
 
+
+       if (localStorage.getItem("useBase64forImages")) {
+       if (localStorage.getItem("useBase64forImages")=="true") {
+useBase64forImages = true;
+} else if (localStorage.getItem("useBase64forImages")=="false") {
+useBase64forImages = false;
+}
+}
+
+       if (localStorage.getItem("useBase64forAudio")) {
+       if (localStorage.getItem("useBase64forAudio")=="true") {
+useBase64forAudio = true;
+} else if (localStorage.getItem("useBase64forAudio")=="false") {
+useBase64forAudio = false;
+}
+}
+
+       if (localStorage.getItem("useBase64forVideo")) {
+       if (localStorage.getItem("useBase64forVideo")=="true") {
+useBase64forVideo = true;
+} else if (localStorage.getItem("useBase64forVideo")=="false") {
+useBase64forVideo = false;
+}
+}
+
+
+
 let mainNote = true;
 let HJKLnote = false;
 let styleNote= true;
@@ -194,6 +221,20 @@ let utilityOpacity = 0.75;
 /* Utility Grid Boundary    */var   bW=  "12";
 /* Utility Grid Boundary Col*/var   bU="#F00";
 /* Utility Grid Opacity     */var    K="0.25";
+
+
+if (localStorage.getItem("sL")) { sL = localStorage.getItem("sL"); }
+if (localStorage.getItem("L")) { L = localStorage.getItem("L"); }
+if (localStorage.getItem("finishedBackgroundColour")) { finishedBackgroundColour = localStorage.getItem("finishedBackgroundColour"); }
+if (localStorage.getItem("UD")) { U = localStorage.getItem("UD"); D = localStorage.getItem("UD");  }
+if (localStorage.getItem("C")) { C = localStorage.getItem("C"); }
+if (localStorage.getItem("bU")) { let value = localStorage.getItem("bU"); }
+
+
+
+
+
+
 
 /* Utility Indicator Size   */let    O=     8;
 /* Utility Indicator Color  */let    N="#0F0";
