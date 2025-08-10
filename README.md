@@ -2,6 +2,8 @@
 
 __Open-Source All The Way!__
 
+[Visit the DCKIM.com](https://dckim.com/)
+
 [DEMO at DCKIM.com](https://dckim.com/HW_project_online.html)
 
 ![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)
