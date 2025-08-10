@@ -20,14 +20,13 @@ For the developers out there: The project is arranged conveniently for BASH with
 
 *The windows can be moved from the keyboard!*
 
-
-![Make a Complex Design.](./images-for-readme/d_HW-HTML-Drafting-Screenshot.png)
-
-
 ![The 'enter' key basically gives you a 'what you see is what you can get' view. It is reversed by pressing the 'escape' key.](./images-for-readme/c_HW-HTML-Drafting-Screenshot.png)
 
+*The 'enter' key basically gives you a 'what you see is what you can get' view. It is reversed by pressing the 'escape' key.*
 
+![Make a Unnecessarily Complex Design.](./images-for-readme/d_HW-HTML-Drafting-Screenshot.png)
 
+*Make a Unnecessarily Complex Design. (why not?)*
 
 ![Unwrap the wizards to make your own unique toolbar.](./images-for-readme/e_HW-HTML-Drafting-Screenshot.png)
 
