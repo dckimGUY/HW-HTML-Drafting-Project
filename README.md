@@ -1,7 +1,6 @@
-# HW
-HTML Drafting Project
+# HW HTML Drafting Project
 
-The foundational components of this project are in place and now, the next steps will be to develop branches that are distinct but, thoughtfully developed.
+The foundational components of this project are in place and now, the next steps will be to decide on branches that are distinct but, thoughtfully developed.
 
 Clearly the project should not be pigeon-holed. The subject of HTML and it's usages are intentionally broad, and I believe that its value could even extend to daily use for non-experts. If only there was a facilitation in that direction.
 
