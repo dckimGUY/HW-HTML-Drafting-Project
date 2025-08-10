@@ -10,11 +10,14 @@ __Open-Source All The Way!__
 
 For the developers out there: The project is arranged conveniently for BASH with 'a_' letters to take advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
 
+## Menu
 - [Screen Grab HYPE](#screen-grab-hype)
 - [Project Direction Notes](#project-direction-notes)
 - [More Information for Developers](#more-information-for-developers) (or just anyone looking for a fun project)
 
 ## Screen Grab HYPE
+
+[return to menu](#menu)
 
 ![The windows can be moved from the keyboard!](./images-for-readme/b_HW-HTML-Drafting-Screenshot.png)
 
@@ -46,6 +49,8 @@ That way you stay in complete control over your own self-expression. It may be a
 
 ## Project Direction Notes
 
+[return to menu](#menu)
+
 The foundational components of this project are in place and now, the next steps will be to decide on branches that are distinct but, thoughtfully developed.
 
 The subject of HTML and it's usages are intentionally broad, and I believe that its value should naturally extend to daily use for non-experts. If only there was a facilitation in that direction.
@@ -76,13 +81,15 @@ I could see between three to five being reasonable.
 
 ## More Information for Developers
 
+[return to menu](#menu)
+
 For the developers out there, I hope there will be some attention here, and I can tell you that the project is set up in a pretty nifty way. That should help to make it easy to just pick up and take it in your own direction. There shouldn't be too much trouble for you to just write up your own code, which you are basically doing anyways.
 
 Just take some of that knowledge and then bring it into a totally obvious visual environment.
 
 For information, and to promote this project a bit further: I can tell you that almost all of the files inside of the project directories are organized with the BASH prompt in mind. So, they all start with an alphabet letter, and then have an underscore. So, when you are working with your own clone of the project, you will get the following result:
 1. You will find the files neatly arranged: "/a_directory/b_directory/h_filename.js". Trust me this saves time and improves efficiency. For example, you can just use 'vi a *tab* b *tab* h *tab* enter'. (anyone who's been at this game a while will love that)
-2. There is a very easy BASH script solution that will build the 'HW_project_online.html' file again from what is in the 'hw' directory. You can just type '. ./chalk' from the prompt, and it assembles the vital project components again. So, you can basically add '.js' files into the 'hw/a_programFunctions' directory at will, and as the file has a function inside of it with the same name as the filename (excluding the 'a_') then you are good to go. If you are familiar with BASH, just have a quick look inside of the 'chalk' file so that you can see what it will affect.
+2. There is a very easy BASH script solution that will build the 'HW_project_online.html' file again from what is in the 'hw' directory. You can just type '. ./chalk' from the prompt, and it assembles the vital project components again. So, you can basically add '.js' files into the 'hw/a_programFunctions' directory at will, and as long as the file has a function inside of it with the same name as the filename (excluding the 'a_') then you are good to go. If you are familiar with BASH, just have a quick look inside of the 'chalk' file so that you can see what it will affect.
 3. There are other convenient BASH scripts, basically ready to be used (as-is). If you just point your browser at the 'WEBSITE' directory, and start saving the browser downloads there, then you are set up pretty good for small-time website production. We just don't have any 'server-side' code happening. This project doesn't deal with any of that. It just deals with what can be easily understood, without any installs, and without any major programming knowledge. Basically 'regular-people-stuff'. That said, everyone can potentially benefit from opening up HTML for general daily use.
 4. The JavaScript (in the 'hw' directory): It's mostly broken down into a 'one-function-one-file' type scenario. So, it's pretty easy to find functions and handle them.
 5. It's even easier to find functions in the project by using the 'HW_treeDiagram.html' file. You can open that in the browser and then use 'ctrl+f' to find things.
