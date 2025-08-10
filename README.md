@@ -5,6 +5,7 @@ __Open-Source All The Way!__
 [DEMO at DCKIM.com](https://dckim.com/HW_project_online.html)
 
 ![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)
+
 *HW HTML Drafting Project LOGO*
 
 For the developers out there: The project is arranged conveniently for BASH with 'a_' letters to take advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
@@ -16,21 +17,27 @@ For the developers out there: The project is arranged conveniently for BASH with
 ## Screen Grab HYPE
 
 ![The windows can be moved from the keyboard!](./images-for-readme/b_HW-HTML-Drafting-Screenshot.png)
+
 *The windows can be moved from the keyboard!*
 
 ![The 'enter' key basically gives you a "what you see is what you can get" view. It is reversed by pressing the 'escape' key.](./images-for-readme/c_HW-HTML-Drafting-Screenshot.png)
+
 *The 'enter' key basically gives you a "what you see is what you can get" view. It is reversed by pressing the 'escape' key.*
 
 ![Make a design so complicated that nobody believes it is possible.](./images-for-readme/d_HW-HTML-Drafting-Screenshot.png)
+
 *Make a design so complicated that nobody believes it is possible.*
 
 ![Unwrap the wizards to make your own unique toolbar.](./images-for-readme/e_HW-HTML-Drafting-Screenshot.png)
+
 *Unwrap the wizards to make your own unique toolbar.*
 
 ![Access important options throught the clickable interface. Or, if you are a pro on the keyboard, all the better!](./images-for-readme/f_HW-HTML-Drafting-Screenshot.png)
+
 *Access important options throught the clickable interface. Or, if you are a pro on the keyboard, all the better!*
 
 ![Drag Image files, audio files, and video files directly into place. (text and HTML too!)](./images-for-readme/g_HW-HTML-Drafting-Screenshot.png)
+
 *Drag Image files, audio files, and video files directly into place. (text and HTML too!)*
 
 The list of features goes on, and it's actually very easy to do the coding for your own new features. The only trick to write all of the JavaScript code in-line and inside of the button or input thingy. So, it's basically a universal way of bringing HTML into your daily computering tasks. For a personal website, this is basically the best you can get for a 'do-it-yourself'.
