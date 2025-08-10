@@ -1,0 +1,1 @@
+rm textualRoll.txt; for i in {a..y}; do echo -n "data:image/png;base64," >> textualRoll.txt; base64 ${i}_wizardIcon.png | tr -d '\n' >> textualRoll.txt; echo >> textualRoll.txt; echo >> textualRoll.txt; done;

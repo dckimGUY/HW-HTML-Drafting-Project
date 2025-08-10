@@ -1,0 +1,24 @@
+.UIwizardButton         { width: 64px; height: 64px; margin: 0px; padding: 0px; border: 0px; border-radius: 1px; }
+.UIwizardButton:hover   { z-index: 100; outline: 8px solid lime;                 }
+.UIwizardButton:active  { z-index: 100; outline: 8px solid magenta;              }
+.xqnBTN:hover           { background-color: lightgrey;                           }
+.xqnBTN:hover           { background-color: lime;                                }
+.xqnBTN:active          { background-color: yellow;                              }
+
+
+body { font-family: monospace; }
+
+@font-face {
+font-family: 'JungYulKim2';
+src: url('JungYulKim2-Regular.woff') format('woff');
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: 'JungYulKim2';
+src: url('JungYulKim2-Bold.woff') format('woff');
+font-weight: 700;
+font-style: normal;
+}
+
+body { font-family: 'JungYulKim2'; }

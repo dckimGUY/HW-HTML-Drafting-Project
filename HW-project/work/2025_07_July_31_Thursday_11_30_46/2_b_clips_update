@@ -1,4 +1,0 @@
-cd WEBSITE;
-. ./0_update;
-. ./2_add_b_clips;
-cd ..;
