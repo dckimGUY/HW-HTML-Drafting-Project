@@ -26,7 +26,6 @@ For the developers out there: The project is arranged conveniently for BASH with
 
 ![Make a design so complicated that nobody believes it is possible.](./images-for-readme/d_HW-HTML-Drafting-Screenshot.png)
 
-*Make a design so complicated that nobody believes it is possible.*
 
 ![Unwrap the wizards to make your own unique toolbar.](./images-for-readme/e_HW-HTML-Drafting-Screenshot.png)
 
