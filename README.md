@@ -22,7 +22,6 @@ For the developers out there: The project is arranged conveniently for BASH with
 
 ![The 'enter' key basically gives you a 'what you see is what you can get' view. It is reversed by pressing the 'escape' key.](./images-for-readme/c_HW-HTML-Drafting-Screenshot.png)
 
-*The 'enter' key basically gives you a 'what you see is what you can get' view. It is reversed by pressing the 'escape' key.*
 
 ![Make a design so complicated that nobody believes it is possible.](./images-for-readme/d_HW-HTML-Drafting-Screenshot.png)
 
