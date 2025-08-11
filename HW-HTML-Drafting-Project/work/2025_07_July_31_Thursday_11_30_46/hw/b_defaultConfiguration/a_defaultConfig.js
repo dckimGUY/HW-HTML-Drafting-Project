@@ -9,6 +9,9 @@ let useBase64forVideo  = true;
 
 let saveWithScript     = false;
 
+var fileSaveHeader = '';
+var fileSaveFooter = '';
+
 
        if (localStorage.getItem("useBase64forImages")) {
        if (localStorage.getItem("useBase64forImages")=="true") {

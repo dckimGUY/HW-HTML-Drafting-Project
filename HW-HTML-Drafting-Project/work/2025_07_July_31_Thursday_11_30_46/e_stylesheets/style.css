@@ -1,9 +1,12 @@
 .UIwizardButton         { width: 64px; height: 64px; margin: 0px; padding: 0px; border: 0px; border-radius: 1px; }
 .UIwizardButton:hover   { z-index: 100; outline: 8px solid lime;                 }
 .UIwizardButton:active  { z-index: 100; outline: 8px solid magenta;              }
-.xqnBTN:hover           { background-color: lightgrey;                           }
+.xqnBTN                 { background-color: lightgrey;                           }
 .xqnBTN:hover           { background-color: lime;                                }
 .xqnBTN:active          { background-color: yellow;                              }
+.layerButton            { background-color: white; width: 100%; height: 100%; margin: 0; padding: 0; border: none; font: inherit; color: inherit; }
+.layerButton:hover      { background-color: #DEFF1C;                             }
+.layerButton:active     { background-color: magenta;                             }
 
 
 body { font-family: monospace; }

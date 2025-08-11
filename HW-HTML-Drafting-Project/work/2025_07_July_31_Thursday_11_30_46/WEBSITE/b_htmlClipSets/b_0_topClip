@@ -84,6 +84,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/a_programFunctions/a_keyboardFunctions/e_saveAndAppend/g_openImageFile.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/e_saveAndAppend/h_openHTMLinNewWindow.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/e_saveAndAppend/i_saveStartupTutorial.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/e_saveAndAppend/j_saveWithHeaderFooter.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/f_documentOrder/a_flowManagement/a_reflow.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/f_documentOrder/a_flowManagement/b_reflowGlobal.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/f_documentOrder/a_flowManagement/c_reflowPerTrip.js"></script>

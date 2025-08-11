@@ -77,6 +77,7 @@ hw.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.f_appendFile	 = append
 hw.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.g_openImageFile	 = openImageFile;
 hw.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.h_openHTMLinNewWindow	 = openHTMLinNewWindow;
 hw.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.i_saveStartupTutorial	 = saveStartupTutorial;
+hw.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.j_saveWithHeaderFooter	 = saveWithHeaderFooter;
 hw.a_programFunctions.a_keyboardFunctions.f_documentOrder = {};
 hw.a_programFunctions.a_keyboardFunctions.f_documentOrder.a_flowManagement = {};
 hw.a_programFunctions.a_keyboardFunctions.f_documentOrder.a_flowManagement.a_reflow	 = reflow;
