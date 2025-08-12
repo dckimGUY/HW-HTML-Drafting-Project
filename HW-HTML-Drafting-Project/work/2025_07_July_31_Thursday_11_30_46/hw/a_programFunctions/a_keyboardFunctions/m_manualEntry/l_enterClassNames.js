@@ -24,9 +24,9 @@ groupAction = coinTrip.sel2;
 result = prompt("enter class(es) for this part: ", coinFocus.class);
 
 if (result!=null) {
-coinFocus.class = result;
+coinFocus.className = result;
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].class = result;
+groupAction[j].className = result;
 }
 }
 
