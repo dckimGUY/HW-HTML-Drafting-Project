@@ -2,13 +2,13 @@
 
 __Open-Source All The Way!__
 
+[HW HTML Drafting Project has a WIKI, just follow this link!](https://github.com/dckimMysteryAuthor/HW-HTML-Drafting-Project/wiki/Home)
+
 [Visit the DCKIM.com](https://dckim.com/)
 
-[DEMO at DCKIM.com](https://dckim.com/HW_project_online.html)
+[DEMO at DCKIM.com/HW_project_online.html](https://dckim.com/HW_project_online.html)
 
 ![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)
-
-*HW HTML Drafting Project LOGO*
 
 For the developers out there: The project is arranged conveniently for BASH with 'a_' letters to take advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
 
