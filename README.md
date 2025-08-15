@@ -6,11 +6,9 @@ __Open-Source All The Way!__
 
 [Visit the DCKIM.com](https://dckim.com/)
 
-[DEMO at DCKIM.com/HW_project_online.html](https://dckim.com/HW_project_online.html)
+[![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)](https://dckim.com/HW_project_online.html)
 
-![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)
-
-For the developers out there: The project is arranged conveniently for BASH with 'a_' letters to take advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
+For the developers out there: The project is arranged conveniently for BASH with both file name and directory prefixes in the form of 'a_'. This takes advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
 
 ## Menu
 - [Screen Grab HYPE](#screen-grab-hype)
