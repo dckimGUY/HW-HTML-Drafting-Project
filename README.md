@@ -2,9 +2,7 @@
 
 __Open-Source All The Way!__
 
-![HW HTML Drafting Project has a WIKI](./images-for-readme/h_wiki-promo.png)
-
-[HW HTML Drafting Project has a WIKI, just follow this link!](https://github.com/dckimMysteryAuthor/HW-HTML-Drafting-Project/wiki/Home)
+[![HW HTML Drafting Project has a WIKI](./images-for-readme/h_wiki-promo.png)](https://github.com/dckimMysteryAuthor/HW-HTML-Drafting-Project/wiki/Home)
 
 [Visit the DCKIM.com](https://dckim.com/)
 
