@@ -1,6 +1,6 @@
-dckimGUY banned on seventh day on reddit, not too shabby!
-
 # HW HTML Drafting Project
+
+#dckimGUY
 
 __Open-Source All The Way!__
 
