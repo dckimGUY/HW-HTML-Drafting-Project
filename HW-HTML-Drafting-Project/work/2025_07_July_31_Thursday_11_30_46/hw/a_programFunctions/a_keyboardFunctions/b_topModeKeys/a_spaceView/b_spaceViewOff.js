@@ -1,6 +1,9 @@
 function spaceViewOff() {
 mouseIsDogged=false;
 spaceView = false;
+
+pulledText.style.pointerEvents = "none";
+
 for (let j=0;j<utilityLayer0.children.length;j++) {
        if (utilityLayer0.children[j].dataset.coinTrip==Ts0) {
 utilityLayer0.children[j].style.outlineColor = Cs0;

@@ -1,3 +1,5 @@
+## BIG BIG Update on the mouse functionality, check it out in the program.
+
 # HW HTML Drafting Project
 
 #dckimGUY

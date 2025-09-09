@@ -1,9 +1,6 @@
 function rotateLeft() {
 if (coinFocus!=null) {
 
-
-
-
 const perspective =  parseInt(coinFocus.lastElementChild.dataset.perspective   );
 const rotateX     =  parseInt(coinFocus.lastElementChild.dataset.rotateX       );
 const rotateY     =  parseInt(coinFocus.lastElementChild.dataset.rotateY       );
@@ -19,6 +16,7 @@ newRotateY += 360;
 coinFocus.lastElementChild.dataset.rotateY = newRotateY;
 coinFocus.lastElementChild.style.transform = "perspective(" + perspective + "px) rotateX(" + rotateX + "deg) rotateY(" + newRotateY + "deg) rotateZ(" + rotateZ + "deg) translateZ(" + translateZ + "px)"; 
 
+coinFocus.firstElementChild.style.transform = "perspective(" + perspective + "px) rotateX(" + rotateX + "deg) rotateY(" + newRotateY + "deg) rotateZ(" + rotateZ + "deg) translateZ(" + translateZ + "px)"; 
 
 
 }

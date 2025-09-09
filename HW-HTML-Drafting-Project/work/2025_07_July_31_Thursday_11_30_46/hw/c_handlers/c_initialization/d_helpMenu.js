@@ -31,7 +31,7 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 
 
 
-   <a href="https://dckim.org/HDUB_program_file_download.html"
+   <a href="https://hdub.neocities.org/hdub-original.html"
      style="position: fixed;
               bottom: 0px;
                left: 64px;
@@ -40,7 +40,7 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
                       -1px -1px  4px lime,
                       -1px  1px  4px lime,
                        1px -1px  4px lime;"
-   ><p>DOWNLOAD HDUB_program_file at DCKIM.org</p></a>
+   ><p>try out original quirky hdub! (totally different)</p></a>
 
 <p class="truth">
     لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰه
@@ -53,17 +53,50 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 <br><br>
 
 
-<header class="header">HW HTML DRAFTING PROJECT<br>Keyboard Description</header>
+<header class="header"><a href="https://github.com/dckimMysteryAuthor/HW-HTML-Drafting-Project">HW HTML DRAFTING PROJECT</a><br>Mouse and Keyboard Descriptions</header>
 
 
 
 <br><br>
 
+<p><span class="heading1">NEW: Mouse Functionality Described in Brief</span></p>
+<br>
+<p class="xyl0">The mouse functions have recently been enhanced greatly. The program now features 'draggable' edges, which is very convenient. The drag edges are used when the mouse is within the visible 'drag-region'. Keep in mind that the corners also work as expected.</p>
+<br>
+<p class="xyl0">The left mouse button will drag to move parts around on the screen, as usual. The left mouse button can now also enter new parts by dragging on the screen where there is no part currently placed. To place a new part, while beginning the action on top of another part, we must hold 'CTRL + SHIFT', as usual.</p>
+<br>
+<p class="xyl0">The middle mouse button can be clicked on top of a part to remove that part. The part can then be re-inserted in the usual way, using 'P'.</p>
+<br>
+<p class="xyl0">Double clicking on a part with 'left-click' will now make a duplicate of that part exactly in place. Holding down the 'CTRL' key and then dragging will also make duplicates quickly. Double clicking on a blank area of the screen now places the cursor and gives keyboard focus to it. Then we can use a single click to place the cursor around the scree.</p>
+<br>
+<p class="xyl0">The 'right-click' of the mouse, as before, is left completely for use by the web browser, which has many interesting and useful features accessible that way. No need to over-ride those wonderful features.</p>
+<br>
+<p class="xyl0">Hovering over a part and using 'CTRL + C' or 'CTRL + V' will copy and paste the internal stuff of the part. However, if we use the 'Y' key in style mode, we will copy the internal navigation link from the part onto the computer's clipboard. We can then paste it onto the desired part using 'CTRL + V'. This is a convenient way of making the internal hyper-links.</p>
+<br>
+<p class="xyl0">The mouse is also used to drag files into the program, using the mouse. We can easily drag in Image, Audio, and Video files. The parts will appear exactly at the place that we drag them to(top left corner). Dragging text files and HTML files is different. At present, we must drag those type of file directly onto a part in the program, so we need to have a part there in the program ready for this. This is a good method, because we can keep HTML particles as files somewhere in our local system, and we don't need to find the file through the dialogue. Keep in mind that HTML and text can also be copied in using 'CTRL + C' and 'CTRL + V'.</p>
+<br>
+<p class="xyl0">The mouse is also used to drag 'templating' information while we use 'backspace mode', but, this system is not fully developed and exposed yet. It can be used, but, it's a kind of 'do-it-youself' at this point.</p>
+<br>
+<p><span class="heading1">Minor Image Editing from the mouse.</span></p>
+<br>
+<p class="xyl0">Start by dragging a file into the background: Hold 'ALT' while dragging from the file system. 'SHIFT + Double-click' on a part to crop the image inside of it. Use 'SHIFT + 1' to save the internal image. Use 'ALT + Double-click' to stamp the image from the part back down against the background image.</p>
+<br>
+<p class="xyl0">We can easily change the background image boundary by placing an empty part in the top left corner and using 'ALT + Double-click' on it.</p>
+<br>
+<p class="xyl0">***The image working stuff is new, and I might expand it later. At present, it seems very useful.</p>
+<br>
+<br>
+<p><span class="heading1">BIG TIP: Use 'ENTER' to get into the 'live view' mode, and use 'ESCAPE' to get back out of it.</span></p>
+<p class="xyl0">Also, in style-mode(caps lock off), be aware of the <u><b>'E' and 'Z' keys(a good way to remember: "It's E-Z")</b></u>. They will let you set the 'content-editable' and 'lower the shield'. This is a quick way to get you started with writing text into the boxes.</p>
+<br>
+
+<br>
+
 <p><span class="xyl5" style="text-align: center;">AS A SUMMARY AND A HELPFUL ADVICE ON HOW TO READ THIS TABLE: </span></p>
 <br>
 <p><span class="xyl5">***If you use the 'ENTER' key here, then you will need to use the 'ESCAPE' key to get back out of here with F1, because we are kinda still inside of the HW program.***</span></p>
 <br>
-<p><span class="xyl5" style="color: magenta;">***NEW: TRY THE 'TAB' KEY TO GET A CLICKABLE USER INTERFACE. (shift + tab will put it into the program as a part!)***</span></p>
+<p><span class="xyl5" style="color: magenta;">***NEW: TRY THE 'TAB' KEY TO GET A CLICKABLE USER INTERFACE. (shift + tab will put it into the program as a part! Many of these buttons will work from a new window)***</span></p>
 <br>
 
 <p><span class="xyl5">This gives most of the key bindings for the program. It is helpful to notice that many of the key functions are very similar when used with the SHIFT key. The difference will be that, while using the SHIFT key, the function will be applied to an entire colour group, instead of only the item in focus. This is a general rule. Knowing this, you can see that this list of keys is actually very short and you can probably skip over the ones that are basically duplicates. I have helped a little bit by setting the duplicated ones in italics. (mostly in style mode)</span></p>
@@ -72,9 +105,9 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 <p class="xyl0">QUICK LOOK-UP Cross-Mode: 
 <br>
 
-<a id="cMESCreturn"   href="#cMESC">ESC</a>
-<a id="cMAAreturn" href="#cMAA">space</a>
-<a id="cMBBreturn" href="#cMBB">enter</a>
+<a id="cMESCreturn" href="#cMESC">ESC</a>
+<a id="cMAAreturn"  href="#cMAA">space</a>
+<a id="cMBBreturn"  href="#cMBB">enter</a>
 <a id="cMSreturn"   href="#cMS">backspace</a>
 <a id="cMUreturn"   href="#cMU">F1</a> 
 <a id="cMVreturn"   href="#cMV">ins</a> 
@@ -82,54 +115,54 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 <a id="cMXreturn"   href="#cMX">page up</a> 
 <a id="cMYreturn"   href="#cMY">delete</a> 
 <a id="cMZreturn"   href="#cMZ">end</a> 
-<a id="cMS2return" href="#cMS2">page down</a> 
-<a id="cMT2return" href="#cMT2">caps</a> 
-<a id="cMU2return" href="#cMU2">up arrow</a> 
-<a id="cMV2return" href="#cMV2">down arrow</a> 
-<a id="cMW2return" href="#cMW2">left arrow</a> 
-<a id="cMX2return" href="#cMX2">right arrow</a>  
-<a id="cMCCreturn" href="#cMCC">\`</a>
-<a id="cMDDreturn" href="#cMDD">1</a>
-<a id="cMEEreturn" href="#cMEE">2</a>
-<a id="cMFFreturn" href="#cMFF">3</a>
-<a id="cMGGreturn" href="#cMGG">4</a>
-<a id="cMHHreturn" href="#cMHH">5</a>
-<a id="cMIIreturn" href="#cMII">6</a>
-<a id="cMJJreturn" href="#cMJJ">7</a>
-<a id="cMKKreturn" href="#cMKK">8</a>
-<a id="cMLLreturn" href="#cMLL">9</a>
-<a id="cMMMreturn" href="#cMMM">0</a>
-<a id="cMNNreturn" href="#cMNN">-</a>
-<a id="cMOOreturn" href="#cMOO">=</a>
-<a id="cMPPreturn" href="#cMPP">~</a>
-<a id="cMQQreturn" href="#cMQQ">!</a>
-<a id="cMRRreturn" href="#cMRR">@</a>
-<a id="cMSSreturn" href="#cMSS">#</a>
-<a id="cMTTreturn" href="#cMTT">$</a>
-<a id="cMUUreturn" href="#cMUU">%</a>
-<a id="cMVVreturn" href="#cMVV">^</a>
-<a id="cMWWreturn" href="#cMWW">&</a>
-<a id="cMXXreturn" href="#cMXX">*</a>
-<a id="cMYYreturn" href="#cMYY">(</a>
-<a id="cMZZreturn" href="#cMZZ">)</a>
-<a id="cMAreturn" href="#cMA">_</a>
-<a id="cMBreturn" href="#cMB">+</a>
-<a id="cMCreturn" href="#cMC">[</a>
-<a id="cMDreturn" href="#cMD">]</a>
-<a id="cMEreturn" href="#cME">\</a>
-<a id="cMFreturn" href="#cMF">;</a>
-<a id="cMGreturn" href="#cMG">'</a>
-<a id="cMHreturn" href="#cMH">,</a>
-<a id="cMIreturn" href="#cMI">.</a>
-<a id="cMJreturn" href="#cMJ">/</a>
-<a id="cMKreturn" href="#cMK">{</a>
-<a id="cMLreturn" href="#cML">}</a>
-<a id="cMMreturn" href="#cMM">|</a>
-<a id="cMNreturn" href="#cMN">:</a>
-<a id="cMOreturn" href="#cMO">"</a>
-<a id="cMPreturn" href="#cMP"><</a>
-<a id="cMQreturn" href="#cMQ">></a>
-<a id="cMRreturn" href="#cMR">?</a>
+<a id="cMS2return"  href="#cMS2">page down</a> 
+<a id="cMT2return"  href="#cMT2">caps</a> 
+<a id="cMU2return"  href="#cMU2">up arrow</a> 
+<a id="cMV2return"  href="#cMV2">down arrow</a> 
+<a id="cMW2return"  href="#cMW2">left arrow</a> 
+<a id="cMX2return"  href="#cMX2">right arrow</a>  
+<a id="cMCCreturn"  href="#cMCC">\`</a>
+<a id="cMDDreturn"  href="#cMDD">1</a>
+<a id="cMEEreturn"  href="#cMEE">2</a>
+<a id="cMFFreturn"  href="#cMFF">3</a>
+<a id="cMGGreturn"  href="#cMGG">4</a>
+<a id="cMHHreturn"  href="#cMHH">5</a>
+<a id="cMIIreturn"  href="#cMII">6</a>
+<a id="cMJJreturn"  href="#cMJJ">7</a>
+<a id="cMKKreturn"  href="#cMKK">8</a>
+<a id="cMLLreturn"  href="#cMLL">9</a>
+<a id="cMMMreturn"  href="#cMMM">0</a>
+<a id="cMNNreturn"  href="#cMNN">-</a>
+<a id="cMOOreturn"  href="#cMOO">=</a>
+<a id="cMPPreturn"  href="#cMPP">~</a>
+<a id="cMQQreturn"  href="#cMQQ">!</a>
+<a id="cMRRreturn"  href="#cMRR">@</a>
+<a id="cMSSreturn"  href="#cMSS">#</a>
+<a id="cMTTreturn"  href="#cMTT">$</a>
+<a id="cMUUreturn"  href="#cMUU">%</a>
+<a id="cMVVreturn"  href="#cMVV">^</a>
+<a id="cMWWreturn"  href="#cMWW">&</a>
+<a id="cMXXreturn"  href="#cMXX">*</a>
+<a id="cMYYreturn"  href="#cMYY">(</a>
+<a id="cMZZreturn"  href="#cMZZ">)</a>
+<a id="cMAreturn"   href="#cMA">_</a>
+<a id="cMBreturn"   href="#cMB">+</a>
+<a id="cMCreturn"   href="#cMC">[</a>
+<a id="cMDreturn"   href="#cMD">]</a>
+<a id="cMEreturn"   href="#cME">\</a>
+<a id="cMFreturn"   href="#cMF">;</a>
+<a id="cMGreturn"   href="#cMG">'</a>
+<a id="cMHreturn"   href="#cMH">,</a>
+<a id="cMIreturn"   href="#cMI">.</a>
+<a id="cMJreturn"   href="#cMJ">/</a>
+<a id="cMKreturn"   href="#cMK">{</a>
+<a id="cMLreturn"   href="#cML">}</a>
+<a id="cMMreturn"   href="#cMM">|</a>
+<a id="cMNreturn"   href="#cMN">:</a>
+<a id="cMOreturn"   href="#cMO">"</a>
+<a id="cMPreturn"   href="#cMP"><</a>
+<a id="cMQreturn"   href="#cMQ">></a>
+<a id="cMRreturn"   href="#cMR">?</a>
 </p>
 
 <br>
@@ -357,15 +390,15 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 <p><a id="cMNN" href="#cMNNreturn">/*    -    */ </a><span class="xyl0"> Decrease Grid Size.                                      </span></p>
 <p><a id="cMOO" href="#cMOOreturn">/*    =    */ </a><span class="xyl0"> Increase Grid Size.                                      </span></p>
 <p><a id="cMPP" href="#cMPPreturn">/*    ~    */ </a><span class="xyl0"> Set filename and then save as '.php'</span></p>
-<p><a id="cMQQ" href="#cMQQreturn">/*    !    */ </a><span class="xyl0"> Set browser to fullscreen.</span></p>
+<p><a id="cMQQ" href="#cMQQreturn">/*    !    */ </a><span class="xyl0"> Save the image from the part.</span></p>
 <p><a id="cMRR" href="#cMRRreturn">/*    @    */ </a><span class="xyl9"> Set the Object's '<b>DRAG-PULL</b>' based on the active 'tuner'.</span></p>
 <p><a id="cMSS" href="#cMSSreturn">/*    #    */ </a><span class="xyl0"> Toggle Part Names on or off.</span></p>
 <p><a id="cMTT" href="#cMTTreturn">/*    $    */ </a><span class="xyl7"> Change focus to the last part in the document order.</span></p>
 <p><a id="cMUU" href="#cMUUreturn">/*    %    */ </a><span class="xyl0"> Set the 'z-echelon'. This is an additive number applied to the entire document when 'z' is used. The result is z-index isolation groups (echelons).</span></p>
 <p><a id="cMVV" href="#cMVVreturn">/*    ^    */ </a><span class="xyl7"> Change focus to the first part in the document order.</span></p>
-<p><a id="cMWW" href="#cMWWreturn">/*    &    */ </a><span class="xyl0"> Open a textarea in a new window.</span></p>
+<p><a id="cMWW" href="#cMWWreturn">/*    &    */ </a><span class="xyl0"> Load in a bunch of Font related templates for use with 'drag-pull'. Use with 'backspace'.</span></p>
 
-<p><a id="cMXX" href="#cMXXreturn">/*    *    */ </a><span class="xyl8"> Load in a bunch of Font related templates for use with 'drag-pull'. Use with 'backspace'.</span></p>
+<p><a id="cMXX" href="#cMXXreturn">/*    *    */ </a><span class="xyl8"> Set the browser to fullscreen</span></p>
 <p><a id="cMYY" href="#cMYYreturn">/*    (    */ </a><span class="xyl8"> Load in all HTML named colours as 'drag-pull' templates. Use with 'backspace'.</span></p>
 <p><a id="cMZZ" href="#cMZZreturn">/*    )    */ </a><span class="xyl8"> Load in RGBA colour templates as 'drag-pull'. Use with 'backspace'.</span></p>
 

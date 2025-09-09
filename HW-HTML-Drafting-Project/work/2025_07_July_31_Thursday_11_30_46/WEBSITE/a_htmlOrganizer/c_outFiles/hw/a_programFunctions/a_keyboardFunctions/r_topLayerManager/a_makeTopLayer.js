@@ -1,5 +1,7 @@
 function makeTopLayer(chosenLayer) {
 
+edgeDetect.style.display= "none";
+
 if (coinFocus!=null) {
 topLayer[topLayer.a_currentLayer].e_coinFocus = coinFocus.id;
 } else {

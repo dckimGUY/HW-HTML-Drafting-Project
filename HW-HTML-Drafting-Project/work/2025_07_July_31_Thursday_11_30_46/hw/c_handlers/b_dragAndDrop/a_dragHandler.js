@@ -50,7 +50,13 @@ colourArray.forEach((colour) => {
        const colourValue = dropText.split(';\n')[0];
        if (!e.shiftKey          ) {
        if (!e.altKey&&!e.ctrlKey) {event.target.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor     = colourValue.trim().toString();
-} else if ( e.altKey&&!e.ctrlKey) {event.target.lastElementChild.style.outlineColor = colourValue.trim().toString(); event.target.dataset.outlineColour = colourValue.trim().toString();
+} else if ( e.altKey&&!e.ctrlKey) {
+
+
+event.target.lastElementChild.style.outlineColor = colourValue.trim().toString();
+event.target.dataset.outlineColour = colourValue.trim().toString();
+
+
 } else if (!e.altKey&& e.ctrlKey) {event.target.lastElementChild.firstElementChild.nextElementSibling.style.color               = colourValue.trim().toString();
 } else if ( e.altKey&& e.ctrlKey) {event.target.lastElementChild.firstElementChild.nextElementSibling.style.textDecorationColor = colourValue.trim().toString();
 }
@@ -778,12 +784,30 @@ reader.readAsText(file);
 //if (!file.type.startsWith("image/")&&!file.type.startsWith("audio/")&&!file.type.startsWith("video/")) {
 
 if ( file.type.startsWith("image/")) {
+
+
+
+
+/* ONE MORE RETARDED HACK PLEASE GOD. */
+/* I DONT KNOW HOW THIS CODE WORKS. */
+
+
+
+if (!e.altKey) {
+
+
+
+
+
+
+
+
+
+
 const reader = new FileReader();
 reader.onload = evt => {
 const img = new Image();
 img.onload = () => {
-img.width = img.naturalWidth;
-img.height = img.naturalHeight;
 img.loading = "lazy";
 insertNewImage([e,'','',e.shiftKey,e.ctrlKey,e.altKey],img);
 modeRouter('',1);
@@ -795,6 +819,52 @@ img.src ="./d_images/" + file.name;
 }
 };
 reader.readAsDataURL(file);
+
+
+
+
+
+
+
+
+
+
+
+
+
+} else if (e.altKey) {
+
+
+
+
+
+
+
+
+
+
+/* retarded hack-job */
+
+
+
+const reader = new FileReader();
+reader.onload = evt => {
+const img = new Image();
+img.onload = () => {
+img.width = img.naturalWidth;
+img.height = img.naturalHeight;
+Picture.width=img.width;
+Picture.height=img.height;
+let ctx = Picture.getContext("2d");
+ctx.drawImage(img, 0, 0, img.width, img.height);
+};
+img.src = evt.target.result;
+};
+reader.readAsDataURL(file);
+}
+
+
+
 
 
 

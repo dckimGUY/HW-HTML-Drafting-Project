@@ -1,27 +1,28 @@
 /* Here is the 'CHALKING-UP' of the online program file. */
 
-echo '<!DOCTYPE html>' > HW_project_online.html;
-echo '<head>' >> HW_project_online.html;
-echo '<meta charset="UTF-8">' >> HW_project_online.html;
-echo '<style>' >> HW_project_online.html;
-echo '/* html, body           { cursor: none;                                          } */' >> HW_project_online.html;
-echo 'html, body              { overflow: scroll; scrollbar-width: none;               }' >> HW_project_online.html;
-echo 'body                    {                         width: 98%; height: 98%;       }' >> HW_project_online.html;
-echo 'p                       { margin: 0;                                             }' >> HW_project_online.html;
-echo 'body::-webkit-scrollbar { display: none;                                         }' >> HW_project_online.html;
-echo '</style>' >> HW_project_online.html;
-echo '<link rel="stylesheet" href="e_stylesheets/style.css"/>' >> HW_project_online.html;
-echo '<title id="documentTitle">emptyFile</title>' >> HW_project_online.html;
-echo '</head>' >> HW_project_online.html;
-echo '<body>' >> HW_project_online.html;
+echo '<!DOCTYPE html>' > index.html;
+echo '<head>' >> index.html;
+echo '<meta charset="UTF-8">' >> index.html;
+echo '<style>' >> index.html;
+echo '/* html, body           { cursor: none;                                          } */' >> index.html;
+echo 'html, body              { overflow: scroll; scrollbar-width: none;               }' >> index.html;
+echo 'body                    {                         width: 98%; height: 98%;       }' >> index.html;
+echo 'p                       { margin: 0;                                             }' >> index.html;
+echo 'body::-webkit-scrollbar { display: none;                                         }' >> index.html;
+echo '</style>' >> index.html;
+echo '<link rel="stylesheet" href="e_stylesheets/style.css"/>' >> index.html;
+echo '<title id="documentTitle">emptyFile</title>' >> index.html;
+echo '</head>' >> index.html;
+echo '<body>' >> index.html;
 
-echo '<div id="utilityLayer0" ></div>' >> HW_project_online.html;
-echo '<div id="utilityLayer1" ></div>' >> HW_project_online.html;
-echo '<div id="interfaceLayer"></div>' >> HW_project_online.html;
-echo '<div id="gridLayer"     ></div>' >> HW_project_online.html;
-echo '<div id="mouseIconLayer"></div>' >> HW_project_online.html;
+echo '<div id="utilityLayer0" ></div>' >> index.html;
+echo '<div id="utilityLayer1" ></div>' >> index.html;
+echo '<div id="interfaceLayer"></div>' >> index.html;
+echo '<div id="gridLayer"     ></div>' >> index.html;
+echo '<div id="mouseIconLayer"></div>' >> index.html;
+echo '<div id="interfaceShelf"></div>' >> index.html;
 
-echo '<div id="scripts">' >> HW_project_online.html;
+echo '<div id="scripts">' >> index.html;
 echo 'const' > ./hw/z_hwObject/a_hwObject.js;
 echo 'hw = {};' >> ./hw/z_hwObject/a_hwObject.js;
 find hw/a_programFunctions/ | sed "s/$/ = {};/g" | sed "s/\.js = {};//g" | tr '/' '.' | sed "s/\. / /g" > pasteFirst;
@@ -32,17 +33,17 @@ rm pasteFirst pasteLast;
 sed -i "s/\.\././g" ./hw/z_hwObject/a_hwObject.js;
 sed -i '/js\.swp/d' ./hw/z_hwObject/a_hwObject.js;
 
-find hw -type f | sed '/js\.swp/d' | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> HW_project_online.html;
-echo '<script src="./hw/c_handlers/c_initialization/c_insertNewWindow.js"></script>' >> HW_project_online.html;
+find hw -type f | sed '/js\.swp/d' | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> index.html;
+echo '<script src="./hw/c_handlers/c_initialization/c_insertNewWindow.js"></script>' >> index.html;
 
-echo '</div>' >> HW_project_online.html;
-echo '</body>' >> HW_project_online.html;
-echo '</html>' >> HW_project_online.html;
-
-
+echo '</div>' >> index.html;
+echo '</body>' >> index.html;
+echo '</html>' >> index.html;
 
 
-/* When we use insertWindow, we are actually writing the HW_project_online.html file again to that new window. */
+
+
+/* When we use insertWindow, we are actually writing the index.html file again to that new window. */
 
 echo 'function insertNewWindow(keyInfo,refresh) {' > c_insertNewWindow.js;
 echo 'const' >> c_insertNewWindow.js;
@@ -56,7 +57,7 @@ echo 'const wH = window.innerHeight;' >> c_insertNewWindow.js;
 echo 'const wW = window.innerwidth;' >> c_insertNewWindow.js;
 echo 'const fileContentsReference =' >> c_insertNewWindow.js;
 echo -n "\`" >> c_insertNewWindow.js;
-cat HW_project_online.html >> c_insertNewWindow.js;
+cat index.html >> c_insertNewWindow.js;
 echo -n "\`;" >> c_insertNewWindow.js;
 echo 'let iS = 192;' >> c_insertNewWindow.js;
 echo '/*    I    */ if (kC ==  73 && cC ==  73) { window.children[window.children.length] = window.open("","_blank",`height=${window.innerHeight + 1},width=${iS + 1},top=${window.screenTop},left=${window.screenLeft - iS},resizable=yes,noopener=no`); }' >> c_insertNewWindow.js;
@@ -83,24 +84,24 @@ mv c_insertNewWindow.js ./hw/c_handlers/c_initialization/;
 
 /* Here is a nifty tree representation, self-contained, searchable in the browser, with clickable links. */
 
-echo '<!DOCTYPE html>' > HW_treeDiagram.html;
-echo "<body>" >> HW_treeDiagram.html;
-echo '<pre style="font-size: 24px; font-style: italic; color: rgb(64,64,64);">' >> HW_treeDiagram.html;
-echo '<span style="font-size: 48px; color: #DEFF1C;">HW TREE DIAGRAM</span>' >> HW_treeDiagram.html;
-find hw/ | sed 's/\(^.*\/\)\(.*$\)/\1<a style="color: #DEFF1C; font-style: normal; font-weight: bold;" href="\1\2">\2<\/a>/g' | sed '/\.js/!i <a>' >> HW_treeDiagram.html;
-echo "</pre>" >> HW_treeDiagram.html;
-echo "<script>" >> HW_treeDiagram.html;
-echo "document.body.style.backgroundColor = 'black';" >> HW_treeDiagram.html;
-echo "</script>" >> HW_treeDiagram.html;
-echo "</body>" >> HW_treeDiagram.html;
-echo "</html>" >> HW_treeDiagram.html;
+echo '<!DOCTYPE html>' > t_treeDiagram.html;
+echo "<body>" >> t_treeDiagram.html;
+echo '<pre style="font-size: 24px; font-style: italic; color: rgb(64,64,64);">' >> t_treeDiagram.html;
+echo '<span style="font-size: 48px; color: #DEFF1C;">HW TREE DIAGRAM</span>' >> t_treeDiagram.html;
+find hw/ | sed 's/\(^.*\/\)\(.*$\)/\1<a style="color: #DEFF1C; font-style: normal; font-weight: bold;" href="\1\2">\2<\/a>/g' | sed '/\.js/!i <a>' >> t_treeDiagram.html;
+echo "</pre>" >> t_treeDiagram.html;
+echo "<script>" >> t_treeDiagram.html;
+echo "document.body.style.backgroundColor = 'black';" >> t_treeDiagram.html;
+echo "</script>" >> t_treeDiagram.html;
+echo "</body>" >> t_treeDiagram.html;
+echo "</html>" >> t_treeDiagram.html;
 
 
 
 
 /* This is a handy header and footer pair that will allow in-programs tutorials or start-up files to be made easily. */
 
-head -n -3 HW_project_online.html > WEBSITE/b_htmlClipSets/b_0_topClip;
+head -n -3 index.html > WEBSITE/b_htmlClipSets/b_0_topClip;
 echo "<script>" >> WEBSITE/b_htmlClipSets/b_0_topClip;
 echo "utilityLayer0.innerHTML = " >> WEBSITE/b_htmlClipSets/b_0_topClip;
 echo '`' >> WEBSITE/b_htmlClipSets/b_0_topClip;
@@ -117,7 +118,7 @@ echo 'hw.c_startup.a_note = "This data allow entry for your own startup file met
 
 
 echo 'hw.c_startup.b_first = `' >> hw/z_hwObject/c_startup.js;
-head -3 HW_project_online.html >> hw/z_hwObject/c_startup.js;
+head -3 index.html >> hw/z_hwObject/c_startup.js;
 echo '`;' >> hw/z_hwObject/c_startup.js;
 
 echo >> hw/z_hwObject/c_startup.js;
@@ -127,7 +128,7 @@ echo 'hw.c_startup.c_customMetaDataHere = ``;' >> hw/z_hwObject/c_startup.js;
 echo >> hw/z_hwObject/c_startup.js;
 
 echo 'hw.c_startup.d_second = `' >> hw/z_hwObject/c_startup.js;
-head -n -3 HW_project_online.html | tail -n +4 >> hw/z_hwObject/c_startup.js;
+head -n -3 index.html | tail -n +4 >> hw/z_hwObject/c_startup.js;
 echo "<script>" >> hw/z_hwObject/c_startup.js;
 echo 'utilityLayer0.innerHTML = \`' >> hw/z_hwObject/c_startup.js;
 echo '`;' >> hw/z_hwObject/c_startup.js;
@@ -146,4 +147,4 @@ echo '`;' >> hw/z_hwObject/c_startup.js;
 
 find . -type f -exec chmod 644 {} +;
 find . -type d -exec chmod 755 {} +;
-echo "... all done! HW_project_online.html, c_insertNewWindow.js, and HW_treeDiagram.html are revised and all permissions are set ...";
+echo "... all done! index.html, c_insertNewWindow.js, and t_treeDiagram.html are revised and all permissions are set ...";

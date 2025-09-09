@@ -7,12 +7,21 @@ document.addEventListener("keydown", (event) => {
 
 
 if (hotDog) {
-if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') {event.preventDefault(); }
-if (event.key==='F5'){event.preventDefault(); }
+if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') { event.preventDefault(); }
+if (event.key==='F5'){event.preventDefault(); saveFromHotdog(0,false); }
 return; }
 
-if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') {event.preventDefault(); utilityLayer0.innerHTML = ""; utilityLayer1.innerHTML = ""; readCoins(); curFocus = 1;}
-if (event.key==='F5'){event.preventDefault(); utilityLayer0.innerHTML = ""; utilityLayer1.innerHTML = ""; readCoins(); curFocus = 1;}
+if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') {
+event.preventDefault();
+utilityLayer0.innerHTML = "";
+utilityLayer1.innerHTML = "";
+Picture.width = 0;
+Picture.height = 0;
+readCoins();
+curFocus = 1;
+}
+
+if (event.key==='F5'){ event.preventDefault(); saveParticlePreparation(0,false); }
 });
 
 /* The mode indicator. */
@@ -23,6 +32,8 @@ document.addEventListener("keydown", (event) => {
 if (splashScreenVisible==true) {
 splashScreen.remove();
 }
+
+edgeDetect.style.display= "none";
 
 kC = event.keyCode;
 let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
@@ -54,7 +65,7 @@ toggleInterfaceLayer();
 enterWizardMaster();
 }
 }
-/*backspace*/ if (kC ==   8)              { spaceViewToggle(keyInfo);      }
+/*backspace*/ if (kC ==   8)              { pulledText.style.pointerEvents = ""; spaceViewToggle(keyInfo);      }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
@@ -106,7 +117,7 @@ enterWizardMaster();
 /* left arr*/ if (kC ==  37)              { event.preventDefault(); scrollRouter(keyInfo); }
 /*right arr*/ if (kC ==  39)              { event.preventDefault(); scrollRouter(keyInfo); }
 /*                                                                        */
-/*  space  */ if (kC ==  32)              {
+/*  space  */ if (kC ==  32&&!es)              {
 
 
 
@@ -117,6 +128,10 @@ removePointerEventsNone();
 interfaceLayer.style.display = "none";
 
 
+
+} else if (kC==32&&es) {
+
+toggleInterfaceShelf();
 
 }
 /*                                                                        */
@@ -130,6 +145,7 @@ interfaceLayer.style.display = "none";
 
 document.addEventListener("keypress", (event) =>  { 
 
+edgeDetect.style.display= "none";
 
 cC = event.charCode;
 let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
@@ -168,14 +184,14 @@ if (hotDog) { return; }
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
 /*    `    */ if (kC == 192 && cC ==  96) {saveParticlePreparation(0,true);}/*    ~    */ if (kC == 192 && cC == 126) {saveParticlePreparation(1,true);}
-/*    1    */ if (kC ==  49 && cC ==  49) { makeTopLayer("b_layer1");      }/*    !    */ if (kC ==  49 && cC ==  33) { goFullscreen();                }
+/*    1    */ if (kC ==  49 && cC ==  49) { makeTopLayer("b_layer1");      }/*    !    */ if (kC ==  49 && cC ==  33) { saveInternalImage();           }
 /*    2    */ if (kC ==  50 && cC ==  50) { makeTopLayer("c_layer2");      }/*    @    */ if (kC ==  50 && cC ==  64) { setDragPullFromContext();      }
 /*    3    */ if (kC ==  51 && cC ==  51) { makeTopLayer("d_layer3");      }/*    #    */ if (kC ==  51 && cC ==  35) { togglePartNames();             }
 /*    4    */ if (kC ==  52 && cC ==  52) { makeTopLayer("e_layer4");      }/*    $    */ if (kC ==  52 && cC ==  36) { fMan(keyInfo);                 }
 /*    5    */ if (kC ==  53 && cC ==  53) { makeTopLayer("f_layer5");      }/*    %    */ if (kC ==  53 && cC ==  37) { enterPageEchelon();            }
 /*    6    */ if (kC ==  54 && cC ==  54) { makeTopLayer("g_layer6");      }/*    ^    */ if (kC ==  54 && cC ==  94) { fMan(keyInfo);                 }
-/*    7    */ if (kC ==  55 && cC ==  55) { makeTopLayer("h_layer7");      }/*    &    */ if (kC ==  55 && cC ==  38) { openTextareaInNewWindow();     }
-/*    8    */ if (kC ==  56 && cC ==  56) { makeTopLayer("i_layer8");      }/*    *    */ if (kC ==  56 && cC ==  42) { otherFontAndTemplates();       }
+/*    7    */ if (kC ==  55 && cC ==  55) { makeTopLayer("h_layer7");      }/*    &    */ if (kC ==  55 && cC ==  38) { otherFontAndTemplates();       }
+/*    8    */ if (kC ==  56 && cC ==  56) { makeTopLayer("i_layer8");      }/*    *    */ if (kC ==  56 && cC ==  42) { goFullscreen();                }
 /*    9    */ if (kC ==  57 && cC ==  57) { makeTopLayer("j_layer9");      }/*    (    */ if (kC ==  57 && cC ==  40) { insertNamedColours();          }
 /*    0    */ if (kC ==  48 && cC ==  48) { copyFilenameLink();            }/*    )    */ if (kC ==  48 && cC ==  41) { insertGrayscale();             }
 /*    -    */ if (kC == 173 && cC ==  45) { lessG(e);                      }/*    _    */ if (kC == 173 && cC ==  95) { lessG(e);                      }
@@ -230,12 +246,14 @@ if (hotDog) { return; }
 
 document.addEventListener("keyup", (event) => {
 
+edgeDetect.style.display= "none";
+
 if (hotDog) { return; }
 
 let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
 let keyInfo = [e,kC,cC,es,ec,ea];
 
-/*  space  */ if (kC ==  32) {
+/*  space  */ if (kC==32) {
 
 
 spaceViewOff([e,32,32,es,ec,ea]);

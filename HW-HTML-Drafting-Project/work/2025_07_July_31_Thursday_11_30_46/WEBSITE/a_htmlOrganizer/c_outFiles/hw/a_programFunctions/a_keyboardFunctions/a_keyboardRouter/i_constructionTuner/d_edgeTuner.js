@@ -20,7 +20,7 @@ if (coinFocus!=null) {
 /*    3    */ if (kC ==  99 && cC ==  51) { rotateUnder(); rotateRight(); }
 
 /*    0    */ if (kC ==  96 && cC ==  48) { coinFocus.dataset.dragPull="backgroundColor"; }
-/*    .    */ if (kC == 110 && cC ==  46) { coinFocus.dataset.dragPull="main.style.transform"; }
+/*    .    */ if (kC == 110 && cC ==  46) { coinFocus.dataset.dragPull="main.style.transform,anchor.style.transform"; }
 }
 
 }

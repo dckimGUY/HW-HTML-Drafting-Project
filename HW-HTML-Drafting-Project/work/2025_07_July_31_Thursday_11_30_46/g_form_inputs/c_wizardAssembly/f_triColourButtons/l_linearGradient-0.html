@@ -1,0 +1,32 @@
+<div style="line-height:0;">
+<button class="xqnBTN" style="font: inherit; width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" onclick="
+try {
+window.opener.coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.background= 'linear-gradient(' + this.nextElementSibling.value + ',' + this.nextElementSibling.nextElementSibling.value + ')';
+} catch {}
+this.parentNode.parentNode.style.background= 'linear-gradient(' + this.nextElementSibling.value + ',' + this.nextElementSibling.nextElementSibling.value + ')';
+this.parentNode.firstElementChild.style.background= 'linear-gradient(' + this.nextElementSibling.value + ',' + this.nextElementSibling.nextElementSibling.value + ')';
+this.parentNode.parentNode.parentNode.parentNode.dataset.dragPull='div.style.background';
+">V grad.</button>
+
+<input name="colour" type="color" style="width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" value="#000000" oninput="   
+try {
+window.opener.coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.background= 'linear-gradient(' + this.value + ',' + this.nextElementSibling.value + ')';
+} catch {}
+this.parentNode.parentNode.style.background= 'linear-gradient(' + this.value + ',' + this.nextElementSibling.value + ')';
+this.parentNode.firstElementChild.style.background= 'linear-gradient(' + this.value + ',' + this.nextElementSibling.value + ')';
+this.parentNode.parentNode.parentNode.parentNode.dataset.dragPull='div.style.background';
+this.setAttribute('value',this.value);
+" />
+
+<input name="colour" type="color" style="width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" value="#000000" oninput="
+try {
+window.opener.coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.background= 'linear-gradient(' + this.previousElementSibling.value + ',' + this.value + ')';
+} catch {}
+this.parentNode.parentNode.style.background= 'linear-gradient(' + this.previousElementSibling.value + ',' + this.value + ')';
+this.parentNode.firstElementChild.style.background= 'linear-gradient(' + this.previousElementSibling.value + ',' + this.value + ')';
+this.parentNode.parentNode.parentNode.parentNode.dataset.dragPull='div.style.background';
+this.setAttribute('value',this.value);
+" />
+
+<input name="colour" type="value" style="font: inherit; text-align: center; width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" value="V grad." oninput="this.setAttribute('value',this.value);this.parentNode.firstElementChild.innerHTML=this.value;" />
+</div>

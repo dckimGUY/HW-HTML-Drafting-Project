@@ -33,15 +33,15 @@ if (!window.opener) { modeRouter(e,1); return; }
 /*    L    */ if (kC ==  76 && cC ==  76) { HJKLnoteCoin("L &rarr;",durationC);    moveRight(keyInfo);  }/*    l    */ if (kC ==  76 && cC == 108) { HJKLnoteCoin("&rarr;",durationC,true); moveRight(keyInfo);  }
 } else if (mode==7) {
 } else if (mode==8) {
-/*    H    */ if (kC ==  72 && cC ==  72) {if(rev==0){focusNext()}else{focusPrevious()}}
+/*    H    */ if (kC ==  72 && cC ==  72) {if(rev==1){focusNext()}else{focusPrevious()}}
 /*    J    */ if (kC ==  74 && cC ==  74) { setCoinTrip(e,1);                          }
 /*    K    */ if (kC ==  75 && cC ==  75) { setCoinTrip(e,1);                          }
-/*    L    */ if (kC ==  76 && cC ==  76) {if(rev==0){focusPrevious()}else{focusNext()}}
+/*    L    */ if (kC ==  76 && cC ==  76) {if(rev==1){focusPrevious()}else{focusNext()}}
 
-/*    h    */ if (kC ==  72 && cC == 104) {if(rev==0){focusNext()}else{focusPrevious()};setCoinTrip(e,0);}
+/*    h    */ if (kC ==  72 && cC == 104) {if(rev==1){focusNext()}else{focusPrevious()};setCoinTrip(e,0);}
 /*    j    */ if (kC ==  74 && cC == 106) { setCoinTrip(e,1);                                            }
 /*    k    */ if (kC ==  75 && cC == 107) { setCoinTrip(e,1);                                            }
-/*    l    */ if (kC ==  76 && cC == 108) {if(rev==0){focusPrevious()}else{focusNext()};setCoinTrip(e,0);}
+/*    l    */ if (kC ==  76 && cC == 108) {if(rev==1){focusPrevious()}else{focusNext()};setCoinTrip(e,0);}
 } else if (mode==9) {
 /*    H    */ if (kC ==  72 && cC ==  72) { HJKLnoteCoin("H<br><span style='font-size: 0.5em;'>top</span>",durationC);       ceilingGlobalZ();         }/*    h    */ if (kC ==  72 && cC == 104) { HJKLnoteCoin("H<br><span style='font-size: 0.5em;'>top (colour)</span>",durationC);       ceilingTripartiteZ();    }
 /*    J    */ if (kC ==  74 && cC ==  74) { HJKLnoteCoin("J<br><span style='font-size: 0.5em;'>lower</span>",durationC);     lowerGlobalZ();           }/*    j    */ if (kC ==  74 && cC == 106) { HJKLnoteCoin("J<br><span style='font-size: 0.5em;'>lower (colour)</span>",durationC);     lowerTripartiteZ();      }

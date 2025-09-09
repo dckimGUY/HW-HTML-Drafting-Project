@@ -13,12 +13,18 @@ coinGroup = coinTrip.sel2;
 }
 
 function evaluateOutline() {
-part.style.outline =`${outlineTunedSize}px ${outlineStyleArray[outlineTunedStyle]} ${coinFocus.dataset.outlineColour}`;
+part.style.outlineWidth = `${outlineTunedSize}px`;
+part.style.outlineOffset = `-${outlineTunedSize/2}px`;
+part.style.outlineStyle = `${outlineStyleArray[outlineTunedStyle]}`;
+part.style.outlineColor = `${coinFocus.dataset.outlineColour}`;
 }
 
 function evaluateOutlineGroup() {
 for (let j = 0; j < coinGroup.length; j++) {
-coinGroup[j].lastElementChild.style.outline =`${outlineTunedSize}px ${outlineStyleArray[outlineTunedStyle]} ${coinGroup[j].dataset.outlineColour}`;
+coinGroup[j].lastElementChild.style.outlineWidth = `${outlineTunedSize}px`;
+coinGroup[j].lastElementChild.style.outlineOffset = `-${outlineTunedSize/2}px`;
+coinGroup[j].lastElementChild.style.outlineStyle = `${outlineStyleArray[outlineTunedStyle]}`;
+coinGroup[j].lastElementChild.style.outlineColor = `${coinGroup[j].dataset.outlineColour}`;
 }
 }
 
@@ -35,47 +41,80 @@ outlineTunedSize += 1;
 evaluateOutline();
 }
 /*    -    */ if (kC == 109 && cC ==  45) {
-if (borderTopLeftRadiusHold      > 1) { part.style.borderTopLeftRadius     = --borderTopLeftRadiusHold     + "px"; }
-if (borderTopRightRadiusHold     > 1) { part.style.borderTopRightRadius    = --borderTopRightRadiusHold    + "px"; }
-if (borderBottomLeftRadiusHold   > 1) { part.style.borderBottomLeftRadius  = --borderBottomLeftRadiusHold  + "px"; }
-if (borderBottomRightRadiusHold  > 1) { part.style.borderBottomRightRadius = --borderBottomRightRadiusHold + "px"; }
+if (borderTopLeftRadiusHold      > 1) {
+part.style.borderTopLeftRadius     = --borderTopLeftRadiusHold     + "px";
+coinFocus.firstElementChild.style.borderTopLeftRadius     = --borderTopLeftRadiusHold     + "px";
+}
+if (borderTopRightRadiusHold     > 1) {
+part.style.borderTopRightRadius    = --borderTopRightRadiusHold    + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius    = --borderTopRightRadiusHold    + "px";
+}
+if (borderBottomLeftRadiusHold   > 1) {
+part.style.borderBottomLeftRadius  = --borderBottomLeftRadiusHold  + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius  = --borderBottomLeftRadiusHold  + "px";
+}
+if (borderBottomRightRadiusHold  > 1) {
+part.style.borderBottomRightRadius = --borderBottomRightRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius = --borderBottomRightRadiusHold + "px";
+}
 }
 /*    +    */ if (kC == 107 && cC ==  43) {
 part.style.borderTopLeftRadius     = ++borderTopLeftRadiusHold     + "px";
 part.style.borderTopRightRadius    = ++borderTopRightRadiusHold    + "px";
 part.style.borderBottomLeftRadius  = ++borderBottomLeftRadiusHold  + "px";
 part.style.borderBottomRightRadius = ++borderBottomRightRadiusHold + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius     = ++borderTopLeftRadiusHold     + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius    = ++borderTopRightRadiusHold    + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius  = ++borderBottomLeftRadiusHold  + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius = ++borderBottomRightRadiusHold + "px";
 }
 /*    7    */ if (kC == 103 && cC ==  55) {
 if (parseInt(part.style.borderTopLeftRadius)    != 0) {
 part.style.borderTopLeftRadius     = 0 + "px";
+coinFocus.firstElementChild.style.borderTopLeftRadius     = 0 + "px";
 } else {
 part.style.borderTopLeftRadius     = borderTopLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderTopLeftRadius     = borderTopLeftRadiusHold + "px";
 }
 }
 /*    8    */ if (kC == 104 && cC ==  56) {
 if (parseInt(part.style.borderTopLeftRadius)    != 0) {
 part.style.borderTopLeftRadius      = 0 + "px";
 part.style.borderTopRightRadius     = 0 + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius      = 0 + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius     = 0 + "px";
 } else {
 part.style.borderTopLeftRadius      = borderTopLeftRadiusHold + "px";
 part.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius      = borderTopLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
 }
 }
 /*    9    */ if (kC == 105 && cC ==  57) {
 if (parseInt(part.style.borderTopRightRadius)    != 0) {
 part.style.borderTopRightRadius     = 0 + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius     = 0 + "px";
 } else {
 part.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
 }
 }
 /*    4    */ if (kC == 100 && cC ==  52) {
 if (parseInt(part.style.borderTopLeftRadius)    != 0) {
 part.style.borderTopLeftRadius        = 0 + "px";
 part.style.borderBottomLeftRadius     = 0 + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius        = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius     = 0 + "px";
 } else {
 part.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
 part.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
 }
 }
 /*    5    */ if (kC == 101 && cC ==  53) {
@@ -84,43 +123,69 @@ part.style.borderTopLeftRadius        = 0 + "px";
 part.style.borderBottomLeftRadius     = 0 + "px";
 part.style.borderTopRightRadius        = 0 + "px";
 part.style.borderBottomRightRadius     = 0 + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius        = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius     = 0 + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius        = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 } else {
 part.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
 part.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
 part.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
 part.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+
+coinFocus.firstElementChild.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 }
 }
 /*    6    */ if (kC == 102 && cC ==  54) {
 if (parseInt(part.style.borderTopRightRadius)    != 0) {
 part.style.borderTopRightRadius        = 0 + "px";
 part.style.borderBottomRightRadius     = 0 + "px";
+
+coinFocus.firstElementChild.style.borderTopRightRadius        = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 } else {
 part.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
 part.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+
+coinFocus.firstElementChild.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 }
 }
 /*    1    */ if (kC ==  97 && cC ==  49) {
 if (parseInt(part.style.borderBottomLeftRadius)    != 0) {
 part.style.borderBottomLeftRadius     = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius     = 0 + "px";
 } else {
 part.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
 }
 }
 /*    2    */ if (kC ==  98 && cC ==  50) {
 if (parseInt(part.style.borderBottomLeftRadius)    != 0) {
 part.style.borderBottomLeftRadius      = 0 + "px";
 part.style.borderBottomRightRadius     = 0 + "px";
+
+coinFocus.firstElementChild.style.borderBottomLeftRadius      = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 } else {
 part.style.borderBottomLeftRadius      = borderBottomLeftRadiusHold + "px";
 part.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+
+coinFocus.firstElementChild.style.borderBottomLeftRadius      = borderBottomLeftRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 }
 }
 /*    3    */ if (kC ==  99 && cC ==  51) {
 if (parseInt(part.style.borderBottomRightRadius)    != 0) {
 part.style.borderBottomRightRadius     = 0 + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 } else {
 part.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+coinFocus.firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 }
 }
 /*    0    */ if (kC ==  96 && cC ==  48) {
@@ -154,21 +219,33 @@ if (borderTopLeftRadiusHold     > 1) { for (let j = 0; j < coinGroup.length; j++
 if (borderTopRightRadiusHold    > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderTopRightRadius       = --borderTopRightRadiusHold    + "px"; } }
 if (borderBottomLeftRadiusHold  > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = --borderBottomLeftRadiusHold  + "px"; } }
 if (borderBottomRightRadiusHold > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderBottomRightRadius    = --borderBottomRightRadiusHold + "px"; } }
+
+if (borderTopLeftRadiusHold     > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderTopLeftRadius        = --borderTopLeftRadiusHold     + "px"; } }
+if (borderTopRightRadiusHold    > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderTopRightRadius       = --borderTopRightRadiusHold    + "px"; } }
+if (borderBottomLeftRadiusHold  > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = --borderBottomLeftRadiusHold  + "px"; } }
+if (borderBottomRightRadiusHold > 1) { for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderBottomRightRadius    = --borderBottomRightRadiusHold + "px"; } }
 }
 /*    +    */ if (kC == 107 && cC ==  43) {
 for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderTopLeftRadius        = ++borderTopLeftRadiusHold     + "px"; }
 for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderTopRightRadius       = ++borderTopRightRadiusHold    + "px"; }
 for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = ++borderBottomLeftRadiusHold  + "px"; }
 for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].lastElementChild.style.borderBottomRightRadius    = ++borderBottomRightRadiusHold + "px"; }
+
+for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderTopLeftRadius        = ++borderTopLeftRadiusHold     + "px"; }
+for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderTopRightRadius       = ++borderTopRightRadiusHold    + "px"; }
+for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = ++borderBottomLeftRadiusHold  + "px"; }
+for (let j = 0; j < coinGroup.length; j++) { coinGroup[j].firstElementChild.style.borderBottomRightRadius    = ++borderBottomRightRadiusHold + "px"; }
 }
 /*    7    */ if (kC == 103 && cC ==  55) {
 if (parseInt(part.style.borderTopLeftRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopLeftRadius     = 0 + "px";
+coinGroup[j].firstElementChild.style.borderTopLeftRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopLeftRadius     = borderTopLeftRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderTopLeftRadius     = borderTopLeftRadiusHold + "px";
 }
 }
 }
@@ -177,11 +254,17 @@ if (parseInt(part.style.borderTopLeftRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopLeftRadius      = 0 + "px";
 coinGroup[j].lastElementChild.style.borderTopRightRadius     = 0 + "px";
+
+coinGroup[j].firstElementChild.style.borderTopLeftRadius      = 0 + "px";
+coinGroup[j].firstElementChild.style.borderTopRightRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopLeftRadius      = borderTopLeftRadiusHold + "px";
 coinGroup[j].lastElementChild.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
+
+coinGroup[j].firstElementChild.style.borderTopLeftRadius      = borderTopLeftRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
 }
 }
 }
@@ -189,10 +272,12 @@ coinGroup[j].lastElementChild.style.borderTopRightRadius     = borderTopRightRad
 if (parseInt(part.style.borderTopRightRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopRightRadius     = 0 + "px";
+coinGroup[j].firstElementChild.style.borderTopRightRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderTopRightRadius     = borderTopRightRadiusHold + "px";
 }
 }
 }
@@ -201,11 +286,17 @@ if (parseInt(part.style.borderTopLeftRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopLeftRadius        = 0 + "px";
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = 0 + "px";
+
+coinGroup[j].firstElementChild.style.borderTopLeftRadius        = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
+
+coinGroup[j].firstElementChild.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
 }
 }
 }
@@ -216,6 +307,11 @@ coinGroup[j].lastElementChild.style.borderTopRightRadius        = 0 + "px";
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = 0 + "px";
 coinGroup[j].lastElementChild.style.borderTopLeftRadius        = 0 + "px";
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = 0 + "px";
+
+coinGroup[j].firstElementChild.style.borderTopRightRadius        = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = 0 + "px";
+coinGroup[j].firstElementChild.style.borderTopLeftRadius        = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
@@ -223,6 +319,11 @@ coinGroup[j].lastElementChild.style.borderTopRightRadius        = borderTopRight
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 coinGroup[j].lastElementChild.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
+
+coinGroup[j].firstElementChild.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderTopLeftRadius        = borderTopLeftRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
 }
 }
 }
@@ -231,11 +332,17 @@ if (parseInt(part.style.borderTopRightRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopRightRadius        = 0 + "px";
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = 0 + "px";
+
+coinGroup[j].firstElementChild.style.borderTopRightRadius        = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+
+coinGroup[j].firstElementChild.style.borderTopRightRadius        = borderTopRightRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 }
 }
 }
@@ -243,10 +350,12 @@ coinGroup[j].lastElementChild.style.borderBottomRightRadius     = borderBottomRi
 if (parseInt(part.style.borderBottomLeftRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius     = borderBottomLeftRadiusHold + "px";
 } 
 }
 }
@@ -255,11 +364,17 @@ if (parseInt(part.style.borderBottomLeftRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius      = 0 + "px";
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = 0 + "px";
+
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius      = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderBottomLeftRadius      = borderBottomLeftRadiusHold + "px";
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+
+coinGroup[j].firstElementChild.style.borderBottomLeftRadius      = borderBottomLeftRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 } 
 }
 }
@@ -267,10 +382,12 @@ coinGroup[j].lastElementChild.style.borderBottomRightRadius     = borderBottomRi
 if (parseInt(part.style.borderBottomRightRadius)    != 0) {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = 0 + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = 0 + "px";
 }
 } else {
 for (let j = 0; j < coinGroup.length; j++) {
 coinGroup[j].lastElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
+coinGroup[j].firstElementChild.style.borderBottomRightRadius     = borderBottomRightRadiusHold + "px";
 }
 }
 }

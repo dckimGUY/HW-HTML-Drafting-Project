@@ -65,7 +65,7 @@ for (let j=0; j<utilityLayer0.children.length; j++) {
 
 if (utilityLayer0.children[j].firstElementChild) {
        if (showPartName==true) {
-utilityLayer0.children[j].firstElementChild.innerText = utilityLayer0.children[j].dataset.jsName ; 
+utilityLayer0.children[j].firstElementChild.innerText = utilityLayer0.children[j].id ; 
 } else {
 utilityLayer0.children[j].firstElementChild.innerText =                                        ""; 
 }
@@ -74,9 +74,9 @@ utilityLayer0.children[j].firstElementChild.innerText =                         
 
 
 if (utilityLayer0.children[j].firstElementChild) {
-if (utilityLayer0.children[j].firstElementChild.innerText!=utilityLayer0.children[j].dataset.jsName) {
+if (utilityLayer0.children[j].firstElementChild.innerText!=utilityLayer0.children[j].id) {
        if (showPartName==true) {
-utilityLayer0.children[j].firstElementChild.innerText += " " + utilityLayer0.children[j].dataset.jsName ; 
+utilityLayer0.children[j].firstElementChild.innerText += " " + utilityLayer0.children[j].id ; 
 }
 }
 }

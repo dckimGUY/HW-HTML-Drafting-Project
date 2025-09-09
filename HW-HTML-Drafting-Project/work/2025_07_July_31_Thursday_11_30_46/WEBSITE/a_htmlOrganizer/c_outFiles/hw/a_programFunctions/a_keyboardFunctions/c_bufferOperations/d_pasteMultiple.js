@@ -21,7 +21,7 @@ utilityLayer0.children[j].style.outline = fA;
 
 if (utilityLayer0.children.length>0) { coinFocus = utilityLayer0.lastElementChild; curFocus = 0; }
 
-multiplePasteBuffer = [];
+multiplePasteBuffer.value = [];
 
 readCoins();
 recoverColouration();

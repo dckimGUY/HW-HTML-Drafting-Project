@@ -15,7 +15,7 @@ if (hauptMode==0) {
 } else if (mode==1) {
 coinFocus.dataset.dragPull="style.left,dataset.left,style.top,dataset.top";
 } else if (mode==5) {
-coinFocus.dataset.dragPull="main.style.transform";
+coinFocus.dataset.dragPull="main.style.transform,anchor.style.transform";
 } else if (mode==6) {
 coinFocus.dataset.dragPull="style.left,dataset.left,style.top,dataset.top,style.width,dataset.width,style.height,dataset.height";
 } else if (mode==8) {

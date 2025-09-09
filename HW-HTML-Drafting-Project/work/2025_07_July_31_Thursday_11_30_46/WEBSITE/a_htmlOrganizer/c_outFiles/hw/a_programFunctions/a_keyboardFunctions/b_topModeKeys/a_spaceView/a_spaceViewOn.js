@@ -1,6 +1,9 @@
 function spaceViewOn() {
 mouseIsDogged=true;
 spaceView = true;
+
+edgeDetect.style.display= "none"; 
+
 for (j=0;j<utilityLayer0.children.length;j++) {
 
 

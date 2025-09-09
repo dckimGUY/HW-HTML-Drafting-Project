@@ -3,21 +3,20 @@ let mouseDeltaX = 0,
 let mousemoveTarget=null;
 
 document.addEventListener("mousemove", (event) => {
+
 if (mouseIsDogged==false) {
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
+
+
+
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const e = event;
-const mouseInfo = [e,ctrl,shift];
+const mouseInfo = [e,ctrl,shift,alt];
 if (event.target.dataset&&event.target.dataset.coinTrip) {
 mousemoveTarget=event.target;
 } else {
 mousemoveTarget=null;
 }
 
-/*
-mouseCursor.style.display            ="block";
-	mouseCursor.style.left = `${event.clientX - (mSZ / 2)}px`;
-	mouseCursor.style.top  = `${event.clientY - (mSZ / 2)}px`;
-*/
 
 if (mousedown.hold==true) {
 mouseDeltaX = event.pageX - mousedown.pageX;
@@ -38,6 +37,82 @@ case 7: mode7.mousemove(mouseInfo); break;
 case 8: mode8.mousemove(mouseInfo); break;
 case 9: mode9.mousemove(mouseInfo); break;
 }
+
+
+
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+
+if (mousedown.hold==false) {
+
+if (event.target.dataset.coinTrip) {
+       if (event.target.dataset.coinTrip==Ts0||
+           event.target.dataset.coinTrip==Ts1||
+           event.target.dataset.coinTrip==Ts2) {
+
+edgeDetect.style.left   = `${parseInt(event.target.style.left) + edgeQ + "px"}`   ;
+edgeDetect.style.top    = `${parseInt(event.target.style.top) + edgeQ + "px"}`    ;
+
+edgeDetect.style.width  = `${parseFloat(event.target.style.width)  * parseFloat(event.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+edgeDetect.style.height = `${parseFloat(event.target.style.height) * parseFloat(event.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+
+edgeDetect.style.zIndex = `${parseInt(event.target.style.zIndex) + 1}` ;
+edgeDetect.style.display= "block"; 
+
+} else {
+edgeDetect.style.display= "none"; 
+}
+} else {
+edgeDetect.style.display= "none"; 
+}
+
+
+
+
+
+} else {
+
+
+if (mousedown.hold==true) {
+
+if (mousedown.target!=null&&mousedown.target.dataset.coinTrip) {
+       if (mousedown.target.dataset.coinTrip==Ts0||
+           mousedown.target.dataset.coinTrip==Ts1||
+           mousedown.target.dataset.coinTrip==Ts2) {
+
+edgeDetect.style.left   = `${parseInt(mousedown.target.style.left) + edgeQ + "px"}`   ;
+edgeDetect.style.top    = `${parseInt(mousedown.target.style.top) + edgeQ + "px"}`    ;
+
+edgeDetect.style.width  = `${parseFloat(mousedown.target.style.width)  * parseFloat(mousedown.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+edgeDetect.style.height = `${parseFloat(mousedown.target.style.height) * parseFloat(mousedown.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+
+edgeDetect.style.zIndex = `${parseInt(mousedown.target.style.zIndex) + 1}` ;
+edgeDetect.style.display= "block"; 
+
+} else {
+
+}
+} else {
+
+}
+
+
+
+
+}
+
+
+
+}
+
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+
+
 } else if (mouseIsDogged==true) {
 
 
@@ -190,23 +265,40 @@ document.addEventListener("mousedown",   (event) => {
 
 
 
+
+
+
+
+
+
 if (splashScreenVisible==true) {
 splashScreen.remove();
 }
 
 
 
+
+
 if (mouseIsDogged==false) {
 
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+
+
+
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
 
 mouseGiveFocus(mouseInfo);
 
 mouseCursor.src          = currentIconSet.cur2.src;
 
+if (event.button!=2) {
 mousedown.hold           = true;
+} else {
+mousedown.hold=false;
+}
+
 mousedown.modeNumber     = mode;
+mousedown.lastButton     = mousedown.button;
 mousedown.button         = event.button;
 mousedown.ctrl           = event.ctrlKey;
 mousedown.shift          = event.shiftKey;
@@ -218,27 +310,37 @@ mousedown.tripSet        = event.target.dataset.tripSet;
 
 if (event.target.dataset.coinTrip==Ts0||event.target.dataset.coinTrip==Ts1||event.target.dataset.coinTrip==Ts2) {
 mousedown.target         = event.target;
-}
 
-     if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width)*1/3)))  {
-     if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*1/3))) { mousedown.targetRegion = 7; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*2/3))) { mousedown.targetRegion = 4; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3))) { mousedown.targetRegion = 1; }
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width)*2/3)))  {
-     if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*1/3))) { mousedown.targetRegion = 8; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*2/3))) { mousedown.targetRegion = 5; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3))) { mousedown.targetRegion = 2; }
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width)*3/3)))  {
-     if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*1/3))) { mousedown.targetRegion = 9; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*2/3))) { mousedown.targetRegion = 6; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3))) { mousedown.targetRegion = 3; }
-}
+} else {
+if (!alt&&ctrl&&shift&&mode==8) {
+
+modeRouter(event,1);
+
 }
 }
 
+     if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { mousedown.targetRegion = 7; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 4; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { mousedown.targetRegion = 1; }
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { mousedown.targetRegion = 8; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 5; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { mousedown.targetRegion = 2; }
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { mousedown.targetRegion = 9; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 6; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { mousedown.targetRegion = 3; }
+}
 
 
-if (ctrl&&!shift&&mode!=8) {
+
+
+
+
+if (!alt&&ctrl&&!shift&&mode!=8) {
 
 
 if (event.target.dataset.coinTrip) {
@@ -265,7 +367,23 @@ case 9: mode9.mousedown(mouseInfo); break;
 }
 }
 
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,14 +391,30 @@ case 9: mode9.mousedown(mouseInfo); break;
 
 document.addEventListener("mouseup", (event) => {
 if (mouseIsDogged==false) {
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+
+
+if (mouseIsDogged==false) {
+
+if (mousedown.button==1&&event.button==1&&mousedown.target==event.target) {
+mouseGiveFocus(mouseInfo);
+deleteCoin([,88,88,,]);
+
+edgeDetect.style.display= "none";
+
+}
+
+}
+
+
+mode1.mouseup(mouseInfo);
+
 
 mousedown.hold           = false;
 mousedown.pageX          = 0;
 mousedown.pageY          = 0;
 
-mode1.mouseup(mouseInfo);
 
 switch (mode) {
 case 0: mode0.mouseup(mouseInfo);break;
@@ -297,7 +431,34 @@ case 9: mode9.mouseup(mouseInfo);break;
 mousedown.target         = null;
 }
 
+if (!event.target.dataset.coinTrip) {
+edgeDetect.style.display= "none"; 
+}
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -307,11 +468,17 @@ mousedown.target         = null;
 
 document.addEventListener("click", (event) => {
 
+interfaceLayer.style.display = "none";
+
 if (mouseIsDogged==false) {
 
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+
+if (!ctrl&&!shift) {
 mouseGiveFocus(mouseInfo);
+}
+
 
 if ((event.target==document.body||curFocus==1)&&Math.abs(mouseDeltaX)<32&&Math.abs(mouseDeltaY)<32) {
 mousePlaceCursor(mouseInfo);
@@ -341,13 +508,25 @@ mouseDeltaY = 0;
 
 document.addEventListener("dblclick", (event) => {
 if (mouseIsDogged==false) {
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
 
-       if (event.target.dataset.coinTrip&&!shift) {
-innerRotationMin();
-} else if (event.target.dataset.coinTrip&& shift) {
-promptOutgoingHashLink();
+       if (event.target.dataset.coinTrip&&!shift&&!alt) {
+insertNewDuplicate([,68,100,,,]);
+} else if (event.target.dataset.coinTrip&& shift&&!alt) {
+cutOutImage();
+} else if (event.target.dataset.coinTrip&&!shift&& alt) {
+applyImageBack();
+} else {
+mousePlaceCursor(mouseInfo);
+
+curFocus=1;
+modeRouter(event,1);
+if (coinFocus!=null) {
+coinFocus.style.outline = fA;
+}
+recoverColouration();
+
 }
 
 switch (mode) {
@@ -374,8 +553,8 @@ case 9: mode9.dblclick(mouseInfo);break;
 /* Scraps the dots if the mouse leaves the browser window. */
 document.addEventListener("mouseleave", (event) => {
 if (mouseIsDogged==false) {
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
 rdots();
 }
 });
@@ -387,8 +566,8 @@ mouseover.target         =  null;
 /* This gives the change of colouration and other styles on mouse over. */
 document.addEventListener("mouseover",      (event) => {
 if (mouseIsDogged==false) {
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
 switch (mode) {
 //case 0: mode0.mouseover(mouseInfo); break;
 //case 1: mode1.mouseover(mouseInfo); break;
@@ -414,7 +593,8 @@ case 8: mode8.mouseover(mouseInfo); break;
 
 document.addEventListener("mouseout",      (event) => {
 if (mouseIsDogged==false) {
-const ctrl  = event.ctrlKey, shift = event.shiftKey;
-const mouseInfo = [event,ctrl,shift];
+const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
 }
+//edgeDetect.style.display = "none";
 });

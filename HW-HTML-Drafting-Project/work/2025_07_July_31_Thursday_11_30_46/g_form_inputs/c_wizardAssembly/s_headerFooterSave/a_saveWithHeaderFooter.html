@@ -1,5 +1,4 @@
-<div style="line-height: 0;">
-
+<div>
 <input type="value" style="width: 100%; height: 64px; font: inherit; margin: 0; padding: 0; border: 0; text-align: center; color: inherit;" placeholder="HEADER/FOOTER name" onchange="
 this.setAttribute('value',this.value);
 "/>
@@ -7,7 +6,7 @@ this.setAttribute('value',this.value);
 <button class="xqnBTN" style="width: 100%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
 window.fileSaveHeader = this.nextElementSibling.innerHTML;
 window.fileSaveFooter = this.nextElementSibling.nextElementSibling.innerHTML;
-this.parentNode.parentNode.parentNode.parentNode.remove();
+this.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
 saveWithHeaderFooter(1,false);
 hotDog = false;
 spaceViewOff([,32,32]);

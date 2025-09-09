@@ -14,18 +14,18 @@ let logMessage = "";
 
 let
 newCoin          = document.createElement("div"),
-anchor          = document.createElement("a"),
-main           = document.createElement("div"),
+anchor           = document.createElement("a"),
+main             = document.createElement("div"),
 
 button      = document.createElement("button"),
 div         = document.createElement("div"),
 img         = document.createElement("img");
 
-         anchor.dataset.name = `anchor`;
+         anchor.dataset.name  = `anchor`;
           button.dataset.name = `button`;
              div.dataset.name = `div`;
              img.dataset.name = `img`;
-          main.dataset.name = `main`;
+          main.dataset.name   = `main`;
 
        anchor.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
 
@@ -54,13 +54,9 @@ main.dataset.translateZ            =        "0";
 main.style.transformOrigin         =   "center";
 main.style.transform               =      "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
 
-
-
 main.appendChild(button);
 main.appendChild(div);
 main.appendChild(img);
-
-
 
 newCoin.id                            =      newId;
 newCoin.dataset.jsName                =      newId;
@@ -73,14 +69,10 @@ newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
 newCoin.style.transform               = "scale(1)";
 
-       if (utilityLayer0.children.length!=0) {
-newCoin.style.zIndex                  =   findZextrema().highestGlobalZ;
-} else {
-newCoin.style.zIndex                  =   findZextrema().highestGlobalZ + tricolourEchelon;
-}
+       if (utilityLayer0.children.length!=0) { newCoin.style.zIndex = findZextrema().highestGlobalZ; } else { newCoin.style.zIndex                  =   findZextrema().highestGlobalZ + tricolourEchelon; }
 
-if (coinFocus!=null) {
-       if (coinFocus.dataset.coinTrip==Ts0) {
+if (coinFocus!=null) { 
+if (coinFocus.dataset.coinTrip==Ts0) {
 anchor.style.fontFamily              =        Es0;
 anchor.style.color                   =        Fs0;
 anchor.style.textAlign               =        Gs2;
@@ -110,9 +102,6 @@ anchor.style.opacity                 =        Os2;
 }
 
 newCoin.style.userSelect="none";
-
-
-
 
 if (coinFocus!=null) {
 let scaleFactor = 1;
@@ -252,7 +241,6 @@ newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 if (hauptMode==0) {
 utilityLayer0.appendChild(newCoin);
-
 }
 
 

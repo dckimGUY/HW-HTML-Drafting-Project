@@ -10,9 +10,9 @@ alt    = keyInfo[5];
 
 let result = null;
 if (coinFocus!=null) {
-result = prompt("enter new jsName: ", coinFocus.dataset.jsName);
+result = prompt("enter new idName: ", coinFocus.id);
 if (result!=null) {
-coinFocus.dataset.jsName = result;
+coinFocus.id = result;
 
        if (showPartName==true) {
 coinFocus.firstElementChild.innerText = result;

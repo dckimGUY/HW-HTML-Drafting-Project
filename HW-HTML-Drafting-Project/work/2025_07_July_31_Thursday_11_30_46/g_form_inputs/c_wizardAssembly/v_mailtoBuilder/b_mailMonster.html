@@ -1,0 +1,19 @@
+<div id="id"><div style="display:flex;"><button style="width: 66px; height: 66px;" onclick="let mailtoLink = document.createElement('a'); this.parentNode.nextElementSibling.value.split(';').forEach(emailAddress => {mailtoLink.innerText = emailAddress;mailtoLink.href='mailto:' +encodeURIComponent(emailAddress) +'?subject=' +encodeURIComponent(this.parentNode.nextElementSibling.nextElementSibling.value) +'&body=' +encodeURIComponent(this.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.value);this.parentNode.parentNode.nextElementSibling.appendChild(mailtoLink);this.parentNode.parentNode.nextElementSibling.innerHTML += '<br>';});">GO</button><buttonstyle="width: 66px; height: 66px;"onclick="this.parentNode.parentNode.nextElementSibling.innerHTML = '';">CL</button><button
+style="width: 66px; height: 66px;"
+onclick="
+this.parentNode.parentNode.nextElementSibling.innerHTML = '';
+">+M</button>
+
+<button
+style="width: 66px; height: 66px;"
+onclick="
+this.parentNode.parentNode.nextElementSibling.innerHTML = '';
+">W+</button>
+</div>
+
+<input type="value" style="width: 264px; height: 33px;" placeholder="same=, multi=;" />
+<input type="value" style="width: 264px; height: 33px;" placeholder="subject" />
+<textarea style="resize: vertical; width: 264px; height: 132px;" placeholder="body" ></textarea>
+</div>
+
+<div style="width: 264px;"></div>

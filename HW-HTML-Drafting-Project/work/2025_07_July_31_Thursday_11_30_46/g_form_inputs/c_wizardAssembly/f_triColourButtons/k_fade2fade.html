@@ -1,0 +1,32 @@
+<div style="line-height:0;">
+<button class="xqnBTN" style="font: inherit; width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" onclick="
+try {
+window.opener.coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.background= 'linear-gradient(' + this.nextElementSibling.nextElementSibling.value + 'deg,rgba(0,0,0,0),' + this.nextElementSibling.value + ',rgba(0,0,0,0))';
+} catch {}
+this.parentNode.parentNode.style.background= 'linear-gradient(' + this.nextElementSibling.value + 'deg,rgba(0,0,0,0),' + this.nextElementSibling.nextElementSibling.value + ',rgba(0,0,0,0))';
+this.parentNode.firstElementChild.style.background= 'linear-gradient(' + this.nextElementSibling.value + 'deg,rgba(0,0,0,0),' + this.nextElementSibling.nextElementSibling.value + ',rgba(0,0,0,0))';
+this.parentNode.parentNode.parentNode.parentNode.dataset.dragPull='div.style.background';
+">double fade</button>
+
+<input name="colour" type="color" style="width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" value="#000000" oninput="
+try {
+window.opener.coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.background= 'linear-gradient(' + this.nextElementSibling.value + 'deg,rgba(0,0,0,0),' + this.value + ',rgba(0,0,0,0))';
+} catch {}
+this.parentNode.parentNode.style.background= 'linear-gradient(' + this.nextElementSibling.value + 'deg,rgba(0,0,0,0),' + this.value + ',rgba(0,0,0,0))';
+this.parentNode.firstElementChild.style.background= 'linear-gradient(' + this.nextElementSibling.value + 'deg,rgba(0,0,0,0),' + this.value + ',rgba(0,0,0,0))';
+this.parentNode.parentNode.parentNode.parentNode.dataset.dragPull='div.style.background';
+this.setAttribute('value',this.value);
+" />
+
+<input name="colour" type="range" style="width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" min="0" max="540" step="5" value="0" oninput="   
+try {
+window.opener.coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.background= 'linear-gradient(' + this.value + 'deg,rgba(0,0,0,0),' + this.previousElementSibling.value + ',rgba(0,0,0,0))';
+} catch {}
+this.parentNode.parentNode.style.background= 'linear-gradient(' + this.value + 'deg,rgba(0,0,0,0),' + this.previousElementSibling.value + ',rgba(0,0,0,0))';
+this.parentNode.firstElementChild.style.background= 'linear-gradient(' + this.value + 'deg,rgba(0,0,0,0),' + this.previousElementSibling.value + ',rgba(0,0,0,0))';
+this.parentNode.parentNode.parentNode.parentNode.dataset.dragPull='div.style.background';
+this.setAttribute('value',this.value);
+" />
+
+<input name="colour" type="value" style="font: inherit; text-align: center; width: 100%; height: 32px; margin: 0; padding: 0; border: 0;" value="double fade" oninput="this.setAttribute('value',this.value);this.parentNode.firstElementChild.innerHTML=this.value;" />
+</div>

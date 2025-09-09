@@ -1,4 +1,4 @@
-function insertNewImage(keyInfo,img) {
+function insertNewImage(keyInfo,img1) {
 
 const
 e      = keyInfo[0],
@@ -14,19 +14,20 @@ let logMessage = "";
 
 let
 newCoin          = document.createElement("div"),
-anchor       = document.createElement("a"),
-main          = document.createElement("div");
+anchor           = document.createElement("a"),
+main             = document.createElement("div"),
 
 button      = document.createElement("button"),
-div = document.createElement("div"),
+div         = document.createElement("div");
+img         = document.createElement("img"); img.src = img1.src;
 
-      anchor.dataset.name = `anchor`;
-     button.dataset.name = `button`;
-div.dataset.name = `div`;
-    img.dataset.name = `img`;
-         main.dataset.name = `main`;
+         anchor.dataset.name  = `anchor`;
+          button.dataset.name = `button`;
+             div.dataset.name = `div`;
+             img.dataset.name = `img`;
+          main.dataset.name   = `main`;
 
-      anchor.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
+       anchor.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
 
        if (showPartName==true) {
 anchor.innerText      =    newId;
@@ -34,21 +35,22 @@ anchor.innerText      =    newId;
 anchor.innerText      =       "";
 }
 
-         main.style = `position:absolute;z-index:100;overflow: hidden;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`;
+main.style = `position:absolute;z-index:100;overflow: hidden;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`;
 
 button.style = buttonInitialStyle;
 div.style = `position:absolute;z-index:200;left:0;top:0;width: 100%;height: 100%;box-sizing: border-box;border:none;text-align:justify;pointer-events:none;background-color:transparent;`;
 
-img.style = `position:absolute;z-index:100;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;background-color:${noImageColour};`;
+img.style = `position:absolute;display:none;z-index:100;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;background-color:${noImageColour};`;
 img.alt = ``;
 div.style.color  = `rgba(0,0,0,1)`;
 div.innerText    = ``;
 
+
 main.dataset.perspective           =   "1536px";
-main.dataset.rotateX               =     "0deg";
-main.dataset.rotateY               =     "0deg";
-main.dataset.rotateZ               =     "0deg";
-main.dataset.translateZ            =      "0px";
+main.dataset.rotateX               =        "0";
+main.dataset.rotateY               =        "0";
+main.dataset.rotateZ               =        "0";
+main.dataset.translateZ            =        "0";
 main.style.transformOrigin         =   "center";
 main.style.transform               =      "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
 
@@ -56,16 +58,16 @@ main.appendChild(button);
 main.appendChild(div);
 main.appendChild(img);
 
-
-
 newCoin.id                            =      newId;
 newCoin.dataset.jsName                =      newId;
+newCoin.dataset.dragPull              =      "style.transform";
 newCoin.dataset.parent                =         "";
 newCoin.dataset.children              =         "";
-newCoin.dataset.dragPull              =         "style.transform";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
 newCoin.style.position                = "absolute";
+newCoin.style.transformOrigin         = "top left";
+newCoin.style.transform               = "scale(1)";
 
 newCoin.style.zIndex                  =   Cur.style.zIndex;
 
@@ -75,16 +77,11 @@ anchor.style.color                   =        Fs2;
 anchor.style.textAlign               =        Gs2;
 anchor.style.backgroundColor         =        Bs2;
 anchor.style.opacity                 =        Os2;
-newCoin.style.transformOrigin         = "top left";
-newCoin.style.transform               = "scale(1)";
-
 
 newCoin.style.userSelect              =        "none";
 
-
-newCoin.style.left      =    Math.floor(parseInt(e.pageX)/T) * T         + "px";
-newCoin.style.top       =    Math.floor(parseInt(e.pageY)/T) * T          + "px";
-
+newCoin.style.left      =    Math.floor(parseInt(e.pageX)/T) * T + "px";
+newCoin.style.top       =    Math.floor(parseInt(e.pageY)/T) * T + "px";
 newCoin.style.width     =    parseInt(img.width) + "px"      ;
 newCoin.style.height    =    parseInt(img.height) + "px"     ;
 curFocus                =    1                                        ;
@@ -94,18 +91,18 @@ logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 
 
 /* Finalize into the datasets. */
-newCoin.dataset.left    =    newCoin.style.left  ;
-newCoin.dataset.top     =    newCoin.style.top   ;
-newCoin.dataset.width   =    newCoin.style.width ;
-newCoin.dataset.height  =    newCoin.style.height;
+newCoin.dataset.left    =    parseInt(newCoin.style.left  ) + "px";
+newCoin.dataset.top     =    parseInt(newCoin.style.top   ) + "px";
+newCoin.dataset.width   =    parseInt(newCoin.style.width ) + "px";
+newCoin.dataset.height  =    parseInt(newCoin.style.height) + "px";
 
 
 newCoin.dataset.scale                 =        "1";
 newCoin.dataset.angle                 =        "0";
-newCoin.dataset.left                  =        newCoin.style.left;
-newCoin.dataset.top                   =        newCoin.style.top;
+newCoin.dataset.left                  =        parseInt(newCoin.style.left) + "px";
+newCoin.dataset.top                   =        parseInt(newCoin.style.top)  + "px";
 
-
+newCoin.dataset.coinTrip              =        Ts2;
 
 coinTrip.sel2[coinTrip.sel2.length] = newCoin;
 
@@ -118,6 +115,7 @@ newCoin.button = newCoin.lastElementChild.firstElementChild;
 newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
 newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
+newCoin.img.style.display = '';
 
 utilityLayer0.appendChild(newCoin);
 curFocus  = 0;

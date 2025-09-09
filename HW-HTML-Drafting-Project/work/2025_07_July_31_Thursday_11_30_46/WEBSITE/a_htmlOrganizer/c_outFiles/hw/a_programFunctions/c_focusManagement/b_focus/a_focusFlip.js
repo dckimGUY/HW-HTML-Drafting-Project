@@ -1,5 +1,5 @@
 function focusFlip() {
-if (coinFocus!=null&&coinFocus1!=null) {
+if (coinFocus!=null&&coinFocus1!=null&&mousedown.hold==false) {
 coinFocus.style.outline = fA;
 setCoinTripColouration();
 coinFocus2=coinFocus ;
