@@ -1,0 +1,92 @@
+function setDefaultTemplate() {
+if (coinFocus!=null) {
+template.default.background         = coinFocus.div.style.background      ;
+template.default.backgroundColor    = coinFocus.div.style.backgroundColor ;
+template.default.color              = coinFocus.div.style.color           ;
+template.default.textShadow         = coinFocus.div.style.textShadow      ;
+template.default.textAlign          = coinFocus.div.style.textAlign       ;
+template.default.textIndent         = coinFocus.div.style.textIndent      ;
+template.default.fontSize           = coinFocus.div.style.fontSize        ;
+template.default.fontStyle          = coinFocus.div.style.fontStyle       ;
+template.default.fontWeight         = coinFocus.div.style.fontWeight      ;
+template.default.fontVariant        = coinFocus.div.style.fontVariant     ;
+template.default.fontFamily         = coinFocus.div.style.fontFamily      ;
+template.default.lineHeight         = coinFocus.div.style.lineHeight      ;
+template.default.wordSpacing        = coinFocus.div.style.wordSpacing     ;
+template.default.letterSpacing      = coinFocus.div.style.letterSpacing   ;
+template.default.textTransform      = coinFocus.div.style.textTransform   ;
+template.default.direction          = coinFocus.div.direction             ;
+template.default.opacity            = coinFocus.div.style.opacity         ;
+template.default.paddingLeft        = coinFocus.div.style.paddingLeft     ;
+template.default.paddingRight       = coinFocus.div.style.paddingRight    ;
+template.default.paddingTop         = coinFocus.div.style.paddingTop      ;
+template.default.paddingBottom      = coinFocus.div.style.paddingBottom   ;
+
+template.defaultIMG.background      = coinFocus.div.style.background      ;
+template.defaultIMG.backgroundColor = coinFocus.div.style.backgroundColor ;
+template.defaultIMG.color           = coinFocus.div.style.color           ;
+template.defaultIMG.textShadow      = coinFocus.div.style.textShadow      ;
+template.defaultIMG.textAlign       = coinFocus.div.style.textAlign       ;
+template.defaultIMG.textIndent      = coinFocus.div.style.textIndent      ;
+template.defaultIMG.fontSize        = coinFocus.div.style.fontSize        ;
+template.defaultIMG.fontStyle       = coinFocus.div.style.fontStyle       ;
+template.defaultIMG.fontWeight      = coinFocus.div.style.fontWeight      ;
+template.defaultIMG.fontVariant     = coinFocus.div.style.fontVariant     ;
+template.defaultIMG.fontFamily      = coinFocus.div.style.fontFamily      ;
+template.defaultIMG.lineHeight      = coinFocus.div.style.lineHeight      ;
+template.defaultIMG.wordSpacing     = coinFocus.div.style.wordSpacing     ;
+template.defaultIMG.letterSpacing   = coinFocus.div.style.letterSpacing   ;
+template.defaultIMG.textTransform   = coinFocus.div.style.textTransform   ;
+template.defaultIMG.direction       = coinFocus.div.direction             ;
+template.defaultIMG.opacity         = coinFocus.div.style.opacity         ;
+template.defaultIMG.paddingLeft     = coinFocus.div.style.paddingLeft     ;
+template.defaultIMG.paddingRight    = coinFocus.div.style.paddingRight    ;
+template.defaultIMG.paddingTop      = coinFocus.div.style.paddingTop      ;
+template.defaultIMG.paddingBottom   = coinFocus.div.style.paddingBottom   ;
+
+localStorage.setItem("template.default.background",          coinFocus.div.style.background     );  
+localStorage.setItem("template.default.backgroundColor",     coinFocus.div.style.backgroundColor);
+localStorage.setItem("template.default.color",               coinFocus.div.style.color          );  
+localStorage.setItem("template.default.textShadow",          coinFocus.div.style.textShadow     );  
+localStorage.setItem("template.default.textAlign",           coinFocus.div.style.textAlign      );  
+localStorage.setItem("template.default.textIndent",          coinFocus.div.style.textIndent     );  
+localStorage.setItem("template.default.fontSize",            coinFocus.div.style.fontSize       );  
+localStorage.setItem("template.default.fontStyle",           coinFocus.div.style.fontStyle      );  
+localStorage.setItem("template.default.fontWeight",          coinFocus.div.style.fontWeight     );  
+localStorage.setItem("template.default.fontVariant",         coinFocus.div.style.fontVariant    );  
+localStorage.setItem("template.default.fontFamily",          coinFocus.div.style.fontFamily     );  
+localStorage.setItem("template.default.lineHeight",          coinFocus.div.style.lineHeight     );  
+localStorage.setItem("template.default.wordSpacing",         coinFocus.div.style.wordSpacing    );  
+localStorage.setItem("template.default.letterSpacing",       coinFocus.div.style.letterSpacing  );  
+localStorage.setItem("template.default.textTransform",       coinFocus.div.style.textTransform  );  
+localStorage.setItem("template.default.direction",           coinFocus.div.direction            );  
+localStorage.setItem("template.default.opacity",             coinFocus.div.style.opacity        );  
+localStorage.setItem("template.default.paddingLeft",         coinFocus.div.style.paddingLeft    );  
+localStorage.setItem("template.default.paddingRight",        coinFocus.div.style.paddingRight   );  
+localStorage.setItem("template.default.paddingTop",          coinFocus.div.style.paddingTop     );  
+localStorage.setItem("template.default.paddingBottom",       coinFocus.div.style.paddingBottom  );  
+
+localStorage.setItem("template.defaultIMG.background",       coinFocus.div.style.background     );  
+localStorage.setItem("template.defaultIMG.backgroundColor",  coinFocus.div.style.backgroundColor);
+localStorage.setItem("template.defaultIMG.color",            coinFocus.div.style.color          );  
+localStorage.setItem("template.defaultIMG.textShadow",       coinFocus.div.style.textShadow     );  
+localStorage.setItem("template.defaultIMG.textAlign",        coinFocus.div.style.textAlign      );  
+localStorage.setItem("template.defaultIMG.textIndent",       coinFocus.div.style.textIndent     );  
+localStorage.setItem("template.defaultIMG.fontSize",         coinFocus.div.style.fontSize       );  
+localStorage.setItem("template.defaultIMG.fontStyle",        coinFocus.div.style.fontStyle      );  
+localStorage.setItem("template.defaultIMG.fontWeight",       coinFocus.div.style.fontWeight     );  
+localStorage.setItem("template.defaultIMG.fontVariant",      coinFocus.div.style.fontVariant    );  
+localStorage.setItem("template.defaultIMG.fontFamily",       coinFocus.div.style.fontFamily     );  
+localStorage.setItem("template.defaultIMG.lineHeight",       coinFocus.div.style.lineHeight     );  
+localStorage.setItem("template.defaultIMG.wordSpacing",      coinFocus.div.style.wordSpacing    );  
+localStorage.setItem("template.defaultIMG.letterSpacing",    coinFocus.div.style.letterSpacing  );  
+localStorage.setItem("template.defaultIMG.textTransform",    coinFocus.div.style.textTransform  );  
+localStorage.setItem("template.defaultIMG.direction",        coinFocus.div.direction            );  
+localStorage.setItem("template.defaultIMG.opacity",          coinFocus.div.style.opacity        );  
+localStorage.setItem("template.defaultIMG.paddingLeft",      coinFocus.div.style.paddingLeft    );  
+localStorage.setItem("template.defaultIMG.paddingRight",     coinFocus.div.style.paddingRight   );  
+localStorage.setItem("template.defaultIMG.paddingTop",       coinFocus.div.style.paddingTop     );  
+localStorage.setItem("template.defaultIMG.paddingBottom",    coinFocus.div.style.paddingBottom  );  
+}
+}
+

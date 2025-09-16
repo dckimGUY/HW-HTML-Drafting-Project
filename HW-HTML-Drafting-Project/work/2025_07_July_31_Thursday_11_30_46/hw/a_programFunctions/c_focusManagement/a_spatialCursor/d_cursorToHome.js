@@ -1,4 +1,7 @@
 function cursorToHome() {
+
+Cur.style.display="block";
+
 Cur.style.top     =   0 + "px";
 Cur.style.left    =   document.documentElement.scrollLeft;
 Cur.dataset.top   =   0 + "px";

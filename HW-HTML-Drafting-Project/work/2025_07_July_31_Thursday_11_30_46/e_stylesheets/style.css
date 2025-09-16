@@ -8,6 +8,13 @@
 .layerButton:hover      { background-color: #DEFF1C;                             }
 .layerButton:active     { background-color: magenta;                             }
 
+.wonkie        { outline: none;              outline-offset:  0px; }
+.wonkie:hover  { outline: 1px dashed yellow; outline-offset: -1px; }
+.wonkie:active { outline: 2px solid lime;    outline-offset: -2px; }
+
+.wonkieTop        { outline: none;              outline-offset:  0px; }
+.wonkieTop:hover  { outline: 2px solid magenta; outline-offset: -2px; }
+.wonkieTop:active { outline: 4px solid blue;    outline-offset: -4px; }
 
 body { font-family: monospace; }
 

@@ -1,5 +1,5 @@
 const defaultUI = `
-<div style="position: fixed; left: 64px; top: 64px;">
+<div style="position: fixed; top: 64px; left: 64px;">
 <div style="display: flex; justify-content: center;" >
 <!-- data:image/png;base64, -->
 

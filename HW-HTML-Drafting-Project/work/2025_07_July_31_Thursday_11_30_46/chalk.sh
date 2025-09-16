@@ -1,4 +1,6 @@
-/* Here is the 'CHALKING-UP' of the online program file. */
+#!/bin/bash
+
+## Here is the 'CHALKING-UP' of the online program file.
 
 echo '<!DOCTYPE html>' > index.html;
 echo '<head>' >> index.html;
@@ -43,7 +45,7 @@ echo '</html>' >> index.html;
 
 
 
-/* When we use insertWindow, we are actually writing the index.html file again to that new window. */
+## When we use insertWindow, we are actually writing the index.html file again to that new window.
 
 echo 'function insertNewWindow(keyInfo,refresh) {' > c_insertNewWindow.js;
 echo 'const' >> c_insertNewWindow.js;
@@ -82,7 +84,7 @@ mv c_insertNewWindow.js ./hw/c_handlers/c_initialization/;
 
 
 
-/* Here is a nifty tree representation, self-contained, searchable in the browser, with clickable links. */
+## Here is a nifty tree representation, self-contained, searchable in the browser, with clickable links.
 
 echo '<!DOCTYPE html>' > t_treeDiagram.html;
 echo "<body>" >> t_treeDiagram.html;
@@ -99,7 +101,7 @@ echo "</html>" >> t_treeDiagram.html;
 
 
 
-/* This is a handy header and footer pair that will allow in-programs tutorials or start-up files to be made easily. */
+## This is a handy header and footer pair that will allow in-programs tutorials or start-up files to be made easily.
 
 head -n -3 index.html > WEBSITE/b_htmlClipSets/b_0_topClip;
 echo "<script>" >> WEBSITE/b_htmlClipSets/b_0_topClip;
@@ -109,7 +111,7 @@ echo '`' >> WEBSITE/b_htmlClipSets/b_0_topClip;
 
 
 
-/* Also make up a piece of data for an in-program button that will save start-up files. */
+## Also make up a piece of data for an in-program button that will save start-up files.
 
 
 echo 'hw.c_startup = {};' > hw/z_hwObject/c_startup.js;
@@ -143,7 +145,7 @@ echo '`;' >> hw/z_hwObject/c_startup.js;
 
 
 
-/* Here we are setting the permissions completely, which will help when it comes to compressing the file. */
+## Here we are setting the permissions completely, which will help when it comes to compressing the file.
 
 find . -type f -exec chmod 644 {} +;
 find . -type d -exec chmod 755 {} +;

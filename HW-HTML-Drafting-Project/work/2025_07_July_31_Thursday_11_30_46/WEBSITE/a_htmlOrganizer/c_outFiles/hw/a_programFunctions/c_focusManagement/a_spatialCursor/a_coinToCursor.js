@@ -9,11 +9,15 @@ ctrl   = keyInfo[4],
 alt    = keyInfo[5];
 
 if (coinFocus!=null) {
+
+Cur.style.display="block";
+
 coinFocus.style.left = Cur.style.left;
 coinFocus.style.top  = Cur.style.top ;
 coinFocus.dataset.left = Cur.style.left;
 coinFocus.dataset.top  = Cur.style.top ;
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 curFocus=0;
 modeRouter(e,1);
 return (1);

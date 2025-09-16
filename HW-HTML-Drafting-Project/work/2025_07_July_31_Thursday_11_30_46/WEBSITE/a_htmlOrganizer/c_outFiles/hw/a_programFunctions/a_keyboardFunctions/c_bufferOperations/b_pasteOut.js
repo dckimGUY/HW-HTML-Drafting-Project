@@ -72,6 +72,8 @@ newCoin.style.top       =    parseInt(Cur.dataset.top)  + "px";
 modeRouter(e,1);
 }
 } else {
+
+if (Cur.style.display!="none") {
 if (curFocus==0&&coinFocus!=null) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) + parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
@@ -80,6 +82,15 @@ modeRouter(e,1);
 newCoin.style.left      =    parseInt(Cur.dataset.left) + "px";
 newCoin.style.top       =    parseInt(Cur.dataset.top)  + "px";
 modeRouter(e,1);
+}
+} else {
+
+newCoin.style.left      =    window.scrollX + "px";
+newCoin.style.top       =    window.scrollY + "px";
+modeRouter(e,1);
+
+
+
 }
 
 }
@@ -160,7 +171,10 @@ newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 utilityLayer0.appendChild(newCoin);
 curFocus  = 0;
-if (coinFocus!=null) { coinFocus.style.outline = fA; }
+if (coinFocus!=null) {
+coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
+}
 coinFocus = coinRef;
 coinFocus = newCoin;
 
@@ -169,6 +183,7 @@ recoverColouration();
 
 
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 readCoins();
 
 } else {

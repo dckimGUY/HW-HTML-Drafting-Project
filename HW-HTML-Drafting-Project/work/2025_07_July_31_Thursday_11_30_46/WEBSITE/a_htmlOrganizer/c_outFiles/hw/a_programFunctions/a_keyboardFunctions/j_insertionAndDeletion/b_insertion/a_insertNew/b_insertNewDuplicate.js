@@ -31,6 +31,7 @@ newCoin.dataset.finishedOutline       =  "none";
 newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
 newCoin.dataset.wrapper               =      coinFocus.dataset.wrapper ;
 newCoin.dataset.outlineColour         =      coinFocus.dataset.outlineColour;
+newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
 
 
@@ -186,6 +187,8 @@ newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
 newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 utilityLayer0.appendChild(newCoin);
+
+coinFocus1 = newCoin;
 
 
 

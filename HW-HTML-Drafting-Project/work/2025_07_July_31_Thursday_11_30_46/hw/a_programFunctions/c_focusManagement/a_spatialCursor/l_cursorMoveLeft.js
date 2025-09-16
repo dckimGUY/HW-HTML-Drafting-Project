@@ -1,4 +1,7 @@
 function cursorMoveLeft() {
+
+Cur.style.display="block";
+
 if (parseInt(Cur.style.left) > 0) {
 Cur.style.left   = parseInt(Cur.style.left) - T + "px";
 if (parseInt(Cur.style.left) < 0) {Cur.style.left    = 0 + "px";}

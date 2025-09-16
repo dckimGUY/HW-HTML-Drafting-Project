@@ -3,6 +3,12 @@
  * otherwise put images in the "/d_images/" directory
  * where this program opens from. *****/
 
+
+/* This sets the initial Draggable Edge Size. */
+
+var edgeQ = 16;
+
+
 let useBase64forImages = true;
 let useBase64forAudio  = true;
 let useBase64forVideo  = true;
@@ -188,8 +194,13 @@ var quitSaveTimeoutSetting = 500;
 /* Default Insertion Width  */let   iW=    64;
 /* Default Insertion Height */let   iH=    64;
 
-/* Focus Outline            */let   fA=    "2px dashed white";
-/* Focus Outline            */let   fB=    "orange solid 3px";
+                                    fAbase = 2;
+/* Focus Outline            */let   fA=    fAbase + "px dashed white";
+                              let   fAO = "-" + fAbase + "px";
+
+                                    fBbase = 4;
+/* Focus Outline            */let   fB=    "gold solid " + fBbase + "px";
+                              let   fBO = "-" + fBbase + "px";
 
 /* The Mouse Cursor Size    */let  mSZ=    64;
 

@@ -14,6 +14,7 @@ let copyOfLayer = utilityLayer0.cloneNode(true);
 for (let j = 0; j < copyOfLayer.children.length; j++) {
 if(copyOfLayer.children[j]&&copyOfLayer.children[j].style) {
 copyOfLayer.children[j].style.outline = fA;
+copyOfLayer.children[j].style.outlineOffset = fAO;
 }
 }
 

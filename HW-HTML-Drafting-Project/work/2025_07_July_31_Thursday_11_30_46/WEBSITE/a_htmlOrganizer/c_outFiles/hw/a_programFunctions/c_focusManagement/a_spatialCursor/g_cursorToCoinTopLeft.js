@@ -1,4 +1,7 @@
 function cursorToCoinTopLeft() {
+
+Cur.style.display="block";
+
 if (coinFocus!=null) {
 Cur.style.left   = parseInt(coinFocus.style.left) + "px";
 Cur.dataset.left = parseInt(coinFocus.style.left) + "px";

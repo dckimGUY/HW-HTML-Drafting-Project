@@ -1,4 +1,7 @@
 function cursorToCoinBottomCentre() {
+
+Cur.style.display="block";
+
 if (coinFocus!=null) {
 let scaleFactor = 1;
 scaleFactor = parseFloat(coinFocus.dataset.scale);

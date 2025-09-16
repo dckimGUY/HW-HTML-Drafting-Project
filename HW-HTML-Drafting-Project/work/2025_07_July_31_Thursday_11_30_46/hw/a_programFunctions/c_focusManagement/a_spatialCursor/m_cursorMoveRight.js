@@ -1,4 +1,7 @@
 function cursorMoveRight() {
+
+Cur.style.display="block";
+
 Cur.style.left   = parseInt(Cur.style.left) + T + "px";
 Cur.dataset.left = parseInt(Cur.style.left) + T + "px";
 Cur.scrollIntoView();

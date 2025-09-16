@@ -19,6 +19,7 @@ if (event.target.dataset.coinTrip==Ts0||
     event.target.dataset.coinTrip==Ts2) {
 
 event.target.style.outline = fA;
+event.target.style.outlineOffset = fAO;
 
 if (event.target.dataset.coinTrip!=newTrip) {
     event.target.dataset.coinTrip= newTrip;
@@ -30,6 +31,7 @@ readCoins();
 recoverColouration();
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }
 
 }
@@ -83,6 +85,7 @@ if (event.target.dataset.coinTrip==Ts0||
     event.target.dataset.coinTrip==Ts2) {
 
 event.target.style.outline = fA;
+event.target.style.outlineOffset = fAO;
 
 if (event.target.dataset.coinTrip!=newTrip) {
     event.target.dataset.coinTrip= newTrip;
@@ -94,6 +97,7 @@ readCoins();
 recoverColouration();
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }
 
 }

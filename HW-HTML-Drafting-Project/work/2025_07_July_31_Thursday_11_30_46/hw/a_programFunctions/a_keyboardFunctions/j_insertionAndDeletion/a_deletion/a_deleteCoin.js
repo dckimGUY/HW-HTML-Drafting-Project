@@ -88,6 +88,7 @@ multiplePasteBuffer.value = buffer.value;
 if (utilityLayer0.children.length!=0) {
 coinFocus=utilityLayer0.lastElementChild;
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 curFocus=0;
 } else {
 curFocus=1;

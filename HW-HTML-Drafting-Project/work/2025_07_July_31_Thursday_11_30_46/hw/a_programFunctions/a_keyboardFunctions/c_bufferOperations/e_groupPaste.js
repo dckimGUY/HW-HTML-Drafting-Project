@@ -32,6 +32,7 @@ sel2PasteBuffer.value = [];
 
 for (let j = 0; j < utilityLayer0.children.length; j++) {
 utilityLayer0.children[j].style.outline = fA;
+utilityLayer0.children[j].style.outlineOffset = fAO;
 }
 
 if (utilityLayer0.children.length>0) { coinFocus = utilityLayer0.lastElementChild; curFocus = 0; }
@@ -41,6 +42,7 @@ recoverColouration();
 
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }
 
 

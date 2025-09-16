@@ -65,6 +65,7 @@ newCoin.dataset.parent                =         "";
 newCoin.dataset.children              =         "";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
+newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
 newCoin.style.transform               = "scale(1)";
@@ -177,8 +178,13 @@ modeRouter(e,1);
 
 
 /*    n    */ if (kC ==  78 && cC == 110) {
+if (Cur.style.display!="none") {
 newCoin.style.left      =    parseInt(Cur.dataset.left)         + "px";
 newCoin.style.top       =    parseInt(Cur.dataset.top)          + "px";
+} else {
+newCoin.style.left      =    window.scrollX         + "px";
+newCoin.style.top       =    window.scrollY         + "px";
+}
 newCoin.style.width     =    T + "px"                                ;
 newCoin.style.height    =    T + "px"                                ;
 curFocus                =    1                                        ;
@@ -236,6 +242,33 @@ newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
 newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 
+/* Initialize from the template. */
+
+div.style.background              = template.default.background              ;
+div.style.backgroundColor         = template.default.backgroundColor         ;
+div.style.color                   = template.default.color                   ;
+div.style.textShadow              = template.default.textShadow              ;
+
+div.style.textAlign               = template.default.textAlign               ;
+div.style.textIndent              = template.default.textIndent              ;
+div.style.fontSize                = template.default.fontSize                ;
+div.style.fontStyle               = template.default.fontStyle               ;
+div.style.fontWeight              = template.default.fontWeight              ;
+div.style.fontVariant             = template.default.fontVariant             ;
+
+div.style.lineHeight              = template.default.lineHeight              ; 
+div.style.wordSpacing             = template.default.wordSpacing             ; 
+div.style.letterSpacing           = template.default.letterSpacing           ; 
+
+div.style.textTransform           = template.default.textTransform           ;
+div.style.direction               = template.default.direction               ;
+div.style.opacity                 = template.default.opacity                 ;
+
+div.style.paddingLeft             = template.default.paddingLeft             ;
+div.style.paddingRight            = template.default.paddingRight            ;
+div.style.paddingTop              = template.default.paddingTop              ;
+div.style.paddingBottom           = template.default.paddingBottom           ;
+
 
 
 
@@ -260,10 +293,17 @@ coinFocus.style.outlineWidth = Ws2;
 coinFocus.style.outlineStyle = Ss2;
 }
 }
+
+if (coinFocus!=null) {
+coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
+}
+
 coinFocus1=coinFocus;
 coinFocus =newCoin;
 curFocus  = 0;
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 
 
 return(newCoin);

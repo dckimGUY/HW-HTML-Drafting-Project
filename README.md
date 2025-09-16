@@ -1,4 +1,4 @@
-## BIG BIG Update on the mouse functionality, check it out in the program.
+## BIG BIG Update: Now with Drag-Edges and 'Local View' (on the TAB key).
 
 # HW HTML Drafting Project
 

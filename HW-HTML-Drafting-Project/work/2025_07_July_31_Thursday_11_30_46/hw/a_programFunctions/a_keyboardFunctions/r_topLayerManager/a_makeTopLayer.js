@@ -54,6 +54,7 @@ readCoins();
 recoverColouration();
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }
 
 if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }

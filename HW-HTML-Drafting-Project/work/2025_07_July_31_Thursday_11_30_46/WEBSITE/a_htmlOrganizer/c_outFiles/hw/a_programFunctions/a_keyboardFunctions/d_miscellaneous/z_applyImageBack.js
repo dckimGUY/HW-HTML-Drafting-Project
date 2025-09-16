@@ -11,6 +11,7 @@ if (Picture.width!=0&&Picture.height!=0) {
 
        if (coinFocus.lastElementChild.lastElementChild.src!='') {
 ctx.drawImage(coinFocus.lastElementChild.lastElementChild, parseInt(coinFocus.style.left), parseInt(coinFocus.style.top), parseInt(coinFocus.style.width), parseInt(coinFocus.style.height));
+Picture.style.display="block";
 
 } else if (coinFocus.img.src==''&&coinFocus.style.left=='0px'&&coinFocus.style.top=='0px') {
 
@@ -30,6 +31,7 @@ Picture.width  = parseInt(coinFocus.style.width);
 Picture.height = parseInt(coinFocus.style.height);
 
 ctx.drawImage(Picture2, 0, 0, tmpWidth, tmpHeight);
+Picture.style.display="block";
 
 }
 
@@ -38,6 +40,7 @@ ctx.drawImage(Picture2, 0, 0, tmpWidth, tmpHeight);
 
 Picture.width  = parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width);
 Picture.height = parseInt(coinFocus.style.top)  + parseInt(coinFocus.style.height);
+Picture.style.display="block";
 
        if (coinFocus.lastElementChild.lastElementChild.src!='') {
 ctx.drawImage(coinFocus.lastElementChild.lastElementChild, parseInt(coinFocus.style.left), parseInt(coinFocus.style.top), parseInt(coinFocus.style.width), parseInt(coinFocus.style.height));

@@ -744,6 +744,7 @@ recoverColouration();
 if (utilityLayer0.children.length>0) {
 coinFocus = utilityLayer0.lastElementChild;
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }
 
 } else {
@@ -765,6 +766,7 @@ recoverColouration();
 
 
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 
 }
 
@@ -857,6 +859,7 @@ Picture.width=img.width;
 Picture.height=img.height;
 let ctx = Picture.getContext("2d");
 ctx.drawImage(img, 0, 0, img.width, img.height);
+Picture.style.display="block";
 };
 img.src = evt.target.result;
 };

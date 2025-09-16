@@ -1,4 +1,7 @@
 function cursorToWindowCentre() {
+
+Cur.style.display="block";
+
 Cur.style.left   = window.scrollX + (window.innerWidth/2)  + "px";
 Cur.dataset.left = window.scrollX + (window.innerWidth/2)  + "px"; 
 Cur.style.top    = window.scrollY + (window.innerHeight/2) + "px";

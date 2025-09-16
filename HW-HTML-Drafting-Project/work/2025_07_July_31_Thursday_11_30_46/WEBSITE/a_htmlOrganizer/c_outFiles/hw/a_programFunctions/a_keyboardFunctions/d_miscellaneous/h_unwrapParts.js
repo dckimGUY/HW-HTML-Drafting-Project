@@ -1,5 +1,6 @@
 function unwrapParts() {
 if (coinFocus!=null) {
+
 if (coinFocus.lastElementChild&&coinFocus.lastElementChild.firstElementChild&&coinFocus.lastElementChild.firstElementChild.nextElementSibling) {
 coinFocus.div = coinFocus.lastElementChild.firstElementChild.nextElementSibling;
 if (coinFocus.div.children.length > 1 && coinFocus.div.firstElementChild.dataset && coinFocus.div.firstElementChild.dataset.coinTrip) {
@@ -23,4 +24,5 @@ spaceViewOff();
 Z();
 recoverColouration();
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 } } } }

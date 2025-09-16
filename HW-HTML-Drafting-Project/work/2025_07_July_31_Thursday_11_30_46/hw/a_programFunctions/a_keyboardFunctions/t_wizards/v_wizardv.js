@@ -10,6 +10,8 @@ utilityLayer0.lastElementChild.style.width    = '384px';
 utilityLayer0.lastElementChild.dataset.width  = '384px';
 utilityLayer0.lastElementChild.style.height   = '384px';
 utilityLayer0.lastElementChild.dataset.height = '384px';
+utilityLayer0.lastElementChild.div.style.textIndent = '0px';
+utilityLayer0.lastElementChild.div.style.lineHeight = '0.5';
 hauptMode=1;
 } else {
 insertNewCoin([null,78,110,false,false,false]);
@@ -20,6 +22,8 @@ utilityLayer0.lastElementChild.style.width    = '384px';
 utilityLayer0.lastElementChild.dataset.width  = '384px';
 utilityLayer0.lastElementChild.style.height   = '384px';
 utilityLayer0.lastElementChild.dataset.height = '384px';
+utilityLayer0.lastElementChild.div.style.textIndent = '0px';
+utilityLayer0.lastElementChild.div.style.lineHeight = '0.5';
 }
 
 interfaceLayer.style.display="none";

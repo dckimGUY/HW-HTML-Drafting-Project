@@ -57,6 +57,7 @@ newCoin.dataset.children              =         "";
 newCoin.dataset.scale              =        "1";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
+newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 
        if (utilityLayer0.children.length!=0) {
@@ -96,17 +97,28 @@ newCoin.style.transform               = "scale(1)";
 
 
 
+if (newXvalue >=0) {
+newCoin.style.left = newXvalue + "px";
+newCoin.style.width = newWidth  + "px";
+} else {
+newCoin.style.left = "0px";
+newCoin.style.width = newWidth  + newXvalue + "px";
+}
+if (newYvalue >=0) {
+newCoin.style.top  = newYvalue + "px";
+newCoin.style.height = newHeight + "px";
+} else {
+newCoin.style.top  = "0px";
+newCoin.style.height = newHeight + newYvalue + "px";
+}
 
-newCoin.style.left      =    newXvalue + "px";
-newCoin.style.top       =    newYvalue + "px";
-newCoin.style.width     =    newWidth  + "px";
-newCoin.style.height    =    newHeight + "px";
 
 
-newCoin.dataset.left      =    newXvalue + "px";
-newCoin.dataset.top       =    newYvalue + "px";
-newCoin.dataset.width     =    newWidth  + "px";
-newCoin.dataset.height    =    newHeight + "px";
+
+newCoin.dataset.left      =    newCoin.style.left;
+newCoin.dataset.top       =    newCoin.style.top;
+newCoin.dataset.width     =    newCoin.style.width;
+newCoin.dataset.height    =    newCoin.style.height;
 
 logMessage=`- - - insertion from mouse input, jsName : "${newCoin.dataset.jsName}"`;
 
@@ -122,8 +134,6 @@ newCoin.appendChild(main);
 
 
 
-
-
 newCoin.anchor = newCoin.firstElementChild;
 newCoin.main   = newCoin.lastElementChild;
 newCoin.button = newCoin.lastElementChild.firstElementChild;
@@ -132,9 +142,32 @@ newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 
 
+/* Initialize from the template. */
 
+div.style.background              = template.default.background              ;  
+div.style.backgroundColor         = template.default.backgroundColor         ;  
+div.style.color                   = template.default.color                   ;  
+div.style.textShadow              = template.default.textShadow              ;  
 
+div.style.textAlign               = template.default.textAlign               ;
+div.style.textIndent              = template.default.textIndent              ;
+div.style.fontSize                = template.default.fontSize                ;
+div.style.fontStyle               = template.default.fontStyle               ;
+div.style.fontWeight              = template.default.fontWeight              ;
+div.style.fontVariant             = template.default.fontVariant             ;
 
+div.style.lineHeight              = template.default.lineHeight              ; 
+div.style.wordSpacing             = template.default.wordSpacing             ; 
+div.style.letterSpacing           = template.default.letterSpacing           ; 
+
+div.style.textTransform           = template.default.textTransform           ;
+div.style.direction               = template.default.direction               ;
+div.style.opacity                 = template.default.opacity                 ;
+
+div.style.paddingLeft             = template.default.paddingLeft             ;
+div.style.paddingRight            = template.default.paddingRight            ;
+div.style.paddingTop              = template.default.paddingTop              ;
+div.style.paddingBottom           = template.default.paddingBottom           ;
 
 
 
@@ -154,11 +187,19 @@ coinFocus.style.outlineColor = Cs2;
 coinFocus.style.outlineWidth = Ws2;
 coinFocus.style.outlineStyle = Ss2;
 }
-}
+
+
+
+coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
+
 coinFocus1=coinFocus;
+}
+
 coinFocus =newCoin;
 curFocus  = 0;
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 if (logMessage!="") {
 }
 

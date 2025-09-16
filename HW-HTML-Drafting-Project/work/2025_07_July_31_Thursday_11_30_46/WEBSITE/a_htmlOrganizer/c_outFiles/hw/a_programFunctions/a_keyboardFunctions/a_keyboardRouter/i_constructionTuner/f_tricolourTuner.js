@@ -1,5 +1,7 @@
 function tricolourTuner() {
 
+Cur.style.display="block";
+
 /*    /    */ if (kC == 111 && cC ==  47) { }
 /*    *    */ if (kC == 106 && cC ==  42) { }
 /*    -    */ if (kC == 109 && cC ==  45) { lessG(); }

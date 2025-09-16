@@ -39,7 +39,7 @@ if (shift==false||hauptMode==1) {
 /*    z    */ if (kC ==  90 && cC == 122) {                 flipAnchorZ(keyInfo);                   }
 /*    x    */ if (kC ==  88 && cC == 120) {                 clearRotation(); noteStyle("X<br><span style='font-size: 0.5em;'>clear rotation</span>",durationS);           }
 /*    c    */ if (kC ==  67 && cC ==  99) {                 enterForegroundColour(keyInfo); noteStyle("C<br><span style='font-size: 0.5em;'>FG colour</span>",durationS); }
-/*    v    */ if (kC ==  86 && cC == 118) {                 noteStyle("V<br><span style='font-size: 0.5em;'>flow document</span>",durationS); reflowGlobal(rev,0);        }
+/*    v    */ if (kC ==  86 && cC == 118) {                 noteStyle("V<br><span style='font-size: 0.5em;'>flow document</span>",durationS); lastFlow="global"; reflowGlobal(rev,0);        }
 /*    b    */ if (kC ==  66 && cC ==  98) {                 enterBackgroundColour(keyInfo); noteStyle("B<br><span style='font-size: 0.5em;'>BG colour</span>",durationS); }
 /*    n    */ if (kC ==  78 && cC == 110) {                 enterArticleContent(keyInfo);           }
 /*    m    */ if (kC ==  77 && cC == 109) {                 overflowMain(keyInfo);                  }
@@ -68,7 +68,7 @@ if (shift==true||hauptMode==1) {
 /*    Z    */ if (kC ==  90 && cC ==  90) {                 flipAnchorZ(keyInfo);                   }
 /*    X    */ if (kC ==  88 && cC ==  88) {                 resetScale(); noteStyle("X<br><span style='font-size: 0.5em;'>reset scale</span>",durationS);                      }
 /*    C    */ if (kC ==  67 && cC ==  67) {                 enterForegroundColour(keyInfo); noteStyle("C<br><span style='font-size: 0.5em;'>FG colour</span>",durationS,true); }
-/*    V    */ if (kC ==  86 && cC ==  86) {                 noteStyle("<u>V</u><br><span style='font-size: 0.5em;'>flow by colour</span>",durationS); reflowPerTrip(keyInfo);  }
+/*    V    */ if (kC ==  86 && cC ==  86) {                 noteStyle("<u>V</u><br><span style='font-size: 0.5em;'>flow by colour</span>",durationS); lastFlow="colour"; reflowPerTrip(keyInfo);  }
 /*    B    */ if (kC ==  66 && cC ==  66) {                 enterBackgroundColour(keyInfo); noteStyle("B<br><span style='font-size: 0.5em;'>BG colour</span>",durationS,true); }
 /*    N    */ if (kC ==  78 && cC ==  78) {                 jsNameAndNote(keyInfo);                 }
 /*    M    */ if (kC ==  77 && cC ==  77) {                 overflowMain(keyInfo);                  }

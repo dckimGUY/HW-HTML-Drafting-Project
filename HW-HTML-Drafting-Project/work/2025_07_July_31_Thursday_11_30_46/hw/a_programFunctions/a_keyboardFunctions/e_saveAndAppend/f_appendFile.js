@@ -10,11 +10,15 @@ const reader = new FileReader();
 reader.onload = event => {
 utilityLayer0.innerHTML += event.target.result;
 restorePointerEventsNone();
-for (j=0; j<utilityLayer0.children.length; j++) { utilityLayer0.children[j].style.outline = fA; }
+for (j=0; j<utilityLayer0.children.length; j++) { 
+utilityLayer0.children[j].style.outline = fA;
+utilityLayer0.children[j].style.outlineOffset = fAO;
+}
 if (utilityLayer0.firstElementChild) {
 coinFocus = utilityLayer0.firstElementChild;
 }
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 readCoins();
 };
 reader.readAsText(file);

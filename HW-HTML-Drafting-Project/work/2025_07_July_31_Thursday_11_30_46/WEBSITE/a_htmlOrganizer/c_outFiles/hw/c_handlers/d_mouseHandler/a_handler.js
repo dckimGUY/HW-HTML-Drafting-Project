@@ -480,7 +480,7 @@ mouseGiveFocus(mouseInfo);
 }
 
 
-if ((event.target==document.body||curFocus==1)&&Math.abs(mouseDeltaX)<32&&Math.abs(mouseDeltaY)<32) {
+if ((event.target==document.documentElement&&curFocus==1)&&Math.abs(mouseDeltaX)<32&&Math.abs(mouseDeltaY)<32) {
 mousePlaceCursor(mouseInfo);
 }
 
@@ -517,13 +517,14 @@ insertNewDuplicate([,68,100,,,]);
 cutOutImage();
 } else if (event.target.dataset.coinTrip&&!shift&& alt) {
 applyImageBack();
-} else {
+} else if (event.target==document.documentElement) {
 mousePlaceCursor(mouseInfo);
 
 curFocus=1;
 modeRouter(event,1);
 if (coinFocus!=null) {
 coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
 }
 recoverColouration();
 

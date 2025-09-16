@@ -18,7 +18,10 @@ utilityLayer0.children[j].style.outlineColor = Cs2;
 utilityLayer0.children[j].style.outlineWidth = Ws2;
 utilityLayer0.children[j].style.outlineStyle = Ss2;
 }
-if (coinFocus!=null) { coinFocus.style.outline = fB; }
+if (coinFocus!=null) { 
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+}
 
 utilityLayer0.style.opacity = utilityOpacity;
 
@@ -42,6 +45,7 @@ pulledText.style.display="none";
 recoverColouration();
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }
 
 }

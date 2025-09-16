@@ -44,7 +44,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    Z    */ if (kC ==  90 && cC ==  90) { noteCoin("Z<br><span style='font-size: 0.5em;'>z-index mode</span>",durationC); manageGlobalZ(0); modeRouter(e,9);                          }
 /*    X    */ if (kC ==  88 && cC ==  88) {                          deleteCoin(keyInfo);                                                                                               }
 /*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("C<br><span style='font-size: 0.5em;'>cursor</span>",durationC); cursorToCoin(keyInfo);                                            }
-/*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("V<br><span style='font-size: 0.5em;'>flow document</span>",durationC); reflowGlobal(rev,0);                                       }
+/*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("V<br><span style='font-size: 0.5em;'>flow document</span>",durationC); lastFlow = "global"; reflowGlobal(rev,0);                  }
 /*    B    */ if (kC ==  66 && cC ==  66) {                          writeInfoToFace();                                                                                                 }
 /*    N    */ if (kC ==  78 && cC ==  78) {                          explicitEntryForTopAndLeft();                                                                                      }
 /*    M    */ if (kC ==  77 && cC ==  77) { noteCoin("M+<br><span style='font-size: 0.5em;'>set mark</span>",durationC); charQ1=0;charM=1;charF=0;                                      }
@@ -156,6 +156,7 @@ curFocus=0;
 
 
 coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
        if (coinFocus.dataset.coinTrip==Ts0) { coinFocus.firstElementChild.style.color = Fs0; coinFocus.style.outlineColor = Cs0; coinFocus.firstElementChild.style.backgroundColor = Bs0; coinFocus.firstElementChild.style.opacity = Os0;
 } else if (coinFocus.dataset.coinTrip==Ts1) { coinFocus.firstElementChild.style.color = Fs1; coinFocus.style.outlineColor = Cs1; coinFocus.firstElementChild.style.backgroundColor = Bs1; coinFocus.firstElementChild.style.opacity = Os1;
 } else if (coinFocus.dataset.coinTrip==Ts2) { coinFocus.firstElementChild.style.color = Fs2; coinFocus.style.outlineColor = Cs2; coinFocus.firstElementChild.style.backgroundColor = Bs2; coinFocus.firstElementChild.style.opacity = Os2;
@@ -164,6 +165,7 @@ coinFocus.style.outline = fA;
 readCoins();
 recoverColouration();
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 
 
 

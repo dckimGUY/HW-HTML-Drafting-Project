@@ -27,11 +27,17 @@ groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.paddi
 } }
 
 } else {
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.padding = T + "px";
+coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.paddingLeft   = T + "px";
+coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.paddingRight  = T + "px";
+coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.paddingTop    = T + "px";
+coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.paddingBottom = T + "px";
 paddingTunedLeftRight = T;
 
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.padding = T + "px";
+groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.paddingLeft   = T + "px";
+groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.paddingRight  = T + "px";
+groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.paddingTop    = T + "px";
+groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.paddingBottom = T + "px";
 paddingTunedLeftRight = T;
 } }
 

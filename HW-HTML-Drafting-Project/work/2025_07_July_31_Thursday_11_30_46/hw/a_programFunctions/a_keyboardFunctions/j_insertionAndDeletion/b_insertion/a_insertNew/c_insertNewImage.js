@@ -65,6 +65,7 @@ newCoin.dataset.parent                =         "";
 newCoin.dataset.children              =         "";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
+newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
 newCoin.style.transform               = "scale(1)";
@@ -117,17 +118,55 @@ newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 newCoin.img.style.display = '';
 
+
+/* Initialize from the template. */
+
+div.style.background              = template.defaultIMG.background              ;
+div.style.backgroundColor         = template.defaultIMG.backgroundColor         ;
+div.style.color                   = template.defaultIMG.color                   ;
+div.style.textShadow              = template.defaultIMG.textShadow              ;
+
+div.style.textAlign               = template.defaultIMG.textAlign               ;
+div.style.textIndent              = template.defaultIMG.textIndent              ;
+div.style.fontSize                = template.defaultIMG.fontSize                ;
+div.style.fontStyle               = template.defaultIMG.fontStyle               ;
+div.style.fontWeight              = template.defaultIMG.fontWeight              ;
+div.style.fontVariant             = template.defaultIMG.fontVariant             ;
+
+div.style.lineHeight              = template.defaultIMG.lineHeight              ; 
+div.style.wordSpacing             = template.defaultIMG.wordSpacing             ; 
+div.style.letterSpacing           = template.defaultIMG.letterSpacing           ; 
+
+div.style.textTransform           = template.defaultIMG.textTransform           ;
+div.style.direction               = template.defaultIMG.direction               ;
+div.style.opacity                 = template.defaultIMG.opacity                 ;
+
+div.style.paddingLeft             = template.defaultIMG.paddingLeft             ;
+div.style.paddingRight            = template.defaultIMG.paddingRight            ;
+div.style.paddingTop              = template.defaultIMG.paddingTop              ;
+div.style.paddingBottom           = template.defaultIMG.paddingBottom           ;
+
+
+
+
+
 utilityLayer0.appendChild(newCoin);
 curFocus  = 0;
 if (coinFocus!=null) {
 coinFocus.style.outlineColor = Cs2;
 coinFocus.style.outlineWidth = Ws2;
 coinFocus.style.outlineStyle = Ss2;
-}
+
+
+coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
 
 coinFocus1=coinFocus;
+}
 coinFocus =newCoin;
+
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 
 if (logMessage!="") {
 }

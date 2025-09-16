@@ -1,4 +1,5 @@
 function mousePlaceCursor(mouseInfo) {
+if (Cur.style.display!="none") {
 const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
 let newCursorX=0,
     newCursorY=0;
@@ -9,4 +10,5 @@ Cur.dataset.left = newCursorX + "px";
   Cur.style.top  = newCursorY + "px";
 Cur.dataset.top  = newCursorY + "px";
 return (1);
+}
 }

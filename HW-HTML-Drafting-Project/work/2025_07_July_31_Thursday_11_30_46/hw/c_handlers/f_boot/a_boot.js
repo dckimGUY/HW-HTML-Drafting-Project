@@ -6,12 +6,12 @@ utilityLayer1.style.pointerEvents = "none";
 const defaultFilename = "100_emptyFile";
 var filename = defaultFilename;
 
-var edgeQ = 12;
-
 var   gridLayer         ; gridLayer          = document.getElementById("gridLayer")     ;
 var   mouseIconLayer    ; mouseIconLayer     = document.getElementById("mouseIconLayer");
 var   pulledText        ; pulledText         = document.createElement("textarea")       ;
 var   edgeDetect        ; edgeDetect         = document.createElement("div")            ;
+
+var lastFlow = "global";
 
 edgeDetect.style.position        =           "absolute";
 edgeDetect.style.pointerEvents   =               "none";
@@ -27,7 +27,6 @@ interfaceLayer.style.display = "none";
 
 var   interfaceShelf    ; interfaceShelf     = document.getElementById("interfaceShelf");
 interfaceShelf.innerHTML = defaultUIshelf;
-interfaceShelf.style.display = "none";
 
 const HWworld = true;
 var layerName = "LVL 1";
@@ -61,6 +60,8 @@ const x_layer23 = document.createElement("div");
 const y_layer24 = document.createElement("div");
 const z_layer25 = document.createElement("div");
 
+const localView = document.createElement("div");
+
 var topLayer = 
 {
 "a_currentLayer" : "b_layer1",
@@ -89,7 +90,9 @@ var topLayer =
 "w_layer22" : { "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1 },
 "x_layer23" : { "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1 },
 "y_layer24" : { "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1 },
-"z_layer25" : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1 }
+"z_layer25" : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1 },
+
+"localView" : { "a_name" : "localView", "b_content" : localView, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LOCAL VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
 }
 
 pulledText.name = "pulledText";
@@ -250,6 +253,7 @@ function visualFlowIndicator() {if (rev==0) {return (`\u21D6`);} else if (rev==1
 
 
 var Picture=document.createElement("canvas");
+Picture.style.display="none";
 Picture.style.position="absolute";
 Picture.style.left="0";
 Picture.style.top="0";
@@ -285,6 +289,7 @@ F.tabIndex=-1;
 }
 gridLayer.appendChild(V);
 gridLayer.appendChild(F);
+
 function Z(){
 F.style.width=`${window.innerWidth}px`;
 F.style.height=`${window.innerHeight}px`;
@@ -298,7 +303,7 @@ Y.strokeStyle=U;
 Y.lineWidth=gW;
 Y.beginPath();
 
-if (T>=8) {
+if (T>=8&&gW!=0) {
 for(let k=0;k<parseInt(V.height/T)+1;k++){
 Y.moveTo(0,W+(T*k));
 Y.lineTo(V.width,W+(T*k))};
@@ -310,11 +315,15 @@ Y.lineTo(X+(T*k),V.height)};
 Y.fillStyle=U;
 Y.font=bF;
 Y.textBaseline="top";
+
+if (gW!=0) {
 Y.fillText(`                 h${Math.floor(window.innerHeight/T)}w${Math.floor(window.innerWidth/T)}/${window.innerWidth}x${window.innerHeight}/${T.toString().padStart(' ',3)} --- z-ECHELON=${pageEchelon / 100000000 } --- ${filename}.html`,bW,bW);
 Y.font=bFarr;
 //Y.fillText(`${visualFlowIndicator()}`,bW,bW);
 Y.fillText(`${layerName}`,bW,bW);
 Y.stroke();
+}
+
 Y.beginPath();
 Y.strokeStyle=bU;
 Y.lineWidth=bW;
@@ -325,7 +334,10 @@ Y.lineTo(-window.pageXOffset,V.height);
 Y.stroke();
 V.style.opacity=K;
 };
-window.addEventListener("resize",()=>{Z();});window.addEventListener("scroll",()=>{Z();});Z();
+
+Z();
+window.addEventListener("resize",()=>{Z();})
+window.addEventListener("scroll",()=>{Z();})
 document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
 
@@ -627,24 +639,6 @@ splashScreenVisible = true;
 const z_wizardCode = {};
 
 /* Completion Message */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 console.log(

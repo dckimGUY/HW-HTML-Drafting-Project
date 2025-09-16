@@ -20,6 +20,7 @@ coinFocus=utilityLayer0.children[utilityLayer0.children.length - 1];
 curFocus=0;
 recoverColouration();
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 
 }
 

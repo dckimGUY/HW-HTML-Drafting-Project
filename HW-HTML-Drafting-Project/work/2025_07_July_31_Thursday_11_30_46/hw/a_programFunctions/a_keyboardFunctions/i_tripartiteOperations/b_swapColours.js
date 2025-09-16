@@ -17,4 +17,5 @@ colourFlip=0;
 readCoins();
 recoverColouration();
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 }

@@ -38,13 +38,17 @@ utilityLayer0.lastElementChild.remove();
 
 restorePointerEventsNone();
 recoverColouration();
-for (j=0; j<utilityLayer0.children.length; j++) { utilityLayer0.children[j].style.outline = fA; }
+for (j=0; j<utilityLayer0.children.length; j++) { 
+utilityLayer0.children[j].style.outline = fA;
+utilityLayer0.children[j].style.outlineOffset = fAO;
+ }
 if (utilityLayer0.firstElementChild) {
 coinFocus = utilityLayer0.firstElementChild;
 pageEchelon = Math.floor(utilityLayer0.firstElementChild.style.zIndex/100000000)*100000000;
 
 }
 coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
 
 readCoins();
 
