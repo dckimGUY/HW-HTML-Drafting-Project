@@ -9,13 +9,13 @@ Vis.style.opacity=1; //formerly K
 
 visualizationsLayer.appendChild(Vis);
 
-/*
+
 Vis.width=window.innerWidth;
 Vis.height=window.innerHeight;
 
 
 function redraw(element){
-
+/*
 
 const zArray = Array.from(utilityLayer0.children);
 const zStack = zArray.map(el => ({ id: el, z: parseInt(getComputedStyle(el).zIndex) || 0 })).sort((a, b) => a.z -b.z);
@@ -56,8 +56,7 @@ Y.stroke();
 
 
 }
-
+*/
 };
 
 
-*/

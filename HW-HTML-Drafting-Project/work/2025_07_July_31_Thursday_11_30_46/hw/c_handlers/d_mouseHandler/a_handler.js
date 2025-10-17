@@ -509,7 +509,9 @@ const mouseInfo = [event,ctrl,shift,alt];
 
 
 if (!ctrl && !shift && !alt) {
+if (coinFocus!=null) {
 coinFocus.style.cursor = cursor.grab;
+}
 }
 
 

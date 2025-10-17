@@ -40,7 +40,7 @@ var useCustomCursors = false;
 /* I guess we'll just be using the defaults for now, but those are actually doing a lot better than we can. */
 
 var cursorSize = [['a_xsmall-31px', ' 16 16'], ['b_small-49px', ' 25 25'], ['c_medium-65px', ' 33 33'], ['d_large-99px', ' 50 50'], ['e_xlarge-125px', ' 63 63']];
-var cursorSet = cursorSize[4];
+var cursorSet = cursorSize[2];
 
 
 var
