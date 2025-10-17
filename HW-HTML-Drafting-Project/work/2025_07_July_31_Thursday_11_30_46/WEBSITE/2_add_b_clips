@@ -1,7 +1,0 @@
-find a_htmlOrganizer/a_latest/ -type f | sed 's/^/cat .\/b_htmlClipSets\/b_0_topClip /g' | sed 's/$/ .\/b_htmlClipSets\/b_1_bottomClip/g' > beginningPart;
-find a_htmlOrganizer/a_latest/ -type f | sed 's/^.*\///g' | sed 's/^/ > .\/a_htmlOrganizer\/c_outFiles\//g' | sed 's/$/;/g' > endingPart;
-paste beginningPart endingPart > clipsAdded;
-rm beginningPart endingPart;
-chmod 755 clipsAdded;
-. ./clipsAdded;
-rm clipsAdded;

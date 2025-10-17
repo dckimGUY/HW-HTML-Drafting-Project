@@ -1,5 +1,0 @@
-cd WEBSITE;
-. ./0_update;
-. ./3_add_c_clips;
-cd ..;
-. ./9_drawSitemap;

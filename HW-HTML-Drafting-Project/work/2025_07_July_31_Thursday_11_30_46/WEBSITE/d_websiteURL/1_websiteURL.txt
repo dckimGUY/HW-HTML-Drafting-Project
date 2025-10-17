@@ -1,2 +1,0 @@
-https://dckim.com/
-/* You must write your exact URL on the first line of this file. It must be alone on the line, having no extra space before or after. The format must be "https://expampleWebsite.com/". */

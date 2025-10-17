@@ -7,7 +7,6 @@ document.addEventListener("mousemove", (event) => {
 if (mouseIsDogged==false) {
 
 
-
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const e = event;
 const mouseInfo = [e,ctrl,shift,alt];
@@ -22,6 +21,85 @@ if (mousedown.hold==true) {
 mouseDeltaX = event.pageX - mousedown.pageX;
 mouseDeltaY = event.pageY - mousedown.pageY;
 }
+
+
+
+
+if (mousedown.hold == false) {
+
+
+if (!ctrl && !shift && !alt) {
+
+
+let found = false;
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+
+if (event.target == utilityLayer0.children[j]) {
+
+found = true;
+
+     if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize;  } //4
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
+}                                                                                                                                                       
+
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {                                          
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nResize;  } //8
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //5
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.sResize;  } //2
+}                                                                                                                                                        
+
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {                                           
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize;  } //6
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
+}
+
+
+} else {
+
+utilityLayer0.children[j].style.cursor = cursor.crosshair;
+
+}
+
+}
+
+} else {
+
+/*
+if (mode!=8)  {
+       if ( ctrl && !shift && !alt)  {
+event.target.style.cursor = cursor.copy;
+} else if (!ctrl &&  shift && !alt) {
+event.target.style.cursor = cursor.move;
+} else if (!ctrl && !shift &&  alt) {
+event.target.style.cursor = cursor.move;
+} else if ( ctrl &&  shift && !alt) {
+event.target.style.cursor = cursor.crosshair;
+} else if ( ctrl && !shift &&  alt) {
+event.target.style.cursor = cursor.grab;
+} else if (!ctrl &&  shift &&  alt) {
+event.target.style.cursor = cursor.grab;
+} else if ( ctrl &&  shift &&  alt) {
+event.target.style.cursor = cursor.grab;
+} else            {
+event.target.style.cursor = cursor.grab;
+}
+} else {
+event.target.style.cursor = cursor.cell;
+}
+
+*/
+
+}
+
+utilityLayer0.style.cursor = "crosshair";
+
+}
+
+
+
 
 mode1.mousemove(mouseInfo);
 
@@ -63,9 +141,11 @@ edgeDetect.style.display= "block";
 
 } else {
 edgeDetect.style.display= "none"; 
+
 }
 } else {
 edgeDetect.style.display= "none"; 
+
 }
 
 
@@ -271,6 +351,7 @@ document.addEventListener("mousedown",   (event) => {
 
 
 
+
 if (splashScreenVisible==true) {
 splashScreen.remove();
 }
@@ -319,6 +400,9 @@ modeRouter(event,1);
 }
 }
 
+
+if (event.target.dataset.coinTrip==Ts0||event.target.dataset.coinTrip==Ts1||event.target.dataset.coinTrip==Ts2) {
+if (!ctrl && !shift) {
      if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
      if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { mousedown.targetRegion = 7; }
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 4; }
@@ -326,7 +410,7 @@ else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.tar
 }
 else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {
      if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { mousedown.targetRegion = 8; }
-else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 5; }
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 5; event.target.style.cursor= cursor.grabbing; }
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { mousedown.targetRegion = 2; }
 }
 else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {
@@ -334,9 +418,35 @@ else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.tar
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 6; }
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { mousedown.targetRegion = 3; }
 }
+} else {
 
 
+if (mode!=8)  {
+       if ( ctrl && !shift && !alt)  {
+event.target.style.cursor = cursor.copy;
+} else if (!ctrl &&  shift && !alt) {
+event.target.style.cursor = cursor.move;
+} else if (!ctrl && !shift &&  alt) {
+event.target.style.cursor = cursor.move;
+} else if ( ctrl &&  shift && !alt) {
+event.target.style.cursor = cursor.grab;
+} else if ( ctrl && !shift &&  alt) {
+event.target.style.cursor = cursor.grab;
+} else if (!ctrl &&  shift &&  alt) {
+event.target.style.cursor = cursor.grab;
+} else if ( ctrl &&  shift &&  alt) {
+event.target.style.cursor = cursor.grab;
+} else            {
+event.target.style.cursor = cursor.grab;
+}
+} else {
+event.target.style.cursor = cursor.cell;
+}
 
+
+}
+}
+utilityLayer0.style.cursor = "crosshair";
 
 
 
@@ -390,20 +500,39 @@ case 9: mode9.mousedown(mouseInfo); break;
 
 
 document.addEventListener("mouseup", (event) => {
-if (mouseIsDogged==false) {
+
+
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
 
 
+
+
+if (!ctrl && !shift && !alt) {
+coinFocus.style.cursor = cursor.grab;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (mouseIsDogged==false) {
+
+
 
 if (mousedown.button==1&&event.button==1&&mousedown.target==event.target) {
 mouseGiveFocus(mouseInfo);
 deleteCoin([,88,88,,]);
 
 edgeDetect.style.display= "none";
-
-}
 
 }
 
@@ -433,6 +562,7 @@ mousedown.target         = null;
 
 if (!event.target.dataset.coinTrip) {
 edgeDetect.style.display= "none"; 
+
 }
 
 });
@@ -507,6 +637,7 @@ mouseDeltaY = 0;
 
 
 document.addEventListener("dblclick", (event) => {
+
 if (mouseIsDogged==false) {
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
@@ -553,6 +684,7 @@ case 9: mode9.dblclick(mouseInfo);break;
 
 /* Scraps the dots if the mouse leaves the browser window. */
 document.addEventListener("mouseleave", (event) => {
+
 if (mouseIsDogged==false) {
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
@@ -560,12 +692,30 @@ rdots();
 }
 });
 
-let
-mouseover                =    {};
-mouseover.target         =  null;
+
+
+
+
+
+
+
+
+
+
 
 /* This gives the change of colouration and other styles on mouse over. */
 document.addEventListener("mouseover",      (event) => {
+
+
+
+
+
+
+
+
+
+
+
 if (mouseIsDogged==false) {
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
@@ -593,6 +743,7 @@ case 8: mode8.mouseover(mouseInfo); break;
 
 
 document.addEventListener("mouseout",      (event) => {
+
 if (mouseIsDogged==false) {
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];

@@ -10,8 +10,8 @@ hw.c_startup.c_customMetaDataHere = ``;
 
 hw.c_startup.d_second = `
 <style>
-/* html, body           { cursor: none;                                          } */
-html, body              { overflow: scroll; scrollbar-width: none;               }
+html, body              { overflow: scroll; scrollbar-width: none;                
+                          cursor: crosshair;                                     }
 body                    {                         width: 98%; height: 98%;       }
 p                       { margin: 0;                                             }
 body::-webkit-scrollbar { display: none;                                         }
@@ -20,12 +20,13 @@ body::-webkit-scrollbar { display: none;                                        
 <title id="documentTitle">emptyFile</title>
 </head>
 <body>
-<div id="utilityLayer0" ></div>
-<div id="utilityLayer1" ></div>
-<div id="interfaceLayer"></div>
-<div id="gridLayer"     ></div>
-<div id="mouseIconLayer"></div>
-<div id="interfaceShelf"></div>
+<div id="utilityLayer0"           ></div>
+<div id="utilityLayer1"           ></div>
+<div id="interfaceLayer"          ></div>
+<div id="gridLayer"               ></div>
+<div id="visualizationsLayer"     ></div>
+<div id="mouseIconLayer"          ></div>
+<div id="interfaceShelf"          ></div>
 <div id="scripts">
 <script src="./hw/a_programFunctions/a_keyboardFunctions/a_keyboardRouter/a_modeRouter.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/a_keyboardRouter/b_hjklRouter.js"></script>
@@ -292,6 +293,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/c_handlers/f_boot/b_fMan.js"></script>
 <script src="./hw/c_handlers/f_boot/c_setMouseCursorIcon.js"></script>
 <script src="./hw/c_handlers/g_copyAndPaste/a_copyAndPasteHandler.js"></script>
+<script src="./hw/c_handlers/h_visualizationLayer/a_visualizations.js"></script>
 <script src="./hw/d_wizards/0_wizard.js"></script>
 <script src="./hw/d_wizards/1_wizard.js"></script>
 <script src="./hw/d_wizards/2_wizard.js"></script>

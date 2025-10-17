@@ -5,7 +5,6 @@ var spaceView = false;
 /* This stops the screen from being refreshed from the keys... which leaves a blank screen anyhow. */
 document.addEventListener("keydown", (event) => {
 
-
 if (hotDog) {
 if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') { event.preventDefault(); }
 if (event.key==='F5'){ event.preventDefault(); toggleInterfaceShelf(); }
@@ -37,6 +36,29 @@ splashScreen.remove();
 kC = event.keyCode;
 let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
 let keyInfo = [e,kC,cC,es,ec,ea];
+
+
+
+
+/* THIS SETS UP THE CURSOR THINGY */
+
+if (mousemoveTarget!=null) {
+if (mode!=8)  {
+if (ec && !es)  {
+mousemoveTarget.style.cursor = cursor.copy;
+} else if (es && !ec) {
+mousemoveTarget.style.cursor = cursor.move;
+} else if (ec && es) {
+mousemoveTarget.style.cursor = cursor.crosshair;
+} else            {
+mousemoveTarget.style.cursor = cursor.grabbing;
+}
+} else {
+mousemoveTarget.style.cursor = cursor.cell;
+}
+}
+
+
 
 if (!es&&!ec&&!ea) {
 edgeDetect.style.display= "none";
@@ -139,6 +161,7 @@ event.preventDefault();
 toggleInterfaceLayer();
 
 }
+
 /*                                                                        */
 /**************************************************************************/
 /**************************************************************************/
@@ -245,6 +268,9 @@ if (hotDog) { return; }
 /*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}}/*    >    */ if (kC == 190 && cC ==  62) {cycleNextLocalView();}
 /*    /    */ if (kC == 191 && cC ==  47) { lessG(e);                      }/*    ?    */ if (kC == 191 && cC ==  63) { moreG(e);                      }
 /*                                                                                                                                                    */
+
+redraw();
+
 /******************************************************************************************************************************************************/
 /******************************************************************************************************************************************************/
 /***************************************************************************************************************************************************/});
@@ -257,6 +283,26 @@ if (hotDog) { return; }
 
 let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
 let keyInfo = [e,kC,cC,es,ec,ea];
+
+
+
+/* THIS SETS UP THE CURSOR THINGY */
+
+if (mousemoveTarget!=null) {
+if (ec && !es)  {
+mousemoveTarget.style.cursor = cursor.copy;
+} else if (es && !ec) {
+mousemoveTarget.style.cursor = cursor.move;
+} else if (ec && es) {
+mousemoveTarget.style.cursor = cursor.crosshair;
+} else            {
+mousemoveTarget.style.cursor = cursor.grab;
+
+}
+} else {
+}
+
+utilityLayer0.style.cursor = "crosshair";
 
 /*  space  */ if (kC==32) {
 

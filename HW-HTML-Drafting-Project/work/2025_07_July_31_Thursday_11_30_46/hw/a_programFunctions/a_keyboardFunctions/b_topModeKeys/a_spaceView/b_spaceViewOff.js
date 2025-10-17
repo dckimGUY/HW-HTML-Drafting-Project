@@ -33,6 +33,7 @@ utilityLayer0.children[j].lastElementChild.style.display  = "block"; }
 readCoins();
 
 utilityLayer1.style.display  = "block";
+visualizationsLayer.style.display= "block";
 gridLayer.style.display      = "block";
        if (hauptMode==1) {
 document.documentElement.style.backgroundColor = window.L;

@@ -3,6 +3,8 @@ var   utilityLayer1     ; utilityLayer1      = document.getElementById("utilityL
 
 utilityLayer1.style.pointerEvents = "none";
 
+utilityLayer0.style.cursor = "move";
+
 const defaultFilename = "100_emptyFile";
 var filename = defaultFilename;
 
@@ -30,6 +32,98 @@ interfaceShelf.innerHTML = defaultUIshelf;
 
 const HWworld = true;
 var layerName = "LVL 1";
+
+var useCustomCursors = false;
+
+
+/* Not sure why I can't get these to work yet... Oops... */
+/* I guess we'll just be using the defaults for now, but those are actually doing a lot better than we can. */
+
+var cursorSize = [['a_xsmall-31px', ' 16 16'], ['b_small-49px', ' 25 25'], ['c_medium-65px', ' 33 33'], ['d_large-99px', ' 50 50'], ['e_xlarge-125px', ' 63 63']];
+var cursorSet = cursorSize[4];
+
+
+var
+cursor = {};
+
+if (useCustomCursors==true) {
+cursor.auto         = `url('g_custom_cursors/${cursorSet[0]}/auto.png'         ), auto         `;
+cursor.default      = `url('g_custom_cursors/${cursorSet[0]}/default.png'      ), default      `;
+cursor.none         = `url('g_custom_cursors/${cursorSet[0]}/none.png'         ), none         `;
+cursor.contextMenu  = `url('g_custom_cursors/${cursorSet[0]}/context-menu.png' ), context-menu `;
+cursor.help         = `url('g_custom_cursors/${cursorSet[0]}/help.png'         ), help         `;
+cursor.pointer      = `url('g_custom_cursors/${cursorSet[0]}/pointer.png'      ), pointer      `;
+cursor.progress     = `url('g_custom_cursors/${cursorSet[0]}/progress.png'     ), progress     `;
+cursor.wait         = `url('g_custom_cursors/${cursorSet[0]}/wait.png'         ) ${cursorSet[1]}, wait         `;
+cursor.cell         = `url('g_custom_cursors/${cursorSet[0]}/cell.png'         ) ${cursorSet[1]}, cell         `;
+cursor.crosshair    = `url('g_custom_cursors/${cursorSet[0]}/crosshair.png'    ) ${cursorSet[1]}, crosshair    `;
+cursor.text         = `url('g_custom_cursors/${cursorSet[0]}/text.png'         ) ${cursorSet[1]}, text         `;
+cursor.verticalText = `url('g_custom_cursors/${cursorSet[0]}/vertical-text.png') ${cursorSet[1]}, vertical-text`;
+cursor.alias        = `url('g_custom_cursors/${cursorSet[0]}/alias.png'        ), alias        `;
+cursor.copy         = `url('g_custom_cursors/${cursorSet[0]}/copy.png'         ), copy         `;
+cursor.move         = `url('g_custom_cursors/${cursorSet[0]}/move.png'         ) ${cursorSet[1]}, move         `;
+cursor.noDrop       = `url('g_custom_cursors/${cursorSet[0]}/no-drop.png'      ) ${cursorSet[1]}, no-drop      `;
+cursor.notAllowed   = `url('g_custom_cursors/${cursorSet[0]}/not-allowed.png'  ) ${cursorSet[1]}, not-allowed  `;
+cursor.grab         = `url('g_custom_cursors/${cursorSet[0]}/grab.png'         ) ${cursorSet[1]}, grab         `;
+cursor.grabbing     = `url('g_custom_cursors/${cursorSet[0]}/grabbing.png'     ) ${cursorSet[1]}, grabbing     `;
+cursor.allScroll    = `url('g_custom_cursors/${cursorSet[0]}/all-scroll.png'   ) ${cursorSet[1]}, all-scroll   `;
+cursor.colResize    = `url('g_custom_cursors/${cursorSet[0]}/col-resize.png'   ) ${cursorSet[1]}, col-resize   `;
+cursor.rowResize    = `url('g_custom_cursors/${cursorSet[0]}/row-resize.png'   ) ${cursorSet[1]}, row-resize   `;
+cursor.nResize      = `url('g_custom_cursors/${cursorSet[0]}/n-resize.png'     ) ${cursorSet[1]}, n-resize     `;
+cursor.eResize      = `url('g_custom_cursors/${cursorSet[0]}/e-resize.png'     ) ${cursorSet[1]}, e-resize     `;
+cursor.sResize      = `url('g_custom_cursors/${cursorSet[0]}/s-resize.png'     ) ${cursorSet[1]}, s-resize     `;
+cursor.wResize      = `url('g_custom_cursors/${cursorSet[0]}/w-resize.png'     ) ${cursorSet[1]}, w-resize     `;
+cursor.neResize     = `url('g_custom_cursors/${cursorSet[0]}/ne-resize.png'    ) ${cursorSet[1]}, ne-resize    `;
+cursor.nwResize     = `url('g_custom_cursors/${cursorSet[0]}/nw-resize.png'    ) ${cursorSet[1]}, nw-resize    `;
+cursor.seResize     = `url('g_custom_cursors/${cursorSet[0]}/se-resize.png'    ) ${cursorSet[1]}, se-resize    `;
+cursor.swResize     = `url('g_custom_cursors/${cursorSet[0]}/sw-resize.png'    ) ${cursorSet[1]}, sw-resize    `;
+cursor.ewResize     = `url('g_custom_cursors/${cursorSet[0]}/ew-resize.png'    ) ${cursorSet[1]}, ew-resize    `;
+cursor.nsResize     = `url('g_custom_cursors/${cursorSet[0]}/ns-resize.png'    ) ${cursorSet[1]}, ns-resize    `;
+cursor.neswResize   = `url('g_custom_cursors/${cursorSet[0]}/nesw-resize.png'  ) ${cursorSet[1]}, nesw-resize  `;
+cursor.nwseResize   = `url('g_custom_cursors/${cursorSet[0]}/nwse-resize.png'  ) ${cursorSet[1]}, nwse-resize  `;
+cursor.zoomIn       = `url('g_custom_cursors/${cursorSet[0]}/zoom-in.png'      ) ${cursorSet[1]}, zoom-in      `;
+cursor.zoomOut      = `url('g_custom_cursors/${cursorSet[0]}/zoom-out.png'     ) ${cursorSet[1]}, zoom-out     `;
+} else {
+cursor.auto         = "auto         ";
+cursor.default      = "default      ";
+cursor.none         = "none         ";
+cursor.contextMenu  = "context-menu ";
+cursor.help         = "help         ";
+cursor.pointer      = "pointer      ";
+cursor.progress     = "progress     ";
+cursor.wait         = "wait         ";
+cursor.cell         = "cell         ";
+cursor.crosshair    = "crosshair    ";
+cursor.text         = "text         ";
+cursor.verticalText = "vertical-text";
+cursor.alias        = "alias        ";
+cursor.copy         = "copy         ";
+cursor.move         = "move         ";
+cursor.noDrop       = "no-drop      ";
+cursor.notAllowed   = "not-allowed  ";
+cursor.grab         = "grab         ";
+cursor.grabbing     = "grabbing     ";
+cursor.allScroll    = "all-scroll   ";
+cursor.colResize    = "col-resize   ";
+cursor.rowResize    = "row-resize   ";
+cursor.nResize      = "n-resize     ";
+cursor.eResize      = "e-resize     ";
+cursor.sResize      = "s-resize     ";
+cursor.wResize      = "w-resize     ";
+cursor.neResize     = "ne-resize    ";
+cursor.nwResize     = "nw-resize    ";
+cursor.seResize     = "se-resize    ";
+cursor.swResize     = "sw-resize    ";
+cursor.ewResize     = "ew-resize    ";
+cursor.nsResize     = "ns-resize    ";
+cursor.neswResize   = "nesw-resize  ";
+cursor.nwseResize   = "nwse-resize  ";
+cursor.zoomIn       = "zoom-in      ";
+cursor.zoomOut      = "zoom-out     ";
+}
+
+document.documentElement.style.cursor = document.body.style.cursor = cursor.crosshair;
+
 
 /* This is for the visible layering system that is accessible from the 'top-row numbers'. */
 
@@ -616,35 +710,29 @@ let splashScreen = document.createElement("img");
 if (!window.opener) {
 
 splashScreen.src="data:image/png;base64," + splashScreenBase64;
-splashScreen.width="512";
-splashScreen.height="512";
 splashScreen.style.position="absolute";
 splashScreen.style.zIndex="100";
-splashScreen.style.width="384px";
-splashScreen.style.height="384px";
+splashScreen.style.width="100%";
 splashScreen.style.border="none";
 splashScreen.style.borderRadius="16px";
 splashScreen.style.outline="lime solid 5px";
 splashScreen.style.boxShadow="rgba(255, 255, 255, 0.75) 0px 0px 48px,rgba(255, 255, 255, 0.75) 0px 0px 48px";
 
-splashScreen.style.left=`${window.innerWidth/2 - 192}px`;
-splashScreen.style.top=`${window.innerHeight/2 - 192}px`;
+splashScreen.style.left=`0px`;
+splashScreen.style.top=`0px`;
 
 document.body.appendChild(splashScreen);
 
 splashScreenVisible = true;
 }
 
-
 const z_wizardCode = {};
 
 /* Completion Message */
 
-
 console.log(
 `
-     boot sequence successful...
+%c     boot sequence successful...
 
-HW - It's all I know...
-
-`);
+HW - It's all I know...`,
+"color: #DEFF1C; font-size: 32px; font-family: JungYulKim2; text-shadow: 2px 2px 4px lime;");

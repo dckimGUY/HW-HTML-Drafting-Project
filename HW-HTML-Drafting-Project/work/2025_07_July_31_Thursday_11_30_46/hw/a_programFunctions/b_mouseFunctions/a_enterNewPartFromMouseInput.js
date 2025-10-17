@@ -2,8 +2,8 @@ function enterNewPartFromMouseInput(mouseInfo) {
 
 const newXvalue = parseInt(P.style.left) > parseInt(S.style.left) ? parseInt(S.style.left) + O/2 : parseInt(P.style.left) + O/2;
 const newYvalue = parseInt(P.style.top)  > parseInt(S.style.top)  ? parseInt(S.style.top)  + O/2 : parseInt(P.style.top)  + O/2;
-const newWidth  = Math.abs(parseInt(P.style.left) - parseInt(S.style.left)) > 0 ? Math.abs(parseInt(P.style.left) - parseInt(S.style.left)) : 8;
-const newHeight = Math.abs(parseInt(P.style.top)  - parseInt(S.style.top)) > 0 ? Math.abs(parseInt(P.style.top)  - parseInt(S.style.top)) : 8;
+const newWidth  = Math.abs(parseInt(P.style.left) - parseInt(S.style.left));
+const newHeight = Math.abs(parseInt(P.style.top)  - parseInt(S.style.top));
 
 if ((newWidth>=edgeQ*2&&newHeight>=edgeQ*2)&&(newWidth>=T&&newHeight>=T)&&(mousedown.lastButton==0||mousedown.lastButton==1)) {
 
@@ -170,6 +170,7 @@ div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
 
+if (parseInt(newCoin.style.width) < 8 || parseInt(newCoin.style.height) < 8) { return; }
 
 utilityLayer0.appendChild(newCoin);
 

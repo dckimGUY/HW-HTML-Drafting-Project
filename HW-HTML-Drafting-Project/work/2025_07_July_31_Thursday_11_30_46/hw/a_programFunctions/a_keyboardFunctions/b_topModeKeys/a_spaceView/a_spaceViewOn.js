@@ -26,6 +26,7 @@ utilityLayer0.children[j].lastElementChild.style.display  = "block";
 }
 utilityLayer1.style.display = "none";
 utilityLayer0.style.opacity = "1.00";
+visualizationsLayer.style.display= "none";
 gridLayer.style.display      = "none";
 document.documentElement.style.backgroundColor = finishedBackgroundColour;
 }

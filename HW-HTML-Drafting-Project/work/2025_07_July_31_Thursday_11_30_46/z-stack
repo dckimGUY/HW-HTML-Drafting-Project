@@ -1,0 +1,3 @@
+const zArray = Array.from(utilityLayer0.children);
+const zStack = zArray.map(el => ({ element: el, z: parseInt(getComputerStyle(el).zIndex) || 0 })).sort((a, b) => a.z -b.z);
+console.log(zStack);

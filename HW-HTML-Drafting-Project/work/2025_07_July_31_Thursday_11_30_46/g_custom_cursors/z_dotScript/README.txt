@@ -1,0 +1,1 @@
+This is just a simple setup to duplicate the file called 'dot.png'. It will set up folders like the other ones, having a whole bunch of copies from that 'dot.png' file.
