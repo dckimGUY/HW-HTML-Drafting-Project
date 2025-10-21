@@ -2,13 +2,15 @@ function spaceViewOn() {
 mouseIsDogged=true;
 spaceView = true;
 
-edgeDetect.style.display= "none"; 
+edgeDetect.style.display= "none";
+document.documentElement.style.cursor = document.body.style.cursor = "auto";
 
 for (j=0;j<utilityLayer0.children.length;j++) {
 
 
 if (utilityLayer0.children[j].style) {
 utilityLayer0.children[j].style.outline = utilityLayer0.children[j].dataset.finishedOutline;
+utilityLayer0.children[j].style.cursor = "auto";
 }
 
 

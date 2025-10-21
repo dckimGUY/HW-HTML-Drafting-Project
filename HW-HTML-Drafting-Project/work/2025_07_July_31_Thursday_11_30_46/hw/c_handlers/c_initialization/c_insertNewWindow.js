@@ -13,12 +13,12 @@ const fileContentsReference =
 <head>
 <meta charset="UTF-8">
 <style>
-html, body              { overflow: scroll; scrollbar-width: none;                
-                          cursor: crosshair;                                     }
+html, body              { overflow: scroll; scrollbar-width: none;               }
 body                    {                         width: 98%; height: 98%;       }
 p                       { margin: 0;                                             }
 body::-webkit-scrollbar { display: none;                                         }
 </style>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="stylesheet" href="e_stylesheets/style.css"/>
 <title id="documentTitle">emptyFile</title>
 </head>
@@ -238,6 +238,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/a_programFunctions/a_keyboardFunctions/u_localView/a_toggleLocalView.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/u_localView/b_cycleNextLocalView.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/u_localView/c_cyclePreviousLocalView.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/v_cleanConversion/a_buttonizer.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/a_enterNewPartFromMouseInput.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/b_mouseGiveFocus.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/c_mousePlaceCursor.js"></script>
@@ -290,13 +291,13 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/c_handlers/c_initialization/f_defaultUIasObjects.js"></script>
 <script src="./hw/c_handlers/c_initialization/g_defaultUIshelf.js"></script>
 <script src="./hw/c_handlers/c_initialization/h_splashScreenBase64.js"></script>
-<script src="./hw/c_handlers/d_mouseHandler/a_handler.js"></script>
-<script src="./hw/c_handlers/e_keyboardHandler/a_handler.js"></script>
-<script src="./hw/c_handlers/f_boot/a_boot.js"></script>
-<script src="./hw/c_handlers/f_boot/b_fMan.js"></script>
-<script src="./hw/c_handlers/f_boot/c_setMouseCursorIcon.js"></script>
-<script src="./hw/c_handlers/g_copyAndPaste/a_copyAndPasteHandler.js"></script>
-<script src="./hw/c_handlers/h_visualizationLayer/a_visualizations.js"></script>
+<script src="./hw/c_handlers/d_visualizationLayer/a_visualizations.js"></script>
+<script src="./hw/c_handlers/e_mouseHandler/a_handler.js"></script>
+<script src="./hw/c_handlers/f_keyboardHandler/a_handler.js"></script>
+<script src="./hw/c_handlers/g_boot/a_boot.js"></script>
+<script src="./hw/c_handlers/g_boot/b_fMan.js"></script>
+<script src="./hw/c_handlers/g_boot/c_setMouseCursorIcon.js"></script>
+<script src="./hw/c_handlers/h_copyAndPaste/a_copyAndPasteHandler.js"></script>
 <script src="./hw/d_wizards/0_wizard.js"></script>
 <script src="./hw/d_wizards/1_wizard.js"></script>
 <script src="./hw/d_wizards/2_wizard.js"></script>

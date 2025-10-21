@@ -8,6 +8,9 @@
 
 var edgeQ = 16;
 
+if (localStorage.getItem("edgeQ")) { edgeQ = parseInt(localStorage.getItem("edgeQ")); }
+
+
 
 let useBase64forImages = true;
 let useBase64forAudio  = true;
@@ -194,7 +197,7 @@ var quitSaveTimeoutSetting = 500;
 /* Default Insertion Width  */let   iW=    64;
 /* Default Insertion Height */let   iH=    64;
 
-                                    fAbase = 2;
+                                    fAbase = 3;
 /* Focus Outline            */let   fA=    fAbase + "px dashed white";
                               let   fAO = "-" + fAbase + "px";
 

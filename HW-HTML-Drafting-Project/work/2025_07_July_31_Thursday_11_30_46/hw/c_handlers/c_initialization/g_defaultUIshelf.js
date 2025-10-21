@@ -123,13 +123,9 @@ const defaultUIshelf = `
 <button class="wonkie" style="border: 0px; margin: 0px; padding: 0px;" onclick="
 if (utilityLayer0.children.length>0&&T<=128) {
 const delta = parseInt(T - edgeQ);
-edgeDetect.style.display='block';
-edgeQ = parseInt(T);
-edgeDetect.style.outline = edgeQ + 'px solid gold';
-edgeDetect.style.left = parseInt(edgeDetect.style.left) + delta + 'px';
-edgeDetect.style.top  = parseInt(edgeDetect.style.top)  + delta + 'px';
-edgeDetect.style.width  = parseInt(edgeDetect.style.width)   - (delta * 2) + 'px';
-edgeDetect.style.height = parseInt(edgeDetect.style.height)  - (delta * 2) + 'px';
+edgeQ = T;
+localStorage.edgeQ = edgeQ;
+redraw();
 this.nextElementSibling.value = T;
 }
 "
@@ -156,15 +152,7 @@ this.setAttribute('value',  0);
 }
 
 
-if (coinFocus!=null) {
-edgeDetect.style.left   = parseInt(coinFocus.style.left) + edgeQ + 'px';
-edgeDetect.style.top    = parseInt(coinFocus.style.top)  + edgeQ + 'px';
 
-edgeDetect.style.width  = parseFloat(coinFocus.style.width)  * parseFloat(coinFocus.dataset.scale) - (edgeQ * 2) + 'px';
-edgeDetect.style.height = parseFloat(coinFocus.style.height) * parseFloat(coinFocus.dataset.scale) - (edgeQ * 2) + 'px';
-
-edgeDetect.style.zIndex = parseInt(coinFocus.style.zIndex) + 1;
-}
 
 
 
@@ -172,13 +160,9 @@ edgeDetect.style.zIndex = parseInt(coinFocus.style.zIndex) + 1;
 oninput="
 if (utilityLayer0.children.length>0) {
 const delta = parseInt(this.value - edgeQ);
-edgeDetect.style.display='block';
 edgeQ = parseInt(this.value);
-edgeDetect.style.outline = edgeQ + 'px solid gold';
-edgeDetect.style.left = parseInt(edgeDetect.style.left) + delta + 'px';
-edgeDetect.style.top  = parseInt(edgeDetect.style.top)  + delta + 'px';
-edgeDetect.style.width  = parseInt(edgeDetect.style.width)   - (delta * 2) + 'px';
-edgeDetect.style.height = parseInt(edgeDetect.style.height)  - (delta * 2) + 'px';
+localStorage.edgeQ = edgeQ;
+redraw();
 }
 "
 />

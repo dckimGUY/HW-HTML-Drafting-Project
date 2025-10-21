@@ -1,5 +1,3 @@
-The names of the folders should not mislead you. The cursor image sizes can be changed. The maximum seems to be 128px (square).
-
-So, you can use the five different cursors as whatever size you wish. There isn't a restriction on the sizing except what the browser will allow.
-
 Feel free to change them up, and draw them for yourself, just keep those file names the same as they are.
+
+I made up the stuff in the program so that the cursors can be extended. To do that, all you need to do is copy each of the five size folders and then change the last digit to a "1" instead of a zero. This can be done all the way up to the number "9". But, just think, that's going to make a very large file size, and that's not good for downloading. I just didn't want you to be limited in the selection of cursors, and who knows, maybe you like working on the cursors and want to set up a "cursor factory"!

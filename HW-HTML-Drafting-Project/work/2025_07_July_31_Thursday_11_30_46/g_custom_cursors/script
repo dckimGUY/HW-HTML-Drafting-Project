@@ -1,0 +1,5 @@
+rmdir a_xsmall-31px;
+rmdir b_small-49px ;
+rmdir c_medium-65px;
+rmdir d_large-99px ;
+rmdir e_xlarge-125px;

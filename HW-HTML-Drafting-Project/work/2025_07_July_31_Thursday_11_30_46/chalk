@@ -102,10 +102,10 @@ echo "</html>" >> t_treeDiagram.html;
 
 ## This is a handy header and footer pair that will allow in-programs tutorials or start-up files to be made easily.
 
-head -n -3 index.html > WEBSITE/b_htmlClipSets/b_0_topClip;
-echo "<script>" >> WEBSITE/b_htmlClipSets/b_0_topClip;
-echo "utilityLayer0.innerHTML = " >> WEBSITE/b_htmlClipSets/b_0_topClip;
-echo '`' >> WEBSITE/b_htmlClipSets/b_0_topClip;
+head -n -3 index.html > b_0_topClip;
+echo "<script>" >> b_0_topClip;
+echo "utilityLayer0.innerHTML = " >> b_0_topClip;
+echo '`' >> b_0_topClip;
 
 
 
@@ -138,7 +138,7 @@ echo >> hw/z_hwObject/c_startup.js;
 
 echo 'hw.c_startup.e_third = `' >> hw/z_hwObject/c_startup.js;
 echo '\`;' >> hw/z_hwObject/c_startup.js;
-cat WEBSITE/b_htmlClipSets/b_1_bottomClip | tail -n +2 >> hw/z_hwObject/c_startup.js;
+cat b_1_bottomClip | tail -n +2 >> hw/z_hwObject/c_startup.js;
 echo '`;' >> hw/z_hwObject/c_startup.js;
 
 
