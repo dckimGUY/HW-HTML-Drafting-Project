@@ -33,7 +33,7 @@ interfaceShelf.innerHTML = defaultUIshelf;
 const HWworld = true;
 var layerName = "LVL 1";
 
-var useCustomCursors = true;
+var useCustomCursors = false;
 
 
 /* Not sure why I can't get these to work yet... Oops... */
@@ -477,7 +477,7 @@ Y.font=bF;
 Y.textBaseline="top";
 
 if (gW!=0) {
-Y.fillText(`                 h${Math.floor(window.innerHeight/T)}w${Math.floor(window.innerWidth/T)}/${window.innerWidth}x${window.innerHeight}/${T.toString().padStart(' ',3)} --- z-ECHELON=${pageEchelon / 100000000 } --- ${filename}.html`,bW,bW);
+Y.fillText(`                 h${Math.floor(window.innerHeight/T)}w${Math.floor(window.innerWidth/T)}/${window.innerWidth}x${window.innerHeight}/${T.toString().padStart(' ',3)} --- z-ECHELON=${pageEchelon / 100000000 }`,bW,bW);
 Y.font=bFarr;
 //Y.fillText(`${visualFlowIndicator()}`,bW,bW);
 Y.fillText(`${layerName}`,bW,bW);
@@ -498,7 +498,7 @@ V.style.opacity=K;
 Z();
 window.addEventListener("resize",()=>{Z(); redraw();})
 window.addEventListener("scroll",()=>{Z(); redraw();})
-document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
+//document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
 
 

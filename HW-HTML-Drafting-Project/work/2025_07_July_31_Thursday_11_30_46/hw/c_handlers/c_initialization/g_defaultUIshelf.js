@@ -1,20 +1,220 @@
 const defaultUIshelf = `
+<div style="position: fixed; top: 0px; right: 0px; width: 404px; height: 1098px; transform-origin: top right; transform: scale(1); z-index: 2;">
 
-<!-- BUTTON TO OPEN CLOSE THE WONKIE -->
+<style>
+.hdub-btn {
+	cursor: pointer;
+	border: none;
+	border-radius: 6px;
+	outline-offset: -3px;
+	background-color:
+	transparent;
+	position: absolute;
+}
 
-<div style="position: fixed; top: 0px; right: 0px; z-index: 2;">
-<div id="wonkieTopper" style="display: flex; justify-content: right; height: 16px; padding: 0px; ">
-<button class="wonkieTop" style="height: 28px; border: 0px; margin: 0px; padding: 0px;" onclick="helpMenu();"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAH1SURBVEhLvZY9csIwEIXXGY4CTYYTKJRumPS0dKYMN4AiXRrTukvLAcQBAJ/AkyLyXRw9sWvkHwyEON+MRqu1Z1ZvdyU7WK1WRRiGNJlM6HA4EOjDLkHA/2K/3xcBDARer9cEpcIjanxbKH2isE+lUCbzE2+gBEqxE9nhb23fJ0AludCWPpT6ymR+giIgcx84ZcyAZxdQhiPf0Mt8SzQe0/jkYTLKshl9Ht9oyJ5rILUIilEqFM7rV5rZSGmSUJLYIOzNspRStkvyHe12GDk7TvjKgKtpvWaVtYkLRaqIDa8Zo3Xhu3REOFoFRZo9J6R2QqVLRVldcRvD6fScTpv694TtC0i3XknpLeS0mS+bKWbaUvpglw7p7WhIG00Re3x8ZUJ3Ss1Xdfd53mgMBJ1eadc7U5rSchRQENgxGtH7N7t98m/Xxep5dFozv0ypotgYsp1JWsc0Y+8ttKW08/I2sbLtHhXVZm9BR+5YqNr5qV9t4MEu7aaHLu3m/i7txJ7BxYIWGHzy0+2HW78sNvbpmUpgTm3j84T6KVxXqI2KGtebLVxhz559bt9T54H3L11xmLvv0gfxmwVg3UhpH/gpHbQF8n2wZX2v7f+UARe4Xrs+8GtYfvGB7Axc2vW9NhClrkv7VFYHCt2vvgvPXNrpX9hhGNIP4jvD1UoqNfMAAAAASUVORK5CYII=" /></button>
+.hdub-btn:hover {
+	border: 3px dashed lime;
+}
 
-<button class="wonkieTop" style="height: 28px; border: 0px; margin: 0px; padding: 0px;" onclick="saveFromHotdog(0,false);"><img src="data:image/png;base64,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" /></button>
+.hdub-btn:active {
+	border: 3px dashed magenta;
+}
 
-<button class="wonkieTop" style="height: 28px; border: 0px; margin: 0px; padding: 0px;" onclick="if (this.parentNode.parentNode.nextElementSibling.style.display=='none') {this.parentNode.parentNode.nextElementSibling.style.display='block';} else {this.parentNode.parentNode.nextElementSibling.style.display='none';}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAEuSURBVEhL7ZZNDoIwEIULIfEQehSXPYOJKxceBC7iwpWJ5/Ac7jyEGzGvdmCCQ5kBYeWXkE5/wut7CaVZWZa1996tt3v3uF0cmKMmguChOsXuvEA8u9ebGp1zdXRwSkxxw2uCxhqHEJzLKYRIMI9jDRDGBO1wbM3HCIgWkitMEFPqriD6ORwBTZzX7Ck+Q/BNNJFqhHf1KlYt0lgXcgrhvCtAwr+AOwPmSK1wZ4Qp0rH8Iw3tL1FEGo7XgPZbk9YZIn3FtiUl2jc3OVLpxamNEIpI2zNdc5IQ3bWGSLPYftCISmsmRZoSHdqQIlIZ6cUpMUOk/XABizPiK1INEBoS43Bh8Y/PxTHPU7DU7E4WgPDil6gijgVoZ0DjQFMDcgrR5S/CEIz9gNWBpfbeuzfxnlrXXenkhQAAAABJRU5ErkJggg==" /></button>
-</div>
-</div>
+.hdub-num {
+	cursor: text;
+	box-sizing: border-box;
+	resize: none;
+	border: none;
+	color: black;
+	font-size: 32px;
+	text-align: right;
+	padding-right: 32px;
+	font-family: monospace;
+	background-color:
+	transparent;
+	position: absolute;
+}
+
+.hdub-num:hover {
+	border: 3px dashed lime;
+}
+
+.hdub-num:active {
+	border: 3px dashed magenta;
+}
+
+.hdub-text {
+	cursor: text;
+	box-sizing: border-box;
+	resize: none;
+	border: none;
+	color: black;
+	font-size: 32px;
+	background-color:
+	transparent;
+	position: absolute;
+}
+
+.hdub-text:hover {
+	border: 3px dashed lime;
+}
+
+.hdub-text:active {
+	border: 3px dashed magenta;
+}
+
+.hdub-feed {
+	cursor: text;
+	box-sizing: border-box;
+	resize: none;
+	border: none;
+	color: white;
+	font-size: 24px;
+	background-color:
+	transparent;
+	position: absolute;
+}
+
+.hdub-feed:hover {
+	border: 3px dashed lime;
+}
+
+.hdub-feed:active {
+	border: 3px dashed magenta;
+}
+
+.hdub-select {
+	color: transparent;
+}
+
+.hdub-select:focus {
+	color: black;
+}
+
+.theImage {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.theTopImage {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 404px;
+	height: 66px;
+	border: none;
+}
+
+.hdubShelf {
+	position: absolute;
+	cursor: default;
+	top: 0px;
+	left: 0px;
+	width: 404px;
+	height: 1098px;
+}
+</style>
+
+<div class="hdubShelf">
+	<div id="lowerShelf" class="hdubShelf" style="display: block;">
+		<div id="folder1" class="hdubShelf" style="display: block;">
+			<div id="folder11" class="hdubShelf" style="display: block;">
+				<img class="theImage" src="iconSet/shelf-menu/folder-1-1.png" />
+				<input    type="number" id="partTop"    class="hdub-num" style="left: 149px; top: 253px; width: 234px; height:  46px;" readonly />
+				<input    type="number" id="partLeft"   class="hdub-num" style="left: 149px; top: 309px; width: 234px; height:  46px;" readonly />
+				<input    type="number" id="partWidth"  class="hdub-num" style="left: 149px; top: 385px; width: 234px; height:  46px;" readonly />
+				<input    type="number" id="partHeight" class="hdub-num" style="left: 149px; top: 441px; width: 234px; height:  46px;" readonly />
+				<input    type="value"  id="partName"   class="hdub-text" style="left: 149px; top: 517px; width: 234px; height:  46px;" spellcheck="false" />
+				<button                 id="notesLeft"  class="hdub-btn"  style="left:  41px; top: 569px; width:  79px; height:  67px;"></button>
+				<button                 id="notesRight" class="hdub-btn"  style="left: 284px; top: 569px; width:  79px; height:  67px;"></button>
+				<textarea               id="partNotes"  class="hdub-text" style="left:  21px; top: 642px; width: 362px; height: 435px;" spellcheck="false"></textarea>
+			</div>
+			<div id="folder12" class="hdubShelf" style="display: none;">
+				<img class="theImage" src="iconSet/shelf-menu/folder-1-2.png" />
+				<select             id="rssFeed"  class="hdub-feed hdub-select" style="left:  18px; top:  220px; width: 168px; height:  39px;">
+					<option value="1">words</option>
+					<option value="2">words</option>
+				</select>
+				<input type="value" id="feedName"          class="hdub-feed" style="left: 190px; top:  220px; width: 196px; height:  39px;" />
+				<textarea           id="feedDescription"   class="hdub-feed" style="left: 190px; top:  260px; width: 196px; height: 107px;"></textarea>
+				<input type="value" id="feedLink"          class="hdub-feed" style="left: 190px; top:  368px; width: 196px; height:  40px;" />
+				<input type="value" id="feedLanguage"      class="hdub-feed" style="left: 190px; top:  409px; width: 196px; height:  39px;" />
+				<input type="value" id="itemTitle"         class="hdub-feed" style="left: 111px; top:  518px; width: 275px; height:  39px;" />
+				<input type="value" id="itemLink"          class="hdub-feed" style="left: 111px; top:  558px; width: 275px; height:  39px;" />
+				<textarea           id="itemDescription"   class="hdub-feed" style="left: 111px; top:  598px; width: 275px; height: 165px;"></textarea>
+				<button             id="feedGoButton"      class="hdub-btn"  style="left:  18px; top:  690px; width:  85px; height:  73px;"></button>
+				<textarea           id="feedTextual"       class="hdub-feed" style="left:  18px; top:  824px; width: 368px; height: 202px;"></textarea>
+				<button             id="feedCopyButton"    class="hdub-btn"  style="left:  18px; top: 1031px; width: 368px; height:  49px;"></button>
+			</div>
+			<button id="folder11button" class="hdub-btn" style="left:  12px; top: 158px; width: 188px; height: 56px;"></button>
+			<button id="folder12button" class="hdub-btn" style="left: 204px; top: 158px; width: 188px; height: 56px;"></button>
+		</div><!-- This is the minor wrapper -->
+
+		<div id="folder2" class="hdubShelf" style="display: none;">
+			<div id="folder21" class="hdubShelf" style="display: block;">
+				<img class="theImage" src="iconSet/shelf-menu/folder-2-2.png" />
+				<input    id="filenameEntrySaves" type="value" class="hdub-text" style="left: 24px; top: 253px; width: 356px; height: 51px;" />
+				<button   id="saveSingleParticle" class="hdub-btn" style="left: 20px; top: 315px; width: 363px; height: 57px;"></button>
+				<textarea id="headerEntry" class="hdub-text" style="left: 24px; top: 408px; width: 356px; height: 269px;"></textarea>
+				<textarea id="footerEntry" class="hdub-text" style="left: 24px; top: 716px; width: 356px; height: 129px;"></textarea>
+				<button   id="saveFullHTML" class="hdub-btn" style="left: 20px; top: 856px; width: 364px; height: 57px;"></button>
+				<button   id="saveWithProgram" class="hdub-btn" style="left: 20px; top: 920px; width: 364px; height: 57px;"></button>
+				<button   id="openFile" class="hdub-btn" style="left: 20px; top: 983px; width: 179px; height: 94px;"></button>
+				<button   id="appendFile" class="hdub-btn" style="left: 206px; top: 983px; width: 178px; height: 94px;"></button>
+			</div>
+			<div id="folder22" class="hdubShelf" style="display: none;">
+				<img class="theImage" src="iconSet/shelf-menu/folder-2-1.png" />
+				<input id="filenameEntryLayers" type="value" class="hdub-text" style="left: 22px; top: 257px; width: 360px; height: 55px;">
+				<button id="setLayer1"  class="hdub-btn" style="left:  70px; top: 352px; width: 48px; height: 48px;"></button>
+				<button id="setLayer2"  class="hdub-btn" style="left: 124px; top: 352px; width: 48px; height: 48px;"></button>
+				<button id="setLayer3"  class="hdub-btn" style="left: 177px; top: 352px; width: 48px; height: 48px;"></button>
+				<button id="setLayer4"  class="hdub-btn" style="left: 231px; top: 352px; width: 48px; height: 48px;"></button>
+				<button id="setLayer5"  class="hdub-btn" style="left: 285px; top: 352px; width: 48px; height: 48px;"></button>
+				<button id="setLayer6"  class="hdub-btn" style="left:  70px; top: 406px; width: 48px; height: 48px;"></button>
+				<button id="setLayer7"  class="hdub-btn" style="left: 124px; top: 406px; width: 48px; height: 48px;"></button>
+				<button id="setLayer8"  class="hdub-btn" style="left: 177px; top: 406px; width: 48px; height: 48px;"></button>
+				<button id="setLayer9"  class="hdub-btn" style="left: 231px; top: 406px; width: 48px; height: 48px;"></button>
+				<button id="setLayer10" class="hdub-btn" style="left: 285px; top: 406px; width: 48px; height: 48px;"></button>
+				<button id="setLayer11" class="hdub-btn" style="left:  70px; top: 460px; width: 48px; height: 48px;"></button>
+				<button id="setLayer12" class="hdub-btn" style="left: 124px; top: 460px; width: 48px; height: 48px;"></button>
+				<button id="setLayer13" class="hdub-btn" style="left: 177px; top: 460px; width: 48px; height: 48px;"></button>
+				<button id="setLayer14" class="hdub-btn" style="left: 231px; top: 460px; width: 48px; height: 48px;"></button>
+				<button id="setLayer15" class="hdub-btn" style="left: 285px; top: 460px; width: 48px; height: 48px;"></button>
+				<button id="setLayer16" class="hdub-btn" style="left:  70px; top: 514px; width: 48px; height: 48px;"></button>
+				<button id="setLayer17" class="hdub-btn" style="left: 124px; top: 514px; width: 48px; height: 48px;"></button>
+				<button id="setLayer18" class="hdub-btn" style="left: 177px; top: 514px; width: 48px; height: 48px;"></button>
+				<button id="setLayer19" class="hdub-btn" style="left: 231px; top: 514px; width: 48px; height: 48px;"></button>
+				<button id="setLayer20" class="hdub-btn" style="left: 285px; top: 514px; width: 48px; height: 48px;"></button>
+				<button id="setLayer21" class="hdub-btn" style="left:  70px; top: 568px; width: 48px; height: 48px;"></button>
+				<button id="setLayer22" class="hdub-btn" style="left: 124px; top: 568px; width: 48px; height: 48px;"></button>
+				<button id="setLayer23" class="hdub-btn" style="left: 177px; top: 568px; width: 48px; height: 48px;"></button>
+				<button id="setLayer24" class="hdub-btn" style="left: 231px; top: 568px; width: 48px; height: 48px;"></button>
+				<button id="setLayer25" class="hdub-btn" style="left: 285px; top: 568px; width: 48px; height: 48px;"></button>
+				<button id="cycleLayerLeft" class="hdub-btn" style="left: 19px; top: 352px; width: 46px; height: 264px;"></button>
+				<button id="cycleLayerRight" class="hdub-btn" style="left: 339px; top: 352px; width: 46px; height: 264px;"></button>
+				<button id="coin28671" class="hdub-btn" style="left: 83px; top: 895px; width: 302px; height: 57px;"></button>
+				<button id="coin34642" class="hdub-btn" style="left: 83px; top: 959px; width: 302px; height: 57px;"></button>
+				<button id="coin44227" class="hdub-btn" style="left: 83px; top: 1023px; width: 302px; height: 57px;"></button>
+				<button id="coin99183" class="hdub-btn" style="left: 19px; top: 895px; width: 57px; height: 185px;"></button>
+			</div>
+			<button id="folder21button" class="hdub-btn" style="left: 12px; top: 158px; width: 188px; height: 56px;"></button>
+			<button id="folder22button" class="hdub-btn" style="left: 204px; top: 158px; width: 188px; height: 56px;"></button>
+		</div><!-- This is the minor wrapper -->
+
+		<div id="folder3" class="hdubShelf" style="display: none;">
+			<div id="folder31" class="hdubShelf" style="display: block;">
+				<img class="theImage" src="iconSet/shelf-menu/folder-3-1.png" />
+			</div>
+			<div id="folder32" class="hdubShelf" style="display: none;">
+				<img class="theImage" src="iconSet/shelf-menu/folder-3-2.png" />
 
 <!-- THE CONTAINER -->
 
-<div id="wonkie" style="display: none; user-select: none; position: fixed; top: 0px; right: 0px; padding-bottom: 4px; padding-left: 16px; padding-right: 16px; background-color: grey; width: 160px; height: 452px; border-bottom-left-radius: 16px; outline: 2px solid #DEFF1C; outline-offset: -2px;">
+<div id="wonkie" style="display: block; user-select: none; position: fixed; top: 220px; right: 20px; padding-bottom: 4px; padding-left: 16px; padding-right: 16px; background-color: grey; width: 160px; height: 452px; border-bottom-left-radius: 16px; outline: 2px solid #DEFF1C; outline-offset: -2px; transform-origin: top right; transform: scale(1.9);">
 
 <!-- TITLE -->
 
@@ -209,5 +409,18 @@ K = parseFloat(this.value); Z();
 </div>
 
 </div>
-
+			</div>
+			<button id="folder31button" class="hdub-btn" style="left: 12px; top: 158px; width: 188px; height: 56px;"></button>
+			<button id="folder32button" class="hdub-btn" style="left: 204px; top: 158px; width: 188px; height: 56px;"></button>
+		</div><!-- This is the minor wrapper -->
+		<button id="folder1button" class="hdub-btn" style="left: 11px; top: 84px; width: 125px; height: 64px;"></button>
+		<button id="folder2button" class="hdub-btn" style="left: 140px; top: 84px; width: 125px; height: 64px;"></button>
+		<button id="folder3button" class="hdub-btn" style="left: 268px; top: 84px; width: 125px; height: 64px;"></button>
+	</div><!-- The midway wrapper -->
+	<img class="theTopImage" src="iconSet/shelf-menu/TOP-CLIP.png" />
+	<button id="shelfToggle" class="hdub-btn" style="left: 338px; top: 10px; width: 56px; height: 56px;"></button>
+	<button id="savePage"    class="hdub-btn" style="left: 66px; top: 10px; width: 272px; height: 56px;"></button>
+	<button id="F1button"    class="hdub-btn" style="left: 10px; top: 10px; width: 56px; height: 56px;"></button>
+</div><!-- This is the major wrapper -->
+</div><!-- CLOSING IT UP -->
 `;

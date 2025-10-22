@@ -21,7 +21,7 @@ if (shift==false||hauptMode==1) {
 /*    w    */ if (kC ==  87 && cC == 119) {                 userSelectNone(keyInfo);                }
 /*    e    */ if (kC ==  69 && cC == 101) {                 makeItContentEditable(keyInfo);         }
 /*    r    */ if (kC ==  82 && cC == 114) { styleKey = "r"; noteStyle("R<br><span style='font-size: 0.5em;'>grid to border-radius</span>",durationS); gridToBorderRadius(keyInfo); lastKey = "r";         }
-/*    t    */ if (kC ==  84 && cC == 116) {                 noteStyle("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationS); modeRouter(e,8); if (lastKey=="T") { swapColours(); } }
+/*    t    */ if (kC ==  84 && cC == 116) {                   noteCoin("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationC); modeRouter(e,8); if (lastKey=="t") { swapColours(); }        }
 /*    y    */ if (kC ==  89 && cC == 121) {                 copyOutgoingHashLink();                 }
 /*    u    */ if (kC ==  85 && cC == 117) { styleKey = "u"; noteStyle("U<br><span style='font-size: 0.5em;'>grid to box-shadow</span>",durationS); gridToBoxShadow(keyInfo); lastKey = "u";               }
 /*    i    */ if (kC ==  73 && cC == 105) { enterImageAltText(keyInfo);                                                                                                                                   }
@@ -50,7 +50,7 @@ if (shift==true||hauptMode==1) {
 /*    W    */ if (kC ==  87 && cC ==  87) {                 userSelectNone(keyInfo);                }
 /*    E    */ if (kC ==  69 && cC ==  69) {                 makeItContentEditable(keyInfo);         }
 /*    R    */ if (kC ==  82 && cC ==  82) { styleKey = "R"; noteStyle("<u>R</u><br><span style='font-size: 0.5em;'>grid to border-radius</span>",durationS,true); gridToBorderRadius(keyInfo); lastKey = "R";   }
-/*    T    */ if (kC ==  84 && cC ==  84) {                 noteStyle("<u>T</u><br><span style='font-size: 0.5em;'>colour all</span>",durationS); assignAllColours();                            }
+/*    T    */ if (kC ==  84 && cC ==  84) {                                        noteCoin("<u>T</u><br><span style='font-size: 0.5em;'>colour all</span>",durationC); assignAllColours();                     }
 /*    Y    */ if (kC ==  89 && cC ==  89) {                 externalLink(); noteStyle("<u>Y</u><br><span style='font-size: 0.5em;'>external link</span>",durationS);                             }
 /*    U    */ if (kC ==  85 && cC ==  85) { styleKey = "U"; noteStyle("<u>U</u><br><span style='font-size: 0.5em;'>grid to box-shadow</span>",durationS,true); gridToBoxShadow(keyInfo); lastKey = "U";         }
 /*    I    */ if (kC ==  73 && cC ==  73) { enterImageAltText(keyInfo);                                                                                                                                         }

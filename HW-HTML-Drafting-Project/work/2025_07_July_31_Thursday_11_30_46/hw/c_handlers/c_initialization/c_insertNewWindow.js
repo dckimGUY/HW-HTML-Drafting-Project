@@ -205,6 +205,9 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/a_programFunctions/a_keyboardFunctions/q_notificationsSystem/c_noteStyle.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/a_makeTopLayer.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/b_recoverCoinFocus.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/c_layerLeft.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/d_layerRight.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/r_topLayerManager/e_highlightLayer.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/s_interfaceLayer/a_toggleInterfaceLayer.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/s_interfaceLayer/b_enterWizardMaster.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/s_interfaceLayer/c_toggleInterfaceShelf.js"></script>
@@ -239,6 +242,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/a_programFunctions/a_keyboardFunctions/u_localView/b_cycleNextLocalView.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/u_localView/c_cyclePreviousLocalView.js"></script>
 <script src="./hw/a_programFunctions/a_keyboardFunctions/v_cleanConversion/a_buttonizer.js"></script>
+<script src="./hw/a_programFunctions/a_keyboardFunctions/w_toolShelf/a_updateInfoShelf.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/a_enterNewPartFromMouseInput.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/b_mouseGiveFocus.js"></script>
 <script src="./hw/a_programFunctions/b_mouseFunctions/c_mousePlaceCursor.js"></script>
@@ -297,6 +301,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/c_handlers/g_boot/a_boot.js"></script>
 <script src="./hw/c_handlers/g_boot/b_fMan.js"></script>
 <script src="./hw/c_handlers/g_boot/c_setMouseCursorIcon.js"></script>
+<script src="./hw/c_handlers/g_boot/d_shelfMenuFunction.js"></script>
 <script src="./hw/c_handlers/h_copyAndPaste/a_copyAndPasteHandler.js"></script>
 <script src="./hw/d_wizards/0_wizard.js"></script>
 <script src="./hw/d_wizards/1_wizard.js"></script>

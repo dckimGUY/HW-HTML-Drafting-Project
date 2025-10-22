@@ -22,6 +22,9 @@ curFocus = 1;
 }
 
 if (event.key==='F5'){ event.preventDefault(); toggleInterfaceShelf(); }
+
+updateInfoShelf();
+
 });
 
 /* The mode indicator. */
@@ -160,6 +163,7 @@ toggleInterfaceLayer();
 
 }
 
+updateInfoShelf();
 
 /*                                                                        */
 /**************************************************************************/
@@ -211,15 +215,15 @@ if (hotDog) { return; }
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
 /*    `    */ if (kC == 192 && cC ==  96) {saveParticlePreparation(0,true);}/*    ~    */ if (kC == 192 && cC == 126) {saveParticlePreparation(1,true);}
-/*    1    */ if (kC ==  49 && cC ==  49) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("b_layer1"); }     }/*    !    */ if (kC ==  49 && cC ==  33) { saveInternalImage();           }
-/*    2    */ if (kC ==  50 && cC ==  50) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("c_layer2"); }     }/*    @    */ if (kC ==  50 && cC ==  64) { setDragPullFromContext();      }
-/*    3    */ if (kC ==  51 && cC ==  51) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("d_layer3"); }     }/*    #    */ if (kC ==  51 && cC ==  35) { togglePartNames();             }
-/*    4    */ if (kC ==  52 && cC ==  52) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("e_layer4"); }     }/*    $    */ if (kC ==  52 && cC ==  36) { fMan(keyInfo);                 }
-/*    5    */ if (kC ==  53 && cC ==  53) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("f_layer5"); }     }/*    %    */ if (kC ==  53 && cC ==  37) { enterPageEchelon();            }
-/*    6    */ if (kC ==  54 && cC ==  54) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("g_layer6"); }     }/*    ^    */ if (kC ==  54 && cC ==  94) { fMan(keyInfo);                 }
-/*    7    */ if (kC ==  55 && cC ==  55) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("h_layer7"); }     }/*    &    */ if (kC ==  55 && cC ==  38) { otherFontAndTemplates();       }
-/*    8    */ if (kC ==  56 && cC ==  56) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("i_layer8"); }     }/*    *    */ if (kC ==  56 && cC ==  42) { goFullscreen();                }
-/*    9    */ if (kC ==  57 && cC ==  57) { if (topLayer.a_currentLayer!="localView") { makeTopLayer("j_layer9"); }     }/*    (    */ if (kC ==  57 && cC ==  40) { insertNamedColours();          }
+/*    1    */ if (kC ==  49 && cC ==  49) { makeTopLayer("b_layer1");      }/*    !    */ if (kC ==  49 && cC ==  33) { saveInternalImage();           }
+/*    2    */ if (kC ==  50 && cC ==  50) { makeTopLayer("c_layer2");      }/*    @    */ if (kC ==  50 && cC ==  64) { setDragPullFromContext();      }
+/*    3    */ if (kC ==  51 && cC ==  51) { makeTopLayer("d_layer3");      }/*    #    */ if (kC ==  51 && cC ==  35) { togglePartNames();             }
+/*    4    */ if (kC ==  52 && cC ==  52) { makeTopLayer("e_layer4");      }/*    $    */ if (kC ==  52 && cC ==  36) { fMan(keyInfo);                 }
+/*    5    */ if (kC ==  53 && cC ==  53) { makeTopLayer("f_layer5");      }/*    %    */ if (kC ==  53 && cC ==  37) { enterPageEchelon();            }
+/*    6    */ if (kC ==  54 && cC ==  54) { makeTopLayer("g_layer6");      }/*    ^    */ if (kC ==  54 && cC ==  94) { fMan(keyInfo);                 }
+/*    7    */ if (kC ==  55 && cC ==  55) { makeTopLayer("h_layer7");      }/*    &    */ if (kC ==  55 && cC ==  38) { otherFontAndTemplates();       }
+/*    8    */ if (kC ==  56 && cC ==  56) { makeTopLayer("i_layer8");      }/*    *    */ if (kC ==  56 && cC ==  42) { goFullscreen();                }
+/*    9    */ if (kC ==  57 && cC ==  57) { makeTopLayer("j_layer9");      }/*    (    */ if (kC ==  57 && cC ==  40) { insertNamedColours();          }
 /*    0    */ if (kC ==  48 && cC ==  48) { copyFilenameLink();            }/*    )    */ if (kC ==  48 && cC ==  41) { insertGrayscale();             }
 /*    -    */ if (kC == 173 && cC ==  45) { lessG(e);                      }/*    _    */ if (kC == 173 && cC ==  95) { lessG(e);                      }
 /*    =    */ if (kC ==  61 && cC ==  61) { moreG(e);                      }/*    +    */ if (kC ==  61 && cC ==  43) { moreG(e);                      }
@@ -269,6 +273,7 @@ if (hotDog) { return; }
 /*                                                                                                                                                    */
 
 redraw();
+updateInfoShelf();
 
 /******************************************************************************************************************************************************/
 /******************************************************************************************************************************************************/
@@ -316,6 +321,7 @@ restorePointerEventsNone();
 if (!(ec&&es)) {rdots();}
 
 redraw();
+updateInfoShelf();
 
 });
 

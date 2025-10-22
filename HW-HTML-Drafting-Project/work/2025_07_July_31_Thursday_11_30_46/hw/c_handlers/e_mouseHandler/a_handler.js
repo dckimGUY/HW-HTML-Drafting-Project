@@ -312,6 +312,11 @@ pulledText.style.display=               "block";
 }
 
 }
+
+
+
+updateInfoShelf();
+
 });
 
 
@@ -346,7 +351,6 @@ mousedown.targetRegion   =     5;
 
 /* This puts the information from the mousedown event into data so that we can refer to it later in our conditions. */
 document.addEventListener("mousedown",   (event) => {
-
 
 
 
@@ -485,6 +489,10 @@ case 9: mode9.mousedown(mouseInfo); break;
 
 redraw();
 
+
+
+updateInfoShelf();
+
 });
 
 
@@ -576,6 +584,8 @@ if (!event.target.dataset.coinTrip) {
 
 redraw();
 
+updateInfoShelf();
+
 });
 
 
@@ -645,6 +655,7 @@ redraw();
 }
 
 
+updateInfoShelf();
 
 });
 
@@ -694,6 +705,10 @@ case 9: mode9.dblclick(mouseInfo);break;
 redraw();
 
 }
+
+
+updateInfoShelf();
+
 });
 
 
@@ -713,6 +728,10 @@ rdots();
 redraw();
 
 }
+
+
+updateInfoShelf();
+
 });
 
 
@@ -758,6 +777,10 @@ case 8: mode8.mouseover(mouseInfo); break;
 redraw();
 
 }
+
+
+updateInfoShelf();
+
 });
 
 
@@ -778,4 +801,8 @@ redraw();
 
 }
 //edgeDetect.style.display = "none";
+
+
+updateInfoShelf();
+
 });

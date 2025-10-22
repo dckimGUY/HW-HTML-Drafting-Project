@@ -67,11 +67,28 @@ newCoin.style.zIndex                  =   findZextrema().highestGlobalZ + tricol
 }
 
 
+
+
+
+
+if (coinFocus!=null) {
+       if (coinFocus.dataset.coinTrip==Ts0) {
+anchor.style.backgroundColor         =        Bs0;
+} else if (coinFocus.dataset.coinTrip==Ts1) {
+anchor.style.backgroundColor         =        Bs1;
+} else if (coinFocus.dataset.coinTrip==Ts2) {
+anchor.style.backgroundColor         =        Bs2;
+}
+} else {
+anchor.style.backgroundColor         =        Bs2;
+}
+
+
 anchor.style.fontFamily              =        Es2;
 anchor.style.color                   =        Fs2;
 anchor.style.textAlign               =        Gs2;
-anchor.style.backgroundColor         =        Bs2;
 anchor.style.opacity                 =        Os2;
+
 
 
 
@@ -125,9 +142,21 @@ logMessage=`- - - insertion from mouse input, jsName : "${newCoin.dataset.jsName
 
 
 
-
+if (coinFocus!=null) {
+       if (coinFocus.dataset.coinTrip==Ts0) {
+newCoin.dataset.coinTrip = Ts0;
+coinTrip.sel0[coinTrip.sel0.length] = newCoin;
+} else if (coinFocus.dataset.coinTrip==Ts1) {
+newCoin.dataset.coinTrip = Ts1;
+coinTrip.sel1[coinTrip.sel1.length] = newCoin;
+} else if (coinFocus.dataset.coinTrip==Ts2) {
 newCoin.dataset.coinTrip = Ts2;
 coinTrip.sel2[coinTrip.sel2.length] = newCoin;
+}
+} else {
+newCoin.dataset.coinTrip = Ts2;
+coinTrip.sel2[coinTrip.sel2.length] = newCoin;
+}
 
 newCoin.appendChild(anchor);
 newCoin.appendChild(main);

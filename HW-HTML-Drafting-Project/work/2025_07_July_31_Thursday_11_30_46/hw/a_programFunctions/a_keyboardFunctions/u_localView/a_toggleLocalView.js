@@ -1,12 +1,5 @@
 function toggleLocalView() {
 
-
-
-
-
-
-
-
 if (topLayer.a_currentLayer!="localView") {
 if (coinFocus!=null) {
 localViewReturn = topLayer.a_currentLayer;
@@ -56,6 +49,7 @@ utilityLayer0.children[j].lastElementChild.style.display  = "block";
 localViewString = utilityLayer0.innerHTML.toString();
 makeTopLayer(localViewReturn);
 localViewReturn = null;
+
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = localViewString;
 
 coinFocus.style.boxShadow = "";
@@ -67,6 +61,16 @@ part.style.top    = parseInt(part.style.top)    - parseInt(coinFocus.style.top) 
 part.dataset.left   = part.style.left  ;
 part.dataset.top    = part.style.top   ;
 }
+
+
+
+
+
+
+
+
+
+
 }
 
 

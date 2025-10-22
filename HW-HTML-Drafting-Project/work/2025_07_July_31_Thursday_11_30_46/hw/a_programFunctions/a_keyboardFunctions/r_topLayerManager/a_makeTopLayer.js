@@ -59,4 +59,6 @@ coinFocus.style.outlineOffset = fBO;
 
 if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
 
+redraw();
+
 }
