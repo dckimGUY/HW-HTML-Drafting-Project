@@ -402,6 +402,6 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/z_hwObject/b_hwSpecials.js"></script>
 <script src="./hw/z_hwObject/c_startup.js"></script>
 <script src="./hw/c_handlers/c_initialization/c_insertNewWindow.js"></script>
-</div>
-</body>
-</html>
+<script>
+utilityLayer0.innerHTML = 
+`

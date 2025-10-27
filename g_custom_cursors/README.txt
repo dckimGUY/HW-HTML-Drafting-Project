@@ -1,0 +1,3 @@
+Feel free to change the cursors, they are just regular image files. Draw them for yourself, just keep those file names the same as they are.
+
+I made up the stuff in the program so that the cursors can be extended. Just copy the ones from the folders that end in "0". Then just change the pictures. Just think, that's going to make a very large file size, and that's not good for downloading. I just didn't want to be limited in the selection of cursors, and who knows, maybe you like working on the cursors and want to set up a "cursor factory"!

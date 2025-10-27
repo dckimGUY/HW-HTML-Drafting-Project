@@ -1,6 +1,14 @@
+hw.c_startup = {};
+hw.c_startup.a_note = "This data allow entry for your own startup file metadata in c_customMetaData";
+hw.c_startup.b_first = `
 <!DOCTYPE html>
 <html lang="en" itemscope="" itemtype="https://schema.org/WebApplication" style="cursor: crosshair; background-color: rgb(63, 63, 95);">
 <head>
+`;
+
+hw.c_startup.c_customMetaDataHere = ``;
+
+hw.c_startup.d_second = `
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -402,6 +410,27 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./hw/z_hwObject/b_hwSpecials.js"></script>
 <script src="./hw/z_hwObject/c_startup.js"></script>
 <script src="./hw/c_handlers/c_initialization/c_insertNewWindow.js"></script>
+<script>
+utilityLayer0.innerHTML = \`
+`;
+
+hw.c_startup.e_third = `
+\`;
+
+if (utilityLayer0.lastElementChild.tagName=="SCRIPT") {
+utilityLayer0.lastElementChild.remove();
+}
+
+restorePointerEventsNone();
+recoverColouration();
+for (j=0; j<utilityLayer0.children.length; j++) { utilityLayer0.children[j].style.outline = fA; }
+if (utilityLayer0.firstElementChild) {
+coinFocus = utilityLayer0.firstElementChild;
+}
+coinFocus.style.outline = fB;
+readCoins();
+</script>
 </div>
 </body>
 </html>
+`;

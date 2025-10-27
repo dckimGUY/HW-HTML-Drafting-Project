@@ -1,0 +1,45 @@
+<div style="position: absolute; left: 0px; top: 0px; width: 200px; height: 65px;">
+<style>
+.button_folder11button           { position: absolute; border: none; margin: none; padding: none; left:      5px; top:     37px; width:     94px; height:     28px;
+                                   background-image: url("d_images/folder-1-1-button.png");        }
+.button_folder11button:focus     { background-image: url("d_images/folder-1-1-button_focus.png");  }
+.button_folder11button:hover     { background-image: url("d_images/folder-1-1-button_hover.png");  }
+.button_folder11button:active    { background-image: url("d_images/folder-1-1-button_active.png"); }
+.button_folder12button           { position: absolute; border: none; margin: none; padding: none; left:    101px; top:     37px; width:     94px; height:     28px;
+                                   background-image: url("d_images/folder-1-2-button.png");        }
+.button_folder12button:focus     { background-image: url("d_images/folder-1-2-button_focus.png");  }
+.button_folder12button:hover     { background-image: url("d_images/folder-1-2-button_hover.png");  }
+.button_folder12button:active    { background-image: url("d_images/folder-1-2-button_active.png"); }
+</style>
+
+<button id="folder11button" class="button_ button_folder11button" title="The name of the part can be used as the JavaScript name later. The notes also have various purposes. For example, this tool-tip."></button>
+<button id="folder12button" class="button_ button_folder12button" title="RSS is crucial to the discoverability of your website. When you publish any new page, you can also add an entry into your 'rss.xml' file."></button>
+</div>
+
+<script>
+/*** THIS SETS UP THE REFERENCES ***/
+const ui = {};
+["folder11button", "folder12button"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+/*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
+ui.folder11button.click          = function() {  };
+ui.folder12button.click          = function() {  };
+
+/*** THIS SETS UP EVENT DELEGATION ***/
+document.addEventListener("click", function() {
+switch (event.target) {
+case ui.folder11button.ref:      ui.folder11button.click()       ; break;
+case ui.folder12button.ref:      ui.folder12button.click()       ; break;
+}
+});
+
+/*** THIS SETS UP EVENT DELEGATION ***/
+document.addEventListener("change", function() {
+switch (event.target) {
+
+}
+});
+</script>
