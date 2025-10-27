@@ -18,7 +18,6 @@ const fileContentsReference =
   <meta name="handheldfriendly" content="true">					
   <meta name="author" content="dckimGUY Mohammed David">		
   <link rel="canonical" href="https://dckim.com/hdub/index.html">
-  <title>DCKIM HTML Drafting</title>
   <meta name="description" content="DCKIM HTML DRAFTING PROJECT is Top-Notch, Open-Source, and Canadian. Hands-on, in-action: It's the best way to learn about HTML. Writing your own website is easy now! So, focus on the artistic and written aspects. Those are more important anyhow!">
 
   <!-- Open Graph -->
@@ -93,7 +92,9 @@ body::-webkit-scrollbar { display: none;                                        
 </style>
 
 <link rel="stylesheet" href="e_stylesheets/style.css"/>
-<title id="documentTitle">DCKIM HTML Drafting Project</title><body>
+<title id="documentTitle">DCKIM HTML Drafting Project</title>
+
+<body>
 <div id="utilityLayer0"           ></div>
 <div id="utilityLayer1"           ></div>
 <div id="interfaceLayer"          ></div>
