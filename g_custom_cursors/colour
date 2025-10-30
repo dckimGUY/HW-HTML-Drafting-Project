@@ -1,0 +1,5 @@
+cd a7_xsmall-31px	; . ./list.txt; cd ..;
+cd b7_small-49px	; . ./list.txt; cd ..;
+cd c7_medium-65px	; . ./list.txt; cd ..;
+cd d7_large-99px	; . ./list.txt; cd ..;
+cd e7_xlarge-125px	; . ./list.txt; cd ..;

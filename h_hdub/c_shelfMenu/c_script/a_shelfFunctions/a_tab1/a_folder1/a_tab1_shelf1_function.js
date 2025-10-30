@@ -1,0 +1,18 @@
+ui.xrayGrey.click                = function() {  };
+ui.xrayMagenta.click             = function() {  };
+ui.xrayCyan.click                = function() {  };
+ui.partY.input                   = function() {  };
+ui.partX.input                   = function() {  };
+ui.partW.input                   = function() {  };
+ui.partH.input                   = function() {  };
+ui.cursorAuto.click              = function() { useCustomCursors = false;                               cursorSetup(); };
+ui.cursorXS.click                = function() { useCustomCursors = true ; cursorSet = cursorSize[0][0]; cursorSetup(); };
+ui.cursorS.click                 = function() { useCustomCursors = true ; cursorSet = cursorSize[1][0]; cursorSetup(); };
+ui.cursorM.click                 = function() { useCustomCursors = true ; cursorSet = cursorSize[2][0]; cursorSetup(); };
+ui.cursorL.click                 = function() { useCustomCursors = true ; cursorSet = cursorSize[3][0]; cursorSetup(); };
+ui.cursorXL.click                = function() { useCustomCursors = true ; cursorSet = cursorSize[4][0]; cursorSetup(); };
+ui.cursorNum.click               = function() {  };
+ui.partNom.input                 = function() { if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; } };
+ui.partPrev.click                = function() { focusPrevious(); updateInfoShelf(); redraw(); };
+ui.partNext.click                = function() { focusNext();     updateInfoShelf(); redraw(); };
+ui.partText.input                = function() { if (coinFocus!=null) { if (curFocus==0) { coinFocus.dataset.notes = ui.partText.ref.value; } } };

@@ -1,0 +1,318 @@
+<div style="position: absolute; left: 0px; top: 0px; width: 200px; height: 500px;">
+<style>
+.button_         {
+image-rendering  : crisp-edges;
+image-rendering  :   pixelated;
+background-color : transparent;
+                 }
+.button_:focus   {
+outline: none;
+                 }
+.input_          {
+position         :    absolute;
+box-sizing       :  border-box;
+font-size        :        32px;
+border           :        none;
+margin           :        none;
+padding-right    :        32px;
+resize           :        none;
+background-color : transparent;
+font-family      :   monospace;
+text-align       :       right;
+color            :       black;
+                 }
+.input_:focus    {
+outline: none;
+                 }
+.textarea_       {
+position         :    absolute;
+box-sizing       :  border-box;
+font-size        :        32px;
+border           :        none;
+margin           :        none;
+padding          :        none;
+resize           :        none;
+background-color : transparent;
+                 }
+.textarea_:focus {
+outline: none;
+                 }
+.input_coin77671                 { position: absolute; border: none; margin: none; padding: none; left:     61px; top:     80px; width:    119px; height:     23px; outline-offset: -4px; }
+.button_coin77155                { position: absolute; border: none; margin: none; padding: none; left:     11px; top:    114px; width:     60px; height:     27px;
+                                   background-image: url("d_images/save.png");        }
+.button_coin77155:focus          { background-image: url("d_images/save_focus.png");  }
+.button_coin77155:hover          { background-image: url("d_images/save_hover.png");  }
+.button_coin77155:active         { background-image: url("d_images/save_active.png"); }
+.button_coin59760                { position: absolute; border: none; margin: none; padding: none; left:     74px; top:    114px; width:     42px; height:     27px;
+                                   background-image: url("d_images/cycle-left.png");        }
+.button_coin59760:focus          { background-image: url("d_images/cycle-left_focus.png");  }
+.button_coin59760:hover          { background-image: url("d_images/cycle-left_hover.png");  }
+.button_coin59760:active         { background-image: url("d_images/cycle-left_active.png"); }
+.button_coin64291                { position: absolute; border: none; margin: none; padding: none; left:    119px; top:    114px; width:     42px; height:     27px;
+                                   background-image: url("d_images/cycle-right.png");        }
+.button_coin64291:focus          { background-image: url("d_images/cycle-right_focus.png");  }
+.button_coin64291:hover          { background-image: url("d_images/cycle-right_hover.png");  }
+.button_coin64291:active         { background-image: url("d_images/cycle-right_active.png"); }
+.button_coin70038                { position: absolute; border: none; margin: none; padding: none; left:    164px; top:    114px; width:     24px; height:     27px;
+                                   background-image: url("d_images/copy-level.png");        }
+.button_coin70038:focus          { background-image: url("d_images/copy-level_focus.png");  }
+.button_coin70038:hover          { background-image: url("d_images/copy-level_hover.png");  }
+.button_coin70038:active         { background-image: url("d_images/copy-level_active.png"); }
+.button_coin49592                { position: absolute; border: none; margin: none; padding: none; left:     11px; top:    144px; width:     60px; height:     27px;
+                                   background-image: url("d_images/advance-save.png");        }
+.button_coin49592:focus          { background-image: url("d_images/advance-save_focus.png");  }
+.button_coin49592:hover          { background-image: url("d_images/advance-save_hover.png");  }
+.button_coin49592:active         { background-image: url("d_images/advance-save_active.png"); }
+.button_coin54398                { position: absolute; border: none; margin: none; padding: none; left:     74px; top:    144px; width:    114px; height:     27px;
+                                   background-image: url("d_images/project-save.png");        }
+.button_coin54398:focus          { background-image: url("d_images/project-save_focus.png");  }
+.button_coin54398:hover          { background-image: url("d_images/project-save_hover.png");  }
+.button_coin54398:active         { background-image: url("d_images/project-save_active.png"); }
+.button_coin85790                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    174px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin85790:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin85790:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin85790:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin08866                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    220px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin08866:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin08866:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin08866:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin13776                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    220px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin13776:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin13776:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin13776:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin16901                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    266px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin16901:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin16901:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin16901:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin20519                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    266px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin20519:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin20519:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin20519:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin25410                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    266px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin25410:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin25410:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin25410:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin32647                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    312px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin32647:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin32647:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin32647:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin36397                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    312px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin36397:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin36397:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin36397:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin39267                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    312px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin39267:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin39267:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin39267:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin43688                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    312px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin43688:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin43688:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin43688:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin48440                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    358px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin48440:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin48440:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin48440:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin52265                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    358px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin52265:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin52265:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin52265:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin56932                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    358px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin56932:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin56932:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin56932:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin61955                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    358px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin61955:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin61955:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin61955:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin65831                { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    358px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin65831:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin65831:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin65831:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin69238                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    404px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin69238:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin69238:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin69238:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin72795                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    404px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin72795:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin72795:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin72795:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin76071                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    404px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin76071:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin76071:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin76071:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin79421                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    404px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin79421:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin79421:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin79421:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin83395                { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    404px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin83395:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin83395:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin83395:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin86509                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    450px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin86509:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin86509:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin86509:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin90492                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    450px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin90492:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin90492:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin90492:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin93949                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    450px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin93949:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin93949:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin93949:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin98770                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    450px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin98770:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin98770:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin98770:active         { background-image: url("d_images/set-level_active.png"); }
+.button_coin01647                { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    450px; width:     34px; height:     42px;
+                                   background-image: url("d_images/set-level.png");        }
+.button_coin01647:focus          { background-image: url("d_images/set-level_focus.png");  }
+.button_coin01647:hover          { background-image: url("d_images/set-level_hover.png");  }
+.button_coin01647:active         { background-image: url("d_images/set-level_active.png"); }
+</style>
+
+<input id="coin77671" name="coin77671" class="input_ input_coin77671" type="value" placeholder="empty">
+<button id="coin77155" class="button_ button_coin77155" title=""></button>
+<button id="coin59760" class="button_ button_coin59760" title=""></button>
+<button id="coin64291" class="button_ button_coin64291" title=""></button>
+<button id="coin70038" class="button_ button_coin70038" title=""></button>
+<button id="coin49592" class="button_ button_coin49592" title=""></button>
+<button id="coin54398" class="button_ button_coin54398" title=""></button>
+<button id="coin85790" class="button_ button_coin85790" title=""></button>
+<button id="coin08866" class="button_ button_coin08866" title=""></button>
+<button id="coin13776" class="button_ button_coin13776" title=""></button>
+<button id="coin16901" class="button_ button_coin16901" title=""></button>
+<button id="coin20519" class="button_ button_coin20519" title=""></button>
+<button id="coin25410" class="button_ button_coin25410" title=""></button>
+<button id="coin32647" class="button_ button_coin32647" title=""></button>
+<button id="coin36397" class="button_ button_coin36397" title=""></button>
+<button id="coin39267" class="button_ button_coin39267" title=""></button>
+<button id="coin43688" class="button_ button_coin43688" title=""></button>
+<button id="coin48440" class="button_ button_coin48440" title=""></button>
+<button id="coin52265" class="button_ button_coin52265" title=""></button>
+<button id="coin56932" class="button_ button_coin56932" title=""></button>
+<button id="coin61955" class="button_ button_coin61955" title=""></button>
+<button id="coin65831" class="button_ button_coin65831" title=""></button>
+<button id="coin69238" class="button_ button_coin69238" title=""></button>
+<button id="coin72795" class="button_ button_coin72795" title=""></button>
+<button id="coin76071" class="button_ button_coin76071" title=""></button>
+<button id="coin79421" class="button_ button_coin79421" title=""></button>
+<button id="coin83395" class="button_ button_coin83395" title=""></button>
+<button id="coin86509" class="button_ button_coin86509" title=""></button>
+<button id="coin90492" class="button_ button_coin90492" title=""></button>
+<button id="coin93949" class="button_ button_coin93949" title=""></button>
+<button id="coin98770" class="button_ button_coin98770" title=""></button>
+<button id="coin01647" class="button_ button_coin01647" title=""></button>
+</div>
+
+<script>
+/*** THIS SETS UP THE REFERENCES ***/
+const ui = {};
+["coin77671", "coin77155", "coin59760", "coin64291", "coin70038", "coin49592", "coin54398", "coin85790", "coin08866", "coin13776", "coin16901", "coin20519", "coin25410", "coin32647", "coin36397", "coin39267", "coin43688", "coin48440", "coin52265", "coin56932", "coin61955", "coin65831", "coin69238", "coin72795", "coin76071", "coin79421", "coin83395", "coin86509", "coin90492", "coin93949", "coin98770", "coin01647"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+/*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
+ui.coin77671.change              = function() {  };
+ui.coin77155.click               = function() {  };
+ui.coin59760.click               = function() {  };
+ui.coin64291.click               = function() {  };
+ui.coin70038.click               = function() {  };
+ui.coin49592.click               = function() {  };
+ui.coin54398.click               = function() {  };
+ui.coin85790.click               = function() {  };
+ui.coin08866.click               = function() {  };
+ui.coin13776.click               = function() {  };
+ui.coin16901.click               = function() {  };
+ui.coin20519.click               = function() {  };
+ui.coin25410.click               = function() {  };
+ui.coin32647.click               = function() {  };
+ui.coin36397.click               = function() {  };
+ui.coin39267.click               = function() {  };
+ui.coin43688.click               = function() {  };
+ui.coin48440.click               = function() {  };
+ui.coin52265.click               = function() {  };
+ui.coin56932.click               = function() {  };
+ui.coin61955.click               = function() {  };
+ui.coin65831.click               = function() {  };
+ui.coin69238.click               = function() {  };
+ui.coin72795.click               = function() {  };
+ui.coin76071.click               = function() {  };
+ui.coin79421.click               = function() {  };
+ui.coin83395.click               = function() {  };
+ui.coin86509.click               = function() {  };
+ui.coin90492.click               = function() {  };
+ui.coin93949.click               = function() {  };
+ui.coin98770.click               = function() {  };
+ui.coin01647.click               = function() {  };
+
+/*** THIS SETS UP EVENT DELEGATION ***/
+document.addEventListener("click", function() {
+switch (event.target) {
+case ui.coin77155.ref:           ui.coin77155.click()            ; break;
+case ui.coin59760.ref:           ui.coin59760.click()            ; break;
+case ui.coin64291.ref:           ui.coin64291.click()            ; break;
+case ui.coin70038.ref:           ui.coin70038.click()            ; break;
+case ui.coin49592.ref:           ui.coin49592.click()            ; break;
+case ui.coin54398.ref:           ui.coin54398.click()            ; break;
+case ui.coin85790.ref:           ui.coin85790.click()            ; break;
+case ui.coin08866.ref:           ui.coin08866.click()            ; break;
+case ui.coin13776.ref:           ui.coin13776.click()            ; break;
+case ui.coin16901.ref:           ui.coin16901.click()            ; break;
+case ui.coin20519.ref:           ui.coin20519.click()            ; break;
+case ui.coin25410.ref:           ui.coin25410.click()            ; break;
+case ui.coin32647.ref:           ui.coin32647.click()            ; break;
+case ui.coin36397.ref:           ui.coin36397.click()            ; break;
+case ui.coin39267.ref:           ui.coin39267.click()            ; break;
+case ui.coin43688.ref:           ui.coin43688.click()            ; break;
+case ui.coin48440.ref:           ui.coin48440.click()            ; break;
+case ui.coin52265.ref:           ui.coin52265.click()            ; break;
+case ui.coin56932.ref:           ui.coin56932.click()            ; break;
+case ui.coin61955.ref:           ui.coin61955.click()            ; break;
+case ui.coin65831.ref:           ui.coin65831.click()            ; break;
+case ui.coin69238.ref:           ui.coin69238.click()            ; break;
+case ui.coin72795.ref:           ui.coin72795.click()            ; break;
+case ui.coin76071.ref:           ui.coin76071.click()            ; break;
+case ui.coin79421.ref:           ui.coin79421.click()            ; break;
+case ui.coin83395.ref:           ui.coin83395.click()            ; break;
+case ui.coin86509.ref:           ui.coin86509.click()            ; break;
+case ui.coin90492.ref:           ui.coin90492.click()            ; break;
+case ui.coin93949.ref:           ui.coin93949.click()            ; break;
+case ui.coin98770.ref:           ui.coin98770.click()            ; break;
+case ui.coin01647.ref:           ui.coin01647.click()            ; break;
+}
+});
+
+/*** THIS SETS UP EVENT DELEGATION ***/
+document.addEventListener("change", function() {
+switch (event.target) {
+case ui.coin77671.ref:           ui.coin77671.change()           ; break;
+
+}
+});
+</script>
