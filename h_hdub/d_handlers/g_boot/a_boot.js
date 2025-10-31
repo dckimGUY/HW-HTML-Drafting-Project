@@ -749,16 +749,21 @@ readCoins();
 let splashScreenVisible = false;
 let splashScreen = document.createElement("img");
 
-if (!window.opener) {
+let firstTime = "true";
+if (localStorage.getItem("firstTime")) { firstTime = localStorage.getItem("firstTime"); }
 
-splashScreen.src="data:image/png;base64," + splashScreenBase64;
+if (!window.opener && firstTime == "true") {
+
+localStorage.setItem("firstTime", "false");
+
+splashScreen.src="d_images/splash_screen.png";
 splashScreen.style.position="absolute";
-splashScreen.style.zIndex="99999999999";
+splashScreen.style.zIndex="999999999999";
 splashScreen.style.width="100%";
 splashScreen.style.border="none";
-splashScreen.style.borderRadius="16px";
-splashScreen.style.outline="lime solid 5px";
-splashScreen.style.boxShadow="rgba(255, 255, 255, 0.75) 0px 0px 48px,rgba(255, 255, 255, 0.75) 0px 0px 48px";
+//splashScreen.style.borderRadius="16px";
+//splashScreen.style.outline="lime solid 5px";
+//splashScreen.style.boxShadow="rgba(255, 255, 255, 0.75) 0px 0px 48px,rgba(255, 255, 255, 0.75) 0px 0px 48px";
 
 splashScreen.style.left=`0px`;
 splashScreen.style.top=`0px`;
