@@ -314,6 +314,7 @@ pulledText.style.display=               "block";
 }
 
 
+updateInfoShelf();
 
 
 });

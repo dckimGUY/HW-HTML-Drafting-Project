@@ -40,8 +40,8 @@ Y.lineWidth = edgeQ;
 
 let l = parseInt(zStack[j].id.style.left) - window.scrollX;
 let t = parseInt(zStack[j].id.style.top) - window.scrollY;
-let w = parseInt(zStack[j].id.style.width) * parseInt(zStack[j].id.dataset.scale);
-let h = parseInt(zStack[j].id.style.height) * parseInt(zStack[j].id.dataset.scale);
+let w = parseInt(zStack[j].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
+let h = parseInt(zStack[j].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
 
 
      if (zStack[j].id==coinFocus && mode!=8) { Y.fillStyle = "rgba(222,255, 28,1.0)"; }
