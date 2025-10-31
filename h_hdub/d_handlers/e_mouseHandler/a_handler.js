@@ -315,7 +315,6 @@ pulledText.style.display=               "block";
 
 
 
-updateInfoShelf();
 
 });
 
@@ -491,7 +490,6 @@ redraw();
 
 
 
-updateInfoShelf();
 
 });
 
@@ -657,7 +655,6 @@ redraw();
 }
 
 
-updateInfoShelf();
 
 });
 
@@ -709,7 +706,6 @@ redraw();
 }
 
 
-updateInfoShelf();
 
 });
 
@@ -732,7 +728,6 @@ redraw();
 }
 
 
-updateInfoShelf();
 
 });
 
@@ -781,7 +776,6 @@ redraw();
 }
 
 
-updateInfoShelf();
 
 });
 
@@ -805,6 +799,5 @@ redraw();
 //edgeDetect.style.display = "none";
 
 
-updateInfoShelf();
 
 });
