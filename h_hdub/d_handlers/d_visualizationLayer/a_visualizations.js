@@ -139,8 +139,10 @@ Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
 Y.fillRect(l + borderWidth * 2 + thinOutline,t + borderWidth * 2 + thinOutline,w -(thinOutline * 2) - (borderWidth * 4),h -(thinOutline * 2) - (borderWidth * 4));
 Y.clearRect(l + borderWidth * 2 + thinOutline + thinOutline,t + borderWidth * 2 + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2));
 }
+
+
 if (mode==9) {
-Y.setLineDash([borderWidth, borderWidth]);
+Y.setLineDash([borderWidth * 2, borderWidth * 4]);
 }
 if ((zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)&&curFocus==0) {
 Y.lineWidth = borderWidth;

@@ -24,18 +24,14 @@ position: absolute; left: 0px; top: 0px; width: 200px; height: 500px; z-index: 1
 .folder {
 position: absolute; left: 0px; top: 0px; width: 200px; height: 500px; z-index: 100;
 }
-.folder11image { background-image: url(h_hdub/c_shelfMenu/a_images/a_tab1/z_folderBackgrounds/folder-1-1.png); }
-.folder12image { background-image: url(h_hdub/c_shelfMenu/a_images/a_tab1/z_folderBackgrounds/folder-1-2.png); }
-.folder21image { background-image: url(h_hdub/c_shelfMenu/a_images/b_tab2/z_folderBackgrounds/folder-2-1.png); }
-.folder22image { background-image: url(h_hdub/c_shelfMenu/a_images/b_tab2/z_folderBackgrounds/folder-2-2.png); }
-.folder31image { background-image: url(h_hdub/c_shelfMenu/a_images/c_tab3/z_folderBackgrounds/folder-3-1.png); }
-.folder32image { background-image: url(h_hdub/c_shelfMenu/a_images/c_tab3/z_folderBackgrounds/folder-3-2.png); }
-.folder41image { background-image: url(h_hdub/c_shelfMenu/a_images/d_tab4/z_folderBackgrounds/folder-4-1.png); }
-.folder42image { background-image: url(h_hdub/c_shelfMenu/a_images/d_tab4/z_folderBackgrounds/folder-4-2.png); }
-.folder51image { background-image: url(h_hdub/c_shelfMenu/a_images/e_tab5/z_folderBackgrounds/folder-5-1.png); }
-.folder52image { background-image: url(h_hdub/c_shelfMenu/a_images/e_tab5/z_folderBackgrounds/folder-5-2.png); }
-.folder61image { background-image: url(h_hdub/c_shelfMenu/a_images/f_tab6/z_folderBackgrounds/folder-6-1.png); }
-.folder62image { background-image: url(h_hdub/c_shelfMenu/a_images/f_tab6/z_folderBackgrounds/folder-6-2.png); }
+` +
+shelfMenuHTML.tab1.backgrounds.style +
+shelfMenuHTML.tab2.backgrounds.style +
+shelfMenuHTML.tab3.backgrounds.style +
+shelfMenuHTML.tab4.backgrounds.style +
+shelfMenuHTML.tab5.backgrounds.style +
+shelfMenuHTML.tab6.backgrounds.style +
+`
 </style>
 `;
 

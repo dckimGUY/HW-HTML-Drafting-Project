@@ -732,6 +732,12 @@ curFocus  = 1;
 hauptMode=0;
 if (window.opener==null) {
 insertNewCoin([null,78,110,0,0,0]);
+if (coinFocus!=null) {
+coinFocus.style.width    = "256px";
+coinFocus.dataset.width  = "256px";
+coinFocus.style.height   = "256px";
+coinFocus.dataset.height = "256px";
+}
 }
 hauptMode=1;
 if (coinFocus!=null) {
