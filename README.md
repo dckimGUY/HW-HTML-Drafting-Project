@@ -1,6 +1,6 @@
 # [OPEN THE PROGRAM HERE](https://dckimguy.github.io/HW-HTML-Drafting-Project/)
 
-## BIG BIG Update: Now with Drag-Edges, 'Local View' (on the TAB key), and Cursors now for the visuals. Custom cursors will soon be available. Then you can just draw them yourself! That's the kind of program I would want.
+The latest update gives an appended version for all '.js' files and all image references (for the shelf menu). This is good all-around. The user now has an up-to-date program, because we re-load any new file version, on a per-file basis. The '.js' files break the program up into tiny chunks, so it's fairly efficient. This is also done for the images in the menu (which is injected).
 
 # HW HTML Drafting Project
 
