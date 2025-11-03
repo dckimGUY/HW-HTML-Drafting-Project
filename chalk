@@ -22,7 +22,7 @@ rm pasteFirst pasteLast;
 sed -i "s/\.\././g" ./h_hdub/z_hwObject/a_hwObject.js;
 sed -i '/js\.swp/d' ./h_hdub/z_hwObject/a_hwObject.js;
 
-find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> index.html;
+find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' >> chalk_tmp_filenames; find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' | sed 's/^/echo ?v=$(date -r /' | sed 's/$/ +"%Y%m%d%H%M%S") >> chalk_tmp_versions;/' > chalk_tmp_versionControl; chmod 755 chalk_tmp_versionControl; . ./chalk_tmp_versionControl; paste -d '' chalk_tmp_filenames chalk_tmp_versions | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> index.html; rm chalk_tmp_filenames chalk_tmp_versions chalk_tmp_versionControl;
 echo '<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>' >> index.html;
 
 echo '</div>' >> index.html;
