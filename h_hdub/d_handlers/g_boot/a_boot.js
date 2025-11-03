@@ -30,8 +30,6 @@ interfaceLayer.style.display = "none";
 const HWworld = true;
 var layerName = "LVL 1";
 
-var xrayVision    = new Array();
-    xrayVision[0] = true;
 var useCustomCursors = false;
 
 

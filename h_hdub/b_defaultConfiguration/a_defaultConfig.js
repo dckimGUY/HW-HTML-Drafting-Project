@@ -197,11 +197,11 @@ var quitSaveTimeoutSetting = 500;
 /* Default Insertion Width  */let   iW=    64;
 /* Default Insertion Height */let   iH=    64;
 
-                                    fAbase = 3;
+                                    fAbase = 0; //3
 /* Focus Outline            */let   fA=    fAbase + "px dashed white";
                               let   fAO = "-" + fAbase + "px";
 
-                                    fBbase = 4;
+                                    fBbase = 0; //4
 /* Focus Outline            */let   fB=    "gold solid " + fBbase + "px";
                               let   fBO = "-" + fBbase + "px";
 

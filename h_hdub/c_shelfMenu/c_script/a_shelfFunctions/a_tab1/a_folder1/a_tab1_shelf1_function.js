@@ -1,10 +1,10 @@
-ui.xrayGrey.click                = function() {  };
-ui.xrayMagenta.click             = function() {  };
-ui.xrayCyan.click                = function() {  };
-ui.partY.input                   = function() {  };
-ui.partX.input                   = function() {  };
-ui.partW.input                   = function() {  };
-ui.partH.input                   = function() {  };
+ui.xrayGrey.click                = function() { if (xrayVision=="false") { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } else { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } };
+ui.xrayMagenta.click             = function() { if (xrayVision=="false") { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } else { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } };
+ui.xrayCyan.click                = function() { if (xrayVision=="false") { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } else { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } };
+ui.partY.input                   = function() { if (coinFocus!=null) { coinFocus.style.top    = parseInt(ui.partY.ref.value) + "px"; coinFocus.dataset.top    = parseInt(ui.partY.ref.value) + "px"; redraw(); } };
+ui.partX.input                   = function() { if (coinFocus!=null) { coinFocus.style.left   = parseInt(ui.partX.ref.value) + "px"; coinFocus.dataset.left   = parseInt(ui.partX.ref.value) + "px"; redraw(); } };
+ui.partW.input                   = function() { if (coinFocus!=null) { coinFocus.style.width  = parseInt(ui.partW.ref.value) + "px"; coinFocus.dataset.width  = parseInt(ui.partW.ref.value) + "px"; redraw(); } };
+ui.partH.input                   = function() { if (coinFocus!=null) { coinFocus.style.height = parseInt(ui.partH.ref.value) + "px"; coinFocus.dataset.height = parseInt(ui.partH.ref.value) + "px"; redraw(); } };
 ui.cursorAuto.click              = function() { useCustomCursors = false;                               cursorSetup(); };
 ui.cursorXS.click                = function() { useCustomCursors = true ; cursorSet = cursorSize[0][0]; cursorSetup(); };
 ui.cursorS.click                 = function() { useCustomCursors = true ; cursorSet = cursorSize[1][0]; cursorSetup(); };
