@@ -62,144 +62,323 @@ if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.t
 
 
 
-       if (mousedown.targetRegion==7) {
-if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
-if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
-mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
-} else {
-mousedown.target.style.top = 0;
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
-}
-}
-if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
-if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
-mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
-} else {
-mousedown.target.style.left = 0;
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
-}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (mode==1) {
+
+
+
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
 } else if (mousedown.targetRegion==8) {
-
-
-if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
-if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
-mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
-} else {
-mousedown.target.style.top = 0;
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
-}
-}
-
-
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
 } else if (mousedown.targetRegion==9) {
-if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
-if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
-mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
-} else {
-mousedown.target.style.top = 0;
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
-}
-}
-if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
-} else {
-mousedown.target.style.width = T + "px";
-}
-if (parseInt(mousedown.target.style.width)<edgeQ*2) {
-mousedown.target.style.width = edgeQ*2 + "px";
-}
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+
+
+
 } else if (mousedown.targetRegion==4) {
-
-
-if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
-if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
-mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
-} else {
-mousedown.target.style.left = 0;
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
-}
-}
-
-
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
 } else if (mousedown.targetRegion==5) {
-if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
-if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
 } else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
 
-
-if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
-} else {
-mousedown.target.style.width = T + "px";
-}
-if (parseInt(mousedown.target.style.width)<edgeQ*2) {
-mousedown.target.style.width = edgeQ*2 + "px";
-}
 
 
 } else if (mousedown.targetRegion==1) {
-if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
-if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
-mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
-} else {
-mousedown.target.style.left = 0;
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
-}
-}
-if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
-} else {
-mousedown.target.style.height = T + "px";
-}
-if (parseInt(mousedown.target.style.height)<edgeQ*2) {
-mousedown.target.style.height = edgeQ*2 + "px";
-}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
 } else if (mousedown.targetRegion==2) {
-
-
-if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
-} else {
-mousedown.target.style.height = T + "px";
-}
-if (parseInt(mousedown.target.style.height)<edgeQ*2) {
-mousedown.target.style.height = edgeQ*2 + "px";
-}
-
-
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
 } else if (mousedown.targetRegion==3) {
-
-
-if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
-mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
-} else {
-mousedown.target.style.width = T + "px";
-}
-if (parseInt(mousedown.target.style.width)<edgeQ*2) {
-mousedown.target.style.width = edgeQ*2 + "px";
-}
-
-
-
-
-
-if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
-mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
-} else {
-mousedown.target.style.height = T + "px";
-}
-if (parseInt(mousedown.target.style.height)<edgeQ*2) {
-mousedown.target.style.height = edgeQ*2 + "px";
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
 }
 
 
+} else if (mode==5) {
+
+if (eM==0) {
+
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+
+
+
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+
+
+
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+}
+
+} else if (eM==1) {
+
+
+
+
+
+
+
+
+
+
+
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+
+
+
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+
+
+
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+}
+
+
+
+
+
+
+
 
 
 
@@ -216,6 +395,148 @@ mousedown.target.style.height = edgeQ*2 + "px";
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} else if (mode==6) {
+
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+
+
+
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+
+
+
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=T) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = T + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=T) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = T + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+}
+
+
+} else if (mode==8) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+} else if (mode==9) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
+}
 
 
 

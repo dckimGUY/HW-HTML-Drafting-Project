@@ -38,23 +38,91 @@ if (event.target == utilityLayer0.children[j]) {
 
 found = true;
 
+
+
+/* THESE HAVE BEEN ADAPTED TO ALIGN WITH THE VISUALS AND THE KEYBOARD ACTION */
+
+if (mode==1) {
+
      if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
      if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize;  } //4
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
 }                                                                                                                                                       
-
 else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {                                          
      if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nResize;  } //8
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //5
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.sResize;  } //2
 }                                                                                                                                                        
-
 else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {                                           
      if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize;  } //6
 else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
 }
+
+} else if (mode==5) {
+
+if (eM==0) {
+     if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.grab;     } //7
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //4
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.sResize;  } //1
+}                                                                                                                                                       
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {                                          
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.grab;     } //8
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //5
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.sResize;  } //2
+}                                                                                                                                                        
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {                                           
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.eResize;  } //9
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize;  } //6
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
+}
+
+} else if (eM==1) {
+     if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize;  } //4
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.wResize;  } //1
+}                                                                                                                                                       
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {                                          
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nResize;  } //8
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //5
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.grab;     } //2
+}                                                                                                                                                        
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {                                           
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nResize;  } //9
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //6
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.grab;     } //3
+}
+}
+
+} else if (mode==6) {
+
+     if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //4
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
+}                                                                                                                                                       
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ)))  {                                          
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.grab;     } //8
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //5
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.grab;     } //2
+}                                                                                                                                                        
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3)))     {                                           
+     if (event.pageY <= (parseInt(event.target.style.top)  + (edgeQ)))                                       { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab;     } //6
+else if (event.pageY <= (parseInt(event.target.style.top)  + (parseInt(event.target.style.height)*3/3)))     { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
+}
+
+} else {
+utilityLayer0.children[j].style.cursor = cursor.grab;
+}
+
+
+
+
+
 
 
 } else {
