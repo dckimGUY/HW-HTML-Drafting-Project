@@ -43,7 +43,6 @@ if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getI
 
 
 
-var edgeThickness = edgeQ - thinOutline * 2;
 
 
 
@@ -51,12 +50,14 @@ var edgeThickness = edgeQ - thinOutline * 2;
 
 function redraw(element){
 
+
 if (showVisualizations=="true") {
 const zArray = Array.from(utilityLayer0.children);
 const zStack = zArray.map(el => ({ id: el, z: parseInt(getComputedStyle(el).zIndex) || 0 })).sort((a, b) => a.z -b.z);
 Vis.width=window.innerWidth;
 Vis.height=window.innerHeight;
 
+let edgeThickness = edgeQ - thinOutline * 2;
 
 
 
