@@ -57,3 +57,32 @@ ui[name].ref   = document.getElementById(name);
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
+
+/* TAB 2, FOLDER 1 */
+
+["modeZ", "modeEeM1", "modeD", "modeG", "modeEeM0", "modeT"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

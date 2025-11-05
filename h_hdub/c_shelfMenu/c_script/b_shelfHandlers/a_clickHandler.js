@@ -23,7 +23,7 @@ case ui.folder52button.ref:      ui.folder52button.click()       ; break;
 case ui.folder61button.ref:      ui.folder61button.click()       ; break;
 case ui.folder62button.ref:      ui.folder62button.click()       ; break;
 
-/* */
+/* tab 1 folder 1 */
 case ui.xrayGrey.ref:            ui.xrayGrey.click()             ; break;
 case ui.xrayMagenta.ref:         ui.xrayMagenta.click()          ; break;
 case ui.xrayCyan.ref:            ui.xrayCyan.click()             ; break;
@@ -37,7 +37,7 @@ case ui.cursorNum.ref:           ui.cursorNum.click()            ; break;
 case ui.partPrev.ref:            ui.partPrev.click()             ; break;
 case ui.partNext.ref:            ui.partNext.click()             ; break;
 
-/* */
+/* tab 1 folder 2 */
 case ui.coin77155.ref:           ui.coin77155.click()            ; break;
 case ui.coin59760.ref:           ui.coin59760.click()            ; break;
 case ui.coin64291.ref:           ui.coin64291.click()            ; break;
@@ -70,6 +70,20 @@ case ui.setLayer22.ref:          ui.setLayer22.click()           ; break;
 case ui.setLayer23.ref:          ui.setLayer23.click()           ; break;
 case ui.setLayer24.ref:          ui.setLayer24.click()           ; break;
 case ui.setLayer25.ref:          ui.setLayer25.click()           ; break;
+
+/* tab 1 folder 2 */
+
+case ui.modeZ.ref:               ui.modeZ.click()                ; break;
+case ui.modeEeM1.ref:            ui.modeEeM1.click()             ; break;
+case ui.modeD.ref:               ui.modeD.click()                ; break;
+case ui.modeG.ref:               ui.modeG.click()                ; break;
+case ui.modeEeM0.ref:            ui.modeEeM0.click()             ; break;
+case ui.modeT.ref:               ui.modeT.click()                ; break;
+
+
+
+
+
 
 /* */
 

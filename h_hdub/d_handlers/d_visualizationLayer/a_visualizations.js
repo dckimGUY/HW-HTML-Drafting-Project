@@ -54,12 +54,12 @@ if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getI
 
 function redraw(element){
 
+Vis.width=window.innerWidth;
+Vis.height=window.innerHeight;
 
 if (showVisualizations=="true") {
 const zArray = Array.from(utilityLayer0.children);
 const zStack = zArray.map(el => ({ id: el, z: parseInt(getComputedStyle(el).zIndex) || 0 })).sort((a, b) => a.z -b.z);
-Vis.width=window.innerWidth;
-Vis.height=window.innerHeight;
 
 let edgeThickness = edgeQ - thinOutline * 2;
 
@@ -147,6 +147,7 @@ Y.clearRect(l + thinOutline * 2 + borderWidth,t + thinOutline * 2 + borderWidth,
 Y.fillRect(l + edgeThickness + thinOutline,t + edgeThickness + thinOutline,w -((edgeThickness + thinOutline * 2 + borderWidth)),h -((edgeThickness + thinOutline * 2 + borderWidth)));
 Y.clearRect(l + edgeThickness + thinOutline * 2,t + edgeThickness + thinOutline * 2,w -((edgeThickness + thinOutline * 4 + borderWidth)),h -((edgeThickness + thinOutline * 4 + borderWidth)));
 }
+
 } else if (mode==6&&(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
 Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
@@ -182,7 +183,9 @@ Y.clearRect(l + borderWidth + thinOutline + thinOutline,t + borderWidth + thinOu
 if (mode==9) {
 Y.setLineDash([borderWidth * 2, borderWidth * 4]);
 }
-if ((zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)&&curFocus==0) {
+
+/* THIS GIVES THE SELECTED OUTLINE COLOUR */
+if (zStack[j].id==coinFocus&&curFocus==0) {
 Y.lineWidth = borderWidth;
 Y.strokeStyle = "rgba(" + selectedColour + "," + opacityString + ")";
 Y.strokeRect(l + thinOutline + (borderWidth/2),t + thinOutline + (borderWidth/2),w -(thinOutline * 2 + borderWidth),h -(thinOutline * 2 + borderWidth));
@@ -203,15 +206,3 @@ xray();
 
 } /* END OF CONDITION showVisualizations */
 };
-
-
-
-
-
-
-
-
-
-
-
-

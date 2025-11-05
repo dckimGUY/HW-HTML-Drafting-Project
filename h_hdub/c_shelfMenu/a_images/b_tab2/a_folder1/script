@@ -1,0 +1,29 @@
+mv mode-z.png           a_mode-z.png;
+mv mode-z_active.png    a_mode-z_active.png;
+mv mode-z_focus.png     a_mode-z_focus.png;
+mv mode-z_hover.png     a_mode-z_hover.png;
+
+mv mode-em1.png         b_mode-em1.png;
+mv mode-em1_active.png  b_mode-em1_active.png;
+mv mode-em1_focus.png   b_mode-em1_focus.png;
+mv mode-em1_hover.png   b_mode-em1_hover.png;
+
+mv mode-d.png           c_mode-d.png;
+mv mode-d_active.png    c_mode-d_active.png;
+mv mode-d_focus.png     c_mode-d_focus.png;
+mv mode-d_hover.png     c_mode-d_hover.png;
+
+mv mode-g.png           d_mode-g.png;
+mv mode-g_active.png    d_mode-g_active.png;
+mv mode-g_focus.png     d_mode-g_focus.png;
+mv mode-g_hover.png     d_mode-g_hover.png;
+
+mv mode-em0.png         e_mode-em0.png;
+mv mode-em0_active.png  e_mode-em0_active.png;
+mv mode-em0_focus.png   e_mode-em0_focus.png;
+mv mode-em0_hover.png   e_mode-em0_hover.png;
+
+mv mode-t.png           f_mode-t.png;
+mv mode-t_active.png    f_mode-t_active.png;
+mv mode-t_focus.png     f_mode-t_focus.png;
+mv mode-t_hover.png     f_mode-t_hover.png;
