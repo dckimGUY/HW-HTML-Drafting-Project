@@ -17,7 +17,6 @@ margin           :        none;
 padding-right    :        16px;
 resize           :        none;
 background-color : transparent;
-font-family      :   monospace;
 text-align       :       right;
 color            :       black;
                  }

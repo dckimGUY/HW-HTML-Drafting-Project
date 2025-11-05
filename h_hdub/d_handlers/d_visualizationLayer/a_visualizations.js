@@ -17,10 +17,12 @@ Vis.height=window.innerHeight;
 var xrayVision         = "false";
 var showVisualizations = "true";
 
-var borderWidth    =  4;
 var xrayWidth      =  2;
 var thinOutline    =  2;
-var opacityString  = '0.50';
+var borderWidth    =  8;
+
+var opacityString  = '1.00';
+
 var selectedColour = "222,255, 28";
 var greyColour     = "255,255,255";
 var blueColour     = "  0,255,255";
@@ -28,7 +30,9 @@ var pinkColour     = "222,128,255";
 var lineColour     = "  0,  0,  0";
 
 
-if (localStorage.getItem("xrayVision")) { xrayVision = localStorage.getItem("xrayVision"); }
+if (localStorage.getItem("xrayVision"))  { xrayVision = localStorage.getItem("xrayVision");   }
+if (localStorage.getItem("thinOutline")) { thinOutline = localStorage.getItem("thinOutline"); }
+if (localStorage.getItem("borderWidth")) { borderWidth = localStorage.getItem("borderWidth"); }
 
 if (localStorage.getItem("borderWidth"  )) { borderWidth   = localStorage.getItem("borderWidth"  ); }
 if (localStorage.getItem("xrayWidth"    )) { xrayWidth     = localStorage.getItem("xrayWidth"    ); }
@@ -152,10 +156,26 @@ Y.clearRect(l + edgeThickness + thinOutline + thinOutline,        t + borderWidt
 Y.clearRect(l + borderWidth + thinOutline + thinOutline, t + edgeThickness + thinOutline + thinOutline,      w -((borderWidth + thinOutline) * 2) - (thinOutline * 2)  ,   h -((edgeThickness + thinOutline) * 2) - (thinOutline * 2)      );
 
 } else if (mode==8||mode==9||!(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
+
+if (mode==8||mode==9) {
+
+
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
 Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
 Y.fillRect(l + borderWidth * 2 + thinOutline,t + borderWidth * 2 + thinOutline,w -(thinOutline * 2) - (borderWidth * 4),h -(thinOutline * 2) - (borderWidth * 4));
 Y.clearRect(l + borderWidth * 2 + thinOutline + thinOutline,t + borderWidth * 2 + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2));
+
+
+} else {
+
+Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
+Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillRect(l + borderWidth + thinOutline,t + borderWidth + thinOutline,w -(thinOutline * 2) - (borderWidth * 2),h -(thinOutline * 2) - (borderWidth * 2));
+Y.clearRect(l + borderWidth + thinOutline + thinOutline,t + borderWidth + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 2) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 2) - (thinOutline * 2));
+
+
+
+}
 }
 
 

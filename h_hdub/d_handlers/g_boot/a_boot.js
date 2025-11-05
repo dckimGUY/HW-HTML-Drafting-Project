@@ -784,7 +784,7 @@ const z_wizardCode = {};
 
 redraw();
 
-
+updateInfoShelf();
 
 
 /* Completion Message */

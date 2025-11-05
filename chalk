@@ -1,8 +1,8 @@
 ## Here is the 'CHALKING-UP' of the online program file.
 
+
 cat y_header.txt > index.html;
 echo '<body>' >> index.html;
-
 echo '<div id="utilityLayer0"           ></div>' >> index.html;
 echo '<div id="utilityLayer1"           ></div>' >> index.html;
 echo '<div id="interfaceLayer"          ></div>' >> index.html;
@@ -10,7 +10,6 @@ echo '<div id="gridLayer"               ></div>' >> index.html;
 echo '<div id="visualizationsLayer"     ></div>' >> index.html;
 echo '<div id="mouseIconLayer"          ></div>' >> index.html;
 echo '<div id="interfaceShelf"          ></div>' >> index.html;
-
 echo '<div id="scripts">' >> index.html;
 echo 'const' > ./h_hdub/z_hwObject/a_hwObject.js;
 echo 'h_hdub = {};' >> ./h_hdub/z_hwObject/a_hwObject.js;
@@ -18,13 +17,10 @@ find h_hdub/a_programFunctions/ | sed "s/$/ = {};/g" | sed "s/\.js = {};//g" | t
 find h_hdub/a_programFunctions/ | sed "s/^.*_/ = /g" | sed "s/\.js/;/g" > pasteLast;
 paste pasteFirst pasteLast | sed "s/;.*$/;/g" >> ./h_hdub/z_hwObject/a_hwObject.js;
 rm pasteFirst pasteLast;
-
 sed -i "s/\.\././g" ./h_hdub/z_hwObject/a_hwObject.js;
 sed -i '/js\.swp/d' ./h_hdub/z_hwObject/a_hwObject.js;
-
 find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' >> chalk_tmp_filenames; find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' | sed 's/^/echo ?v=$(date -r /' | sed 's/$/ +"%Y%m%d%H%M%S") >> chalk_tmp_versions;/' > chalk_tmp_versionControl; chmod 755 chalk_tmp_versionControl; . ./chalk_tmp_versionControl; paste -d '' chalk_tmp_filenames chalk_tmp_versions | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> index.html; rm chalk_tmp_filenames chalk_tmp_versions chalk_tmp_versionControl;
 echo '<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>' >> index.html;
-
 echo '</div>' >> index.html;
 echo '</body>' >> index.html;
 echo '</html>' >> index.html;
@@ -33,6 +29,7 @@ echo '</html>' >> index.html;
 
 
 ## When we use insertWindow, we are actually writing the index.html file again to that new window.
+
 
 echo 'function insertNewWindow(keyInfo,refresh) {' > c_insertNewWindow.js;
 echo 'const' >> c_insertNewWindow.js;
@@ -57,7 +54,6 @@ echo '/*    o    */ if (kC ==  79 && cC == 111) { window.children[window.childre
 echo '/*    a    */ if (kC ==  65 && cC ==  97) { window.children[window.children.length] = window.open("","_blank",`height=${window.innerHeight + 1},width=${iS + 1},top=${window.screenTop},left=${screen.width - iS},resizable=yes,noopener=no`); }' >> c_insertNewWindow.js;
 echo '/*    n    */ if (kC ==  78 && cC == 110) { window.children[window.children.length] = window.open("","_blank"); }' >> c_insertNewWindow.js;
 echo '/* REFRESH */ if (refresh==true)          { window.children[window.children.length] = window.open("","_blank",`height=${window.innerHeight},width=${window.innerWidth},top=${window.screenTop},left=${window.screenLeft},resizable=yes,noopener=no`); window.close(); }' >> c_insertNewWindow.js;
-
 echo 'window.children[window.children.length - 1].document.write(fileContentsReference);' >> c_insertNewWindow.js;
 echo 'try {' >> c_insertNewWindow.js;
 echo 'for (let j = 0; j < window.parents.length; j++) {' >> c_insertNewWindow.js;
@@ -65,7 +61,6 @@ echo 'window.parents[j].children[window.parents[j].children.length] = window.chi
 echo '}' >> c_insertNewWindow.js;
 echo '} catch {}' >> c_insertNewWindow.js;
 echo '}' >> c_insertNewWindow.js;
-
 mv c_insertNewWindow.js ./h_hdub/d_handlers/c_initialization/;
 
 
@@ -75,9 +70,10 @@ mv c_insertNewWindow.js ./h_hdub/d_handlers/c_initialization/;
 
 echo '<!DOCTYPE html>' > t_treeDiagram.html;
 echo "<body>" >> t_treeDiagram.html;
+echo "<style> .hdub_treeLink { color: #DEFF1C; } </style>" >> t_treeDiagram.html;
 echo '<pre style="font-size: 24px; font-style: italic; color: rgb(64,64,64);">' >> t_treeDiagram.html;
 echo '<span style="font-size: 48px; color: #DEFF1C;">HDUB TREE DIAGRAM</span>' >> t_treeDiagram.html;
-find h_hdub/ | sed -n '/\.js/p' | sed 's/\(^.*\/\)\(.*$\)/\1<a style="color: #DEFF1C; font-style: normal; font-weight: bold;" href="\1\2">\2<\/a>/g' | sed '/\.js/!i <a>' >> t_treeDiagram.html;
+find h_hdub/ | sed -n '/\.js/p' | sed 's/\(^.*\/\)\(.*$\)/\1<a class="hdub_treeLink" href="\1\2">\2<\/a>/g' | sed '/\.js/!i <a>' >> t_treeDiagram.html;
 echo "</pre>" >> t_treeDiagram.html;
 echo "<script>" >> t_treeDiagram.html;
 echo "document.body.style.backgroundColor = 'black';" >> t_treeDiagram.html;
@@ -102,28 +98,19 @@ echo '`' >> b_0_topClip;
 
 
 echo 'h_hdub.c_startup = {};' > h_hdub/z_hwObject/c_startup.js;
-
 echo 'h_hdub.c_startup.a_note = "This data allow entry for your own startup file metadata in c_customMetaData";' >> h_hdub/z_hwObject/c_startup.js;
-
-
 echo 'h_hdub.c_startup.b_first = `' >> h_hdub/z_hwObject/c_startup.js;
 head -3 index.html >> h_hdub/z_hwObject/c_startup.js;
 echo '`;' >> h_hdub/z_hwObject/c_startup.js;
-
 echo >> h_hdub/z_hwObject/c_startup.js;
-
 echo 'h_hdub.c_startup.c_customMetaDataHere = ``;' >> h_hdub/z_hwObject/c_startup.js;
-
 echo >> h_hdub/z_hwObject/c_startup.js;
-
 echo 'h_hdub.c_startup.d_second = `' >> h_hdub/z_hwObject/c_startup.js;
 head -n -3 index.html | tail -n +4 >> h_hdub/z_hwObject/c_startup.js;
 echo "<script>" >> h_hdub/z_hwObject/c_startup.js;
 echo 'utilityLayer0.innerHTML = \`' >> h_hdub/z_hwObject/c_startup.js;
 echo '`;' >> h_hdub/z_hwObject/c_startup.js;
-
 echo >> h_hdub/z_hwObject/c_startup.js;
-
 echo 'h_hdub.c_startup.e_third = `' >> h_hdub/z_hwObject/c_startup.js;
 echo '\`;' >> h_hdub/z_hwObject/c_startup.js;
 cat b_1_bottomClip | tail -n +2 >> h_hdub/z_hwObject/c_startup.js;
@@ -132,13 +119,8 @@ echo '`;' >> h_hdub/z_hwObject/c_startup.js;
 
 
 
-
-
-
-
-
-
 ## HERE WE ARE SETTING SOME VERSION STRINGS IN THE INJECTED HTML STUFF OF THE SHELF MENU
+
 
 find h_hdub/c_shelfMenu/a_images/a_tab1/0_folderSelectors/ -type f > menu_temp; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/[^"]*"\//' > menu_temp_1; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/?v=/' > menu_temp_2; cat menu_temp | sed 's/^/date -r /' | sed 's/$/ +"%Y%m%d%H%M%S" >> menu_versions;/' > menu_stamp_script; . ./menu_stamp_script; paste -d '' menu_temp_1 menu_temp_2 menu_versions | sed "s/^/sed -i 's\//" | sed "s/$/@\/' h_hdub\/c_shelfMenu\/b_html\/a_tab1\/0_folderSelectors\/*;/" | sed 's/@/"/' > menu_temp_script; chmod 755 menu_temp_script; . ./menu_temp_script; rm menu_temp_script menu_temp menu_temp_1 menu_temp_2 menu_versions menu_stamp_script;
 find h_hdub/c_shelfMenu/a_images/b_tab2/0_folderSelectors/ -type f > menu_temp; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/[^"]*"\//' > menu_temp_1; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/?v=/' > menu_temp_2; cat menu_temp | sed 's/^/date -r /' | sed 's/$/ +"%Y%m%d%H%M%S" >> menu_versions;/' > menu_stamp_script; . ./menu_stamp_script; paste -d '' menu_temp_1 menu_temp_2 menu_versions | sed "s/^/sed -i 's\//" | sed "s/$/@\/' h_hdub\/c_shelfMenu\/b_html\/b_tab2\/0_folderSelectors\/*;/" | sed 's/@/"/' > menu_temp_script; chmod 755 menu_temp_script; . ./menu_temp_script; rm menu_temp_script menu_temp menu_temp_1 menu_temp_2 menu_versions menu_stamp_script;
@@ -168,10 +150,19 @@ find h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/ -type f > menu_temp; cat menu
 find h_hdub/c_shelfMenu/a_images/e_tab5/b_folder2/ -type f > menu_temp; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/[^"]*"\//' > menu_temp_1; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/?v=/' > menu_temp_2; cat menu_temp | sed 's/^/date -r /' | sed 's/$/ +"%Y%m%d%H%M%S" >> menu_versions;/' > menu_stamp_script; . ./menu_stamp_script; paste -d '' menu_temp_1 menu_temp_2 menu_versions | sed "s/^/sed -i 's\//" | sed "s/$/@\/' h_hdub\/c_shelfMenu\/b_html\/e_tab5\/b_folder2\/*;/" | sed 's/@/"/' > menu_temp_script; chmod 755 menu_temp_script; . ./menu_temp_script; rm menu_temp_script menu_temp menu_temp_1 menu_temp_2 menu_versions menu_stamp_script;
 find h_hdub/c_shelfMenu/a_images/f_tab6/b_folder2/ -type f > menu_temp; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/[^"]*"\//' > menu_temp_1; cat menu_temp | sed 's/\//\\\//g' | sed 's/$/?v=/' > menu_temp_2; cat menu_temp | sed 's/^/date -r /' | sed 's/$/ +"%Y%m%d%H%M%S" >> menu_versions;/' > menu_stamp_script; . ./menu_stamp_script; paste -d '' menu_temp_1 menu_temp_2 menu_versions | sed "s/^/sed -i 's\//" | sed "s/$/@\/' h_hdub\/c_shelfMenu\/b_html\/f_tab6\/b_folder2\/*;/" | sed 's/@/"/' > menu_temp_script; chmod 755 menu_temp_script; . ./menu_temp_script; rm menu_temp_script menu_temp menu_temp_1 menu_temp_2 menu_versions menu_stamp_script;
 
+
+
+
+## THIS IS FOR NEOCITIES, DIRECT TO PROGRAM
+
+
 cp index.html not_found.html;
 
 
+
+
 ## Here we are setting the permissions completely, which will help when it comes to compressing the file.
+
 
 find . -type f -exec chmod 644 {} +;
 find . -type d -exec chmod 755 {} +;

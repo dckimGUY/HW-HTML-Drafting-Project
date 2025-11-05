@@ -15,4 +15,4 @@ ui.cursorNum.click               = function() {  };
 ui.partNom.input                 = function() { if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; } };
 ui.partPrev.click                = function() { focusPrevious(); updateInfoShelf(); redraw(); };
 ui.partNext.click                = function() { focusNext();     updateInfoShelf(); redraw(); };
-ui.partText.input                = function() { if (coinFocus!=null) { if (curFocus==0) { coinFocus.dataset.notes = ui.partText.ref.value; } } };
+ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value; } };

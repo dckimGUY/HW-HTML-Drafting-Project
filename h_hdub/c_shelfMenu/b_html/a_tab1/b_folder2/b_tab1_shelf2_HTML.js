@@ -1,5 +1,5 @@
 shelfMenuHTML.tab1.folder2.HTML = `
-<input  id="coin77671" class="input_  input_coin77671"  type="value" placeholder="emptyFileName" spellcheck="false">
+<input  id="coin77671" class="input_  input_coin77671 dckimPixelMono"  type="value" placeholder="emptyFileName" spellcheck="false">
 <button id="coin77155" class="button_ button_coin77155" title=""></button>
 <button id="coin59760" class="button_ button_coin59760" title=""></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>

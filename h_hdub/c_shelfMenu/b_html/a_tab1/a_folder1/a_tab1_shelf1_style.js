@@ -65,7 +65,7 @@ shelfMenuHTML.tab1.folder1.style = `
 .button_partNext:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr_focus.gif?v=20251102205813");  }
 .button_partNext:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr_hover.gif?v=20251102205813");  }
 .button_partNext:active          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr_active.gif?v=20251102205813"); }
-.input_partText                  { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    284px; width:    184px; height:    207px; outline-offset: -4px; }
+.input_partText                  { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    284px; width:    184px; height:    207px; outline-offset: -4px; font-size: 16px; }
 </style>
 `;
 

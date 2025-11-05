@@ -14,7 +14,5 @@ switch (event.target) {
 
 /* */
 
-/* */
-
 }
 });

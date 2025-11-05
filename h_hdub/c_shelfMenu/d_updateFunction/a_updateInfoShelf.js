@@ -2,8 +2,11 @@ function updateInfoShelf() {
 
 topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
 
-
-ui.partText.ref.value  = filename;
+if (coinFocus!=null&&coinFocus.dataset.notes) {
+ui.partText.ref.value  = coinFocus.dataset.notes;
+} else {
+ui.partText.ref.value  = "";
+}
 
 let filenameEntryLayers = document.getElementById("coin77671");
 filenameEntryLayers.value = filename;
@@ -34,7 +37,6 @@ if (coinFocus.dataset.notes) {
 partText.value = coinFocus.dataset.notes;
 } else {
 coinFocus.dataset.notes = "";
-partText.value = coinFocus.dataset.notes;
 }
 
 } else if (curFocus==1) {
