@@ -17,4 +17,5 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <button id="partPrev" class="button_ button_partPrev" title=""></button>
 <button id="partNext" class="button_ button_partNext" title=""></button>
 <textarea id="partText" class="textarea_ input_partText dckimPixelMono" placeholder="empty" spellcheck="false"></textarea>
+<input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" placeholder="imagePath/" spellcheck="false">
 `;

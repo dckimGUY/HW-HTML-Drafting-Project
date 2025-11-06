@@ -46,7 +46,7 @@ ui[name].ref   = document.getElementById(name);
 
 /* TAB 1, FOLDER 1 */
 
-["xrayGrey", "xrayMagenta", "xrayCyan", "partY", "partX", "partW", "partH", "cursorAuto", "cursorXS", "cursorS", "cursorM", "cursorL", "cursorXL", "cursorNum", "partNom", "partPrev", "partNext", "partText"].forEach((name) => {
+["xrayGrey", "xrayMagenta", "xrayCyan", "partY", "partX", "partW", "partH", "cursorAuto", "cursorXS", "cursorS", "cursorM", "cursorL", "cursorXL", "cursorNum", "partNom", "partPrev", "partNext", "partText", "pathEntry"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
@@ -65,8 +65,27 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
+["hdub_menuScale8", "hdub_menuScale4", "hdub_menuScale2", "hdub_menuScale1", "hdub_menuScaleHalf", "hdub_menuScaleQuarter", "hdub_menuScaleEighth"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
 
 
+
+
+/* TAB 3, FOLDER 1 */
+
+["coin17304", "coin26746", "coin32891", "coin40855", "coin46032"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
+/******************/
+/* INITIALIZATION */
+
+ui.pathEntry.ref.value = hdub_imagePath;
 
 
 

@@ -4,8 +4,8 @@ shelfMenuHTML.wrapperStyle = `
 <style>
 .menuWrapper {
 position: fixed;
-right: 16px;
-top: 16px;
+right: 0px;
+top: 0px;
 width: 200px;
 height: 500px;
 z-index: 9999999999;

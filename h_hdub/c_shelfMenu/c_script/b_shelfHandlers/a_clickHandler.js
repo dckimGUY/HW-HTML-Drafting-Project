@@ -71,8 +71,7 @@ case ui.setLayer23.ref:          ui.setLayer23.click()           ; break;
 case ui.setLayer24.ref:          ui.setLayer24.click()           ; break;
 case ui.setLayer25.ref:          ui.setLayer25.click()           ; break;
 
-/* tab 1 folder 2 */
-
+/* tab 2 folder 1 */
 case ui.modeZ.ref:               ui.modeZ.click()                ; break;
 case ui.modeEeM1.ref:            ui.modeEeM1.click()             ; break;
 case ui.modeD.ref:               ui.modeD.click()                ; break;
@@ -80,10 +79,20 @@ case ui.modeG.ref:               ui.modeG.click()                ; break;
 case ui.modeEeM0.ref:            ui.modeEeM0.click()             ; break;
 case ui.modeT.ref:               ui.modeT.click()                ; break;
 
+case ui.hdub_menuScale8.ref:     ui.hdub_menuScale8.click()      ; break;
+case ui.hdub_menuScale4.ref:     ui.hdub_menuScale4.click()      ; break;
+case ui.hdub_menuScale2.ref:     ui.hdub_menuScale2.click()      ; break;
+case ui.hdub_menuScale1.ref:     ui.hdub_menuScale1.click()      ; break;
+case ui.hdub_menuScaleHalf.ref:  ui.hdub_menuScaleHalf.click()   ; break;
+case ui.hdub_menuScaleQuarter.ref: ui.hdub_menuScaleQuarter.click() ; break;
+case ui.hdub_menuScaleEighth.ref: ui.hdub_menuScaleEighth.click() ; break;
 
-
-
-
+/* tab 3 folder 1 */
+case ui.coin17304.ref:           ui.coin17304.click()            ; break;
+case ui.coin26746.ref:           ui.coin26746.click()            ; break;
+case ui.coin32891.ref:           ui.coin32891.click()            ; break;
+case ui.coin40855.ref:           ui.coin40855.click()            ; break;
+case ui.coin46032.ref:           ui.coin46032.click()            ; break;
 
 /* */
 

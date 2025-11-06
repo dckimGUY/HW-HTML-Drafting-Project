@@ -18,6 +18,11 @@ let useBase64forVideo  = true;
 
 let saveWithScript     = false;
 
+var hdub_imagePath = "d_images/";
+
+if (localStorage.getItem("hdub_imagePath")) { hdub_imagePath = localStorage.getItem("hdub_imagePath"); }
+
+
 var fileSaveHeader = '';
 var fileSaveFooter = '';
 

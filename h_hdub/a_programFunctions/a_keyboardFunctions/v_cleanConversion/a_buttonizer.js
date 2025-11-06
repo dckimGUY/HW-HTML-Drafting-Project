@@ -48,7 +48,7 @@ let buttonHandlerPrep = ''  ;
 let changeHandlerPrep  = ''  ;
 let functionPrep      = ''  ;
 
-let imageFolder = "d_images/";
+let imageFolder = hdub_imagePath;
 
 for (let j = 0; j < coinFocus.div.children.length; j++) {
 if (coinFocus.div.children[j].dataset.name) { nameInput = coinFocus.div.children[j].dataset.name; } else { nameInput = coinFocus.div.children[j].id; }

@@ -817,7 +817,7 @@ modeRouter('',1);
 if (useBase64forImages==true) {
 img.src = evt.target.result;
 } else {
-img.src ="./d_images/" + file.name;
+img.src ="./" + hdub_imagePath + file.name;
 }
 };
 reader.readAsDataURL(file);

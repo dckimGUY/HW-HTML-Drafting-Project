@@ -16,3 +16,4 @@ ui.partNom.input                 = function() { if (coinFocus != null && curFocu
 ui.partPrev.click                = function() { focusPrevious(); updateInfoShelf(); redraw(); };
 ui.partNext.click                = function() { focusNext();     updateInfoShelf(); redraw(); };
 ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value; } };
+ui.pathEntry.input               = function() { ui.pathEntry.ref.value = ui.pathEntry.ref.value.replace(/\\/g, "/"); hdub_imagePath = ui.pathEntry.ref.value; localStorage.setItem("hdub_imagePath", hdub_imagePath); };

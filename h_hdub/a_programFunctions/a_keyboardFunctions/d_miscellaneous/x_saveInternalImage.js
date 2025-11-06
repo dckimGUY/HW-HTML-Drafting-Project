@@ -1,5 +1,5 @@
-function saveInternalImage() {
-if (coinFocus!=null) {
+function saveInternalImage(fileSaveName) {
+if (coinFocus!=null&&coinFocus.lastElementChild.lastElementChild.src.startsWith("data")) {
 
 const date       =    new Date()                                      ;
 const year       =    date.getFullYear()                              ;
@@ -15,7 +15,11 @@ if(coinFocus.lastElementChild.lastElementChild.src != '') {
 const dataURL = coinFocus.lastElementChild.lastElementChild.src;
 const link = document.createElement('a');
 link.href = dataURL;
+
 link.download = "d_image-crop@" + dateSuffix + ".png";
+if (fileSaveName) {
+link.download = fileSaveName;
+}
 link.click();
 }
 

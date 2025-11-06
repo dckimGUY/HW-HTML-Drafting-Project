@@ -5,4 +5,15 @@ shelfMenuHTML.tab2.folder1.HTML = `
 <button id="modeG"    class="button_ button_modeG"    title="mode==1; move objects at the keyboard"></button>
 <button id="modeEeM0" class="button_ button_modeEeM0" title="mode==5; eM=0; Move the bottom and right edges"></button>
 <button id="modeT"    class="button_ button_modeT"    title="mode==8; set the three-colour using ctrl/shift/ctrl+shift and click"></button>
+
+
+
+<button id="hdub_menuScale8"       class="button_ button_hdub_menuScale8" title=""></button>
+<button id="hdub_menuScale4"       class="button_ button_hdub_menuScale4" title=""></button>
+<button id="hdub_menuScale2"       class="button_ button_hdub_menuScale2" title=""></button>
+<button id="hdub_menuScale1"       class="button_ button_hdub_menuScale1" title=""></button>
+<button id="hdub_menuScaleHalf"    class="button_ button_hdub_menuScaleHalf" title=""></button>
+<button id="hdub_menuScaleQuarter" class="button_ button_hdub_menuScaleQuarter" title=""></button>
+<button id="hdub_menuScaleEighth"  class="button_ button_hdub_menuScaleEighth" title=""></button>
+
 `;
