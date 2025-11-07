@@ -92,6 +92,11 @@ shelfMenuHTML.tab2.folder1.style = `
 .input_coin17325                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    469px; width:    132px; height:     18px; outline-offset: -4px; }
 
 
+.input_coin59277                 { position: absolute; border: none; margin: none; padding: none; left:     21px; top:    257px; width:     22px; height:     27px; outline-offset: -4px; }
+.input_coin62796                 { position: absolute; border: none; margin: none; padding: none; left:     47px; top:    257px; width:     22px; height:     27px; outline-offset: -4px; }
+.input_coin65598                 { position: absolute; border: none; margin: none; padding: none; left:     73px; top:    257px; width:     22px; height:     27px; outline-offset: -4px; }
+.input_coin67938                 { position: absolute; border: none; margin: none; padding: none; left:    107px; top:    257px; width:     22px; height:     27px; outline-offset: -4px; }
+.input_coin47065                 { position: absolute; border: none; margin: none; padding: none; left:    133px; top:    257px; width:     22px; height:     27px; outline-offset: -4px; }
 
 
 

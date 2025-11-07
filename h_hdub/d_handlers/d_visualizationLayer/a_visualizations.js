@@ -46,9 +46,9 @@ l = parseInt(zStack[k].id.style.left) + xrayWidth/2 + thinOutline - window.scrol
 t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scrollY;
 w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
 h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
-Y.strokeStyle = "rgba(" + selectedColour + "," + opacityString + ")";
+Y.strokeStyle = selectedColour;
 Y.strokeRect(l,t,w,h);
-Y.fillStyle   = "rgba(" + selectedColour + ",1)";
+Y.fillStyle   = selectedColour;
 l = parseInt(zStack[k].id.style.left) - window.scrollX;
 t = parseInt(zStack[k].id.style.top) - window.scrollY;
 w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
@@ -61,11 +61,11 @@ t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scroll
 w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
 h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
        if (zStack[k].id.dataset.coinTrip==Ts0) {
-Y.strokeStyle = "rgba(" + greyColour + "," + opacityString + ")";
+Y.strokeStyle = greyColour;
 } else if (zStack[k].id.dataset.coinTrip==Ts1) {
-Y.strokeStyle = "rgba(" + pinkColour + "," + opacityString + ")";
+Y.strokeStyle = pinkColour;
 } else if (zStack[k].id.dataset.coinTrip==Ts2) {
-Y.strokeStyle = "rgba(" + blueColour + "," + opacityString + ")";
+Y.strokeStyle = blueColour;
 }
 Y.strokeRect(l,t,w,h);
 }
@@ -90,20 +90,20 @@ l = parseInt(zStack[j].id.style.left) - window.scrollX;
 t = parseInt(zStack[j].id.style.top) - window.scrollY;
 w = parseInt(zStack[j].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
 h = parseInt(zStack[j].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
-Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillStyle   = lineColour;
 Y.clearRect(l,t,w,h);
 Y.fillRect(l,t,w,h);
-     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = "rgba(" + greyColour + "," + opacityString + ")"; }
-else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = "rgba(" + pinkColour + "," + opacityString + ")"; }
-else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = "rgba(" + blueColour + "," + opacityString + ")"; }
+     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = greyColour; }
+else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = pinkColour; }
+else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = blueColour; }
        if (mode==1&&(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
-Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillStyle   = lineColour;
 Y.fillRect(l + edgeThickness + thinOutline,t + edgeThickness + thinOutline,w -((edgeThickness + thinOutline) * 2),h -((edgeThickness + thinOutline) * 2));
 Y.clearRect(l + edgeThickness + thinOutline * 2,t + edgeThickness + thinOutline * 2,w -((edgeThickness + thinOutline * 2) * 2),h -((edgeThickness + thinOutline * 2) * 2));
 } else if (mode==5&&(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
-Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillStyle   = lineColour;
        if (eM==0) {
 Y.fillRect(l + thinOutline + borderWidth,t + thinOutline + borderWidth,w -((edgeThickness + thinOutline * 2 + borderWidth)),h -((edgeThickness + thinOutline * 2 + borderWidth)));
 Y.clearRect(l + thinOutline * 2 + borderWidth,t + thinOutline * 2 + borderWidth,w -((edgeThickness + thinOutline * 4 + borderWidth)),h -((edgeThickness + thinOutline * 4 + borderWidth)));
@@ -114,7 +114,7 @@ Y.clearRect(l + edgeThickness + thinOutline * 2,t + edgeThickness + thinOutline 
 
 } else if (mode==6&&(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
-Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillStyle   = lineColour;
 Y.fillRect(l + edgeThickness + thinOutline,        t + borderWidth + thinOutline,        w -((edgeThickness + thinOutline) * 2),         h -((borderWidth + thinOutline) * 2));
 Y.fillRect(     l + borderWidth + thinOutline,   t + edgeThickness + thinOutline,              w -((borderWidth + thinOutline) * 2)   ,    h -((edgeThickness + thinOutline) * 2)    );
 Y.clearRect(l + edgeThickness + thinOutline + thinOutline,        t + borderWidth + thinOutline + thinOutline,        w -((edgeThickness + thinOutline) * 2) - (thinOutline * 2),         h -((borderWidth + thinOutline) * 2) - (thinOutline * 2));
@@ -126,7 +126,7 @@ if (mode==8||mode==9) {
 
 
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
-Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillStyle   = lineColour;
 Y.fillRect(l + borderWidth * 2 + thinOutline,t + borderWidth * 2 + thinOutline,w -(thinOutline * 2) - (borderWidth * 4),h -(thinOutline * 2) - (borderWidth * 4));
 Y.clearRect(l + borderWidth * 2 + thinOutline + thinOutline,t + borderWidth * 2 + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2));
 
@@ -134,7 +134,7 @@ Y.clearRect(l + borderWidth * 2 + thinOutline + thinOutline,t + borderWidth * 2 
 } else {
 
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
-Y.fillStyle   = "rgba(" + lineColour + "," + opacityString + ")";
+Y.fillStyle   = lineColour;
 Y.fillRect(l + borderWidth + thinOutline,t + borderWidth + thinOutline,w -(thinOutline * 2) - (borderWidth * 2),h -(thinOutline * 2) - (borderWidth * 2));
 Y.clearRect(l + borderWidth + thinOutline + thinOutline,t + borderWidth + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 2) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 2) - (thinOutline * 2));
 
@@ -151,7 +151,7 @@ Y.setLineDash([borderWidth * 2, borderWidth * 4]);
 /* THIS GIVES THE SELECTED OUTLINE COLOUR */
 if (zStack[j].id==coinFocus&&curFocus==0) {
 Y.lineWidth = borderWidth;
-Y.strokeStyle = "rgba(" + selectedColour + "," + opacityString + ")";
+Y.strokeStyle = selectedColour;
 Y.strokeRect(l + thinOutline + (borderWidth/2),t + thinOutline + (borderWidth/2),w -(thinOutline * 2 + borderWidth),h -(thinOutline * 2 + borderWidth));
 }
 

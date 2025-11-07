@@ -16,22 +16,12 @@ var xrayWidth      =  2;
 var thinOutline    =  2;
 var borderWidth    =  8;
 var opacityString  = '1.00';
-var selectedColour = "222,255, 28";
-var greyColour     = "255,255,255";
-var blueColour     = "  0,255,255";
-var pinkColour     = "222,128,255";
-var lineColour     = "  0,  0,  0";
+var selectedColour = "#DEFF1C";
+var greyColour     = "#FFFFFF";
+var blueColour     = "#00FFFF";
+var pinkColour     = "#DE80FF";
+var lineColour     = "#000000";
 
-if (localStorage.getItem("xrayVision"))  { xrayVision        = parseInt(localStorage.getItem("xrayVision"));     }
-if (localStorage.getItem("borderWidth"  )) { borderWidth     = parseInt(localStorage.getItem("borderWidth"  ));  }
-if (localStorage.getItem("xrayWidth"    )) { xrayWidth       = parseInt(localStorage.getItem("xrayWidth"    ));  }
-if (localStorage.getItem("thinOutline"  )) { thinOutline     = parseInt(localStorage.getItem("thinOutline"  ));  }
-if (localStorage.getItem("opacityString")) { opacityString   = localStorage.getItem("opacityString");  }
-if (localStorage.getItem("selectedColour")) { selectedColour = localStorage.getItem("selectedColour"); }
-if (localStorage.getItem("greyColour"    )) { greyColour     = localStorage.getItem("greyColour"    ); }
-if (localStorage.getItem("blueColour"    )) { blueColour     = localStorage.getItem("blueColour"    ); }
-if (localStorage.getItem("pinkColour"    )) { pinkColour     = localStorage.getItem("pinkColour"    ); }
-if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getItem("lineColour"    ); }
 
 
 
@@ -421,3 +411,22 @@ Do not enter this as the dataset.dragPull value.
 "= "
 
 */
+
+
+
+
+
+
+
+
+if (localStorage.getItem("xrayVision"))    { xrayVision      = parseInt(localStorage.getItem("xrayVision"));     }
+if (localStorage.getItem("borderWidth"  )) { borderWidth     = parseInt(localStorage.getItem("borderWidth"  ));  }
+if (localStorage.getItem("xrayWidth"    )) { xrayWidth       = parseInt(localStorage.getItem("xrayWidth"    ));  }
+if (localStorage.getItem("thinOutline"  )) { thinOutline     = parseInt(localStorage.getItem("thinOutline"  )); xrayWidth = thinOutline; }
+if (localStorage.getItem("opacityString")) { opacityString   = localStorage.getItem("opacityString");  }
+
+if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getItem("lineColour"    ); }
+if (localStorage.getItem("selectedColour")) { selectedColour = localStorage.getItem("selectedColour"); }
+if (localStorage.getItem("greyColour"    )) { greyColour = localStorage.getItem("greyColour"); Bs0 = greyColour; Cs0 = greyColour; }
+if (localStorage.getItem("blueColour"    )) { blueColour = localStorage.getItem("blueColour"); Bs2 = blueColour; Cs2 = blueColour;}
+if (localStorage.getItem("pinkColour"    )) { pinkColour = localStorage.getItem("pinkColour"); Bs1 = pinkColour; Cs1 = pinkColour; }

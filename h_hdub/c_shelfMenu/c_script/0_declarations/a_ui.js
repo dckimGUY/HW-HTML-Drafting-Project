@@ -82,6 +82,13 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
+["coin59277", "coin62796", "coin65598", "coin67938", "coin47065"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
 
 
 
@@ -118,5 +125,10 @@ ui.coin43886.ref.value = bU;
 
 
 
+ui.coin59277.ref.value = greyColour;
+ui.coin62796.ref.value = blueColour;
+ui.coin65598.ref.value = pinkColour;
+ui.coin67938.ref.value = lineColour;
+ui.coin47065.ref.value = selectedColour;
 
 

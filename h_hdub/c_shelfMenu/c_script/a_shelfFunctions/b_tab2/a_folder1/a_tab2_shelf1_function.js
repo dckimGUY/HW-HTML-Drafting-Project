@@ -70,6 +70,83 @@ spaceViewOff();
 Z();
  };
 
+
+
+
+/*
+if (localStorage.getItem("greyColour"    )) { greyColour     = localStorage.getItem("greyColour"    ); }
+if (localStorage.getItem("blueColour"    )) { blueColour     = localStorage.getItem("blueColour"    ); }
+if (localStorage.getItem("pinkColour"    )) { pinkColour     = localStorage.getItem("pinkColour"    ); }
+*/
+
+/* TRI-COLOURS */
+
+ui.coin59277.input              = function() {
+                      greyColour    = ui.coin59277.ref.value;
+                      Bs0           = ui.coin59277.ref.value + "99";
+                      Cs0           = ui.coin59277.ref.value + "99";
+localStorage.setItem('greyColour'    ,ui.coin59277.ref.value);
+                                      ui.coin59277.ref.setAttribute('value',
+                                      ui.coin59277.ref.value); redraw();
+spaceViewOn();
+spaceViewOff();
+};
+ui.coin62796.input              = function() {
+                      blueColour    = ui.coin62796.ref.value;
+                      Bs2           = ui.coin62796.ref.value + "99";
+                      Cs2           = ui.coin62796.ref.value + "99";
+localStorage.setItem('blueColour'    ,ui.coin62796.ref.value);
+                                      ui.coin62796.ref.setAttribute('value',
+                                      ui.coin62796.ref.value); redraw();
+spaceViewOn();
+spaceViewOff();
+};
+ui.coin65598.input              = function() {
+                      pinkColour    = ui.coin65598.ref.value;
+                      Bs1           = ui.coin65598.ref.value + "99";
+                      Cs1           = ui.coin65598.ref.value + "99";
+localStorage.setItem('pinkColour'    ,ui.coin65598.ref.value);
+                                      ui.coin65598.ref.setAttribute('value',
+                                      ui.coin65598.ref.value); redraw();
+spaceViewOn();
+spaceViewOff();
+};
+
+
+
+
+
+ui.coin67938.input              = function() {
+                      lineColour    = ui.coin67938.ref.value;
+localStorage.setItem('lineColour'    ,ui.coin67938.ref.value);
+                                      ui.coin67938.ref.setAttribute('value',
+                                      ui.coin67938.ref.value); redraw();
+};
+
+ui.coin47065.input              = function() {
+                      selectedColour= ui.coin47065.ref.value;
+localStorage.setItem('selectedColour',ui.coin47065.ref.value);
+                                      ui.coin47065.ref.setAttribute('value',
+                                      ui.coin47065.ref.value); redraw();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* SLIDERS */
 
 
@@ -87,6 +164,7 @@ localStorage.thinOutline = thinOutline;
 
 ui.coin41267.input              = function() {
 thinOutline = parseInt(ui.coin41267.ref.value);
+xrayWidth = thinOutline;
 localStorage.setItem("thinOutline", thinOutline);
 if (utilityLayer0.children.length>0) { redraw(); }
 };
