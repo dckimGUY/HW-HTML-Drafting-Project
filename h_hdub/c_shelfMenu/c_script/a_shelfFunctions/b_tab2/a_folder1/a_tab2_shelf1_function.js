@@ -13,9 +13,9 @@ ui.hdub_menuScale8.click         = function() { ui.menuWrapper.ref.style.transfo
 ui.hdub_menuScale4.click         = function() { ui.menuWrapper.ref.style.transform = "scale(4.00)"; };
 ui.hdub_menuScale2.click         = function() { ui.menuWrapper.ref.style.transform = "scale(2.00)"; };
 ui.hdub_menuScale1.click         = function() { ui.menuWrapper.ref.style.transform = "scale(1.00)"; };
-ui.hdub_menuScaleHalf.click      = function() { ui.menuWrapper.ref.style.transform = "scale(0.50)"; };
-ui.hdub_menuScaleQuarter.click   = function() { ui.menuWrapper.ref.style.transform = "scale(0.25)"; };
-ui.hdub_menuScaleEighth.click    = function() { ui.menuWrapper.ref.style.transform = "scale(0.125)"; };
+ui.hdub_menuScaleHalf.click      = function() { ui.menuWrapper.ref.style.transform = "scale(0.80)"; };
+ui.hdub_menuScaleQuarter.click   = function() { ui.menuWrapper.ref.style.transform = "scale(0.65)"; };
+ui.hdub_menuScaleEighth.click    = function() { ui.menuWrapper.ref.style.transform = "scale(0.50)"; };
 
 
 /* ROW 3 */

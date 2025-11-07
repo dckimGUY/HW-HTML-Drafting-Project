@@ -6,7 +6,7 @@
 
 /* This sets the initial Draggable Edge Size. */
 
-var edgeQ = 16;
+var edgeQ = 32;
 
 if (localStorage.getItem("edgeQ")) { edgeQ = parseInt(localStorage.getItem("edgeQ")); }
 
@@ -265,8 +265,8 @@ let utilityOpacity = 0.75;
 
 /* OPTIONS FOR THE GRID */
 
-/* Utility Background Color Alternate for Construction Mode */var   sL="#3F3F5F";
-/* Utility Background Color Alternate for Style Mode        */var    L="#3F3F3F";
+/* Utility Background Color Alternate for Construction Mode */var   sL="#3F3F3F";
+/* Utility Background Color Alternate for Style Mode        */var    L="#3F3F5F";
 /* Finished Document Background Color */var    finishedBackgroundColour="#BFBFBF";
 
 /* Utility Grid Line Color  */var    U="#00FFFF";
