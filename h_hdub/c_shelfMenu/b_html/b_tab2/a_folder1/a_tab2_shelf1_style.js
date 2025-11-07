@@ -72,6 +72,63 @@ shelfMenuHTML.tab2.folder1.style = `
 .button_hdub_menuScaleEighth:hover { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/b_shelfMenuScale/g_scaleEighth_hover.png?v=20251105175048");  }
 .button_hdub_menuScaleEighth:active { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/b_shelfMenuScale/g_scaleEighth_active.png?v=20251105175326"); }
 
+/* ROW 3 */
+
+.input_coin88067                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:      7px; top:    197px; width:     35px; height:     18px; }
+.input_coin46861                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:      7px; top:    178px; width:     35px; height:     18px; }
+.input_coin44038                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:      7px; top:    216px; width:     35px; height:     18px; }
+.input_coin72275                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    155px; top:    178px; width:     38px; height:     18px; }
+.input_coin74555                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    155px; top:    197px; width:     38px; height:     18px; }
+.input_coin43886                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    155px; top:    216px; width:     38px; height:     18px; }
+
+/* SLIDERS */
+
+.input_coin41267                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    296px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin47497                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    325px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin50633                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    353px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin53526                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    382px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin56897                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    411px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin59527                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    440px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin17325                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    469px; width:    132px; height:     18px; outline-offset: -4px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

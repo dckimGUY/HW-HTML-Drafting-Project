@@ -70,6 +70,20 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
+["coin88067", "coin46861", "coin44038", "coin72275", "coin74555", "coin43886"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+/* SLIDERS */
+
+["coin41267", "coin47497", "coin50633", "coin53526", "coin56897", "coin59527", "coin17325"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
 
 
 
@@ -87,19 +101,20 @@ ui[name].ref   = document.getElementById(name);
 
 ui.pathEntry.ref.value = hdub_imagePath;
 
+ui.coin41267.ref.value = thinOutline;
+ui.coin47497.ref.value = borderWidth;
+ui.coin50633.ref.value = edgeQ;
 
+//ui.coin41267.ref.addEventListener("focus", function() { });
+ui.coin47497.ref.addEventListener("focus", function() { this.max = edgeQ - (thinOutline * 2); });
+ui.coin50633.ref.addEventListener("focus", function() { this.min = borderWidth + thinOutline * 2; });
 
-
-
-
-
-
-
-
-
-
-
-
+ui.coin88067.ref.value = L;
+ui.coin46861.ref.value = sL;
+ui.coin44038.ref.value = finishedBackgroundColour;
+ui.coin72275.ref.value = U;
+ui.coin74555.ref.value = C;
+ui.coin43886.ref.value = bU;
 
 
 

@@ -10,7 +10,7 @@ width: 200px;
 height: 500px;
 z-index: 9999999999;
 transform-origin: top right;
-transform: scale(2);
+transform: scale(1);
 }
 .tabSelectors {
 position: absolute; left: 0px; top: 0px; width: 200px; height: 32px; z-index: 300;

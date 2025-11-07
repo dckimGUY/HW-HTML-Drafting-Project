@@ -744,7 +744,7 @@ if (coinFocus!=null) {
 };
 /* A refreshed window will start again with mode=0 */
 try {
-if (window.opener) {mode=0;}
+if (window.opener) { mode=0; interfaceShelf.style.display="none"; }
 } catch {}
 } else {
 coinFocus = utilityLayer0.lastElementChild;

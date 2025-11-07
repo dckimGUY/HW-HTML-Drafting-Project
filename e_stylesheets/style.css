@@ -47,3 +47,49 @@ body { font-family: 'JungYulKim2'; }
 .dckimPixelMono { font-family: 'dckimPixelMono'; line-height: 1.1; }
 
 img, canvas { image-rendering: crisp-edges; image-rendering: pixelated; }
+
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: none; }
+input[type="color"] {
+-webkit-appearance: none;
+appearance: none;
+border: none;
+padding: 0;
+margin: 0;
+}
+
+
+
+
+
+
+input[type=range] {
+appearance: none;
+background: transparent;
+border: none;
+cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 10px;
+height: 24px;
+appearance: none;
+background: url("hdub_range_thumb.png?v=1") no-repeat center/contain;
+border: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+background: transparent;
+}
+
+input[type=range]::-moz-range-thumb {
+background: url("hdub_range_thumb.png?v=1") no-repeat center/contain;
+border: none;
+width: 10px;
+height: 24px;
+}
+
+input[type=range]::-moz-range-track {
+background: transparent;
+}

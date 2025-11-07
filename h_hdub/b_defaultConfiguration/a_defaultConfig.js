@@ -10,6 +10,31 @@ var edgeQ = 16;
 
 if (localStorage.getItem("edgeQ")) { edgeQ = parseInt(localStorage.getItem("edgeQ")); }
 
+var xrayVision         = "false";
+var showVisualizations = "true";
+var xrayWidth      =  2;
+var thinOutline    =  2;
+var borderWidth    =  8;
+var opacityString  = '1.00';
+var selectedColour = "222,255, 28";
+var greyColour     = "255,255,255";
+var blueColour     = "  0,255,255";
+var pinkColour     = "222,128,255";
+var lineColour     = "  0,  0,  0";
+
+if (localStorage.getItem("xrayVision"))  { xrayVision        = parseInt(localStorage.getItem("xrayVision"));     }
+if (localStorage.getItem("borderWidth"  )) { borderWidth     = parseInt(localStorage.getItem("borderWidth"  ));  }
+if (localStorage.getItem("xrayWidth"    )) { xrayWidth       = parseInt(localStorage.getItem("xrayWidth"    ));  }
+if (localStorage.getItem("thinOutline"  )) { thinOutline     = parseInt(localStorage.getItem("thinOutline"  ));  }
+if (localStorage.getItem("opacityString")) { opacityString   = localStorage.getItem("opacityString");  }
+if (localStorage.getItem("selectedColour")) { selectedColour = localStorage.getItem("selectedColour"); }
+if (localStorage.getItem("greyColour"    )) { greyColour     = localStorage.getItem("greyColour"    ); }
+if (localStorage.getItem("blueColour"    )) { blueColour     = localStorage.getItem("blueColour"    ); }
+if (localStorage.getItem("pinkColour"    )) { pinkColour     = localStorage.getItem("pinkColour"    ); }
+if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getItem("lineColour"    ); }
+
+
+
 
 
 let useBase64forImages = true;
@@ -240,18 +265,18 @@ let utilityOpacity = 0.75;
 
 /* OPTIONS FOR THE GRID */
 
-/* Utility Background Color Alternate for Construction Mode */var   sL="rgb( 63, 63, 63)";
-/* Utility Background Color Alternate for Style Mode        */var    L="rgb( 63, 63, 95)";
-/* Finished Document Background Color */var    finishedBackgroundColour="rgb(191,191,191)";
+/* Utility Background Color Alternate for Construction Mode */var   sL="#3F3F5F";
+/* Utility Background Color Alternate for Style Mode        */var    L="#3F3F3F";
+/* Finished Document Background Color */var    finishedBackgroundColour="#BFBFBF";
 
-/* Utility Grid Line Color  */var    U="rgb(  0,255,255)";
-/* Utility Grid Line Color2 */var    C="rgb(  0,255,  0)";
-/* Utility Grid Line Color3 */var    D="rgb(  0,255,255)";
+/* Utility Grid Line Color  */var    U="#00FFFF";
+/* Utility Grid Line Color2 */var    C="#00FF00";
+/* Utility Grid Line Color3 */var    D="#00FFFF";
 /* Utility Grid Line Size   */var   gW=   "1";
 /* Utility Grid Font Select */var   bF="16px monospace";
 /* Utility Grid Font Select */var   bFarr="26px monospace";
 /* Utility Grid Boundary    */var   bW=  "12";
-/* Utility Grid Boundary Col*/var   bU="#F00";
+/* Utility Grid Boundary Col*/var   bU="#FF0000";
 /* Utility Grid Opacity     */var    K="0.25";
 
 
