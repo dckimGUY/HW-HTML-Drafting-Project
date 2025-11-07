@@ -306,6 +306,18 @@ mouseIconLayer.appendChild(edgeDetect) ;
 utilityLayer0.style.opacity     = "0.75";
 utilityLayer1.style.opacity     = "0.25";
 
+
+
+
+var partsOpacity = K;
+if (localStorage.getItem("partsOpacity")) { partsOpacity = localStorage.getItem("partsOpacity"); ui.coin59527.ref.value = partsOpacity; utilityLayer0.style.opacity=partsOpacity; }
+
+
+
+
+
+
+
 /* This detects the caps-lock state, when possible. */
 var CAPS = -1;
 document.addEventListener("blur", (event) => { CAPS = -1; });
@@ -412,12 +424,31 @@ Picture.width=0;
 Picture.height=0;
 Picture.style.pointerEvents="none";
 
-Picture.style.outlineWidth=bW + "px";
-Picture.style.outlineStyle="dotted";
+Picture.style.outlineWidth=bW/2 + "px";
+Picture.style.outlineStyle="dashed";
+
+
+
+if (localStorage.getItem("bU")) { bU = localStorage.getItem("bU"); ui.coin43886.ref.value = bU; }
+
 Picture.style.outlineColor=bU;
 
-Picture.style.opacity=K;
+
+var pictureOpacity = K;
+if (localStorage.getItem("pictureOpacity")) {
+pictureOpacity = localStorage.getItem("pictureOpacity");
+ui.coin17325.ref.value = pictureOpacity;
+ui.menuWrapper.ref.style.opacity=pictureOpacity;
+}
+
+
+Picture.style.opacity=pictureOpacity;
 gridLayer.appendChild(Picture);
+
+
+
+
+if (localStorage.getItem("K")) { K = localStorage.getItem("K"); ui.coin53526.ref.value = K; }
 
 /* Initialize the grid. */
 document.documentElement.style.backgroundColor=L;
@@ -572,6 +603,7 @@ this.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAgMAAADXB5lNAAAA
 Cur.appendChild(curImg);
 gridLayer.appendChild(Cur);
 
+Cur.style.opacity=pictureOpacity;
 
 
 

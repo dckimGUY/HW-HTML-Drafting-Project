@@ -181,8 +181,28 @@ localStorage.edgeQ = edgeQ;
 if (utilityLayer0.children.length>0) { redraw(); }
 };
 
-ui.coin53526.input              = function() {  };
-ui.coin56897.input              = function() {  };
-ui.coin59527.input              = function() {  };
-ui.coin17325.input              = function() {  };
+ui.coin53526.input              = function() {
+K = parseFloat(ui.coin53526.ref.value); Z();
+localStorage.setItem("K", K);
+};
+
+ui.coin56897.input              = function() { 
+visualOpacity = parseFloat(ui.coin56897.ref.value);
+Vis.style.opacity=visualOpacity;
+localStorage.setItem("visualOpacity", visualOpacity);
+};
+
+ui.coin59527.input              = function() { 
+partsOpacity = parseFloat(ui.coin59527.ref.value);
+utilityLayer0.style.opacity=partsOpacity;
+localStorage.setItem("partsOpacity", partsOpacity);
+};
+
+ui.coin17325.input              = function() { 
+pictureOpacity = parseFloat(ui.coin17325.ref.value);
+Picture.style.opacity=pictureOpacity;
+Cur.style.opacity=pictureOpacity;
+ui.menuWrapper.ref.style.opacity=pictureOpacity;
+localStorage.setItem("pictureOpacity", pictureOpacity);
+};
 

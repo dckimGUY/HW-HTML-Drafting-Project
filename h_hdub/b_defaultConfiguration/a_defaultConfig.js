@@ -26,7 +26,6 @@ var lineColour     = "#000000";
 
 
 
-
 let useBase64forImages = true;
 let useBase64forAudio  = true;
 let useBase64forVideo  = true;
@@ -313,7 +312,7 @@ let
 /*    Outline Color       */      Cs0=      "#CCC",      Cs1=      "#A0A",      Cs2=      "#0CC", /**/
 /*    Outline Width       */      Ws0=       "2px",      Ws1=       "2px",      Ws2=       "2px", /**/
 /*    Outline Style       */      Ss0=    "dashed",      Ss1=    "dashed",      Ss2=    "dashed", /**/
-/*    Background Color    */      Bs0="rgba(191,191,191,0.5)", Bs1="rgba(255,127,255,0.5)", Bs2="rgba(127,255,255,0.5)", /**/
+/*    Background Color    */      Bs0="#CCCCCC99", Bs1="#AA00AA99", Bs2="#00CCCC99", /**/
 /*    Opacity             */      Os0=      "1.00",      Os1=      "1.00",      Os2=      "1.00"; /**/
 /*                        */                                                                      /**/
 /****************************************************************************************************/

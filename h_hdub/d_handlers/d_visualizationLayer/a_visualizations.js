@@ -12,9 +12,11 @@ visualizationsLayer.appendChild(Vis);
 Vis.width=window.innerWidth;
 Vis.height=window.innerHeight;
 
+var visualOpacity = K;
+if (localStorage.getItem("visualOpacity")) { visualOpacity = localStorage.getItem("visualOpacity"); ui.coin56897.ref.value = visualOpacity; Vis.style.opacity=visualOpacity; }
 
 
-
+if (localStorage.getItem("xrayVision")) { xrayVision = localStorage.getItem("xrayVision"); };
 
 function redraw(element){
 
