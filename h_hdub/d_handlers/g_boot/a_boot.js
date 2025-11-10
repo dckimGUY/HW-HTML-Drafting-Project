@@ -610,7 +610,9 @@ window.addEventListener("scroll",()=>{Z(); redraw();})
 //document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
 
-
+if (localStorage.getItem("shelfMenuScale")) {
+ui.menuWrapper.ref.style.transform = "scale(" + parseFloat(localStorage.getItem("shelfMenuScale")) + ")";
+}
 
 var gridIncrementArray = "3-2";
 
@@ -667,7 +669,8 @@ else             {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
 
      if (T==  1) {                              }
 else if (T==  2) {T=  1;E=2;U=D;aS1=128;aS2=256;}
-else if (T==  6) {T=  2;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  3) {T=  2;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  6) {T=  3;E=2;U=D;aS1=128;aS2=256;}
 else if (T== 12) {T=  6;E=2;U=D;aS1=128;aS2=256;}
 else if (T== 24) {T= 12;E=2;U=D;aS1= 64;aS2=128;}
 else if (T== 48) {T= 24;E=2;U=D;aS1= 32;aS2= 64;}
@@ -733,7 +736,8 @@ else             {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
 } else if (gridIncrementArray=="3")           {
 
      if (T==  1) {T=  2;E=2;U=D;aS1= 96;aS2=192;}
-else if (T==  2) {T=  6;E=2;U=D;aS1= 64;aS2=128;}
+else if (T==  2) {T=  3;E=2;U=D;aS1= 96;aS2=192;}
+else if (T==  3) {T=  6;E=2;U=D;aS1= 64;aS2=128;}
 else if (T==  6) {T= 12;E=3;U=C;aS1= 96;aS2=192;}
 else if (T== 12) {T= 24;E=3;U=C;aS1= 48;aS2= 96;}
 else if (T== 24) {T= 48;E=3;U=C;aS1= 24;aS2= 48;}
@@ -798,6 +802,8 @@ gridLayer.appendChild(Cur);
 
 Cur.style.opacity=pictureOpacity;
 
+
+if (localStorage.getItem("cursorDisplay")) { Cur.style.display = localStorage.getItem("cursorDisplay"); }
 
 
 

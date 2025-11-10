@@ -50,6 +50,7 @@ case ui.coin59527.ref:           ui.coin59527.input()           ; break;
 case ui.coin17325.ref:           ui.coin17325.input()           ; break;
 
 
+case ui.bodyFade.ref:           ui.bodyFade.input()           ; break;
 
 
 

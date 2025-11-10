@@ -51,4 +51,14 @@ shelfMenuHTML.tab2.folder2.HTML = `
 <button id="coin07023" class="button_ button_coin07023" title=""></button>
 <input id="coin23538" name="coin23538" class="input_ input_coin23538 dckimPixelMono" type="value" placeholder="empty">
 <input id="coin32259" name="coin32259" class="input_coin32259" type="color" value="#FF00FF">
+
+<button id="setMetric" class="button_ button_setMetric" title="Keyboard Snap Metric"></button>
+<button id="setComp2" class="button_ button_setComp2" title="Keyboard Snap 2^2"></button>
+<button id="setComp3" class="button_ button_setComp3" title="Keyboard Snap 3*2^2"></button>
+<button id="setComp2and3" class="button_ button_setComp2and3" title="Keyboard Snap Comp2 and Comp3"></button>
+
+<button id="cursorShutoff" class="button_ button_cursorShutoff" title="Remove the annoying cursor!"></button>
+
+
+
 `;

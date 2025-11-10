@@ -86,7 +86,7 @@ shelfMenuHTML.tab2.folder1.style = `
 .input_coin41267                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    296px; width:    132px; height:     18px; outline-offset: -4px; }
 .input_coin47497                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    325px; width:    132px; height:     18px; outline-offset: -4px; }
 .input_coin50633                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    353px; width:    132px; height:     18px; outline-offset: -4px; }
-.input_coin53526                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    382px; width:    132px; height:     18px; outline-offset: -4px; }
+.input_coin53526                 { position: absolute; border: none; margin: none; padding: none; left:     8px; top:    382px; width:    157px; height:     18px; outline-offset: -4px; }
 .input_coin56897                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    411px; width:    132px; height:     18px; outline-offset: -4px; }
 .input_coin59527                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    440px; width:    132px; height:     18px; outline-offset: -4px; }
 .input_coin17325                 { position: absolute; border: none; margin: none; padding: none; left:     34px; top:    469px; width:    132px; height:     18px; outline-offset: -4px; }
@@ -99,9 +99,15 @@ shelfMenuHTML.tab2.folder1.style = `
 .input_coin47065                 { position: absolute; border: none; margin: none; padding: none; left:    133px; top:    257px; width:     22px; height:     27px; outline-offset: -4px; }
 
 
+.button_setDragThresholdFromGrid { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    453px; width:     25px; height:     39px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/setDragFromGrid.png?v=20251110014415");        }
+.button_setDragThresholdFromGrid:focus { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/setDragFromGrid_focus.png?v=20251110012711");  }
+.button_setDragThresholdFromGrid:hover { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/setDragFromGrid_hover.png?v=20251110012508");  }
+.button_setDragThresholdFromGrid:active { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/setDragFromGrid_active.png?v=20251110012629"); }
 
 
 
+.input_bodyFade                 { position: absolute; border: none; margin: none; padding: none; left: 119px; top: 394px; width: 124px; height:18px; transform: rotate(-90deg); }
 
 
 

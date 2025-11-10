@@ -110,3 +110,16 @@ spaceViewOn();
 spaceViewOff();
 Z(); 
 };
+
+ui.setMetric.click               = function() { gridIncrementArray = "metric"; localStorage.setItem("gridIncrementArray", gridIncrementArray); };
+ui.setComp2.click                = function() { gridIncrementArray = "2";      localStorage.setItem("gridIncrementArray", gridIncrementArray); };
+ui.setComp3.click                = function() { gridIncrementArray = "3";      localStorage.setItem("gridIncrementArray", gridIncrementArray); };
+ui.setComp2and3.click            = function() { gridIncrementArray = "3-2";    localStorage.setItem("gridIncrementArray", gridIncrementArray); };
+
+ui.cursorShutoff.click               = function() { if (Cur.style.display=='none') { Cur.style.display='block'; localStorage.setItem("cursorDisplay", "block"); } else { Cur.style.display='none'; localStorage.setItem("cursorDisplay", "none"); }; };
+
+
+
+
+
+

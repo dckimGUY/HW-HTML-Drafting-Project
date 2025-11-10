@@ -9,13 +9,13 @@ ui.modeT.click                   = function() { modeRouter(null,8); };
 
 /* ROW 2 */
 
-ui.hdub_menuScale8.click         = function() { ui.menuWrapper.ref.style.transform = "scale(8.00)"; };
-ui.hdub_menuScale4.click         = function() { ui.menuWrapper.ref.style.transform = "scale(4.00)"; };
-ui.hdub_menuScale2.click         = function() { ui.menuWrapper.ref.style.transform = "scale(2.00)"; };
-ui.hdub_menuScale1.click         = function() { ui.menuWrapper.ref.style.transform = "scale(1.00)"; };
-ui.hdub_menuScaleHalf.click      = function() { ui.menuWrapper.ref.style.transform = "scale(0.80)"; };
-ui.hdub_menuScaleQuarter.click   = function() { ui.menuWrapper.ref.style.transform = "scale(0.65)"; };
-ui.hdub_menuScaleEighth.click    = function() { ui.menuWrapper.ref.style.transform = "scale(0.50)"; };
+ui.hdub_menuScale8.click         = function() { ui.menuWrapper.ref.style.transform = "scale(8.00)"; localStorage.setItem("shelfMenuScale", "8.00"); };
+ui.hdub_menuScale4.click         = function() { ui.menuWrapper.ref.style.transform = "scale(4.00)"; localStorage.setItem("shelfMenuScale", "4.00");};
+ui.hdub_menuScale2.click         = function() { ui.menuWrapper.ref.style.transform = "scale(2.00)"; localStorage.setItem("shelfMenuScale", "2.00");};
+ui.hdub_menuScale1.click         = function() { ui.menuWrapper.ref.style.transform = "scale(1.00)"; localStorage.setItem("shelfMenuScale", "1.00");};
+ui.hdub_menuScaleHalf.click      = function() { ui.menuWrapper.ref.style.transform = "scale(0.80)"; localStorage.setItem("shelfMenuScale", "0.80");};
+ui.hdub_menuScaleQuarter.click   = function() { ui.menuWrapper.ref.style.transform = "scale(0.65)"; localStorage.setItem("shelfMenuScale", "0.65");};
+ui.hdub_menuScaleEighth.click    = function() { ui.menuWrapper.ref.style.transform = "scale(0.50)"; localStorage.setItem("shelfMenuScale", "0.50");};
 
 
 /* ROW 3 */
@@ -205,4 +205,22 @@ Cur.style.opacity=pictureOpacity;
 ui.menuWrapper.ref.style.opacity=pictureOpacity;
 localStorage.setItem("pictureOpacity", pictureOpacity);
 };
+
+
+
+
+
+ui.setDragThresholdFromGrid.click = function() {
+edgeQ = T;
+localStorage.edgeQ = edgeQ;
+ui.coin50633.ref.value = edgeQ;
+redraw();
+};
+
+
+
+
+ui.bodyFade.input              = function() { document.body.style.opacity = ui.bodyFade.ref.value; };
+
+
 

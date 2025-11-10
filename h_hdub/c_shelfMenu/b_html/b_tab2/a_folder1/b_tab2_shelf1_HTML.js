@@ -28,10 +28,10 @@ shelfMenuHTML.tab2.folder1.HTML = `
 <input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1">
 
 
-<input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.02">
-<input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.02">
-<input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.02">
-<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0" max="1"    step="0.02">
+<input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005">
+<input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005">
+<input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005">
+<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0" max="1"    step="0.005">
 
 <input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color">
 <input id="coin62796" name="coin62796" class="input_ input_coin62796" type="color">
@@ -39,4 +39,15 @@ shelfMenuHTML.tab2.folder1.HTML = `
 
 <input id="coin67938" name="coin67938" class="input_ input_coin67938" type="color">
 <input id="coin47065" name="coin47065" class="input_ input_coin47065" type="color">
+
+
+
+<button id="setDragThresholdFromGrid" class="button_ button_setDragThresholdFromGrid" title="Set Drag Threshold from Snap Grid"></button>
+
+
+
+<input id="bodyFade" name="bodyFade" class="input_bodyFade" type="range" min="0.05" max="1" step="0.01" value="1" title="Fade Entire Program">
+
+
+
 `;

@@ -87,7 +87,21 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
-/* TAB 2, FOLDER 1 */
+["setDragThresholdFromGrid"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+["bodyFade"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
+
+/* TAB 2, FOLDER 2 */
 
 ["coin21493", "coin31352", "coin44789", "coin33352", "coin35216", "coin36899", "coin38511", "coin40870", "coin46684", "coin48242", "coin50503", "coin53180", "coin55658", "coin57816", "coin60297", "coin64112", "coin66935", "coin70148", "coin05786", "coin08962", "coin10912", "coin15097", "coin18271", "coin21056", "coin22927", "coin26110", "coin44062", "coin46633", "coin48525", "coin51107", "coin56470", "coin58382", "coin59792", "coin61443", "coin63058", "coin65326", "coin67576", "coin69548", "coin71699", "coin72936", "coin74420", "coin63249"].forEach((name) => {
 ui[name]       = {};
@@ -99,9 +113,15 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
+["setMetric", "setComp2", "setComp3", "setComp2and3"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
 
-
-
+["cursorShutoff"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
 
 
 

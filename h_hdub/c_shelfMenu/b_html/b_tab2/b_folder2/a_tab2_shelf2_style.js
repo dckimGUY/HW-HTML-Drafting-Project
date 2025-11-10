@@ -83,6 +83,36 @@ border-radius: 2px;
 .input_coin23538                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    181px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
 .input_coin32259                 { position: absolute; border: none; margin: none; padding: none; left:    110px; top:    181px; width:     14px; height:     14px; outline-offset: -4px; }
 
+
+.button_setMetric                { position: absolute; border: none; margin: none; padding: none; left:      6px; top:    198px; width:     55px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setMetric.png?v=20251109205240");        }
+.button_setMetric:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setMetric_focus.png?v=20251109221057");  }
+.button_setMetric:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setMetric_hover.gif?v=20251109214505");  }
+.button_setMetric:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setMetric_active.png?v=20251109221104"); }
+.button_setComp2                 { position: absolute; border: none; margin: none; padding: none; left:     62px; top:    198px; width:     48px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2.png?v=20251109205219");        }
+.button_setComp2:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2_focus.png?v=20251109221229");  }
+.button_setComp2:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2_hover.gif?v=20251109215039");  }
+.button_setComp2:active          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2_active.png?v=20251109221231"); }
+.button_setComp3                 { position: absolute; border: none; margin: none; padding: none; left:    111px; top:    198px; width:     49px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp3.png?v=20251109205224");        }
+.button_setComp3:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp3_focus.png?v=20251109221136");  }
+.button_setComp3:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp3_hover.gif?v=20251109215744");  }
+.button_setComp3:active          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp3_active.png?v=20251109221149"); }
+.button_setComp2and3             { position: absolute; border: none; margin: none; padding: none; left:    161px; top:    198px; width:     33px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2and3.png?v=20251109205229");        }
+.button_setComp2and3:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2and3_focus.png?v=20251109221205");  }
+.button_setComp2and3:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2and3_hover.gif?v=20251109220615");  }
+.button_setComp2and3:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setComp2and3_active.png?v=20251109221211"); }
+
+.button_cursorShutoff                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    225px; width:     32px; height:     32px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/cursorShutoff.png?v=20251109231743");        }
+.button_cursorShutoff:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/cursorShutoff_focus.png?v=20251109231546");  }
+.button_cursorShutoff:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/cursorShutoff_hover.png?v=20251109231518");  }
+.button_cursorShutoff:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/cursorShutoff_active.png?v=20251109231530"); }
+
+
+
 </style>
 `;
 

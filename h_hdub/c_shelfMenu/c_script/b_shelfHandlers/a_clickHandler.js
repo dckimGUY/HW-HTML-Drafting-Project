@@ -87,6 +87,12 @@ case ui.hdub_menuScaleHalf.ref:  ui.hdub_menuScaleHalf.click()   ; break;
 case ui.hdub_menuScaleQuarter.ref: ui.hdub_menuScaleQuarter.click() ; break;
 case ui.hdub_menuScaleEighth.ref: ui.hdub_menuScaleEighth.click() ; break;
 
+case ui.setDragThresholdFromGrid.ref: ui.setDragThresholdFromGrid.click() ; break;
+
+
+
+
+
 /* tab 2 folder 2 */
 case ui.coin21493.ref:           ui.coin21493.click()            ; break;
 case ui.coin31352.ref:           ui.coin31352.click()            ; break;
@@ -134,6 +140,15 @@ case ui.coin63249.ref:           ui.coin63249.click()            ; break;
 case ui.coin38634.ref:           ui.coin38634.click()            ; break;
 case ui.coin41046.ref:           ui.coin41046.click()            ; break;
 case ui.coin07023.ref:           ui.coin07023.click()            ; break;
+
+case ui.setMetric.ref:           ui.setMetric.click()            ; break;
+case ui.setComp2.ref:            ui.setComp2.click()             ; break;
+case ui.setComp3.ref:            ui.setComp3.click()             ; break;
+case ui.setComp2and3.ref:        ui.setComp2and3.click()         ; break;
+
+case ui.cursorShutoff.ref:           ui.cursorShutoff.click()            ; break;
+
+
 
 /* tab 3 folder 1 */
 case ui.coin17304.ref:           ui.coin17304.click()            ; break;
