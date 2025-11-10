@@ -22,12 +22,10 @@ shelfMenuHTML.tab2.folder1.HTML = `
 <input id="coin43886" name="coin43886" class="input_coin43886" type="color">
 
 
-
 <!-- THESE DETERMINE LINE THICKNESSES AND THEN THE LAST ONES OPACITIES --> 
-
 <input id="coin41267" name="coin41267" class="input_coin41267" type="range" min="0" max="4"   step="1">
 <input id="coin47497" name="coin47497" class="input_coin47497" type="range" min="1" max="16"  step="1">
-<input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="2">
+<input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1">
 
 
 <input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.02">
@@ -41,6 +39,4 @@ shelfMenuHTML.tab2.folder1.HTML = `
 
 <input id="coin67938" name="coin67938" class="input_ input_coin67938" type="color">
 <input id="coin47065" name="coin47065" class="input_ input_coin47065" type="color">
-
-
 `;

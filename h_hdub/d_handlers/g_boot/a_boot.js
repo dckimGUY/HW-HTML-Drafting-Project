@@ -434,7 +434,7 @@ if (localStorage.getItem("bU")) { bU = localStorage.getItem("bU"); ui.coin43886.
 Picture.style.outlineColor=bU;
 
 
-var pictureOpacity = K;
+var pictureOpacity = 1;
 if (localStorage.getItem("pictureOpacity")) {
 pictureOpacity = localStorage.getItem("pictureOpacity");
 ui.coin17325.ref.value = pictureOpacity;
@@ -444,6 +444,45 @@ ui.menuWrapper.ref.style.opacity=pictureOpacity;
 
 Picture.style.opacity=pictureOpacity;
 gridLayer.appendChild(Picture);
+
+
+
+var grid0Viz = "true";
+
+var   visualGridThickness1 = gW;
+var      visualGridColour1 =  "#FFFF00";
+var        visualGridSize1 =  T;
+var                  grid1Viz = "false";
+
+var   visualGridThickness2 = gW;
+var      visualGridColour2 =  "#00FFFF";
+var        visualGridSize2 =  T;
+var                  grid2Viz = "false";
+
+var   visualGridThickness3 = gW;
+var      visualGridColour3 =  "#FF00FF";
+var        visualGridSize3 =  T;
+var                  grid3Viz = "false";
+
+if (localStorage.getItem("gridSize")) { T = parseInt(localStorage.getItem("gridSize")); }
+
+if (localStorage.getItem("grid0Viz")) { grid0Viz = localStorage.getItem("grid0Viz"); }
+if (localStorage.getItem("grid1Viz")) { grid1Viz = localStorage.getItem("grid1Viz"); }
+if (localStorage.getItem("grid2Viz")) { grid2Viz = localStorage.getItem("grid2Viz"); }
+if (localStorage.getItem("grid3Viz")) { grid3Viz = localStorage.getItem("grid3Viz"); }
+
+if (localStorage.getItem("visualGridThickness1")) { visualGridThickness1 = parseInt(localStorage.getItem("visualGridThickness1")); }
+   if (localStorage.getItem("visualGridColour1")) {    visualGridColour1 =             localStorage.getItem("visualGridColour1");  ui.coin28281.ref.value =    visualGridColour1; }
+     if (localStorage.getItem("visualGridSize1")) {      visualGridSize1 =      parseInt(localStorage.getItem("visualGridSize1")); ui.coin18868.ref.value =    visualGridSize1;   }
+
+if (localStorage.getItem("visualGridThickness2")) { visualGridThickness2 = parseInt(localStorage.getItem("visualGridThickness2")); }
+   if (localStorage.getItem("visualGridColour2")) {    visualGridColour2 =             localStorage.getItem("visualGridColour2");  ui.coin30119.ref.value =    visualGridColour2; }
+     if (localStorage.getItem("visualGridSize2")) {      visualGridSize2 =      parseInt(localStorage.getItem("visualGridSize2")); ui.coin21315.ref.value =    visualGridSize2;   }
+
+if (localStorage.getItem("visualGridThickness3")) { visualGridThickness3 = parseInt(localStorage.getItem("visualGridThickness3")); }
+   if (localStorage.getItem("visualGridColour3")) {    visualGridColour3 =             localStorage.getItem("visualGridColour3");  ui.coin32259.ref.value =    visualGridColour3; }
+     if (localStorage.getItem("visualGridSize3")) {      visualGridSize3 =      parseInt(localStorage.getItem("visualGridSize3")); ui.coin23538.ref.value =    visualGridSize3;   }
+
 
 
 
@@ -479,15 +518,16 @@ Y.strokeStyle=U;
 Y.lineWidth=gW;
 Y.beginPath();
 
+if (grid0Viz=="true") {
 if (T>=8&&gW!=0) {
-for(let k=0;k<parseInt(V.height/T)+1;k++){
-Y.moveTo(0,W+(T*k));
-Y.lineTo(V.width,W+(T*k))};
-for(let k=0;k<parseInt(V.width/T)+1;k++){
-Y.moveTo(X+(T*k),0);
-Y.lineTo(X+(T*k),V.height)};
+for(let k=0;k<parseInt(V.height/T)+1;k++){ Y.moveTo(0,W+(T*k)); Y.lineTo(V.width,W+(T*k))};
+for(let k=0;k<parseInt(V.width/T)+1;k++){ Y.moveTo(X+(T*k),0); Y.lineTo(X+(T*k),V.height)};
+}
 }
 
+Y.stroke();
+
+Y.beginPath();
 Y.fillStyle=U;
 Y.font=bF;
 Y.textBaseline="top";
@@ -499,6 +539,59 @@ Y.font=bFarr;
 Y.fillText(`${layerName}`,bW,bW);
 Y.stroke();
 }
+
+
+if (grid1Viz=="true") {
+W=visualGridSize1-(window.scrollY%visualGridSize1);
+X=visualGridSize1-(window.scrollX%visualGridSize1);
+Y.strokeStyle=visualGridColour1;
+Y.beginPath(); Y.lineWidth=visualGridThickness1;
+                            if (visualGridSize1>=8&&gW!=0) {
+for(let k=0;k<parseInt(V.height/visualGridSize1)+1;k++){
+                  Y.moveTo(0,W+(visualGridSize1*k));
+            Y.lineTo(V.width,W+(visualGridSize1*k))};
+ for(let k=0;k<parseInt(V.width/visualGridSize1)+1;k++){
+                    Y.moveTo(X+(visualGridSize1*k),0);
+                    Y.lineTo(X+(visualGridSize1*k),V.height)}; } Y.stroke();
+}
+
+if (grid2Viz=="true") {
+W=visualGridSize2-(window.scrollY%visualGridSize2);
+X=visualGridSize2-(window.scrollX%visualGridSize2);
+Y.strokeStyle=visualGridColour2;
+Y.beginPath(); Y.lineWidth=visualGridThickness2;
+                            if (visualGridSize2>=8&&gW!=0) {
+for(let k=0;k<parseInt(V.height/visualGridSize2)+1;k++){
+                  Y.moveTo(0,W+(visualGridSize2*k));
+            Y.lineTo(V.width,W+(visualGridSize2*k))};
+ for(let k=0;k<parseInt(V.width/visualGridSize2)+1;k++){
+                    Y.moveTo(X+(visualGridSize2*k),0);
+                    Y.lineTo(X+(visualGridSize2*k),V.height)}; } Y.stroke();
+}
+
+if (grid3Viz=="true") {
+W=visualGridSize3-(window.scrollY%visualGridSize3);
+X=visualGridSize3-(window.scrollX%visualGridSize3);
+Y.strokeStyle=visualGridColour3;
+Y.beginPath(); Y.lineWidth=visualGridThickness3;
+                            if (visualGridSize3>=8&&gW!=0) {
+for(let k=0;k<parseInt(V.height/visualGridSize3)+1;k++){
+                  Y.moveTo(0,W+(visualGridSize3*k));
+            Y.lineTo(V.width,W+(visualGridSize3*k))};
+ for(let k=0;k<parseInt(V.width/visualGridSize3)+1;k++){
+                    Y.moveTo(X+(visualGridSize3*k),0);
+                    Y.lineTo(X+(visualGridSize3*k),V.height)}; } Y.stroke();
+}
+
+W=T-(window.scrollY%T);
+X=T-(window.scrollX%T);
+
+
+
+
+
+
+
 
 Y.beginPath();
 Y.strokeStyle=bU;
@@ -516,6 +609,14 @@ window.addEventListener("resize",()=>{Z(); redraw();})
 window.addEventListener("scroll",()=>{Z(); redraw();})
 //document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
+
+
+
+var gridIncrementArray = "3-2";
+
+if (localStorage.getItem("gridIncrementArray")) { gridIncrementArray = localStorage.getItem("gridIncrementArray"); }
+
+
 window.oneLessG = function () {
 if (T!=0) {
 T--;
@@ -528,6 +629,8 @@ Z();
 };
 
 window.lessG = function () {
+if (gridIncrementArray=="3-2") {
+
      if (T==  1) {                              }
 else if (T==  2) {T=  1;E=2;U=D;aS1=128;aS2=256;}
 else if (T==  4) {T=  2;E=2;U=D;aS1=128;aS2=256;}
@@ -545,10 +648,56 @@ else if (T==256) {T=192;E=3;U=C;aS1=  6;aS2= 12;}
 else if (T==384) {T=256;E=2;U=D;aS1=  4;aS2=  8;}
 else if (T==512) {T=384;E=2;U=C;aS1=  4;aS2=  8;}
 else             {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
+
+} else if (gridIncrementArray=="2")      {
+
+     if (T==  1) {                              }
+else if (T==  2) {T=  1;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  4) {T=  2;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  8) {T=  4;E=2;U=D;aS1=128;aS2=256;}
+else if (T== 16) {T=  8;E=2;U=D;aS1=128;aS2=256;}
+else if (T== 32) {T= 16;E=2;U=D;aS1= 64;aS2=128;}
+else if (T== 64) {T= 32;E=2;U=D;aS1= 32;aS2= 64;}
+else if (T==128) {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
+else if (T==256) {T=128;E=2;U=D;aS1=  8;aS2= 16;}
+else if (T==512) {T=256;E=2;U=D;aS1=  4;aS2=  8;}
+else             {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
+
+} else if (gridIncrementArray=="3")      {
+
+     if (T==  1) {                              }
+else if (T==  2) {T=  1;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  6) {T=  2;E=2;U=D;aS1=128;aS2=256;}
+else if (T== 12) {T=  6;E=2;U=D;aS1=128;aS2=256;}
+else if (T== 24) {T= 12;E=2;U=D;aS1= 64;aS2=128;}
+else if (T== 48) {T= 24;E=2;U=D;aS1= 32;aS2= 64;}
+else if (T== 96) {T= 48;E=2;U=D;aS1= 16;aS2= 32;}
+else if (T==192) {T= 96;E=2;U=D;aS1=  8;aS2= 16;}
+else if (T==384) {T=192;E=2;U=D;aS1=  4;aS2=  8;}
+else if (T==768) {T=384;E=2;U=C;aS1=  4;aS2=  8;}
+else             {T= 48;E=2;U=D;aS1= 16;aS2= 32;}
+
+} else if (gridIncrementArray=="metric") {
+
+     if (T==   1) {                              }
+else if (T==   2) {T=  1;E=2;U=D;aS1=128;aS2=256;}
+else if (T==   5) {T=  2;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  10) {T=  5;E=2;U=D;aS1=128;aS2=256;}
+else if (T==  20) {T= 10;E=2;U=D;aS1= 64;aS2=128;}
+else if (T==  50) {T= 20;E=2;U=D;aS1= 32;aS2= 64;}
+else if (T== 100) {T= 50;E=2;U=D;aS1= 16;aS2= 32;}
+else if (T== 200) {T=100;E=2;U=D;aS1=  8;aS2= 16;}
+else if (T== 500) {T=200;E=2;U=D;aS1=  4;aS2=  8;}
+else if (T==1000) {T=500;E=2;U=C;aS1=  4;aS2=  8;}
+else              {T= 50;E=2;U=D;aS1= 16;aS2= 32;}
+
+}
 Z();
 };
 
 window.moreG = function () {
+if (gridIncrementArray=="3-2") {
+
      if (T==  1) {T=  2;E=2;U=D;aS1= 96;aS2=192;}
 else if (T==  2) {T=  4;E=2;U=D;aS1= 64;aS2=128;}
 else if (T==  4) {T=  8;E=2;U=D;aS1= 64;aS2=128;}
@@ -566,6 +715,50 @@ else if (T==256) {T=384;E=3;U=C;aS1=  2;aS2=  4;}
 else if (T==384) {T=512;E=3;U=D;aS1=  2;aS2=  4;}
 else if (T==512) {                              }
 else             {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
+
+} else if (gridIncrementArray=="2")           {
+
+     if (T==  1) {T=  2;E=2;U=D;aS1= 96;aS2=192;}
+else if (T==  2) {T=  4;E=2;U=D;aS1= 64;aS2=128;}
+else if (T==  4) {T=  8;E=2;U=D;aS1= 64;aS2=128;}
+else if (T==  8) {T= 16;E=2;U=D;aS1= 64;aS2=128;}
+else if (T== 16) {T= 32;E=2;U=D;aS1= 32;aS2= 64;}
+else if (T== 32) {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
+else if (T== 64) {T=128;E=2;U=D;aS1=  8;aS2= 16;}
+else if (T==128) {T=256;E=2;U=D;aS1=  4;aS2=  8;}
+else if (T==256) {T=512;E=3;U=D;aS1=  2;aS2=  4;}
+else if (T==512) {                              }
+else             {T= 64;E=2;U=D;aS1= 16;aS2= 32;}
+
+} else if (gridIncrementArray=="3")           {
+
+     if (T==  1) {T=  2;E=2;U=D;aS1= 96;aS2=192;}
+else if (T==  2) {T=  6;E=2;U=D;aS1= 64;aS2=128;}
+else if (T==  6) {T= 12;E=3;U=C;aS1= 96;aS2=192;}
+else if (T== 12) {T= 24;E=3;U=C;aS1= 48;aS2= 96;}
+else if (T== 24) {T= 48;E=3;U=C;aS1= 24;aS2= 48;}
+else if (T== 48) {T= 96;E=3;U=C;aS1= 12;aS2= 24;}
+else if (T== 96) {T=192;E=3;U=C;aS1=  6;aS2= 12;}
+else if (T==192) {T=384;E=3;U=C;aS1=  2;aS2=  4;}
+else if (T==384) {T=768;E=3;U=D;aS1=  2;aS2=  4;}
+else if (T==768) {                              }
+else             {T= 48;E=2;U=D;aS1= 16;aS2= 32;}
+
+} else if (gridIncrementArray=="metric")      {
+
+     if (T==   1) {T=   2;E=2;U=D;aS1=128;aS2=256;}
+else if (T==   2) {T=   5;E=2;U=D;aS1=128;aS2=256;}
+else if (T==   5) {T=  10;E=2;U=D;aS1= 64;aS2=128;}
+else if (T==  10) {T=  20;E=2;U=D;aS1= 32;aS2= 64;}
+else if (T==  20) {T=  50;E=2;U=D;aS1= 16;aS2= 32;}
+else if (T==  50) {T= 100;E=2;U=D;aS1=  8;aS2= 16;}
+else if (T== 100) {T= 200;E=2;U=D;aS1=  4;aS2=  8;}
+else if (T== 200) {T= 500;E=2;U=C;aS1=  4;aS2=  8;}
+else if (T== 500) {T=1000;E=2;U=D;aS1=  4;aS2=  8;}
+else if (T==1000) {                               }
+else              {T=  50;E=2;U=D;aS1= 16;aS2= 32;}
+
+}
 Z();
 }
 
@@ -596,7 +789,7 @@ curImg.style.top             =        -cSZ/2 + "px";
 curImg.style.left            =        -cSZ/2 + "px";
 curImg.style.pointerEvents   =        "none";
 curImg.style.userSelect      =        "none";
-curImg.src                   =                 "iconSet/spatialCursor/customCursor.png"; /* If not present we use the fallback icon in BASE64. */
+curImg.src                   =                 "iconSet/spatialCursor/customCursor.png?v=001"; /* If not present we use the fallback icon in BASE64. */
 curImg.onerror               = function() {
 this.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAgMAAADXB5lNAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAMUExURQAAAP///+0cJMPDw5kSAiMAAAABdFJOUwBA5thmAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB+kFBRQnJYhP8iYAAADTSURBVDjLzdKxDcJADAXQBOko0mcEmluCjJAinyBGYApGoKFPgxTMPFmCGShyPkeyTQkFsXTS3ZMS//hSFFJhKHx9AVX7O6wlx/7tzyXo4qAGjQ4AIheLwUbbMdhnHmgj3Q0Q0rrpeUPXFA2NxuQQJVoDubVCFOgUcsda4SXQLx0JAqHnvcBgIC2a8vurJ+8NRAGuqRPQ8XTafJlX7qcQBAYDDX+yQom039q5H1I32CmfaAw4G4hEwNHeLIO7XQZ3c5HMvGTuZua5Pn+H1fyn/84xAznlXBhTn9tKAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI1LTA1LTA1VDIwOjE4OjIxKzAwOjAw1KOWzgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNS0wNS0wNVQyMDozNzo1NiswMDowMMP7+6kAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjUtMDUtMDVUMjA6Mzk6MzcrMDA6MDDqP+j2AAAAAElFTkSuQmCC";
 }
@@ -765,10 +958,11 @@ hauptMode=0;
 if (window.opener==null) {
 insertNewCoin([null,78,110,0,0,0]);
 if (coinFocus!=null) {
-coinFocus.style.width    = "256px";
-coinFocus.dataset.width  = "256px";
-coinFocus.style.height   = "256px";
-coinFocus.dataset.height = "256px";
+
+coinFocus.style.width    = T*Math.ceil((edgeQ*2)/T)+"px";
+coinFocus.dataset.width  = T*Math.ceil((edgeQ*2)/T)+"px";
+coinFocus.style.height   = T*Math.ceil((edgeQ*2)/T)+"px";
+coinFocus.dataset.height = T*Math.ceil((edgeQ*2)/T)+"px";
 }
 }
 hauptMode=1;

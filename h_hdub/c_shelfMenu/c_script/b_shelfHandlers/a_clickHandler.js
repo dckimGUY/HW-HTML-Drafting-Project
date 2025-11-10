@@ -87,6 +87,54 @@ case ui.hdub_menuScaleHalf.ref:  ui.hdub_menuScaleHalf.click()   ; break;
 case ui.hdub_menuScaleQuarter.ref: ui.hdub_menuScaleQuarter.click() ; break;
 case ui.hdub_menuScaleEighth.ref: ui.hdub_menuScaleEighth.click() ; break;
 
+/* tab 2 folder 2 */
+case ui.coin21493.ref:           ui.coin21493.click()            ; break;
+case ui.coin31352.ref:           ui.coin31352.click()            ; break;
+case ui.coin44789.ref:           ui.coin44789.click()            ; break;
+case ui.coin33352.ref:           ui.coin33352.click()            ; break;
+case ui.coin35216.ref:           ui.coin35216.click()            ; break;
+case ui.coin36899.ref:           ui.coin36899.click()            ; break;
+case ui.coin38511.ref:           ui.coin38511.click()            ; break;
+case ui.coin40870.ref:           ui.coin40870.click()            ; break;
+case ui.coin46684.ref:           ui.coin46684.click()            ; break;
+case ui.coin48242.ref:           ui.coin48242.click()            ; break;
+case ui.coin50503.ref:           ui.coin50503.click()            ; break;
+case ui.coin53180.ref:           ui.coin53180.click()            ; break;
+case ui.coin55658.ref:           ui.coin55658.click()            ; break;
+case ui.coin57816.ref:           ui.coin57816.click()            ; break;
+case ui.coin60297.ref:           ui.coin60297.click()            ; break;
+case ui.coin64112.ref:           ui.coin64112.click()            ; break;
+case ui.coin66935.ref:           ui.coin66935.click()            ; break;
+case ui.coin70148.ref:           ui.coin70148.click()            ; break;
+case ui.coin05786.ref:           ui.coin05786.click()            ; break;
+case ui.coin08962.ref:           ui.coin08962.click()            ; break;
+case ui.coin10912.ref:           ui.coin10912.click()            ; break;
+case ui.coin15097.ref:           ui.coin15097.click()            ; break;
+case ui.coin18271.ref:           ui.coin18271.click()            ; break;
+case ui.coin21056.ref:           ui.coin21056.click()            ; break;
+case ui.coin22927.ref:           ui.coin22927.click()            ; break;
+case ui.coin26110.ref:           ui.coin26110.click()            ; break;
+case ui.coin44062.ref:           ui.coin44062.click()            ; break;
+case ui.coin46633.ref:           ui.coin46633.click()            ; break;
+case ui.coin48525.ref:           ui.coin48525.click()            ; break;
+case ui.coin51107.ref:           ui.coin51107.click()            ; break;
+case ui.coin56470.ref:           ui.coin56470.click()            ; break;
+case ui.coin58382.ref:           ui.coin58382.click()            ; break;
+case ui.coin59792.ref:           ui.coin59792.click()            ; break;
+case ui.coin61443.ref:           ui.coin61443.click()            ; break;
+case ui.coin63058.ref:           ui.coin63058.click()            ; break;
+case ui.coin65326.ref:           ui.coin65326.click()            ; break;
+case ui.coin67576.ref:           ui.coin67576.click()            ; break;
+case ui.coin69548.ref:           ui.coin69548.click()            ; break;
+case ui.coin71699.ref:           ui.coin71699.click()            ; break;
+case ui.coin72936.ref:           ui.coin72936.click()            ; break;
+case ui.coin74420.ref:           ui.coin74420.click()            ; break;
+case ui.coin63249.ref:           ui.coin63249.click()            ; break;
+
+case ui.coin38634.ref:           ui.coin38634.click()            ; break;
+case ui.coin41046.ref:           ui.coin41046.click()            ; break;
+case ui.coin07023.ref:           ui.coin07023.click()            ; break;
+
 /* tab 3 folder 1 */
 case ui.coin17304.ref:           ui.coin17304.click()            ; break;
 case ui.coin26746.ref:           ui.coin26746.click()            ; break;

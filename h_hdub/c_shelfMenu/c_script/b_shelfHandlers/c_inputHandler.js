@@ -30,7 +30,12 @@ case ui.coin65598.ref:           ui.coin65598.input()           ; break;
 case ui.coin67938.ref:           ui.coin67938.input()           ; break;
 case ui.coin47065.ref:           ui.coin47065.input()           ; break;
 
-
+case ui.coin18868.ref:           ui.coin18868.input()           ; break;
+case ui.coin28281.ref:           ui.coin28281.input()           ; break;
+case ui.coin21315.ref:           ui.coin21315.input()           ; break;
+case ui.coin30119.ref:           ui.coin30119.input()           ; break;
+case ui.coin23538.ref:           ui.coin23538.input()           ; break;
+case ui.coin32259.ref:           ui.coin32259.input()           ; break;
 
 
 /* SLIDERS */

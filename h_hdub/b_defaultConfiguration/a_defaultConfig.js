@@ -209,8 +209,8 @@ var quitSaveTimeoutSetting = 500;
 /* Rotate  Design Grid Size */var  aD2=   180;
 /* Design Grid Size Divisor */var    E=     2;
 
-/* The Spatial Cursor Top   */let  cRT=    32;
-/* The Spatial Cursor Left  */let  cRL=    32;
+/* The Spatial Cursor Top   */let  cRT=    -32;
+/* The Spatial Cursor Left  */let  cRL=    -32;
 /* The Spatial Cursor Size  */let  cSZ=    64;
 
 /* Default Insertion Width  */let   iW=    64;
