@@ -24,7 +24,7 @@ coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 }
 
-utilityLayer0.style.opacity = utilityOpacity;
+utilityLayer0.style.opacity = partsOpacity;
 
 
 if (utilityLayer0.children[j].lastElementChild) {
