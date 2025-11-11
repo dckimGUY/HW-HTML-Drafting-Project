@@ -4,6 +4,8 @@ ui.tab3.click                 = function() { tabSelector(3); };
 ui.tab4.click                 = function() { tabSelector(4); };
 ui.tab5.click                 = function() { tabSelector(5); };
 ui.tab6.click                 = function() { tabSelector(6); };
+ui.crop.click                 = function() { ui.menuWrapper.ref.style.display = "none";  ui.menu_open.ref.style.display = "block"; };
+ui.menu_open.click            = function() { ui.menuWrapper.ref.style.display = "block"; ui.menu_open.ref.style.display = "none";  };
 
 function tabSelector(tabNumber) {
 /* HIDE EVERYTHING */
@@ -23,3 +25,4 @@ document.getElementById("tab" + localStorage.getItem("currentMenuTab") + "Wrappe
 } else {
 ui.tab1Wrapper.ref.style.display = "block";
 }
+

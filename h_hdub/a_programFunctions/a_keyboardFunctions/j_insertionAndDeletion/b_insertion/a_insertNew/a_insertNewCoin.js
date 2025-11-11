@@ -185,8 +185,10 @@ newCoin.style.top       =    parseInt(Cur.dataset.top)          + "px";
 newCoin.style.left      =    window.scrollX         + "px";
 newCoin.style.top       =    window.scrollY         + "px";
 }
-newCoin.style.width     =    T + "px"                                ;
-newCoin.style.height    =    T + "px"                                ;
+
+newCoin.style.width    = T*Math.ceil((edgeQ*2)/T)+"px";
+newCoin.style.height   = T*Math.ceil((edgeQ*2)/T)+"px";
+                              ;
 curFocus                =    1                                        ;
 logMessage=`"N"-insertion at cursor,     jsName : "${newCoin.dataset.jsName}"`;
 eM=0;modeRouter(e,5); 

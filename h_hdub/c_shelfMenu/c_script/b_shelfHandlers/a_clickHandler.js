@@ -1,6 +1,10 @@
 document.addEventListener("click", function() {
 switch (event.target) {
 
+/* OPEN-CLOSE THE MENU */
+case ui.crop.ref:             ui.crop.click()              ; break;
+case ui.menu_open.ref:        ui.menu_open.click()              ; break;
+
 /* */
 case ui.tab1.ref:             ui.tab1.click()              ; break;
 case ui.tab2.ref:             ui.tab2.click()              ; break;
@@ -190,7 +194,7 @@ case ui.loadTheme_j9.ref:        ui.loadTheme_j9.click()         ; break;
 
 
 
-/* tab 3 folder 1 */
+/* tab 6 folder 1 */
 case ui.coin17304.ref:           ui.coin17304.click()            ; break;
 case ui.coin26746.ref:           ui.coin26746.click()            ; break;
 case ui.coin32891.ref:           ui.coin32891.click()            ; break;

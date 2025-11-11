@@ -24,6 +24,23 @@ position: absolute; left: 0px; top: 0px; width: 200px; height: 500px; z-index: 1
 .folder {
 position: absolute; left: 0px; top: 0px; width: 200px; height: 500px; z-index: 100;
 }
+.button_open {
+position: fixed;
+border: none;
+margin: none;
+padding: none;
+right: 0px;
+top: 0px;
+width: 16px;
+height: 16px;
+z-index: 9999999999;
+transform-origin: top right;
+transform: scale(2);
+                                background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open.png?v=20251102205812");        }
+.button_open:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open_focus.png?v=20251102205812");  }
+.button_open:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open_hover.png?v=20251102205812");  }
+.button_open:active           { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open_active.png?v=20251102205812"); }
+
 ` +
 shelfMenuHTML.tab1.backgrounds.style +
 shelfMenuHTML.tab2.backgrounds.style +
@@ -38,7 +55,6 @@ shelfMenuHTML.tab6.backgrounds.style +
 const shelfAssembly = 
 
 shelfMenuHTML.wrapperStyle +
-
 `<div id="menuWrapper" class="menuWrapper">` +
 `<div id="wrapper_tabSelectors" class="tabSelectors">` +
 shelfMenuHTML.tabSelectors.style +
@@ -116,7 +132,9 @@ shelfMenuHTML.tab6.folder1.HTML  +
 shelfMenuHTML.tab6.folder2.style +
 shelfMenuHTML.tab6.folder2.HTML  +
 `</div></div>` +
-`</div>`
+`</div>` +
+`
+<button id="menu_open" class="button_ button_open" title="Open a menu." style="display: none;"></button>`
 ;
 
 /* INJECT THE ASSEMBLED HTML INTO THE ELEMENT */

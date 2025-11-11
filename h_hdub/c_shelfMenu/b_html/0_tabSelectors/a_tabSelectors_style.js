@@ -68,5 +68,10 @@ background-color : rgba(255,255,128,0.17);
 .button_tab6:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/tab6_focus.gif?v=20251102205812");  }
 .button_tab6:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/tab6_hover.gif?v=20251102205812");  }
 .button_tab6:active           { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/tab6_active.gif?v=20251102205812"); }
+.button_crop                  { position: absolute; border: none; margin: none; padding: none; left:    -2px; top:      486px; width:     16px; height:     16px;
+                                background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/crop.png?v=20251102205812");        }
+.button_crop:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/crop_focus.png?v=20251102205812");  }
+.button_crop:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/crop_hover.png?v=20251102205812");  }
+.button_crop:active           { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/crop_active.png?v=20251102205812"); }
 </style>
 `;

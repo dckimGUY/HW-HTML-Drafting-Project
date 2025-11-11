@@ -11,7 +11,7 @@ ui[name].ref   = document.getElementById(name);
 
 /* WRAPPERS */
 
-["menuWrapper", "tab1Wrapper", "tab2Wrapper", "tab3Wrapper", "tab4Wrapper", "tab5Wrapper", "tab6Wrapper"].forEach((name) => {
+["menu_open", "menuWrapper", "wrapper_tabSelectors", "tab1Wrapper", "tab2Wrapper", "tab3Wrapper", "tab4Wrapper", "tab5Wrapper", "tab6Wrapper", "crop"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
