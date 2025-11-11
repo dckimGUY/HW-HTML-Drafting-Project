@@ -1,0 +1,269 @@
+/*
+<input id="coin88067" name="coin88067" class="input_coin88067" type="color">
+<input id="coin46861" name="coin46861" class="input_coin46861" type="color">
+<input id="coin44038" name="coin44038" class="input_coin44038" type="color">
+<input id="coin72275" name="coin72275" class="input_coin72275" type="color">
+<input id="coin74555" name="coin74555" class="input_coin74555" type="color">
+<input id="coin43886" name="coin43886" class="input_coin43886" type="color">
+
+<input id="coin41267" name="coin41267" class="input_coin41267" type="range" min="0" max="4"   step="1">
+<input id="coin47497" name="coin47497" class="input_coin47497" type="range" min="1" max="16"  step="1">
+<input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1">
+<input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005">
+<input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005">
+<input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005">
+<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0" max="1"    step="0.005">
+<input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color">
+<input id="coin62796" name="coin62796" class="input_ input_coin62796" type="color">
+<input id="coin65598" name="coin65598" class="input_ input_coin65598" type="color">
+<input id="coin67938" name="coin67938" class="input_ input_coin67938" type="color">
+<input id="coin47065" name="coin47065" class="input_ input_coin47065" type="color">
+
+<!-- GRID VISIBILITY -->
+<button id="coin44789" class="button_grid button_coin44789" title=""></button>
+<button id="coin46633" class="button_grid button_coin46633" title=""></button>
+<button id="coin48525" class="button_grid button_coin48525" title=""></button>
+<button id="coin51107" class="button_grid button_coin51107" title=""></button>
+
+<input id="coin18868" name="coin18868" class="input_ input_coin18868 dckimPixelMono" type="value" placeholder="empty">
+<input id="coin28281" name="coin28281" class="input_coin28281" type="color" value="#FFFF00">
+<input id="coin21315" name="coin21315" class="input_ input_coin21315 dckimPixelMono" type="value" placeholder="empty">
+<input id="coin30119" name="coin30119" class="input_coin30119" type="color" value="#00FFFF">
+<input id="coin23538" name="coin23538" class="input_ input_coin23538 dckimPixelMono" type="value" placeholder="empty">
+<input id="coin32259" name="coin32259" class="input_coin32259" type="color" value="#FF00FF">
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ui.saveTheme_a0.click            = function() { saveTheme("a0"); };
+ui.saveTheme_b1.click            = function() { saveTheme("b1"); };
+ui.saveTheme_c2.click            = function() { saveTheme("c2"); };
+ui.saveTheme_d3.click            = function() { saveTheme("d3"); };
+ui.saveTheme_e4.click            = function() { saveTheme("e4"); };
+ui.saveTheme_f5.click            = function() { saveTheme("f5"); };
+ui.saveTheme_g6.click            = function() { saveTheme("g6"); };
+ui.saveTheme_h7.click            = function() { saveTheme("h7"); };
+ui.saveTheme_i8.click            = function() { saveTheme("i8"); };
+ui.saveTheme_j9.click            = function() { saveTheme("j9"); };
+
+ui.loadTheme_a0.click            = function() {  };
+ui.loadTheme_b1.click            = function() {  };
+ui.loadTheme_c2.click            = function() {  };
+ui.loadTheme_d3.click            = function() {  };
+ui.loadTheme_e4.click            = function() {  };
+ui.loadTheme_f5.click            = function() {  };
+ui.loadTheme_g6.click            = function() {  };
+ui.loadTheme_h7.click            = function() {  };
+ui.loadTheme_i8.click            = function() {  };
+ui.loadTheme_j9.click            = function() {  };
+
+
+
+
+
+
+
+
+
+/* Objects to hold the custom configurations. */
+
+const userCustomTheme    = {};
+      userCustomTheme.a0 = {};
+      userCustomTheme.b1 = {};
+      userCustomTheme.c2 = {};
+      userCustomTheme.d3 = {};
+      userCustomTheme.e4 = {};
+      userCustomTheme.f5 = {};
+      userCustomTheme.g6 = {};
+      userCustomTheme.h7 = {};
+      userCustomTheme.i8 = {};
+      userCustomTheme.j9 = {};
+
+
+function saveTheme(configName) {
+userCustomTheme[configName].shelfMenuScale           = shelfMenuScale;          
+userCustomTheme[configName].L                        = L;                       
+userCustomTheme[configName].sL                       = sL;                      
+userCustomTheme[configName].finishedBackgroundColour = finishedBackgroundColour; 
+userCustomTheme[configName].UD                       = UD;                      
+userCustomTheme[configName].C                        = C;                       
+userCustomTheme[configName].bU                       = bU;                       
+userCustomTheme[configName].greyColour               = greyColour;               
+userCustomTheme[configName].blueColour               = blueColour;               
+userCustomTheme[configName].pinkColour               = pinkColour;               
+userCustomTheme[configName].lineColour               = lineColour;               
+userCustomTheme[configName].selectedColour           = selectedColour;           
+userCustomTheme[configName].thinOutline              = thinOutline;           
+userCustomTheme[configName].borderWidth              = borderWidth;           
+userCustomTheme[configName].edgeQ                    = edgeQ;           
+userCustomTheme[configName].K                        = K;           
+userCustomTheme[configName].visualOpacity            = visualOpacity;           
+userCustomTheme[configName].partsOpacity             = partsOpacity;           
+userCustomTheme[configName].pictureOpacity           = pictureOpacity;           
+userCustomTheme[configName].T                        = T;           
+userCustomTheme[configName].grid0Viz                 = grid0Viz;           
+userCustomTheme[configName].grid1Viz                 = grid1Viz;           
+userCustomTheme[configName].grid2Viz                 = grid2Viz;           
+userCustomTheme[configName].grid3Viz                 = grid3Viz;           
+userCustomTheme[configName].visualGridThickness1     = visualGridThickness1;           
+userCustomTheme[configName].visualGridThickness2     = visualGridThickness2;           
+userCustomTheme[configName].visualGridThickness3     = visualGridThickness3;           
+userCustomTheme[configName].visualGridSize1          = visualGridSize1;           
+userCustomTheme[configName].visualGridSize2          = visualGridSize2;           
+userCustomTheme[configName].visualGridSize3          = visualGridSize3;           
+userCustomTheme[configName].visualGridColour1        = visualGridColour1;           
+userCustomTheme[configName].visualGridColour2        = visualGridColour2;           
+userCustomTheme[configName].visualGridColour3        = visualGridColour3;           
+userCustomTheme[configName].gridIncrementArray       = gridIncrementArray;           
+userCustomTheme[configName].cursorDisplay            = cursorDisplay;           
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gridSize", T
+
+grid0Viz", "false"
+grid1Viz", "false"
+grid2Viz", "false"
+grid3Viz", "false"
+
+visualGridThickness1
+visualGridThickness2
+visualGridThickness3
+
+visualGridSize1   = parseInt(ui.coin18868.ref.value);
+visualGridSize2   = parseInt(ui.coin21315.ref.value);
+visualGridSize3   = parseInt(ui.coin23538.ref.value);
+
+visualGridColour1 = ui.coin28281.ref.value;
+visualGridColour2 = ui.coin30119.ref.value;
+visualGridColour3 = ui.coin32259.ref.value;
+
+gridIncrementArray
+
+Cur.style.display=='none' || Cur.style.display='block'; localStorage.setItem("cursorDisplay", "block"); } else { Cur.style.display='none'; localStorage.setItem("cursorDisplay", "none"); }; };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+localStorage.setItem('L',ui.coin88067.ref.value);
+localStorage.setItem('sL',ui.coin46861.ref.value);
+localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
+localStorage.setItem('UD',ui.coin72275.ref.value);
+localStorage.setItem('C',ui.coin74555.ref.value);
+localStorage.setItem('bU',ui.coin43886.ref.value);
+
+localStorage.setItem('greyColour'    ,ui.coin59277.ref.value);
+localStorage.setItem('blueColour'    ,ui.coin62796.ref.value);
+localStorage.setItem('pinkColour'    ,ui.coin65598.ref.value);
+localStorage.setItem('lineColour'    ,ui.coin67938.ref.value);
+localStorage.setItem('selectedColour',ui.coin47065.ref.value);
+
+
+
+
+
+
+
+thinOutline = parseInt(ui.coin41267.ref.value);
+xrayWidth = thinOutline;
+localStorage.setItem("thinOutline", thinOutline);
+
+borderWidth = parseInt(ui.coin47497.ref.value);
+localStorage.setItem("borderWidth", borderWidth);
+
+edgeQ = parseInt(ui.coin50633.ref.value);
+localStorage.edgeQ = edgeQ;
+
+K = parseFloat(ui.coin53526.ref.value); Z();
+localStorage.setItem("K", K);
+
+visualOpacity = parseFloat(ui.coin56897.ref.value);
+Vis.style.opacity=visualOpacity;
+
+partsOpacity = parseFloat(ui.coin59527.ref.value);
+
+utilityLayer0.style.opacity=partsOpacity;
+
+
+
+ui.coin17325.ref.value =  parseFloat(pictureOpacity);
+
+
+Picture.style.opacity=pictureOpacity;
+Cur.style.opacity=pictureOpacity;
+ui.menuWrapper.ref.style.opacity=pictureOpacity;
+
+localStorage.setItem("pictureOpacity", pictureOpacity);
+
+
+
+
+

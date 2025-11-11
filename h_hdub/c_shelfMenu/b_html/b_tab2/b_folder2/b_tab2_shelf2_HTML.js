@@ -61,4 +61,45 @@ shelfMenuHTML.tab2.folder2.HTML = `
 
 
 
+
+
+
+
+
+
+
+<button id="saveTheme_a0" class="button_ button_saveTheme_a0" title=""></button>
+<button id="saveTheme_b1" class="button_ button_saveTheme_b1" title=""></button>
+<button id="saveTheme_c2" class="button_ button_saveTheme_c2" title=""></button>
+<button id="saveTheme_d3" class="button_ button_saveTheme_d3" title=""></button>
+<button id="saveTheme_e4" class="button_ button_saveTheme_e4" title=""></button>
+<button id="saveTheme_f5" class="button_ button_saveTheme_f5" title=""></button>
+<button id="saveTheme_g6" class="button_ button_saveTheme_g6" title=""></button>
+<button id="saveTheme_h7" class="button_ button_saveTheme_h7" title=""></button>
+<button id="saveTheme_i8" class="button_ button_saveTheme_i8" title=""></button>
+<button id="saveTheme_j9" class="button_ button_saveTheme_j9" title=""></button>
+
+<button id="loadTheme_a0" class="button_ button_loadTheme_a0" title=""></button>
+<button id="loadTheme_b1" class="button_ button_loadTheme_b1" title=""></button>
+<button id="loadTheme_c2" class="button_ button_loadTheme_c2" title=""></button>
+<button id="loadTheme_d3" class="button_ button_loadTheme_d3" title=""></button>
+<button id="loadTheme_e4" class="button_ button_loadTheme_e4" title=""></button>
+<button id="loadTheme_f5" class="button_ button_loadTheme_f5" title=""></button>
+<button id="loadTheme_g6" class="button_ button_loadTheme_g6" title=""></button>
+<button id="loadTheme_h7" class="button_ button_loadTheme_h7" title=""></button>
+<button id="loadTheme_i8" class="button_ button_loadTheme_i8" title=""></button>
+<button id="loadTheme_j9" class="button_ button_loadTheme_j9" title=""></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
 `;

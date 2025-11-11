@@ -150,6 +150,46 @@ case ui.cursorShutoff.ref:           ui.cursorShutoff.click()            ; break
 
 
 
+
+
+
+
+
+
+case ui.saveTheme_a0.ref:        ui.saveTheme_a0.click()         ; break;
+case ui.saveTheme_b1.ref:        ui.saveTheme_b1.click()         ; break;
+case ui.saveTheme_c2.ref:        ui.saveTheme_c2.click()         ; break;
+case ui.saveTheme_d3.ref:        ui.saveTheme_d3.click()         ; break;
+case ui.saveTheme_e4.ref:        ui.saveTheme_e4.click()         ; break;
+case ui.saveTheme_f5.ref:        ui.saveTheme_f5.click()         ; break;
+case ui.saveTheme_g6.ref:        ui.saveTheme_g6.click()         ; break;
+case ui.saveTheme_h7.ref:        ui.saveTheme_h7.click()         ; break;
+case ui.saveTheme_i8.ref:        ui.saveTheme_i8.click()         ; break;
+case ui.saveTheme_j9.ref:        ui.saveTheme_j9.click()         ; break;
+
+case ui.loadTheme_a0.ref:        ui.loadTheme_a0.click()         ; break;
+case ui.loadTheme_b1.ref:        ui.loadTheme_b1.click()         ; break;
+case ui.loadTheme_c2.ref:        ui.loadTheme_c2.click()         ; break;
+case ui.loadTheme_d3.ref:        ui.loadTheme_d3.click()         ; break;
+case ui.loadTheme_e4.ref:        ui.loadTheme_e4.click()         ; break;
+case ui.loadTheme_f5.ref:        ui.loadTheme_f5.click()         ; break;
+case ui.loadTheme_g6.ref:        ui.loadTheme_g6.click()         ; break;
+case ui.loadTheme_h7.ref:        ui.loadTheme_h7.click()         ; break;
+case ui.loadTheme_i8.ref:        ui.loadTheme_i8.click()         ; break;
+case ui.loadTheme_j9.ref:        ui.loadTheme_j9.click()         ; break;
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* tab 3 folder 1 */
 case ui.coin17304.ref:           ui.coin17304.click()            ; break;
 case ui.coin26746.ref:           ui.coin26746.click()            ; break;

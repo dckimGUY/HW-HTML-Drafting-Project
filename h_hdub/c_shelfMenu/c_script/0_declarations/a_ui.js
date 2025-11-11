@@ -124,6 +124,10 @@ ui[name].ref   = document.getElementById(name);
 });
 
 
+["saveTheme_a0", "saveTheme_b1", "saveTheme_c2", "saveTheme_d3", "saveTheme_e4", "saveTheme_f5", "saveTheme_g6", "saveTheme_h7", "saveTheme_i8", "saveTheme_j9", "loadTheme_a0", "loadTheme_b1", "loadTheme_c2", "loadTheme_d3", "loadTheme_e4", "loadTheme_f5", "loadTheme_g6", "loadTheme_h7", "loadTheme_i8", "loadTheme_j9"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
 
 
 

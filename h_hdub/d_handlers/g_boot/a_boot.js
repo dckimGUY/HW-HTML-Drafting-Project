@@ -13,6 +13,9 @@ var   mouseIconLayer    ; mouseIconLayer     = document.getElementById("mouseIco
 var   pulledText        ; pulledText         = document.createElement("textarea")       ;
 var   edgeDetect        ; edgeDetect         = document.createElement("div")            ;
 
+var cursorDisplay = "block";
+
+
 var lastFlow = "global";
 
 edgeDetect.style.position        =           "absolute";
@@ -609,9 +612,11 @@ window.addEventListener("resize",()=>{Z(); redraw();})
 window.addEventListener("scroll",()=>{Z(); redraw();})
 //document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
+var shelfMenuScale = 2;
 
 if (localStorage.getItem("shelfMenuScale")) {
 ui.menuWrapper.ref.style.transform = "scale(" + parseFloat(localStorage.getItem("shelfMenuScale")) + ")";
+shelfMenuScale = parseFloat(localStorage.getItem("shelfMenuScale"));
 }
 
 var gridIncrementArray = "3-2";
@@ -803,7 +808,7 @@ gridLayer.appendChild(Cur);
 Cur.style.opacity=pictureOpacity;
 
 
-if (localStorage.getItem("cursorDisplay")) { Cur.style.display = localStorage.getItem("cursorDisplay"); }
+if (localStorage.getItem("cursorDisplay")) { Cur.style.display = localStorage.getItem("cursorDisplay"); cursorDisplay = Cur.style.display; }
 
 
 
