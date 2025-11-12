@@ -83,13 +83,6 @@ case ui.modeG.ref:               ui.modeG.click()                ; break;
 case ui.modeEeM0.ref:            ui.modeEeM0.click()             ; break;
 case ui.modeT.ref:               ui.modeT.click()                ; break;
 
-case ui.hdub_menuScale8.ref:     ui.hdub_menuScale8.click()      ; break;
-case ui.hdub_menuScale4.ref:     ui.hdub_menuScale4.click()      ; break;
-case ui.hdub_menuScale2.ref:     ui.hdub_menuScale2.click()      ; break;
-case ui.hdub_menuScale1.ref:     ui.hdub_menuScale1.click()      ; break;
-case ui.hdub_menuScaleHalf.ref:  ui.hdub_menuScaleHalf.click()   ; break;
-case ui.hdub_menuScaleQuarter.ref: ui.hdub_menuScaleQuarter.click() ; break;
-case ui.hdub_menuScaleEighth.ref: ui.hdub_menuScaleEighth.click() ; break;
 
 case ui.setDragThresholdFromGrid.ref: ui.setDragThresholdFromGrid.click() ; break;
 

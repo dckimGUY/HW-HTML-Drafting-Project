@@ -133,6 +133,7 @@ shelfMenuHTML.tab6.folder2.style +
 shelfMenuHTML.tab6.folder2.HTML  +
 `</div></div>` +
 `</div>` +
+shelfMenuHTML.scaler +
 `
 <button id="menu_open" class="button_ button_open" title="Open a menu." style="display: none;"></button>`
 ;

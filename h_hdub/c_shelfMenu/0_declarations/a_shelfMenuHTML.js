@@ -2,6 +2,8 @@ const shelfMenuHTML                  = {};
 
 /* THESE OBJECTS ALL CARRY A ".style" and ".HTML" assigned later. */
 
+shelfMenuHTML.scaler                 = {};
+
 shelfMenuHTML.tabSelectors           = {};
 
 shelfMenuHTML.tab1                   = {};

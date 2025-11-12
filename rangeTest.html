@@ -1,0 +1,85 @@
+<style>
+.menuScalerWrap {
+position: fixed;
+right: 50px;
+top: 0px;
+}
+.mouseCatcher {
+position: absolute;
+width: 16px;
+height: 976px;
+right: 384px;
+top: 0px;
+background-color: blue;
+pointer-events: auto;
+}
+.scaleRangeWrapper {
+display: none;
+}
+.scaleRange {
+position: absolute;
+width: 1600px;
+height: 976px;
+top: 0px;
+right: 0px;
+padding: 0px;
+border: 0;
+margin: 0;
+opacity: 0;
+cursor: ew-resize;
+}
+.rightBlocker {
+position: absolute;
+width: 1600px;
+height: 976px;
+right: -1216px;
+top: 0px;
+background-color: transparent;
+}
+.leftBlocker {
+position: absolute;
+width: 1600px;
+height: 976px;
+right: 400px;
+top: 0px;
+background-color: transparent;
+}
+</style>
+
+<div id="menuScalerWrap" class="menuScalerWrap">
+<div id="mouseCatcher" class="mouseCatcher"></div>
+<div id="scaleRangeWrapper" class="scaleRangeWrapper">
+<input id="scaleRange" class="scaleRange" type="range" value="1200" min="0" max="1600" step="0.001">
+<div id="rightBlocker" class="rightBlocker"></div>
+<div id="leftBlocker"  class="leftBlocker"></div>
+</div>
+</div>
+
+<script>
+const scaleRangeWrapper = document.getElementById("scaleRangeWrapper");
+const mouseCatcher      = document.getElementById("mouseCatcher")     ;
+const rightBlocker      = document.getElementById("rightBlocker")     ;
+const leftBlocker       = document.getElementById("leftBlocker")      ;
+const scaleRange        = document.getElementById("scaleRange")       ;
+scaleRange.addEventListener("input", function() {
+newFactor = ((1600 - scaleRange.value + 50)/200);
+newHeight = (newFactor * 488) + "px";
+newWidth  = newFactor * 8;
+if (200 - scaleRange.value + (newWidth/2) <= 1600 && 1600 - scaleRange.value + (newWidth/2) >= newWidth) {
+leftBlocker.style.right = 1600 - scaleRange.value + (newWidth/2) + "px";
+mouseCatcher.style.right = 1600 - newWidth - scaleRange.value + (newWidth/2) + "px";
+rightBlocker.style.right =  -scaleRange.value - (newWidth/2) + "px";
+}
+rightBlocker.style.height = newHeight;
+leftBlocker.style.height  = newHeight;
+scaleRange.style.height   = newHeight;
+mouseCatcher.style.height = newHeight;
+mouseCatcher.style.width  = newWidth + "px";
+});
+scaleRange.addEventListener("mouseleave",  function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+scaleRange.addEventListener("mouseout",  function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+rightBlocker.addEventListener("mouseover",  function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+leftBlocker.addEventListener("mouseover",  function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+mouseCatcher.addEventListener("mouseenter", function() { scaleRangeWrapper.style.display="block"; mouseCatcher.style.pointerEvents="none"; });
+mouseCatcher.addEventListener("mouseover", function() { scaleRangeWrapper.style.display="block"; mouseCatcher.style.pointerEvents="none"; });
+</script>

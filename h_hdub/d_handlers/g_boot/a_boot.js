@@ -615,9 +615,28 @@ window.addEventListener("scroll",()=>{Z(); redraw();})
 var shelfMenuScale = 2;
 
 if (localStorage.getItem("shelfMenuScale")) {
-ui.menuWrapper.ref.style.transform = "scale(" + parseFloat(localStorage.getItem("shelfMenuScale")) + ")";
 shelfMenuScale = parseFloat(localStorage.getItem("shelfMenuScale"));
+ui.menuWrapper.ref.style.transform = "scale(" + shelfMenuScale + ")";
+ui.menu_open.ref.style.transform = "scale(" + shelfMenuScale + ")";
 }
+
+if (localStorage.getItem("shelfMenuScaleSetting")) {
+scaleRange.value          = parseFloat(localStorage.getItem("shelfMenuScaleSetting"));
+newFactor                 = ((1600 - scaleRange.value + 50)/200);
+newHeight                 = (newFactor * 488) + "px";
+newWidth                  = newFactor * 8;
+leftBlocker.style.right   = 1600 - scaleRange.value + (newWidth/2) + "px";
+mouseCatcher.style.right  = 1600 - newWidth - scaleRange.value + (newWidth/2) + "px";
+rightBlocker.style.right  =  -scaleRange.value - (newWidth/2) + "px";
+rightBlocker.style.height = newHeight;
+leftBlocker.style.height  = newHeight;
+scaleRange.style.height   = newHeight;
+mouseCatcher.style.height = newHeight;
+mouseCatcher.style.width  = newWidth + "px";
+}
+
+
+
 
 var gridIncrementArray = "3-2";
 

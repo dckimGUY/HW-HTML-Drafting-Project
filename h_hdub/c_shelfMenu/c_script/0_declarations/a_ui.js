@@ -65,11 +65,6 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
-["hdub_menuScale8", "hdub_menuScale4", "hdub_menuScale2", "hdub_menuScale1", "hdub_menuScaleHalf", "hdub_menuScaleQuarter", "hdub_menuScaleEighth"].forEach((name) => {
-ui[name]       = {};
-ui[name].ref   = document.getElementById(name);
-});
-
 ["coin88067", "coin46861", "coin44038", "coin72275", "coin74555", "coin43886"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
@@ -174,5 +169,61 @@ ui.coin62796.ref.value = blueColour;
 ui.coin65598.ref.value = pinkColour;
 ui.coin67938.ref.value = lineColour;
 ui.coin47065.ref.value = selectedColour;
+
+
+
+
+
+
+
+
+const menuScalerWrap    = document.getElementById("menuScalerWrap")   ;
+const scaleRangeWrapper = document.getElementById("scaleRangeWrapper");
+const mouseCatcher      = document.getElementById("mouseCatcher")     ;
+const rightBlocker      = document.getElementById("rightBlocker")     ;
+const leftBlocker       = document.getElementById("leftBlocker")      ;
+const scaleRange        = document.getElementById("scaleRange")       ;
+scaleRange.addEventListener("input", function() {
+newFactor = ((1600 - scaleRange.value + 50)/200);
+newHeight = (newFactor * 488) + "px";
+newWidth  = newFactor * 8;
+if (200 - scaleRange.value + (newWidth/2) <= 1600 && 1600 - scaleRange.value + (newWidth/2) >= newWidth) {
+leftBlocker.style.right = 1600 - scaleRange.value + (newWidth/2) + "px";
+mouseCatcher.style.right = 1600 - newWidth - scaleRange.value + (newWidth/2) + "px";
+rightBlocker.style.right =  -scaleRange.value - (newWidth/2) + "px";
+}
+rightBlocker.style.height = newHeight;
+leftBlocker.style.height  = newHeight;
+scaleRange.style.height   = newHeight;
+mouseCatcher.style.height = newHeight;
+mouseCatcher.style.width  = newWidth + "px";
+ui.menuWrapper.ref.style.transform = "scale(" + newFactor + ")";
+ui.menu_open.ref.style.transform = "scale(" + newFactor + ")";
+localStorage.setItem("shelfMenuScale", newFactor);
+localStorage.setItem("shelfMenuScaleSetting", scaleRange.value);
+});
+
+
+menuScalerWrap.addEventListener("mousedown", function() { event.stopPropagation(); }, true);
+menuScalerWrap.addEventListener("mousemove", function() { event.stopPropagation(); }, true);
+
+
+
+scaleRange.addEventListener("mouseleave",   function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+scaleRange.addEventListener("mouseout",     function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+rightBlocker.addEventListener("mouseover",  function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+leftBlocker.addEventListener("mouseover",   function() { scaleRangeWrapper.style.display="none";  mouseCatcher.style.pointerEvents="auto"; });
+mouseCatcher.addEventListener("mouseenter", function() { scaleRangeWrapper.style.display="block"; mouseCatcher.style.pointerEvents="none"; });
+mouseCatcher.addEventListener("mouseover",  function() { scaleRangeWrapper.style.display="block"; mouseCatcher.style.pointerEvents="none"; });
+
+
+
+
+
+
+
+
+
+
 
 
