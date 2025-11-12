@@ -266,7 +266,13 @@ let utilityOpacity = 0.75;
 /* Utility Grid Font Select */var   bFarr="26px monospace";
 /* Utility Grid Boundary    */var   bW=  "12";
 /* Utility Grid Boundary Col*/var   bU="#FF0000";
-/* Utility Grid Opacity     */var    K="0.25";
+/* Utility Grid Opacity     */var    K=0.25;
+
+
+var visualOpacity = K;
+if (localStorage.getItem("visualOpacity")) {
+visualOpacity = localStorage.getItem("visualOpacity");
+}
 
 
 if (localStorage.getItem("sL")) { sL = localStorage.getItem("sL"); }
