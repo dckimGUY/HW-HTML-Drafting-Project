@@ -1,32 +1,32 @@
-ui.coin21493.click               = function() { T = 1;    localStorage.setItem("gridSize", T); Z(); };
-ui.coin31352.click               = function() { T = 2;    localStorage.setItem("gridSize", T); Z(); };
+ui.coin21493.click               = function() { T = 1;    localStorage.setItem("T", T); Z(); };
+ui.coin31352.click               = function() { T = 2;    localStorage.setItem("T", T); Z(); };
 
-ui.coin33352.click               = function() { T = 5;    localStorage.setItem("gridSize", T); Z(); };
-ui.coin35216.click               = function() { T = 10;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin36899.click               = function() { T = 20;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin38511.click               = function() { T = 50;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin40870.click               = function() { T = 100;  localStorage.setItem("gridSize", T); Z(); };
-ui.coin46684.click               = function() { T = 200;  localStorage.setItem("gridSize", T); Z(); };
-ui.coin48242.click               = function() { T = 500;  localStorage.setItem("gridSize", T); Z(); };
-ui.coin50503.click               = function() { T = 1000; localStorage.setItem("gridSize", T); Z(); };
+ui.coin33352.click               = function() { T = 5;    localStorage.setItem("T", T); Z(); };
+ui.coin35216.click               = function() { T = 10;   localStorage.setItem("T", T); Z(); };
+ui.coin36899.click               = function() { T = 20;   localStorage.setItem("T", T); Z(); };
+ui.coin38511.click               = function() { T = 50;   localStorage.setItem("T", T); Z(); };
+ui.coin40870.click               = function() { T = 100;  localStorage.setItem("T", T); Z(); };
+ui.coin46684.click               = function() { T = 200;  localStorage.setItem("T", T); Z(); };
+ui.coin48242.click               = function() { T = 500;  localStorage.setItem("T", T); Z(); };
+ui.coin50503.click               = function() { T = 1000; localStorage.setItem("T", T); Z(); };
 
-ui.coin53180.click               = function() { T = 4;    localStorage.setItem("gridSize", T); Z(); };
-ui.coin55658.click               = function() { T = 8;    localStorage.setItem("gridSize", T); Z(); };
-ui.coin57816.click               = function() { T = 16;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin60297.click               = function() { T = 32;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin64112.click               = function() { T = 64;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin66935.click               = function() { T = 128;  localStorage.setItem("gridSize", T); Z(); };
-ui.coin70148.click               = function() { T = 256;  localStorage.setItem("gridSize", T); Z(); };
-ui.coin05786.click               = function() { T = 512;  localStorage.setItem("gridSize", T); Z(); };
+ui.coin53180.click               = function() { T = 4;    localStorage.setItem("T", T); Z(); };
+ui.coin55658.click               = function() { T = 8;    localStorage.setItem("T", T); Z(); };
+ui.coin57816.click               = function() { T = 16;   localStorage.setItem("T", T); Z(); };
+ui.coin60297.click               = function() { T = 32;   localStorage.setItem("T", T); Z(); };
+ui.coin64112.click               = function() { T = 64;   localStorage.setItem("T", T); Z(); };
+ui.coin66935.click               = function() { T = 128;  localStorage.setItem("T", T); Z(); };
+ui.coin70148.click               = function() { T = 256;  localStorage.setItem("T", T); Z(); };
+ui.coin05786.click               = function() { T = 512;  localStorage.setItem("T", T); Z(); };
 
-ui.coin08962.click               = function() { T = 3;    localStorage.setItem("gridSize", T); Z(); };
-ui.coin10912.click               = function() { T = 6;    localStorage.setItem("gridSize", T); Z(); };
-ui.coin15097.click               = function() { T = 12;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin18271.click               = function() { T = 24;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin21056.click               = function() { T = 48;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin22927.click               = function() { T = 96;   localStorage.setItem("gridSize", T); Z(); };
-ui.coin26110.click               = function() { T = 192;  localStorage.setItem("gridSize", T); Z(); };
-ui.coin44062.click               = function() { T = 384;  localStorage.setItem("gridSize", T); Z(); };
+ui.coin08962.click               = function() { T = 3;    localStorage.setItem("T", T); Z(); };
+ui.coin10912.click               = function() { T = 6;    localStorage.setItem("T", T); Z(); };
+ui.coin15097.click               = function() { T = 12;   localStorage.setItem("T", T); Z(); };
+ui.coin18271.click               = function() { T = 24;   localStorage.setItem("T", T); Z(); };
+ui.coin21056.click               = function() { T = 48;   localStorage.setItem("T", T); Z(); };
+ui.coin22927.click               = function() { T = 96;   localStorage.setItem("T", T); Z(); };
+ui.coin26110.click               = function() { T = 192;  localStorage.setItem("T", T); Z(); };
+ui.coin44062.click               = function() { T = 384;  localStorage.setItem("T", T); Z(); };
 
 ui.coin44789.click               = function() {
                  if ( grid0Viz == "true") {

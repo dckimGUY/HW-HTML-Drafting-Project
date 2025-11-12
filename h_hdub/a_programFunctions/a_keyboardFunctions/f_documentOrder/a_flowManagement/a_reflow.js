@@ -1,6 +1,6 @@
 function reflow(input,reverse,order) {
 /* Initial check to see if anything is in <a> and sel0 OR sel1 OR sel2 */
-if (utilityLayer0.children.length > 1 && input.length > 1) {
+if (utilityLayer0.children.length > 1 && input.length > 0) {
 const aa = input;
 let   az = Array.from(aa);
 let   zz = new Array();

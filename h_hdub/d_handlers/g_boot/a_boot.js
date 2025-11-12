@@ -467,7 +467,7 @@ var      visualGridColour3 =  "#FF00FF";
 var        visualGridSize3 =  T;
 var                  grid3Viz = "false";
 
-if (localStorage.getItem("gridSize")) { T = parseInt(localStorage.getItem("gridSize")); }
+if (localStorage.getItem("T")) { T = parseInt(localStorage.getItem("T")); }
 
 if (localStorage.getItem("grid0Viz")) { grid0Viz = localStorage.getItem("grid0Viz"); }
 if (localStorage.getItem("grid1Viz")) { grid1Viz = localStorage.getItem("grid1Viz"); }
@@ -989,10 +989,35 @@ if (window.opener==null) {
 insertNewCoin([null,78,110,0,0,0]);
 if (coinFocus!=null) {
 
-coinFocus.style.width    = T*Math.ceil((edgeQ*2)/T)+"px";
-coinFocus.dataset.width  = T*Math.ceil((edgeQ*2)/T)+"px";
-coinFocus.style.height   = T*Math.ceil((edgeQ*2)/T)+"px";
-coinFocus.dataset.height = T*Math.ceil((edgeQ*2)/T)+"px";
+
+
+       if (T%5==0) {
+
+coinFocus.style.width    = "500px";
+coinFocus.dataset.width  = "500px";
+coinFocus.style.height   = "500px";
+coinFocus.dataset.height = "500px";
+
+} else if (T%3==0) {
+
+coinFocus.style.width    = "600px";
+coinFocus.dataset.width  = "600px";
+coinFocus.style.height   = "600px";
+coinFocus.dataset.height = "600px";
+
+} else {
+
+coinFocus.style.width    = "512px";
+coinFocus.dataset.width  = "512px";
+coinFocus.style.height   = "512px";
+coinFocus.dataset.height = "512px";
+
+}
+
+
+
+
+
 }
 }
 hauptMode=1;
