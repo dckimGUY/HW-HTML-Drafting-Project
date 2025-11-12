@@ -312,7 +312,7 @@ let
 /*    Outline Color       */      Cs0=      "#CCC",      Cs1=      "#A0A",      Cs2=      "#0CC", /**/
 /*    Outline Width       */      Ws0=       "2px",      Ws1=       "2px",      Ws2=       "2px", /**/
 /*    Outline Style       */      Ss0=    "dashed",      Ss1=    "dashed",      Ss2=    "dashed", /**/
-/*    Background Color    */      Bs0="#CCCCCC99", Bs1="#AA00AA99", Bs2="#00CCCC99", /**/
+/*    Background Color    */      Bs0="rgba(255,255,255,0.5)", Bs1="rgba(255,0,255,0.5)", Bs2="rgba(0,255,255,0.5)", /**/
 /*    Opacity             */      Os0=      "1.00",      Os1=      "1.00",      Os2=      "1.00"; /**/
 /*                        */                                                                      /**/
 /****************************************************************************************************/
@@ -426,6 +426,6 @@ if (localStorage.getItem("opacityString")) { opacityString   = localStorage.getI
 
 if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getItem("lineColour"    ); }
 if (localStorage.getItem("selectedColour")) { selectedColour = localStorage.getItem("selectedColour"); }
-if (localStorage.getItem("greyColour"    )) { greyColour = localStorage.getItem("greyColour"); Bs0 = greyColour; Cs0 = greyColour; }
-if (localStorage.getItem("blueColour"    )) { blueColour = localStorage.getItem("blueColour"); Bs2 = blueColour; Cs2 = blueColour;}
-if (localStorage.getItem("pinkColour"    )) { pinkColour = localStorage.getItem("pinkColour"); Bs1 = pinkColour; Cs1 = pinkColour; }
+if (localStorage.getItem("greyColour"    )) { greyColour = localStorage.getItem("greyColour"); Bs0 = greyColour + "99"; Cs0 = greyColour + "99"; }
+if (localStorage.getItem("blueColour"    )) { blueColour = localStorage.getItem("blueColour"); Bs2 = blueColour + "99"; Cs2 = blueColour + "99";}
+if (localStorage.getItem("pinkColour"    )) { pinkColour = localStorage.getItem("pinkColour"); Bs1 = pinkColour + "99"; Cs1 = pinkColour + "99"; }

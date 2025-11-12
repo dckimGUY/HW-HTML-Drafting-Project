@@ -993,12 +993,23 @@ if (coinFocus!=null) {
 
        if (T%5==0) {
 
+coinFocus.style.left    = "100px";
+coinFocus.dataset.left  = "100px";
+coinFocus.style.top     = "100px";
+coinFocus.dataset.top   = "100px";
+
 coinFocus.style.width    = "500px";
 coinFocus.dataset.width  = "500px";
 coinFocus.style.height   = "500px";
 coinFocus.dataset.height = "500px";
 
+
 } else if (T%3==0) {
+
+coinFocus.style.left    = "96px";
+coinFocus.dataset.left  = "96px";
+coinFocus.style.top     = "96px";
+coinFocus.dataset.top   = "96px";
 
 coinFocus.style.width    = "600px";
 coinFocus.dataset.width  = "600px";
@@ -1007,6 +1018,11 @@ coinFocus.dataset.height = "600px";
 
 } else {
 
+coinFocus.style.left    = "128px";
+coinFocus.dataset.left  = "128px";
+coinFocus.style.top     = "128px";
+coinFocus.dataset.top   = "128px";
+
 coinFocus.style.width    = "512px";
 coinFocus.dataset.width  = "512px";
 coinFocus.style.height   = "512px";
@@ -1014,9 +1030,31 @@ coinFocus.dataset.height = "512px";
 
 }
 
+coinFocus.div.style.fontSize = "32px";
 
+function invertHexColour(h) {return "#"+(0xFFFFFF^parseInt(h.slice(1),16)).toString(16).padStart(6,"0");}
 
+coinFocus.div.style.color = invertHexColour(finishedBackgroundColour);
+coinFocus.div.style.textAlign = "left";
+coinFocus.div.style.padding = "32px";
+coinFocus.div.style.overflow = "auto";
 
+coinFocus.div.innerHTML = `
+<p><b>DCKIM - HTML Drafting Project:</b></p>
+<ol>
+<li>F1 Help Menu</li>
+<li>spacebar: live preview</li>
+<li>enter/esc: live edit</li>
+<li>CAPS-lock: construction/style modes</li>
+<li>V: document re-flow</li>
+<li>re-size the menu from the edge</li>
+<li>explore the program: It's NEW! (under active development)</li>
+<li><u>Last Update: November 12, 2025</u></li>
+</ol>
+`;
+
+makeItContentEditable([,,,true,,]);
+flipAnchorZ([,,,true,,]);
 
 }
 }
