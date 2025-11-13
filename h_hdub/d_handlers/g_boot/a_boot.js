@@ -1104,6 +1104,9 @@ redraw();
 
 updateInfoShelf();
 
+spaceViewOn();
+spaceViewOff();
+
 
 /* Completion Message */
 

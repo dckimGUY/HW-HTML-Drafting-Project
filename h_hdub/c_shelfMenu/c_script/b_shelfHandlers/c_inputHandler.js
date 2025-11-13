@@ -22,7 +22,6 @@ case ui.coin88067.ref:           ui.coin88067.input()           ; break;
 case ui.coin46861.ref:           ui.coin46861.input()           ; break;
 case ui.coin44038.ref:           ui.coin44038.input()           ; break;
 case ui.coin72275.ref:           ui.coin72275.input()           ; break;
-case ui.coin74555.ref:           ui.coin74555.input()           ; break;
 case ui.coin43886.ref:           ui.coin43886.input()           ; break;
 
 
