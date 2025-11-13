@@ -1048,7 +1048,8 @@ coinFocus.div.innerHTML = `
 <li>V: document re-flow</li>
 <li>re-size the menu from the edge</li>
 <li>explore the program: It's NEW! (under active development)</li>
-<li><u>Last Update: November 12, 2025</u></li>
+<li>Vote for DCKIM in the PetraPixel Indie Web Contest!</li>
+<li><u>Last Update: November 13, 2025</u></li>
 </ol>
 `;
 
@@ -1075,6 +1076,8 @@ let firstTime = "true";
 if (localStorage.getItem("firstTime")) { firstTime = localStorage.getItem("firstTime"); }
 
 if (!window.opener && firstTime == "true") {
+
+loadTheme("c2");
 
 localStorage.setItem("firstTime", "false");
 
