@@ -77,7 +77,8 @@ shelfMenuHTML.tab2.folder2.HTML = `
 <input id="coin46861" name="coin46861" class="input_coin46861" type="color">
 <input id="coin44038" name="coin44038" class="input_coin44038" type="color">
 <input id="coin72275" name="coin72275" class="input_coin72275" type="color">
-<input id="coin74555" name="coin74555" class="input_coin74555" type="color">
+
+
 <input id="coin43886" name="coin43886" class="input_coin43886" type="color">
 
 

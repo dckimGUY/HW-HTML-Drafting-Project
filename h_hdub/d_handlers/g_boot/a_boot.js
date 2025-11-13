@@ -1032,7 +1032,6 @@ coinFocus.dataset.height = "512px";
 
 coinFocus.div.style.fontSize = "32px";
 
-function invertHexColour(h) {return "#"+(0xFFFFFF^parseInt(h.slice(1),16)).toString(16).padStart(6,"0");}
 
 coinFocus.div.style.color = invertHexColour(finishedBackgroundColour);
 coinFocus.div.style.textAlign = "left";

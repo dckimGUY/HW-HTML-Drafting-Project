@@ -3,6 +3,10 @@
  * otherwise put images in the "/d_images/" directory
  * where this program opens from. *****/
 
+/* INVERT HEX COLOURS */
+
+function invertHexColour(h) {return "#"+(0xFFFFFF^parseInt(h.slice(1),16)).toString(16).padStart(6,"0");}
+
 
 /* This sets the initial Draggable Edge Size. */
 

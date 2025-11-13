@@ -136,8 +136,7 @@ border-radius: 2px;
 .input_coin88067                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:     73px; top:    232px; width:     22px; height:     17px; }
 .input_coin46861                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:     47px; top:    232px; width:     22px; height:     17px; }
 .input_coin44038                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    107px; top:    232px; width:     22px; height:     17px; }
-.input_coin72275                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    124px; top:     71px; width:     14px; height:     14px; }
-.input_coin74555                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    138px; top:     71px; width:      7px; height:     14px; }
+.input_coin72275                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    124px; top:     71px; width:     21px; height:     14px; }
 .input_coin43886                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    147px; top:     71px; width:     21px; height:     14px; }
 
 /* SLIDERS */

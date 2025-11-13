@@ -65,7 +65,7 @@ ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
-["coin88067", "coin46861", "coin44038", "coin72275", "coin74555", "coin43886"].forEach((name) => {
+["coin88067", "coin46861", "coin44038", "coin72275", "coin43886"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
@@ -159,7 +159,6 @@ ui.coin88067.ref.value = L;
 ui.coin46861.ref.value = sL;
 ui.coin44038.ref.value = finishedBackgroundColour;
 ui.coin72275.ref.value = U;
-ui.coin74555.ref.value = C;
 ui.coin43886.ref.value = bU;
 
 

@@ -128,8 +128,92 @@ ui.setComp2and3.click            = function() { gridIncrementArray = "3-2";    l
 
 /* INVERT COLOURATIONS */
 
-ui.invertBGandGrid.click         = function() {  };
-ui.invertPartVisuals.click       = function() {  };
+ui.invertBGandGrid.click         = function() {
+
+L = invertHexColour(L);
+sL = invertHexColour(sL);
+finishedBackgroundColour = invertHexColour(finishedBackgroundColour);
+U = invertHexColour(U); D = U; C = U;
+bU = invertHexColour(bU);
+visualGridColour1 = invertHexColour(visualGridColour1);
+visualGridColour2 = invertHexColour(visualGridColour2);
+visualGridColour3 = invertHexColour(visualGridColour3);
+
+ui.coin88067.ref.value = L;
+ui.coin46861.ref.value = sL;
+ui.coin44038.ref.value = finishedBackgroundColour;
+ui.coin72275.ref.value = D;
+ui.coin43886.ref.value = bU;
+ui.coin28281.ref.value = visualGridColour1;
+ui.coin30119.ref.value = visualGridColour2;
+ui.coin32259.ref.value = visualGridColour3;
+
+ui.coin88067.ref.setAttribute('value',L);
+ui.coin46861.ref.setAttribute('value',sL);
+ui.coin44038.ref.setAttribute('value',finishedBackgroundColour);
+ui.coin72275.ref.setAttribute('value',U);
+ui.coin43886.ref.setAttribute('value',bU);
+ui.coin28281.ref.setAttribute('value',visualGridColour1);
+ui.coin30119.ref.setAttribute('value',visualGridColour2);
+ui.coin32259.ref.setAttribute('value',visualGridColour3);
+
+localStorage.setItem('L',L);
+localStorage.setItem('sL',sL);
+localStorage.setItem('finishedBackgroundColour',finishedBackgroundColour);
+localStorage.setItem('UD',U);
+localStorage.setItem('bU',bU);
+localStorage.setItem('visualGridColour1',visualGridColour1);
+localStorage.setItem('visualGridColour2',visualGridColour2);
+localStorage.setItem('visualGridColour3',visualGridColour3);
+
+spaceViewOn();
+spaceViewOff();
+Z();
+
+};
+
+
+
+
+
+
+ui.invertPartVisuals.click       = function() {
+
+greyColour = invertHexColour(greyColour);
+blueColour = invertHexColour(blueColour);
+pinkColour = invertHexColour(pinkColour);
+lineColour = invertHexColour(lineColour);
+selectedColour = invertHexColour(selectedColour);
+
+Bs0 = greyColour + "99";
+Cs0 = greyColour + "99";
+Bs2 = blueColour + "99";
+Cs2 = blueColour + "99";
+Bs1 = pinkColour + "99";
+Cs1 = pinkColour + "99";
+
+localStorage.setItem('greyColour', greyColour);
+localStorage.setItem('blueColour', blueColour);
+localStorage.setItem('pinkColour', pinkColour);
+localStorage.setItem('lineColour', lineColour);
+localStorage.setItem('selectedColour',selectedColour);
+
+ui.coin59277.ref.value = greyColour;
+ui.coin62796.ref.value = blueColour;
+ui.coin65598.ref.value = pinkColour;
+ui.coin67938.ref.value = lineColour;
+ui.coin47065.ref.value = selectedColour;
+
+ui.coin59277.ref.setAttribute('value', greyColour);
+ui.coin62796.ref.setAttribute('value', blueColour);
+ui.coin65598.ref.setAttribute('value', pinkColour);
+ui.coin67938.ref.setAttribute('value', lineColour);
+ui.coin47065.ref.setAttribute('value', selectedColour);
+
+spaceViewOn();
+spaceViewOff();
+redraw();
+};
 
 
 
@@ -168,16 +252,9 @@ Z();
 ui.coin72275.input              = function() { 
 U = ui.coin72275.ref.value;
 D = ui.coin72275.ref.value;
+C = ui.coin72275.ref.value;
 ui.coin72275.ref.setAttribute('value',ui.coin72275.ref.value);
 localStorage.setItem('UD',ui.coin72275.ref.value);
-spaceViewOn();
-spaceViewOff();
-Z();
- };
-ui.coin74555.input              = function() { 
-C = ui.coin74555.ref.value;
-ui.coin74555.ref.setAttribute('value',ui.coin74555.ref.value);
-localStorage.setItem('C',ui.coin74555.ref.value);
 spaceViewOn();
 spaceViewOff();
 Z();
