@@ -143,15 +143,10 @@ case ui.setComp2.ref:            ui.setComp2.click()             ; break;
 case ui.setComp3.ref:            ui.setComp3.click()             ; break;
 case ui.setComp2and3.ref:        ui.setComp2and3.click()         ; break;
 
-case ui.cursorShutoff.ref:           ui.cursorShutoff.click()            ; break;
+case ui.invertBGandGrid.ref:     ui.invertBGandGrid.click()      ; break;
+case ui.invertPartVisuals.ref:   ui.invertPartVisuals.click()    ; break;
 
-
-
-
-
-
-
-
+case ui.cursorShutoff.ref:       ui.cursorShutoff.click()        ; break;
 
 case ui.saveTheme_a0.ref:        ui.saveTheme_a0.click()         ; break;
 case ui.saveTheme_b1.ref:        ui.saveTheme_b1.click()         ; break;

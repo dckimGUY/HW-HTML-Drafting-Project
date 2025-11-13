@@ -15,39 +15,35 @@ shelfMenuHTML.tab2.folder1.HTML = `
 
 
 
-<input id="coin88067" name="coin88067" class="input_coin88067" type="color">
-<input id="coin46861" name="coin46861" class="input_coin46861" type="color">
-<input id="coin44038" name="coin44038" class="input_coin44038" type="color">
-<input id="coin72275" name="coin72275" class="input_coin72275" type="color">
-<input id="coin74555" name="coin74555" class="input_coin74555" type="color">
-<input id="coin43886" name="coin43886" class="input_coin43886" type="color">
-
-
-<!-- THESE DETERMINE LINE THICKNESSES AND THEN THE LAST ONES OPACITIES --> 
-<input id="coin41267" name="coin41267" class="input_coin41267" type="range" min="0" max="4"   step="1">
-<input id="coin47497" name="coin47497" class="input_coin47497" type="range" min="1" max="16"  step="1">
-<input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1">
-
-
-<input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005">
-<input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005">
-<input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005">
-<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0" max="1"    step="0.005">
-
-<input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color">
-<input id="coin62796" name="coin62796" class="input_ input_coin62796" type="color">
-<input id="coin65598" name="coin65598" class="input_ input_coin65598" type="color">
-
-<input id="coin67938" name="coin67938" class="input_ input_coin67938" type="color">
-<input id="coin47065" name="coin47065" class="input_ input_coin47065" type="color">
 
 
 
-<button id="setDragThresholdFromGrid" class="button_ button_setDragThresholdFromGrid" title="Set Drag Threshold from Snap Grid"></button>
+
+
+<button id="saveTheme_a0" class="button_ button_saveTheme_a0" title=""></button>
+<button id="saveTheme_b1" class="button_ button_saveTheme_b1" title=""></button>
+<button id="saveTheme_c2" class="button_ button_saveTheme_c2" title=""></button>
+<button id="saveTheme_d3" class="button_ button_saveTheme_d3" title=""></button>
+<button id="saveTheme_e4" class="button_ button_saveTheme_e4" title=""></button>
+<button id="saveTheme_f5" class="button_ button_saveTheme_f5" title=""></button>
+<button id="saveTheme_g6" class="button_ button_saveTheme_g6" title=""></button>
+<button id="saveTheme_h7" class="button_ button_saveTheme_h7" title=""></button>
+<button id="saveTheme_i8" class="button_ button_saveTheme_i8" title=""></button>
+<button id="saveTheme_j9" class="button_ button_saveTheme_j9" title=""></button>
+
+<button id="loadTheme_a0" class="button_ button_loadTheme_a0" title=""></button>
+<button id="loadTheme_b1" class="button_ button_loadTheme_b1" title=""></button>
+<button id="loadTheme_c2" class="button_ button_loadTheme_c2" title=""></button>
+<button id="loadTheme_d3" class="button_ button_loadTheme_d3" title=""></button>
+<button id="loadTheme_e4" class="button_ button_loadTheme_e4" title=""></button>
+<button id="loadTheme_f5" class="button_ button_loadTheme_f5" title=""></button>
+<button id="loadTheme_g6" class="button_ button_loadTheme_g6" title=""></button>
+<button id="loadTheme_h7" class="button_ button_loadTheme_h7" title=""></button>
+<button id="loadTheme_i8" class="button_ button_loadTheme_i8" title=""></button>
+<button id="loadTheme_j9" class="button_ button_loadTheme_j9" title=""></button>
 
 
 
-<input id="bodyFade" name="bodyFade" class="input_bodyFade" type="range" min="0.05" max="1" step="0.01" value="1" title="Fade Entire Program">
 
 
 

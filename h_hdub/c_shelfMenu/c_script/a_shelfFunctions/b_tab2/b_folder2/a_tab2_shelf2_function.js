@@ -1,6 +1,8 @@
 ui.coin21493.click               = function() { T = 1;    localStorage.setItem("T", T); Z(); };
 ui.coin31352.click               = function() { T = 2;    localStorage.setItem("T", T); Z(); };
 
+ui.snapGridIncrement.input       = function() {  };
+
 ui.coin33352.click               = function() { T = 5;    localStorage.setItem("T", T); Z(); };
 ui.coin35216.click               = function() { T = 10;   localStorage.setItem("T", T); Z(); };
 ui.coin36899.click               = function() { T = 20;   localStorage.setItem("T", T); Z(); };
@@ -116,105 +118,138 @@ ui.setComp2.click                = function() { gridIncrementArray = "2";      l
 ui.setComp3.click                = function() { gridIncrementArray = "3";      localStorage.setItem("gridIncrementArray", gridIncrementArray); };
 ui.setComp2and3.click            = function() { gridIncrementArray = "3-2";    localStorage.setItem("gridIncrementArray", gridIncrementArray); };
 
-ui.cursorShutoff.click               = function() { if (Cur.style.display=='none') { Cur.style.display='block'; localStorage.setItem("cursorDisplay", "block"); cursorDisplay = "block"; } else { Cur.style.display='none'; localStorage.setItem("cursorDisplay", "none"); cursorDisplay = "none"; }; };
 
 
 
 
 
 
-const userCustomTheme    = {};
-      userCustomTheme.a0 = {};
-      userCustomTheme.b1 = {};
-      userCustomTheme.c2 = {};
-      userCustomTheme.d3 = {};
-      userCustomTheme.e4 = {};
-      userCustomTheme.f5 = {};
-      userCustomTheme.g6 = {};
-      userCustomTheme.h7 = {};
-      userCustomTheme.i8 = {};
-      userCustomTheme.j9 = {};
-
-function saveTheme(configName) {
-userCustomTheme[configName].L                        = L;                       
-userCustomTheme[configName].sL                       = sL;                      
-userCustomTheme[configName].finishedBackgroundColour = finishedBackgroundColour; 
-userCustomTheme[configName].U                        = U;                      
-userCustomTheme[configName].D                        = D;                      
-userCustomTheme[configName].C                        = C;                       
-userCustomTheme[configName].bU                       = bU;                       
-userCustomTheme[configName].greyColour               = greyColour;               
-userCustomTheme[configName].blueColour               = blueColour;               
-userCustomTheme[configName].pinkColour               = pinkColour;               
-userCustomTheme[configName].lineColour               = lineColour;               
-userCustomTheme[configName].selectedColour           = selectedColour;           
-userCustomTheme[configName].thinOutline              = thinOutline;           
-userCustomTheme[configName].borderWidth              = borderWidth;           
-userCustomTheme[configName].edgeQ                    = edgeQ;           
-userCustomTheme[configName].K                        = K;           
-userCustomTheme[configName].visualOpacity            = visualOpacity;           
-userCustomTheme[configName].partsOpacity             = partsOpacity;           
-userCustomTheme[configName].pictureOpacity           = pictureOpacity;           
-userCustomTheme[configName].T                        = T;           
-userCustomTheme[configName].grid0Viz                 = grid0Viz;           
-userCustomTheme[configName].grid1Viz                 = grid1Viz;           
-userCustomTheme[configName].grid2Viz                 = grid2Viz;           
-userCustomTheme[configName].grid3Viz                 = grid3Viz;           
-userCustomTheme[configName].visualGridThickness1     = visualGridThickness1;           
-userCustomTheme[configName].visualGridThickness2     = visualGridThickness2;           
-userCustomTheme[configName].visualGridThickness3     = visualGridThickness3;           
-userCustomTheme[configName].visualGridSize1          = visualGridSize1;           
-userCustomTheme[configName].visualGridSize2          = visualGridSize2;           
-userCustomTheme[configName].visualGridSize3          = visualGridSize3;           
-userCustomTheme[configName].visualGridColour1        = visualGridColour1;           
-userCustomTheme[configName].visualGridColour2        = visualGridColour2;           
-userCustomTheme[configName].visualGridColour3        = visualGridColour3;           
-userCustomTheme[configName].gridIncrementArray       = gridIncrementArray;           
-userCustomTheme[configName].cursorDisplay            = cursorDisplay;           
-localStorage.setItem("userCustomTheme_" + configName, JSON.stringify(userCustomTheme[configName]));
-}
 
 
-function loadTheme(configName) {
-L                         = userCustomTheme[configName].L                        ? userCustomTheme[configName].L                        : L                          ; localStorage.setItem("L"                         , L                         ); ui.coin88067.ref.value = L                       ;
-sL                        = userCustomTheme[configName].sL                       ? userCustomTheme[configName].sL                       : sL                         ; localStorage.setItem("sL"                        , sL                        ); ui.coin46861.ref.value = sL                      ;
-finishedBackgroundColour  = userCustomTheme[configName].finishedBackgroundColour ? userCustomTheme[configName].finishedBackgroundColour : finishedBackgroundColour   ; localStorage.setItem("finishedBackgroundColour"  , finishedBackgroundColour  ); ui.coin44038.ref.value = finishedBackgroundColour;
-U                         = userCustomTheme[configName].U                        ? userCustomTheme[configName].U                        : U                          ; localStorage.setItem("U"                         , U                         ); ui.coin72275.ref.value = U                       ;
-C                         = userCustomTheme[configName].C                        ? userCustomTheme[configName].C                        : C                          ; localStorage.setItem("C"                         , C                         ); ui.coin74555.ref.value = C                       ;
-bU                        = userCustomTheme[configName].bU                       ? userCustomTheme[configName].bU                       : bU                         ; localStorage.setItem("bU"                        , bU                        ); ui.coin43886.ref.value = bU                      ;
-D                         = userCustomTheme[configName].D                        ? userCustomTheme[configName].D                        : D                          ; localStorage.setItem("D"                         , D                         );  ;
-greyColour                = userCustomTheme[configName].greyColour               ? userCustomTheme[configName].greyColour               : greyColour                 ; localStorage.setItem("greyColour"                , greyColour                ); ui.coin59277.ref.value = greyColour    ;
-blueColour                = userCustomTheme[configName].blueColour               ? userCustomTheme[configName].blueColour               : blueColour                 ; localStorage.setItem("blueColour"                , blueColour                ); ui.coin62796.ref.value = blueColour    ;
-pinkColour                = userCustomTheme[configName].pinkColour               ? userCustomTheme[configName].pinkColour               : pinkColour                 ; localStorage.setItem("pinkColour"                , pinkColour                ); ui.coin65598.ref.value = pinkColour    ;
-lineColour                = userCustomTheme[configName].lineColour               ? userCustomTheme[configName].lineColour               : lineColour                 ; localStorage.setItem("lineColour"                , lineColour                ); ui.coin67938.ref.value = lineColour    ;
-selectedColour            = userCustomTheme[configName].selectedColour           ? userCustomTheme[configName].selectedColour           : selectedColour             ; localStorage.setItem("selectedColour"            , selectedColour            ); ui.coin47065.ref.value = selectedColour;
-thinOutline               = userCustomTheme[configName].thinOutline              ? parseFloat(userCustomTheme[configName].thinOutline    )         : thinOutline                ; localStorage.setItem("thinOutline"               , thinOutline               ); ui.coin41267.ref.value = thinOutline; xrayWidth = thinOutline;
-borderWidth               = userCustomTheme[configName].borderWidth              ? parseFloat(userCustomTheme[configName].borderWidth    )         : borderWidth                ; localStorage.setItem("borderWidth"               , borderWidth               ); ui.coin47497.ref.value = borderWidth ;
-edgeQ                     = userCustomTheme[configName].edgeQ                    ? parseFloat(userCustomTheme[configName].edgeQ          )         : edgeQ                      ; localStorage.setItem("edgeQ"                     , edgeQ                     ); ui.coin50633.ref.value = edgeQ ;
-K                         = userCustomTheme[configName].K                        ? parseFloat(userCustomTheme[configName].K              )         : K                          ; localStorage.setItem("K"                         , K                         ); ui.coin53526.ref.value = K ;
-visualOpacity             = userCustomTheme[configName].visualOpacity            ? parseFloat(userCustomTheme[configName].visualOpacity  )         : visualOpacity              ; localStorage.setItem("visualOpacity"             , visualOpacity             ); ui.coin56897.ref.value = visualOpacity ; Vis.style.opacity=visualOpacity;
-partsOpacity              = userCustomTheme[configName].partsOpacity             ? parseFloat(userCustomTheme[configName].partsOpacity   )         : partsOpacity               ; localStorage.setItem("partsOpacity"              , partsOpacity              ); ui.coin59527.ref.value = partsOpacity ; utilityLayer0.style.opacity=partsOpacity;
-pictureOpacity            = userCustomTheme[configName].pictureOpacity           ? parseFloat(userCustomTheme[configName].pictureOpacity )         : pictureOpacity             ; localStorage.setItem("pictureOpacity"            , pictureOpacity            ); ui.coin17325.ref.value = pictureOpacity; Picture.style.opacity=pictureOpacity; Cur.style.opacity=pictureOpacity; ui.menuWrapper.ref.style.opacity=pictureOpacity; ;
-T                         = userCustomTheme[configName].T                        ? parseInt(userCustomTheme[configName].T)                        : T                          ; localStorage.setItem("T"                         , T                         );  ;
-grid0Viz                  = userCustomTheme[configName].grid0Viz                 ? userCustomTheme[configName].grid0Viz                 : grid0Viz                   ; localStorage.setItem("grid0Viz"                  , grid0Viz                  );  ;
-grid1Viz                  = userCustomTheme[configName].grid1Viz                 ? userCustomTheme[configName].grid1Viz                 : grid1Viz                   ; localStorage.setItem("grid1Viz"                  , grid1Viz                  );  ;
-grid2Viz                  = userCustomTheme[configName].grid2Viz                 ? userCustomTheme[configName].grid2Viz                 : grid2Viz                   ; localStorage.setItem("grid2Viz"                  , grid2Viz                  );  ;
-grid3Viz                  = userCustomTheme[configName].grid3Viz                 ? userCustomTheme[configName].grid3Viz                 : grid3Viz                   ; localStorage.setItem("grid3Viz"                  , grid3Viz                  );  ;
-visualGridThickness1      = userCustomTheme[configName].visualGridThickness1     ? parseInt(userCustomTheme[configName].visualGridThickness1  )  : visualGridThickness1       ; localStorage.setItem("visualGridThickness1"      , visualGridThickness1      );  ;
-visualGridThickness2      = userCustomTheme[configName].visualGridThickness2     ? parseInt(userCustomTheme[configName].visualGridThickness2  )  : visualGridThickness2       ; localStorage.setItem("visualGridThickness2"      , visualGridThickness2      );  ;
-visualGridThickness3      = userCustomTheme[configName].visualGridThickness3     ? parseInt(userCustomTheme[configName].visualGridThickness3  )  : visualGridThickness3       ; localStorage.setItem("visualGridThickness3"      , visualGridThickness3      );  ;
-visualGridSize1           = userCustomTheme[configName].visualGridSize1          ? parseInt(userCustomTheme[configName].visualGridSize1       )  : visualGridSize1            ; localStorage.setItem("visualGridSize1"           , visualGridSize1           ); ui.coin18868.ref.value = visualGridSize1 ;
-visualGridSize2           = userCustomTheme[configName].visualGridSize2          ? parseInt(userCustomTheme[configName].visualGridSize2       )  : visualGridSize2            ; localStorage.setItem("visualGridSize2"           , visualGridSize2           ); ui.coin21315.ref.value = visualGridSize2 ;
-visualGridSize3           = userCustomTheme[configName].visualGridSize3          ? parseInt(userCustomTheme[configName].visualGridSize3       )  : visualGridSize3            ; localStorage.setItem("visualGridSize3"           , visualGridSize3           ); ui.coin23538.ref.value = visualGridSize3 ;
-visualGridColour1         = userCustomTheme[configName].visualGridColour1        ? userCustomTheme[configName].visualGridColour1        : visualGridColour1          ; localStorage.setItem("visualGridColour1"         , visualGridColour1         ); ui.coin28281.ref.value = visualGridColour1 ;
-visualGridColour2         = userCustomTheme[configName].visualGridColour2        ? userCustomTheme[configName].visualGridColour2        : visualGridColour2          ; localStorage.setItem("visualGridColour2"         , visualGridColour2         ); ui.coin30119.ref.value = visualGridColour2 ;
-visualGridColour3         = userCustomTheme[configName].visualGridColour3        ? userCustomTheme[configName].visualGridColour3        : visualGridColour3          ; localStorage.setItem("visualGridColour3"         , visualGridColour3         ); ui.coin32259.ref.value = visualGridColour3 ;
-gridIncrementArray        = userCustomTheme[configName].gridIncrementArray       ? userCustomTheme[configName].gridIncrementArray       : gridIncrementArray         ; localStorage.setItem("gridIncrementArray"        , gridIncrementArray        );  ;
-cursorDisplay             = userCustomTheme[configName].cursorDisplay            ? userCustomTheme[configName].cursorDisplay            : cursorDisplay              ; localStorage.setItem("cursorDisplay"             , cursorDisplay             ); Cur.style.display = cursorDisplay ;
+/* INVERT COLOURATIONS */
+
+ui.invertBGandGrid.click         = function() {  };
+ui.invertPartVisuals.click       = function() {  };
+
+
+
+
+
+
+
+
+
+/* ROW 3 */
+
+ui.coin88067.input              = function() { 
+L = ui.coin88067.ref.value;
+ui.coin88067.ref.setAttribute('value',ui.coin88067.ref.value);
+localStorage.setItem('L',ui.coin88067.ref.value);
+spaceViewOn();
+spaceViewOff();
+Z(); 
+ };
+ui.coin46861.input              = function() { 
+sL = ui.coin46861.ref.value;
+ui.coin46861.ref.setAttribute('value',ui.coin46861.ref.value);
+localStorage.setItem('sL',ui.coin46861.ref.value);
+spaceViewOn();
+spaceViewOff();
+Z(); 
+};
+ui.coin44038.input              = function() { 
+finishedBackgroundColour = ui.coin44038.ref.value;
+ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
+localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
 spaceViewOn();
 spaceViewOff();
 Z();
-}
+ };
+ui.coin72275.input              = function() { 
+U = ui.coin72275.ref.value;
+D = ui.coin72275.ref.value;
+ui.coin72275.ref.setAttribute('value',ui.coin72275.ref.value);
+localStorage.setItem('UD',ui.coin72275.ref.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+ };
+ui.coin74555.input              = function() { 
+C = ui.coin74555.ref.value;
+ui.coin74555.ref.setAttribute('value',ui.coin74555.ref.value);
+localStorage.setItem('C',ui.coin74555.ref.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+ };
+ui.coin43886.input              = function() { 
+bU = ui.coin43886.ref.value;
+ui.coin43886.ref.setAttribute('value',ui.coin43886.ref.value);
+localStorage.setItem('bU',ui.coin43886.ref.value);
+spaceViewOn();
+spaceViewOff();
+Z();
+ };
+
+
+
+
+/*
+if (localStorage.getItem("greyColour"    )) { greyColour     = localStorage.getItem("greyColour"    ); }
+if (localStorage.getItem("blueColour"    )) { blueColour     = localStorage.getItem("blueColour"    ); }
+if (localStorage.getItem("pinkColour"    )) { pinkColour     = localStorage.getItem("pinkColour"    ); }
+*/
+
+/* TRI-COLOURS */
+
+ui.coin59277.input              = function() {
+                      greyColour    = ui.coin59277.ref.value;
+                      Bs0           = ui.coin59277.ref.value + "99";
+                      Cs0           = ui.coin59277.ref.value + "99";
+localStorage.setItem('greyColour'    ,ui.coin59277.ref.value);
+                                      ui.coin59277.ref.setAttribute('value',
+                                      ui.coin59277.ref.value); redraw();
+spaceViewOn();
+spaceViewOff();
+};
+ui.coin62796.input              = function() {
+                      blueColour    = ui.coin62796.ref.value;
+                      Bs2           = ui.coin62796.ref.value + "99";
+                      Cs2           = ui.coin62796.ref.value + "99";
+localStorage.setItem('blueColour'    ,ui.coin62796.ref.value);
+                                      ui.coin62796.ref.setAttribute('value',
+                                      ui.coin62796.ref.value); redraw();
+spaceViewOn();
+spaceViewOff();
+};
+ui.coin65598.input              = function() {
+                      pinkColour    = ui.coin65598.ref.value;
+                      Bs1           = ui.coin65598.ref.value + "99";
+                      Cs1           = ui.coin65598.ref.value + "99";
+localStorage.setItem('pinkColour'    ,ui.coin65598.ref.value);
+                                      ui.coin65598.ref.setAttribute('value',
+                                      ui.coin65598.ref.value); redraw();
+spaceViewOn();
+spaceViewOff();
+};
+
+
+
+
+
+ui.coin67938.input              = function() {
+                      lineColour    = ui.coin67938.ref.value;
+localStorage.setItem('lineColour'    ,ui.coin67938.ref.value);
+                                      ui.coin67938.ref.setAttribute('value',
+                                      ui.coin67938.ref.value); redraw();
+};
+
+ui.coin47065.input              = function() {
+                      selectedColour= ui.coin47065.ref.value;
+localStorage.setItem('selectedColour',ui.coin47065.ref.value);
+                                      ui.coin47065.ref.setAttribute('value',
+                                      ui.coin47065.ref.value); redraw();
+};
 
 
 
@@ -225,11 +260,6 @@ Z();
 
 
 
-["a0", "b1", "c2", "d3", "e4", "f5", "g6", "h7", "i8", "j9"].forEach(function(configName) {
-if (localStorage.getItem("userCustomTheme_" + configName)) {
-userCustomTheme[configName] = JSON.parse(localStorage.getItem("userCustomTheme_" + configName));
-}
-});
 
 
 
@@ -237,33 +267,81 @@ userCustomTheme[configName] = JSON.parse(localStorage.getItem("userCustomTheme_"
 
 
 
-ui.saveTheme_a0.click            = function() { saveTheme("a0"); };
-ui.saveTheme_b1.click            = function() { saveTheme("b1"); };
-ui.saveTheme_c2.click            = function() { saveTheme("c2"); };
-ui.saveTheme_d3.click            = function() { saveTheme("d3"); };
-ui.saveTheme_e4.click            = function() { saveTheme("e4"); };
-ui.saveTheme_f5.click            = function() { saveTheme("f5"); };
-ui.saveTheme_g6.click            = function() { saveTheme("g6"); };
-ui.saveTheme_h7.click            = function() { saveTheme("h7"); };
-ui.saveTheme_i8.click            = function() { saveTheme("i8"); };
-ui.saveTheme_j9.click            = function() { saveTheme("j9"); };
 
-ui.loadTheme_a0.click            = function() { loadTheme("a0"); };
-ui.loadTheme_b1.click            = function() { loadTheme("b1"); };
-ui.loadTheme_c2.click            = function() { loadTheme("c2"); };
-ui.loadTheme_d3.click            = function() { loadTheme("d3"); };
-ui.loadTheme_e4.click            = function() { loadTheme("e4"); };
-ui.loadTheme_f5.click            = function() { loadTheme("f5"); };
-ui.loadTheme_g6.click            = function() { loadTheme("g6"); };
-ui.loadTheme_h7.click            = function() { loadTheme("h7"); };
-ui.loadTheme_i8.click            = function() { loadTheme("i8"); };
-ui.loadTheme_j9.click            = function() { loadTheme("j9"); };
+/* SLIDERS */
+
+
+
+/*
+localStorage.borderWidth = borderWidth;
+localStorage.xrayWidth   = xrayWidth;
+localStorage.thinOutline = thinOutline;
+*/
 
 
 
 
 
 
+ui.coin41267.input              = function() {
+thinOutline = parseInt(ui.coin41267.ref.value);
+xrayWidth = thinOutline;
+localStorage.setItem("thinOutline", thinOutline);
+if (utilityLayer0.children.length>0) { redraw(); }
+};
+
+ui.coin47497.input              = function() {
+borderWidth = parseInt(ui.coin47497.ref.value);
+localStorage.setItem("borderWidth", borderWidth);
+if (utilityLayer0.children.length>0) { redraw(); }
+};
+
+ui.coin50633.input              = function() {
+edgeQ = parseInt(ui.coin50633.ref.value);
+localStorage.edgeQ = edgeQ;
+if (utilityLayer0.children.length>0) { redraw(); }
+};
+
+ui.coin53526.input              = function() {
+K = parseFloat(ui.coin53526.ref.value); Z();
+localStorage.setItem("K", K);
+};
+
+ui.coin56897.input              = function() { 
+visualOpacity = parseFloat(ui.coin56897.ref.value);
+Vis.style.opacity=visualOpacity;
+localStorage.setItem("visualOpacity", visualOpacity);
+};
+
+ui.coin59527.input              = function() { 
+partsOpacity = parseFloat(ui.coin59527.ref.value);
+utilityLayer0.style.opacity=partsOpacity;
+localStorage.setItem("partsOpacity", partsOpacity);
+};
+
+ui.coin17325.input              = function() { 
+pictureOpacity = parseFloat(ui.coin17325.ref.value);
+Picture.style.opacity=pictureOpacity;
+Cur.style.opacity=pictureOpacity;
+ui.menuWrapper.ref.style.opacity=pictureOpacity;
+localStorage.setItem("pictureOpacity", pictureOpacity);
+};
+
+
+
+
+
+ui.setDragThresholdFromGrid.click = function() {
+edgeQ = T;
+localStorage.edgeQ = edgeQ;
+ui.coin50633.ref.value = edgeQ;
+redraw();
+};
+
+
+
+
+ui.bodyFade.input              = function() { document.body.style.opacity = ui.bodyFade.ref.value; };
 
 
 

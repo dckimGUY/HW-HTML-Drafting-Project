@@ -14,7 +14,10 @@ case ui.coin77671.ref:           ui.coin77671.input()           ; break;
 
 /* */
 
-/* TAB 2 FOLDER 1 (COLOURATIONS) */
+/* TAB 2 FOLDER 2 */
+
+case ui.snapGridIncrement.ref:   ui.snapGridIncrement.input()   ; break;
+
 case ui.coin88067.ref:           ui.coin88067.input()           ; break;
 case ui.coin46861.ref:           ui.coin46861.input()           ; break;
 case ui.coin44038.ref:           ui.coin44038.input()           ; break;
