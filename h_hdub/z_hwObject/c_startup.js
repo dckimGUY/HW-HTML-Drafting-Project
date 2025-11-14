@@ -88,7 +88,7 @@ p                       { margin: 0;                                            
 body::-webkit-scrollbar { display: none;                                         }
 </style>
 
-<link rel="stylesheet" href="e_stylesheets/style.css"/>
+<link rel="stylesheet" href="e_stylesheets/style.css?v=221122"/>
 <title id="documentTitle">DCKIM HTML Drafting Project</title>
 
 <body>
@@ -347,46 +347,46 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/c_shelfMenu/b_html/0_tabSelectors/a_tabSelectors_style.js?v=20251111125627"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/0_tabSelectors/b_tabSelectors_HTML.js?v=20251111130241"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/0_tabSelectors/c_scaler.js?v=20251111223554"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/a_tab1_folderSelectors_style.js?v=20251113110145"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/b_tab1_folderSelectors_HTML.js?v=20251113110145"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/1_folderBackgrounds/a_tab1_background_style.js?v=20251113110152"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/a_tab1_shelf1_style.js?v=20251113110201"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/b_tab1_shelf1_HTML.js?v=20251113110201"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/a_tab1_shelf2_style.js?v=20251113110219"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/b_tab1_shelf2_HTML.js?v=20251113110219"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/a_tab2_folderSelectors_style.js?v=20251113110146"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/b_tab2_folderSelectors_HTML.js?v=20251113110146"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/1_folderBackgrounds/a_tab2_background_style.js?v=20251113110153"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/a_tab2_shelf1_style.js?v=20251113110212"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/b_tab2_shelf1_HTML.js?v=20251113110212"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/a_tab2_shelf2_style.js?v=20251113110224"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/b_tab2_shelf2_HTML.js?v=20251113110224"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/a_tab3_folderSelectors_style.js?v=20251113110147"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/b_tab3_folderSelectors_HTML.js?v=20251113110147"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/1_folderBackgrounds/a_tab3_background_style.js?v=20251113110153"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/a_tab1_folderSelectors_style.js?v=20251113111844"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/b_tab1_folderSelectors_HTML.js?v=20251113111844"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/1_folderBackgrounds/a_tab1_background_style.js?v=20251113111851"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/a_tab1_shelf1_style.js?v=20251113111901"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/b_tab1_shelf1_HTML.js?v=20251113111901"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/a_tab1_shelf2_style.js?v=20251113111921"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/b_tab1_shelf2_HTML.js?v=20251113111921"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/a_tab2_folderSelectors_style.js?v=20251113111845"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/b_tab2_folderSelectors_HTML.js?v=20251113111845"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/1_folderBackgrounds/a_tab2_background_style.js?v=20251113111852"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/a_tab2_shelf1_style.js?v=20251113111913"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/b_tab2_shelf1_HTML.js?v=20251113111913"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/a_tab2_shelf2_style.js?v=20251113111927"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/b_tab2_shelf2_HTML.js?v=20251113111927"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/a_tab3_folderSelectors_style.js?v=20251113111847"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/b_tab3_folderSelectors_HTML.js?v=20251113111847"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/1_folderBackgrounds/a_tab3_background_style.js?v=20251113111853"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/c_tab3/a_folder1/a_tab3_shelf1_style.js?v=20251111093449"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/c_tab3/a_folder1/b_tab3_shelf1_HTML.js?v=20251111093445"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/c_tab3/b_folder2/a_tab3_shelf2_style.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/c_tab3/b_folder2/b_tab3_shelf2_HTML.js?v=20251110000324"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/a_tab4_folderSelectors_style.js?v=20251113110149"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/b_tab4_folderSelectors_HTML.js?v=20251113110149"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/1_folderBackgrounds/a_tab4_background_style.js?v=20251113110154"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/a_tab4_folderSelectors_style.js?v=20251113111848"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/b_tab4_folderSelectors_HTML.js?v=20251113111848"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/1_folderBackgrounds/a_tab4_background_style.js?v=20251113111853"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/d_tab4/a_folder1/a_tab4_shelf1_style.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/d_tab4/a_folder1/b_tab4_shelf1_HTML.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/d_tab4/b_folder2/a_tab4_shelf2_style.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/d_tab4/b_folder2/b_tab4_shelf2_HTML.js?v=20251102205813"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/a_tab5_folderSelectors_style.js?v=20251113110150"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/b_tab5_folderSelectors_HTML.js?v=20251113110150"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/1_folderBackgrounds/a_tab5_background_style.js?v=20251113110155"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/a_tab5_folderSelectors_style.js?v=20251113111849"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/b_tab5_folderSelectors_HTML.js?v=20251113111849"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/1_folderBackgrounds/a_tab5_background_style.js?v=20251113111854"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/e_tab5/a_folder1/a_tab5_shelf1_style.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/e_tab5/a_folder1/b_tab5_shelf1_HTML.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/e_tab5/b_folder2/a_tab5_shelf2_style.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/e_tab5/b_folder2/b_tab5_shelf2_HTML.js?v=20251102205813"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/a_tab6_folderSelectors_style.js?v=20251113110151"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/b_tab6_folderSelectors_HTML.js?v=20251113110151"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/1_folderBackgrounds/a_tab6_background_style.js?v=20251113110155"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/a_tab6_shelf1_style.js?v=20251113110216"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/b_tab6_shelf1_HTML.js?v=20251113110216"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/a_tab6_folderSelectors_style.js?v=20251113111851"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/b_tab6_folderSelectors_HTML.js?v=20251113111851"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/1_folderBackgrounds/a_tab6_background_style.js?v=20251113111855"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/a_tab6_shelf1_style.js?v=20251113111918"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/b_tab6_shelf1_HTML.js?v=20251113111918"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/f_tab6/b_folder2/a_tab6_shelf2_style.js?v=20251111092738"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/f_tab6/b_folder2/b_tab6_shelf2_HTML.js?v=20251111092744"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/z_mainAssembly/a_shelfAssembly.js?v=20251111221430"></script>
@@ -429,7 +429,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/d_handlers/b_dragAndDrop/a_dragHandler.js?v=20251105160929"></script>
 <script src="./h_hdub/d_handlers/c_initialization/a_namedColourArray.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/b_loadReferenceData.js?v=20251102205813"></script>
-<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js?v=20251113110142"></script>
+<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js?v=20251113111842"></script>
 <script src="./h_hdub/d_handlers/c_initialization/d_helpMenu.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/e_defaultUI.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/f_defaultUIasObjects.js?v=20251102205813"></script>
@@ -477,9 +477,9 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/e_wizards/x_wizard.js?v=20251102205813"></script>
 <script src="./h_hdub/e_wizards/y_wizard.js?v=20251102205813"></script>
 <script src="./h_hdub/e_wizards/z_wizard.js?v=20251102205813"></script>
-<script src="./h_hdub/z_hwObject/a_hwObject.js?v=20251113111824"></script>
+<script src="./h_hdub/z_hwObject/a_hwObject.js?v=20251114160449"></script>
 <script src="./h_hdub/z_hwObject/b_hwSpecials.js?v=20251102205812"></script>
-<script src="./h_hdub/z_hwObject/c_startup.js?v=20251113110143"></script>
+<script src="./h_hdub/z_hwObject/c_startup.js?v=20251113111843"></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 <script>
 utilityLayer0.innerHTML = \`

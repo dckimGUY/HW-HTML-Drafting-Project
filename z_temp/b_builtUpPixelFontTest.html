@@ -1,0 +1,11 @@
+<style>
+.text            { outline: none; border: none; margin: 0; resize: none; font-family: dckimPixelMono; font-size: 64px; line-height: 1.2; }
+.text::selection { background: #DEFF1C55; }
+html { background-color: #ACBA6A; }
+</style>
+<div id="text0" style="position: absolute; top: 0px; left: 2px; width: calc(100% - 2px); height: 100%; background-color: transparent; color: cyan;   pointer-events: none;" class="text" spellcheck="false" readonly></div>
+<div id="text1" style="position: absolute; top: 2px; left: 2px; width: calc(100% - 2px); height: calc(100% - 2px); background-color: transparent; color: cyan;   pointer-events: none;" class="text" spellcheck="false" readonly></div>
+<div id="text2" style="position: absolute; top: 2px; left: 0px; width: calc(100% - 2px); height: 100%; background-color: transparent; color: yellow; pointer-events: none;" class="text" spellcheck="false" readonly></div>
+<div id="text3" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: transparent; color: navy;"                         class="text" spellcheck="false" contenteditable="true"
+oninput="document.getElementById('text0').innerHTML = this.innerHTML; document.getElementById('text1').innerHTML = this.innerHTML; document.getElementById('text2').innerHTML = this.innerHTML;"
+></div>
