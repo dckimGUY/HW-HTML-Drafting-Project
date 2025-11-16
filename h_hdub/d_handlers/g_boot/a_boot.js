@@ -1100,8 +1100,10 @@ splashScreenVisible = true;
 
 const z_wizardCode = {};
 
-
-
+/* DRAW INITIAL BUTTON AFTER THE FONT IS LOADED */
+document.fonts.load("16px 'dckimPixelMono'").then(() => {
+drawButton7();
+});
 
 redraw();
 

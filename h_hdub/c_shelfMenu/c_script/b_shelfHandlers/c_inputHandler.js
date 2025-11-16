@@ -51,8 +51,26 @@ case ui.coin56897.ref:           ui.coin56897.input()           ; break;
 case ui.coin59527.ref:           ui.coin59527.input()           ; break;
 case ui.coin17325.ref:           ui.coin17325.input()           ; break;
 
-
 case ui.bodyFade.ref:           ui.bodyFade.input()           ; break;
+
+
+/* TAB 3 FOLDER 1 */
+
+
+case ui.buttonLink.ref:          ui.buttonLink.input()           ; break;
+case ui.textEntry.ref:           ui.textEntry.input()           ; break;
+case ui.buttonFace.ref:          ui.buttonFace.input()          ; break;
+case ui.buttonShadow.ref:        ui.buttonShadow.input()        ; break;
+case ui.buttonLeft.ref:          ui.buttonLeft.input()          ; break;
+case ui.buttonTop.ref:           ui.buttonTop.input()           ; break;
+case ui.buttonRight.ref:         ui.buttonRight.input()         ; break;
+case ui.buttonBottom.ref:        ui.buttonBottom.input()        ; break;
+case ui.textRight.ref:           ui.textRight.input()           ; break;
+case ui.textBottom.ref:          ui.textBottom.input()          ; break;
+case ui.textFace.ref:            ui.textFace.input()            ; break;
+case ui.textHover.ref:           ui.textHover.input()           ; break;
+case ui.textActive.ref:          ui.textActive.input()          ; break;
+case ui.textFocus.ref:           ui.textFocus.input()           ; break;
 
 
 

@@ -20,114 +20,130 @@ appearance: none;
 border: none;
 padding: 0;
 margin: 0;
+border-radius: 13px;
 }
-.input_ {
+.input_pos {
 position: absolute;
-border: none;
-margin: none;
+border:  none;
+margin:  none;
 padding: none;
-width: 208px;
-height: 208px;
+width:   26px;
+height:  26px;
 }
-.input_canvasOutput {
-position: absolute;
-border: none;
-margin: none;
-padding: none;
-width: 512px;
-height: 56px;
-background-color: white;
-transform-origin: top left;
-transform: scale(4);
-}
-
-@media (min-aspect-ratio: 1/1) {
-.input_buttonFace                { left:    144px; top:    256px; }
-.input_buttonShadow              { left:    352px; top:    256px; }
-.input_buttonLeft                { left:    560px; top:    256px; }
-.input_buttonTop                 { left:    768px; top:    256px; }
-.input_buttonRight               { left:    976px; top:    256px; }
-.input_buttonBottom              { left:   1184px; top:    256px; }
-.input_textRight                 { left:    144px; top:    480px; }
-.input_textBottom                { left:    352px; top:    480px; }
-.input_textFace                  { left:    560px; top:    480px; }
-.input_textHover                 { left:    768px; top:    480px; }
-.input_textActive                { left:    976px; top:    480px; }
-.input_textFocus                 { left:   1184px; top:    480px; }
-.input_canvasOutput              { left:    144px; top:     16px; }
-}
-
-@media (max-aspect-ratio: 1/1) {
-.input_buttonFace                { left:     48px; top:    248px; }
-.input_buttonShadow              { left:    280px; top:    248px; }
-.input_buttonLeft                { left:    512px; top:    248px; }
-.input_buttonTop                 { left:     48px; top:    480px; }
-.input_buttonRight               { left:    280px; top:    480px; }
-.input_buttonBottom              { left:    512px; top:    480px; }
-.input_textRight                 { left:     48px; top:    712px; }
-.input_textBottom                { left:    280px; top:    712px; }
-.input_textFace                  { left:    512px; top:    712px; }
-.input_textHover                 { left:     48px; top:    944px; }
-.input_textActive                { left:    280px; top:    944px; }
-.input_textFocus                 { left:    512px; top:    944px; }
-.input_canvasOutput              { left:     80px; top:      8px; }
-}
-
 .offscreen {
 position: absolute;
-left: -256px;
-top: -256px;
-width: 128px;
-height: 128px;
+left:   0px;
+top:    0px;
+width:  0px;
+height: 0px;
+opacity:  0;
+}
+.input_buttonFace                { left:      0px; top:     56px; }
+.input_buttonShadow              { left:     26px; top:     56px; }
+.input_buttonLeft                { left:     52px; top:     56px; }
+.input_buttonTop                 { left:     78px; top:     56px; }
+.input_buttonRight               { left:    104px; top:     56px; }
+.input_textRight                 { left:      0px; top:     82px; }
+.input_textBottom                { left:     26px; top:     82px; }
+.input_textFace                  { left:     52px; top:     82px; }
+.input_textHover                 { left:     78px; top:     82px; }
+.input_textActive                { left:    104px; top:     82px; }
+.input_textFocus                 { left:    130px; top:     82px; }
+.input_buttonBottom              { left:    130px; top:     56px; }
+.buttonScale {
+position: absolute;
+top: 0px;
+left: 0px;
+}
+
+.input_buttonTooltip             { position: absolute; border: none; margin: none; padding: none; left:      0px; top:    108px; width:    156px; height:     78px; outline-offset: -4px; resize: none; }
+.input_buttonTooltip:hover  { outline: none; }
+.input_buttonTooltip:active { outline: none; }
+.input_buttonTooltip:focus  { outline: none; }
+.button_cycleColourLeft          { position: absolute; border: none; margin: none; padding: none; left:      0px; top:    186px; width:     78px; height:     36px; outline-offset: -4px;
+                                   background-color: lightgrey; outline: 4px outset grey; }
+.button_cycleColourLeft:focus    { background-color: lightblue; outline: 4px outset blue; }
+.button_cycleColourLeft:hover    { background-color: lime;      outline: 4px outset green;}
+.button_cycleColourLeft:active   { background-color: magenta;   outline: 4px inset  pink; }
+.button_cycleColoursRight        { position: absolute; border: none; margin: none; padding: none; left:     78px; top:    186px; width:     78px; height:     36px; outline-offset: -4px;
+                                   background-color: lightgrey; outline: 4px outset grey; }
+.button_cycleColoursRight:focus  { background-color: lightblue; outline: 4px outset blue; }
+.button_cycleColoursRight:hover  { background-color: lime;      outline: 4px outset green;}
+.button_cycleColoursRight:active { background-color: magenta;   outline: 4px inset  pink; }
+
+.yourButtonIsHere {
+position: absolute;
+top:  0px;
+left: 0px;
 }
 </style>
 </head>
 <body> 
 
+<div   id="yourButtonIsHere"  class="yourButtonIsHere"></div>
 
+<div   id="buttonScale"                                           class="buttonScale"> 
+<textarea id="textEntry"   class="offscreen">button7</textarea>
 
+<canvas id="canvasOutput1" width="152" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput2" width="152" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput3" width="152" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput4" width="152" height="56" style="display: none;"></canvas>
 
-<input id="buttonFace"   name="buttonFace"   title="buttonFace"   class="input_ input_buttonFace"   type="color" value="#ACBA6A">
-<input id="buttonShadow" name="buttonShadow" title="buttonShadow" class="input_ input_buttonShadow" type="color" value="#EEEA31">
-<input id="buttonLeft"   name="buttonLeft"   title="buttonLeft"   class="input_ input_buttonLeft"   type="color" value="#737973">
-<input id="buttonTop"    name="buttonTop"    title="buttonTop"    class="input_ input_buttonTop"    type="color" value="#B485CD">
-<input id="buttonRight"  name="buttonRight"  title="buttonRight"  class="input_ input_buttonRight"  type="color" value="#C5C2C5">
-<input id="buttonBottom" name="buttonBottom" title="buttonBottom" class="input_ input_buttonBottom" type="color" value="#A4AAA4">
-<input id="textRight"    name="textRight"    title="textRight"    class="input_ input_textRight"    type="color" value="#A4AAA4">
-<input id="textBottom"   name="textBottom"   title="textBottom"   class="input_ input_textBottom"   type="color" value="#737973">
-<input id="textFace"     name="textFace"     title="textFace"     class="input_ input_textFace"     type="color" value="#00FF00">
-<input id="textHover"    name="textHover"    title="textHover"    class="input_ input_textHover"    type="color" value="#00A1EE">
-<input id="textActive"   name="textActive"   title="textActive"   class="input_ input_textActive"   type="color" value="#FF00FF">
-<input id="textFocus"    name="textFocus"    title="textFocus"    class="input_ input_textFocus"    type="color" value="#101C52">
+<input id="buttonFace"   name="buttonFace"   title="buttonFace"   class="input_pos input_buttonFace"   type="color" value="#ACBA6A">
+<input id="buttonShadow" name="buttonShadow" title="buttonShadow" class="input_pos input_buttonShadow" type="color" value="#EEEA31">
+<input id="buttonLeft"   name="buttonLeft"   title="buttonLeft"   class="input_pos input_buttonLeft"   type="color" value="#737973">
+<input id="buttonTop"    name="buttonTop"    title="buttonTop"    class="input_pos input_buttonTop"    type="color" value="#B485CD">
+<input id="buttonRight"  name="buttonRight"  title="buttonRight"  class="input_pos input_buttonRight"  type="color" value="#C5C2C5">
+<input id="buttonBottom" name="buttonBottom" title="buttonBottom" class="input_pos input_buttonBottom" type="color" value="#A4AAA4">
+<input id="textRight"    name="textRight"    title="textRight"    class="input_pos input_textRight"    type="color" value="#FFA3A3">
+<input id="textBottom"   name="textBottom"   title="textBottom"   class="input_pos input_textBottom"   type="color" value="#737973">
+<input id="textFace"     name="textFace"     title="textFace"     class="input_pos input_textFace"     type="color" value="#00FF00">
+<input id="textHover"    name="textHover"    title="textHover"    class="input_pos input_textHover"    type="color" value="#00A1EE">
+<input id="textActive"   name="textActive"   title="textActive"   class="input_pos input_textActive"   type="color" value="#FF00FF">
+<input id="textFocus"    name="textFocus"    title="textFocus"    class="input_pos input_textFocus"    type="color" value="#101C52">
 
-<textarea id="textEntry" class="offscreen" value="Aller Öffnen Ação"></textarea>
-<canvas id="canvasOutput3" class="input_canvasOutput" width="512" height="56" style="display: none;"></canvas>
-<canvas id="canvasOutput2" class="input_canvasOutput" width="512" height="56"></canvas>
-<canvas id="canvasOutput1" class="input_canvasOutput" width="512" height="56" style="display: none;"></canvas>
-
+<textarea id="buttonTooltip"   class="input   input_buttonTooltip" placeholder="no tooltip?"></textarea>
+<button   id="cycleColourLeft"   class="button_ button_cycleColourLeft"   title=""></button>
+<button   id="cycleColoursRight" class="button_ button_cycleColoursRight" title=""></button>
+</div>
 
 <script>
 
-
-
 /*** THIS SETS UP THE REFERENCES ***/
 const ui = {};
-["textEntry", "canvasOutput1", "canvasOutput2", "canvasOutput3"].forEach((name) => {
-ui[name]       = {};
-ui[name].ref   = document.getElementById(name);
-});
-["buttonFace", "buttonShadow", "buttonLeft", "buttonTop", "buttonRight", "buttonBottom", "textRight", "textBottom", "textFace", "textHover", "textActive", "textFocus"].forEach((name) => {
+[
+"yourButtonIsHere"     ,
+"buttonTooltip"        , 
+"cycleColourLeft"      ,
+"cycleColoursRight"    ,
+"buttonScale"          ,
+"textEntry"            ,
+"canvasOutput1"        ,
+"canvasOutput2"        ,
+"canvasOutput3"        ,
+"canvasOutput4"        ,
+"buttonFace"           ,
+"buttonShadow"         ,
+"buttonLeft"           ,
+"buttonTop"            ,
+"buttonRight"          ,
+"buttonBottom"         ,
+"textRight"            ,
+"textBottom"           ,
+"textFace"             ,
+"textHover"            ,
+"textActive"           ,
+"textFocus"
+].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
 ui.buttonStyle           = {};
-
 ui.buttonStyle.names     = ["a_flat"];
 ui.buttonStyle.chosen    =  0;
-
 ui.buttonStyle.a_flat    = {};
-
 ui.buttonStyle.a_flat.left       = new Image();
 ui.buttonStyle.a_flat.left.src   = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAA4CAMAAADOzPhPAAAAMFBMVEUAAAAA/wAQHFIA/wAYdb3//wCL1u7/AP//AABaAAAA///2/+7/AP8Aoe4AAP+LOAAHFtTmAAAAEHRSTlMA////////////////////wFCLQwAAAGRJREFUOI3t1DkOwDAIRNGRkIVF4fsfN4kXbJYbxL98oqABAJDYUPIBRTg6ysvRBwef7H2xc2Xrm9nsvZmlaed0q9rJ9fLl3zFJxkTZSRlVtrrY6WSvg4N2jto5+1UldXweQ+4PsMYjf82EkmsAAAAASUVORK5CYII=";
 ui.buttonStyle.a_flat.center     = new Image();
@@ -136,43 +152,39 @@ ui.buttonStyle.a_flat.right      = new Image();
 ui.buttonStyle.a_flat.right.src  = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAA4CAMAAADHJ1g1AAAAMFBMVEUAAAAA/wAQHFIA/wAYdb3//wCL1u7/AP//AABaAAAA///2/+7/AP8Aoe4AAP+LOAAHFtTmAAAAEHRSTlMA////////////////////wFCLQwAAAGJJREFUOI3t0zkOwDAIRFGkKAJRcP/jerwQmXGfyr9Cr6IAcU7koWAkqkyqQQQh6lJpSKEpoFwnBRQr1xzEVuEH2aVL/1LKdr44TabPNkrbaVmhaZWGEXVjcvOD+ru/lBwEaWI9JhuCceR1AAAAAElFTkSuQmCC";
 
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
-
 ui.textEntry.input              = function() {
-if (window.innerHeight > window.innerWidth) {
 ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,7);
-} else {
-ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,17);
-}
 localStorage.setItem("textEntry", ui.textEntry.ref.value);
 redraw();
 };
 
-ui.buttonFace.input             = function() { redraw(); localStorage.setItem("buttonizer_buttonFace"  , ui.buttonFace.ref.value  ); };
-ui.buttonShadow.input           = function() { redraw(); localStorage.setItem("buttonizer_buttonShadow", ui.buttonShadow.ref.value); };
-ui.buttonLeft.input             = function() { redraw(); localStorage.setItem("buttonizer_buttonLeft"  , ui.buttonLeft.ref.value  ); };
-ui.buttonTop.input              = function() { redraw(); localStorage.setItem("buttonizer_buttonTop"   , ui.buttonTop.ref.value   ); };
-ui.buttonRight.input            = function() { redraw(); localStorage.setItem("buttonizer_buttonRight" , ui.buttonRight.ref.value ); };
-ui.buttonBottom.input           = function() { redraw(); localStorage.setItem("buttonizer_buttonBottom", ui.buttonBottom.ref.value); };
-ui.textRight.input              = function() { redraw(); localStorage.setItem("buttonizer_textRight"   , ui.textRight.ref.value   ); };
-ui.textBottom.input             = function() { redraw(); localStorage.setItem("buttonizer_textBottom"  , ui.textBottom.ref.value  ); };
-ui.textFace.input               = function() { redraw(); localStorage.setItem("buttonizer_textFace"    , ui.textFace.ref.value    ); };
-ui.textHover.input              = function() { redraw(); localStorage.setItem("buttonizer_textHover"   , ui.textHover.ref.value   ); };
-ui.textActive.input             = function() { redraw(); localStorage.setItem("buttonizer_textActive"  , ui.textActive.ref.value  ); };
-ui.textFocus.input              = function() { redraw(); localStorage.setItem("buttonizer_textFocus"   , ui.textFocus.ref.value   ); };
+ui.buttonFace.input             = function() { redraw(); };
+ui.buttonShadow.input           = function() { redraw(); };
+ui.buttonLeft.input             = function() { redraw(); };
+ui.buttonTop.input              = function() { redraw(); };
+ui.buttonRight.input            = function() { redraw(); };
+ui.buttonBottom.input           = function() { redraw(); };
+ui.textRight.input              = function() { redraw(); };
+ui.textBottom.input             = function() { redraw(); };
+ui.textFace.input               = function() { redraw(); };
+ui.textHover.input              = function() { redraw(); };
+ui.textActive.input             = function() { redraw(); };
+ui.textFocus.input              = function() { redraw(); };
 
-ui.buttonFace.change             = function() { localStorage.setItem("buttonizer_buttonFace"  , ui.buttonFace.ref.value  ); };
-ui.buttonShadow.change           = function() { localStorage.setItem("buttonizer_buttonShadow", ui.buttonShadow.ref.value); };
-ui.buttonLeft.change             = function() { localStorage.setItem("buttonizer_buttonLeft"  , ui.buttonLeft.ref.value  ); };
-ui.buttonTop.change              = function() { localStorage.setItem("buttonizer_buttonTop"   , ui.buttonTop.ref.value   ); };
-ui.buttonRight.change            = function() { localStorage.setItem("buttonizer_buttonRight" , ui.buttonRight.ref.value ); };
-ui.buttonBottom.change           = function() { localStorage.setItem("buttonizer_buttonBottom", ui.buttonBottom.ref.value); };
-ui.textRight.change              = function() { localStorage.setItem("buttonizer_textRight"   , ui.textRight.ref.value   ); };
-ui.textBottom.change             = function() { localStorage.setItem("buttonizer_textBottom"  , ui.textBottom.ref.value  ); };
-ui.textFace.change               = function() { localStorage.setItem("buttonizer_textFace"    , ui.textFace.ref.value    ); };
-ui.textHover.change              = function() { localStorage.setItem("buttonizer_textHover"   , ui.textHover.ref.value   ); };
-ui.textActive.change             = function() { localStorage.setItem("buttonizer_textActive"  , ui.textActive.ref.value  ); };
-ui.textFocus.change              = function() { localStorage.setItem("buttonizer_textFocus"   , ui.textFocus.ref.value   ); };
+ui.buttonFace.change            = function() { localStorage.setItem("buttonizer_buttonFace"  , ui.buttonFace.ref.value  ); };
+ui.buttonShadow.change          = function() { localStorage.setItem("buttonizer_buttonShadow", ui.buttonShadow.ref.value); };
+ui.buttonLeft.change            = function() { localStorage.setItem("buttonizer_buttonLeft"  , ui.buttonLeft.ref.value  ); };
+ui.buttonTop.change             = function() { localStorage.setItem("buttonizer_buttonTop"   , ui.buttonTop.ref.value   ); };
+ui.buttonRight.change           = function() { localStorage.setItem("buttonizer_buttonRight" , ui.buttonRight.ref.value ); };
+ui.buttonBottom.change          = function() { localStorage.setItem("buttonizer_buttonBottom", ui.buttonBottom.ref.value); };
+ui.textRight.change             = function() { localStorage.setItem("buttonizer_textRight"   , ui.textRight.ref.value   ); };
+ui.textBottom.change            = function() { localStorage.setItem("buttonizer_textBottom"  , ui.textBottom.ref.value  ); };
+ui.textFace.change              = function() { localStorage.setItem("buttonizer_textFace"    , ui.textFace.ref.value    ); };
+ui.textHover.change             = function() { localStorage.setItem("buttonizer_textHover"   , ui.textHover.ref.value   ); };
+ui.textActive.change            = function() { localStorage.setItem("buttonizer_textActive"  , ui.textActive.ref.value  ); };
+ui.textFocus.change             = function() { localStorage.setItem("buttonizer_textFocus"   , ui.textFocus.ref.value   ); };
 
+/* THIS SETS UP LOCAL STORAGE */
 if (localStorage.getItem("textEntry"              ))  { ui.textEntry.ref.value     = localStorage.getItem("textEntry"              ); }
 if (localStorage.getItem("buttonizer_buttonFace"  ))  { ui.buttonFace.ref.value    = localStorage.getItem("buttonizer_buttonFace"  ); }
 if (localStorage.getItem("buttonizer_buttonShadow"))  { ui.buttonShadow.ref.value  = localStorage.getItem("buttonizer_buttonShadow"); }
@@ -187,14 +199,12 @@ if (localStorage.getItem("buttonizer_textHover"   ))  { ui.textHover.ref.value  
 if (localStorage.getItem("buttonizer_textActive"  ))  { ui.textActive.ref.value    = localStorage.getItem("buttonizer_textActive"  ); }
 if (localStorage.getItem("buttonizer_textFocus"   ))  { ui.textFocus.ref.value     = localStorage.getItem("buttonizer_textFocus"   ); }
 
-/*** THIS SETS UP EVENT DELEGATION ***/
-document.addEventListener("click", function() { ui.textEntry.ref.focus(); });
+ui.yourButtonIsHere.ref.addEventListener("click", function() { ui.textEntry.ref.focus(); });
 
 /*** THIS SETS UP EVENT DELEGATION ***/
 document.addEventListener("input", function() {
 switch (event.target) {
 case ui.textEntry.ref:           ui.textEntry.input()           ; break;
-
 case ui.buttonFace.ref:          ui.buttonFace.input()          ; break;
 case ui.buttonShadow.ref:        ui.buttonShadow.input()        ; break;
 case ui.buttonLeft.ref:          ui.buttonLeft.input()          ; break;
@@ -271,14 +281,7 @@ localStorage.setItem("buttonizer_textActive"  , ui.textActive.ref.value  );
 localStorage.setItem("buttonizer_textFocus"   , ui.textFocus.ref.value   );
 }
 
-var keyCode = 0, charCode = 0;
-/*** THIS SETS UP KEYDOWN EVENT ***/
-document.addEventListener("keydown", (event) =>  { 
-keyCode = event.keyCode;
-/*   tab   */ if (event.keyCode == 9) {
-event.preventDefault();
-if (event.shiftKey) {
-function cycleColoursForward() {
+function cycleColoursBackward() {
 const colourSwap           =  ui.textFocus.ref.value   ;
 ui.textFocus.ref.value     =  ui.textActive.ref.value  ;
 ui.textActive.ref.value    =  ui.textHover.ref.value   ;
@@ -292,10 +295,10 @@ ui.buttonTop.ref.value     =  ui.buttonLeft.ref.value  ;
 ui.buttonLeft.ref.value    =  ui.buttonShadow.ref.value;
 ui.buttonShadow.ref.value  =  ui.buttonFace.ref.value  ;
 ui.buttonFace.ref.value    =  colourSwap               ;
+sendColoursToStorage();
 }
-cycleColoursForward();
-} else if (!event.shiftKey) {
-function cycleColoursBackward() {
+
+function cycleColoursForward() {
 const colourSwap           = ui.buttonFace.ref.value  ; 
 ui.buttonFace.ref.value    = ui.buttonShadow.ref.value; 
 ui.buttonShadow.ref.value  = ui.buttonLeft.ref.value  ; 
@@ -309,46 +312,32 @@ ui.textFace.ref.value      = ui.textHover.ref.value   ;
 ui.textHover.ref.value     = ui.textActive.ref.value  ; 
 ui.textActive.ref.value    = ui.textFocus.ref.value   ; 
 ui.textFocus.ref.value     = colourSwap;
-}
-cycleColoursBackward();
-}
 sendColoursToStorage();
-redraw();
 }
-});
-
-/*** THIS SETS UP KEYPRESS EVENT ***/
-document.addEventListener("keypress", (event) =>  { 
-charCode = event.charCode;
-/*  enter  */ if (keyCode ==  13 && cC ==  charCode) {
-//event.preventDefault();
-}
-});
-
-
-
-
-
-
-
-
 
 const hexToRGB=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7,),16)];
-var lastDraw = 0;
+var lastCall = 0;
 
 function redraw(){
 
 /* THROTTLE THE CALLS */
-if (lastDraw !=0 && performance.now() - lastDraw < 50) return;
-lastDraw = performance.now();
+if (lastCall !=0 && performance.now() - lastCall < 50) return;
+lastCall = performance.now();
 
-Y = ui.canvasOutput1.ref.getContext("2d", {willReadFrequently: true});
-Z = ui.canvasOutput2.ref.getContext("2d", {willReadFrequently: true});
+W = ui.canvasOutput3.ref.getContext("2d", {alpha: true, willReadFrequently: true});
+X = ui.canvasOutput4.ref.getContext("2d", {alpha: true, willReadFrequently: true});
+Y = ui.canvasOutput1.ref.getContext("2d", {alpha: true, willReadFrequently: true});
+Z = ui.canvasOutput2.ref.getContext("2d", {alpha: true, willReadFrequently: true});
 
 ui.canvasOutput1.ref.width = (ui.textEntry.ref.value.length * 16) + 40;
 ui.canvasOutput2.ref.width = (ui.textEntry.ref.value.length * 16) + 40;
+ui.canvasOutput3.ref.width = (ui.textEntry.ref.value.length * 16) + 40;
+ui.canvasOutput4.ref.width = (ui.textEntry.ref.value.length * 16) + 40;
+
 ui.canvasOutput1.ref.style.width = (ui.textEntry.ref.value.length * 16) + 40 + "px";
 ui.canvasOutput2.ref.style.width = (ui.textEntry.ref.value.length * 16) + 40 + "px";
+ui.canvasOutput3.ref.style.width = (ui.textEntry.ref.value.length * 16) + 40 + "px";
+ui.canvasOutput4.ref.style.width = (ui.textEntry.ref.value.length * 16) + 40 + "px";
 
 Z.clearRect(0,0,ui.canvasOutput2.ref.width,56);
 
@@ -365,7 +354,7 @@ swapColours("#00FF00",ui.buttonTop.ref.value   , Z);
 swapColours("#0000FF",ui.buttonRight.ref.value , Z);
 swapColours("#00FFFF",ui.buttonBottom.ref.value, Z);
 
-Y.clearRect(0,0,512,56);
+Y.clearRect(0,0,152,56);
 
 Y.font="400 32px dckimPixelMono";
 Y.textBaseline="top";
@@ -376,7 +365,7 @@ Y.fillText(ui.textEntry.ref.value,21,13);
 Y.stroke();
 clean(hexToRGB("#4d894d")[0], hexToRGB("#4d894d")[1], hexToRGB("#4d894d")[2]);
 Z.drawImage(ui.canvasOutput1.ref,0,0);
-Y.clearRect(0,0,512,56);
+Y.clearRect(0,0,152,56);
 
 Y.beginPath();
 Y.fillStyle="#4d894d";
@@ -384,7 +373,7 @@ Y.fillText(ui.textEntry.ref.value,21,14);
 Y.stroke();
 clean(hexToRGB("#4d894d")[0], hexToRGB("#4d894d")[1], hexToRGB("#4d894d")[2]);
 Z.drawImage(ui.canvasOutput1.ref,0,0);
-Y.clearRect(0,0,512,56);
+Y.clearRect(0,0,152,56);
 
 Y.beginPath();
 Y.fillStyle="#6ea66e";
@@ -392,7 +381,7 @@ Y.fillText(ui.textEntry.ref.value,20,14);
 Y.stroke();
 clean(hexToRGB("#6ea66e")[0], hexToRGB("#6ea66e")[1], hexToRGB("#6ea66e")[2]);
 Z.drawImage(ui.canvasOutput1.ref,0,0);
-Y.clearRect(0,0,512,56);
+Y.clearRect(0,0,152,56);
 
 Y.beginPath();
 Y.fillStyle="#540707";
@@ -400,7 +389,7 @@ Y.fillText(ui.textEntry.ref.value,20,13);
 Y.stroke();
 clean(hexToRGB("#540707")[0], hexToRGB("#540707")[1], hexToRGB("#540707")[2]);
 Z.drawImage(ui.canvasOutput1.ref,0,0);
-Y.clearRect(0,0,512,56);
+Y.clearRect(0,0,152,56);
 
 function clean(R,G,B) {
 let d = Y.getImageData(0,0,ui.canvasOutput1.ref.width,ui.canvasOutput1.ref.height);
@@ -428,12 +417,64 @@ p[i+3]= 255;
 context.putImageData(d,0,0);
 }
 
-swapColours("#540707",ui.textFace.ref.value,  Z);
-swapColours("#4d894d",ui.textRight.ref.value, Z);
-swapColours("#6ea66e",ui.textBottom.ref.value,Z);
+swapColours("#540707", ui.textFace.ref.value,   Z);
+swapColours("#4d894d", ui.textRight.ref.value,  Z);
+swapColours("#6ea66e", ui.textBottom.ref.value, Z);
+
+Y.drawImage(ui.canvasOutput2.ref, 0, 0); swapColours(ui.textFace.ref.value,     ui.textHover.ref.value,  Y);
+W.drawImage(ui.canvasOutput2.ref,-2, 2); swapColours(ui.textFace.ref.value,     ui.textActive.ref.value, W);
+W.clearRect(0,55,1,1);
+X.drawImage(ui.canvasOutput2.ref, 0, 0); swapColours(ui.buttonShadow.ref.value, ui.textFocus.ref.value,  X);
+
+const uniqueIdentifier        = "button" + Date.now();
+const constructedButtonWidth  = ui.canvasOutput2.ref.width ;
+const constructedButtonHeight = ui.canvasOutput2.ref.height;
+
+ui.yourButtonIsHere.ref.innerHTML = `
+<div id="holder_${uniqueIdentifier}" style="width: ${constructedButtonWidth}px; height: ${constructedButtonHeight}px;">
+<style>
+.${uniqueIdentifier} {
+position: absolute;
+top:     0px;
+left:    0px;
+border:  0px;
+margin:  0px;
+padding: 0px;
+width    : ${constructedButtonWidth}px;
+height   : ${constructedButtonHeight}px;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background-color: transparent;
+}
+.${uniqueIdentifier}        { background-image: url("${ui.canvasOutput2.ref.toDataURL("image/png")}"); outline: none; }
+.${uniqueIdentifier}:focus  { background-image: url("${ui.canvasOutput4.ref.toDataURL("image/png")}"); outline: none; }
+.${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); outline: none; }
+.${uniqueIdentifier}:active { background-image: url("${ui.canvasOutput3.ref.toDataURL("image/png")}"); outline: none; }
+</style>
+<button id="${uniqueIdentifier}" class="${uniqueIdentifier}"></button>
+<script>
+const ${uniqueIdentifier} =  document.getElementById("${uniqueIdentifier}");
+
+/* THIS WILL BE CLIPPED TO COMBINE WITH OTHER BUTTON CODE */
+document.addEventListener("click", function() {
+switch (event.target) {
+case ui.${uniqueIdentifier}.ref: ui.${uniqueIdentifier}.click(); break;
+}
+});
+
+/* FULLY SET-UP AND READY FOR CODE */
+ui.${uniqueIdentifier}.click = function() { /* YOUR CODE GOES INSIDE HERE */  };
+</` + `script>` +
+`
+</div><!-- END OF holder_${uniqueIdentifier} -->
+`;
+
+W.clearRect(0,0,152,56);
+X.clearRect(0,0,152,56);
+Y.clearRect(0,0,152,56);
+Z.clearRect(0,0,152,56);
 
 }
-
 
 redraw();
 ui.textEntry.ref.focus();

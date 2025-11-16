@@ -135,10 +135,53 @@ ui[name].ref   = document.getElementById(name);
 
 /* TAB 3, FOLDER 1 */
 
-["coin17304", "coin26746", "coin32891", "coin40855", "coin46032"].forEach((name) => {
+[
+"yourButtonIsHere"     ,
+"buttonTooltip"        , 
+"buttonLink"           ,
+"dropButton1"          ,
+"dropButton2"          ,
+"dropButton4"          ,
+"dropButton8"          ,
+"cycleColourLeft"      ,
+"cycleColoursRight"    ,
+"buttonScale"          ,
+"textEntry"            ,
+"canvasOutput1"        ,
+"canvasOutput2"        ,
+"canvasOutput3"        ,
+"canvasOutput4"        ,
+"buttonFace"           ,
+"buttonShadow"         ,
+"buttonLeft"           ,
+"buttonTop"            ,
+"buttonRight"          ,
+"buttonBottom"         ,
+"textRight"            ,
+"textBottom"           ,
+"textFace"             ,
+"textHover"            ,
+"textActive"           ,
+"textFocus"
+].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
+
+ui.buttonStyle           = {};
+ui.buttonStyle.names     = ["a_flat"];
+ui.buttonStyle.chosen    =  0;
+ui.buttonStyle.a_flat    = {};
+ui.buttonStyle.a_flat.left       = new Image();
+ui.buttonStyle.a_flat.left.src   = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAA4CAMAAADOzPhPAAAAMFBMVEUAAAAA/wAQHFIA/wAYdb3//wCL1u7/AP//AABaAAAA///2/+7/AP8Aoe4AAP+LOAAHFtTmAAAAEHRSTlMA////////////////////wFCLQwAAAGRJREFUOI3t1DkOwDAIRNGRkIVF4fsfN4kXbJYbxL98oqABAJDYUPIBRTg6ysvRBwef7H2xc2Xrm9nsvZmlaed0q9rJ9fLl3zFJxkTZSRlVtrrY6WSvg4N2jto5+1UldXweQ+4PsMYjf82EkmsAAAAASUVORK5CYII=";
+ui.buttonStyle.a_flat.center     = new Image();
+ui.buttonStyle.a_flat.center.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAA4CAMAAADD0ogIAAAAMFBMVEUAAAAA/wAQHFIA/wAYdb3//wCL1u7/AP//AABaAAAA///2/+7/AP8Aoe4AAP+LOAAHFtTmAAAAEHRSTlMA////////////////////wFCLQwAAACpJREFUKJFj4EIDDMxogE4CGO7gQwMMHGhgVGBUgEIBjEQ3WARY0QCGAAAUkRsxaLzOoQAAAABJRU5ErkJggg==";
+ui.buttonStyle.a_flat.right      = new Image();
+ui.buttonStyle.a_flat.right.src  = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAA4CAMAAADHJ1g1AAAAMFBMVEUAAAAA/wAQHFIA/wAYdb3//wCL1u7/AP//AABaAAAA///2/+7/AP8Aoe4AAP+LOAAHFtTmAAAAEHRSTlMA////////////////////wFCLQwAAAGJJREFUOI3t0zkOwDAIRFGkKAJRcP/jerwQmXGfyr9Cr6IAcU7koWAkqkyqQQQh6lJpSKEpoFwnBRQr1xzEVuEH2aVL/1LKdr44TabPNkrbaVmhaZWGEXVjcvOD+ru/lBwEaWI9JhuCceR1AAAAAElFTkSuQmCC";
+
+
+
+
 
 
 
