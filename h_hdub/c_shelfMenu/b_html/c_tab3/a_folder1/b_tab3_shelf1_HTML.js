@@ -5,6 +5,8 @@ shelfMenuHTML.tab3.folder1.HTML = `
 <div   id="buttonScale"                                           class="buttonScale"> 
 <textarea id="textEntry"         class="offscreen"></textarea>
 
+
+
 <canvas id="canvasOutput1" width="312" height="56" style="display: none;"></canvas>
 <canvas id="canvasOutput2" width="312" height="56" style="display: none;"></canvas>
 <canvas id="canvasOutput3" width="312" height="56" style="display: none;"></canvas>
@@ -28,6 +30,8 @@ shelfMenuHTML.tab3.folder1.HTML = `
 
 </div>
 </div>
+
+<button id="readButtonBack" class="button_ button_readButtonBack" title="Read button colour and text back into the program."></button>
 
 <button id="cycleColourLeft" class="button_ button_cycleColourLeft" title="Cycle Colour Scheme Left"></button>
 <button id="cycleColoursRight" class="button_ button_cycleColoursRight" title="Cycle Colour Schemes Right"></button>

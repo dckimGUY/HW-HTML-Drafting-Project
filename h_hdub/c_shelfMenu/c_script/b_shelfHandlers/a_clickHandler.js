@@ -182,6 +182,7 @@ case ui.navPoint6.ref:           ui.navPoint6.click()            ; break;
 case ui.navPoint1.ref:           ui.navPoint1.click()            ; break;
 case ui.navPoint2.ref:           ui.navPoint2.click()            ; break;
 case ui.navPoint3.ref:           ui.navPoint3.click()            ; break;
+case ui.readButtonBack.ref:      ui.readButtonBack.click()       ; break;
 
 /* tab 6 folder 1 */
 /*

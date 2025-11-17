@@ -127,6 +127,32 @@ buttonStep.y++;
 if (buttonStep.y%10==0) { buttonStep.y = 0; buttonStep.x++; }
 }
 
+/* READ THE COLOURS AND TEXT BACK INTO THE BUTTON SELECTOR SYSTEM */
+ui.readButtonBack.click          = function() {
+if (coinFocus!=null) {
+const targetButtonId = (Array.from(coinFocus.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";
+if (targetButtonId!="") {
+const buttonDataArray = document.getElementById(targetButtonId).dataset.buttonData.split(",");
+ui.textEntry.ref.value        =   buttonDataArray[ 0];
+ui.buttonFace.ref.value       =   buttonDataArray[ 1];
+ui.buttonShadow.ref.value     =   buttonDataArray[ 2];
+ui.buttonLeft.ref.value       =   buttonDataArray[ 3];
+ui.buttonTop.ref.value        =   buttonDataArray[ 4];
+ui.buttonRight.ref.value      =   buttonDataArray[ 5];
+ui.buttonBottom.ref.value     =   buttonDataArray[ 6];
+ui.textRight.ref.value        =   buttonDataArray[ 7];
+ui.textBottom.ref.value       =   buttonDataArray[ 8];
+ui.textFace.ref.value         =   buttonDataArray[ 9];
+ui.textHover.ref.value        =   buttonDataArray[10];
+ui.textActive.ref.value       =   buttonDataArray[11];
+ui.textFocus.ref.value        =   buttonDataArray[12];
+sendColoursToStorage();
+localStorage.setItem("textEntry", ui.textEntry.ref.value);
+drawButton7();
+}
+}
+};
+
 /* THIS SETS UP LOCAL STORAGE */
 if (localStorage.getItem("textEntry"              ))  { ui.textEntry.ref.value     = localStorage.getItem("textEntry"              ); }
 if (localStorage.getItem("buttonizer_buttonFace"  ))  { ui.buttonFace.ref.value    = localStorage.getItem("buttonizer_buttonFace"  ); }
@@ -201,6 +227,10 @@ function drawButton7(){
 /* THROTTLE THE CALLS */
 if (lastCall !=0 && performance.now() - lastCall < 50) return;
 lastCall = performance.now();
+
+
+const buttonData = `${ui.textEntry.ref.value},${ui.buttonFace.ref.value},${ui.buttonShadow.ref.value},${ui.buttonLeft.ref.value},${ui.buttonTop.ref.value},${ui.buttonRight.ref.value},${ui.buttonBottom.ref.value},${ui.textRight.ref.value},${ui.textBottom.ref.value},${ui.textFace.ref.value},${ui.textHover.ref.value},${ui.textActive.ref.value},${ui.textFocus.ref.value}`;
+
 
 WbuttonContext = ui.canvasOutput3.ref.getContext("2d", {alpha: true, willReadFrequently: true});
 XbuttonContext = ui.canvasOutput4.ref.getContext("2d", {alpha: true, willReadFrequently: true});
@@ -341,7 +371,7 @@ background-color: transparent;
 .${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); outline: none; }
 .${uniqueIdentifier}:active { background-image: url("${ui.canvasOutput3.ref.toDataURL("image/png")}"); outline: none; }
 </style>
-<button id="${uniqueIdentifier}" class="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="right: -152px;" onclick="`;
+<button id="${uniqueIdentifier}" class="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="right: -152px;" data-button-data="${buttonData}" onclick="`;
 
 buttonHTML2 = `"></button>`;
 

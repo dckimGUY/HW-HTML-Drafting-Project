@@ -51,6 +51,7 @@ left: 0px;
 position: absolute;
 top: -16px;
 left:  2px;
+z-index: 500;
 }
 
 .buttonMakerContainer {
@@ -127,7 +128,11 @@ left: 22px;
 
 
 
-
+.button_readButtonBack           { position: absolute; border: none; margin: none; padding: none; left:     16px; top:     92px; width:     87px; height:     42px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/buttonRead.gif?v=20251116192347");        }
+.button_readButtonBack:focus     { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/buttonRead_focus.png?v=20251116193025");  }
+.button_readButtonBack:hover     { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/buttonRead_hover.png?v=20251116193152");  }
+.button_readButtonBack:active    { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/buttonRead_active.png?v=20251116192804"); }
 
 
 
