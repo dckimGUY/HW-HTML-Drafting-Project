@@ -84,6 +84,7 @@ h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.h_openHTMLinNewWin
 h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.i_saveStartupTutorial	 = saveStartupTutorial;
 h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.j_saveWithHeaderFooter	 = saveWithHeaderFooter;
 h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.k_saveFromHotdog	 = saveFromHotdog;
+h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.l_openImageSheetBase	 = openImageSheetBase;
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder = {};
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.a_flowManagement = {};
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.a_flowManagement.a_reflow	 = reflow;
