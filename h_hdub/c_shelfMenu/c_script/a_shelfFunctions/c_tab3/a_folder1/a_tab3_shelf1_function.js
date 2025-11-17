@@ -8,6 +8,7 @@ var buttonStep     = {};
 ui.textEntry.ref.onblur = function() { buttonStep.x = 0; buttonStep.y = 0; buttonStep.num = 0; }
 
 ui.textEntry.input              = function() {
+
 if (ui.textEntry.ref.value.endsWith("\n")) {
 if (hauptMode==0) { enterNavLinkButton(lastNavPoint); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(lastNavPoint); hauptMode = 1; }
 ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,ui.textEntry.ref.value.length - 1);
@@ -91,6 +92,12 @@ coinFocus.div.lastElementChild.style.left   =  "0px";
 coinFocus.div.lastElementChild.style.backgroundSize = "100% 100%";
 }
 
+
+
+
+
+
+
 function enterNavLinkButton(navPoint) {
 buttonLinkValue = "";
 if (ui.buttonLink.ref.value != "") {
@@ -133,21 +140,19 @@ if (coinFocus!=null) {
 const targetButtonId = (Array.from(coinFocus.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";
 if (targetButtonId!="") {
 const buttonDataArray = document.getElementById(targetButtonId).dataset.buttonData.split(",");
-ui.textEntry.ref.value        =   buttonDataArray[ 0];
-ui.buttonFace.ref.value       =   buttonDataArray[ 1];
-ui.buttonShadow.ref.value     =   buttonDataArray[ 2];
-ui.buttonLeft.ref.value       =   buttonDataArray[ 3];
-ui.buttonTop.ref.value        =   buttonDataArray[ 4];
-ui.buttonRight.ref.value      =   buttonDataArray[ 5];
-ui.buttonBottom.ref.value     =   buttonDataArray[ 6];
-ui.textRight.ref.value        =   buttonDataArray[ 7];
-ui.textBottom.ref.value       =   buttonDataArray[ 8];
-ui.textFace.ref.value         =   buttonDataArray[ 9];
-ui.textHover.ref.value        =   buttonDataArray[10];
-ui.textActive.ref.value       =   buttonDataArray[11];
-ui.textFocus.ref.value        =   buttonDataArray[12];
+ui.buttonFace.ref.value       =   buttonDataArray[ 0];
+ui.buttonShadow.ref.value     =   buttonDataArray[ 1];
+ui.buttonLeft.ref.value       =   buttonDataArray[ 2];
+ui.buttonTop.ref.value        =   buttonDataArray[ 3];
+ui.buttonRight.ref.value      =   buttonDataArray[ 4];
+ui.buttonBottom.ref.value     =   buttonDataArray[ 5];
+ui.textRight.ref.value        =   buttonDataArray[ 6];
+ui.textBottom.ref.value       =   buttonDataArray[ 7];
+ui.textFace.ref.value         =   buttonDataArray[ 8];
+ui.textHover.ref.value        =   buttonDataArray[ 9];
+ui.textActive.ref.value       =   buttonDataArray[10];
+ui.textFocus.ref.value        =   buttonDataArray[11];
 sendColoursToStorage();
-localStorage.setItem("textEntry", ui.textEntry.ref.value);
 drawButton7();
 }
 }
@@ -229,7 +234,7 @@ if (lastCall !=0 && performance.now() - lastCall < 50) return;
 lastCall = performance.now();
 
 
-const buttonData = `${ui.textEntry.ref.value},${ui.buttonFace.ref.value},${ui.buttonShadow.ref.value},${ui.buttonLeft.ref.value},${ui.buttonTop.ref.value},${ui.buttonRight.ref.value},${ui.buttonBottom.ref.value},${ui.textRight.ref.value},${ui.textBottom.ref.value},${ui.textFace.ref.value},${ui.textHover.ref.value},${ui.textActive.ref.value},${ui.textFocus.ref.value}`;
+const buttonData = `${ui.buttonFace.ref.value},${ui.buttonShadow.ref.value},${ui.buttonLeft.ref.value},${ui.buttonTop.ref.value},${ui.buttonRight.ref.value},${ui.buttonBottom.ref.value},${ui.textRight.ref.value},${ui.textBottom.ref.value},${ui.textFace.ref.value},${ui.textHover.ref.value},${ui.textActive.ref.value},${ui.textFocus.ref.value}`;
 
 
 WbuttonContext = ui.canvasOutput3.ref.getContext("2d", {alpha: true, willReadFrequently: true});

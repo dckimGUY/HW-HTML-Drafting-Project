@@ -75,7 +75,7 @@ ui["setLayer" + (j + 1)].ref.style.backgroundColor = "transparent";
 if (topLayer[layerArray[j]].a_name==topLayer.a_currentLayer) {
 ui["setLayer" + (j + 1)].ref.style.borderRadius  = "4px";
 ui["setLayer" + (j + 1)].ref.style.outlineOffset = "-5px";
-ui["setLayer" + (j + 1)].ref.style.outline       = "3px double red";
+ui["setLayer" + (j + 1)].ref.style.outline       = "3px double rgb(255,255,255)";
 } else {
 ui["setLayer" + (j + 1)].ref.style.outline = "";
 }

@@ -255,6 +255,9 @@ h_hdub.a_programFunctions.a_keyboardFunctions.u_localView.b_cycleNextLocalView	 
 h_hdub.a_programFunctions.a_keyboardFunctions.u_localView.c_cyclePreviousLocalView	 = cyclePreviousLocalView;
 h_hdub.a_programFunctions.a_keyboardFunctions.v_cleanConversion = {};
 h_hdub.a_programFunctions.a_keyboardFunctions.v_cleanConversion.a_buttonizer	 = buttonizer;
+h_hdub.a_programFunctions.a_keyboardFunctions.w_projectLevel = {};
+h_hdub.a_programFunctions.a_keyboardFunctions.w_projectLevel.a_saveProject	 = saveProject;
+h_hdub.a_programFunctions.a_keyboardFunctions.w_projectLevel.b_openProject	 = openProject;
 h_hdub.a_programFunctions.b_mouseFunctions = {};
 h_hdub.a_programFunctions.b_mouseFunctions.a_enterNewPartFromMouseInput	 = enterNewPartFromMouseInput;
 h_hdub.a_programFunctions.b_mouseFunctions.b_mouseGiveFocus	 = mouseGiveFocus;

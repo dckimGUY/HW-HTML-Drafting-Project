@@ -227,6 +227,7 @@ const localView = document.createElement("div");
 
 var topLayer = 
 {
+"aa_project_name" : "emptyProject",
 "a_currentLayer" : "b_layer1",
 "b_layer1" : { "a_name" : "b_layer1", "b_content" : b_layer1, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 1", "filename" : "100_emptyFile", "echelon" : 1 },
 "c_layer2" : { "a_name" : "c_layer2", "b_content" : c_layer2, "c_title" : " ", "d_filename" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "g_layerTitle" : "LVL 2", "filename" : "100_emptyFile", "echelon" : 1 },

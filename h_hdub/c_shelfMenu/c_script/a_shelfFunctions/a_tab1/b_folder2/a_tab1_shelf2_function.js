@@ -3,8 +3,8 @@ ui.coin77155.click               = function() { saveParticlePreparation(0,false)
 ui.coin59760.click               = function() { layerLeft();  };
 ui.coin64291.click               = function() { layerRight(); };
 ui.coin70038.click               = function() { navigator.clipboard.writeText(utilityLayer0.innerHTML); };
-ui.coin49592.click               = function() {  };
-ui.coin54398.click               = function() {  };
+ui.coin49592.click               = function() { openProject(); };
+ui.coin54398.click               = function() { saveProject(); };
 
 ui.setLayer1.click               = function() { makeTopLayer("b_layer1");  };
 ui.setLayer2.click               = function() { makeTopLayer("c_layer2");  };
