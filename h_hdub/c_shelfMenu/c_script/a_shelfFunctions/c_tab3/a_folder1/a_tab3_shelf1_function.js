@@ -63,15 +63,15 @@ const navigationPoints    = [];
 
 ui.cycleColourLeft.click        = function() { cycleColoursForward();  drawButton7(); };
 ui.cycleColoursRight.click      = function() { cycleColoursBackward(); drawButton7(); };
-ui.navPoint7.click              = function() { if (hauptMode==0) { enterNavLinkButton(7); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(7); hauptMode = 1; }; lastNavPoint = 7; };
-ui.navPoint8.click              = function() { if (hauptMode==0) { enterNavLinkButton(8); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(8); hauptMode = 1; }; lastNavPoint = 8; };
-ui.navPoint9.click              = function() { if (hauptMode==0) { enterNavLinkButton(9); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(9); hauptMode = 1; }; lastNavPoint = 9; };
-ui.navPoint4.click              = function() { if (hauptMode==0) { enterNavLinkButton(4); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(4); hauptMode = 1; }; lastNavPoint = 4; };
-ui.navPoint5.click              = function() { if (hauptMode==0) { enterNavLinkButton(5); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(5); hauptMode = 1; }; lastNavPoint = 5; };
-ui.navPoint6.click              = function() { if (hauptMode==0) { enterNavLinkButton(6); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(6); hauptMode = 1; }; lastNavPoint = 6; };
-ui.navPoint1.click              = function() { if (hauptMode==0) { enterNavLinkButton(1); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(1); hauptMode = 1; }; lastNavPoint = 1; };
-ui.navPoint2.click              = function() { if (hauptMode==0) { enterNavLinkButton(2); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(2); hauptMode = 1; }; lastNavPoint = 2; };
-ui.navPoint3.click              = function() { if (hauptMode==0) { enterNavLinkButton(3); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(3); hauptMode = 1; }; lastNavPoint = 3; };
+ui.navPoint7.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(7); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(7); hauptMode = 1; }; lastNavPoint = 7; };
+ui.navPoint8.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(8); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(8); hauptMode = 1; }; lastNavPoint = 8; };
+ui.navPoint9.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(9); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(9); hauptMode = 1; }; lastNavPoint = 9; };
+ui.navPoint4.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(4); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(4); hauptMode = 1; }; lastNavPoint = 4; };
+ui.navPoint5.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(5); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(5); hauptMode = 1; }; lastNavPoint = 5; };
+ui.navPoint6.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(6); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(6); hauptMode = 1; }; lastNavPoint = 6; };
+ui.navPoint1.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(1); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(1); hauptMode = 1; }; lastNavPoint = 1; };
+ui.navPoint2.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(2); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(2); hauptMode = 1; }; lastNavPoint = 2; };
+ui.navPoint3.click              = function() { drawButton7(); if (hauptMode==0) { enterNavLinkButton(3); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(3); hauptMode = 1; }; lastNavPoint = 3; };
 
 let buttonLinkValue = "";
 
@@ -108,7 +108,7 @@ enterButton(); return;
 let navLinkEntry = "";
 if (coinFocus!=null) {
 const targetButtonId = (Array.from(coinFocus.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";
-if (targetButtonId!="") {
+if (targetButtonId.startsWith("button")) {
 navLinkEntry = `(function(){try{document.getElementById('${targetButtonId}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${targetButtonId}').focus(); }catch{}})()`;
 } else {
 navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${coinFocus.id}').focus(); }catch{}})()`;
@@ -134,6 +134,11 @@ coinFocus.div.lastElementChild.style.backgroundSize = "100% 100%";
 buttonStep.y++;
 if (buttonStep.y%10==0) { buttonStep.y = 0; buttonStep.x++; }
 }
+
+
+
+
+
 
 /* READ THE COLOURS AND TEXT BACK INTO THE BUTTON SELECTOR SYSTEM */
 ui.readButtonBack.click          = function() {

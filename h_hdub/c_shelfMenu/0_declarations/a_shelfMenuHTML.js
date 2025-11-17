@@ -42,3 +42,27 @@ shelfMenuHTML.tab6.folder1           = {};
 shelfMenuHTML.tab6.folder2           = {};
 shelfMenuHTML.tab6.backgrounds       = {};
 
+/* SET UP SOME SLOTS FOR THE IMAGES TO LOAD IN FOR THE SHEET BUTTON MAKER */
+
+const sheetImages             =          {};
+      sheetImages.base        = new Image();
+      sheetImages.hover       = new Image();
+      sheetImages.active      = new Image();
+      sheetImages.focus       = new Image();
+      sheetImages.focusHover  = new Image();
+      sheetImages.focusActive = new Image();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

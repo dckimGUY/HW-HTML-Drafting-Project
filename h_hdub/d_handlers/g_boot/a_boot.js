@@ -15,7 +15,6 @@ var   edgeDetect        ; edgeDetect         = document.createElement("div")    
 
 var cursorDisplay = "block";
 
-
 var lastFlow = "global";
 
 edgeDetect.style.position        =           "absolute";
@@ -1050,7 +1049,6 @@ coinFocus.div.innerHTML = `
 <li>re-size the menu from the edge</li>
 <li>explore the program: It's NEW! (under active development)</li>
 <li>Vote for DCKIM in the PetraPixel Indie Web Contest!</li>
-<li><u>Last Update: November 13, 2025</u></li>
 </ol>
 `;
 
