@@ -26,17 +26,49 @@ utilityLayer0.innerHTML = topLayer[topLayer.a_currentLayer].b_content.innerHTML;
 filename = topLayer[topLayer.a_currentLayer].filename;
 pageEchelon = topLayer[topLayer.a_currentLayer].echelon * 100000000;
 
-Z();
 document.getElementById("documentTitle").innerText = filename;
-readCoins();
+
+restorePointerEventsNone();
 recoverColouration();
+for (j=0; j<utilityLayer0.children.length; j++) { 
+utilityLayer0.children[j].style.outline = fA;
+utilityLayer0.children[j].style.outlineOffset = fAO;
+ }
+if (utilityLayer0.firstElementChild) {
+coinFocus = utilityLayer0.firstElementChild;
+pageEchelon = Math.floor(utilityLayer0.firstElementChild.style.zIndex/100000000)*100000000;
+}
+
+
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 }
+
 if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
-redraw();
+
+makeTopLayer("b_layer1")
+
 updateInfoShelf();
+
+redraw();
+readCoins();
+
+Z();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 };
 reader.readAsText(file);

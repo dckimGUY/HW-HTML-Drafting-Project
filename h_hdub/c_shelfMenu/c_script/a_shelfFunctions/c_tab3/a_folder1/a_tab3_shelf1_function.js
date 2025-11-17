@@ -12,6 +12,7 @@ ui.textEntry.input              = function() {
 if (ui.textEntry.ref.value.endsWith("\n")) {
 if (hauptMode==0) { enterNavLinkButton(lastNavPoint); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(lastNavPoint); hauptMode = 1; }
 ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,ui.textEntry.ref.value.length - 1);
+cycleColoursForward();
 }
 ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,17);
 localStorage.setItem("textEntry", ui.textEntry.ref.value);
@@ -116,8 +117,8 @@ navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrol
 navLinkEntry = ``;
 }
 insertNewCoin([null,78,110]);
-coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * 312) + "px";
-coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * 312) + "px";
+coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
+coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
 coinFocus.dataset.top   = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
 coinFocus.style.width    = ui.canvasOutput2.ref.width  * 2 + "px";
