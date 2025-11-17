@@ -54,7 +54,7 @@ shelfMenuHTML.tab1.folder1.style = `
 .button_cursorNum:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/cursor-number_focus.png?v=20251102205813");  }
 .button_cursorNum:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/cursor-number_hover.png?v=20251102205813");  }
 .button_cursorNum:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/cursor-number_active.png?v=20251102205813"); }
-.input_partNom                   { position: absolute; border: none; margin: none; padding: none; left:     73px; top:    224px; width:    119px; height:     25px; outline-offset: -4px; }
+.input_partNom                   { position: absolute; border: none; margin: none; padding: none; left:     41px; top:    224px; width:    151px; height:     25px; padding: 0px; text-align: center; outline-offset: -4px; }
 .button_partPrev                 { position: absolute; border: none; margin: none; padding: none; left:     19px; top:    250px; width:     40px; height:     33px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-larr.gif?v=20251102205813");        }
 .button_partPrev:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-larr_focus.gif?v=20251102205813");  }

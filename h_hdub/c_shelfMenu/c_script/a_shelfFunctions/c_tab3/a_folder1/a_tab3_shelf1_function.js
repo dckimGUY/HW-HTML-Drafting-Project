@@ -1,12 +1,18 @@
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
-var lastButtonSize = 4;
+var lastNavPoint   =  5;
+var buttonStep     = {};
+    buttonStep.x   =  0;
+    buttonStep.y   =  0;
+    buttonStep.num =  0;
+
+ui.textEntry.ref.onblur = function() { buttonStep.x = 0; buttonStep.y = 0; buttonStep.num = 0; }
 
 ui.textEntry.input              = function() {
 if (ui.textEntry.ref.value.endsWith("\n")) {
-if (hauptMode==0) { enterNavLinkButton(lastButtonSize); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(lastButtonSize); hauptMode = 1; }
+if (hauptMode==0) { enterNavLinkButton(lastNavPoint); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(lastNavPoint); hauptMode = 1; }
 ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,ui.textEntry.ref.value.length - 1);
 }
-ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,7);
+ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,17);
 localStorage.setItem("textEntry", ui.textEntry.ref.value);
 drawButton7();
 };
@@ -38,58 +44,87 @@ ui.textFace.change              = function() { localStorage.setItem("buttonizer_
 ui.textHover.change             = function() { localStorage.setItem("buttonizer_textHover"   , ui.textHover.ref.value   ); };
 ui.textActive.change            = function() { localStorage.setItem("buttonizer_textActive"  , ui.textActive.ref.value  ); };
 ui.textFocus.change             = function() { localStorage.setItem("buttonizer_textFocus"   , ui.textFocus.ref.value   ); };
-ui.buttonTooltip.change         = function() {  };
+ui.buttonTooltip.change         = function() { drawButton7(); };
+
+const navigationPoints    = [];
+      navigationPoints[7] = ", block: 'start' , inline: 'start' ";
+      navigationPoints[8] = ", block: 'start' , inline: 'center'";
+      navigationPoints[9] = ", block: 'start' , inline: 'end'   ";
+
+      navigationPoints[4] = ", block: 'center', inline: 'start' ";
+      navigationPoints[5] = ", block: 'center', inline: 'center'";
+      navigationPoints[6] = ", block: 'center', inline: 'end'   ";
+
+      navigationPoints[1] = ", block: 'end'   , inline: 'start' ";
+      navigationPoints[2] = ", block: 'end'   , inline: 'center'";
+      navigationPoints[3] = ", block: 'end'   , inline: 'end'   ";
 
 ui.cycleColourLeft.click        = function() { cycleColoursForward();  drawButton7(); };
 ui.cycleColoursRight.click      = function() { cycleColoursBackward(); drawButton7(); };
+ui.navPoint7.click              = function() { if (hauptMode==0) { enterNavLinkButton(7); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(7); hauptMode = 1; }; lastNavPoint = 7; };
+ui.navPoint8.click              = function() { if (hauptMode==0) { enterNavLinkButton(8); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(8); hauptMode = 1; }; lastNavPoint = 8; };
+ui.navPoint9.click              = function() { if (hauptMode==0) { enterNavLinkButton(9); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(9); hauptMode = 1; }; lastNavPoint = 9; };
+ui.navPoint4.click              = function() { if (hauptMode==0) { enterNavLinkButton(4); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(4); hauptMode = 1; }; lastNavPoint = 4; };
+ui.navPoint5.click              = function() { if (hauptMode==0) { enterNavLinkButton(5); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(5); hauptMode = 1; }; lastNavPoint = 5; };
+ui.navPoint6.click              = function() { if (hauptMode==0) { enterNavLinkButton(6); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(6); hauptMode = 1; }; lastNavPoint = 6; };
+ui.navPoint1.click              = function() { if (hauptMode==0) { enterNavLinkButton(1); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(1); hauptMode = 1; }; lastNavPoint = 1; };
+ui.navPoint2.click              = function() { if (hauptMode==0) { enterNavLinkButton(2); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(2); hauptMode = 1; }; lastNavPoint = 2; };
+ui.navPoint3.click              = function() { if (hauptMode==0) { enterNavLinkButton(3); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(3); hauptMode = 1; }; lastNavPoint = 3; };
 
-ui.dropButton1.click            = function() { if (hauptMode==0) { enterButton(1); } else if (hauptMode==1) { hauptMode = 0; enterButton(1); hauptMode = 1; } lastButtonSize = 1; };
-ui.dropButton2.click            = function() { if (hauptMode==0) { enterButton(2); } else if (hauptMode==1) { hauptMode = 0; enterButton(2); hauptMode = 1; } lastButtonSize = 2; };
-ui.dropButton4.click            = function() { if (hauptMode==0) { enterButton(4); } else if (hauptMode==1) { hauptMode = 0; enterButton(4); hauptMode = 1; } lastButtonSize = 4; };
-ui.dropButton8.click            = function() { if (hauptMode==0) { enterButton(8); } else if (hauptMode==1) { hauptMode = 0; enterButton(8); hauptMode = 1; } lastButtonSize = 8; };
-
-function enterButton(buttonScaleFactor) {
 let buttonLinkValue = "";
-if (ui.buttonLink.ref.value != "") {
-buttonLinkValue = ui.buttonLink.ref.value;
-} else {
-buttonLinkValue = "";
-}
+
+function enterButton() {
 insertNewCoin([null,78,110]);
 coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + "px";
 coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.style.width    = ui.canvasOutput2.ref.width * buttonScaleFactor +  "px";
-coinFocus.dataset.width  = ui.canvasOutput2.ref.width * buttonScaleFactor +  "px";
-coinFocus.style.height   = ui.canvasOutput2.ref.height * buttonScaleFactor + "px";
-coinFocus.dataset.height = ui.canvasOutput2.ref.height * buttonScaleFactor + "px";
-coinFocus.div.innerHTML =
-`<div style="transform-origin: top left; transform: scale(${buttonScaleFactor});">
-` + buttonHTML1 + buttonLinkValue + buttonHTML2 + '\n</div>';
+coinFocus.style.width    = ui.canvasOutput2.ref.width * 4 +  "px";
+coinFocus.dataset.width  = ui.canvasOutput2.ref.width * 4 +  "px";
+coinFocus.style.height   = ui.canvasOutput2.ref.height * 4 + "px";
+coinFocus.dataset.height = ui.canvasOutput2.ref.height * 4 + "px";
+coinFocus.div.innerHTML = buttonHTML1 + buttonLinkValue + buttonHTML2;
 flipAnchorZ([,,,false,]);
+coinFocus.div.lastElementChild.style.width  = "100%";
+coinFocus.div.lastElementChild.style.height = "100%";
+coinFocus.div.lastElementChild.style.left   =  "0px";
+coinFocus.div.lastElementChild.style.backgroundSize = "100% 100%";
 }
 
-function enterNavLinkButton(buttonScaleFactor) {
+function enterNavLinkButton(navPoint) {
+buttonLinkValue = "";
+if (ui.buttonLink.ref.value != "") {
+buttonLinkValue = "location.href = '" + ui.buttonLink.ref.value + "';";
+enterButton(); return;
+}
 let navLinkEntry = "";
 if (coinFocus!=null) {
-navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({behavior:'smooth'});}catch{}})()`;
+const targetButtonId = (Array.from(coinFocus.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";
+if (targetButtonId!="") {
+navLinkEntry = `(function(){try{document.getElementById('${targetButtonId}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${targetButtonId}').focus(); }catch{}})()`;
+} else {
+navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${coinFocus.id}').focus(); }catch{}})()`;
+}
 } else {
 navLinkEntry = ``;
 }
 insertNewCoin([null,78,110]);
-coinFocus.style.left    = parseInt(window.scrollX) + "px";
-coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
-coinFocus.style.top     = parseInt(window.scrollY) + "px";
-coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.style.width    = ui.canvasOutput2.ref.width * buttonScaleFactor +  "px";
-coinFocus.dataset.width  = ui.canvasOutput2.ref.width * buttonScaleFactor +  "px";
-coinFocus.style.height   = ui.canvasOutput2.ref.height * buttonScaleFactor + "px";
-coinFocus.dataset.height = ui.canvasOutput2.ref.height * buttonScaleFactor + "px";
-coinFocus.div.innerHTML =
-`<div style="transform-origin: top left; transform: scale(${buttonScaleFactor});">
-` + buttonHTML1 + navLinkEntry + buttonHTML2 + '\n</div>';
+coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * 312) + "px";
+coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * 312) + "px";
+coinFocus.style.top     = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
+coinFocus.dataset.top   = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
+coinFocus.style.width    = ui.canvasOutput2.ref.width  * 2 + "px";
+coinFocus.dataset.width  = ui.canvasOutput2.ref.width  * 2 + "px";
+coinFocus.style.height   = ui.canvasOutput2.ref.height * 2 + "px";
+coinFocus.dataset.height = ui.canvasOutput2.ref.height * 2 + "px";
+coinFocus.div.innerHTML = buttonHTML1 + navLinkEntry + buttonHTML2;
 flipAnchorZ([,,,false,]);
+coinFocus.div.lastElementChild.style.width  = "100%";
+coinFocus.div.lastElementChild.style.height = "100%";
+coinFocus.div.lastElementChild.style.left   =  "0px";
+coinFocus.div.lastElementChild.style.backgroundSize = "100% 100%";
+buttonStep.y++;
+if (buttonStep.y%10==0) { buttonStep.y = 0; buttonStep.x++; }
 }
 
 /* THIS SETS UP LOCAL STORAGE */
@@ -211,7 +246,7 @@ swapColours("#00FF00",ui.buttonTop.ref.value   , ZbuttonContext);
 swapColours("#0000FF",ui.buttonRight.ref.value , ZbuttonContext);
 swapColours("#00FFFF",ui.buttonBottom.ref.value, ZbuttonContext);
 
-YbuttonContext.clearRect(0,0,152,56);
+YbuttonContext.clearRect(0,0,312,56);
 
 YbuttonContext.font="400 32px dckimPixelMono";
 YbuttonContext.textBaseline="top";
@@ -222,7 +257,7 @@ YbuttonContext.fillText(ui.textEntry.ref.value,21 - twoCharDeduction,13);
 YbuttonContext.stroke();
 clean(hexToRGB("#4d894d")[0], hexToRGB("#4d894d")[1], hexToRGB("#4d894d")[2]);
 ZbuttonContext.drawImage(ui.canvasOutput1.ref,0,0);
-YbuttonContext.clearRect(0,0,152,56);
+YbuttonContext.clearRect(0,0,312,56);
 
 YbuttonContext.beginPath();
 YbuttonContext.fillStyle="#4d894d";
@@ -230,7 +265,7 @@ YbuttonContext.fillText(ui.textEntry.ref.value,21 - twoCharDeduction,14);
 YbuttonContext.stroke();
 clean(hexToRGB("#4d894d")[0], hexToRGB("#4d894d")[1], hexToRGB("#4d894d")[2]);
 ZbuttonContext.drawImage(ui.canvasOutput1.ref,0,0);
-YbuttonContext.clearRect(0,0,152,56);
+YbuttonContext.clearRect(0,0,312,56);
 
 YbuttonContext.beginPath();
 YbuttonContext.fillStyle="#6ea66e";
@@ -238,7 +273,7 @@ YbuttonContext.fillText(ui.textEntry.ref.value,20 - twoCharDeduction,14);
 YbuttonContext.stroke();
 clean(hexToRGB("#6ea66e")[0], hexToRGB("#6ea66e")[1], hexToRGB("#6ea66e")[2]);
 ZbuttonContext.drawImage(ui.canvasOutput1.ref,0,0);
-YbuttonContext.clearRect(0,0,152,56);
+YbuttonContext.clearRect(0,0,312,56);
 
 YbuttonContext.beginPath();
 YbuttonContext.fillStyle="#540707";
@@ -246,7 +281,7 @@ YbuttonContext.fillText(ui.textEntry.ref.value,20 - twoCharDeduction,13);
 YbuttonContext.stroke();
 clean(hexToRGB("#540707")[0], hexToRGB("#540707")[1], hexToRGB("#540707")[2]);
 ZbuttonContext.drawImage(ui.canvasOutput1.ref,0,0);
-YbuttonContext.clearRect(0,0,152,56);
+YbuttonContext.clearRect(0,0,312,56);
 
 function clean(R,G,B) {
 let d = YbuttonContext.getImageData(0,0,ui.canvasOutput1.ref.width,ui.canvasOutput1.ref.height);
@@ -292,7 +327,6 @@ buttonHTML1 = `
 .${uniqueIdentifier} {
 position: absolute;
 top:     0px;
-left:    0px;
 border:  0px;
 margin:  0px;
 padding: 0px;
@@ -307,16 +341,16 @@ background-color: transparent;
 .${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); outline: none; }
 .${uniqueIdentifier}:active { background-image: url("${ui.canvasOutput3.ref.toDataURL("image/png")}"); outline: none; }
 </style>
-<button id="${uniqueIdentifier}" class="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" onclick="`;
+<button id="${uniqueIdentifier}" class="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="right: -152px;" onclick="`;
 
 buttonHTML2 = `"></button>`;
 
 ui.yourButtonIsHere.ref.innerHTML = buttonHTML1 + buttonHTML2;
 ;
 
-WbuttonContext.clearRect(0,0,152,56);
-XbuttonContext.clearRect(0,0,152,56);
-YbuttonContext.clearRect(0,0,152,56);
-ZbuttonContext.clearRect(0,0,152,56);
+WbuttonContext.clearRect(0,0,312,56);
+XbuttonContext.clearRect(0,0,312,56);
+YbuttonContext.clearRect(0,0,312,56);
+ZbuttonContext.clearRect(0,0,312,56);
 
 }

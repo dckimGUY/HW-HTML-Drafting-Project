@@ -171,12 +171,17 @@ case ui.loadTheme_i8.ref:        ui.loadTheme_i8.click()         ; break;
 case ui.loadTheme_j9.ref:        ui.loadTheme_j9.click()         ; break;
 
 /* tab 3 folder 1 */
-case ui.cycleColourLeft.ref:      ui.cycleColourLeft.click()       ; break;
-case ui.cycleColoursRight.ref:    ui.cycleColoursRight.click()     ; break;
-case ui.dropButton1.ref:          ui.dropButton1.click()           ; break;
-case ui.dropButton2.ref:          ui.dropButton2.click()           ; break;
-case ui.dropButton4.ref:          ui.dropButton4.click()           ; break;
-case ui.dropButton8.ref:          ui.dropButton8.click()           ; break;
+case ui.cycleColourLeft.ref:     ui.cycleColourLeft.click()      ; break;
+case ui.cycleColoursRight.ref:   ui.cycleColoursRight.click()    ; break;
+case ui.navPoint7.ref:           ui.navPoint7.click()            ; break;
+case ui.navPoint8.ref:           ui.navPoint8.click()            ; break;
+case ui.navPoint9.ref:           ui.navPoint9.click()            ; break;
+case ui.navPoint4.ref:           ui.navPoint4.click()            ; break;
+case ui.navPoint5.ref:           ui.navPoint5.click()            ; break;
+case ui.navPoint6.ref:           ui.navPoint6.click()            ; break;
+case ui.navPoint1.ref:           ui.navPoint1.click()            ; break;
+case ui.navPoint2.ref:           ui.navPoint2.click()            ; break;
+case ui.navPoint3.ref:           ui.navPoint3.click()            ; break;
 
 /* tab 6 folder 1 */
 /*

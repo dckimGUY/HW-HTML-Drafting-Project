@@ -3,12 +3,12 @@ shelfMenuHTML.tab3.folder1.HTML = `
 <div   id="yourButtonIsHere"     class="yourButtonIsHere"></div>
 
 <div   id="buttonScale"                                           class="buttonScale"> 
-<textarea id="textEntry"         class="offscreen">button7</textarea>
+<textarea id="textEntry"         class="offscreen"></textarea>
 
-<canvas id="canvasOutput1" width="152" height="56" style="display: none;"></canvas>
-<canvas id="canvasOutput2" width="152" height="56" style="display: none;"></canvas>
-<canvas id="canvasOutput3" width="152" height="56" style="display: none;"></canvas>
-<canvas id="canvasOutput4" width="152" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput1" width="312" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput2" width="312" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput3" width="312" height="56" style="display: none;"></canvas>
+<canvas id="canvasOutput4" width="312" height="56" style="display: none;"></canvas>
 
 <input id="buttonFace"   name="buttonFace"   title="buttonFace"   class="input_pos input_buttonFace"   type="color" value="#ACBA6A">
 <input id="buttonShadow" name="buttonShadow" title="buttonShadow" class="input_pos input_buttonShadow" type="color" value="#EEEA31">
@@ -23,15 +23,23 @@ shelfMenuHTML.tab3.folder1.HTML = `
 <input id="textActive"   name="textActive"   title="textActive"   class="input_pos input_textActive"   type="color" value="#FF00FF">
 <input id="textFocus"    name="textFocus"    title="textFocus"    class="input_pos input_textFocus"    type="color" value="#101C52">
 
-<textarea id="buttonTooltip"     class="input input_buttonTooltip dckimPixelMono" placeholder="Use the enter key above for fast internal NAV links\n\n-enter tooltip here-"></textarea>
-<textarea id="buttonLink"     class="input input_buttonLink dckimPixelMono" placeholder="external link URL?"></textarea>
-<button   id="cycleColourLeft"   class="button_ button_cycleColourLeft dckimPixelMono"   title="">&lt;&lt;&lt;</button>
-<button   id="cycleColoursRight" class="button_ button_cycleColoursRight dckimPixelMono" title="">&gt;&gt;&gt;</button>
+<input id="buttonTooltip" class="input input_buttonTooltip dckimPixelMono" placeholder="tooltip" title="Click the button to type custom text.">
+<input id="buttonLink"    class="input input_buttonLink dckimPixelMono"    placeholder="URL, blank=NAV"     title="If not empty, the link is used instead of internal navigation, which uses the currently selected object.">
 
-<button   id="dropButton1" class="button_ button_dropButton1 dckimPixelMono" title="Put 1x Scale Button">1X</button>
-<button   id="dropButton2" class="button_ button_dropButton2 dckimPixelMono" title="Put 2x Scale Button">2X</button>
-<button   id="dropButton4" class="button_ button_dropButton4 dckimPixelMono" title="Put 4x Scale Button">4X</button>
-<button   id="dropButton8" class="button_ button_dropButton8 dckimPixelMono" title="Put 8x Scale Button">8X</button>
 </div>
 </div>
+
+<button id="cycleColourLeft" class="button_ button_cycleColourLeft" title="Cycle Colour Scheme Left"></button>
+<button id="cycleColoursRight" class="button_ button_cycleColoursRight" title="Cycle Colour Schemes Right"></button>
+<button id="navPoint7" class="button_ button_navPoint7" title="NAV Scroll to NW"></button>
+<button id="navPoint8" class="button_ button_navPoint8" title="NAV Scroll to N"></button>
+<button id="navPoint9" class="button_ button_navPoint9" title="NAV Scroll to NE"></button>
+<button id="navPoint4" class="button_ button_navPoint4" title="NAV Scroll to W"></button>
+<button id="navPoint5" class="button_ button_navPoint5" title="NAV Scroll to Center"></button>
+<button id="navPoint6" class="button_ button_navPoint6" title="NAV Scroll to E"></button>
+<button id="navPoint1" class="button_ button_navPoint1" title="NAV Scroll to SW"></button>
+<button id="navPoint2" class="button_ button_navPoint2" title="NAV Scroll to S"></button>
+<button id="navPoint3" class="button_ button_navPoint3" title="NAV Scroll to SE"></button>
+
+
 `;
