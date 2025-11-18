@@ -2,6 +2,8 @@ function updateInfoShelf() {
 
 topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
 
+ui.snapGridIncrement.ref.value = T;
+
 if (coinFocus!=null&&coinFocus.dataset.notes) {
 ui.partText.ref.value  = coinFocus.dataset.notes;
 } else {
