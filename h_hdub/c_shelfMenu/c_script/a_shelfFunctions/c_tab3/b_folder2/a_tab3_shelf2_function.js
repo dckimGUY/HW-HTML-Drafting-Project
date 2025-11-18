@@ -35,6 +35,11 @@ ui.clearFocusActive.click        = function() { clearImageSheet("focusActive"); 
 
 ui.getButtons.click              = function() {
 if (utilityLayer0.children.length!=0) {
+
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+utilityLayer0.children[j].firstElementChild.style.zIndex="0";
+}
+
 const imageCutter = document.createElement("canvas");
 let           ctx = imageCutter.getContext("2d")    ;
 
@@ -67,42 +72,42 @@ margin              :         0px;
                     }
 `;
 
-if (sheetImages.base.img.src) {
+if (sheetImages.base.img.src&&sheetImages.base.img.width!=0&&sheetImages.base.img.height!=0) {
 viewImageSheet("base");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
 .${buttonName}               { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
-if (sheetImages.focus.img.src) {
+if (sheetImages.focus.img.src&&sheetImages.focus.img.width!=0&&sheetImages.focus.img.height!=0) {
 viewImageSheet("focus");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
 .${buttonName}:focus         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
-if (sheetImages.hover.img.src) {
+if (sheetImages.hover.img.src&&sheetImages.hover.img.width!=0&&sheetImages.hover.img.height!=0) {
 viewImageSheet("hover");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
 .${buttonName}:hover         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
-if (sheetImages.active.img.src) {
+if (sheetImages.active.img.src&&sheetImages.active.img.width!=0&&sheetImages.active.img.height!=0) {
 viewImageSheet("active");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
 .${buttonName}:active        { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
-if (sheetImages.focusHover.img.src) {
+if (sheetImages.focusHover.img.src&&sheetImages.focusHover.img.width!=0&&sheetImages.focusHover.img.height!=0) {
 viewImageSheet("focusHover");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
 .${buttonName}:focus:hover   { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
-if (sheetImages.focusActive.img.src) {
+if (sheetImages.focusActive.img.src&&sheetImages.focusActive.img.width!=0&&sheetImages.focusActive.img.height!=0) {
 viewImageSheet("focusActive");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
@@ -118,7 +123,6 @@ utilityLayer0.children[j].div.innerHTML = buttonCode;
 buttonCode = "";
 
 }
-
 
 
 

@@ -7,18 +7,10 @@ const file = input.files[0];
 const reader = new FileReader();
 reader.onload = () => {
 const img = new Image();
-sheetImages[sheetName].filename = file.name;
 img.onload = () => {};
 sheetImages[sheetName].img.src = reader.result;
 
-/* ALSO DISPLAY THE IMAGE */
-let ctx = Picture.getContext("2d");
-Picture.width        = img.width;
-Picture.height       = img.height;
-Picture.style.width  = img.width;
-Picture.style.height = img.height;
-ctx.drawImage(img, 0, 0, img.width, img.height);
-Picture.style.display="block";
+setTimeout(viewImageSheet(sheetName), 1000);
 
 };
 reader.readAsDataURL(file);
