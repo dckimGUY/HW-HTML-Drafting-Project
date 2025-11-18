@@ -22,10 +22,10 @@ let partY     = document.getElementById("partY"    ),
 
 if (coinFocus != null && curFocus == 0) {
 
-partY.value = parseInt(coinFocus.style.top)    + "px";
-partX.value = parseInt(coinFocus.style.left)   + "px";
-partW.value = parseInt(coinFocus.style.width)  + "px";
-partH.value = parseInt(coinFocus.style.height) + "px";
+partY.value = parseInt(coinFocus.style.top)    ;
+partX.value = parseInt(coinFocus.style.left)   ;
+partW.value = parseInt(coinFocus.style.width)  ;
+partH.value = parseInt(coinFocus.style.height) ;
 
 if (coinFocus.id) {
 partNom.value = coinFocus.id;
