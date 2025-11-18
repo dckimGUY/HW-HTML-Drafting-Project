@@ -44,25 +44,25 @@ shelfMenuHTML.tab6.backgrounds       = {};
 
 /* SET UP SOME SLOTS FOR THE IMAGES TO LOAD IN FOR THE SHEET BUTTON MAKER */
 
-const sheetImages             =          {};
-      sheetImages.base        = new Image();
-      sheetImages.hover       = new Image();
-      sheetImages.active      = new Image();
-      sheetImages.focus       = new Image();
-      sheetImages.focusHover  = new Image();
-      sheetImages.focusActive = new Image();
+const sheetImages                 =          {};
 
+      sheetImages.base            =          {};
+      sheetImages.hover           =          {};
+      sheetImages.active          =          {};
+      sheetImages.focus           =          {};
+      sheetImages.focusHover      =          {};
+      sheetImages.focusActive     =          {};
 
+      sheetImages.base.img        = new Image();
+      sheetImages.focus.img       = new Image();
+      sheetImages.hover.img       = new Image();
+      sheetImages.active.img      = new Image();
+      sheetImages.focusHover.img  = new Image();
+      sheetImages.focusActive.img = new Image();
 
-
-
-
-
-
-
-
-
-
-
-
-
+      sheetImages.base.filename        = "";
+      sheetImages.hover.filename       = "";
+      sheetImages.active.filename      = "";
+      sheetImages.focus.filename       = "";
+      sheetImages.focusHover.filename  = "";
+      sheetImages.focusActive.filename = "";

@@ -191,6 +191,20 @@ ui.buttonStyle.a_flat.right.src  = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg
 
 
 
+/* TAB 3, FOLDER 2 */
+
+["getButtons", "loadBase", "loadFocus", "loadHover", "loadActive", "loadFocusHover", "loadFocusActive", "viewBase", "viewFocus", "viewHover", "viewActive", "viewFocusHover", "viewFocusActive", "clearBase", "clearFocus", "clearHover", "clearActive", "clearFocusHover", "clearFocusActive"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
+
+
+
+
+
 /******************/
 /* INITIALIZATION */
 

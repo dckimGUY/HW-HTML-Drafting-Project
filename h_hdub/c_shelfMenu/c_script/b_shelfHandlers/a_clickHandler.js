@@ -184,6 +184,32 @@ case ui.navPoint2.ref:           ui.navPoint2.click()            ; break;
 case ui.navPoint3.ref:           ui.navPoint3.click()            ; break;
 case ui.readButtonBack.ref:      ui.readButtonBack.click()       ; break;
 
+/* tab 3 folder 2 */
+case ui.getButtons.ref:          ui.getButtons.click()           ; break;
+case ui.loadBase.ref:            ui.loadBase.click()             ; break;
+case ui.loadFocus.ref:           ui.loadFocus.click()            ; break;
+case ui.loadHover.ref:           ui.loadHover.click()            ; break;
+case ui.loadActive.ref:          ui.loadActive.click()           ; break;
+case ui.loadFocusHover.ref:      ui.loadFocusHover.click()       ; break;
+case ui.loadFocusActive.ref:     ui.loadFocusActive.click()      ; break;
+case ui.viewBase.ref:            ui.viewBase.click()             ; break;
+case ui.viewFocus.ref:           ui.viewFocus.click()            ; break;
+case ui.viewHover.ref:           ui.viewHover.click()            ; break;
+case ui.viewActive.ref:          ui.viewActive.click()           ; break;
+case ui.viewFocusHover.ref:      ui.viewFocusHover.click()       ; break;
+case ui.viewFocusActive.ref:     ui.viewFocusActive.click()      ; break;
+case ui.clearBase.ref:           ui.clearBase.click()            ; break;
+case ui.clearFocus.ref:          ui.clearFocus.click()           ; break;
+case ui.clearHover.ref:          ui.clearHover.click()           ; break;
+case ui.clearActive.ref:         ui.clearActive.click()          ; break;
+case ui.clearFocusHover.ref:     ui.clearFocusHover.click()      ; break;
+case ui.clearFocusActive.ref:    ui.clearFocusActive.click()     ; break;
+
+
+
+
+
+
 /* tab 6 folder 1 */
 /*
 case ui.coin17304.ref:           ui.coin17304.click()            ; break;

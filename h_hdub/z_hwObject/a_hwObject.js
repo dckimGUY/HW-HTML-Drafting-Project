@@ -85,6 +85,8 @@ h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.i_saveStartupTutor
 h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.j_saveWithHeaderFooter	 = saveWithHeaderFooter;
 h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.k_saveFromHotdog	 = saveFromHotdog;
 h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.l_openImageSheet	 = openImageSheet;
+h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.m_clearImageSheet	 = clearImageSheet;
+h_hdub.a_programFunctions.a_keyboardFunctions.e_saveAndAppend.n_viewImageSheet	 = viewImageSheet;
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder = {};
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.a_flowManagement = {};
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.a_flowManagement.a_reflow	 = reflow;
