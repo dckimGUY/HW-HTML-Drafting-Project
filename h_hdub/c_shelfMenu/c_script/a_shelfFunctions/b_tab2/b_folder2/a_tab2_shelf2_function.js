@@ -87,8 +87,12 @@ ui.coin63249.click               = function() { visualGridThickness3 = 6; localS
 
 
 
-ui.coin38634.click              = function() { visualGridSize1 = T; ui.coin18868.ref.value = T   ; localStorage.setItem("visualGridSize1", visualGridSize1); Z(); };
-ui.coin18868.input              = function() { visualGridSize1 = parseInt(ui.coin18868.ref.value); localStorage.setItem("visualGridSize1", visualGridSize1); Z(); };
+ui.coin38634.click              = function() { visualGridSize1 = T; ui.coin18868.ref.value = T   ; mouseIncrement = visualGridSize1; localStorage.setItem("visualGridSize1", visualGridSize1); localStorage.setItem("mouseIncrement", mouseIncrement); Z(); };
+
+
+ui.coin18868.input              = function() { visualGridSize1 = parseInt(ui.coin18868.ref.value); mouseIncrement = visualGridSize1; localStorage.setItem("visualGridSize1", visualGridSize1); localStorage.setItem("mouseIncrement", mouseIncrement); Z(); };
+
+
 ui.coin28281.input              = function() {
 visualGridColour1 = ui.coin28281.ref.value;
 ui.coin28281.ref.setAttribute('value',ui.coin28281.ref.value);

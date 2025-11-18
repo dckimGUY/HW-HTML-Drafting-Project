@@ -5,7 +5,7 @@ const newYvalue = parseInt(P.style.top)  > parseInt(S.style.top)  ? parseInt(S.s
 const newWidth  = Math.abs(parseInt(P.style.left) - parseInt(S.style.left));
 const newHeight = Math.abs(parseInt(P.style.top)  - parseInt(S.style.top));
 
-if ((newWidth>=edgeQ*2&&newHeight>=edgeQ*2)&&(newWidth>=T&&newHeight>=T)&&(mousedown.lastButton==0||mousedown.lastButton==1)) {
+if ((newWidth>=edgeQ*2&&newHeight>=edgeQ*2)&&(newWidth>=mouseIncrement&&newHeight>=mouseIncrement)&&(mousedown.lastButton==0||mousedown.lastButton==1)) {
 
 
 

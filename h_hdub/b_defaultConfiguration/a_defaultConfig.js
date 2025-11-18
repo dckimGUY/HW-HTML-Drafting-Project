@@ -205,13 +205,19 @@ var showPartName = false;
 
 var quitSaveTimeoutSetting = 500;
 
-
+/* THIS SETS THE INCREMENT FOR THE KEYBOARD */
 /* Initial Design Grid Size */var    T=    64;
 /*  Scale  Design Grid Size */var  aS1=    16;
 /*  Scale  Design Grid Size */var  aS2=    32;
 /* Rotate  Design Grid Size */var  aD1=    32;
 /* Rotate  Design Grid Size */var  aD2=   180;
 /* Design Grid Size Divisor */var    E=     2;
+
+/* THIS SETS THE INCREMENT FOR THE MOUSE */
+var mouseIncrement = 8;
+
+
+
 
 /* The Spatial Cursor Top   */let  cRT=    -32;
 /* The Spatial Cursor Left  */let  cRL=    -32;

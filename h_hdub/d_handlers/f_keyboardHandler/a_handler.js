@@ -275,7 +275,13 @@ if (hotDog) { return; }
 /*    m    */ if (kC ==  77 && cC == 109) { shiftRouter(keyInfo);lastKey="m";}/*    M    */ if (kC ==  77 && cC ==  77) { shiftRouter(keyInfo);lastKey="M";}
 /*    ,    */ if (kC == 188 && cC ==  44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}}/*    <    */ if (kC == 188 && cC ==  60) {cyclePreviousLocalView();}
 /*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}}/*    >    */ if (kC == 190 && cC ==  62) {cycleNextLocalView();}
-/*    /    */ if (kC == 191 && cC ==  47) { lessG(e);                      }/*    ?    */ if (kC == 191 && cC ==  63) { moreG(e);                      }
+/*    /    */ if (kC == 191 && cC ==  47) { lessG(e);                      }/*    ?    */ if (kC == 191 && cC ==  63) { 
+                 if ( grid0Viz == "true") {
+                      grid0Viz = "false";
+localStorage.setItem("grid0Viz", "false");
+} else {              grid0Viz = "true";
+localStorage.setItem("grid0Viz", "true"); }
+Z();                      }
 /*                                                                                                                                                    */
 
 redraw();

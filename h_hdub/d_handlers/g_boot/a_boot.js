@@ -467,7 +467,8 @@ var      visualGridColour3 =  "#FF00FF";
 var        visualGridSize3 =  T;
 var                  grid3Viz = "false";
 
-if (localStorage.getItem("T")) { T = parseInt(localStorage.getItem("T")); }
+if (localStorage.getItem("T")) { T = parseInt(localStorage.getItem("T")); ui.snapGridIncrement.ref.value = T; }
+if (localStorage.getItem("mouseIncrement")) { mouseIncrement = parseInt(localStorage.getItem("mouseIncrement")); ui.coin18868.ref.value = mouseIncrement; }
 
 if (localStorage.getItem("grid0Viz")) { grid0Viz = localStorage.getItem("grid0Viz"); }
 if (localStorage.getItem("grid1Viz")) { grid1Viz = localStorage.getItem("grid1Viz"); }
@@ -517,18 +518,14 @@ V.height=window.innerHeight;
 W=T-(window.scrollY%T);
 X=T-(window.scrollX%T);
 Y=V.getContext("2d");
+
 Y.strokeStyle=U;
 Y.lineWidth=gW;
-Y.beginPath();
 
-if (grid0Viz=="true") {
-if (T>=8&&gW!=0) {
-for(let k=0;k<parseInt(V.height/T)+1;k++){ Y.moveTo(0,W+(T*k)); Y.lineTo(V.width,W+(T*k))};
-for(let k=0;k<parseInt(V.width/T)+1;k++){ Y.moveTo(X+(T*k),0); Y.lineTo(X+(T*k),V.height)};
-}
-}
 
-Y.stroke();
+
+
+
 
 Y.beginPath();
 Y.fillStyle=U;
@@ -585,6 +582,19 @@ for(let k=0;k<parseInt(V.height/visualGridSize3)+1;k++){
                     Y.moveTo(X+(visualGridSize3*k),0);
                     Y.lineTo(X+(visualGridSize3*k),V.height)}; } Y.stroke();
 }
+
+W=T-(window.scrollY%T);
+X=T-(window.scrollX%T);
+
+Y.strokeStyle=U;
+Y.lineWidth=gW;
+if (grid0Viz=="true") {Y.beginPath();if (T>=8&&gW!=0) {
+for(let k=0;k<parseInt(V.height/T)+1;k++){ Y.moveTo(0,W+(T*k)); Y.lineTo(V.width,W+(T*k))};
+for(let k=0;k<parseInt(V.width/T)+1;k++){ Y.moveTo(X+(T*k),0); Y.lineTo(X+(T*k),V.height)};
+}Y.stroke();}
+
+
+
 
 W=T-(window.scrollY%T);
 X=T-(window.scrollX%T);

@@ -211,13 +211,7 @@ case ui.clearFocusActive.ref:    ui.clearFocusActive.click()     ; break;
 
 
 /* tab 6 folder 1 */
-/*
-case ui.coin17304.ref:           ui.coin17304.click()            ; break;
-case ui.coin26746.ref:           ui.coin26746.click()            ; break;
-case ui.coin32891.ref:           ui.coin32891.click()            ; break;
-case ui.coin40855.ref:           ui.coin40855.click()            ; break;
-case ui.coin46032.ref:           ui.coin46032.click()            ; break;
-*/
+
 /* */
 
 }
