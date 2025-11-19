@@ -1,10 +1,16 @@
-ui.coin77671.input               = function() { filename = ui.coin77671.ref.value; };
+
+
+ui.projectName.input             = function() { topLayer.aa_project_name = ui.projectName.ref.value; };
+
 ui.coin77155.click               = function() { saveParticlePreparation(0,false); };
 ui.coin59760.click               = function() { layerLeft();  };
 ui.coin64291.click               = function() { layerRight(); };
 ui.coin70038.click               = function() { navigator.clipboard.writeText(utilityLayer0.innerHTML); };
 ui.coin49592.click               = function() { openProject(); };
 ui.coin54398.click               = function() { saveProject(); };
+
+ui.coin77671.input               = function() { filename = ui.coin77671.ref.value; topLayer[topLayer.a_currentLayer].filename = filename; };
+ui.levelNotes.input              = function() { topLayer[topLayer.a_currentLayer].d_description = ui.levelNotes.ref.value; };
 
 ui.setLayer1.click               = function() { makeTopLayer("b_layer1");  };
 ui.setLayer2.click               = function() { makeTopLayer("c_layer2");  };

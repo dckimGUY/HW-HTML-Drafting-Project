@@ -11,6 +11,8 @@ case ui.pathEntry.ref:           ui.pathEntry.input()           ; break;
 
 /* */
 case ui.coin77671.ref:           ui.coin77671.input()           ; break;
+case ui.projectName.ref:         ui.projectName.input()         ; break;
+case ui.levelNotes.ref:          ui.levelNotes.input()          ; break;
 
 /* */
 

@@ -6,6 +6,11 @@ topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
 topLayer[topLayer.a_currentLayer].filename = filename;
 topLayer[topLayer.a_currentLayer].echelon = pageEchelon / 100000000;
 
+
+saveTheme("currentTheme");
+topLayer.projectThemes = userCustomTheme;
+
+
 const json = JSON.stringify(topLayer, (key, value) => {
 if (value instanceof Element) { return value.outerHTML; }
 return value; }, 0);
