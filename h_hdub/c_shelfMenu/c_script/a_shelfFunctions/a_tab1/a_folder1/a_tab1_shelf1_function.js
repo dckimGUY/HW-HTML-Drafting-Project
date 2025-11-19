@@ -6,18 +6,10 @@ ui.partY.input                   = function() {
        if (ui.partY.ref.value.includes("-")) { 
            ui.partY.ref.value =
            ui.partY.ref.value.replace(/-/g, "");
-if (hauptMode==0) {
-insertNewCoin([, 65, 65,,,]);
-} else if (hauptMode==1) {
-hauptMode = 0;
-insertNewCoin([, 65, 65,,,]);
-hauptMode = 1;
-}
 updateInfoShelf();redraw();
-ui.partW.ref.focus();
-ui.partW.ref.select();
+ui.partH.ref.focus();
+ui.partH.ref.select();
 return;
-
 } else if (ui.partY.ref.value.includes("+")) { 
            ui.partY.ref.value =
            ui.partY.ref.value.replace(/\+/g, "");
@@ -25,7 +17,6 @@ updateInfoShelf();redraw();
 ui.partX.ref.focus();
 ui.partX.ref.select();
 return;
-
 }    
 inputPartNav("partY");
 if (coinFocus!=null) {
@@ -39,19 +30,10 @@ ui.partX.input                   = function() {
        if (ui.partX.ref.value.includes("-")) { 
            ui.partX.ref.value =
            ui.partX.ref.value.replace(/-/g, "");
-if (hauptMode==0) {
-insertNewCoin([, 65, 65,,,]);
-} else if (hauptMode==1) {
-hauptMode = 0;
-insertNewCoin([, 65, 65,,,]);
-hauptMode = 1;
-}
 updateInfoShelf();redraw();
-ui.partW.ref.focus();
-ui.partW.ref.select();
+ui.partY.ref.focus();
+ui.partY.ref.select();
 return;
-
-
 } else if (ui.partX.ref.value.includes("+")) { 
            ui.partX.ref.value =
            ui.partX.ref.value.replace(/\+/g, "");
@@ -59,7 +41,6 @@ updateInfoShelf();redraw();
 ui.partW.ref.focus();
 ui.partW.ref.select();
 return;
-
 }
 inputPartNav("partX");
 if (coinFocus!=null) {
@@ -73,19 +54,10 @@ ui.partW.input                   = function() {
        if (ui.partW.ref.value.includes("-")) { 
            ui.partW.ref.value =
            ui.partW.ref.value.replace(/-/g, "");
-if (hauptMode==0) {
-insertNewCoin([, 65, 65,,,]);
-} else if (hauptMode==1) {
-hauptMode = 0;
-insertNewCoin([, 65, 65,,,]);
-hauptMode = 1;
-}
 updateInfoShelf();redraw();
-ui.partW.ref.focus();
-ui.partW.ref.select();
+ui.partX.ref.focus();
+ui.partX.ref.select();
 return;
-
-
 } else if (ui.partW.ref.value.includes("+")) { 
            ui.partW.ref.value =
            ui.partW.ref.value.replace(/\+/g, "");
@@ -93,7 +65,6 @@ updateInfoShelf();redraw();
 ui.partH.ref.focus();
 ui.partH.ref.select();
 return;
-
 }
 inputPartNav("partW");
 if (coinFocus!=null) {
@@ -107,13 +78,6 @@ ui.partH.input                   = function() {
        if (ui.partH.ref.value.includes("-")) { 
            ui.partH.ref.value =
            ui.partH.ref.value.replace(/-/g, "");
-if (hauptMode==0) {
-insertNewCoin([, 65, 65,,,]);
-} else if (hauptMode==1) {
-hauptMode = 0;
-insertNewCoin([, 65, 65,,,]);
-hauptMode = 1;
-}
 updateInfoShelf();redraw();
 ui.partW.ref.focus();
 ui.partW.ref.select();
