@@ -528,11 +528,13 @@ Y.lineWidth=gW;
 Y.beginPath();
 Y.fillStyle=U;
 Y.font=bF;
+Y.font = "400 32px dckimPixelMono";
 Y.textBaseline="top";
 
 if (gW!=0) {
 Y.fillText(`                 h${Math.floor(window.innerHeight/T)}w${Math.floor(window.innerWidth/T)}/${window.innerWidth}x${window.innerHeight}/${T.toString().padStart(' ',3)} --- z-ECHELON=${pageEchelon / 100000000 }`,bW,bW);
 Y.font=bFarr;
+Y.font = "400 32px dckimPixelMono";
 //Y.fillText(`${visualFlowIndicator()}`,bW,bW);
 Y.fillText(`${layerName}`,bW,bW);
 Y.stroke();
@@ -1124,7 +1126,9 @@ spaceViewOff();
 
 console.log(
 `
-%c     boot sequence successful...
-
-HW - It's all I know...`,
-'color: #DEFF1C; font-size: 24px; font-style: italic; font-family: JungYulKim2; text-shadow: 2px 2px 4px black;');
+%c
+build date:
+${document.querySelector('meta[name="last-build"]').content}
+boot sequence successful:
+HW - it's all i know...`,
+'color: rgb( 77,136,255); font-size: 32px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;');

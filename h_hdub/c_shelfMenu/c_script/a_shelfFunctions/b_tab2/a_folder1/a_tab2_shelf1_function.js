@@ -24,7 +24,7 @@ ui.cursorShutoff.click               = function() { if (Cur.style.display=='none
 
 
 
-const userCustomTheme    = {};
+var   userCustomTheme    = {};
       userCustomTheme.currentTheme = {};
       userCustomTheme.a0 = {};
       userCustomTheme.b1 = {};

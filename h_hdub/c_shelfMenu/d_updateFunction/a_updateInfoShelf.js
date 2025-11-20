@@ -51,7 +51,7 @@ partX.value   = parseInt(Cur.style.left);
 partW.value  = 64                      ;
 partH.value = 64                      ;
 partNom.value   = "specialCursor"         ;
-partText.value  = `This little special cursor does some small jobs, but it's capability is not yet fully utilized. What other interesting things might this cursor be used for?`;
+partText.value  = `What does that special cursor even do?`;
 
 }
 

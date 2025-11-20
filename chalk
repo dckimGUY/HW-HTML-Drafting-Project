@@ -4,25 +4,29 @@
 
 cat y_header.txt > index.html;
 
-echo '<link rel="stylesheet" href="e_stylesheets/a_style.css?v=' >> index.html;
+echo -n '<link rel="stylesheet" href="e_stylesheets/a_style.css?v=' >> index.html;
                   echo -n $(date -r ./e_stylesheets/a_style.css +%Y%m%d%H%M%S) >> index.html;
-                                                                 echo -n '"/>' >> index.html;
-echo '<link rel="stylesheet" href="e_stylesheets/b_style.css?v=' >> index.html;
+                                                                 echo '"/>' >> index.html;
+echo -n '<link rel="stylesheet" href="e_stylesheets/b_style.css?v=' >> index.html;
                   echo -n $(date -r ./e_stylesheets/b_style.css +%Y%m%d%H%M%S) >> index.html;
-                                                                 echo -n '"/>' >> index.html;
-echo '<link rel="stylesheet" href="e_stylesheets/c_style.css?v=' >> index.html;
+                                                                 echo '"/>' >> index.html;
+echo -n '<link rel="stylesheet" href="e_stylesheets/c_style.css?v=' >> index.html;
                   echo -n $(date -r ./e_stylesheets/c_style.css +%Y%m%d%H%M%S) >> index.html;
-                                                                 echo -n '"/>' >> index.html;
-echo '<link rel="stylesheet" href="e_stylesheets/d_style.css?v=' >> index.html;
+                                                                 echo '"/>' >> index.html;
+echo -n '<link rel="stylesheet" href="e_stylesheets/d_style.css?v=' >> index.html;
                   echo -n $(date -r ./e_stylesheets/d_style.css +%Y%m%d%H%M%S) >> index.html;
-                                                                 echo -n '"/>' >> index.html;
-echo '<link rel="stylesheet" href="e_stylesheets/e_style.css?v=' >> index.html;
+                                                                 echo '"/>' >> index.html;
+echo -n '<link rel="stylesheet" href="e_stylesheets/e_style.css?v=' >> index.html;
                   echo -n $(date -r ./e_stylesheets/e_style.css +%Y%m%d%H%M%S) >> index.html;
-                                                                 echo -n '"/>' >> index.html;
+                                                                 echo '"/>' >> index.html;
 
-echo  '<meta name="last-build" content="' >> index.html;
+echo >> index.html;
+
+echo -n '<meta name="last-build" content="' >> index.html;
    echo -n $(date -u +%Y-%m-%dT%H:%M:%SZ) >> index.html;
-                             echo -n '">' >> index.html;
+                             echo '">' >> index.html;
+
+echo >> index.html;
 
 echo '<body>' >> index.html;
 echo '<div id="utilityLayer0"           ></div>' >> index.html;

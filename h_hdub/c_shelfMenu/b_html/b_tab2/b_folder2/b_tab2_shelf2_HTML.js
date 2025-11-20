@@ -91,7 +91,7 @@ shelfMenuHTML.tab2.folder2.HTML = `
 <input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005">
 <input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005">
 <input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005">
-<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0" max="1"    step="0.005">
+<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0.05" max="1"    step="0.005">
 
 <input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color">
 <input id="coin62796" name="coin62796" class="input_ input_coin62796" type="color">
