@@ -63,14 +63,21 @@ shelfMenuHTML.tab1.folder1.style = `
 .button_partPrev:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-larr_focus.gif?v=20251119163205");  }
 .button_partPrev:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-larr_hover.gif?v=20251119163428");  }
 .button_partPrev:active          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-larr_active.gif?v=20251119163156"); }
+
+.button_showNames                { position: absolute; border: none; margin: none; padding: none; left:     64px; top:    185px; width:     72px; height:     25px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/showName.png?v=20251120092442");        }
+.button_showNames:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/showName_focus.png?v=20251120092844");  }
+.button_showNames:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/showName_hover.png?v=20251120092850");  }
+.button_showNames:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/showName_active.png?v=20251120092847"); }
+
+
 .button_partNext                 { position: absolute; border: none; margin: none; padding: none; left:    141px; top:    186px; width:     40px; height:     21px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr.gif?v=20251119163218");        }
 .button_partNext:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr_focus.gif?v=20251119163306");  }
 .button_partNext:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr_hover.gif?v=20251119163241");  }
 .button_partNext:active          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-1-rarr_active.gif?v=20251119163335"); }
 
-.input_partText                  { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    210px; width:    184px; height:    253px; outline-offset: -4px; font-size: 16px; }
+.input_partText                  { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    240px; width:    184px; height:    225px; outline-offset: -4px; font-size: 12px; }
 .input_pathEntry                 { position: absolute; border: none; margin: none; padding: none; left:     61px; top:    469px; width:    131px; height:     22px; outline-offset: -4px; }
 </style>
 `;
-

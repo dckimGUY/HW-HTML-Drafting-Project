@@ -46,7 +46,7 @@ ui[name].ref   = document.getElementById(name);
 
 /* TAB 1, FOLDER 1 */
 
-["xrayGrey", "xrayMagenta", "xrayCyan", "partY", "partX", "partW", "partH", "cursorAuto", "cursorXS", "cursorS", "cursorM", "cursorL", "cursorXL", "cursorNum", "partNom", "partPrev", "partNext", "partText", "pathEntry"].forEach((name) => {
+["xrayGrey", "xrayMagenta", "xrayCyan", "partY", "partX", "partW", "partH", "cursorAuto", "cursorXS", "cursorS", "cursorM", "cursorL", "cursorXL", "cursorNum", "partNom", "partPrev", "showNames", "partNext", "partText", "pathEntry"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });

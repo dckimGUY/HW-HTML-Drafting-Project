@@ -105,8 +105,12 @@ ui.cursorM.click                 = function() { useCustomCursors = true ; cursor
 ui.cursorL.click                 = function() { useCustomCursors = true ; cursorSet = cursorSize[3][0]; cursorSetup(); };
 ui.cursorXL.click                = function() { useCustomCursors = true ; cursorSet = cursorSize[4][0]; cursorSetup(); };
 ui.cursorNum.click               = function() {  };
-ui.partNom.input                 = function() { inputPartNav("partNom"); if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; } };
+
+ui.partNom.input                 = function() { inputPartNav("partNom"); if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; } redraw(); };
 ui.partPrev.click                = function() { focusPrevious(); updateInfoShelf(); redraw(); };
+
+ui.showNames.click               = function() { if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw(); };
+
 ui.partNext.click                = function() { focusNext();     updateInfoShelf(); redraw(); };
 ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value; } };
 ui.pathEntry.input               = function() { ui.pathEntry.ref.value = ui.pathEntry.ref.value.replace(/\\/g, "/"); hdub_imagePath = ui.pathEntry.ref.value; localStorage.setItem("hdub_imagePath", hdub_imagePath); };

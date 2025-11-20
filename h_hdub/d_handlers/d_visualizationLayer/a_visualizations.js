@@ -16,25 +16,19 @@ Vis.height=window.innerHeight;
 ui.coin56897.ref.value = visualOpacity;
 Vis.style.opacity=visualOpacity;
 
+var drawPartNames = "false";
 
+if (localStorage.getItem("drawPartNames")) { drawPartNames = localStorage.getItem("drawPartNames"); };
 if (localStorage.getItem("xrayVision")) { xrayVision = localStorage.getItem("xrayVision"); };
 
 function redraw(element){
-
 Vis.width=window.innerWidth;
 Vis.height=window.innerHeight;
-
 if (showVisualizations=="true") {
 const zArray = Array.from(utilityLayer0.children);
 const zStack = zArray.map(el => ({ id: el, z: parseInt(getComputedStyle(el).zIndex) || 0 })).sort((a, b) => a.z -b.z);
-
 let edgeThickness = edgeQ - thinOutline * 2;
-
-
-
 for (let j=0; j < zStack.length; j++) {
-
-
 let l, t, w, h;
 
 function xray() {
@@ -42,7 +36,6 @@ if (j!=0) {
 Y.setLineDash([8,4]);
 for (k = j; k >= 0; k--) {
 Y.lineWidth = xrayWidth;
-
 if (zStack[k].id == coinFocus) {
 if (curFocus==0) {
 l = parseInt(zStack[k].id.style.left) + xrayWidth/2 + thinOutline - window.scrollX;
@@ -75,18 +68,8 @@ Y.strokeRect(l,t,w,h);
 }
 }
 Y.setLineDash([0]);
-
 }
 } /* END OF FUNCTION CODE xray */
-
-
-
-
-
-
-
-
-
 
 let Y=Vis.getContext("2d");
 l = parseInt(zStack[j].id.style.left) - window.scrollX;
@@ -114,7 +97,6 @@ Y.clearRect(l + thinOutline * 2 + borderWidth,t + thinOutline * 2 + borderWidth,
 Y.fillRect(l + edgeThickness + thinOutline,t + edgeThickness + thinOutline,w -((edgeThickness + thinOutline * 2 + borderWidth)),h -((edgeThickness + thinOutline * 2 + borderWidth)));
 Y.clearRect(l + edgeThickness + thinOutline * 2,t + edgeThickness + thinOutline * 2,w -((edgeThickness + thinOutline * 4 + borderWidth)),h -((edgeThickness + thinOutline * 4 + borderWidth)));
 }
-
 } else if (mode==6&&(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
 Y.fillStyle   = lineColour;
@@ -122,30 +104,19 @@ Y.fillRect(l + edgeThickness + thinOutline,        t + borderWidth + thinOutline
 Y.fillRect(     l + borderWidth + thinOutline,   t + edgeThickness + thinOutline,              w -((borderWidth + thinOutline) * 2)   ,    h -((edgeThickness + thinOutline) * 2)    );
 Y.clearRect(l + edgeThickness + thinOutline + thinOutline,        t + borderWidth + thinOutline + thinOutline,        w -((edgeThickness + thinOutline) * 2) - (thinOutline * 2),         h -((borderWidth + thinOutline) * 2) - (thinOutline * 2));
 Y.clearRect(l + borderWidth + thinOutline + thinOutline, t + edgeThickness + thinOutline + thinOutline,      w -((borderWidth + thinOutline) * 2) - (thinOutline * 2)  ,   h -((edgeThickness + thinOutline) * 2) - (thinOutline * 2)      );
-
 } else if (mode==8||mode==9||!(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
-
 if (mode==8||mode==9) {
-
-
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
 Y.fillStyle   = lineColour;
 Y.fillRect(l + borderWidth * 2 + thinOutline,t + borderWidth * 2 + thinOutline,w -(thinOutline * 2) - (borderWidth * 4),h -(thinOutline * 2) - (borderWidth * 4));
 Y.clearRect(l + borderWidth * 2 + thinOutline + thinOutline,t + borderWidth * 2 + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 4) - (thinOutline * 2));
-
-
 } else {
-
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
 Y.fillStyle   = lineColour;
 Y.fillRect(l + borderWidth + thinOutline,t + borderWidth + thinOutline,w -(thinOutline * 2) - (borderWidth * 2),h -(thinOutline * 2) - (borderWidth * 2));
 Y.clearRect(l + borderWidth + thinOutline + thinOutline,t + borderWidth + thinOutline + thinOutline,w -(thinOutline * 2) - (borderWidth * 2) - (thinOutline * 2),h -(thinOutline * 2) - (borderWidth * 2) - (thinOutline * 2));
-
-
-
 }
 }
-
 
 if (mode==9) {
 Y.setLineDash([borderWidth * 2, borderWidth * 4]);
@@ -162,14 +133,19 @@ if (xrayVision=="true") {
 xray();
 }
 
-
-
-
-
-
-
+if (drawPartNames=="true") {
+Y.strokeStyle = lineColour;
+Y.lineWidth = 3;
+     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = greyColour; }
+else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = pinkColour; }
+else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = blueColour; }
+Y.font = "400 36px dckimPixelMono";
+Y.textAlign = "start";
+Y.textBaseline = "bottom";
+Y.strokeText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
+Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
+}
 
 } /* END OF THE FOR LOOP */
-
 } /* END OF CONDITION showVisualizations */
 };

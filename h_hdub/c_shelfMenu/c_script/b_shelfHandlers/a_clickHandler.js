@@ -39,6 +39,7 @@ case ui.cursorL.ref:             ui.cursorL.click()              ; break;
 case ui.cursorXL.ref:            ui.cursorXL.click()             ; break;
 case ui.cursorNum.ref:           ui.cursorNum.click()            ; break;
 case ui.partPrev.ref:            ui.partPrev.click()             ; break;
+case ui.showNames.ref:           ui.showNames.click()            ; break;
 case ui.partNext.ref:            ui.partNext.click()             ; break;
 
 /* tab 1 folder 2 */

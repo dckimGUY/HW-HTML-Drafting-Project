@@ -15,6 +15,7 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <button id="cursorNum" class="button_ button_cursorNum" tabindex="-1" title=""></button>
 <input id="partNom" name="partNom" class="input_ input_partNom dckimPixelMono" type="value" placeholder="emptyFile" spellcheck="false">
 <button id="partPrev" class="button_ button_partPrev" tabindex="-1" title=""></button>
+<button id="showNames" class="button_ button_showNames" title="show part names, click part to copy name"></button>
 <button id="partNext" class="button_ button_partNext" tabindex="-1" title=""></button>
 <textarea id="partText" class="textarea_ input_partText dckimPixelMono" placeholder="empty" spellcheck="false"></textarea>
 <input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" placeholder="imagePath/" spellcheck="false">
