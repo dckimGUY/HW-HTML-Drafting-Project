@@ -223,7 +223,7 @@ if (hotDog) { return; }
 /*    `    */ if (kC == 192 && cC ==  96) { toggleInterfaceShelf();        }/*    ~    */ if (kC == 192 && cC == 126) { toggleInterfaceLayer();        }
 /*    1    */ if (kC ==  49 && cC ==  49) { makeTopLayer("b_layer1");      }/*    !    */ if (kC ==  49 && cC ==  33) { saveInternalImage();           }
 /*    2    */ if (kC ==  50 && cC ==  50) { makeTopLayer("c_layer2");      }/*    @    */ if (kC ==  50 && cC ==  64) { setDragPullFromContext();      }
-/*    3    */ if (kC ==  51 && cC ==  51) { makeTopLayer("d_layer3");      }/*    #    */ if (kC ==  51 && cC ==  35) { togglePartNames();             }
+/*    3    */ if (kC ==  51 && cC ==  51) { makeTopLayer("d_layer3");      }/*    #    */ if (kC ==  51 && cC ==  35) {  if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw();              }
 /*    4    */ if (kC ==  52 && cC ==  52) { makeTopLayer("e_layer4");      }/*    $    */ if (kC ==  52 && cC ==  36) { fMan(keyInfo);                 }
 /*    5    */ if (kC ==  53 && cC ==  53) { makeTopLayer("f_layer5");      }/*    %    */ if (kC ==  53 && cC ==  37) { enterPageEchelon();            }
 /*    6    */ if (kC ==  54 && cC ==  54) { makeTopLayer("g_layer6");      }/*    ^    */ if (kC ==  54 && cC ==  94) { fMan(keyInfo);                 }

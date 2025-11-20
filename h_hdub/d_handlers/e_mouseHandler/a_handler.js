@@ -677,14 +677,11 @@ updateInfoShelf();
 
 
 
-
-
-
-
-
-
-
 document.addEventListener("click", (event) => {
+
+if (coinFocus!=null&&drawPartNames=="true") {
+copyToClipboard(coinFocus.id);
+}
 
 if (mode==0) { curFocus=0; modeRouter(event,1); }
 
