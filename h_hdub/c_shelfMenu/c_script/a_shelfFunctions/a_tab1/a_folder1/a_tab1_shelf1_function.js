@@ -3,16 +3,20 @@ ui.xrayMagenta.click             = function() { if (xrayVision=="true") { xrayVi
 ui.xrayCyan.click                = function() { if (xrayVision=="true") { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } else { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } };
 
 ui.partY.input                   = function() { 
-       if (ui.partY.ref.value.includes("-")) { 
+       if (ui.partY.ref.value.includes("-")||ui.partY.ref.value.includes(":")) { 
            ui.partY.ref.value =
            ui.partY.ref.value.replace(/-/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/:/g, "");
 updateInfoShelf();redraw();
 ui.partH.ref.focus();
 ui.partH.ref.select();
 return;
-} else if (ui.partY.ref.value.includes("+")) { 
+} else if (ui.partY.ref.value.includes("+")||ui.partY.ref.value.includes(";")) { 
            ui.partY.ref.value =
            ui.partY.ref.value.replace(/\+/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/;/g, "");
 updateInfoShelf();redraw();
 ui.partX.ref.focus();
 ui.partX.ref.select();
@@ -27,16 +31,20 @@ updateInfoShelf();redraw();
 };
 
 ui.partX.input                   = function() { 
-       if (ui.partX.ref.value.includes("-")) { 
+       if (ui.partX.ref.value.includes("-")||ui.partX.ref.value.includes(":")) { 
            ui.partX.ref.value =
            ui.partX.ref.value.replace(/-/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/:/g, "");
 updateInfoShelf();redraw();
 ui.partY.ref.focus();
 ui.partY.ref.select();
 return;
-} else if (ui.partX.ref.value.includes("+")) { 
+} else if (ui.partX.ref.value.includes("+")||ui.partX.ref.value.includes(";")) { 
            ui.partX.ref.value =
            ui.partX.ref.value.replace(/\+/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/;/g, "");
 updateInfoShelf();redraw();
 ui.partW.ref.focus();
 ui.partW.ref.select();
@@ -51,16 +59,20 @@ updateInfoShelf();redraw();
 };
 
 ui.partW.input                   = function() {
-       if (ui.partW.ref.value.includes("-")) { 
+       if (ui.partW.ref.value.includes("-")||ui.partW.ref.value.includes(":")) { 
            ui.partW.ref.value =
            ui.partW.ref.value.replace(/-/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/:/g, "");
 updateInfoShelf();redraw();
 ui.partX.ref.focus();
 ui.partX.ref.select();
 return;
-} else if (ui.partW.ref.value.includes("+")) { 
+} else if (ui.partW.ref.value.includes("+")||ui.partW.ref.value.includes(";")) { 
            ui.partW.ref.value =
            ui.partW.ref.value.replace(/\+/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/;/g, "");
 updateInfoShelf();redraw();
 ui.partH.ref.focus();
 ui.partH.ref.select();
@@ -75,16 +87,20 @@ updateInfoShelf();redraw();
 };
 
 ui.partH.input                   = function() {
-       if (ui.partH.ref.value.includes("-")) { 
+       if (ui.partH.ref.value.includes("-")||ui.partH.ref.value.includes(":")) { 
            ui.partH.ref.value =
            ui.partH.ref.value.replace(/-/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/:/g, "");
 updateInfoShelf();redraw();
 ui.partW.ref.focus();
 ui.partW.ref.select();
 return;
-} else if (ui.partH.ref.value.includes("+")) { 
+} else if (ui.partH.ref.value.includes("+")||ui.partH.ref.value.includes(";")) { 
            ui.partH.ref.value =
            ui.partH.ref.value.replace(/\+/g, "");
+           ui.partY.ref.value =
+           ui.partY.ref.value.replace(/;/g, "");
 updateInfoShelf();redraw();
 ui.partY.ref.focus();
 ui.partY.ref.select();
@@ -107,11 +123,11 @@ ui.cursorXL.click                = function() { useCustomCursors = true ; cursor
 ui.cursorNum.click               = function() {  };
 
 ui.partNom.input                 = function() { inputPartNav("partNom"); if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; } redraw(); };
-ui.partPrev.click                = function() { focusPrevious(); updateInfoShelf(); redraw(); };
+ui.partPrev.click                = function() { focusPrevious(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); }; updateInfoShelf(); redraw(); };
 
 ui.showNames.click               = function() { if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw(); };
 
-ui.partNext.click                = function() { focusNext();     updateInfoShelf(); redraw(); };
+ui.partNext.click                = function() { focusNext(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); };     updateInfoShelf(); redraw(); };
 ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value; } };
 ui.pathEntry.input               = function() { ui.pathEntry.ref.value = ui.pathEntry.ref.value.replace(/\\/g, "/"); hdub_imagePath = ui.pathEntry.ref.value; localStorage.setItem("hdub_imagePath", hdub_imagePath); };
 

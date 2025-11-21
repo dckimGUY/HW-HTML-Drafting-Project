@@ -43,10 +43,10 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    L    */ if (kC ==  76 && cC ==  76) { hjklRouter(keyInfo);                                                                                                                        }
 /*    Z    */ if (kC ==  90 && cC ==  90) { noteCoin("Z<br><span style='font-size: 0.5em;'>z-index mode</span>",durationC); manageGlobalZ(0); modeRouter(e,9);                          }
 /*    X    */ if (kC ==  88 && cC ==  88) {                          deleteCoin(keyInfo);                                                                                               }
-/*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("C<br><span style='font-size: 0.5em;'>cursor</span>",durationC); cursorToCoin(keyInfo);                                            }
+/*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("C<br><span style='font-size: 0.5em;'>cursor</span>",durationC); cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});   }
 /*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("V<br><span style='font-size: 0.5em;'>flow document</span>",durationC); lastFlow = "global"; reflowGlobal(rev,0);                  }
 /*    B    */ if (kC ==  66 && cC ==  66) {                          buttonizer();                                                                                                      }
-/*    N    */ if (kC ==  78 && cC ==  78) {                          tabSelector(1); folder1Selector(1); document.getElementById("partY").focus();                                      }
+/*    N    */ if (kC ==  78 && cC ==  78) { tabSelector(1); folder1Selector(1); document.getElementById("partY").focus(); document.getElementById("partY").select();                    }
 /*    M    */ if (kC ==  77 && cC ==  77) { noteCoin("M+<br><span style='font-size: 0.5em;'>set mark</span>",durationC); charQ1=0;charM=1;charF=0;                                      }
 /*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/

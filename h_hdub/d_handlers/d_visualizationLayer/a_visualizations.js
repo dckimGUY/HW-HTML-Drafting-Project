@@ -143,7 +143,7 @@ Y.font = "400 36px dckimPixelMono";
 Y.textAlign = "start";
 Y.textBaseline = "bottom";
 //Y.strokeText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
-Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
+Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left) - window.scrollX, parseInt(zStack[j].id.style.top) - window.scrollY);
 }
 
 } /* END OF THE FOR LOOP */

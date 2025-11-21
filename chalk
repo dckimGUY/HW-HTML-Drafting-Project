@@ -36,6 +36,7 @@ echo '<div id="gridLayer"               ></div>' >> index.html;
 echo '<div id="visualizationsLayer"     ></div>' >> index.html;
 echo '<div id="mouseIconLayer"          ></div>' >> index.html;
 echo '<div id="interfaceShelf"          ></div>' >> index.html;
+echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> index.html;
 echo '<div id="scripts">' >> index.html;
 echo 'const' > ./h_hdub/z_hwObject/a_hwObject.js;
 echo 'h_hdub = {};' >> ./h_hdub/z_hwObject/a_hwObject.js;

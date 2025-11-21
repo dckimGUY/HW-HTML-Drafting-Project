@@ -614,7 +614,7 @@ if (mouseIsDogged==false) {
 
 if (mousedown.button==1&&event.button==1&&mousedown.target==event.target) {
 mouseGiveFocus(mouseInfo);
-deleteCoin([,88,88,,]);
+//deleteCoin([,88,88,,]);
 
 //edgeDetect.style.display= "none";
 

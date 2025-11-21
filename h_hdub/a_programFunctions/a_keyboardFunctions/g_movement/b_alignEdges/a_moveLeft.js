@@ -47,7 +47,7 @@ cl.dataset.left = parseInt(newValue) + "px";
 }
 }
 if (parseInt(newValue)>=0&&newValue) {
-if (cl==Cur) {cl.style.left   = parseInt(newValue) + "px";}
+if (cl==Cur) {cl.style.left   = parseInt(newValue) + "px"; Cur.scrollIntoView({behavior:'auto', block: 'center', inline: 'center'});}
 if (cl==Cur) {cl.dataset.left = parseInt(newValue) + "px";}
 }
 

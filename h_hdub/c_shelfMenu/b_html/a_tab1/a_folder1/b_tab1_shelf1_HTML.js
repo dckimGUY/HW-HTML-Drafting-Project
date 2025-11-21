@@ -18,7 +18,7 @@ shelfMenuHTML.tab1.folder1.HTML = `
 
 <input id="partNom" name="partNom" class="input_ input_partNom dckimPixelMono" type="value" placeholder="emptyFile" spellcheck="false" title="comma period = cycle parts, < > = cycle levels">
 <button id="partPrev" class="button_ button_partPrev" tabindex="-1" title=""></button>
-<button id="showNames" class="button_ button_showNames" title="show part names, click part to copy name"></button>
+<button id="showNames" class="button_ button_showNames" title="show part names, click part to copy name, shift + click to copy the group as an array, ctrl + shift + click to get the innerHTML"></button>
 <button id="partNext" class="button_ button_partNext" tabindex="-1" title=""></button>
 <textarea id="partText" class="textarea_ input_partText dckimPixelMono" placeholder="empty" spellcheck="false"></textarea>
 <input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" placeholder="imagePath/" spellcheck="false">

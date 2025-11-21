@@ -53,7 +53,7 @@ coinTrip.sel2[j].style.top  = coinTrip.sel2[j].dataset.top ;
 if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
 if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top  = parseInt(mousedown.target.dataset.top)  + Ymove + "px"; } else { mousedown.target.style.top  = 0; }
 
-} else if (!alt&&!ctrl&&!shift&&mousedown.button==0) {
+} else if (!alt&&!ctrl&&!shift&&(mousedown.button==0||mousedown.button==1)) {
 
 
 

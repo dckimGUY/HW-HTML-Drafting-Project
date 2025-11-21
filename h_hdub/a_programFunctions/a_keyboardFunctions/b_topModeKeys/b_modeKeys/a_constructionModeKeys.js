@@ -31,7 +31,7 @@ if (shift==true||hauptMode==0) {
 /*    l    */ if (kC ==  76 && cC == 108) { hjklRouter(keyInfo);                                                                                                                 }
 /*    z    */ if (kC ==  90 && cC == 122) { noteCoin("<u>Z</u><br><span style='font-size: 0.5em;'>Z by colour</span>",durationC); manageTripartiteZ(0); modeRouter(e,9);         }
 /*    x    */ if (kC ==  88 && cC == 120) {                                 deleteCoin(keyInfo);                                                                                 }
-/*    c    */ if (kC ==  67 && cC ==  99) { noteCoin("<u>C</u><br><span style='font-size: 0.5em;'>coinToCursor</span>",durationC); coinToCursor(keyInfo);                        }
+/*    c    */ if (kC ==  67 && cC ==  99) { noteCoin("<u>C</u><br><span style='font-size: 0.5em;'>coinToCursor</span>",durationC); coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                        }
 /*    v    */ if (kC ==  86 && cC == 118) { noteCoin("<u>V</u><br><span style='font-size: 0.5em;'>flow by colour</span>",durationC); lastFlow="colour"; reflowPerTrip(keyInfo);  }
 /*    b    */ if (kC ==  66 && cC ==  98) { noteCoin("<u>B</u><br><span style='font-size: 0.5em;'>copy opener contents</span>",durationC); copyOpenerContents(keyInfo);          }
 /*    n    */ if (kC ==  78 && cC == 110) {                                 aioNRouter(keyInfo);                                                                                 }

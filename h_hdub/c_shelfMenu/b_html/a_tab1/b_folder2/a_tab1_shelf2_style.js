@@ -75,43 +75,38 @@ text-shadow: 0px .5px 0px #FF00FF, .5px .5px 0px #5A0000, .5px 0px 0px #5A0000;
 
 
 
-.button_setLayer1                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    266px; width:     34px; height:     42px; }
-.button_setLayer2                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    266px; width:     34px; height:     42px; }
-.button_setLayer3                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    266px; width:     34px; height:     42px; }
-.button_setLayer4                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    266px; width:     34px; height:     42px; }
-.button_setLayer5                { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    266px; width:     34px; height:     42px; }
-
-.button_setLayer6                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    312px; width:     34px; height:     42px; }
-.button_setLayer7                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    312px; width:     34px; height:     42px; }
-.button_setLayer8                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    312px; width:     34px; height:     42px; }
-.button_setLayer9                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    312px; width:     34px; height:     42px; }
-.button_setLayer10               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    312px; width:     34px; height:     42px; }
-
-.button_setLayer11               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    358px; width:     34px; height:     42px; }
-.button_setLayer12               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    358px; width:     34px; height:     42px; }
-.button_setLayer13               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    358px; width:     34px; height:     42px; }
-.button_setLayer14               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    358px; width:     34px; height:     42px; }
-.button_setLayer15               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    358px; width:     34px; height:     42px; }
-
-.button_setLayer16               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    404px; width:     34px; height:     42px; }
-.button_setLayer17               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    404px; width:     34px; height:     42px; }
-.button_setLayer18               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    404px; width:     34px; height:     42px; }
-.button_setLayer19               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    404px; width:     34px; height:     42px; }
-.button_setLayer20               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    404px; width:     34px; height:     42px; }
-
-.button_setLayer21               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    450px; width:     34px; height:     42px; }
-.button_setLayer22               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    450px; width:     34px; height:     42px; }
-.button_setLayer23               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    450px; width:     34px; height:     42px; }
-.button_setLayer24               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    450px; width:     34px; height:     42px; }
-.button_setLayer25               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    450px; width:     34px; height:     42px; }
+.button_setLayer1                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    266px; width:     34px; height:     32px; }
+.button_setLayer2                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    266px; width:     34px; height:     32px; }
+.button_setLayer3                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    266px; width:     34px; height:     32px; }
+.button_setLayer4                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    266px; width:     34px; height:     32px; }
+.button_setLayer5                { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    266px; width:     34px; height:     32px; }
+.button_setLayer6                { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    302px; width:     34px; height:     32px; }
+.button_setLayer7                { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    302px; width:     34px; height:     32px; }
+.button_setLayer8                { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    302px; width:     34px; height:     32px; }
+.button_setLayer9                { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    302px; width:     34px; height:     32px; }
+.button_setLayer10               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    302px; width:     34px; height:     32px; }
+.button_setLayer11               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    337px; width:     34px; height:     32px; }
+.button_setLayer12               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    337px; width:     34px; height:     32px; }
+.button_setLayer13               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    337px; width:     34px; height:     32px; }
+.button_setLayer14               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    337px; width:     34px; height:     32px; }
+.button_setLayer15               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    337px; width:     34px; height:     32px; }
+.button_setLayer16               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    373px; width:     34px; height:     32px; }
+.button_setLayer17               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    373px; width:     34px; height:     32px; }
+.button_setLayer18               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    373px; width:     34px; height:     32px; }
+.button_setLayer19               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    373px; width:     34px; height:     32px; }
+.button_setLayer20               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    373px; width:     34px; height:     32px; }
+.button_setLayer21               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer22               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer23               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer24               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer25               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    408px; width:     34px; height:     32px; }
 
 .button_setLevel                { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level.png?v=20251102205813");        }
 .button_setLevel:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_focus.png?v=20251102205813");  }
-.button_setLevel:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_hover.gif?v=20251102205813"); border-radius: 4px; outline-offset: -5px; outline: 3px double lime; }
+.button_setLevel:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_hover.gif?v=20251120222931"); border-radius: 4px; outline-offset: -5px; outline: 3px double lime; }
 .button_setLevel:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_active.png?v=20251102205813"); }
 
 
 
 </style>
 `;
-

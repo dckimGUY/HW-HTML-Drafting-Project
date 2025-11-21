@@ -56,7 +56,7 @@ coinTrip.sel2[j].dataset.left = coinTrip.sel2[j].style.left;
 cl.style.left=newValue;
 cl.dataset.left=newValue;
 }
-if (cl==Cur) {cl.style.left   = parseInt(newValue) + "px";}
+if (cl==Cur) {cl.style.left   = parseInt(newValue) + "px"; Cur.scrollIntoView({behavior:'auto', block: 'center', inline: 'center'});}
 if (cl==Cur) {cl.dataset.left = parseInt(newValue) + "px";}
 
 
