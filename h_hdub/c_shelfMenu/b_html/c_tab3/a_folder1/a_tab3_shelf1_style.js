@@ -74,51 +74,55 @@ left: 22px;
 .button_cycleColoursRight:focus  { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/cycleColourRight_focus.png?v=20251116122950");  }
 .button_cycleColoursRight:hover  { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/cycleColourRight_hover.png?v=20251116123026");  }
 .button_cycleColoursRight:active { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/cycleColourRight_active.png?v=20251116122728"); }
-.button_navPoint7                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    322px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7.png?v=20251116102505");        }
-.button_navPoint7:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7_focus.png?v=20251116123532");  }
-.button_navPoint7:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7_hover.png?v=20251116123602");  }
-.button_navPoint7:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7_active.png?v=20251116123552"); }
-.button_navPoint8                { position: absolute; border: none; margin: none; padding: none; left:     76px; top:    322px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8.png?v=20251116102540");        }
-.button_navPoint8:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8_focus.png?v=20251116123537");  }
-.button_navPoint8:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8_hover.png?v=20251116123607");  }
-.button_navPoint8:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8_active.png?v=20251116123557"); }
-.button_navPoint9                { position: absolute; border: none; margin: none; padding: none; left:    132px; top:    322px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9.png?v=20251116102612");        }
-.button_navPoint9:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_focus.png?v=20251116123620");  }
-.button_navPoint9:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_hover.png?v=20251116123634");  }
-.button_navPoint9:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_active.png?v=20251116123629"); }
-.button_navPoint4                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    377px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4.png?v=20251116102654");        }
-.button_navPoint4:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_focus.png?v=20251116123338");  }
-.button_navPoint4:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_hover.png?v=20251116123419");  }
-.button_navPoint4:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_active.png?v=20251116123356"); }
-.button_navPoint5                { position: absolute; border: none; margin: none; padding: none; left:     76px; top:    377px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5.png?v=20251116102733");        }
-.button_navPoint5:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5_focus.png?v=20251116123442");  }
-.button_navPoint5:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5_hover.png?v=20251116123508");  }
-.button_navPoint5:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5_active.png?v=20251116123457"); }
-.button_navPoint6                { position: absolute; border: none; margin: none; padding: none; left:    132px; top:    377px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6.png?v=20251116102806");        }
-.button_navPoint6:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6_focus.png?v=20251116123438");  }
-.button_navPoint6:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6_hover.png?v=20251116123513");  }
-.button_navPoint6:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6_active.png?v=20251116123502"); }
-.button_navPoint1                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    432px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1.png?v=20251116123141");        }
-.button_navPoint1:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1_focus.png?v=20251116123209");  }
-.button_navPoint1:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1_hover.png?v=20251116123151");  }
-.button_navPoint1:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1_active.png?v=20251116123158"); }
-.button_navPoint2                { position: absolute; border: none; margin: none; padding: none; left:     76px; top:    432px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2.png?v=20251116102916");        }
-.button_navPoint2:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2_focus.png?v=20251116123215");  }
-.button_navPoint2:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2_hover.png?v=20251116123229");  }
-.button_navPoint2:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2_active.png?v=20251116123224"); }
-.button_navPoint3                { position: absolute; border: none; margin: none; padding: none; left:    132px; top:    432px; width:     49px; height:     49px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3.png?v=20251116102948");        }
-.button_navPoint3:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3_focus.png?v=20251116123343");  }
-.button_navPoint3:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3_hover.png?v=20251116123414");  }
-.button_navPoint3:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3_active.png?v=20251116123402"); }
+
+
+
+
+.button_navPoint7                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    322px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7.png?v=20251120134944");        }
+.button_navPoint7:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7_focus.png?v=20251120135527");  }
+.button_navPoint7:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7_hover.png?v=20251120135347");  }
+.button_navPoint7:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point7_active.png?v=20251120135443"); }
+.button_navPoint8                { position: absolute; border: none; margin: none; padding: none; left:     47px; top:    322px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8.png?v=20251120134953");        }
+.button_navPoint8:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8_focus.png?v=20251120135529");  }
+.button_navPoint8:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8_hover.png?v=20251120135351");  }
+.button_navPoint8:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point8_active.png?v=20251120135445"); }
+.button_navPoint9                { position: absolute; border: none; margin: none; padding: none; left:     74px; top:    322px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9.png?v=20251120135004");        }
+.button_navPoint9:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_focus.png?v=20251120135531");  }
+.button_navPoint9:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_hover.png?v=20251120135355");  }
+.button_navPoint9:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_active.png?v=20251120135447"); }
+.button_navPoint4                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    349px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4.png?v=20251120134912");        }
+.button_navPoint4:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_focus.png?v=20251120135518");  }
+.button_navPoint4:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_hover.png?v=20251120135335");  }
+.button_navPoint4:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_active.png?v=20251120135433"); }
+.button_navPoint5                { position: absolute; border: none; margin: none; padding: none; left:     47px; top:    349px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5.png?v=20251120134922");        }
+.button_navPoint5:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5_focus.png?v=20251120135544");  }
+.button_navPoint5:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5_hover.png?v=20251120135404");  }
+.button_navPoint5:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point5_active.png?v=20251120135436"); }
+.button_navPoint6                { position: absolute; border: none; margin: none; padding: none; left:     74px; top:    349px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6.png?v=20251120134930");        }
+.button_navPoint6:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6_focus.png?v=20251120135524");  }
+.button_navPoint6:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6_hover.png?v=20251120135343");  }
+.button_navPoint6:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point6_active.png?v=20251120135438"); }
+.button_navPoint1                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    376px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1.png?v=20251120135018");        }
+.button_navPoint1:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1_focus.png?v=20251120135534");  }
+.button_navPoint1:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1_hover.png?v=20251120135324");  }
+.button_navPoint1:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point1_active.png?v=20251120135426"); }
+.button_navPoint2                { position: absolute; border: none; margin: none; padding: none; left:     47px; top:    376px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2.png?v=20251120135027");        }
+.button_navPoint2:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2_focus.png?v=20251120135512");  }
+.button_navPoint2:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2_hover.png?v=20251120135327");  }
+.button_navPoint2:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point2_active.png?v=20251120135429"); }
+.button_navPoint3                { position: absolute; border: none; margin: none; padding: none; left:     74px; top:    376px; width:     24px; height:     24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3.png?v=20251120135039");        }
+.button_navPoint3:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3_focus.png?v=20251120135516");  }
+.button_navPoint3:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3_hover.png?v=20251120135332");  }
+.button_navPoint3:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point3_active.png?v=20251120135431"); }
 
 
 

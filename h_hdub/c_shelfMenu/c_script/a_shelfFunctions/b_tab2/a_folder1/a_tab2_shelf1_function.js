@@ -113,6 +113,7 @@ visualGridColour3         = userCustomTheme[configName].visualGridColour3       
 gridIncrementArray        = userCustomTheme[configName].gridIncrementArray       ? userCustomTheme[configName].gridIncrementArray       : gridIncrementArray         ; localStorage.setItem("gridIncrementArray"        , gridIncrementArray        );  ;
 cursorDisplay             = userCustomTheme[configName].cursorDisplay            ? userCustomTheme[configName].cursorDisplay            : cursorDisplay              ; localStorage.setItem("cursorDisplay"             , cursorDisplay             ); Cur.style.display = cursorDisplay ;
 mouseIncrement            = visualGridSize1;
+localStorage.setItem("mouseIncrement", mouseIncrement);
 spaceViewOn();
 spaceViewOff();
 Z();

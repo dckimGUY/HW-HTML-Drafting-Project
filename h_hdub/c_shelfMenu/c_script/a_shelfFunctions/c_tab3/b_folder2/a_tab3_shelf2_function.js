@@ -56,7 +56,7 @@ let   buttonCode = "";
 
 buttonCode += `
 <style>
-.${buttonName} {
+#${buttonName} {
 position            :    absolute;
 top                 :         0px;
 left                :         0px;
@@ -76,48 +76,48 @@ if (sheetImages.base.img.src&&sheetImages.base.img.width!=0&&sheetImages.base.im
 viewImageSheet("base");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-.${buttonName}               { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}               { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
 if (sheetImages.focus.img.src&&sheetImages.focus.img.width!=0&&sheetImages.focus.img.height!=0) {
 viewImageSheet("focus");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-.${buttonName}:focus         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:focus         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
 if (sheetImages.hover.img.src&&sheetImages.hover.img.width!=0&&sheetImages.hover.img.height!=0) {
 viewImageSheet("hover");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-.${buttonName}:hover         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:hover         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
 if (sheetImages.active.img.src&&sheetImages.active.img.width!=0&&sheetImages.active.img.height!=0) {
 viewImageSheet("active");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-.${buttonName}:active        { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:active        { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
 if (sheetImages.focusHover.img.src&&sheetImages.focusHover.img.width!=0&&sheetImages.focusHover.img.height!=0) {
 viewImageSheet("focusHover");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-.${buttonName}:focus:hover   { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:focus:hover   { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
 if (sheetImages.focusActive.img.src&&sheetImages.focusActive.img.width!=0&&sheetImages.focusActive.img.height!=0) {
 viewImageSheet("focusActive");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-.${buttonName}:focus:active  { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:focus:active  { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
 
 buttonCode += `
 </style>
-<button id="${buttonName}" class="${buttonName}" onclick=""></button>`;
+<button id="${buttonName}" onclick=""></button>`;
 
 utilityLayer0.children[j].div.innerHTML = buttonCode;
 buttonCode = "";

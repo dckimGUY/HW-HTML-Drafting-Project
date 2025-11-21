@@ -142,7 +142,7 @@ else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = blueColour; }
 Y.font = "400 36px dckimPixelMono";
 Y.textAlign = "start";
 Y.textBaseline = "bottom";
-Y.strokeText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
+//Y.strokeText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
 Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
 }
 

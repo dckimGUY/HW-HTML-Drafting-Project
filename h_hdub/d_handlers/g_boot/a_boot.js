@@ -1125,10 +1125,7 @@ spaceViewOff();
 /* Completion Message */
 
 console.log(
-`
-%c
-build date:
-${document.querySelector('meta[name="last-build"]').content}
+`%c${document.querySelector('meta[name="last-build"]').content}
 boot sequence successful:
 HW - it's all i know...`,
 'color: rgb( 77,136,255); font-size: 32px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;');

@@ -134,6 +134,18 @@ focusNext();updateInfoShelf();redraw();ui[inputBoxName].ref.select();
 ui[inputBoxName].ref.value = ui[inputBoxName].ref.value.replace(/\//g, "");
 focusPrevious();updateInfoShelf();redraw();ui[inputBoxName].ref.select();
 
+/* SWITCH PART NAMES ON AN OFF */
+} else if (ui[inputBoxName].ref.value.includes(" ")) { 
+ui[inputBoxName].ref.value = ui[inputBoxName].ref.value.replace(/ /g, "");
+if (drawPartNames=="false") {
+drawPartNames = "true";
+} else {
+drawPartNames = "false";
+};
+localStorage.setItem("drawPartNames", drawPartNames);
+redraw(); 
+
+
 /* CYCLE THROUGH THE PARTS (FIRST AND LAST) */
 } else if (ui[inputBoxName].ref.value.includes("$")) { 
 ui[inputBoxName].ref.value = ui[inputBoxName].ref.value.replace(/$/g, "");

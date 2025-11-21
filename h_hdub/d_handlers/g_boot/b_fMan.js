@@ -46,7 +46,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("C<br><span style='font-size: 0.5em;'>cursor</span>",durationC); cursorToCoin(keyInfo);                                            }
 /*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("V<br><span style='font-size: 0.5em;'>flow document</span>",durationC); lastFlow = "global"; reflowGlobal(rev,0);                  }
 /*    B    */ if (kC ==  66 && cC ==  66) {                          buttonizer();                                                                                                      }
-/*    N    */ if (kC ==  78 && cC ==  78) {                          explicitEntryForTopAndLeft();                                                                                      }
+/*    N    */ if (kC ==  78 && cC ==  78) {                          tabSelector(1); folder1Selector(1); document.getElementById("partY").focus();                                      }
 /*    M    */ if (kC ==  77 && cC ==  77) { noteCoin("M+<br><span style='font-size: 0.5em;'>set mark</span>",durationC); charQ1=0;charM=1;charF=0;                                      }
 /*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/

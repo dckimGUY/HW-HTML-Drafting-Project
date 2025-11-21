@@ -680,8 +680,39 @@ updateInfoShelf();
 document.addEventListener("click", (event) => {
 
 if (coinFocus!=null&&drawPartNames=="true") {
+
+
+
+/* COPY VARIOUS STUFF TO THE CLIPBOARD IF ENABLED */
+       if (!event.shiftKey&&!event.ctrlKey) {
 copyToClipboard(coinFocus.id);
+} else if ( event.shiftKey&&!event.ctrlKey) {
+let setName = "sel0";
+       if (coinFocus.dataset.coinTrip=="0") {
+setName = "sel0";
+} else if (coinFocus.dataset.coinTrip=="1") {
+setName = "sel1";
+} else if (coinFocus.dataset.coinTrip=="?") {
+setName = "sel2";
 }
+let clipList = '[\n"';
+for ( let j = 0; j < coinTrip[setName].length; j++) {
+if (j != coinTrip[setName].length - 1) {
+clipList += coinTrip[setName][j].id + '",\n"';
+} else {
+clipList += coinTrip[setName][j].id +'"\n]';
+}
+}
+copyToClipboard(clipList);
+} else if ( event.shiftKey&& event.ctrlKey) {
+copyToClipboard(coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML);
+}
+}
+
+
+
+
+
 
 if (mode==0) { curFocus=0; modeRouter(event,1); }
 

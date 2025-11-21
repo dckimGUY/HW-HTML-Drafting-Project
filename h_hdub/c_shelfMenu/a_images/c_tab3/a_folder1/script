@@ -1,0 +1,9 @@
+cp point1.png point1_hover.png; cp point1.png point1_active.png; cp point1.png point1_focus.png; 
+cp point2.png point2_hover.png; cp point2.png point2_active.png; cp point2.png point2_focus.png; 
+cp point3.png point3_hover.png; cp point3.png point3_active.png; cp point3.png point3_focus.png; 
+cp point4.png point4_hover.png; cp point4.png point4_active.png; cp point4.png point4_focus.png; 
+cp point5.png point5_hover.png; cp point5.png point5_active.png; cp point5.png point5_focus.png; 
+cp point6.png point6_hover.png; cp point6.png point6_active.png; cp point6.png point6_focus.png; 
+cp point7.png point7_hover.png; cp point7.png point7_active.png; cp point7.png point7_focus.png; 
+cp point8.png point8_hover.png; cp point8.png point8_active.png; cp point8.png point8_focus.png; 
+cp point9.png point9_hover.png; cp point9.png point9_active.png; cp point9.png point9_focus.png; 
