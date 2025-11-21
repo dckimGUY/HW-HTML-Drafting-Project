@@ -143,6 +143,25 @@ left: 22px;
 
 
 
+#buttonWordList            { position: absolute; border: none; margin: none; padding: none; left:    103px; top:    322px; width:     78px; height:    125px; outline-offset: -4px;
+
+background-color: white; font-size: 9px; text-align: left;
+padding: 0px;
+
+}
+#buttonWordList:focus      { background-colour: white; }
+
+.button_popColours               { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    452px; width:     78px; height:     36px; outline-offset: -4px;
+                                   background-color: grey; outline: 4px outset grey; }
+.button_popColours:focus         { background-color: cyan; outline: 4px outset cyan; }
+.button_popColours:hover         { background-color: lime; outline: 4px outset lime; }
+.button_popColours:active        { background-color: pink; outline: 4px inset  pink; }
+.button_popButton                { position: absolute; border: none; margin: none; padding: none; left:    103px; top:    452px; width:     78px; height:     36px; outline-offset: -4px;
+                                   background-color: grey; outline: 4px outset grey; }
+.button_popButton:focus          { background-color: cyan; outline: 4px outset cyan; }
+.button_popButton:hover          { background-color: lime; outline: 4px outset lime; }
+.button_popButton:active         { background-color: pink; outline: 4px inset  pink; }
+
 
 
 

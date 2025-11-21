@@ -134,8 +134,11 @@ ui[name].ref   = document.getElementById(name);
 
 
 /* TAB 3, FOLDER 1 */
-
+  
 [
+"popButton"            ,
+"popColours"           ,
+"buttonWordList"       ,
 "readButtonBack"       ,
 "yourButtonIsHere"     ,
 "buttonTooltip"        , 

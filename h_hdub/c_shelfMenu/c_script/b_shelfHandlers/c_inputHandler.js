@@ -75,6 +75,7 @@ case ui.textActive.ref:          ui.textActive.input()          ; break;
 case ui.textFocus.ref:           ui.textFocus.input()           ; break;
 
 
+case ui.buttonWordList.ref:      ui.buttonWordList.input()      ; break;
 
 
 

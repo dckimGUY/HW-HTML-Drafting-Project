@@ -46,4 +46,12 @@ shelfMenuHTML.tab3.folder1.HTML = `
 <button id="navPoint3" class="button_ button_navPoint3" title="NAV Scroll to SE"></button>
 
 
+
+
+
+<textarea id="buttonWordList" name="buttonWordList" class="input_ input_buttonWordList dckimPixelMono" type="value" placeholder="empty" spellcheck="false"></textarea>
+<button id="popColours" class="button_ button_popColours dckimPixelMono" title="">COLOURS</button>
+<button id="popButton" class="button_ button_popButton dckimPixelMono" title="">POP TEXT</button>
+
+
 `;

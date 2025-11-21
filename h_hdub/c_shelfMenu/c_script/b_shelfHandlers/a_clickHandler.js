@@ -185,6 +185,9 @@ case ui.navPoint2.ref:           ui.navPoint2.click()            ; break;
 case ui.navPoint3.ref:           ui.navPoint3.click()            ; break;
 case ui.readButtonBack.ref:      ui.readButtonBack.click()       ; break;
 
+case ui.popColours.ref:          ui.popColours.click()           ; break;
+case ui.popButton.ref:           ui.popButton.click()            ; break;
+
 /* tab 3 folder 2 */
 case ui.getButtons.ref:          ui.getButtons.click()           ; break;
 case ui.loadBase.ref:            ui.loadBase.click()             ; break;

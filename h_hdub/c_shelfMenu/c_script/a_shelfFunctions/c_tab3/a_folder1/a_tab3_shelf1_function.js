@@ -395,3 +395,46 @@ YbuttonContext.clearRect(0,0,312,56);
 ZbuttonContext.clearRect(0,0,312,56);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+function popTheButtonsOut(swapColours) {
+if (ui.buttonWordList.ref.value.split("\n").length > 0 && ui.buttonWordList.ref.value != "") {
+let wordArray = Array.from(ui.buttonWordList.ref.value.split("\n"));
+ui.textEntry.ref.value = wordArray.shift();
+drawButton7();
+localStorage.setItem("textEntry", ui.textEntry.ref.value);
+if (hauptMode==0) { enterNavLinkButton(lastNavPoint); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(lastNavPoint); hauptMode = 1; }
+ui.buttonWordList.ref.value = wordArray.join("\n");
+if (swapColours) {
+cycleColoursForward();
+}
+}
+}
+
+
+
+
+ui.buttonWordList.input          = function() {  };
+
+ui.popColours.click              = function() {
+popTheButtonsOut(true);
+};
+
+
+
+
+ui.popButton.click               = function() {
+popTheButtonsOut(false);
+};
+
+
+
