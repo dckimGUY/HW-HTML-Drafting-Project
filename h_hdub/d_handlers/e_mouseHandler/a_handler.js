@@ -679,7 +679,7 @@ updateInfoShelf();
 
 document.addEventListener("click", (event) => {
 
-if (coinFocus!=null&&drawPartNames=="true") {
+if (coinFocus!=null&&drawPartNames=="true"&&event.target&&event.target.dataset&&event.target.dataset.coinTrip) {
 
 
 
