@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-eu</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>eu</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-eu</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML-marrazkia</title>
+<link>https://dckim.com/hdub/eu/articles/HTML-marrazkia.html</link>
+<description>HTML Zirriborroa hasiberri eta zaleentzat da. Jarri gauza batzuk orrian, eta gero argitaratu zure webgunean. Hau jende arruntarentzat da, ez denbora handiko web saltzaileentzat.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

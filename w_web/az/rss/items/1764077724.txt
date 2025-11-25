@@ -1,0 +1,7 @@
+<item>
+<title>E-poçt</title>
+<link>https://dckim.com/hdub/az/articles/E-poçt.html</link>
+<description>HTML Planlaşdırma yeni başlayanlar və qidaçılar üçün.  page  some  some  then  then  then, then post it on your website. Bu müxtəlif insanlar üçün, böyük-time web-developers deyil.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

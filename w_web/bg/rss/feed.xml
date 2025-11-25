@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-bg</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>bg</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-bg</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML-рисунка</title>
+<link>https://dckim.com/hdub/bg/articles/HTML-рисунка.html</link>
+<description>HTML Подготовката е за начинаещи и хобита. Сложи някои неща на страницата, после го публикувай на сайта си. Това е за обикновени хора, не за големи уеб-разработчици.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

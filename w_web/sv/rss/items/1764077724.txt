@@ -1,0 +1,7 @@
+<item>
+<title>HTML-ritning</title>
+<link>https://dckim.com/hdub/sv/articles/HTML-ritning.html</link>
+<description>HTML Drafting är för nybörjare och hobbyister. Slappa några saker på sidan, sedan lägga upp det på din webbplats. Detta är för vanliga människor, inte big-time webbutvecklare.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

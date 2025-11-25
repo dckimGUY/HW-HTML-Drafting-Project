@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-nb</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>nb</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-nb</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML--tegning</title>
+<link>https://dckim.com/hdub/nb/articles/HTML--tegning.html</link>
+<description>HTML Utkast er for nybegynnere og hobbyister. Legg noe på siden, og legg det deretter på nettstedet ditt. Dette er for vanlige mennesker, ikke store web-developers.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

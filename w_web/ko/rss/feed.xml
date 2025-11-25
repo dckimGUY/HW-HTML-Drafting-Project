@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-ko</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>ko</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-ko</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML-그림</title>
+<link>https://dckim.com/hdub/ko/articles/HTML-그림.html</link>
+<description>HTML 지원 초록색은 초보자와 취미자를위한 것입니다. Slap 일부 물건에 페이지, 다음 사이트에 게시. 이것은 평범한 사람들을 위해, 큰 시간 웹 개발자 아닙니다.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

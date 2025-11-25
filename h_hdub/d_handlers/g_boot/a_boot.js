@@ -653,6 +653,63 @@ var gridIncrementArray = "3-2";
 if (localStorage.getItem("gridIncrementArray")) { gridIncrementArray = localStorage.getItem("gridIncrementArray"); }
 
 
+
+
+
+window.mouseIncrementCycle = function () {
+if (gridIncrementArray=="3-2") {
+     if (mouseIncrement==  1) {mouseIncrement=  4;}
+else if (mouseIncrement==  4) {mouseIncrement=  8;}
+else if (mouseIncrement==  8) {mouseIncrement= 16;}
+else if (mouseIncrement== 16) {mouseIncrement=  1;}
+else                          {mouseIncrement=  1;}
+} else if (gridIncrementArray=="2")      {
+     if (mouseIncrement==  1) {mouseIncrement=  4;}
+else if (mouseIncrement==  4) {mouseIncrement=  8;}
+else if (mouseIncrement==  8) {mouseIncrement= 16;}
+else if (mouseIncrement== 16) {mouseIncrement=  1;}
+else                          {mouseIncrement=  1;}
+} else if (gridIncrementArray=="3")      {
+     if (mouseIncrement==  1) {mouseIncrement=  6;}
+else if (mouseIncrement==  6) {mouseIncrement= 12;}
+else if (mouseIncrement== 12) {mouseIncrement= 24;}
+else if (mouseIncrement== 24) {mouseIncrement=  1;}
+else                          {mouseIncrement=  1;}
+} else if (gridIncrementArray=="metric") {
+     if (mouseIncrement==  1) {mouseIncrement=  5;}
+else if (mouseIncrement==  5) {mouseIncrement= 10;}
+else if (mouseIncrement== 10) {mouseIncrement= 20;}
+else if (mouseIncrement== 20) {mouseIncrement=  1;}
+else                          {mouseIncrement=  1;}
+}
+visualGridSize1 = mouseIncrement;
+ui.coin18868.ref.value = mouseIncrement;
+localStorage.setItem("visualGridSize1", visualGridSize1);
+localStorage.setItem("mouseIncrement", mouseIncrement);
+Z();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 window.oneLessG = function () {
 if (T!=0) {
 T--;

@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/en/articles/HTML-Drawing.html</link>
+<description>HTML Drafting is for beginners and hobbyists. Slap some stuff onto the page, then post it on your website. This is for regular folks, not big-time web-developers.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

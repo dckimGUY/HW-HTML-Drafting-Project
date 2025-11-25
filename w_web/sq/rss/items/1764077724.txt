@@ -1,0 +1,7 @@
+<item>
+<title>Vizatim-HTML</title>
+<link>https://dckim.com/hdub/sq/articles/Vizatim-HTML.html</link>
+<description>HTML Kopja është për fillestarët dhe hobitë. Vendos disa gjëra në faqe, pastaj postoje në faqen tënde. Kjo është për njerëz të zakonshëm, jo për shumë kohë në internet-zhvillues.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>HTML--joonistus</title>
+<link>https://dckim.com/hdub/et/articles/HTML--joonistus.html</link>
+<description>HTML Joonistamine on algajatele ja harrastajatele. Slap mõned asjad lehele, siis postita see oma kodulehel. See on mõeldud tavainimestele, mitte suurtele veebiarendajatele.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

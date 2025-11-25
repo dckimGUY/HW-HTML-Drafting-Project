@@ -93,17 +93,23 @@ mv c_insertNewWindow.js ./h_hdub/d_handlers/c_initialization/;
 
 
 
-## Here is a nifty tree representation, self-contained, searchable in the browser, with clickable links.
+## Here is a nifty tree representation, self-contained, searchable in the browser, with click-to-copy BASH references.
 
 echo '<!DOCTYPE html>' > t_treeDiagram.html;
 echo "<body>" >> t_treeDiagram.html;
-echo "<style> .hdub_treeLink { color: #DEFF1C; } </style>" >> t_treeDiagram.html;
+echo "<style>" >> t_treeDiagram.html;
+echo ".hdub_ViLink       { color: #DEFF1C; cursor: pointer; }" >> t_treeDiagram.html;
+echo ".hdub_ViLink:hover { color: lime; cursor: pointer; }" >> t_treeDiagram.html;
+echo ".hdub_cdLink       { color: darkmagenta; cursor: pointer; }" >> t_treeDiagram.html;
+echo ".hdub_cdLink:hover { color: magenta; cursor: pointer; }" >> t_treeDiagram.html;
+echo "</style>" >> t_treeDiagram.html;
 echo '<pre style="font-size: 24px; font-style: italic; color: rgb(64,64,64);">' >> t_treeDiagram.html;
-echo '<span style="font-size: 48px; color: #DEFF1C;">HDUB TREE DIAGRAM</span>' >> t_treeDiagram.html;
-find h_hdub/ | sed -n '/\.js/p' | sed 's/\(^.*\/\)\(.*$\)/\1<a class="hdub_treeLink" href="\1\2">\2<\/a>/g' | sed '/\.js/!i <a>' >> t_treeDiagram.html;
+echo '<span style="font-size: 48px; color: #DEFF1C;">HDUB TREE DIAGRAM (click to copy bash cd/Vi command)</span>' >> t_treeDiagram.html;
+find h_hdub/ | sed -n '/\.js/p' | sed 's/\(^.*\/\)\(.*$\)/<a class="hdub_cdLink" onclick="copyToClipboard(\`cd \1\;`)">\1<\/a><a class="hdub_ViLink" onclick="copyToClipboard(\`vi \1\2">\2<\/a>/g' | sed '/\.js/!i <a>' | sed 's/js"/js;\`)" title="Vi from bash"/' >> t_treeDiagram.html;
 echo "</pre>" >> t_treeDiagram.html;
 echo "<script>" >> t_treeDiagram.html;
 echo "document.body.style.backgroundColor = 'black';" >> t_treeDiagram.html;
+cat x_treeTack.txt >> t_treeDiagram.html;
 echo "</script>" >> t_treeDiagram.html;
 echo "</body>" >> t_treeDiagram.html;
 echo "</html>" >> t_treeDiagram.html;

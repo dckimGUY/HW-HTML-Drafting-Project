@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Çizim-HTML</title>
+<link>https://dckim.com/hdub/tr/articles/HTML-Çizim-HTML.html</link>
+<description>HTML HTML HTML HTML Taslak yeni başlayanlar ve hobiler içindir. Sayfaya bazı şeyleri kırdı, sonra web sitenizde yayınlayın. Bu normal insanlar içindir, büyük zaman web-developers değil.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-zh-Hans</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>zh-Hans</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-zh-Hans</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML-绘图</title>
+<link>https://dckim.com/hdub/zh-Hans/articles/HTML-绘图.html</link>
+<description>HTML 语言 起草对象为初学者和爱好者. 把一些东西放到网页上,然后贴在你的网站上。 这是给普通人,不是大时间的网络开发者.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,7 @@
+<item>
+<title>HTML-のデッサン</title>
+<link>https://dckim.com/hdub/ja/articles/HTML-のデッサン.html</link>
+<description>アーカイブ ドラフティングは初心者や趣味者向けのものです。 ページの部分をスラップし、ウェブサイトに投稿します。 これは、大規模なWeb開発者ではなく、定期的な人々のためのものです.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

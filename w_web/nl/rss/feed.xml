@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-nl</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>nl</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-nl</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML-tekening</title>
+<link>https://dckim.com/hdub/nl/articles/HTML-tekening.html</link>
+<description>HTML Tekening is voor beginners en hobbyisten. Sla wat spullen op de pagina en plaats het dan op uw website. Dit is voor gewone mensen, geen grote web-ontwikkelaars.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,8 @@
+rssHeader="$(cat ../h_rssHeader.txt)";
+rssFooter="$(cat ../i_rssFooter.txt)";
+rssDate="$(date -R)";
+for language in {ar,az,bg,bn,ca,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,he,hi,hu,id,it,ja,ko,ky,lt,lv,ms,nb,nl,pt-BR,pl,pt,ro,ru,sk,sl,sq,sv,th,tl,tr,zh-Hans,zh-Hant}; do
+echo "$rssHeader" | sed 's/{{lang}}/'"$language"'/g' | sed 's/{{date}}/'"$rssDate"'/g' > ../"$language"/rss/feed.xml;
+cat $(echo ./"$language"/rss/items/* | tr ' ' '\n' | sort -r) >> ../"$language"/rss/feed.xml;
+echo "$rssFooter" >> ../"$language"/rss/feed.xml;
+done;

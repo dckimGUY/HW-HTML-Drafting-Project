@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-pt-BR</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>pt-BR</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-pt-BR</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>Desenho-HTML</title>
+<link>https://dckim.com/hdub/pt-BR/articles/Desenho-HTML.html</link>
+<description>HTML Redação é para iniciantes e hobbyistas. Coloque algumas coisas na página, depois publique no seu site. Isso é para gente normal, não para grandes desenvolvedores.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

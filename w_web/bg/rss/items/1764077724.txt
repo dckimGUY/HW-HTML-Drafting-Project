@@ -1,0 +1,7 @@
+<item>
+<title>HTML-рисунка</title>
+<link>https://dckim.com/hdub/bg/articles/HTML-рисунка.html</link>
+<description>HTML Подготовката е за начинаещи и хобита. Сложи някои неща на страницата, после го публикувай на сайта си. Това е за обикновени хора, не за големи уеб-разработчици.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

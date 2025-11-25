@@ -1,0 +1,15 @@
+06_mastodonRoll/
+a_inputPageHeader.txt
+b_inputPageTitle.txt
+c_inputPageDescription.txt
+d_inputPageHTML.txt
+e_inputPageFooter.txt
+f_inputOpenGraphImage.png
+g_rssItem.txt
+h_rssHeader.txt
+i_rssFooter.txt
+vv_buildImages
+ww_mastodonPostLengthChecker
+xx_buildSitemap
+yy_buildFolders
+zz_buildMain

@@ -1,0 +1,7 @@
+<item>
+<title>HTML--tegning</title>
+<link>https://dckim.com/hdub/da/articles/HTML--tegning.html</link>
+<description>HTML Tegning er for begyndere og hobbyfolk. Slagte nogle ting på siden, og derefter skrive det på din hjemmeside. Dette er for almindelige mennesker, ikke big- time web- udviklere.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

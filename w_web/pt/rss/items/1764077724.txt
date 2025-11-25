@@ -1,0 +1,7 @@
+<item>
+<title>Desenho-HTML</title>
+<link>https://dckim.com/hdub/pt/articles/Desenho-HTML.html</link>
+<description>HTML Redação é para iniciantes e hobbyistas. Coloque algumas coisas na página e, em seguida, publique no seu site. Isto é para pessoas normais, não para grandes operadores.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

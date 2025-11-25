@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-ca</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>ca</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-ca</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>Dibuix-HTMLName</title>
+<link>https://dckim.com/hdub/ca/articles/Dibuix-HTMLName.html</link>
+<description>HTML L'aprenentatge és per principiants i hobbyistes. Pega alguna cosa a la pàgina i posa-la al teu lloc web. Això és per a gent normal, no per als desenvolupadors del web.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

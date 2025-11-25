@@ -1,0 +1,7 @@
+<item>
+<title>HTML-рисунок</title>
+<link>https://dckim.com/hdub/ru/articles/HTML-рисунок.html</link>
+<description>HTML Редактирование предназначено для начинающих и любителей. Нанесите что-нибудь на страницу, а затем опубликуйте на своем сайте. Это для обычных людей, а не для крупных веб-разработчиков.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

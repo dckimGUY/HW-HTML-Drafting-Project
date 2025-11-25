@@ -1,0 +1,23 @@
+<rss version="2.0">
+<channel>
+<title>DCKIM-en</title>
+<link>https://dckim.com/</link>
+<description>DCKIM: Independent Canadian Open-Source HTML Software From Toronto Ontario</description>
+<language>en</language>
+<image>
+<url>https://dckim.com/hdub/w_web/1_images/rssLOGO.png</url>
+<title>DCKIM-en</title>
+<link>https://dckim.com/</link>
+<width>88</width>
+<height>31></height>
+</image>
+<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/en/articles/HTML-Drawing.html</link>
+<description>HTML Drafting is for beginners and hobbyists. Slap some stuff onto the page, then post it on your website. This is for regular folks, not big-time web-developers.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
+</channel>
+</rss>

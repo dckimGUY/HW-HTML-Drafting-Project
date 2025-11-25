@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Zeichnung</title>
+<link>https://dckim.com/hdub/de/articles/HTML-Zeichnung.html</link>
+<description>HTML Entwurf ist für Anfänger und Hobbyisten. Schlagen Sie etwas auf die Seite, dann posten Sie es auf Ihrer Website. Dies ist für normale Leute, nicht Big-time Web-Entwickler.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>

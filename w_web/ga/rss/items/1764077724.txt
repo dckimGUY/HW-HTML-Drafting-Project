@@ -1,0 +1,7 @@
+<item>
+<title>Seirbhís-do-Chustaiméirí</title>
+<link>https://dckim.com/hdub/ga/articles/Seirbhís-do-Chustaiméirí.html</link>
+<description>HTML Is dréachtú do thosaitheoirí agus caitheamh aimsire. Slap roinnt rudaí ar an leathanach, ansin é a phost ar do láithreán gréasáin. Tá sé seo le haghaidh folks rialta, ní mór-am forbróirí gréasáin.</description>
+<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+</item>
