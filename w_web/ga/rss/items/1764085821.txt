@@ -1,0 +1,7 @@
+<item>
+<title>Tá-HTML-crochta-ag-roinnt-snáitheanna</title>
+<link>https://dckim.com/hdub/w_web/ga/articles/Tá-HTML-crochta-ag-roinnt-snáitheanna.html</link>
+<description>A chara NERDS, Open-Letter chur chun cinn an HTML Dréacht-Tionscadal ar Shráid Yonge i dTuaisceart-Eabhrac, in aice leis an Siopa Feola Famous OWL ar.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

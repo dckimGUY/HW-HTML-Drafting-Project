@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>Σχέδιο-HTML</title>
-<link>https://dckim.com/hdub/el/articles/Σχέδιο-HTML.html</link>
+<title>Προσέγγιση-HTML</title>
+<link>https://dckim.com/hdub/w_web/el/articles/Προσέγγιση-HTML.html</link>
 <description>HTML Το σχέδιο είναι για αρχάριους και χομπίστες. Βάλε μερικά πράγματα στη σελίδα και μετά ανέβασέ τα στην ιστοσελίδα σου. Αυτό είναι για τους απλούς ανθρώπους, όχι για τους μεγάλους developers.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-κρέμεται-από-κάποια-νήματα</title>
+<link>https://dckim.com/hdub/w_web/el/articles/HTML-κρέμεται-από-κάποια-νήματα.html</link>
+<description>Αγαπητοί NERDS, ένα Open-Letter που προωθεί αυτό το HTML σχέδιο για Yonge Street στη Βόρεια Υόρκη, κοντά στο διάσημο κατάστημα κρέατος OWL του.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

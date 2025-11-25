@@ -1,7 +1,0 @@
-<item>
-<title>HTML-tekening</title>
-<link>https://dckim.com/hdub/nl/articles/HTML-tekening.html</link>
-<description>HTML Tekening is voor beginners en hobbyisten. Sla wat spullen op de pagina en plaats het dan op uw website. Dit is voor gewone mensen, geen grote web-ontwikkelaars.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

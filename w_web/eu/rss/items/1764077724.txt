@@ -1,7 +1,0 @@
-<item>
-<title>HTML-marrazkia</title>
-<link>https://dckim.com/hdub/eu/articles/HTML-marrazkia.html</link>
-<description>HTML Zirriborroa hasiberri eta zaleentzat da. Jarri gauza batzuk orrian, eta gero argitaratu zure webgunean. Hau jende arruntarentzat da, ez denbora handiko web saltzaileentzat.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

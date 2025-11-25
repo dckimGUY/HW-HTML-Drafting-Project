@@ -1,0 +1,7 @@
+<item>
+<title>HTML--kreslení</title>
+<link>https://dckim.com/hdub/w_web/cs/articles/HTML--kreslení.html</link>
+<description>HTML Kreslení je pro začátečníky a hobbyisty. Nafackovat nějaké věci na stránku, pak to dát na své webové stránky. Tohle je pro normální lidi, ne pro vývojáře webových stránek.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

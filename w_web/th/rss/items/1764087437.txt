@@ -1,0 +1,7 @@
+<item>
+<title>การวาด-HTML</title>
+<link>https://dckim.com/hdub/w_web/th/articles/การวาด-HTML.html</link>
+<description>HTML การดราฟท์สําหรับมือใหม่และงานอดิเรก แปะบางอย่างลงบนหน้ากระดาษ แล้วโพสต์ลงในเว็บไซต์ของคุณ นี่สําหรับคนธรรมดา ไม่ใช่นักพัฒนาเว็บ.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

@@ -1,7 +1,0 @@
-<item>
-<title>Dibuix-HTMLName</title>
-<link>https://dckim.com/hdub/ca/articles/Dibuix-HTMLName.html</link>
-<description>HTML L'aprenentatge és per principiants i hobbyistes. Pega alguna cosa a la pàgina i posa-la al teu lloc web. Això és per a gent normal, no per als desenvolupadors del web.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

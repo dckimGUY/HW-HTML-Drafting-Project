@@ -1,0 +1,7 @@
+<item>
+<title>HTML-è-appeso-da-alcuni-fili</title>
+<link>https://dckim.com/hdub/w_web/it/articles/HTML-è-appeso-da-alcuni-fili.html</link>
+<description>Caro NERDS, un Open-Letter che promuove questo progetto di bozza HTML su Yonge Street a North York, vicino al famoso negozio di carne OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

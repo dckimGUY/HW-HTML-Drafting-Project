@@ -1,0 +1,7 @@
+<item>
+<title>HTML-is-hanging-by-some-threads</title>
+<link>https://dckim.com/hdub/en/articles/HTML-is-hanging-by-some-threads.html</link>
+<description>Dear NERDS, an Open-Letter promoting this HTML Drafting Project on Yonge Street in North York, near the Famous OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:07:29 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:07:29 -0500</guid>
+</item>

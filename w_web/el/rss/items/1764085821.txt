@@ -1,0 +1,7 @@
+<item>
+<title>HTML-κρέμεται-από-κάποια-νήματα</title>
+<link>https://dckim.com/hdub/w_web/el/articles/HTML-κρέμεται-από-κάποια-νήματα.html</link>
+<description>Αγαπητοί NERDS, ένα Open-Letter που προωθεί αυτό το HTML σχέδιο για Yonge Street στη Βόρεια Υόρκη, κοντά στο διάσημο κατάστημα κρέατος OWL του.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

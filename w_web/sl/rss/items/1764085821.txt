@@ -1,0 +1,7 @@
+<item>
+<title>HTML-visi-na-nekaterih-nitih</title>
+<link>https://dckim.com/hdub/w_web/sl/articles/HTML-visi-na-nekaterih-nitih.html</link>
+<description>Spoštovani NERDS, Open-Litter, ki promovira ta HTML projekt na Yonge Streetu v North Yorku, blizu slavne OWL-jeve trgovine z mesom.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>Показване-на-HTML</title>
+<link>https://dckim.com/hdub/w_web/bg/articles/Показване-на-HTML.html</link>
+<description>HTML Подготовката е за начинаещи и хобита. Сложи някои неща на страницата, после го публикувай на сайта си. Това е за обикновени хора, не за големи уеб-разработчици.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

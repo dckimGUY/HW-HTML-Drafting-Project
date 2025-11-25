@@ -1,0 +1,7 @@
+<item>
+<title>HTML-está-colgado-por-algunos-hilos</title>
+<link>https://dckim.com/hdub/w_web/es/articles/HTML-está-colgado-por-algunos-hilos.html</link>
+<description>Queridos NERDS, una carta abierta que promueve este proyecto de redacción HTML en la calle Yonge en el norte de York, cerca de la famosa tienda de carne de OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

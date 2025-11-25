@@ -1,0 +1,7 @@
+<item>
+<title>HTML-висит-на-некоторых-потоках</title>
+<link>https://dckim.com/hdub/w_web/ru/articles/HTML-висит-на-некоторых-потоках.html</link>
+<description>Дорогие NERDS, открытое письмо, продвигающее этот проект HTML Drafting на Йонг-стрит в Северном Йорке, недалеко от мясного магазина Famous OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

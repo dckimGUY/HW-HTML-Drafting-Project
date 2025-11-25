@@ -1,0 +1,7 @@
+<item>
+<title>HTML-תלוי-בכמה-חוטים</title>
+<link>https://dckim.com/hdub/w_web/he/articles/HTML-תלוי-בכמה-חוטים.html</link>
+<description>Dear NERDS, Open-Letter לקדם את פרויקט ה-HTML הזה ברחוב יונג שבצפון יורק, ליד חנות הבשר המפורסמת של OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

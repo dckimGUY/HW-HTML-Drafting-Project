@@ -1,0 +1,7 @@
+<item>
+<title>HTML-je-zavěšen-za-nějaké-nitě</title>
+<link>https://dckim.com/hdub/w_web/cs/articles/HTML-je-zavěšen-za-nějaké-nitě.html</link>
+<description>Milý NERDS, Open- Letter propagující tento HTML Drafting Project na Yonge Street v North Yorku, poblíž slavného OWL 's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

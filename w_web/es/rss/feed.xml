@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>Dibujo-HTML</title>
-<link>https://dckim.com/hdub/es/articles/Dibujo-HTML.html</link>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/es/articles/HTML-Drawing.html</link>
 <description>HTML La redacción es para principiantes y hobbyistas. Coloque algunas cosas en la página, después póngalo en su sitio web. Esto es para gente normal, no para grandes desarrolladores web.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-está-colgado-por-algunos-hilos</title>
+<link>https://dckim.com/hdub/w_web/es/articles/HTML-está-colgado-por-algunos-hilos.html</link>
+<description>Queridos NERDS, una carta abierta que promueve este proyecto de redacción HTML en la calle Yonge en el norte de York, cerca de la famosa tienda de carne de OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

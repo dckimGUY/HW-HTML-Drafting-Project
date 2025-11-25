@@ -1,0 +1,7 @@
+<item>
+<title>HTML은-일부-스레드에-의해-거는</title>
+<link>https://dckim.com/hdub/w_web/ko/articles/HTML은-일부-스레드에-의해-거는.html</link>
+<description>이 HTML Drafting Project를 홍보하는 Open-Letter는 유명한 OWL의 Meat Shop 근처에 노스 요크의 Yonge Street에 홍보합니다.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

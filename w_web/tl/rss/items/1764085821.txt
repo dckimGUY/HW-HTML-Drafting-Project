@@ -1,0 +1,7 @@
+<item>
+<title>Ang-HTML-ay-nakabitin-sa-ilang-sinulid</title>
+<link>https://dckim.com/hdub/w_web/tl/articles/Ang-HTML-ay-nakabitin-sa-ilang-sinulid.html</link>
+<description>Dear NERDS, isang Open-Letter na nagtataguyod ng HTML Drafting Project na ito sa Yonge Street sa Hilagang York, malapit sa Famous oWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

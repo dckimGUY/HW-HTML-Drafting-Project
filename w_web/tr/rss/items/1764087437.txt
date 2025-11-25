@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/tr/articles/HTML-Drawing.html</link>
+<description>HTML HTML HTML HTML Taslak yeni başlayanlar ve hobiler içindir. Sayfaya bazı şeyleri kırdı, sonra web sitenizde yayınlayın. Bu normal insanlar içindir, büyük zaman web-developers değil.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

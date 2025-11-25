@@ -1,7 +1,0 @@
-<item>
-<title>Rysunek-HTML</title>
-<link>https://dckim.com/hdub/pl/articles/Rysunek-HTML.html</link>
-<description>HTML Drafting jest dla początkujących i hobbystów. Poklep kilka rzeczy na stronę, a następnie zamieść na swojej stronie internetowej. To dla zwykłych ludzi, a nie dla wielkich deweloperów.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

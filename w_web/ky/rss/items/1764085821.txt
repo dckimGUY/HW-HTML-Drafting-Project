@@ -1,0 +1,7 @@
+<item>
+<title>HTML-кээ-бир-жипчелер-менен-илинип-турат</title>
+<link>https://dckim.com/hdub/w_web/ky/articles/HTML-кээ-бир-жипчелер-менен-илинип-турат.html</link>
+<description>"Сүйүктүү NERDS, бул HTML долбоорлоо долбоорун Түндүк Йорктогу Йонге көчөсүндө, ""Famous OWL"" эт дүкөнүнүн жанында жайылтуучу ачык кат.".</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

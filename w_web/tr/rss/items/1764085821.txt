@@ -1,0 +1,7 @@
+<item>
+<title>HTML-bazı-iplikler-tarafından-asılı</title>
+<link>https://dckim.com/hdub/w_web/tr/articles/HTML-bazı-iplikler-tarafından-asılı.html</link>
+<description>Sevgili NERDS, bu HTML Taslağı Projesini Kuzey York'ta, Ünlü OWL'nin Et Dükkanına yakın olarak tanıtalım.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

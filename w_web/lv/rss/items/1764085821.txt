@@ -1,0 +1,7 @@
+<item>
+<title>HTML-karājas-dažos-pavedienos</title>
+<link>https://dckim.com/hdub/w_web/lv/articles/HTML-karājas-dažos-pavedienos.html</link>
+<description>Cienījamie NERDS, Open-Letter veicināt šo HTML projektu Yonge Street North York, netālu no slavenā OML gaļas veikals.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

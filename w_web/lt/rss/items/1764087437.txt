@@ -1,0 +1,7 @@
+<item>
+<title>HTML--piešimas</title>
+<link>https://dckim.com/hdub/w_web/lt/articles/HTML--piešimas.html</link>
+<description>HTML Ruošimas yra pradedantiesiems ir pomėgiams. Slap keletą dalykų į puslapį, tada įdėti jį į savo svetainę. Čia skirta paprastiems žmonėms, bet ne didelės apimties žiniatinklio kūrėjams.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

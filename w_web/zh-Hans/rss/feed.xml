@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
 <title>HTML-绘图</title>
-<link>https://dckim.com/hdub/zh-Hans/articles/HTML-绘图.html</link>
+<link>https://dckim.com/hdub/w_web/zh-Hans/articles/HTML-绘图.html</link>
 <description>HTML 语言 起草对象为初学者和爱好者. 把一些东西放到网页上,然后贴在你的网站上。 这是给普通人,不是大时间的网络开发者.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-被一些线程所悬挂</title>
+<link>https://dckim.com/hdub/w_web/zh-Hans/articles/HTML-被一些线程所悬挂.html</link>
+<description>亲爱的NERDS,一个在北约克的永德街上宣传这个HTML起草项目的公开信,靠近著名的OWL肉店.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

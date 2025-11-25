@@ -1,7 +1,0 @@
-<item>
-<title>Dessin-HTML</title>
-<link>https://dckim.com/hdub/fr/articles/Dessin-HTML.html</link>
-<description>HTML La rédaction est pour les débutants et les amateurs. Mettez des trucs sur la page, puis postez-les sur votre site Web. C'est pour les gens réguliers, pas pour les grands développeurs de web.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

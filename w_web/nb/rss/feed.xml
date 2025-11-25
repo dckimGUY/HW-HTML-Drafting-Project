@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML--tegning</title>
-<link>https://dckim.com/hdub/nb/articles/HTML--tegning.html</link>
+<title>HTML-trekking</title>
+<link>https://dckim.com/hdub/w_web/nb/articles/HTML-trekking.html</link>
 <description>HTML Utkast er for nybegynnere og hobbyister. Legg noe på siden, og legg det deretter på nettstedet ditt. Dette er for vanlige mennesker, ikke store web-developers.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-henger-av-noen-tråder</title>
+<link>https://dckim.com/hdub/w_web/nb/articles/HTML-henger-av-noen-tråder.html</link>
+<description>Kjære NERDS, en åpen-skriver som fremmer dette HTML-utkastet på Yonge Street i North York, nær den berømte OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

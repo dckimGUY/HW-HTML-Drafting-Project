@@ -1,0 +1,7 @@
+<item>
+<title>HTML-piirustus</title>
+<link>https://dckim.com/hdub/w_web/fi/articles/HTML-piirustus.html</link>
+<description>HTML Laadinta on aloittelijoille ja harrastajille. Läimäytä joitakin asioita sivulle, sitten lähettää sen sivustolle. Tämä on tavallisille ihmisille, ei isoille web-kehittäjille.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

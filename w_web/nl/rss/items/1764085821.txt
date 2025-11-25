@@ -1,0 +1,7 @@
+<item>
+<title>HTML-hangt-aan-enkele-draden</title>
+<link>https://dckim.com/hdub/w_web/nl/articles/HTML-hangt-aan-enkele-draden.html</link>
+<description>Beste NERDS, een Open-Letter die dit HTML Drafting Project promoot op Yonge Street in North York, vlakbij de Famous OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

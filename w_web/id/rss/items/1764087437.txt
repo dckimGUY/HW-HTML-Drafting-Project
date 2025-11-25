@@ -1,0 +1,7 @@
+<item>
+<title>HTML--Menggambar</title>
+<link>https://dckim.com/hdub/w_web/id/articles/HTML--Menggambar.html</link>
+<description>HTML Drafting untuk pemula dan hobbyists. Menampar beberapa hal ke halaman, kemudian posting di website Anda. Ini untuk orang-orang biasa, bukan pengembang web besar-waktu.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

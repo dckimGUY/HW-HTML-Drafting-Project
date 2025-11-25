@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML-Debuxo</title>
-<link>https://dckim.com/hdub/gl/articles/HTML-Debuxo.html</link>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/gl/articles/HTML-Drawing.html</link>
 <description>HTML A programación é para principiantes e afeccionados. Sela algo na páxina, logo publicar na súa web. Isto é para xente normal, non grandes desenvolvedores web.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-está-colgado-por-algúns-fíos</title>
+<link>https://dckim.com/hdub/w_web/gl/articles/HTML-está-colgado-por-algúns-fíos.html</link>
+<description>Dear NERDS, un Open-Letter que promove este proxecto de borrador de HTML en Yonge Street, no norte de York, preto da Famous OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

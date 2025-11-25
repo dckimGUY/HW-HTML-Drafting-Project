@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/es/articles/HTML-Drawing.html</link>
+<description>HTML La redacción es para principiantes y hobbyistas. Coloque algunas cosas en la página, después póngalo en su sitio web. Esto es para gente normal, no para grandes desarrolladores web.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

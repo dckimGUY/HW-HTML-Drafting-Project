@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML-ritning</title>
-<link>https://dckim.com/hdub/sv/articles/HTML-ritning.html</link>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/sv/articles/HTML-Drawing.html</link>
 <description>HTML Drafting är för nybörjare och hobbyister. Slappa några saker på sidan, sedan lägga upp det på din webbplats. Detta är för vanliga människor, inte big-time webbutvecklare.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-hänger-med-några-trådar</title>
+<link>https://dckim.com/hdub/w_web/sv/articles/HTML-hänger-med-några-trådar.html</link>
+<description>Kära NERDS, en Open-Letter som främjar detta HTML Drafting Project på Yonge Street i North York, nära den berömda OWL: s köttbutik.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

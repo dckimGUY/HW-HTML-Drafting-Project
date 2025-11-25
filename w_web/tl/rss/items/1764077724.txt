@@ -1,7 +1,0 @@
-<item>
-<title>PAG---UUSAP</title>
-<link>https://dckim.com/hdub/tl/articles/PAG---UUSAP.html</link>
-<description>HTML Ang Drafting ay para sa mga baguhan at mga hobbyist. Ilagay ang ilang bagay sa pahina, saka ilagay ito sa iyong website. Ito ay para sa mga regular na mga magulang, hindi malalaking-panahon na web-pagpapaunlad.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

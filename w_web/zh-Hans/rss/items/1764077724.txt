@@ -1,7 +1,0 @@
-<item>
-<title>HTML-绘图</title>
-<link>https://dckim.com/hdub/zh-Hans/articles/HTML-绘图.html</link>
-<description>HTML 语言 起草对象为初学者和爱好者. 把一些东西放到网页上,然后贴在你的网站上。 这是给普通人,不是大时间的网络开发者.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

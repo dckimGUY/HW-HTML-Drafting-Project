@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
 <title>HTML--joonistus</title>
-<link>https://dckim.com/hdub/et/articles/HTML--joonistus.html</link>
+<link>https://dckim.com/hdub/w_web/et/articles/HTML--joonistus.html</link>
 <description>HTML Joonistamine on algajatele ja harrastajatele. Slap mõned asjad lehele, siis postita see oma kodulehel. See on mõeldud tavainimestele, mitte suurtele veebiarendajatele.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-ripub-mõne-lõime-järgi</title>
+<link>https://dckim.com/hdub/w_web/et/articles/HTML-ripub-mõne-lõime-järgi.html</link>
+<description>Kallis NERDS, avatud kiri, mis edendab seda HTML-i koostamise projekti Yonge tänaval Põhja-Yorkis, kuulsa OWLi lihapoe lähedal.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

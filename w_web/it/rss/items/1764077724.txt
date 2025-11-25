@@ -1,7 +1,0 @@
-<item>
-<title>Disegno-HTML</title>
-<link>https://dckim.com/hdub/it/articles/Disegno-HTML.html</link>
-<description>HTML La bozza è per principianti e hobbisti. Slap alcune cose sulla pagina, quindi posta sul tuo sito web. Questo è per le persone normali, non grandi sviluppatori web.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

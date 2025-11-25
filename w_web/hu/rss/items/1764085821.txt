@@ -1,0 +1,7 @@
+<item>
+<title>HTML-lóg-néhány-szál</title>
+<link>https://dckim.com/hdub/w_web/hu/articles/HTML-lóg-néhány-szál.html</link>
+<description>Kedves NERDS, egy nyílt levél, amely ezt a HTML Drafting Project-et reklámozza a Yonge Streeten, Észak York-ban, közel a híres OWL húsbolthoz.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

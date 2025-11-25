@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>Risba-HTML</title>
-<link>https://dckim.com/hdub/sl/articles/Risba-HTML.html</link>
+<title>Narisanje-HTML</title>
+<link>https://dckim.com/hdub/w_web/sl/articles/Narisanje-HTML.html</link>
 <description>HTML Risanje je za začetnike in ljubitelje. Splezaj nekaj stvari na stran in jih nato objavi na svoji spletni strani. To je za navadne ljudi, ne za velike spletne razvijalce.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-visi-na-nekaterih-nitih</title>
+<link>https://dckim.com/hdub/w_web/sl/articles/HTML-visi-na-nekaterih-nitih.html</link>
+<description>Spoštovani NERDS, Open-Litter, ki promovira ta HTML projekt na Yonge Streetu v North Yorku, blizu slavne OWL-jeve trgovine z mesom.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

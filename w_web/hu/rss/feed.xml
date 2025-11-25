@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML-rajzolás</title>
-<link>https://dckim.com/hdub/hu/articles/HTML-rajzolás.html</link>
+<title>HTML--rajzolás</title>
+<link>https://dckim.com/hdub/w_web/hu/articles/HTML--rajzolás.html</link>
 <description>HTML A rajzolás kezdőknek és hobbistáknak való. Lapozz néhány dolgot az oldalra, majd tedd fel a honlapodra. Ez a hétköznapi embereknek van, nem a nagymenő webfejlesztőknek.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-lóg-néhány-szál</title>
+<link>https://dckim.com/hdub/w_web/hu/articles/HTML-lóg-néhány-szál.html</link>
+<description>Kedves NERDS, egy nyílt levél, amely ezt a HTML Drafting Project-et reklámozza a Yonge Streeten, Észak York-ban, közel a híres OWL húsbolthoz.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

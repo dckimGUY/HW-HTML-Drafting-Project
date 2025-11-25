@@ -1,0 +1,7 @@
+<item>
+<title>HTML-ripub-mõne-lõime-järgi</title>
+<link>https://dckim.com/hdub/w_web/et/articles/HTML-ripub-mõne-lõime-järgi.html</link>
+<description>Kallis NERDS, avatud kiri, mis edendab seda HTML-i koostamise projekti Yonge tänaval Põhja-Yorkis, kuulsa OWLi lihapoe lähedal.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

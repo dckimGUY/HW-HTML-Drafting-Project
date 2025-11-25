@@ -1,0 +1,7 @@
+<item>
+<title>HTML-womando-digantung-oleh-beberapa-benang</title>
+<link>https://dckim.com/hdub/w_web/ms/articles/HTML-womando-digantung-oleh-beberapa-benang.html</link>
+<description>Dear NERDS, sebuah Open-Letter mempromosikan Proyek Drawing HTML ini di Yonge Street di North York, dekat Toko Daging Famous OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

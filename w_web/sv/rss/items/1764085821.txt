@@ -1,0 +1,7 @@
+<item>
+<title>HTML-hänger-med-några-trådar</title>
+<link>https://dckim.com/hdub/w_web/sv/articles/HTML-hänger-med-några-trådar.html</link>
+<description>Kära NERDS, en Open-Letter som främjar detta HTML Drafting Project på Yonge Street i North York, nära den berömda OWL: s köttbutik.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

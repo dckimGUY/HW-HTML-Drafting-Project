@@ -1,0 +1,7 @@
+<item>
+<title>HTML-is-hanging-by-some-threads</title>
+<link>https://dckim.com/hdub/w_web/id/articles/HTML-is-hanging-by-some-threads.html</link>
+<description>NERDS yang terhormat, Open-Letter mempromosikan Proyek Drafting HTML ini di Yonge Street di York Utara, dekat Toko Daging OWL Terkenal.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

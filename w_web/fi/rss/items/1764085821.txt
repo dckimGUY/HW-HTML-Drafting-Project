@@ -1,0 +1,7 @@
+<item>
+<title>HTML-on-roikkuu-joitakin-säikeitä</title>
+<link>https://dckim.com/hdub/w_web/fi/articles/HTML-on-roikkuu-joitakin-säikeitä.html</link>
+<description>Rakas NERDS, avoin kirjain, joka mainostaa tätä HTML:n luonnosprojektia Yonge Streetillä, lähellä kuuluisaa OWL:n lihakauppaa.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

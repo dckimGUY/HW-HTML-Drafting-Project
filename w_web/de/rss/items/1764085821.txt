@@ -1,0 +1,7 @@
+<item>
+<title>HTML-hängt-von-einigen-Threads</title>
+<link>https://dckim.com/hdub/w_web/de/articles/HTML-hängt-von-einigen-Threads.html</link>
+<description>Liebe NERDS, ein Open-Letter, der dieses HTML-Entwurfprojekt auf der Yonge Street in North York fördert, in der Nähe des Famous OWL's Meat Shops.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

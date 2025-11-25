@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/eu/articles/HTML-Drawing.html</link>
+<description>HTML Zirriborroa hasiberri eta zaleentzat da. Jarri gauza batzuk orrian, eta gero argitaratu zure webgunean. Hau jende arruntarentzat da, ez denbora handiko web saltzaileentzat.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

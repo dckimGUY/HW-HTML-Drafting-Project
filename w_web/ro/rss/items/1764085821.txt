@@ -1,0 +1,7 @@
+<item>
+<title>HTML-este-agățat-de-unele-fire</title>
+<link>https://dckim.com/hdub/w_web/ro/articles/HTML-este-agățat-de-unele-fire.html</link>
+<description>Dragă NERDS, un Open-Letter care promovează acest proiect de proiectare HTML pe strada Yonge din North York, lângă Famous OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

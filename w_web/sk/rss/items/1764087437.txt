@@ -1,0 +1,7 @@
+<item>
+<title>HTML--Drawing</title>
+<link>https://dckim.com/hdub/w_web/sk/articles/HTML--Drawing.html</link>
+<description>HTML Kreslenie je pre začiatočníkov a hobbyistov. Prilepiť nejaké veci na stránku a potom ich poslať na vaše webové stránky. Toto je pre bežných ľudí, nie pre veľkých webových vývojárov.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

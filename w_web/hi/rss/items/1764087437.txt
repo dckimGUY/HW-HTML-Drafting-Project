@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/hi/articles/HTML-Drawing.html</link>
+<description>एचटीएमएल ड्राफ्टिंग शुरुआती और शौकियों के लिए है। पृष्ठ पर कुछ सामान थप्पड़, फिर इसे अपनी वेबसाइट पर पोस्ट करें। यह नियमित लोगों के लिए है, नहीं बड़े समय के वेब डेवलपर्स।.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

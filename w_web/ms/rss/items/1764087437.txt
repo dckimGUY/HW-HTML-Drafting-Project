@@ -1,0 +1,7 @@
+<item>
+<title>Penggambaran-HTML</title>
+<link>https://dckim.com/hdub/w_web/ms/articles/Penggambaran-HTML.html</link>
+<description>Kepulauan Marshall Draf untuk pemula dan hobi. Tampar beberapa barang ke halaman, kemudian posting di website Anda. Ini untuk orang biasa, bukan pengembang web besar-waktu.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

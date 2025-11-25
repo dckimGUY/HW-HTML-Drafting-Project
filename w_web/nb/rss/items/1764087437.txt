@@ -1,0 +1,7 @@
+<item>
+<title>HTML-trekking</title>
+<link>https://dckim.com/hdub/w_web/nb/articles/HTML-trekking.html</link>
+<description>HTML Utkast er for nybegynnere og hobbyister. Legg noe på siden, og legg det deretter på nettstedet ditt. Dette er for vanlige mennesker, ikke store web-developers.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

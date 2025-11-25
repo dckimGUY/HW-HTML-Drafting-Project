@@ -1,0 +1,7 @@
+<item>
+<title>HTML-está-pendurado-por-alguns-tópicos</title>
+<link>https://dckim.com/hdub/w_web/pt-BR/articles/HTML-está-pendurado-por-alguns-tópicos.html</link>
+<description>Caro NERDS, uma carta aberta promovendo este projeto de redação HTML em Yonge Street, em North York, perto da Famous OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

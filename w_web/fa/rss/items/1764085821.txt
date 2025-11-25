@@ -1,0 +1,7 @@
+<item>
+<title>HTML-توسط-برخی-از-موضوعات-آویزان-است</title>
+<link>https://dckim.com/hdub/w_web/fa/articles/HTML-توسط-برخی-از-موضوعات-آویزان-است.html</link>
+<description>Dear NERDS، یک Open-Letter ترویج این پروژه پیش نویس HTML در خیابان یونگ در شمال یورک، نزدیک به فروشگاه مشهور گوشت OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

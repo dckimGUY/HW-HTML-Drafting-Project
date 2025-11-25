@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/gl/articles/HTML-Drawing.html</link>
+<description>HTML A programación é para principiantes e afeccionados. Sela algo na páxina, logo publicar na súa web. Isto é para xente normal, non grandes desenvolvedores web.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

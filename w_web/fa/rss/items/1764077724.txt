@@ -1,7 +1,0 @@
-<item>
-<title>HTML-Draw</title>
-<link>https://dckim.com/hdub/fa/articles/HTML-Draw.html</link>
-<description>HTML HTML پیش نویس برای مبتدیان و سرگرمی ها است. برخی موارد را بر روی صفحه بنویسید، سپس آن را در وب سایت خود پست کنید. این برای افراد عادی است، نه توسعه دهندگان وب در زمان بزرگ.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

@@ -1,7 +1,0 @@
-<item>
-<title>HTML-чиймеси</title>
-<link>https://dckim.com/hdub/ky/articles/HTML-чиймеси.html</link>
-<description>HTML HTML Редакция башталгычтар жана хоббисттер үчүн. Бир нече нерсени баракка чапкыла, анан веб-сайтыңарга жарыялагыла. Бул чоң веб-иштеп чыгуучулар үчүн эмес, кадимки адамдар үчүн.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

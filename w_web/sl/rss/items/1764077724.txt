@@ -1,7 +1,0 @@
-<item>
-<title>Risba-HTML</title>
-<link>https://dckim.com/hdub/sl/articles/Risba-HTML.html</link>
-<description>HTML Risanje je za začetnike in ljubitelje. Splezaj nekaj stvari na stran in jih nato objavi na svoji spletni strani. To je za navadne ljudi, ne za velike spletne razvijalce.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
-</item>

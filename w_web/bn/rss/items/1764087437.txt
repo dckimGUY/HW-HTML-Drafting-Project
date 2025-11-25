@@ -1,0 +1,7 @@
+<item>
+<title>HTML-বিন্যাসিং</title>
+<link>https://dckim.com/hdub/w_web/bn/articles/HTML-বিন্যাসিং.html</link>
+<description>HTML খসড়া হচ্ছে শুরু এবং শখকারীদের জন্য। এই পাতায় কিছু জিনিস জমা দিন, তারপর সেটা আপনার ওয়েবসাইটে পোস্ট করুন। এটা সাধারণ মানুষের জন্য, বড় মাপের ওয়েব-ডেমোটার নয়।.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

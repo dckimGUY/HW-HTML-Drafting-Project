@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML-рисунка</title>
-<link>https://dckim.com/hdub/bg/articles/HTML-рисунка.html</link>
+<title>Показване-на-HTML</title>
+<link>https://dckim.com/hdub/w_web/bg/articles/Показване-на-HTML.html</link>
 <description>HTML Подготовката е за начинаещи и хобита. Сложи някои неща на страницата, после го публикувай на сайта си. Това е за обикновени хора, не за големи уеб-разработчици.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-виси-на-някои-конци</title>
+<link>https://dckim.com/hdub/w_web/bg/articles/HTML-виси-на-някои-конци.html</link>
+<description>Скъпи NERDS, Open-Letter промотира този HTML проект за проектиране на Йонг Стрийт в Северен Йорк, близо до известния магазин за месо на ОУЛ.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

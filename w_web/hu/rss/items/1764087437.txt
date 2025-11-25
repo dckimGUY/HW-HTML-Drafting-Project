@@ -1,0 +1,7 @@
+<item>
+<title>HTML--rajzolás</title>
+<link>https://dckim.com/hdub/w_web/hu/articles/HTML--rajzolás.html</link>
+<description>HTML A rajzolás kezdőknek és hobbistáknak való. Lapozz néhány dolgot az oldalra, majd tedd fel a honlapodra. Ez a hétköznapi embereknek van, nem a nagymenő webfejlesztőknek.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML-výkres</title>
-<link>https://dckim.com/hdub/cs/articles/HTML-výkres.html</link>
+<title>HTML--kreslení</title>
+<link>https://dckim.com/hdub/w_web/cs/articles/HTML--kreslení.html</link>
 <description>HTML Kreslení je pro začátečníky a hobbyisty. Nafackovat nějaké věci na stránku, pak to dát na své webové stránky. Tohle je pro normální lidi, ne pro vývojáře webových stránek.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-je-zavěšen-za-nějaké-nitě</title>
+<link>https://dckim.com/hdub/w_web/cs/articles/HTML-je-zavěšen-za-nějaké-nitě.html</link>
+<description>Milý NERDS, Open- Letter propagující tento HTML Drafting Project na Yonge Street v North Yorku, poblíž slavného OWL 's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

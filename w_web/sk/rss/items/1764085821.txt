@@ -1,0 +1,7 @@
+<item>
+<title>HTML-visí-na-niektorých-vláknach</title>
+<link>https://dckim.com/hdub/w_web/sk/articles/HTML-visí-na-niektorých-vláknach.html</link>
+<description>Drahí Nerds, Open-Letter propagujúci tento HTML Kreslenie projekt na Yonge Street v Severnom Yorku, v blízkosti známeho OWL Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

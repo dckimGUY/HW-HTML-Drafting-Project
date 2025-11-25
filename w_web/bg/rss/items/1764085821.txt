@@ -1,0 +1,7 @@
+<item>
+<title>HTML-виси-на-някои-конци</title>
+<link>https://dckim.com/hdub/w_web/bg/articles/HTML-виси-на-някои-конци.html</link>
+<description>Скъпи NERDS, Open-Letter промотира този HTML проект за проектиране на Йонг Стрийт в Северен Йорк, близо до известния магазин за месо на ОУЛ.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

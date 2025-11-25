@@ -1,0 +1,7 @@
+<item>
+<title>HTML-està-penjant-per-alguns-fils</title>
+<link>https://dckim.com/hdub/w_web/ca/articles/HTML-està-penjant-per-alguns-fils.html</link>
+<description>Estimat equiper d'investigació, un projecte de promoció d'Open Letter a Yonge Street al nord de York, prop del famós Sipho.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

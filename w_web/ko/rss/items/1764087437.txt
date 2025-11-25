@@ -1,0 +1,7 @@
+<item>
+<title>HTML-그리기</title>
+<link>https://dckim.com/hdub/w_web/ko/articles/HTML-그리기.html</link>
+<description>HTML 지원 초록색은 초보자와 취미자를위한 것입니다. Slap 일부 물건에 페이지, 다음 사이트에 게시. 이것은 평범한 사람들을 위해, 큰 시간 웹 개발자 아닙니다.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/de/articles/HTML-Drawing.html</link>
+<description>HTML Entwurf ist für Anfänger und Hobbyisten. Schlagen Sie etwas auf die Seite, dann posten Sie es auf Ihrer Website. Dies ist für normale Leute, nicht Big-time Web-Entwickler.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

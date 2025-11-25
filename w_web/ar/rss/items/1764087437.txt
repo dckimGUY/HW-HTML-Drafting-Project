@@ -1,0 +1,7 @@
+<item>
+<title>HTML---سحب</title>
+<link>https://dckim.com/hdub/w_web/ar/articles/HTML---سحب.html</link>
+<description>HTML الصياغة للمبتدئين والهواة صفع بعض الأشياء على الصفحة، ثم وضعه على موقعك. هذا من أجل الناس العاديين، وليس كبار المتطورين على الإنترنت.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

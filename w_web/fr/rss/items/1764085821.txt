@@ -1,0 +1,7 @@
+<item>
+<title>HTML-est-accroché-par-certains-threads</title>
+<link>https://dckim.com/hdub/w_web/fr/articles/HTML-est-accroché-par-certains-threads.html</link>
+<description>Cher NERDS, une lettre ouverte faisant la promotion de ce projet de rédaction HTML sur Yonge Street à North York, près du célèbre magasin de viande de l'OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

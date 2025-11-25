@@ -1,0 +1,7 @@
+<item>
+<title>HTML-被一些线程所悬挂</title>
+<link>https://dckim.com/hdub/w_web/zh-Hans/articles/HTML-被一些线程所悬挂.html</link>
+<description>亲爱的NERDS,一个在北约克的永德街上宣传这个HTML起草项目的公开信,靠近著名的OWL肉店.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

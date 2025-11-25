@@ -1,0 +1,7 @@
+<item>
+<title>HTML-está-colgado-por-algúns-fíos</title>
+<link>https://dckim.com/hdub/w_web/gl/articles/HTML-está-colgado-por-algúns-fíos.html</link>
+<description>Dear NERDS, un Open-Letter que promove este proxecto de borrador de HTML en Yonge Street, no norte de York, preto da Famous OWL's Meat Shop.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

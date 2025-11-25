@@ -1,0 +1,7 @@
+<item>
+<title>HTML-Dibuixing</title>
+<link>https://dckim.com/hdub/w_web/ca/articles/HTML-Dibuixing.html</link>
+<description>HTML L'aprenentatge és per principiants i hobbyistes. Pega alguna cosa a la pàgina i posa-la al teu lloc web. Això és per a gent normal, no per als desenvolupadors del web.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

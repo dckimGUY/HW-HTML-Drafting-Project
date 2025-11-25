@@ -1,0 +1,7 @@
+<item>
+<title>HTML</title>
+<link>https://dckim.com/hdub/w_web/sq/articles/HTML.html</link>
+<description>HTML Kopja është për fillestarët dhe hobitë. Vendos disa gjëra në faqe, pastaj postoje në faqen tënde. Kjo është për njerëz të zakonshëm, jo për shumë kohë në internet-zhvillues.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML</title>
-<link>https://dckim.com/hdub/he/articles/HTML.html</link>
+<title>HTML-Drawing</title>
+<link>https://dckim.com/hdub/w_web/he/articles/HTML-Drawing.html</link>
 <description>HTML Drafting הוא למתחילים ותחביבים. קצת על הדף, ולאחר מכן לפרסם אותו באתר שלך. זה עבור אנשים רגילים, לא מהדורות אינטרנט גדולות.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-תלוי-בכמה-חוטים</title>
+<link>https://dckim.com/hdub/w_web/he/articles/HTML-תלוי-בכמה-חוטים.html</link>
+<description>Dear NERDS, Open-Letter לקדם את פרויקט ה-HTML הזה ברחוב יונג שבצפון יורק, ליד חנות הבשר המפורסמת של OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

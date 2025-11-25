@@ -11,13 +11,20 @@
 <width>88</width>
 <height>31></height>
 </image>
-<lastBuildDate>Tue, 25 Nov 2025 08:35:24 -0500</lastBuildDate>
+<lastBuildDate>Tue, 25 Nov 2025 11:17:17 -0500</lastBuildDate>
 <item>
-<title>HTML-рисунок</title>
-<link>https://dckim.com/hdub/ru/articles/HTML-рисунок.html</link>
+<title>HTML-рисование</title>
+<link>https://dckim.com/hdub/w_web/ru/articles/HTML-рисование.html</link>
 <description>HTML Редактирование предназначено для начинающих и любителей. Нанесите что-нибудь на страницу, а затем опубликуйте на своем сайте. Это для обычных людей, а не для крупных веб-разработчиков.</description>
-<pubDate>Tue, 25 Nov 2025 08:35:24 -0500</pubDate>
-<guid>Tue, 25 Nov 2025 08:35:24 -0500</guid>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>
+<item>
+<title>HTML-висит-на-некоторых-потоках</title>
+<link>https://dckim.com/hdub/w_web/ru/articles/HTML-висит-на-некоторых-потоках.html</link>
+<description>Дорогие NERDS, открытое письмо, продвигающее этот проект HTML Drafting на Йонг-стрит в Северном Йорке, недалеко от мясного магазина Famous OWL.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
 </item>
 </channel>
 </rss>

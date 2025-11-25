@@ -1,0 +1,7 @@
+<item>
+<title>HTML-هو-معلق-من-قبل-بعض-الخيوط</title>
+<link>https://dckim.com/hdub/w_web/ar/articles/HTML-هو-معلق-من-قبل-بعض-الخيوط.html</link>
+<description>عزيزتي (نيردز) ، رسالة مفتوحة تروج لمشروع "إتش تي إل" في شارع "يونج" في "شمال يورك" بالقرب من محل "الطعام الشهير".</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

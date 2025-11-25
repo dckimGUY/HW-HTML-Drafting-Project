@@ -1,0 +1,7 @@
+<item>
+<title>HTML-zīmēšana</title>
+<link>https://dckim.com/hdub/w_web/lv/articles/HTML-zīmēšana.html</link>
+<description>HTML Izstrāde paredzēta iesācējiem un hobijistiem. Iepļaukāt dažas sīkumi lapā, tad post to savā mājas lapā. Tas ir regulāriem ļaudīm, nevis liela laika tīmekļa izstrādātājiem.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>Narisanje-HTML</title>
+<link>https://dckim.com/hdub/w_web/sl/articles/Narisanje-HTML.html</link>
+<description>HTML Risanje je za začetnike in ljubitelje. Splezaj nekaj stvari na stran in jih nato objavi na svoji spletni strani. To je za navadne ljudi, ne za velike spletne razvijalce.</description>
+<pubDate>Tue, 25 Nov 2025 11:17:17 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 11:17:17 -0500</guid>
+</item>

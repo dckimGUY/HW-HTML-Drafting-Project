@@ -1,0 +1,7 @@
+<item>
+<title>HTML-แขวนโดยบางเธรด</title>
+<link>https://dckim.com/hdub/w_web/th/articles/HTML-แขวนโดยบางเธรด.html</link>
+<description>ถึง NERDS,  Open-letter โปรโมตโครงการร่างแบบ HTML นี้ บนถนนยองกีในตอนเหนือของยอร์ก ใกล้ร้านเนื้อโอดับเบิลยูแอลที่มีชื่อเสียง.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>

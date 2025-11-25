@@ -1,0 +1,7 @@
+<item>
+<title>HTML-zintzilik-dago-hari-batzuekin</title>
+<link>https://dckim.com/hdub/w_web/eu/articles/HTML-zintzilik-dago-hari-batzuekin.html</link>
+<description>NERDS maitea, Ipar Yorkeko Yonge Street-eko HTML zirriborro-proiektu hau sustatzen duen gutun ireki bat, Famous OWL's Meat Shop-etik hurbil.</description>
+<pubDate>Tue, 25 Nov 2025 10:50:21 -0500</pubDate>
+<guid>Tue, 25 Nov 2025 10:50:21 -0500</guid>
+</item>
