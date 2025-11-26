@@ -1,0 +1,7 @@
+pageTitle="$(cat b_inputPageTitle.txt)";
+for inputLanguage in {ar,az,bg,bn,ca,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,he,hi,hu,id,it,ja,ko,ky,lt,lv,ms,nb,nl,pt-BR,pl,pt,ro,ru,sk,sl,sq,sv,th,tl,tr,zh-Hans}; do
+inputTitle="$(curl -X POST "http://localhost:5000/translate" -H "Content-Type: application/json" -d '{"q": "'"$pageTitle"'", "source":"en", "target":"'"$inputLanguage"'"}')";
+cleanTitle="$(echo "$inputTitle" | sed 's/{"translatedText":"//' | sed 's/"}//' | sed 's/ /-/g')";
+imageCaption="$(echo "$inputTitle" | sed 's/{"translatedText":"//' | sed 's/"}//')";
+magick f_inputOpenGraphImage.png -gravity south -pointsize 96 -fill white -annotate +0+24 "$imageCaption" ./"$inputLanguage"/images/"$cleanTitle".png;
+done;

@@ -32,10 +32,10 @@ if (shift==false||hauptMode==1) {
 /*    d    */ if (kC ==  68 && cC == 100) {                 promptDownloadLink();                   }
 /*    f    */ if (kC ==  70 && cC == 102) { styleKey = "f"; noteStyle("F<br><span style='font-size: 0.5em;'>grid to font-size</span>",durationS);  gridToFontSize(keyInfo); lastKey = "f";                }
 /*    g    */ if (kC ==  71 && cC == 103) { modeRouter(e,1);                                        }
-/*    h    */ if (kC ==  72 && cC == 104) {                 outerScaleDown(keyInfo);                }
+/*    h    */ if (kC ==  72 && cC == 104) {                 rotateLeft();                           }
 /*    j    */ if (kC ==  74 && cC == 106) {                 rotateZleft();                          }
 /*    k    */ if (kC ==  75 && cC == 107) {                 rotateZright();                         }
-/*    l    */ if (kC ==  76 && cC == 108) {                 outerScaleUp(keyInfo);                  }
+/*    l    */ if (kC ==  76 && cC == 108) {                 rotateRight();                          }
 /*    z    */ if (kC ==  90 && cC == 122) {                 flipAnchorZ(keyInfo);                   }
 /*    x    */ if (kC ==  88 && cC == 120) {                 clearRotation(); noteStyle("X<br><span style='font-size: 0.5em;'>clear rotation</span>",durationS);           }
 /*    c    */ if (kC ==  67 && cC ==  99) {                 enterForegroundColour(keyInfo); noteStyle("C<br><span style='font-size: 0.5em;'>FG colour</span>",durationS); }
@@ -61,10 +61,10 @@ if (shift==true||hauptMode==1) {
 /*    D    */ if (kC ==  68 && cC ==  68) {                 buttonDiv();                            }
 /*    F    */ if (kC ==  70 && cC ==  70) { styleKey = "F"; noteStyle("<u>F</u><br><span style='font-size: 0.5em;'>grid to font-size</span>",durationS,true); gridToFontSize(keyInfo); lastKey = "F";           }
 /*    G    */ if (kC ==  71 && cC ==  71) { modeRouter(e,1);                                        }
-/*    H    */ if (kC ==  72 && cC ==  72) {                 rotateLeft();                           }
+/*    H    */ if (kC ==  72 && cC ==  72) {                 outerScaleDown(keyInfo);                }
 /*    J    */ if (kC ==  74 && cC ==  74) {                 rotateUnder();                          }
 /*    K    */ if (kC ==  75 && cC ==  75) {                 rotateOver();                           }
-/*    L    */ if (kC ==  76 && cC ==  76) {                 rotateRight();                          }
+/*    L    */ if (kC ==  76 && cC ==  76) {                 outerScaleUp(keyInfo);                  }
 /*    Z    */ if (kC ==  90 && cC ==  90) {                 flipAnchorZ(keyInfo);                   }
 /*    X    */ if (kC ==  88 && cC ==  88) {                 resetScale(); noteStyle("X<br><span style='font-size: 0.5em;'>reset scale</span>",durationS);                      }
 /*    C    */ if (kC ==  67 && cC ==  67) {                 enterForegroundColour(keyInfo); noteStyle("C<br><span style='font-size: 0.5em;'>FG colour</span>",durationS,true); }

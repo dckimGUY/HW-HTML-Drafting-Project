@@ -9,6 +9,14 @@ g_rssItem.txt
 h_rssHeader.txt
 i_rssFooter.txt
 vv_buildImages
+vva_buildImages_dckimPixelMono
+vvb_buildImages_ARIALN
+vvc_buildImages_Nirmala
+vvd_buildImages_segoeui
+vve_buildImages_YuGothB
+vvf_buildImages_malgun
+vvg_buildImages_LeelawUI
+vvh_buildImages_msyh
 ww_mastodonPostLengthChecker
 xx_buildSitemap
 yy_buildFolders
