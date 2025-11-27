@@ -1,0 +1,7 @@
+<item>
+<title>Rúa-Yonge</title>
+<link>https://dckim.com/hdub/w_web/gl/articles/Rúa-Yonge.html</link>
+<description>Unha breve carta de agradecemento á cidade de Toronto, en Yonge Street, no norte de York, por permitirme usar o seu taboleiro de sinalización da comunidade para anunciar este Proxecto HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

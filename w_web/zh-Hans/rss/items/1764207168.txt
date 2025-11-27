@@ -1,0 +1,7 @@
+<item>
+<title>出差时</title>
+<link>https://dckim.com/hdub/w_web/zh-Hans/articles/出差时.html</link>
+<description>努力制作有史以来最好的 HTML 起草程序 .</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

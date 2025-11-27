@@ -1,0 +1,7 @@
+<item>
+<title>Na-misii</title>
+<link>https://dckim.com/hdub/w_web/sk/articles/Na-misii.html</link>
+<description>Tvrdo pracuje na výrobe najlepšieho HTML redakčného programu, aký bol kedy navrhnutý.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>Dalam-misi</title>
+<link>https://dckim.com/hdub/w_web/ms/articles/Dalam-misi.html</link>
+<description>Saat bekerja keras untuk menghasilkan program penyusunan HTML terbaik yang pernah dirancang.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

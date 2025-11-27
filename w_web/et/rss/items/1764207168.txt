@@ -1,0 +1,7 @@
+<item>
+<title>Missioonil</title>
+<link>https://dckim.com/hdub/w_web/et/articles/Missioonil.html</link>
+<description>Töötades kõvasti, et luua parim HTML koostamise programm kunagi välja töötatud.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

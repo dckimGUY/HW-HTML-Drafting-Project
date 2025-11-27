@@ -1,0 +1,7 @@
+<item>
+<title>في-بعثة</title>
+<link>https://dckim.com/hdub/w_web/ar/articles/في-بعثة.html</link>
+<description>العمل جاهداً على إنتاج أفضل برنامج صياغته.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

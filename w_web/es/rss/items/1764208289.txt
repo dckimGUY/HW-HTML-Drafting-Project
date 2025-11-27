@@ -1,0 +1,7 @@
+<item>
+<title>Querida-calle-Yonge</title>
+<link>https://dckim.com/hdub/w_web/es/articles/Querida-calle-Yonge.html</link>
+<description>Una breve carta de agradecimiento a la ciudad de Toronto, en la calle Yonge en el norte de York, por permitirme utilizar su junta de firmas comunitarias para anunciar este proyecto de redacción HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

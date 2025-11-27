@@ -1,0 +1,7 @@
+<item>
+<title>Na-misiji</title>
+<link>https://dckim.com/hdub/w_web/sl/articles/Na-misiji.html</link>
+<description>Trdo se trudijo, da bi izdelali najboljši program za oblikovanje HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

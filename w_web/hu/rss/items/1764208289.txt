@@ -1,0 +1,7 @@
+<item>
+<title>Kedves-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/hu/articles/Kedves-Yonge-Street.html</link>
+<description>Egy rövid köszönöm-levelet Toronto városának, a Yonge Streeten, Észak York-ban, hogy megengedte, hogy használjam a közösségi hirdetőtáblájukat, hogy reklámozzam ezt a HTML rajzprojektet.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

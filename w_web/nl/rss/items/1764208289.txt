@@ -1,0 +1,7 @@
+<item>
+<title>Beste-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/nl/articles/Beste-Yonge-Street.html</link>
+<description>Een korte bedankbrief aan de stad Toronto, op Yonge Street in North York, voor het feit dat ik hun community bord mag gebruiken om dit HTML Drafting Project te adverteren.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

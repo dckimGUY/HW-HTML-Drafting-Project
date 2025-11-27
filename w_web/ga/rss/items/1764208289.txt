@@ -1,0 +1,7 @@
+<item>
+<title>A-chara-Sráid-Yonge</title>
+<link>https://dckim.com/hdub/w_web/ga/articles/A-chara-Sráid-Yonge.html</link>
+<description>A Brief thank-you letter to the City of Toronto, on Yonge Street in North York, chun ligean dom a n-bord comhartha-posting pobail a úsáid a fhógairt seo HTML Dréacht-Tionscadal.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

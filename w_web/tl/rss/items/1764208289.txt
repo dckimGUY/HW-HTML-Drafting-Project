@@ -1,0 +1,7 @@
+<item>
+<title>Mahal-na-Lansangang-Yonge</title>
+<link>https://dckim.com/hdub/w_web/tl/articles/Mahal-na-Lansangang-Yonge.html</link>
+<description>Isang maikling liham ng pasasalamat sa Lungsod ng Toronto, sa Yonge Street sa Hilagang York, dahil sa pagpapahintulot sa akin na gamitin ang kanilang community sign-posting board upang ianunsiyo ang HTML Drafting Project na ito.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

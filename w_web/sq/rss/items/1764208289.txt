@@ -1,0 +1,7 @@
+<item>
+<title>E-dashur-Jonge-Street</title>
+<link>https://dckim.com/hdub/w_web/sq/articles/E-dashur-Jonge-Street.html</link>
+<description>Një letër e shkurtër falënderimi për qytetin e Torontos, në rrugën Jonge në veri të Jorkut, që më lejoi të përdorja bordin e tyre të nënshkrimit të shenjave për të njoftuar projektin e kopjeve të HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

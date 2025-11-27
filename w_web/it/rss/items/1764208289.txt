@@ -1,0 +1,7 @@
+<item>
+<title>Caro-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/it/articles/Caro-Yonge-Street.html</link>
+<description>Una breve lettera di ringraziamento alla città di Toronto, su Yonge Street a North York, per avermi permesso di usare la loro community sign-posting board per pubblicizzare questo progetto HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

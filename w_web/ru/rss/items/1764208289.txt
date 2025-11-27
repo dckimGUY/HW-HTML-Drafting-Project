@@ -1,0 +1,7 @@
+<item>
+<title>Дорогая-улица-Йонг</title>
+<link>https://dckim.com/hdub/w_web/ru/articles/Дорогая-улица-Йонг.html</link>
+<description>Короткое благодарственное письмо в город Торонто, на Йонг-стрит в Северном Йорке, за то, что я позволила использовать их общинную доску объявлений для рекламы этого проекта HTML Drafting.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

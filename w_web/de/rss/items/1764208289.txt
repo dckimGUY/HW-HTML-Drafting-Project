@@ -1,0 +1,7 @@
+<item>
+<title>Liebe-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/de/articles/Liebe-Yonge-Street.html</link>
+<description>Ein kurzes Dankesschreiben an die Stadt Toronto, auf der Yonge Street in North York, damit ich ihr Community Sign-Posting-Board nutzen kann, um dieses HTML-Entwurf-Projekt zu werben.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

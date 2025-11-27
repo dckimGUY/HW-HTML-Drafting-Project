@@ -1,0 +1,7 @@
+<item>
+<title>Drahá-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/cs/articles/Drahá-Yonge-Street.html</link>
+<description>Brief díku- vy dopis do města Toronto, na Yonge Street v Severní Yorku, za to, že mi umožní použít jejich komunitní sign- vysílání tabule inzerovat tento HTML Drafting Project.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

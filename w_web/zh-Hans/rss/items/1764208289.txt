@@ -1,0 +1,7 @@
+<item>
+<title>亲爱的永爱街</title>
+<link>https://dckim.com/hdub/w_web/zh-Hans/articles/亲爱的永爱街.html</link>
+<description>一封写给多伦多市的简短的感谢信 写在北约永街 允许我用他们的社区招牌板 来宣传这个HTML起草项目.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

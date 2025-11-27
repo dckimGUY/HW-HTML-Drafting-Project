@@ -1,0 +1,7 @@
+<item>
+<title>במשימה</title>
+<link>https://dckim.com/hdub/w_web/he/articles/במשימה.html</link>
+<description>לעבוד קשה כדי להפיק את התוכנית הטובה ביותר לנסח HTML אי פעם.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>Kjære-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/nb/articles/Kjære-Yonge-Street.html</link>
+<description>En kort takk-du brev til byen Toronto, på Yonge Street i North York, for å tillate meg å bruke deres fellesskap sign-posting styret for å annonsere dette HTML Drafting Project.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

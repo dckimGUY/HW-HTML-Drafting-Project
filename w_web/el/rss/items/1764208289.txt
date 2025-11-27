@@ -1,0 +1,7 @@
+<item>
+<title>Αγαπητέ-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/el/articles/Αγαπητέ-Yonge-Street.html</link>
+<description>Μια σύντομη ευχαριστήρια επιστολή προς την πόλη του Τορόντο, στην οδό Yonge στη Βόρεια Υόρκη, για να μου επιτρέψει να χρησιμοποιήσετε την κοινότητα τους πινακίδα-αποστολή για να διαφημίσει αυτό το HTML σχέδιο.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

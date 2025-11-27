@@ -1,0 +1,7 @@
+<item>
+<title>এক-অভিযানে</title>
+<link>https://dckim.com/hdub/w_web/bn/articles/এক-অভিযানে.html</link>
+<description>এইচ.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

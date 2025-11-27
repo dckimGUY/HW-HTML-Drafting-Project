@@ -1,0 +1,7 @@
+<item>
+<title>Yonge-Street-maitea</title>
+<link>https://dckim.com/hdub/w_web/eu/articles/Yonge-Street-maitea.html</link>
+<description>Esker oneko gutun bat Torontoko Hiriari, Yonge Street-en, Ipar York-en, beren komunitateko posta-mahaia erabiltzeko HTML zirriborro-proiektu hau iragartzeko.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

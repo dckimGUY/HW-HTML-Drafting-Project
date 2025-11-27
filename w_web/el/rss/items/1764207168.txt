@@ -1,0 +1,7 @@
+<item>
+<title>Σε-μια-αποστολή</title>
+<link>https://dckim.com/hdub/w_web/el/articles/Σε-μια-αποστολή.html</link>
+<description>Εργάζεται σκληρά για να παράγει το καλύτερο πρόγραμμα σύνταξης HTML που επινοήθηκε ποτέ.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>Misijoje</title>
+<link>https://dckim.com/hdub/w_web/lt/articles/Misijoje.html</link>
+<description>Sunkiai dirba gaminti geriausią HTML redagavimo programą kada nors sugalvojo.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

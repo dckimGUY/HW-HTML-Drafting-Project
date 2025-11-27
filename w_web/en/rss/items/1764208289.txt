@@ -1,0 +1,7 @@
+<item>
+<title>Dear-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/en/articles/Dear-Yonge-Street.html</link>
+<description>A Brief thank-you letter to the City of Toronto, on Yonge Street in North York, for allowing me to use their community sign-posting board to advertise this HTML Drafting Project.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

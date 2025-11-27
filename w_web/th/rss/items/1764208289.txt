@@ -1,0 +1,7 @@
+<item>
+<title>ถึง-ยง-สตรีท</title>
+<link>https://dckim.com/hdub/w_web/th/articles/ถึง-ยง-สตรีท.html</link>
+<description>จดหมายขอบคุณฉบับสั้น ๆ ถึงเมืองโตรอนโต บนถนนยองกีในตอนเหนือของยอร์ก ที่อนุญาตให้ผมใช้คณะกรรมการส่งสาส์นชุมชนของพวกเขา เพื่อโฆษณาโครงการร่างแบบ HTML นี้.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

@@ -1,4 +1,5 @@
 06_mastodonRoll/
+07_posts/
 a_inputPageHeader.txt
 b_inputPageTitle.txt
 c_inputPageDescription.txt
@@ -8,6 +9,8 @@ f_inputOpenGraphImage.png
 g_rssItem.txt
 h_rssHeader.txt
 i_rssFooter.txt
+input.json
+uu_buildPosts
 vv_buildImages
 vva_buildImages_dckimPixelMono
 vvb_buildImages_ARIALN

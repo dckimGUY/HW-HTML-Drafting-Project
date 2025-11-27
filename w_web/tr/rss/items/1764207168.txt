@@ -1,0 +1,7 @@
+<item>
+<title>Bir-görevde</title>
+<link>https://dckim.com/hdub/w_web/tr/articles/Bir-görevde.html</link>
+<description>Her zaman tasarlanan en iyi HTML draft programını üretmek zor.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>Dragă-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/ro/articles/Dragă-Yonge-Street.html</link>
+<description>O scurtă scrisoare de mulţumire către oraşul Toronto, pe strada Yonge din North York, pentru că mi-a permis să folosesc consiliul lor comunitar pentru a face reclamă acestui proiect HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

@@ -1,0 +1,7 @@
+<item>
+<title>רחוב-יונג</title>
+<link>https://dckim.com/hdub/w_web/he/articles/רחוב-יונג.html</link>
+<description>מכתב תודה קצר לעיר טורונטו, ברחוב יונג בצפון יורק, על כך שאפשר לי להשתמש בדירקטוריון החתומה הקהילתי שלהם כדי לפרסם את פרויקט ה-HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

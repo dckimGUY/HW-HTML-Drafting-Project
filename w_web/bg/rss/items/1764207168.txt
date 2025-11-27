@@ -1,0 +1,7 @@
+<item>
+<title>На-мисия</title>
+<link>https://dckim.com/hdub/w_web/bg/articles/На-мисия.html</link>
+<description>Работим усилено, за да създадем най-добрата HTML програма, която някога е разработвана.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

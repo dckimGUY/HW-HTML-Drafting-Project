@@ -1,0 +1,7 @@
+<item>
+<title>Sevgili-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/tr/articles/Sevgili-Yonge-Street.html</link>
+<description>The City of Toronto'ya kısa bir teşekkür mektubunuz, North York'ta Yonge Street'te, bu HTML Taslağı Projesi'ni duyurmama izin vermek için.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

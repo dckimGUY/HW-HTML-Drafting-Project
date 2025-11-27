@@ -1,0 +1,7 @@
+<item>
+<title>Rakas-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/fi/articles/Rakas-Yonge-Street.html</link>
+<description>Lyhyt kiitoskirje Toronton kaupungille, Yonge Streetillä Pohjois-Yorkissa, - siitä, että sain käyttää heidän yhteisön opastustauluaan mainostamaan tätä HTML:n luonnosprojektia.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

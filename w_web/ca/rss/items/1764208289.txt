@@ -1,0 +1,7 @@
+<item>
+<title>Estimat-carrer-Yonge</title>
+<link>https://dckim.com/hdub/w_web/ca/articles/Estimat-carrer-Yonge.html</link>
+<description>Un breu agraïment a la ciutat de Toronto, a Yonge Street a North York, per permetre'm utilitzar el seu consell de senyal familiar per anunciar aquest projecte HTML d'apel·lació.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

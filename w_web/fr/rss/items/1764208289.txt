@@ -1,0 +1,7 @@
+<item>
+<title>Cher-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/fr/articles/Cher-Yonge-Street.html</link>
+<description>Une brève lettre de remerciement à la Ville de Toronto, sur Yonge Street à North York, pour m'avoir permis d'utiliser leur panneau d'affichage communautaire pour annoncer ce projet de rédaction HTML.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

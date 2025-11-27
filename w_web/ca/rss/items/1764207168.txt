@@ -1,0 +1,7 @@
+<item>
+<title>En-una-missió</title>
+<link>https://dckim.com/hdub/w_web/ca/articles/En-una-missió.html</link>
+<description>Treballar dur per produir el millor programa d'esborrany HTML mai ideat.</description>
+<pubDate>Wed, 26 Nov 2025 20:32:48 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:32:48 -0500</guid>
+</item>

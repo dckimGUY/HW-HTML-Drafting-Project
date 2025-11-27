@@ -1,0 +1,7 @@
+<item>
+<title>Droga-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/pl/articles/Droga-Yonge-Street.html</link>
+<description>Krótkie podziękowania - list do miasta Toronto, na Yonge Street w północnym Jorku, za umożliwienie mi korzystania z ich społeczności sign- delegowanie do reklamy tego projektu HTML Drafting.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>

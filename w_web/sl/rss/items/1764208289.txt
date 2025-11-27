@@ -1,0 +1,7 @@
+<item>
+<title>Draga-Yonge-Street</title>
+<link>https://dckim.com/hdub/w_web/sl/articles/Draga-Yonge-Street.html</link>
+<description>Kratka zahvala mestu Toronto, na Yonge Streetu v North Yorku, ker mi je dovolila, da uporabim njihovo skupnostno tablo za oglaševanje tega HTML projekta.</description>
+<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
+</item>
