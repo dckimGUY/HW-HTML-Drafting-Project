@@ -1,0 +1,7 @@
+<item>
+<title>HTML-garaile-ateratzen-da</title>
+<link>https://dckim.com/hdub/w_web/eu/articles/HTML-garaile-ateratzen-da.html</link>
+<description>Yonge Streeten, Ipar Yorken, Kanadako web-proiektu berri bat garaile aterako da.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

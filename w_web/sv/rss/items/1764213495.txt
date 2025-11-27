@@ -1,0 +1,7 @@
+<item>
+<title>HTML-framträder-segerrik</title>
+<link>https://dckim.com/hdub/w_web/sv/articles/HTML-framträder-segerrik.html</link>
+<description>På Yonge Street i North York kommer ett nytt kanadensiskt webbprojekt att segra.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

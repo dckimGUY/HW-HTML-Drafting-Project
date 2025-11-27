@@ -1,0 +1,7 @@
+<item>
+<title>HTML-erscheint-siegreich</title>
+<link>https://dckim.com/hdub/w_web/de/articles/HTML-erscheint-siegreich.html</link>
+<description>Auf der Yonge Street in North York wird ein neues kanadisches Webprojekt siegreich erscheinen.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

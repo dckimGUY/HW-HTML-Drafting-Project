@@ -1,0 +1,7 @@
+<item>
+<title>HTML-は好奇心に現れます</title>
+<link>https://dckim.com/hdub/w_web/ja/articles/HTML-は好奇心に現れます.html</link>
+<description>新しいカナダのWebプロジェクトは、北のYongeストリートで勝利を収めます.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

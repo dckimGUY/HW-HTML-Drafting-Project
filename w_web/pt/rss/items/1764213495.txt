@@ -1,0 +1,7 @@
+<item>
+<title>O-HTML-emerge-vitorioso</title>
+<link>https://dckim.com/hdub/w_web/pt/articles/O-HTML-emerge-vitorioso.html</link>
+<description>Na Yonge Street, em North York, um novo projeto web canadense surgirá vitorioso.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

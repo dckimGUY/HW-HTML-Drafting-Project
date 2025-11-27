@@ -1,0 +1,7 @@
+<item>
+<title>HTML-iese-victorios</title>
+<link>https://dckim.com/hdub/w_web/ro/articles/HTML-iese-victorios.html</link>
+<description>Pe strada Yonge din North York, un nou proiect web canadian va ieşi victorios.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

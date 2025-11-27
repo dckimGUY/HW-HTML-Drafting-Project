@@ -1,0 +1,7 @@
+<item>
+<title>HTML-kommer-seirende</title>
+<link>https://dckim.com/hdub/w_web/nb/articles/HTML-kommer-seirende.html</link>
+<description>På Yonge Street i North York vil et nytt kanadisk webprosjekt bli seirende.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

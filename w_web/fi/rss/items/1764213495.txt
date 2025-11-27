@@ -1,0 +1,7 @@
+<item>
+<title>HTML-tulee-voitokkaaksi</title>
+<link>https://dckim.com/hdub/w_web/fi/articles/HTML-tulee-voitokkaaksi.html</link>
+<description>Yonge Streetillä, Pohjois- Yorkissa, uusi kanadalainen verkkoprojekti nousee voitokkaaksi.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

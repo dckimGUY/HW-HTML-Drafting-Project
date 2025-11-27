@@ -1,0 +1,7 @@
+<item>
+<title>HTML-kļūst-uzvarošs</title>
+<link>https://dckim.com/hdub/w_web/lv/articles/HTML-kļūst-uzvarošs.html</link>
+<description>Jongestrītā (North York) uzvarēs jauns Kanādas tīmekļa projekts.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

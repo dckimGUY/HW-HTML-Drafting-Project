@@ -1,0 +1,7 @@
+<item>
+<title>HTML-се-появява-победител</title>
+<link>https://dckim.com/hdub/w_web/bg/articles/HTML-се-появява-победител.html</link>
+<description>На улица Йонг в Северен Йорк, нов канадски уеб проект ще се появи победител.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

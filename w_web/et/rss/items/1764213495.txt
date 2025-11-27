@@ -1,0 +1,7 @@
+<item>
+<title>HTML-ilmub-võitjana</title>
+<link>https://dckim.com/hdub/w_web/et/articles/HTML-ilmub-võitjana.html</link>
+<description>Põhja-Yorkis Yonge tänaval kerkib võidukalt esile uus Kanada veebiprojekt.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

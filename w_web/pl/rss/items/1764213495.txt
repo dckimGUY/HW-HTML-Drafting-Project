@@ -1,0 +1,7 @@
+<item>
+<title>HTML-pojawia-się-zwycięsko</title>
+<link>https://dckim.com/hdub/w_web/pl/articles/HTML-pojawia-się-zwycięsko.html</link>
+<description>Na Yonge Street w północnym Jorku pojawi się nowy kanadyjski projekt internetowy.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

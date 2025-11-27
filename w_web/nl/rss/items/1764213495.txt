@@ -1,0 +1,7 @@
+<item>
+<title>HTML-wint</title>
+<link>https://dckim.com/hdub/w_web/nl/articles/HTML-wint.html</link>
+<description>Op Yonge Street in North York zal een nieuw Canadees webproject zegevieren.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

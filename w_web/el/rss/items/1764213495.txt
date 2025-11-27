@@ -1,0 +1,7 @@
+<item>
+<title>HTML-αναδύεται-νικηφόρα</title>
+<link>https://dckim.com/hdub/w_web/el/articles/HTML-αναδύεται-νικηφόρα.html</link>
+<description>Στην οδό Yonge στη Βόρεια Υόρκη, ένα νέο καναδικό web project θα αναδειχθεί νικητής.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

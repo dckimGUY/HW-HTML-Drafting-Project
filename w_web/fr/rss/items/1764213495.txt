@@ -1,0 +1,7 @@
+<item>
+<title>HTML-émerge-victorieux</title>
+<link>https://dckim.com/hdub/w_web/fr/articles/HTML-émerge-victorieux.html</link>
+<description>Sur la rue Yonge, à North York, un nouveau projet Web canadien sortira vainqueur.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

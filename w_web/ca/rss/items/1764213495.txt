@@ -1,0 +1,7 @@
+<item>
+<title>L'-HTML-sorgeix-amb-èxit</title>
+<link>https://dckim.com/hdub/w_web/ca/articles/L'-HTML-sorgeix-amb-èxit.html</link>
+<description>A Yonge Street, al nord de York, un nou projecte web canadenca naixerà sagnant.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

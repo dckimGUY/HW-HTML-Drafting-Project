@@ -1,0 +1,7 @@
+<item>
+<title>HTML-پیروز-می-شود</title>
+<link>https://dckim.com/hdub/w_web/fa/articles/HTML-پیروز-می-شود.html</link>
+<description>در خیابان یونگ در نیویورک، یک پروژه وب جدید کانادایی پیروز خواهد شد.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>

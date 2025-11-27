@@ -1,0 +1,7 @@
+<item>
+<title>HTML-жеңүүчү-болуп-чыгат</title>
+<link>https://dckim.com/hdub/w_web/ky/articles/HTML-жеңүүчү-болуп-чыгат.html</link>
+<description>Түндүк-Йорктогу Йонге көчөсүндө Канаданын жаңы веб-проекти жеңүүчү болуп чыгат.</description>
+<pubDate>Wed, 26 Nov 2025 22:18:15 -0500</pubDate>
+<guid>Wed, 26 Nov 2025 22:18:15 -0500</guid>
+</item>
