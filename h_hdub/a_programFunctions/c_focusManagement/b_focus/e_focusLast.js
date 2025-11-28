@@ -8,7 +8,7 @@ coinFocus1=coinFocus;
 coinFocus = utilityLayer0.lastElementChild;
 coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
-coinFocus.scrollIntoView({behavior: 'smooth'});
+coinFocus.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
 return (1);
 } else {
 return (0);

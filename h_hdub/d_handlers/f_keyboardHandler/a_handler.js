@@ -260,8 +260,8 @@ if (hotDog) { return; }
 /*    j    */ if (kC ==  74 && cC == 106) { shiftRouter(keyInfo);lastKey="j";}/*    J    */ if (kC ==  74 && cC ==  74) { shiftRouter(keyInfo);lastKey="J";}
 /*    k    */ if (kC ==  75 && cC == 107) { shiftRouter(keyInfo);lastKey="k";}/*    K    */ if (kC ==  75 && cC ==  75) { shiftRouter(keyInfo);lastKey="K";}
 /*    l    */ if (kC ==  76 && cC == 108) { shiftRouter(keyInfo);lastKey="l";}/*    L    */ if (kC ==  76 && cC ==  76) { shiftRouter(keyInfo);lastKey="L";}
-/*    ;    */ if (kC ==  59 && cC ==  59) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth',block:'center'});} }/*    :    */ if (kC ==  59 && cC ==  58) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth',block:'center'});} }
-/*    '    */ if (kC == 222 && cC ==  39) { fMan(keyInfo);                 }/*    "    */ if (kC == 222 && cC ==34){shiftRouter([e,78,110,true,ec,ea]);}
+/*    ;    */ if (kC ==  59 && cC ==  59) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center'});} }/*    :    */ if (kC ==  59 && cC ==  58) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', inline: 'center'});} }
+/*    '    */ if (kC == 222 && cC ==  39) { fMan(keyInfo);                 }/*    "    */ if (kC == 222 && cC ==34){ if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center', inline: 'center'});} }
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */

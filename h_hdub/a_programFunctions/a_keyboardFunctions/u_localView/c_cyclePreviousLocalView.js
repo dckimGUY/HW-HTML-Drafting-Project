@@ -16,7 +16,7 @@ if(rev==1){focusNext(true)}else{focusPrevious(true)}
 toggleLocalView();
 
 } else {
-if(rev==1){focusNext(true)}else{focusPrevious(true)}
+if(rev==1){focusNext(false)}else{focusPrevious(false)}
 
 
 }

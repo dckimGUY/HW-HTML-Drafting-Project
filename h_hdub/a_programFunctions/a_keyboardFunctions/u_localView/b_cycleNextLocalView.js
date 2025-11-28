@@ -19,7 +19,7 @@ toggleLocalView();
 
 
 } else {
-if(rev==1){focusPrevious(true)}else{focusNext(true)}
+if(rev==1){focusPrevious(false)}else{focusNext(false)}
 }
 
 

@@ -77,6 +77,7 @@ let buttonLinkValue = "";
 
 function enterButton() {
 insertNewCoin([null,78,110]);
+coinFocus.id = coinFocus.id.replace(/coin/g, "link");
 coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + "px";
@@ -117,6 +118,7 @@ navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrol
 navLinkEntry = ``;
 }
 insertNewCoin([null,78,110]);
+coinFocus.id = coinFocus.id.replace(/coin/g, "nav");
 coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
@@ -435,6 +437,3 @@ popTheButtonsOut(true);
 ui.popButton.click               = function() {
 popTheButtonsOut(false);
 };
-
-
-

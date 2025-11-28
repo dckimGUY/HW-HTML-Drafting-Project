@@ -1,5 +1,21 @@
 function updateInfoShelf() {
 
+if (coinFocus!=null) {
+
+if (ui.buttonLink.ref.value=="") {
+
+ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
+
+}
+
+
+}
+
+
+
+
+
+
 topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
 
 ui.snapGridIncrement.ref.value = T;

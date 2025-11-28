@@ -2,6 +2,17 @@ let mouseDeltaX = 0,
     mouseDeltaY = 0;
 let mousemoveTarget=null;
 
+
+
+
+document.addEventListener("mousewheel", (event) => {
+if (event.buttons===4) {
+event.preventDefault();
+}
+});
+
+
+
 document.addEventListener("mousemove", (event) => {
 
 if (mouseIsDogged==false) {
@@ -21,6 +32,32 @@ if (mousedown.hold==true) {
 mouseDeltaX = event.pageX - mousedown.pageX;
 mouseDeltaY = event.pageY - mousedown.pageY;
 }
+
+
+
+
+
+if (mousedown.hold==true) {
+mouseX = mousedown.clientX - event.clientX;
+mouseY = mousedown.clientY - event.clientY;
+
+
+if (event.buttons===4) {
+event.preventDefault();
+if ((mousedown.scrollX + mouseX >= 0)&&(mousedown.scrollY + mouseY >= 0)) {
+window.scrollTo({ left: mousedown.scrollX + mouseX, top: mousedown.scrollY + mouseY, behavior: "auto"});
+}
+return;
+}
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -410,6 +447,10 @@ mousedown.alt            =     0;
 mousedown.meta           =     0;
 mousedown.pageX          =     0;
 mousedown.pageY          =     0;
+mousedown.clientX        =     0;
+mousedown.clientY        =     0;
+mousedown.scrollX        =     0;
+mousedown.scrollY        =     0;
 mousedown.tripSet        =  null;
 mousedown.target         =  null;
 mousedown.targetRegion   =     5;
@@ -439,6 +480,16 @@ splashScreen.remove();
 if (mouseIsDogged==false) {
 
 
+if (event.button===1) {
+event.preventDefault();
+}
+
+
+
+mousedown.clientX          = event.clientX;
+mousedown.clientY          = event.clientY;
+mousedown.scrollX          = window.scrollX;
+mousedown.scrollY          = window.scrollY;
 
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
@@ -685,7 +736,7 @@ if (coinFocus!=null&&drawPartNames=="true"&&event.target&&event.target.dataset&&
 
 /* COPY VARIOUS STUFF TO THE CLIPBOARD IF ENABLED */
        if (!event.shiftKey&&!event.ctrlKey) {
-copyToClipboard(coinFocus.id);
+/* copyToClipboard(coinFocus.id); */
 } else if ( event.shiftKey&&!event.ctrlKey) {
 let setName = "sel0";
        if (coinFocus.dataset.coinTrip=="0") {

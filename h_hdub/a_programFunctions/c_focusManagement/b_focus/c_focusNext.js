@@ -25,7 +25,7 @@ coinFocus = coinFocus.nextElementSibling;
 coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 if (!del) {
-coinFocus.scrollIntoView({behavior: 'smooth'});
+coinFocus.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
 }
 return (1);
 
