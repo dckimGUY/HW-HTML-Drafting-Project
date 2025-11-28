@@ -9,7 +9,7 @@ document.addEventListener("mousewheel", (event) => {
 if (event.buttons===4) {
 event.preventDefault();
 }
-});
+}, { passive: false });
 
 
 
@@ -31,22 +31,29 @@ mousemoveTarget=null;
 if (mousedown.hold==true) {
 mouseDeltaX = event.pageX - mousedown.pageX;
 mouseDeltaY = event.pageY - mousedown.pageY;
-}
-
-
-
-
-
-if (mousedown.hold==true) {
-mouseX = mousedown.clientX - event.clientX;
-mouseY = mousedown.clientY - event.clientY;
-
-
+mouseX = mousedown.scrollX + mousedown.clientX - event.clientX;
+mouseY = mousedown.scrollY + mousedown.clientY - event.clientY;
+quarterMouseX = mousedown.scrollX + (mousedown.clientX - event.clientX) / 4;
+quarterMouseY = mousedown.scrollY + (mousedown.clientY - event.clientY) / 4;
 if (event.buttons===4) {
 event.preventDefault();
-if ((mousedown.scrollX + mouseX >= 0)&&(mousedown.scrollY + mouseY >= 0)) {
-window.scrollTo({ left: mousedown.scrollX + mouseX, top: mousedown.scrollY + mouseY, behavior: "auto"});
+
+position1X = Math.floor(mouseX/mouseIncrement)*mouseIncrement;
+position1Y = Math.floor(mouseY/mouseIncrement)*mouseIncrement;
+position2X = Math.floor(mouseX/visualGridSize2)*visualGridSize2;
+position2Y = Math.floor(mouseY/visualGridSize2)*visualGridSize2;
+
+
+if (!event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
+} else if (!event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
+} else if ( event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: position1X, top: position1Y, behavior: "auto"});
+} else if ( event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: position2X, top: position2Y, behavior: "auto"});
 }
+
 return;
 }
 }
@@ -474,6 +481,10 @@ splashScreen.remove();
 }
 
 
+mousedown.clientX          = event.clientX;
+mousedown.clientY          = event.clientY;
+mousedown.scrollX          = window.scrollX;
+mousedown.scrollY          = window.scrollY;
 
 
 
@@ -486,10 +497,6 @@ event.preventDefault();
 
 
 
-mousedown.clientX          = event.clientX;
-mousedown.clientY          = event.clientY;
-mousedown.scrollX          = window.scrollX;
-mousedown.scrollY          = window.scrollY;
 
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
