@@ -76,7 +76,7 @@ ui.navPoint3.click              = function() { drawButton7(); if (hauptMode==0) 
 let buttonLinkValue = "";
 
 function enterButton() {
-insertNewCoin([null,78,110]);
+insertNewCoin([null,78,78]);
 coinFocus.id = coinFocus.id.replace(/coin/g, "link");
 coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
@@ -117,7 +117,7 @@ navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrol
 } else {
 navLinkEntry = ``;
 }
-insertNewCoin([null,78,110]);
+insertNewCoin([null,78,78]);
 coinFocus.id = coinFocus.id.replace(/coin/g, "nav");
 coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
@@ -366,6 +366,9 @@ const constructedButtonWidth  = ui.canvasOutput2.ref.width ;
 const constructedButtonHeight = ui.canvasOutput2.ref.height;
 
 buttonHTML1 = `
+<button id="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="right: -152px;" data-button-data="${buttonData}" onclick="`;
+
+buttonHTML2 = `">
 <style>
 #${uniqueIdentifier} {
 position: absolute;
@@ -384,9 +387,7 @@ background-color: transparent;
 #${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); outline: none; }
 #${uniqueIdentifier}:active { background-image: url("${ui.canvasOutput3.ref.toDataURL("image/png")}"); outline: none; }
 </style>
-<button id="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="right: -152px;" data-button-data="${buttonData}" onclick="`;
-
-buttonHTML2 = `"></button>`;
+</button>`;
 
 ui.yourButtonIsHere.ref.innerHTML = buttonHTML1 + buttonHTML2;
 ;

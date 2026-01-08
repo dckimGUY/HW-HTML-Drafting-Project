@@ -17,7 +17,7 @@ let colourationChoice="rgba(255,255,255,0.5)";
 for (let i = 0; i < 3; i++) {
 
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.borderTopLeftRadius = startRadius - (j * radiusReduction) + "px";
@@ -36,7 +36,7 @@ newCoin.dataset.dragPull="main.style.borderTopLeftRadius";
 newCoin.dataset.coinTrip=tripleSet;
 }
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.borderTopRightRadius = startRadius - (j * radiusReduction) + "px";
@@ -55,7 +55,7 @@ newCoin.dataset.dragPull="main.style.borderTopRightRadius";
 newCoin.dataset.coinTrip=tripleSet;
 }
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.borderBottomLeftRadius = startRadius - (j * radiusReduction) + "px";
@@ -74,7 +74,7 @@ newCoin.dataset.dragPull="main.style.borderBottomLeftRadius";
 newCoin.dataset.coinTrip=tripleSet;
 }
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.borderBottomRightRadius = startRadius - (j * radiusReduction) + "px";
@@ -103,7 +103,7 @@ else if (startRadius==128) { startRadius=28 ; radiusReduction=4 ; tripleSet=Ts2;
 
 
 {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.borderBottomRightRadius = 0 + "px";

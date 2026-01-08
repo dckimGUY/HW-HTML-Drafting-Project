@@ -65,53 +65,53 @@ let scaleFactor = 1;
 if (coinFocus.dataset.scale) { scaleFactor = parseFloat(coinFocus.dataset.scale); }
 
 
-/*    I    */ if (kC ==  73 && cC ==  73) {
+/*    i    */ if (kC ==  73 && cC ==  105) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) - parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"i"-duplicated at left,       jsName : "${newCoin.dataset.jsName}"`;
 }
-/*    i    */ if (kC ==  73 && cC == 105) {
+/*    I    */ if (kC ==  73 && cC == 73) {
 coinFocus.style.left      =    document.body.scrollLeft + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"I"-duplicated at left edge,  jsName : "${newCoin.dataset.jsName}"`;
 }
 
-/*    O    */ if (kC ==  79 && cC ==  79) {
+/*    o    */ if (kC ==  79 && cC ==  111) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top) + parseInt(coinFocus.dataset.height)*scaleFactor + "px";
 logMessage=`"o"-duplicated below,         jsName : "${newCoin.dataset.jsName}"`;
 }
-/*    o    */ if (kC ==  79 && cC == 111) {
+/*    O    */ if (kC ==  79 && cC == 79) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top) - parseInt(coinFocus.dataset.height)*scaleFactor + "px";
 logMessage=`"O"-duplicated above,         jsName : "${newCoin.dataset.jsName}"`;
 }
 
-/*    A    */ if (kC ==  65 && cC ==  65) {
+/*    a    */ if (kC ==  65 && cC ==  97) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"a"-duplicated at right,      jsName : "${newCoin.dataset.jsName}"`;
 }
-/*    a    */ if (kC ==  65 && cC ==  97) {
+/*    A    */ if (kC ==  65 && cC ==  65) {
 coinFocus.style.left      =    document.body.scrollLeft + window.innerWidth - parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"A"-duplicated at right edge, jsName : "${newCoin.dataset.jsName}"`;
 }
 
-/*    d    */ if (kC ==  68 && cC == 100) {
+/*    D    */ if (kC ==  68 && cC == 68) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"D"-duplicated in-place,      jsName : "${newCoin.dataset.jsName}"`;
 }
 }
        if (mode!=5) {
-/*    n    */ if (kC ==  78 && cC == 110) {
+/*    N    */ if (kC ==  78 && cC == 78) {
 coinFocus.style.left      =    parseInt(Cur.dataset.left) + "px"      ;
 coinFocus.style.top       =    parseInt(Cur.dataset.top)  + "px"      ;
 logMessage=`"N"-duplicated at cursor,     jsName : "${newCoin.dataset.jsName}"`;
 }
 } else if (mode==5) {
-/*    n    */ if (kC ==  78 && cC == 110) {
+/*    N    */ if (kC ==  78 && cC == 78) {
 coinFocus.style.left      =    parseInt(Cur.dataset.left)         + "px";
 coinFocus.style.top       =    parseInt(Cur.dataset.top)          + "px";
 coinFocus.style.width     =    T + "px"                                ;
@@ -123,7 +123,7 @@ logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 }
 }
 
-/*    n    */ if ((kC ==  78 && cC == 110)||coinFocus!=null) {
+/*    N    */ if ((kC ==  78 && cC == 78)||coinFocus!=null) {
 
 
 

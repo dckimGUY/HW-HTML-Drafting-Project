@@ -13,7 +13,7 @@ Cur.dataset.top  = "0px";
 let factor = 0.02;
 
 for ( let j = 0; j < 48; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px dashed magenta";
@@ -42,7 +42,7 @@ newCoin.dataset.coinTrip=Ts0;
 factor = 0.01;
 
 for ( let j = 0; j < 48; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px dashed magenta";
@@ -72,7 +72,7 @@ newCoin.dataset.coinTrip=Ts0;
 factor = 0.01;
 
 for ( let j = 0; j < 48; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px dashed magenta";
@@ -102,7 +102,7 @@ newCoin.dataset.coinTrip=Ts0;
 factor = 0.1;
 
 for ( let j = 0; j < 48; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px dashed magenta";
@@ -137,7 +137,7 @@ let indicationColour = "cyan";
 for ( let k = 0; k < 8; k++) {
 for ( let i = 0; i < 8; i++) {
 for ( let j = 0; j < 3; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = `4px dashed ${indicationColour}`;

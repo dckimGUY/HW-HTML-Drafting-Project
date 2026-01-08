@@ -13,7 +13,7 @@ Cur.dataset.top  = "0px";
 let padFactor = 2;
 
 for ( let j = 0; j < 24; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px ridge blue";
@@ -37,7 +37,7 @@ newCoin.dataset.coinTrip=Ts0;
 }
 
 for ( let j = 0; j < 24; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px ridge blue";
@@ -62,7 +62,7 @@ newCoin.dataset.coinTrip=Ts0;
 }
 
 for ( let j = 0; j < 24; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px ridge blue";
@@ -86,7 +86,7 @@ newCoin.dataset.coinTrip=Ts0;
 }
 
 for ( let j = 0; j < 24; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px ridge blue";
@@ -119,7 +119,7 @@ startingPoint = 4.00;
 for ( let i = 0; i < 18; i++) {
 
 for ( let j = 0; j < 20; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "8px ridge grey";

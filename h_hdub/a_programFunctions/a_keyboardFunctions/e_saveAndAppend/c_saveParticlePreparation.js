@@ -1,10 +1,43 @@
-function saveParticlePreparation(rename,phpSub) {
+const autoHeader = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="index, follow">
+<meta name="handheldfriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description"         content="{{description}}">
+<meta property="og:description"  content="{{description}}">
+<meta name="geo.position"  content="43.658497;-79.347015">
+<meta name="geo.region"    content="CA-ON">
+<meta name="geo.placename" content="Toronto">
+                             <title>{{title}}</title>
+<meta property="og:title"  content="{{title}}">
+<meta property="og:type"   content="website">
+
+<meta property="og:image"  content="<<insert URL>>">
+<meta property="og:url"    content="<<insert URL>>">
+<link rel="canonical"         href="<<insert URL>>">
+<link rel="stylesheet"        href="<<insert URL>>"/>
+
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" >
+</head>
+<body>
+`;
+
+const autoFooter = `
+<script>
+</script>
+</body>
+</html>
+`;
+
+
+
+
+function saveParticlePreparation(rename,phpSub,header) {
 spaceViewOn();
 removePointerEventsNone();
-
-
-
-
 
 if (rename==0&&filename!=defaultFilename) {
 } else {
@@ -15,11 +48,6 @@ filename = filename.replace(/ /g, '-');
 document.getElementById("documentTitle").innerText = filename;
 }
 }
-
-
-
-
-
 
 
 
@@ -184,6 +212,11 @@ fileContents = fileContents.replace("phpStart", '<?php');
 fileContents = fileContents.replace("phpEnd", '?>');
 
 
+if (header == true) {
+
+fileContents = autoHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + fileContents + autoFooter;
+
+}
 
 saveHTMLparticle(rename, fileContents, false, false, phpSub);
 

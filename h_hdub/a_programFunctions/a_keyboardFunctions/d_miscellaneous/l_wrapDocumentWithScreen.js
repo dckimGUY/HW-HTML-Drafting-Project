@@ -4,7 +4,7 @@ if (utilityLayer0.children.length>1) {
 let originalScrollX = window.scrollX;
 let originalScrollY = window.scrollY;
 
-const newCoin = insertNewCoin([null,78,110,false,false,false]);
+const newCoin = insertNewCoin([null,78,78,false,false,false]);
 
 newCoin.remove();
 

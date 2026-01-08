@@ -19,7 +19,7 @@ alt    = keyInfo[5];
 	}
 
 
-/*    X    */ if (kC ==  88 && cC ==  88) {
+/*    x    */ if (kC ==  88 && cC ==  120) {
 if (coinFocus != null) {
 
 singlePasteBuffer.value.push(coinFocus);
@@ -54,7 +54,7 @@ modeRouter(e,1);
 
 
 
-/*    x    */ if (kC ==  88 && cC == 120) {
+/*    X    */ if (kC ==  88 && cC == 88) {
 if (coinFocus != null) {
 
 /* Stop us from entering in an empty thing... This way we've always something. */

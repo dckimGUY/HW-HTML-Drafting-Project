@@ -38,9 +38,42 @@ shelfMenuHTML.tab2.folder1.style = `
 
 
 
+.button_setup_left               { position: absolute; border: none; margin: none; padding: none; left:     11px; top:    182px; width:     22px; height:     30px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/left.png?v=20260104135732");        }
+.button_setup_left:focus         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/left_focus.png?v=20260104135749");  }
+.button_setup_left:hover         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/left_hover.png?v=20260104135739");  }
+.button_setup_left:active        { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/left_active.png?v=20260104135743"); }
+.button_setup_right              { position: absolute; border: none; margin: none; padding: none; left:    167px; top:    182px; width:     22px; height:     30px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/right.png?v=20260104135807");        }
+.button_setup_right:focus        { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/right_focus.png?v=20260104135822");  }
+.button_setup_right:hover        { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/right_hover.png?v=20260104135811");  }
+.button_setup_right:active       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/right_active.png?v=20260104135818"); }
+.input_setup_title               { position: absolute; border: none; margin: none; padding: none; left:     39px; top:    186px; width:    122px; height:     22px; outline-offset: -4px;
+padding: 0; margin: 0; outline: 0;
+padding-top: 4px;
+text-align: center;
+font-size: 20px;
+caret-color: yellow;
+color: lime;
+text-shadow: 0px .5px 0px rgb(115,121,115), .5px .5px 0px rgb(164,170,164), .5px 0px 0px rgb(164,170,164);
+}
+
+.input_setup_title::selection      { background: #DEFF1C; color: rgba(90,0,0,1); }
 
 
 
+
+.input_setup_notes               { position: absolute; border: none; margin: none; padding: none; left:     15px; top:    218px; width:    170px; height:     81px; outline-offset: -4px;
+text-align: left;
+font-size: 12px;
+caret-color: yellow;
+color: lime;
+text-shadow: 0px .5px 0px rgb(115,121,115), .5px .5px 0px rgb(164,170,164), .5px 0px 0px rgb(164,170,164);
+
+}
+
+
+.input_setup_notes::selection      { background: #DEFF1C; color: rgba(90,0,0,1); }
 
 
 

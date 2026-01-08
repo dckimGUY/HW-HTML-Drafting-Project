@@ -10,7 +10,10 @@ shelfMenuHTML.tab2.folder1.HTML = `
 
 
 
-
+<button id="setup_left" class="button_ button_setup_left" title=""></button>
+<button id="setup_right" class="button_ button_setup_right" title=""></button>
+<input    id="setup_title" name="setup_title" class="input_ input_setup_title dckimPixelMono" type="value" placeholder="empty" spellcheck="false">
+<textarea id="setup_notes" name="setup_notes" class="input_ input_setup_notes dckimPixelMono" placeholder="theme description" spellcheck="false"></textarea>
 
 
 

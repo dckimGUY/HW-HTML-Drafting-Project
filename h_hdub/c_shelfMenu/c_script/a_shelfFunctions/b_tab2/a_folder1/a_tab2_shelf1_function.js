@@ -10,9 +10,48 @@ ui.modeT.click                   = function() { modeRouter(null,8); };
 /* ROW 2 */
 
 
+ui.setup_left.click              = function() { setupLeft();  };
+ui.setup_right.click             = function() { setupRight(); };
+ui.setup_title.input             = function() {
+userCustomTheme[userCustomTheme.currentTheme].title = ui.setup_title.ref.value;
+localStorage.setItem("themeTitle", ui.setup_title.ref.value);
+};
+ui.setup_notes.input             = function() {
+userCustomTheme[userCustomTheme.currentTheme].description = ui.setup_notes.ref.value;
+localStorage.setItem("themeDescription", ui.setup_notes.ref.value);
+};
 
 
 
+function setupRight() {
+switch (userCustomTheme.currentTheme) {
+case "a0": loadTheme("b1"); break;
+case "b1": loadTheme("c2"); break;
+case "c2": loadTheme("d3"); break;
+case "d3": loadTheme("e4"); break;
+case "e4": loadTheme("f5"); break;
+case "f5": loadTheme("g6"); break;
+case "g6": loadTheme("h7"); break;
+case "h7": loadTheme("i8"); break;
+case "i8": loadTheme("j9"); break;
+case "j9": loadTheme("a0"); break;
+}
+}
+
+function setupLeft() {
+switch (userCustomTheme.currentTheme) {
+case "a0": loadTheme("j9"); break;
+case "b1": loadTheme("a0"); break;
+case "c2": loadTheme("b1"); break;
+case "d3": loadTheme("c2"); break;
+case "e4": loadTheme("d3"); break;
+case "f5": loadTheme("e4"); break;
+case "g6": loadTheme("f5"); break;
+case "h7": loadTheme("g6"); break;
+case "i8": loadTheme("h7"); break;
+case "j9": loadTheme("i8"); break;
+}
+}
 
 
 
@@ -25,7 +64,7 @@ ui.cursorShutoff.click               = function() { if (Cur.style.display=='none
 
 
 var   userCustomTheme    = {};
-      userCustomTheme.currentTheme = {};
+      userCustomTheme.currentTheme = "c2";
       userCustomTheme.a0 = {};
       userCustomTheme.b1 = {};
       userCustomTheme.c2 = {};
@@ -38,6 +77,8 @@ var   userCustomTheme    = {};
       userCustomTheme.j9 = {};
 
 function saveTheme(configName) {
+userCustomTheme[configName].title                    = ui.setup_title.ref.value;
+userCustomTheme[configName].description              = ui.setup_notes.ref.value;
 userCustomTheme[configName].L                        = L;                       
 userCustomTheme[configName].sL                       = sL;                      
 userCustomTheme[configName].finishedBackgroundColour = finishedBackgroundColour; 
@@ -78,6 +119,10 @@ localStorage.setItem("userCustomTheme_" + configName, JSON.stringify(userCustomT
 
 
 function loadTheme(configName) {
+ui.setup_title.ref.value         = userCustomTheme[configName].title;
+ui.setup_notes.ref.value         = userCustomTheme[configName].description;
+localStorage.setItem("themeTitle", ui.setup_title.ref.value);
+localStorage.setItem("themeDescription", ui.setup_notes.ref.value);
 L                         = userCustomTheme[configName].L                        ? userCustomTheme[configName].L                        : L                          ; localStorage.setItem("L"                         , L                         ); ui.coin88067.ref.value = L                       ;
 sL                        = userCustomTheme[configName].sL                       ? userCustomTheme[configName].sL                       : sL                         ; localStorage.setItem("sL"                        , sL                        ); ui.coin46861.ref.value = sL                      ;
 finishedBackgroundColour  = userCustomTheme[configName].finishedBackgroundColour ? userCustomTheme[configName].finishedBackgroundColour : finishedBackgroundColour   ; localStorage.setItem("finishedBackgroundColour"  , finishedBackgroundColour  ); ui.coin44038.ref.value = finishedBackgroundColour;
@@ -114,6 +159,8 @@ gridIncrementArray        = userCustomTheme[configName].gridIncrementArray      
 cursorDisplay             = userCustomTheme[configName].cursorDisplay            ? userCustomTheme[configName].cursorDisplay            : cursorDisplay              ; localStorage.setItem("cursorDisplay"             , cursorDisplay             ); Cur.style.display = cursorDisplay ;
 mouseIncrement            = visualGridSize1;
 localStorage.setItem("mouseIncrement", mouseIncrement);
+localStorage.setItem("currentTheme", userCustomTheme.currentTheme);
+userCustomTheme.currentTheme = configName;
 spaceViewOn();
 spaceViewOff();
 Z();
@@ -166,42 +213,42 @@ userCustomTheme.a0 =
 
 userCustomTheme.b1 =
 {
-    "title": "Mostly Beige",
-    "description": "This is almost exactly a direct inversion of the DCKIM theme.",
-    "L": "#a5a588",
-    "sL": "#afa7a7",
-    "finishedBackgroundColour": "#404040",
-    "U": "#ffffff",
-    "D": "#ffffff",
+    "title": "DCKIM (M)",
+    "description": "Same colourations: This one is metric.",
+    "L": "#3f3f5f",
+    "sL": "#3f3f3f",
+    "finishedBackgroundColour": "#bfbfbf",
+    "U": "#00FF00",
+    "D": "#00FFFF",
     "C": "#00FF00",
-    "bU": "#0000ff",
-    "greyColour": "#000000",
-    "blueColour": "#ff0000",
-    "pinkColour": "#217f00",
+    "bU": "#ff0000",
+    "greyColour": "#ffffff",
+    "blueColour": "#00ffff",
+    "pinkColour": "#de80ff",
     "lineColour": "#000000",
-    "selectedColour": "#00ffff",
+    "selectedColour": "#deff1c",
     "thinOutline": 2,
     "borderWidth": 8,
     "edgeQ": 32,
-    "K": "0.135",
-    "visualOpacity": "0.45",
-    "partsOpacity": "0.25",
-    "pictureOpacity": "1",
-    "T": 32,
-    "grid0Viz": "true",
-    "grid1Viz": "false",
-    "grid2Viz": "false",
+    "K": 0.155,
+    "visualOpacity": 0.5,
+    "partsOpacity": 0.25,
+    "pictureOpacity": 1,
+    "T": 50,
+    "grid0Viz": "false",
+    "grid1Viz": "true",
+    "grid2Viz": "true",
     "grid3Viz": "true",
     "visualGridThickness1": 1,
-    "visualGridThickness2": 1,
-    "visualGridThickness3": 6,
-    "visualGridSize1": 16,
-    "visualGridSize2": 64,
-    "visualGridSize3": 1536,
-    "visualGridColour1": "#0000ff",
-    "visualGridColour2": "#ff0000",
-    "visualGridColour3": "#0000ff",
-    "gridIncrementArray": "3-2",
+    "visualGridThickness2": 2,
+    "visualGridThickness3": 4,
+    "visualGridSize1": 10,
+    "visualGridSize2": 100,
+    "visualGridSize3": 1000,
+    "visualGridColour1": "#52adad",
+    "visualGridColour2": "#32b8b8",
+    "visualGridColour3": "#ff0000",
+    "gridIncrementArray": "metric",
     "cursorDisplay": "block"
 };
 
@@ -452,28 +499,28 @@ userCustomTheme.h7 =
 
 userCustomTheme.i8 =
 {
-    "title": "MinI",
-    "description": "Simple",
+    "title": "HTML fury",
+    "description": "This theme is designed for use with 'HTML fury' found on tab 5-2. When you change the settings here, they become the settings for that little program.",
     "L": "#ffffff",
     "sL": "#ffffff",
     "finishedBackgroundColour": "#ffffff",
     "U": "#ff0000",
     "D": "#ff0000",
-    "C": "#ff0000",
-    "bU": "#ff009d",
-    "greyColour": "#007f00",
-    "blueColour": "#0080ff",
-    "pinkColour": "#a35200",
-    "lineColour": "#000000",
-    "selectedColour": "#7f7f7f",
-    "thinOutline": 2,
-    "borderWidth": 5,
-    "edgeQ": 24,
+    "C": "#00ffff",
+    "bU": "#ffffff",
+    "greyColour": "#ffffff",
+    "blueColour": "#ffffff",
+    "pinkColour": "#ffffff",
+    "lineColour": "#ffffff",
+    "selectedColour": "#ffffff",
+    "thinOutline": 1,
+    "borderWidth": 1,
+    "edgeQ": 28,
     "K": 0,
-    "visualOpacity": 0.685,
-    "partsOpacity": 0.375,
-    "pictureOpacity": 0.645,
-    "T": 24,
+    "visualOpacity": 0,
+    "partsOpacity": 1,
+    "pictureOpacity": 1,
+    "T": 20,
     "grid0Viz": "false",
     "grid1Viz": "false",
     "grid2Viz": "false",
@@ -481,13 +528,13 @@ userCustomTheme.i8 =
     "visualGridThickness1": 1,
     "visualGridThickness2": 2,
     "visualGridThickness3": 2,
-    "visualGridSize1": 1,
+    "visualGridSize1": 20,
     "visualGridSize2": 100,
     "visualGridSize3": 1000,
-    "visualGridColour1": "#fb00ff",
-    "visualGridColour2": "#fc3dff",
-    "visualGridColour3": "#ff884c",
-    "gridIncrementArray": "3",
+    "visualGridColour1": "#ffffff",
+    "visualGridColour2": "#ffffff",
+    "visualGridColour3": "#ffffff",
+    "gridIncrementArray": "metric",
     "cursorDisplay": "none"
 };
 
@@ -551,8 +598,17 @@ userCustomTheme[configName] = JSON.parse(localStorage.getItem("userCustomTheme_"
 }
 });
 
+if (localStorage.getItem("themeTitle")) {
+ui.setup_title.ref.value = localStorage.getItem("themeTitle");
+} else {
+ui.setup_title.ref.value = userCustomTheme.c2.title;
+}
 
-
+if (localStorage.getItem("themeDescription")) {
+ui.setup_notes.ref.value = localStorage.getItem("themeDescription");
+} else {
+ui.setup_notes.ref.value = userCustomTheme.c2.description;
+}
 
 
 

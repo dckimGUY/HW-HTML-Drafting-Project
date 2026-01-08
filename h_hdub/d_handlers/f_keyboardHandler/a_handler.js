@@ -72,6 +72,11 @@ if (ec&&es&&mode!=8) {dot();}
 
 /*   esc   */ if (kC ==  27)              {
 
+if (ui.folder52.ref.style.display == "none" ||
+    ui.tab5Wrapper.ref.style.display  == "none") {
+hdubDemo.style.opacity = 0;
+}
+
 if (mode==0) { curFocus=0; modeRouter(e,1); }
 
 hotDog = false;
@@ -101,7 +106,20 @@ enterWizardMaster();
 */
 
 }
-/*backspace*/ if (kC ==   8)              { pulledText.style.pointerEvents = ""; spaceViewToggle(keyInfo);      }
+/*backspace*/ if (kC ==   8)              {
+
+
+if (event.shiftKey) {
+
+} else {
+
+pulledText.style.pointerEvents = "";
+spaceViewToggle(keyInfo);
+
+}
+
+
+}
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
@@ -130,15 +148,15 @@ enterWizardMaster();
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*   ins   */ if (kC ==  45)              { groupPaste(Ts0);               }
-/*   home  */ if (kC ==  36)              { groupPaste(Ts1);               }
-/* page up */ if (kC ==  33)              { groupPaste(Ts2);               }
+/*   ins   */ if (kC ==  45)              { event.preventDefault(); groupPaste(Ts0);               }
+/*   home  */ if (kC ==  36)              { event.preventDefault(); groupPaste(Ts1);               }
+/* page up */ if (kC ==  33)              { event.preventDefault(); groupPaste(Ts2);               }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*  delete */ if (kC ==  46)              { groupDeletion(Ts0);            }
-/*   end   */ if (kC ==  35)              { groupDeletion(Ts1);            }
-/*page down*/ if (kC ==  34)              { groupDeletion(Ts2);            }
+/*  delete */ if (kC ==  46)              { event.preventDefault(); groupDeletion(Ts0);            }
+/*   end   */ if (kC ==  35)              { event.preventDefault(); groupDeletion(Ts1);            }
+/*page down*/ if (kC ==  34)              { event.preventDefault(); groupDeletion(Ts2);            }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
@@ -163,8 +181,9 @@ interfaceLayer.style.display = "none";
 } else if (kC==32&&es) {
 
 event.preventDefault();
-
-interfaceLayer.style.display = "block";
+tabSelector(4);
+folder4Selector(1);
+document.getElementById("hdubSingleEntry").focus();
 
 }
 
@@ -196,17 +215,17 @@ let keyInfo = [e,kC,cC,es,ec,ea];
 /*    -    */ if (kC == 109 && cC ==  45) { e.preventDefault(); numpadRouter(keyInfo);         }
 /*    +    */ if (kC == 107 && cC ==  43) { e.preventDefault(); numpadRouter(keyInfo);         }
 /*                                                                        */
-/*    7    */ if (kC == 103 && cC ==  55) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    8    */ if (kC == 104 && cC ==  56) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    9    */ if (kC == 105 && cC ==  57) { e.preventDefault(); numpadRouter(keyInfo);         }
+/*    7    */ if (kC == 103 && cC ==  55) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    8    */ if (kC == 104 && cC ==  56) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    9    */ if (kC == 105 && cC ==  57) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
 /*                                                                        */
-/*    4    */ if (kC == 100 && cC ==  52) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    5    */ if (kC == 101 && cC ==  53) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    6    */ if (kC == 102 && cC ==  54) { e.preventDefault(); numpadRouter(keyInfo);         }
+/*    4    */ if (kC == 100 && cC ==  52) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    5    */ if (kC == 101 && cC ==  53) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    6    */ if (kC == 102 && cC ==  54) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
 /*                                                                        */
-/*    1    */ if (kC ==  97 && cC ==  49) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    2    */ if (kC ==  98 && cC ==  50) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    3    */ if (kC ==  99 && cC ==  51) { e.preventDefault(); numpadRouter(keyInfo);         }
+/*    1    */ if (kC ==  97 && cC ==  49) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    2    */ if (kC ==  98 && cC ==  50) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    3    */ if (kC ==  99 && cC ==  51) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
 /*                                                                        */
 /*    0    */ if (kC ==  96 && cC ==  48) { e.preventDefault(); numpadRouter(keyInfo);         }
 /*    .    */ if (kC == 110 && cC ==  46) { e.preventDefault(); numpadRouter(keyInfo);         }
@@ -215,7 +234,30 @@ let keyInfo = [e,kC,cC,es,ec,ea];
 
 if (hotDog) { return; }
 /*                                                                        */
-/*  enter  */ if (kC ==  13 && cC ==  13) { hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone(); }
+/*  enter  */ if (kC ==  13 && cC ==  13) {
+if (event.shiftKey) {
+tabSelector(5);
+folder5Selector(2);
+let selectedTheme = userCustomTheme.currentTheme;
+loadTheme("i8");
+userCustomTheme.currentTheme = selectedTheme;
+localStorage.setItem("currentTheme", userCustomTheme.currentTheme);
+drawFury(true);
+} else {
+
+hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone();
+
+if (coinFocus != null &&
+    coinFocus.div
+) {
+if (ui.folder52.ref.style.display == "block" &&
+    ui.tab5Wrapper.ref.style.display  == "block") {
+}
+coinFocus.div.focus();
+
+}
+}
+}
 /*                                                                        */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -272,9 +314,9 @@ if (hotDog) { return; }
 /*    b    */ if (kC ==  66 && cC ==  98) { shiftRouter(keyInfo);lastKey="b";}/*    B    */ if (kC ==  66 && cC ==  66) { shiftRouter(keyInfo);lastKey="B";}
 /*    n    */ if (kC ==  78 && cC == 110) { shiftRouter(keyInfo);lastKey="n";}/*    N    */ if (kC ==  78 && cC ==  78) { shiftRouter(keyInfo);lastKey="N";}
 /*    m    */ if (kC ==  77 && cC == 109) { shiftRouter(keyInfo);lastKey="m";}/*    M    */ if (kC ==  77 && cC ==  77) { shiftRouter(keyInfo);lastKey="M";}
-/*    ,    */ if (kC == 188 && cC ==  44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}}/*    <    */ if (kC == 188 && cC ==  60) {cyclePreviousLocalView();}
-/*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}}/*    >    */ if (kC == 190 && cC ==  62) {cycleNextLocalView();}
-/*    /    */ if (kC == 191 && cC ==  47) { mouseIncrementCycle();                      }/*    ?    */ if (kC == 191 && cC ==  63) { 
+/*    ,    */ if (kC == 188 && cC ==  44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}}/*    <    */ if (kC == 188 && cC ==  60) {layerLeft();updateInfoShelf();redraw();}
+/*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}}/*    >    */ if (kC == 190 && cC ==  62) {layerRight();updateInfoShelf();redraw();}
+/*    /    */ if (kC == 191 && cC ==  47) { event.preventDefault(); mouseIncrementCycle(); }/*    ?    */ if (kC == 191 && cC ==  63) { 
                  if ( grid0Viz == "true") {
                       grid0Viz = "false";
 localStorage.setItem("grid0Viz", "false");

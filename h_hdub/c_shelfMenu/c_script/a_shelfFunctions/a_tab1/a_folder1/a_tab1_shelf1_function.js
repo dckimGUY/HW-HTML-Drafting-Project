@@ -128,7 +128,15 @@ ui.partPrev.click                = function() { focusPrevious(); if (coinFocus!=
 ui.showNames.click               = function() { if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw(); };
 
 ui.partNext.click                = function() { focusNext(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); };     updateInfoShelf(); redraw(); };
-ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value; } };
+
+ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value;  } };
+ui.partStyle.input               = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.style = ui.partStyle.ref.value; } };
+ui.partCode.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML = ui.partCode.ref.value;  } };
+
+
+
+
+
 ui.pathEntry.input               = function() { ui.pathEntry.ref.value = ui.pathEntry.ref.value.replace(/\\/g, "/"); hdub_imagePath = ui.pathEntry.ref.value; localStorage.setItem("hdub_imagePath", hdub_imagePath); };
 
 function inputPartNav(inputBoxName) {
@@ -188,3 +196,31 @@ layerRight();updateInfoShelf();redraw();ui[inputBoxName].ref.select();
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ui.notesTab.click                = function() { partText.style.display = "block"; partStyle.style.display =  "none"; partCode.style.display =  "none"; };
+ui.styleTab.click                = function() { partText.style.display =  "none"; partStyle.style.display = "block"; partCode.style.display =  "none"; };
+ui.codeTab.click                 = function() { partText.style.display =  "none"; partStyle.style.display =  "none"; partCode.style.display = "block"; };
+
+
+
+
+
+
+

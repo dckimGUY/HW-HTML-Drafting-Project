@@ -18,7 +18,7 @@ const coinLeft   = parseInt(coinFocus.style.left)  ,
 if (coinFocus != null) {
        if (eM==0) {
 
-/*    H    */ if (kC ==  72 && cC ==  72) {
+/*    h    */ if (kC ==  72 && cC == 104) {
 if ((coinLeft + coinWidth)%T==0) {
 if (coinWidth - T >= 0) {
 coinFocus.style.width = coinWidth - T + "px";
@@ -32,7 +32,7 @@ coinFocus.style.width = (Math.floor((coinLeft + coinWidth) / T) * T) - coinLeft 
 }
 }
 
-/*    J    */ if (kC ==  74 && cC ==  74) {
+/*    j    */ if (kC ==  74 && cC == 106) {
 if ((coinTop + coinHeight)%T==0) {
 coinFocus.style.height = coinHeight + T + "px";
 } else {
@@ -40,7 +40,7 @@ coinFocus.style.height = (Math.ceil((coinTop + coinHeight) / T) * T) - coinTop +
 }
 }
 
-/*    K    */ if (kC ==  75 && cC ==  75) {
+/*    k    */ if (kC ==  75 && cC == 107) {
 if ((coinTop + coinHeight)%T==0) {
 if (coinHeight - T >= 0) {
 coinFocus.style.height = coinHeight - T + "px";
@@ -54,7 +54,7 @@ coinFocus.style.height = (Math.floor((coinTop + coinHeight) / T) * T) - coinTop 
 }
 }
 
-/*    L    */ if (kC ==  76 && cC ==  76) {
+/*    l    */ if (kC ==  76 && cC == 108) {
 if ((coinLeft + coinWidth)%T==0) {
 coinFocus.style.width = coinWidth + T + "px";
 } else {
@@ -63,7 +63,7 @@ coinFocus.style.width = (Math.ceil((coinLeft + coinWidth) / T) * T) - coinLeft +
 }
 
 } else if (eM==1) {
-/*    H    */ if (kC ==  72 && cC ==  72) {
+/*    h    */ if (kC ==  72 && cC == 104) {
 if (coinLeft%T==0) {
 if (((coinLeft - T) * T)>=0) {
 coinFocus.style.width = coinWidth + T + "px";
@@ -77,7 +77,7 @@ coinFocus.style.left = Math.floor((coinLeft) / T) * T + "px";
 }
 }
 
-/*    J    */ if (kC ==  74 && cC ==  74) {
+/*    j    */ if (kC ==  74 && cC == 106) {
 if (coinTop%T==0) {
 if (coinHeight - T >= 0) {
 coinFocus.style.height = coinHeight - T + "px";
@@ -92,7 +92,7 @@ coinFocus.style.top = Math.ceil((coinTop) / T) * T + "px";
 }
 }
 
-/*    K    */ if (kC ==  75 && cC ==  75) {
+/*    k    */ if (kC ==  75 && cC == 107) {
 if (coinTop%T==0) {
 if ((coinTop - T)>=0) {
 coinFocus.style.height = coinHeight + T + "px";
@@ -106,7 +106,7 @@ coinFocus.style.top = Math.floor((coinTop) / T) * T + "px";
 }
 }
 
-/*    L    */ if (kC ==  76 && cC ==  76) {
+/*    l    */ if (kC ==  76 && cC == 108) {
 if (coinLeft%T==0) {
 if (coinWidth - T >= 0) {
 coinFocus.style.width = coinWidth - T + "px";
@@ -123,23 +123,23 @@ coinFocus.style.left = Math.ceil((coinLeft) / T) * T + "px";
 }
 
 
-/*    h    */ if (kC ==  72 && cC == 104) {
+/*    H    */ if (kC ==  72 && cC ==  72) {
 if (coinWidth - (T*2) >= 0) {
 coinFocus.style.width = coinWidth - (T*2) + "px";
 coinFocus.style.left  = coinLeft  + T + "px";
 }
 }
-/*    j    */ if (kC ==  74 && cC == 106) {
+/*    J    */ if (kC ==  74 && cC ==  74) {
 if (coinHeight - (T*2) >= 0) {
 coinFocus.style.height = coinHeight - (T*2) + "px";
 coinFocus.style.top  = coinTop  + T + "px";
 }
 }
-/*    k    */ if (kC ==  75 && cC == 107) {
+/*    K    */ if (kC ==  75 && cC ==  75) {
 coinFocus.style.height = coinHeight + (T*2) + "px";
 coinFocus.style.top  = coinTop  - T + "px";
 }
-/*    l    */ if (kC ==  76 && cC == 108) {
+/*    L    */ if (kC ==  76 && cC ==  76) {
 coinFocus.style.width = coinWidth + (T*2) + "px";
 coinFocus.style.left  = coinLeft  - T + "px";
 }
@@ -156,15 +156,15 @@ coinFocus.dataset.top    = coinFocus.style.top   ;
 } else if (coinFocus!=null&&coinFocus.dataset.lockE&&coinFocus.dataset.lockE=="true") {
 
 
-/*    h    */ if (kC ==  72 && cC == 104) { rotateLeft();                           }
-/*    j    */ if (kC ==  74 && cC == 106) { rotateUnder();                          }
-/*    k    */ if (kC ==  75 && cC == 107) { rotateOver();                           }
-/*    l    */ if (kC ==  76 && cC == 108) { rotateRight();                          }
+/*    H    */ if (kC ==  72 && cC ==  72) { rotateLeft();                           }
+/*    J    */ if (kC ==  74 && cC ==  74) { rotateUnder();                          }
+/*    K    */ if (kC ==  75 && cC ==  75) { rotateOver();                           }
+/*    L    */ if (kC ==  76 && cC ==  76) { rotateRight();                          }
 
-/*    H    */ if (kC ==  72 && cC ==  72) { outerScaleDown(keyInfo);                }
-/*    J    */ if (kC ==  74 && cC ==  74) { rotateZleft();                          }
-/*    K    */ if (kC ==  75 && cC ==  75) { rotateZright();                         }
-/*    L    */ if (kC ==  76 && cC ==  76) { outerScaleUp(keyInfo);                  }
+/*    h    */ if (kC ==  72 && cC == 104) { outerScaleDown(keyInfo);                }
+/*    j    */ if (kC ==  74 && cC == 106) { rotateZleft();                          }
+/*    k    */ if (kC ==  75 && cC == 107) { rotateZright();                         }
+/*    l    */ if (kC ==  76 && cC == 108) { outerScaleUp(keyInfo);                  }
 
 
 

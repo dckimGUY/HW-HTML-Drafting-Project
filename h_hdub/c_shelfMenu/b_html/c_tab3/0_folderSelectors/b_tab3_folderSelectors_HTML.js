@@ -2,5 +2,5 @@
 <button id="folder31button" class="button_
      button_folder31button" title=""></button>
 <button id="folder32button" class="button_
-     button_folder32button" title=""></button>
+     button_folder32button" title="alt + click => read info in console(F12)"></button>
 `;

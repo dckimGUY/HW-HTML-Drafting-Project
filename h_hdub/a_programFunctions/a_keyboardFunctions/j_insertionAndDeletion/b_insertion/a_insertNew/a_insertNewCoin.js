@@ -107,7 +107,7 @@ newCoin.style.userSelect="none";
 if (coinFocus!=null) {
 let scaleFactor = 1;
 if (coinFocus.dataset.scale) { scaleFactor = parseFloat(coinFocus.dataset.scale); }
-/*    I    */ if (kC ==  73 && cC ==  73) {
+/*    i    */ if (kC ==  73 && cC ==  105) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) - T + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    T + "px"                              ;
@@ -116,7 +116,7 @@ logMessage=`"i"-insertion at left,       jsName : "${newCoin.dataset.jsName}"`;
 eM=1;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : left and top ***`;
 }
-/*    i    */ if (kC ==  73 && cC == 105) {
+/*    I    */ if (kC ==  73 && cC == 73) {
 newCoin.style.left      =    document.body.scrollLeft + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    T + "px"                              ;
@@ -126,7 +126,7 @@ eM=0;modeRouter(e,5);
 logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 }
 
-/*    O    */ if (kC ==  79 && cC ==  79) {
+/*    o    */ if (kC ==  79 && cC ==  111) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top) + parseInt(coinFocus.dataset.height)*scaleFactor + "px";
 newCoin.style.width     =    parseInt(coinFocus.dataset.width)*scaleFactor +"px";
@@ -135,7 +135,7 @@ logMessage=`"o"-insertion below,         jsName : "${newCoin.dataset.jsName}"`;
 eM=0;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 }
-/*    o    */ if (kC ==  79 && cC == 111) {
+/*    O    */ if (kC ==  79 && cC == 79) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top) - T + "px";
 newCoin.style.width     =    parseInt(coinFocus.dataset.width)*scaleFactor +"px";
@@ -145,7 +145,7 @@ eM=1;modeRouter(e,5);
 logMessage=`*** mode 5 - "e" - extendEdge : left and top ***`;
 }
 
-/*    A    */ if (kC ==  65 && cC ==  65) {
+/*    a    */ if (kC ==  65 && cC ==  97) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) + parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    T + "px"                              ;
@@ -154,7 +154,7 @@ logMessage=`"a"-insertion at right,      jsName : "${newCoin.dataset.jsName}"`;
 eM=0;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 }
-/*    a    */ if (kC ==  65 && cC ==  97) {
+/*    A    */ if (kC ==  65 && cC ==  65) {
 newCoin.style.left      =    document.body.scrollLeft + window.innerWidth - T + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    T + "px"                              ;
@@ -164,7 +164,7 @@ eM=1;modeRouter(e,5);
 logMessage=`*** mode 5 - "e" - extendEdge : left and top ***`;
 }
 
-/*    d    */ if (kC ==  68 && cC == 100) {
+/*    D    */ if (kC ==  68 && cC == 68) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    parseInt(coinFocus.dataset.width) +"px";
@@ -177,7 +177,7 @@ modeRouter(e,1);
 
 
 
-/*    n    */ if (kC ==  78 && cC == 110) {
+/*    N    */ if (kC ==  78 && cC == 78) {
 if (Cur.style.display!="none") {
 newCoin.style.left      =    parseInt(Cur.dataset.left)         + "px";
 newCoin.style.top       =    parseInt(Cur.dataset.top)          + "px";
@@ -198,7 +198,7 @@ logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 
 
 
-/*    n    */ if ((kC ==  78 && cC ==  110)||coinFocus!=null) {
+/*    N    */ if ((kC ==  78 && cC ==  78)||coinFocus!=null) {
 
 /* Finalize into the datasets. */
 newCoin.dataset.left    =    parseInt(newCoin.style.left  ) + "px";

@@ -42,6 +42,10 @@ case ui.partPrev.ref:            ui.partPrev.click()             ; break;
 case ui.showNames.ref:           ui.showNames.click()            ; break;
 case ui.partNext.ref:            ui.partNext.click()             ; break;
 
+case ui.notesTab.ref:            ui.notesTab.click()             ; break;
+case ui.styleTab.ref:            ui.styleTab.click()             ; break;
+case ui.codeTab.ref:             ui.codeTab.click()              ; break;
+
 /* tab 1 folder 2 */
 case ui.coin77155.ref:           ui.coin77155.click()            ; break;
 case ui.coin59760.ref:           ui.coin59760.click()            ; break;
@@ -83,6 +87,10 @@ case ui.modeD.ref:               ui.modeD.click()                ; break;
 case ui.modeG.ref:               ui.modeG.click()                ; break;
 case ui.modeEeM0.ref:            ui.modeEeM0.click()             ; break;
 case ui.modeT.ref:               ui.modeT.click()                ; break;
+
+
+case ui.setup_left.ref:          ui.setup_left.click()           ; break;
+case ui.setup_right.ref:         ui.setup_right.click()          ; break;
 
 
 case ui.setDragThresholdFromGrid.ref: ui.setDragThresholdFromGrid.click() ; break;
@@ -209,12 +217,93 @@ case ui.clearActive.ref:         ui.clearActive.click()          ; break;
 case ui.clearFocusHover.ref:     ui.clearFocusHover.click()      ; break;
 case ui.clearFocusActive.ref:    ui.clearFocusActive.click()     ; break;
 
+case ui.hdub_b6.ref:             ui.hdub_b6.click()              ; break;
+case ui.hdub_b4.ref:             ui.hdub_b4.click()              ; break;
+case ui.hdub_b2.ref:             ui.hdub_b2.click()              ; break;
+case ui.hdub_i6.ref:             ui.hdub_i6.click()              ; break;
+case ui.hdub_i4.ref:             ui.hdub_i4.click()              ; break;
+case ui.hdub_i2.ref:             ui.hdub_i2.click()              ; break;
+
+
+
+/* tab 4 folder 1 */
+case ui.hdubAdd.ref:             ui.hdubAdd.click()              ; break;
+case ui.hdubRollLeft.ref:        ui.hdubRollLeft.click()         ; break;
+case ui.hdubRollRight.ref:       ui.hdubRollRight.click()        ; break;
+case ui.hdubEnter.ref:           ui.hdubEnter.click()            ; break;
+case ui.hdubSave.ref:            ui.hdubSave.click()             ; break;
+case ui.hdubCanvas.ref:          ui.hdubCanvas.click()           ; break;
+case ui.hdubSheetTemplate1x.ref: ui.hdubSheetTemplate1x.click()  ; break;
+
+case ui.hwSel_a.ref:             ui.hwSel_a.click()              ; break;
+case ui.hwSel_b.ref:             ui.hwSel_b.click()              ; break;
+case ui.hwSel_c.ref:             ui.hwSel_c.click()              ; break;
+case ui.hwSel_d.ref:             ui.hwSel_d.click()              ; break;
+case ui.hwSel_e.ref:             ui.hwSel_e.click()              ; break;
+case ui.hwSel_f.ref:             ui.hwSel_f.click()              ; break;
+case ui.hwSel_g.ref:             ui.hwSel_g.click()              ; break;
+case ui.hwSel_i.ref:             ui.hwSel_i.click()              ; break;
+case ui.hwSel_j.ref:             ui.hwSel_j.click()              ; break;
+case ui.hwSel_k.ref:             ui.hwSel_k.click()              ; break;
+case ui.hwSel_l.ref:             ui.hwSel_l.click()              ; break;
+case ui.hwSel_m.ref:             ui.hwSel_m.click()              ; break;
+case ui.hwSel_n.ref:             ui.hwSel_n.click()              ; break;
+case ui.hwSel_o.ref:             ui.hwSel_o.click()              ; break;
+case ui.hwSel_p.ref:             ui.hwSel_p.click()              ; break;
+case ui.hwSel_q.ref:             ui.hwSel_q.click()              ; break;
+case ui.hwSel_r.ref:             ui.hwSel_r.click()              ; break;
+case ui.hwSel_s.ref:             ui.hwSel_s.click()              ; break;
+case ui.hwSel_t.ref:             ui.hwSel_t.click()              ; break;
+case ui.hwSel_u.ref:             ui.hwSel_u.click()              ; break;
+case ui.hwSel_v.ref:             ui.hwSel_v.click()              ; break;
+case ui.hwSel_x.ref:             ui.hwSel_x.click()              ; break;
+case ui.hwSel_y.ref:             ui.hwSel_y.click()              ; break;
+case ui.hwSel_z.ref:             ui.hwSel_z.click()              ; break;
+
+
+/* tab 4 folder 2 */
+case ui.save200.ref:             ui.save200.click()              ; break;
+case ui.save300.ref:             ui.save300.click()              ; break;
+case ui.save500.ref:             ui.save500.click()              ; break;
+case ui.save800.ref:             ui.save800.click()              ; break;
+case ui.save1000.ref:            ui.save1000.click()             ; break;
+case ui.save1200.ref:            ui.save1200.click()             ; break;
+case ui.save1500.ref:            ui.save1500.click()             ; break;
+case ui.save1800.ref:            ui.save1800.click()             ; break;
+case ui.elementArticle.ref:      ui.elementArticle.click()       ; break;
+case ui.elementColour.ref:       ui.elementColour.click()        ; break;
+case ui.elementRadioBtn.ref:     ui.elementRadioBtn.click()      ; break;
+case ui.elementRange.ref:        ui.elementRange.click()         ; break;
+case ui.elementValue.ref:        ui.elementValue.click()         ; break;
+case ui.elementTextarea.ref:     ui.elementTextarea.click()      ; break;
+case ui.elementCheckbox.ref:     ui.elementCheckbox.click()      ; break;
+case ui.elementNumber.ref:       ui.elementNumber.click()        ; break;
+case ui.elementButton.ref:       ui.elementButton.click()        ; break;
+case ui.elementCanvas.ref:       ui.elementCanvas.click()        ; break;
 
 
 
 
 
-/* tab 6 folder 1 */
+
+/* tab 5 folder 2 */
+case ui.furyLeftMargin.ref:      ui.furyLeftMargin.click()       ; break;
+case ui.furyInputArticle.ref:    ui.furyInputArticle.click()     ; break;
+case ui.furyBreakArticle.ref:    ui.furyBreakArticle.click()     ; break;
+case ui.furyInputParagraph.ref:  ui.furyInputParagraph.click()   ; break;
+case ui.furyBreakParagraph.ref:  ui.furyBreakParagraph.click()   ; break;
+case ui.furyInputSentence.ref:   ui.furyInputSentence.click()    ; break;
+case ui.furyInputHeading1.ref:   ui.furyInputHeading1.click()    ; break;
+case ui.furyInputHeading2.ref:   ui.furyInputHeading2.click()    ; break;
+case ui.furyInputHeading3.ref:   ui.furyInputHeading3.click()    ; break;
+case ui.furyInputBlockquote.ref: ui.furyInputBlockquote.click()  ; break;
+case ui.furyGlobb.ref:           ui.furyGlobb.click()            ; break;
+
+
+
+
+
+
 
 /* */
 

@@ -5,14 +5,14 @@ shelfMenuHTML.tab1.folder2.HTML = `
 <button id="coin49592" class="button_ button_coin49592" title=""></button>
 <button id="coin54398" class="button_ button_coin54398" title=""></button>
 
-<button id="coin77155" class="button_ button_coin77155" title=""></button>
+<button id="coin77155" class="button_ button_coin77155" title="save with complete HTML and meta tags, fill in the URLs manually"></button>
 <button id="coin59760" class="button_ button_coin59760" title=""></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>
 <button id="coin70038" class="button_ button_coin70038" title=""></button>
 
-<input  id="coin77671" class="input_  input_coin77671 dckimPixelMono"  type="value" placeholder="emptyFileName" spellcheck="false" title="level name">
+<input  id="coin77671" class="input_  input_coin77671 dckimPixelMono"  type="value" placeholder="emptyFileName" spellcheck="false" title="this serves as the file name and the title, it should contain no spaces, this is inserted as the title in the metadata when you save using the button above">
 
-<textarea id="levelNotes" class="textarea_ input_levelNotes" placeholder="level notes" spellcheck="false" ondblclick="if (parseInt(this.style.height) == 69) { this.style.height = '301px'; } else { this.style.height = '69px'; } this.selectionStart = this.selectionEnd; "></textarea>
+<textarea id="levelNotes" class="textarea_ input_levelNotes" placeholder="level notes" spellcheck="false" title="this is only note space" ondblclick="if (parseInt(this.style.height) == 69) { this.style.height = '301px'; } else { this.style.height = '69px'; } this.selectionStart = this.selectionEnd; "></textarea>
 
 <button id="setLayer1"  class="button_ button_setLevel button_setLayer1"  title=""></button>
 <button id="setLayer2"  class="button_ button_setLevel button_setLayer2"  title=""></button>
@@ -39,4 +39,6 @@ shelfMenuHTML.tab1.folder2.HTML = `
 <button id="setLayer23" class="button_ button_setLevel button_setLayer23" title=""></button>
 <button id="setLayer24" class="button_ button_setLevel button_setLayer24" title=""></button>
 <button id="setLayer25" class="button_ button_setLevel button_setLayer25" title=""></button>
+
+<textarea id="pageDescription" class="input_  pageDescription dckimPixelMono" placeholder="short description" spellcheck="false" title="OpenGraph page description text, this is inserted when you use the save button above"></textarea>
 `;

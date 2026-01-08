@@ -104,7 +104,7 @@ Cur.dataset.top  = "0px";
 ["direction","rtl"]
 
 ].forEach((array) => {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "4px dashed grey";

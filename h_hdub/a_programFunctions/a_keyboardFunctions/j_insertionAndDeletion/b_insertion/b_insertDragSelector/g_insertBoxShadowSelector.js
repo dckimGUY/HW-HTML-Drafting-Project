@@ -30,7 +30,7 @@ let colourationChoice="rgba(255,255,255,0.5)";
 for (let i = 0; i < 3; i++) {
 
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.boxShadow = `-${startRadius - (j * radiusReduction)}px -${startRadius - (j * radiusReduction)}px ${(startRadius - (j * radiusReduction))/diffusion}px ${colourGiven}`;
@@ -50,7 +50,7 @@ newCoin.dataset.dragPull="main.style.boxShadow";
 newCoin.dataset.coinTrip=tripleSet;
 }
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.boxShadow = `${startRadius - (j * radiusReduction)}px -${startRadius - (j * radiusReduction)}px ${(startRadius - (j * radiusReduction))/diffusion}px ${colourGiven}`;
@@ -70,7 +70,7 @@ newCoin.dataset.dragPull="main.style.boxShadow";
 newCoin.dataset.coinTrip=tripleSet;
 }
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.boxShadow = `-${startRadius - (j * radiusReduction)}px ${startRadius - (j * radiusReduction)}px ${(startRadius - (j * radiusReduction))/diffusion}px ${colourGiven}`;
@@ -90,7 +90,7 @@ newCoin.dataset.dragPull="main.style.boxShadow";
 newCoin.dataset.coinTrip=tripleSet;
 }
 for ( let j = 0; j < 8; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,true,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.boxShadow = `${startRadius - (j * radiusReduction)}px ${startRadius - (j * radiusReduction)}px ${(startRadius - (j * radiusReduction))/diffusion}px ${colourGiven}`;

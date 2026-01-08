@@ -5,7 +5,7 @@ if (coinFocus!=null) {
 localViewReturn = topLayer.a_currentLayer;
 topLayer.localView.b_content.innerHTML = '';
 
-insertNewDuplicate([event,68,100,,,]);
+insertNewDuplicate([event,68,68,,,]);
 
 coinFocus1.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
 
@@ -14,14 +14,14 @@ var iSZ = "0px 0px " + edgeQ + "px " + localViewHighlightColour;
 const iSZa = iSZ + ",";
 coinFocus1.style.boxShadow = iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZ;
 
-deleteCoin([event,88,88,,,]);
+deleteCoin([event,88,120,,,]);
 
-guideLayer([event,77,109,,,]);
+guideLayer([event,77,77,,,]);
 if(rev==1){focusPrevious()}else{focusNext()}
 makeTopLayer("localView");
-pasteSingle([event,80,80,,,]);
+pasteSingle([event,80,112,,,]);
 if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML=="") {
-deleteCoin([event,88,88,,,]);
+deleteCoin([event,88,120,,,]);
 singlePasteBuffer.value.pop();
 } else {
 

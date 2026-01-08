@@ -1,0 +1,2555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>shadowTree</title>
+<meta charset="UTF-8">
+<meta name="last-build" content="2025-12-16T12:48:15Z">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAADxJREFUGJV1i0kOACAMAof/f9qkm7UqBxqGAhK4YcYmCpAk8q+OfVVqbkcuatZCEhiE8+uxmYsbaOZCGloyeABiJ4rFHAAAAABJRU5ErkJggg==">
+<style>
+
+html, body              { overflow: scroll; scrollbar-width: none;               }
+body                    {                  
+margin: none; padding: none; border: none; outline: none; }
+p                       { margin: 0;                                             }
+body::-webkit-scrollbar { display: none;                                         }
+body          {
+background-color: rgb(127,127,127);
+font-family: monospace;
+font-style: italic;
+border: none;
+padding: none;
+margin: none;
+outline: none;
+}
+
+button        {
+background-color: transparent;
+border:  none;
+margin:  none;
+padding: none;
+outline: none;
+font-family: inherit;
+font-style:  inherit;
+font-size:   inherit;
+}
+
+button:focus  {
+outline: none;
+border-radius: 4px;
+outline-offset: -2px;
+outline: 2px solid black;
+background-color: blue;
+font-weight: bold;
+}
+button:active {
+color: white;
+}
+
+.directory       { color: darkmagenta; }
+.directory:focus { color: magenta;     }
+
+.baseDir         { color: black;       }
+.baseDir:focus   { color: black;       }
+
+.file            { color: darkgreen;   }
+.file:focus      { color: lime;        }
+
+.js              { color: darkgreen;   }
+.js:focus        { color: lime;        }
+
+.css             { color: darkgreen;   }
+.css:focus       { color: lime;        }
+
+.sh              { color: darkgreen;   }
+.sh:focus        { color: lime;        }
+
+.html            { color: darkgreen;   }
+.html:focus      { color: lime;        }
+
+
+
+
+.treeMain {
+position: absolute;
+border:  none;
+margin:  none;
+padding: none;
+outline: none;
+}
+
+
+
+
+
+
+
+
+
+.path {
+text-align: left;
+border-left:  1px solid white;
+border-right: 1px solid white;
+padding: 0.1vw;
+}
+
+.brushTop {
+border-top-left-radius:  0.75vw;
+border-top-right-radius: 0.75vw;
+border-top: 0.1vw solid white;
+}
+
+.brushBottom {
+border-bottom-left-radius:  0.75vw;
+border-bottom-right-radius: 0.75vw;
+border-bottom: 0.1vw solid white;
+margin-bottom: 0.4vw;
+}
+
+.highlight   {
+position: relative;
+left: -1vw;
+width: calc(100% + 0.75vw);
+padding-left: 1vw;
+border-radius: 2vw;
+outline-offset: 0.05vw;
+outline: 0.1vw solid black;
+border:  0.1vw solid white;
+box-shadow: 0 0 1.5vw black;
+z-index: 500;
+opacity: 0.9;
+}
+
+.copied {
+outline-offset: 0px;
+outline: 2px solid red;
+box-shadow: 0 0 1.5vw white;
+}
+
+
+
+
+
+/* this is the indication of the colour associated letter */
+.letter          {
+border-radius: 10px;
+border: 1px solid rgb( 63, 63, 63);
+color: rgb( 63, 63, 63);
+background-color: rgba(255,255,255,0.2);
+font-style: normal;
+font-weight: bold;
+}
+
+/* the notifications which follow the line and appear temporarily */
+.notification {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.GUI {
+position: fixed;
+left:      0;
+bottom:    0;
+width:  100%;
+height: calc(5/15 * 100vw);
+transform-origin: bottom left;
+z-index: 500;
+margin: none;
+padding: none;
+border-radius: 0.5vw;
+background-color: black;
+}
+
+.indicator      {
+position: absolute;
+z-index: 100;
+width:  calc(1/15 * 100vw);
+height: calc(1/15 * 100vw);
+background-color: rgb(191,191,191);
+color: rgb( 63, 63, 63);
+font-size: 2.5vw;
+font-family: monospace;
+font-style: normal;
+font-weight: bold;
+border: 0.1vw solid black;
+/*outline-offset: -0.06vw;*/
+border-radius: 0.5vw;
+border: 0.4vw double;
+}
+
+.character {
+position: relative;
+}
+
+.numberRow {
+position: relative;
+outline: 0.1vw solid black;
+border-radius: 4vw;
+}
+
+.numeral {
+position: absolute;
+top: 0.25vw;
+left: 0.5vw;
+font-size: 1.5vw;
+}
+
+.hideIndicator {
+position: absolute;
+bottom: 0vw;
+right:  0vw;
+width: 100%;
+background-color: rgba(255,255,255, 0.5);
+border-top: 0.1vw solid grey;
+text-align: center;
+font-size: 1.5vw;
+}
+
+.extraText {
+position: absolute;
+bottom: 0vw;
+right:  0vw;
+width: 100%;
+text-align: center;
+font-size: 1.5vw;
+}
+
+
+
+.hiddenKey {
+outline-offset: -0.4vw;
+outline: 0.4vw dashed rgba(  0,  0,  0, 0.5);
+}
+
+.tilde        { left: calc(  0.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n1           { left: calc(  1.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n2           { left: calc(  2.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n3           { left: calc(  3.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n4           { left: calc(  4.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n5           { left: calc(  5.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n6           { left: calc(  6.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n7           { left: calc(  7.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n8           { left: calc(  8.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n9           { left: calc(  9.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n0           { left: calc( 10.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.minus        { left: calc( 11.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.plus         { left: calc( 12.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.backspace    { left: calc( 13.00/15 * 100vw); bottom: calc(4/15 * 100vw); width: calc(2.00/15 * 100vw); }
+
+.tab          { left: calc(  0.00/15 * 100vw); bottom: calc(3/15 * 100vw); width: calc(1.50/15 * 100vw); }
+.Q            { left: calc(  1.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.W            { left: calc(  2.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.E            { left: calc(  3.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.R            { left: calc(  4.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.T            { left: calc(  5.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.Y            { left: calc(  6.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.U            { left: calc(  7.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.I            { left: calc(  8.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.O            { left: calc(  9.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.P            { left: calc( 10.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.leftbracket  { left: calc( 11.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.rightbracket { left: calc( 12.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.backslash    { left: calc( 13.50/15 * 100vw); bottom: calc(3/15 * 100vw); width: calc(1.50/15 * 100vw); }
+
+.caps         { left: calc(  0.00/15 * 100vw); bottom: calc(2/15 * 100vw); width: calc(1.75/15 * 100vw); }
+.A            { left: calc(  1.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.S            { left: calc(  2.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.D            { left: calc(  3.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.F            { left: calc(  4.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.G            { left: calc(  5.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.H            { left: calc(  6.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.J            { left: calc(  7.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.K            { left: calc(  8.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.L            { left: calc(  9.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+
+.tilde, .n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8, .n9, .n0, .minus, .plus, .backspace, .tab, .leftbracket, .rightbracket, .backslash, .caps, .semicolon, .apostrophe, .enter, .leftshift, .lt, .gt, .forwardslash, .rightshift, .leftctrl, .windowskey, .leftalt, .spacebar, .rightalt, .fn, .menu, .rightctrl, .A, .G, .H, .J, .K, .L {
+outline-offset: -1vw;
+outline: 0.4vw outset white;
+}
+
+.forwardslash { 
+outline-offset: -1.65vw;
+outline: 1vw outset cyan;
+background-color: magenta;
+font-size: 4vw;
+color: cyan;
+}
+
+.semicolon    { left: calc( 10.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.apostrophe   { left: calc( 11.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.enter        { left: calc( 12.75/15 * 100vw); bottom: calc(2/15 * 100vw); width: calc(2.25/15 * 100vw); }
+
+.leftshift    { left: calc(  0.00/15 * 100vw); bottom: calc(1/15 * 100vw); width: calc(2.25/15 * 100vw); }
+.Z            { left: calc(  2.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.X            { left: calc(  3.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.C            { left: calc(  4.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.V            { left: calc(  5.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.B            { left: calc(  6.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.N            { left: calc(  7.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.M            { left: calc(  8.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.lt           { left: calc(  9.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.gt           { left: calc( 10.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.forwardslash { left: calc( 11.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.rightshift   { left: calc( 12.25/15 * 100vw); bottom: calc(1/15 * 100vw); width: calc(2.75/15 * 100vw); }
+
+.leftctrl     { left: calc(  0.00/15 * 100vw); bottom:               0vw; width: calc(1.50/15 * 100vw); }
+.windowskey   { left: calc(  1.50/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.leftalt      { left: calc(  2.75/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.spacebar     { left: calc(  4.00/15 * 100vw); bottom:               0vw; width: calc(5.75/15 * 100vw); }
+.rightalt     { left: calc(  9.75/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.fn           { left: calc( 11.00/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.menu         { left: calc( 12.25/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.rightctrl    { left: calc( 13.50/15 * 100vw); bottom:               0vw; width: calc(1.50/15 * 100vw); }
+
+
+/* an alternate layout that is minimal */
+
+.n1alt        { left: calc(  0/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n2alt        { left: calc(  1/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n3alt        { left: calc(  2/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n4alt        { left: calc(  3/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n5alt        { left: calc(  4/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n6alt        { left: calc(  5/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n7alt        { left: calc(  6/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n8alt        { left: calc(  7/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n9alt        { left: calc(  8/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n0alt        { left: calc(  9/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Calt         { left: calc( 10/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Valt         { left: calc( 11/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Balt         { left: calc( 12/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Nalt         { left: calc( 13/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Malt         { left: calc( 14/15 * 100vw); bottom: calc(0/15 * 100vw); }
+
+.Qalt         { left: calc(  0/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Walt         { left: calc(  1/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ealt         { left: calc(  2/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ralt         { left: calc(  3/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Talt         { left: calc(  4/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Yalt         { left: calc(  5/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ualt         { left: calc(  6/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ialt         { left: calc(  7/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Oalt         { left: calc(  8/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Palt         { left: calc(  9/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Salt         { left: calc( 10/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Dalt         { left: calc( 11/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Falt         { left: calc( 12/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Zalt         { left: calc( 13/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Xalt         { left: calc( 14/15 * 100vw); bottom: calc(1/15 * 100vw); }
+
+
+
+
+
+.hideThisLetter { display: none; }
+.GUIsmall       { height: calc(2/15 * 100vw); }
+
+.press          {
+z-index: 600;
+outline: 1.0vw solid lime;
+}
+
+.isolation {
+text-shadow:
+ 0.1vw    0   0 red,     0.1vw  0.1vw 0 red,
+ 0      0.1vw 0 red,   -0.1vw    0    0 red,
+-0.1vw -0.1vw 0 red,   0   -0.1vw     0 red;
+border-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.command {
+background-color: white;
+color: black;
+left: calc(11/15 * 100vw);
+width: calc(2.5/15 * 100vw);
+bottom: 0vw;
+}
+
+.currentView {
+outline-offset: -1.25vw;
+outline: 0.7vw double black;
+background-color: rgb(91,91,91);
+color: lightgrey;
+font-size: 3.5vw;
+}
+
+
+
+.searchBar {
+position: absolute;
+top: calc(-1/15 * 100vw - 0.75vw);
+text-align: center;
+left: 0.2vw;
+width: 98.4vw;
+height: calc(1/15 * 100vw);
+outline: 0.4vw solid white;
+border-radius: 1vw;
+border: none;
+padding-left: 1vw;
+font-family: monospace;
+font-size: 5vw;
+font-style: italic;
+background-color: rgba(153,153,153,0.85);
+color: white;
+}
+
+
+.grepBar {
+position: absolute;
+top: calc(-1/15 * 100vw - 0.75vw);
+text-align: center;
+left: 0.2vw;
+width: 98.4vw;
+height: calc(1/15 * 100vw);
+outline: 0.4vw solid white;
+border-radius: 1vw;
+border: none;
+padding-left: 1vw;
+font-family: monospace;
+font-size: 5vw;
+font-style: italic;
+background-color: rgba(153,153,153,0.85);
+color: white;
+}
+.window {
+position: fixed;
+border:  none;
+margin:  none;
+padding: none;
+outline: 0.1vh solid white;
+border-radius: 1vw;
+border-width: 0.25vw;
+border-style: dotted;
+border-color:  white;
+border-right-width: 1vw;
+border-left-width:  1vw;
+}
+
+.filter {
+position: fixed;
+pointer-events: none;
+border:  none;
+margin:  none;
+padding: none;
+text-align: right;
+outline: 0.1vh solid white;
+border-radius: 1vw;
+border-width: 0.25vw;
+border-style:  solid;
+border-color:  green;
+border-right-width: 1vw;
+border-left-width:  1vw;
+color: black;
+overflow: hidden;
+}
+
+.viewerLayoutLeft0  { width:  calc(             0vw); left: calc(             0.1vw); }
+.viewerLayoutLeft1  { width:  calc(1/2 * 100% - 1vw); left: calc(0/1 * 100% + 1.1vw); }
+.viewerLayoutLeft2  { width:  calc(1/3 * 100% - 1vw); left: calc(0/1 * 100% + 1.1vw); }
+
+.viewerLayoutRight0 { width:  calc(             0vw); left: calc(1/1 * 100% - 2.1vw); }
+.viewerLayoutRight1 { width:  calc(             0vw); left: calc(1/1 * 100% - 2.1vw); }
+.viewerLayoutRight2 { width:  calc(1/3 * 100% - 1vw); left: calc(2/3 * 100% - 2.1vw); }
+
+.oct0               { top: calc(0/4 * 100% + 0.125%); }
+.oct1               { top: calc(2/4 * 100% + 0.125%); }
+.oct2               { top: calc(0/4 * 100% + 0.125%); }
+.oct3               { top: calc(2/4 * 100% + 0.125%); }
+
+.viewerQuad         { height: calc(2/4 * 100% - 1%); z-index: 400; }
+.viewerSemi         { height: calc(4/4 * 100% - 1%); z-index: 500; }
+
+</style>
+</head>
+<body>
+
+<script>
+var findFileList       = "";
+var workingDirectory   = "";
+var pathArray          = [];
+var listArray          = [];
+var directoryListArray = [];
+var tree               = {};
+var treeValues         = [];
+var filesystem         = [];
+var multiMove          =  8;
+var GUIflip            = "true";
+var isolation          =  0;
+
+var mouseMoveTarget    = null;
+
+var editorName         = "vi";
+var newSearch          = false;
+
+var   fitSelection    =  {};
+      fitSelection.choice  =   0;
+      fitSelection.option0 =  {};
+      fitSelection.option1 =  {};
+      fitSelection.option2 =  {};
+
+      fitSelection.option0.fontSize = 18;
+      fitSelection.option1.fontSize = 18;
+      fitSelection.option2.fontSize = 18;
+
+var abbr = 0;
+
+
+const treeMain = document.createElement("div");
+const key      = {};
+const GUI      = document.createElement("div");
+
+var allVisible = true;
+var treeFocus = null;
+const view = { "n0":"n0", "n1":"n1", "n2":"n2", "n3":"n3", "n4":"n4", "n5":"n5", "n6":"n6", "n7":"n7", "n8":"n8", "n9":"n9" };
+
+window.activeView = "";
+if (localStorage.getItem("activeView")) {
+activeView = localStorage.getItem("activeView");
+} else {
+activeView = view.n0;
+localStorage.setItem("activeView", view.n0);
+}
+
+</script>
+
+<script src="./pwd.js"></script>
+<script src="./find -type f.js"></script>
+
+<script>
+
+if (localStorage.getItem("GUI")) {
+GUI.style.display = localStorage.getItem("GUI");
+} else {
+localStorage.setItem("GUI", "block");
+}
+/* GHJKL are excluded here and then included in the next file */
+
+key.names  = 
+      [ "Q","W","E","R","T","Y","U","I","O","P",
+         "S","D","F",
+          "Z","X","C","V","B","N","M" ];
+key.initialColours = 
+[ "aquamarine", "skyblue", "cyan", "grey", "gold", "cornsilk", "coral", "magenta", "lavender", "olivedrab",
+  "lime", "rosybrown", "peachpuff", "teal",
+  "thistle", "violet", "lightpink", "plum", "yellow",
+  "cadetblue" ];
+      GUI.classList = "GUI";
+ document.body.prepend(GUI);
+key.names.forEach((char,index) => {
+key[char] = {};
+key[char].view = {};
+key[char].name = char;
+key[char].colour = key.initialColours[index];
+if (localStorage.getItem(activeView + "-" + char)) {
+key[char].display = localStorage.getItem(activeView + "-" + char);
+} else {
+key[char].display = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+}
+key[char].GUI = document.createElement("button");
+key[char].GUI.classList = `indicator ${char}`;
+GUI.append(key[char].GUI);
+});
+const viewArray = Object.values(view);
+for (let j = 0; j < viewArray.length; j++) {
+key.names.forEach((char,index) => {
+if (localStorage.getItem(viewArray[j] + "-" + char)) {
+key[char].view[viewArray[j]] = localStorage.getItem(viewArray[j] + "-" + char);
+} else {
+key[char].view[viewArray[j]] = "block";
+localStorage.setItem(viewArray[j] + "-" + char, "block");
+}
+});
+}
+const grepBar  = document.createElement("textarea");
+grepBar.type   = "value";
+grepBar.name   = "grepBar";
+grepBar.placeholder  = "- - -GREP search- - -";
+grepBar.classList = "grepBar";
+grepBar.style.display = "none";
+grepBar.setAttribute("spellcheck", "false");
+grepBar.oninput = function() {
+if (grepBar.value.endsWith("\n")) {
+grepBar.value = grepBar.value.replace(/\n/g, "");
+grepSearch(grepBar.value);
+grepBar.style.display = "none";
+}
+return;
+};
+
+GUI.append(grepBar);
+/* This will cover some more keyboard keys */
+
+key.additionalKeys  = 
+[ "tilde", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n0", "minus", "plus", "backspace", "tab", "leftbracket", "rightbracket", "backslash", "caps", "semicolon", "apostrophe", "enter", "leftshift", "lt", "gt", "forwardslash", "rightshift", "leftctrl", "windowskey", "leftalt", "spacebar", "rightalt", "fn", "menu", "rightctrl", "A", "G", "H", "J", "K", "L" ];
+
+key.topRowNumbers =
+[ "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n0" ];
+
+key.topRowNumbersAlternate =
+[ "!", "@", "#", "$", "%", "^", "&", "*", "(", ")" ];
+
+key.topRowNumbersSmallText =
+[ "PAD", "PADx2", "PASTE", "GREP", "ABC", "ABC+", "CAT", "CPquad", "FONT-", "FONT+" ];
+
+key.additionalKeysText  = 
+[ "~", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "+", "bksp", "tab", "[", "]", "\\", "caps", ";", "'", "enter", "shift", "<", ">", "?", "shift", "ctrl", "win", "alt", "space", "alt", "fn", "mn", "ctrl", "A", "G", "H", "J", "K", "L" ];
+
+key.additionalKeysHTML  = 
+[ "invert", "", "", "", "", "", "", "", "", "", "", "", "", "new tab", "search", "src-L", "src-R", "*view", "", "", "*GUI", "copy group", "", "quad-L", "quad-R", "", "", "", "", "", "copy single item for editor", "", "", "", "", "*abbr.", "&uarr;&darr;", "&larr;", "&darr;", "&uarr;", "&rarr;" ];
+
+key.additionalKeys.forEach((keyname,index) => {
+key[keyname] = {};
+key[keyname].name = keyname;
+key[keyname].colour = "lightgrey";
+key[keyname].GUI = document.createElement("button");
+key[keyname].GUI.innerHTML = `${key.additionalKeysText[index]}<div class="extraText">${key.additionalKeysHTML[index]}</div>`;
+key[keyname].GUI.classList = `indicator ${keyname}`;
+GUI.append(key[keyname].GUI);
+});
+
+key.command           = document.createElement("button");
+key.command.innerText = "Vi";
+key.command.classList = "indicator command";
+GUI.append(key.command);
+GUI.addEventListener("keydown",   function(event) {
+/*   esc OR tab   */
+if (event.keyCode == 27 ||
+    event.keyCode == 9) {
+event.preventDefault();
+searchBar.style.display = "none";
+grepBar.style.display   = "none";
+searchBar.value         =     "";
+grepBar.value           =     "";
+
+if (treeFocus.style.display == "none") {
+setTimeout(() => { move("top"); newSearch = false; }, 50);
+}
+
+}
+event.stopPropagation(); }, true);
+
+GUI.addEventListener("keypress",  function(event) { event.stopPropagation(); }, true);
+GUI.addEventListener("keyup",     function(event) { event.stopPropagation(); }, true);
+
+const searchBar  = document.createElement("input");
+searchBar.type   = "value";
+searchBar.name   = "searchBar";
+searchBar.placeholder  = "- - -search- - -";
+searchBar.classList = "searchBar";
+searchBar.style.display = "none";
+searchBar.setAttribute("spellcheck", "false");
+searchBar.oninput = function() {search();};
+
+GUI.append(searchBar);
+               const fileViewerLayer = document.createElement("div");
+                     fileViewerLayer.classList = "fileViewerLayer";
+document.body.append(fileViewerLayer);
+
+                 const viewer                       = {};
+                       viewer.layout                = "";
+
+   for (let j = 0; j < 4;  j++)          {
+                       viewer["file" + j]           = {};
+                       viewer["file" + j].reference =  "";
+                       viewer["file" + j].window    = document.createElement("iframe");
+                       viewer["file" + j].window.classList.add(`window`);
+                       viewer["file" + j].window.classList.add(`viewerQuad`);
+                       viewer["file" + j].window.classList.add(`oct${j}`);
+fileViewerLayer.append(viewer["file" + j].window);
+                       viewer["file" + j].filter    = document.createElement("div");
+                       viewer["file" + j].filter.classList.add(`filter`);
+                       viewer["file" + j].filter.classList.add(`viewerQuad`);
+                       viewer["file" + j].filter.classList.add(`oct${j}` );
+fileViewerLayer.append(viewer["file" + j].filter);
+                                         }
+
+viewer.file0.window.classList.add("viewerLayoutLeft1");
+viewer.file1.window.classList.add("viewerLayoutLeft1");
+viewer.file2.window.classList.add("viewerLayoutRight1");
+viewer.file3.window.classList.add("viewerLayoutRight1");
+
+viewer.file0.window.src = "";
+viewer.file1.window.src = "";
+viewer.file2.window.src = "";
+viewer.file3.window.src = "";
+const colour =
+{
+"aliceblue":            { "name": "aliceblue",           "rgb": "rgb(240, 248, 255)" },
+"antiquewhite":         { "name": "antiquewhite",        "rgb": "rgb(250, 235, 215)" },
+"aqua":                 { "name": "aqua",                "rgb": "rgb(0, 255, 255)"   },
+"aquamarine":           { "name": "aquamarine",          "rgb": "rgb(127, 255, 212)" },
+"azure":                { "name": "azure",               "rgb": "rgb(240, 255, 255)" },
+"beige":                { "name": "beige",               "rgb": "rgb(245, 245, 220)" },
+"bisque":               { "name": "bisque",              "rgb": "rgb(255, 228, 196)" },
+"black":                { "name": "black",               "rgb": "rgb(0, 0, 0)"       },
+"blanchedalmond":       { "name": "blanchedalmond",      "rgb": "rgb(255, 235, 205)" },
+"blue":                 { "name": "blue",                "rgb": "rgb(0, 0, 255)"     },
+"blueviolet":           { "name": "blueviolet",          "rgb": "rgb(138, 43, 226)"  },
+"brown":                { "name": "brown",               "rgb": "rgb(165, 42, 42)"   },
+"burlywood":            { "name": "burlywood",           "rgb": "rgb(222, 184, 135)" },
+"cadetblue":            { "name": "cadetblue",           "rgb": "rgb(95, 158, 160)"  },
+"chartreuse":           { "name": "chartreuse",          "rgb": "rgb(127, 255, 0)"   },
+"chocolate":            { "name": "chocolate",           "rgb": "rgb(210, 105, 30)"  },
+"coral":                { "name": "coral",               "rgb": "rgb(255, 127, 80)"  },
+"cornflowerblue":       { "name": "cornflowerblue",      "rgb": "rgb(100, 149, 237)" },
+"cornsilk":             { "name": "cornsilk",            "rgb": "rgb(255, 248, 220)" },
+"crimson":              { "name": "crimson",             "rgb": "rgb(220, 20, 60)"   },
+"cyan":                 { "name": "cyan",                "rgb": "rgb(0, 255, 255)"   },
+"darkblue":             { "name": "darkblue",            "rgb": "rgb(0, 0, 139)"     },
+"darkcyan":             { "name": "darkcyan",            "rgb": "rgb(0, 139, 139)"   },
+"darkgoldenrod":        { "name": "darkgoldenrod",       "rgb": "rgb(184, 134, 11)"  },
+"darkgray":             { "name": "darkgray",            "rgb": "rgb(169, 169, 169)" },
+"darkgreen":            { "name": "darkgreen",           "rgb": "rgb(0, 100, 0)"     },
+"darkgrey":             { "name": "darkgrey",            "rgb": "rgb(169, 169, 169)" },
+"darkkhaki":            { "name": "darkkhaki",           "rgb": "rgb(189, 183, 107)" },
+"darkmagenta":          { "name": "darkmagenta",         "rgb": "rgb(139, 0, 139)"   },
+"darkolivegreen":       { "name": "darkolivegreen",      "rgb": "rgb(85, 107, 47)"   },
+"darkorange":           { "name": "darkorange",          "rgb": "rgb(255, 140, 0)"   },
+"darkorchid":           { "name": "darkorchid",          "rgb": "rgb(153, 50, 204)"  },
+"darkred":              { "name": "darkred",             "rgb": "rgb(139, 0, 0)"     },
+"darksalmon":           { "name": "darksalmon",          "rgb": "rgb(233, 150, 122)" },
+"darkseagreen":         { "name": "darkseagreen",        "rgb": "rgb(143, 188, 143)" },
+"darkslateblue":        { "name": "darkslateblue",       "rgb": "rgb(72, 61, 139)"   },
+"darkslategray":        { "name": "darkslategray",       "rgb": "rgb(47, 79, 79)"    },
+"darkslategrey":        { "name": "darkslategrey",       "rgb": "rgb(47, 79, 79)"    },
+"darkturquoise":        { "name": "darkturquoise",       "rgb": "rgb(0, 206, 209)"   },
+"darkviolet":           { "name": "darkviolet",          "rgb": "rgb(148, 0, 211)"   },
+"deeppink":             { "name": "deeppink",            "rgb": "rgb(255, 20, 147)"  },
+"deepskyblue":          { "name": "deepskyblue",         "rgb": "rgb(0, 191, 255)"   },
+"dimgray":              { "name": "dimgray",             "rgb": "rgb(105, 105, 105)" },
+"dimgrey":              { "name": "dimgrey",             "rgb": "rgb(105, 105, 105)" },
+"dodgerblue":           { "name": "dodgerblue",          "rgb": "rgb(30, 144, 255)"  },
+"firebrick":            { "name": "firebrick",           "rgb": "rgb(178, 34, 34)"   },
+"floralwhite":          { "name": "floralwhite",         "rgb": "rgb(255, 250, 240)" },
+"forestgreen":          { "name": "forestgreen",         "rgb": "rgb(34, 139, 34)"   },
+"fuchsia":              { "name": "fuchsia",             "rgb": "rgb(255, 0, 255)"   },
+"gainsboro":            { "name": "gainsboro",           "rgb": "rgb(220, 220, 220)" },
+"ghostwhite":           { "name": "ghostwhite",          "rgb": "rgb(248, 248, 255)" },
+"gold":                 { "name": "gold",                "rgb": "rgb(255, 215, 0)"   },
+"goldenrod":            { "name": "goldenrod",           "rgb": "rgb(218, 165, 32)"  },
+"gray":                 { "name": "gray",                "rgb": "rgb(128, 128, 128)" },
+"green":                { "name": "green",               "rgb": "rgb(0, 128, 0)"     },
+"greenyellow":          { "name": "greenyellow",         "rgb": "rgb(173, 255, 47)"  },
+"grey":                 { "name": "grey",                "rgb": "rgb(128, 128, 128)" },
+"honeydew":             { "name": "honeydew",            "rgb": "rgb(240, 255, 240)" },
+"hotpink":              { "name": "hotpink",             "rgb": "rgb(255, 105, 180)" },
+"indianred":            { "name": "indianred",           "rgb": "rgb(205, 92, 92)"   },
+"indigo":               { "name": "indigo",              "rgb": "rgb(75, 0, 130)"    },
+"ivory":                { "name": "ivory",               "rgb": "rgb(255, 255, 240)" },
+"khaki":                { "name": "khaki",               "rgb": "rgb(240, 230, 140)" },
+"lavender":             { "name": "lavender",            "rgb": "rgb(230, 230, 250)" },
+"lavenderblush":        { "name": "lavenderblush",       "rgb": "rgb(255, 240, 245)" },
+"lawngreen":            { "name": "lawngreen",           "rgb": "rgb(124, 252, 0)"   },
+"lemonchiffon":         { "name": "lemonchiffon",        "rgb": "rgb(255, 250, 205)" },
+"lightblue":            { "name": "lightblue",           "rgb": "rgb(173, 216, 230)" },
+"lightcoral":           { "name": "lightcoral",          "rgb": "rgb(240, 128, 128)" },
+"lightcyan":            { "name": "lightcyan",           "rgb": "rgb(224, 255, 255)" },
+"lightgoldenrodyellow": { "name": "lightgoldenrodyellow","rgb": "rgb(250, 250, 210)" },
+"lightgray":            { "name": "lightgray",           "rgb": "rgb(211, 211, 211)" },
+"lightgreen":           { "name": "lightgreen",          "rgb": "rgb(144, 238, 144)" },
+"lightgrey":            { "name": "lightgrey",           "rgb": "rgb(211, 211, 211)" },
+"lightpink":            { "name": "lightpink",           "rgb": "rgb(255, 182, 193)" },
+"lightsalmon":          { "name": "lightsalmon",         "rgb": "rgb(255, 160, 122)" },
+"lightseagreen":        { "name": "lightseagreen",       "rgb": "rgb(32, 178, 170)"  },
+"lightskyblue":         { "name": "lightskyblue",        "rgb": "rgb(135, 206, 250)" },
+"lightslategray":       { "name": "lightslategray",      "rgb": "rgb(119, 136, 153)" },
+"lightslategrey":       { "name": "lightslategrey",      "rgb": "rgb(119, 136, 153)" },
+"lightsteelblue":       { "name": "lightsteelblue",      "rgb": "rgb(176, 196, 222)" },
+"lightyellow":          { "name": "lightyellow",         "rgb": "rgb(255, 255, 224)" },
+"lime":                 { "name": "lime",                "rgb": "rgb(0, 255, 0)"     },
+"limegreen":            { "name": "limegreen",           "rgb": "rgb(50, 205, 50)"   },
+"linen":                { "name": "linen",               "rgb": "rgb(250, 240, 230)" },
+"magenta":              { "name": "magenta",             "rgb": "rgb(255, 0, 255)"   },
+"maroon":               { "name": "maroon",              "rgb": "rgb(128, 0, 0)"     },
+"mediumaquamarine":     { "name": "mediumaquamarine",    "rgb": "rgb(102, 205, 170)" },
+"mediumblue":           { "name": "mediumblue",          "rgb": "rgb(0, 0, 205)"     },
+"mediumorchid":         { "name": "mediumorchid",        "rgb": "rgb(186, 85, 211)"  },
+"mediumpurple":         { "name": "mediumpurple",        "rgb": "rgb(147, 112, 219)" },
+"mediumseagreen":       { "name": "mediumseagreen",      "rgb": "rgb(60, 179, 113)"  },
+"mediumslateblue":      { "name": "mediumslateblue",     "rgb": "rgb(123, 104, 238)" },
+"mediumspringgreen":    { "name": "mediumspringgreen",   "rgb": "rgb(0, 250, 154)"   },
+"mediumturquoise":      { "name": "mediumturquoise",     "rgb": "rgb(72, 209, 204)"  },
+"mediumvioletred":      { "name": "mediumvioletred",     "rgb": "rgb(199, 21, 133)"  },
+"midnightblue":         { "name": "midnightblue",        "rgb": "rgb(25, 25, 112)"   },
+"mintcream":            { "name": "mintcream",           "rgb": "rgb(245, 255, 250)" },
+"mistyrose":            { "name": "mistyrose",           "rgb": "rgb(255, 228, 225)" },
+"moccasin":             { "name": "moccasin",            "rgb": "rgb(255, 228, 181)" },
+"navajowhite":          { "name": "navajowhite",         "rgb": "rgb(255, 222, 173)" },
+"navy":                 { "name": "navy",                "rgb": "rgb(0, 0, 128)"     },
+"oldlace":              { "name": "oldlace",             "rgb": "rgb(253, 245, 230)" },
+"olive":                { "name": "olive",               "rgb": "rgb(128, 128, 0)"   },
+"olivedrab":            { "name": "olivedrab",           "rgb": "rgb(107, 142, 35)"  },
+"orange":               { "name": "orange",              "rgb": "rgb(255, 165, 0)"   },
+"orangered":            { "name": "orangered",           "rgb": "rgb(255, 69, 0)"    },
+"orchid":               { "name": "orchid",              "rgb": "rgb(218, 112, 214)" },
+"palegoldenrod":        { "name": "palegoldenrod",       "rgb": "rgb(238, 232, 170)" },
+"palegreen":            { "name": "palegreen",           "rgb": "rgb(152, 251, 152)" },
+"paleturquoise":        { "name": "paleturquoise",       "rgb": "rgb(175, 238, 238)" },
+"palevioletred":        { "name": "palevioletred",       "rgb": "rgb(219, 112, 147)" },
+"papayawhip":           { "name": "papayawhip",          "rgb": "rgb(255, 239, 213)" },
+"peachpuff":            { "name": "peachpuff",           "rgb": "rgb(255, 218, 185)" },
+"peru":                 { "name": "peru",                "rgb": "rgb(205, 133, 63)"  },
+"pink":                 { "name": "pink",                "rgb": "rgb(255, 192, 203)" },
+"plum":                 { "name": "plum",                "rgb": "rgb(221, 160, 221)" },
+"powderblue":           { "name": "powderblue",          "rgb": "rgb(176, 224, 230)" },
+"purple":               { "name": "purple",              "rgb": "rgb(128, 0, 128)"   },
+"rebeccapurple":        { "name": "rebeccapurple",       "rgb": "rgb(102, 51, 153)"  },
+"red":                  { "name": "red",                 "rgb": "rgb(255, 0, 0)"     },
+"rosybrown":            { "name": "rosybrown",           "rgb": "rgb(188, 143, 143)" },
+"royalblue":            { "name": "royalblue",           "rgb": "rgb(65, 105, 225)"  },
+"saddlebrown":          { "name": "saddlebrown",         "rgb": "rgb(139, 69, 19)"   },
+"salmon":               { "name": "salmon",              "rgb": "rgb(250, 128, 114)" },
+"sandybrown":           { "name": "sandybrown",          "rgb": "rgb(244, 164, 96)"  },
+"seagreen":             { "name": "seagreen",            "rgb": "rgb(46, 139, 87)"   },
+"seashell":             { "name": "seashell",            "rgb": "rgb(255, 245, 238)" },
+"sienna":               { "name": "sienna",              "rgb": "rgb(160, 82, 45)"   },
+"silver":               { "name": "silver",              "rgb": "rgb(192, 192, 192)" },
+"skyblue":              { "name": "skyblue",             "rgb": "rgb(135, 206, 235)" },
+"slateblue":            { "name": "slateblue",           "rgb": "rgb(106, 90, 205)"  },
+"slategray":            { "name": "slategray",           "rgb": "rgb(112, 128, 144)" },
+"slategrey":            { "name": "slategrey",           "rgb": "rgb(112, 128, 144)" },
+"snow":                 { "name": "snow",                "rgb": "rgb(255, 250, 250)" },
+"springgreen":          { "name": "springgreen",         "rgb": "rgb(0, 255, 127)"   },
+"steelblue":            { "name": "steelblue",           "rgb": "rgb(70, 130, 180)"  },
+"tan":                  { "name": "tan",                 "rgb": "rgb(210, 180, 140)" },
+"teal":                 { "name": "teal",                "rgb": "rgb(0, 128, 128)"   },
+"thistle":              { "name": "thistle",             "rgb": "rgb(216, 191, 216)" },
+"tomato":               { "name": "tomato",              "rgb": "rgb(255, 99, 71)"   },
+"turquoise":            { "name": "turquoise",           "rgb": "rgb(64, 224, 208)"  },
+"violet":               { "name": "violet",              "rgb": "rgb(238, 130, 238)" },
+"wheat":                { "name": "wheat",               "rgb": "rgb(245, 222, 179)" },
+"white":                { "name": "white",               "rgb": "rgb(255, 255, 255)" },
+"whitesmoke":           { "name": "whitesmoke",          "rgb": "rgb(245, 245, 245)" },
+"yellow":               { "name": "yellow",              "rgb": "rgb(255, 255, 0)"   },
+"yellowgreen":          { "name": "yellowgreen",         "rgb": "rgb(154, 205, 50)"  }
+};
+document.body.prepend(treeMain);
+treeMain.style.paddingTop    = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.width         = parseInt(window.innerWidth) + "px";
+treeMain.classList           = "treeMain";
+
+
+function buildTree(start,end) {
+
+for (i=0;i<100;i++) {for (let j = 0; j < treeMain.children.length; j++) {
+treeMain.removeChild(treeMain.children[j]);
+}} treeMain.innerHTML = "";
+
+pathArray = findFileList.trim().split("\n");
+
+for (let j = 0; j < pathArray.length; j++) {
+listArray[j]            = {};
+const filePathSeparator     = pathArray[j].split("/");
+listArray[j].filename   = filePathSeparator.pop();
+listArray[j].directory  = filePathSeparator.join("/");
+}
+
+for (let j = 0; j < listArray.length; j++) {
+const nameInput = listArray[j].directory.replace(/\//g, "_") +
+                   "_" + listArray[j].filename.replace(/\./g, "_");
+tree[nameInput]           = {};
+tree[nameInput].name      = nameInput;
+tree[nameInput].path      = [];
+tree[nameInput].path.text = listArray[j].directory.split("/");
+if (tree[nameInput].path.text[0] == "") {
+tree[nameInput].path.text.shift(); }
+tree[nameInput].path.text.push(listArray[j].filename);
+}
+
+treeValues  = Object.values(tree);
+
+let treeIndex  = 0;
+let childIndex = 0;
+if (localStorage.getItem("treePosition")) {
+treeIndex  = parseInt(localStorage.getItem("treePosition").split(",")[0]);
+childIndex = parseInt(localStorage.getItem("treePosition").split(",")[1]);
+}
+
+for (let j = 0; j < treeMain.children.length; j++) {
+treeMain.children[j].remove();
+}
+
+/* DRAW THE TREE DIAGRAM */
+for (let j = 0; j < treeValues.length; j++) {
+const newLine               = document.createElement("div");
+ newLine.dataset.name       = treeValues[j].name;
+ newLine.dataset.treeIndex  = j;
+      newLine.classList     = "path";
+      newLine.style.display = "block";
+
+const letter       = document.createElement("button");
+const notification = document.createElement("button");
+
+letter.dataset.childIndex = treeValues[j].path.text.length;
+letter.classList               = "letter";
+notification.classList         = "notification";
+treeValues[j].end              = {};
+treeValues[j].end.letter       = letter;
+treeValues[j].end.notification = notification;
+treeValues[j].key = {};
+if (localStorage.getItem(treeValues[j].name)) {
+newLine.style.backgroundColor = key[localStorage.getItem(treeValues[j].name)].colour;
+newLine.dataset.keyName   = key[localStorage.getItem(treeValues[j].name)].name;
+try {
+newLine.style.display     = key[newLine.dataset.keyName].display;
+} catch {}
+treeValues[j].key.name    = localStorage.getItem(treeValues[j].name);
+treeValues[j].key.display = localStorage.getItem(treeValues[j].key.name);
+letter.innerText          = localStorage.getItem(treeValues[j].name);
+} else {
+newLine.style.backgroundColor = key.D.colour;
+newLine.dataset.keyName   = key.D.name;
+treeValues[j].key.name    = key.D.name;
+treeValues[j].key.display = key.D.display;
+letter.innerText          = key.D.name;
+localStorage.setItem(treeValues[j].name, key.D.name);
+}
+treeValues[j].path.DOM = [];
+for (let k = 0; k < treeValues[j].path.text.length; k++) {
+let clicker = document.createElement("button");
+clicker.dataset.childIndex = k;
+clicker.dataset.treeIndex  = j;
+clicker.dataset.fullName   = treeValues[j].path.text[k];
+clicker.dataset.abbreviation = treeValues[j].path.text[k].slice(start,end);
+if (treeValues[j].path.text[k].includes(".")) {
+if (treeValues[j].path.text[k].split(".")[1]=="/") {
+clicker.classList = "baseDir";
+clicker.innerText = treeValues[j].path.text[k].slice(0,1);
+} else {
+clicker.classList = "file " + treeValues[j].path.text[k].split(".")[1];
+clicker.innerText = treeValues[j].path.text[k];
+}
+if (treeValues[j].path.text[k].split(".")[1]=="/") {
+treeValues[j].type = "baseDir";
+} else {
+treeValues[j].type = treeValues[j].path.text[k].split(".")[1];
+}
+} else {
+clicker.classList = "directory";
+clicker.innerText = treeValues[j].path.text[k];
+treeValues[j].type = "directory";
+}
+treeValues[j].path.DOM.push(clicker);
+newLine.appendChild(clicker);
+if (j == treeIndex && k == childIndex) {
+treeFocus = clicker;
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+}
+newLine.appendChild(letter);
+newLine.appendChild(notification);
+treeValues[j].DOM = newLine;
+treeMain.appendChild(newLine);
+}
+if (treeFocus == null) { treeFocus = treeValues[treeIndex].path.DOM[childIndex]; }
+treeFocus.focus();
+}
+/* Here are the tooltips for the keyboard GUI.
+ * This way I can't forget the buttons on this. */
+
+key.tilde.GUI.title = "invert";
+key.n1.GUI.title = "visibility layer";
+key.n2.GUI.title = "visibility layer";
+key.n3.GUI.title = "visibility layer";
+key.n4.GUI.title = "visibility layer";
+key.n5.GUI.title = "visibility layer";
+key.n6.GUI.title = "visibility layer";
+key.n7.GUI.title = "visibility layer";
+key.n8.GUI.title = "visibility layer";
+key.n9.GUI.title = "- change font size";
+key.n0.GUI.title = "+ change font size";
+key.minus.GUI.title = "CTRL, browser scale";
+key.plus.GUI.title = "CTRL, browser scale";
+key.backspace.GUI.title = "open new tab";
+key.tab.GUI.title = "search, use shift for GREP search (use query in bash, paste file list back to a key)";
+key.leftbracket.GUI.title = "set source top left, shift for bottom";
+key.rightbracket.GUI.title = "set source top right, shift for bottom";
+key.backslash.GUI.title = "alternate GUI, shift for wide";
+key.caps.GUI.title = "";
+key.semicolon.GUI.title = "";
+key.apostrophe.GUI.title = "toggle alternate GUI, or hide";
+key.enter.GUI.title = "copy group to clipboard, shift for alternate";
+key.leftshift.GUI.title = "use with letters to toggle visibility";
+key.lt.GUI.title = "move within group, shift to toggle semi/quad viewer left";
+key.gt.GUI.title = "move within group, shift to toggle semi/quad viewer right";
+key.forwardslash.GUI.title = "isolate single letters temporarily, esc to revert";
+key.rightshift.GUI.title = "use with letters to toggle visibility";
+key.leftctrl.GUI.title = "use with + - to change browser scale";
+key.windowskey.GUI.title = "";
+key.leftalt.GUI.title = "use with tab to cycle operating system windows";
+key.spacebar.GUI.title = "copy single file to clipboard, shift for alternate";
+key.rightalt.GUI.title = "use with tab to cycle operating system windows";
+key.fn.GUI.title = "";
+key.menu.GUI.title = "";
+key.rightctrl.GUI.title = "use with + - to change browser scale";
+key.A.GUI.title = "ALL/NONE, shift to set abbreviation";
+key.G.GUI.title = "go to top, shift for bottom";
+key.H.GUI.title = "go left, shift for first";
+key.J.GUI.title = "go down, shift to skip 10";
+key.K.GUI.title = "go up, shift to skip 10";
+key.L.GUI.title = "go to right, shift for last";
+function setColour(char) {
+
+/* When isolation mode is set, colour groups are isolated */
+if (isolation == 1) {
+treeFocus.parentNode.classList.remove("highlight");
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.style.display = "none";
+}
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display = "block";
+}
+if (treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name != char) {
+treeFocus = key[char].array[0].lastElementChild.previousElementSibling.previousElementSibling;
+}
+treeFocus.focus();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+return 0;
+}
+
+let comparisonArray  = [];
+for (let k = 0; k <= parseInt(treeFocus.dataset.childIndex); k++) {
+comparisonArray.push(treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[k]);
+}
+for (let j = 0; j < treeValues.length; j++) {
+let matchArray = [];
+for (let k = 0; k <= parseInt(treeFocus.dataset.childIndex); k++) {
+matchArray.push(treeValues[j].path.text[k]);
+}
+/* check if the strings match */
+if (matchArray.toString() == comparisonArray.toString()) {
+/* check that the row is not hidden */
+if (treeValues[j].DOM.style.display != "none") {
+treeValues[j].key.name = key[char].name;
+treeValues[j].DOM.style.backgroundColor      = key[char].colour;
+treeValues[j].DOM.style.display              = key[char].display;
+treeValues[j].end.letter.innerText = key[char].name;
+localStorage.setItem(treeValues[j].name, key[char].name);
+}
+}
+}
+if (key[char].display == "none") {
+move("up"); move("down");
+}
+brush();
+treeKey();
+updateGUI();
+}
+function showColour(char) {
+let allHidden  = true;
+key.names.forEach((char, index) => {
+if (key[char].display == "block") {
+allHidden = false;
+}
+});
+for (let j = 0; j < key[char].array.length; j++) {
+treeValues[parseInt(key[char].array[j].dataset.keyIndex)].key.display = "block";
+key[char].array[j].style.display = "block";
+}
+key[char].display          = "block";
+key[char].view[activeView] = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+if (allHidden == true) move("top");
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function hideColour(char) {
+for (let j = 0; j < key[char].array.length; j++) {
+treeValues[parseInt(key[char].array[j].dataset.keyIndex)].key.display = "none";
+key[char].array[j].style.display = "none";
+}
+key[char].display          = "none";
+key[char].view[activeView] = "none";
+localStorage.setItem(activeView + "-" + char, "none");
+if (treeFocus.parentNode.style.display == "none") {
+if (treeFocus == seek(treeFocus, "forward") && treeFocus == seek(treeFocus, "backward")) {
+return;
+} else if (treeFocus != seek(treeFocus, "forward")) {
+treeFocus = seek(treeFocus, "forward");
+} else if (treeFocus != seek(treeFocus, "backward")) {
+treeFocus = seek(treeFocus, "backward");
+}
+treeFocus.focus();
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+}
+function toggleColour(char) {
+treeFocus.parentNode.classList.remove("highlight");
+              if (key[char].display == "none") {
+           showColour(char);
+       } else if (key[char].display == "block") {
+           hideColour(char);
+       }
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+updateGUI();
+}
+function showAll() {
+key.names.forEach((char) => {
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display = "block"; }
+key[char].display = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+});
+treeFocus.focus();
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+treeKey();
+updateGUI();
+}
+function hideAll() {
+key.names.forEach((char) => {
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display = "none"; }
+key[char].display = "none";
+localStorage.setItem(activeView + "-" + char, "none");
+});
+treeKey();
+updateGUI();
+}
+function invertRGB(input) {
+const numberArray =
+[ parseInt(input.split(",")[0].replace(/rgb\(/g, '')),
+  parseInt(input.split(",")[1]),
+  parseInt(input.split(",")[2].replace(/\)/g, '')) ]
+return `rgb(${255 - numberArray[0]},${255 - numberArray[1]},${255 - numberArray[2]})`;
+}
+function invertColourScheme() {
+key.names.forEach((value, index) => {
+try {
+key[value].colour = colour[key[value].colour].inverted;
+} catch {
+key[value].colour = invertRGB(key[value].colour);
+}
+key[value].GUI.style.backgroundColour = key[value].colour;
+});
+}
+function toggleAll() {
+let allVisible = true;
+let allHidden  = true;
+key.names.forEach((char, index) => {
+       if (key[char].display == "block") {
+allHidden  = false;
+} else if (key[char].display == "none") {
+allVisible = false;
+}
+});
+       if (allVisible == true) { hideAll();
+} else if (allHidden  == true) { showAll();
+} else {                         showAll(); }
+
+}
+function toggleIsolation() {
+if (isolation == 0) {
+    isolation = 1;
+key.names.forEach((char, index) => {
+key[char].GUI.classList.add("isolation");
+});
+} else {
+    isolation = 0;
+key.names.forEach((char, index) => {
+key[char].GUI.classList.remove("isolation");
+});
+restoreAll();
+}
+}
+function restoreAll() {
+key.names.forEach((char) => {
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display =  key[char].display;
+}
+});
+
+    isolation = 0;
+key.names.forEach((char, index) => {
+key[char].GUI.classList.remove("isolation");
+});
+
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function invertSelection() {
+treeFocus.parentNode.classList.remove("highlight");
+for (let j = 0; j < treeValues.length; j ++) {
+if (treeValues[j].DOM.style.display == "none") {
+    treeValues[j].DOM.style.display =  "block";
+} else {
+    treeValues[j].DOM.style.display =  "none";
+}
+}
+key.names.forEach((char,index) => {
+if (key[char].display == "none") {
+    key[char].display =  "block";
+key[char].view[activeView] = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+} else {
+    key[char].display =  "none";
+key[char].view[activeView] = "none";
+localStorage.setItem(activeView + "-" + char, "none");
+}
+});
+move("up"); move("down");
+treeFocus.focus();
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function toggleGUI() {
+if (GUI.style.display=="none") {
+GUI.style.display="block";
+localStorage.setItem("GUI", "block");
+} else {
+GUI.style.display="none";
+localStorage.setItem("GUI", "none");
+}
+}
+function updateGUI() {
+key.names.forEach((char,index) => {
+key[char].GUI.style.backgroundColor = key[char].colour;
+key[char].GUI.innerHTML = `${key[char].name}<div class="numeral">${key[char].array.length}</div>`;
+if (key[char].display == "none") {
+key[char].GUI.classList.add("hiddenKey"); 
+key[char].GUI.innerHTML = 
+`${key[char].name}
+<div class="numeral">${key[char].array.length}</div>
+<div class="hideIndicator">HIDDEN</div>
+`;
+} else {
+`${key[char].name}
+<div class="numeral">${key[char].array.length}</div>
+`;
+key[char].GUI.classList.remove("hiddenKey"); 
+}
+});
+for (let j = 0; j < 4;  j++) { updateViewerColour(j); }
+}
+function shiftKeyLabels() {
+key.topRowNumbers.forEach((char,index) => {
+key[char].GUI.innerHTML = `${key.topRowNumbersAlternate[index]}<div class="hideIndicator">${key.topRowNumbersSmallText[index]}</div>`
+});
+}
+function unshiftKeyLabels() {
+key.additionalKeys.forEach((keyname,index) => {
+key[keyname].GUI.innerHTML = `${key.additionalKeysText[index]}<div class="extraText">${key.additionalKeysHTML[index]}</div>`;
+});
+}
+function brush() {
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.classList.remove("brushTop");
+treeValues[j].DOM.classList.remove("brushBottom");
+       if (j==0) {
+treeValues[j].DOM.classList.add("brushTop");
+       if (treeValues[j].key.name != treeValues[j + 1].key.name) {
+treeValues[j].DOM.classList.add("brushBottom"); }
+} else if (j == treeValues.length - 1) {
+treeValues[j].DOM.classList.add("brushBottom");
+       if (treeValues[j].key.name != treeValues[j - 1].key.name) {
+treeValues[j].DOM.classList.add("brushTop"); }
+} else if (treeValues[j].key.name != treeValues[j + 1].key.name) {
+treeValues[j].DOM.classList.add("brushBottom");
+       if (treeValues[j].key.name != treeValues[j - 1].key.name) {
+treeValues[j].DOM.classList.add("brushTop"); }
+} else if (treeValues[j].key.name != treeValues[j - 1].key.name) {
+treeValues[j].DOM.classList.add("brushTop");
+       if (treeValues[j].key.name != treeValues[j + 1].key.name) {
+treeValues[j].DOM.classList.add("brushBottom"); }
+}
+}
+}
+function flipGUI() {
+
+if (GUI.style.display == "none") {
+GUI.style.display = "block";
+localStorage.setItem("GUI", "block");
+}
+
+if (GUIflip == "true") {
+GUIflip = "false";
+localStorage.setItem("GUIflip", "true");
+key.names.forEach((value, index) => {
+key[value].GUI.classList.add(`${value}alt`); });
+key.additionalKeys.forEach((value, index) => {
+key[value].GUI.classList.add(`hideThisLetter`); });
+key.topRowNumbers.forEach((value, index) => {
+key[value].GUI.classList.add(`${value}alt`);
+key[value].GUI.classList.remove(`hideThisLetter`);
+});
+GUI.classList.add("GUIsmall");
+key.command.classList.add("hideThisLetter");
+
+} else if (GUIflip == "false") {
+GUIflip = "true";
+localStorage.setItem("GUIflip", "false");
+key.names.forEach((value, index) => {
+key[value].GUI.classList.remove(`${value}alt`); });
+key.additionalKeys.forEach((value, index) => {
+key[value].GUI.classList.remove(`hideThisLetter`); });
+key.topRowNumbers.forEach((value, index) => {
+key[value].GUI.classList.remove(`${value}alt`);
+});
+GUI.classList.remove("GUIsmall");
+key.command.classList.remove("hideThisLetter");
+}
+
+}
+function abbreviate() {
+if (abbr == 0) { abbr = 2; } else { abbr = 0; }
+for (let j = 0; j < treeValues.length; j++) {
+for (let k = 0; k < treeValues[j].path.DOM.length; k++) {
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\//g, "");
+} }
+if (abbr == 0) { return; }
+for (let j = 0; j < treeValues.length; j++) {
+for (let k = 0; k < treeValues[j].path.DOM.length - abbr; k++) {
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].slice(0,1);
+} }
+localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
+}
+function unabbreviate() {
+
+
+for (let j = 0; j < treeValues.length; j++) {
+for (let k = 0; k < treeValues[j].path.DOM.length; k++) {
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\//g, "");
+} }
+
+
+}
+function press(theKey) {
+key[theKey].GUI.classList.add("press");
+setTimeout(() => {
+key[theKey].GUI.classList.remove("press");
+}, 600);
+}
+function fontSizeUp() {
+       if ( fitSelection.choice == 0 ) { fitSelection.option0.fontSize += 0.5; document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`;
+} else if ( fitSelection.choice == 2 ) { fitSelection.option2.fontSize += 0.5; document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`;
+} else if ( fitSelection.choice == 1 ) { fitSelection.option1.fontSize += 0.5; document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`;
+}
+localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
+}
+function fontSizeDown() {
+       if ( fitSelection.choice == 0 ) { if (fitSelection.option0.fontSize > 4) { fitSelection.option0.fontSize -= 0.5; document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`; }
+} else if ( fitSelection.choice == 2 ) { if (fitSelection.option2.fontSize > 4) { fitSelection.option2.fontSize -= 0.5; document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`; }
+} else if ( fitSelection.choice == 1 ) { if (fitSelection.option1.fontSize > 4) { fitSelection.option1.fontSize -= 0.5; document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`; }
+}
+localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
+}
+function move(arg1,arg2) {
+treeFocus.parentNode.classList.remove("highlight");
+let input = treeFocus;
+const treeIndex  = parseInt(input.dataset.treeIndex);
+const childIndex = parseInt(input.dataset.childIndex);
+
+function getRef() {
+switch (arg1) {
+case   "left":
+	if (childIndex != 0) {
+	return treeValues[treeIndex].path.DOM[childIndex - 1];
+	} else {
+	return input;
+        }
+	break;
+case  "right":
+	if (childIndex != treeValues[treeIndex].path.DOM.length - 1) {
+	return treeValues[treeIndex].path.DOM[childIndex + 1];
+	} else {
+	return input;
+        }
+	break;
+case  "first":
+	return treeValues[treeIndex].path.DOM[0];
+	break;
+case   "last":
+	return treeValues[treeIndex].path.DOM[treeValues[treeIndex].path.DOM.length - 1];
+	; break;
+case    "top":
+	if (treeValues[0].DOM.style.display != "none") {
+	return treeValues[0].path.DOM[treeValues[0].path.DOM.length - 1];
+	} else {
+	return seek(treeValues[0].path.DOM[treeValues[0].path.DOM.length - 1],"forward");
+	}
+	break;
+case "bottom":
+	if (treeValues[treeValues.length - 1].DOM.style.display != "none") {
+	return treeValues[treeValues.length - 1].path.DOM[treeValues[treeValues.length - 1].path.DOM.length - 1];
+	} else {
+	return seek(treeValues[treeValues.length - 1].path.DOM[treeValues[treeValues.length - 1].path.DOM.length - 1],"backward");
+	}
+	break;
+case     "up":
+	return seek(input, "backward");
+	break;
+case   "down":
+	return seek(input, "forward");
+	break;
+default:
+	return input;
+}
+}
+
+if (arg2 == "skip") {
+for (let j = 0; j < multiMove; j++) {
+treeFocus = getRef();
+input     = treeFocus;
+}
+} else {
+treeFocus = getRef();
+}
+
+treeFocus.focus();
+
+
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function nextInGroup() {
+treeFocus.parentNode.classList.remove("highlight");
+const keyName     = treeFocus.parentNode.dataset.keyName;
+const arrayLength = key[keyName].array.length;
+const arrayIndex  = parseInt(treeFocus.parentNode.dataset.keyIndex);
+
+if (arrayIndex < arrayLength - 1) {
+treeFocus = key[keyName].array[arrayIndex + 1].lastElementChild.previousElementSibling.previousElementSibling;
+}
+
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+treeFocus.parentNode.classList.add("highlight");
+setStoragePosition();
+}
+function previousInGroup() {
+treeFocus.parentNode.classList.remove("highlight");
+const keyName     = treeFocus.parentNode.dataset.keyName;
+const arrayLength = key[keyName].array.length;
+const arrayIndex  = parseInt(treeFocus.parentNode.dataset.keyIndex);
+if (arrayIndex > 0) {
+treeFocus = key[keyName].array[arrayIndex - 1].lastElementChild.previousElementSibling.previousElementSibling;
+}
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+treeFocus.parentNode.classList.add("highlight");
+setStoragePosition();
+}
+function seek(input, direction) {
+const treeIndex  = parseInt(input.dataset.treeIndex);
+const childIndex = parseInt(input.dataset.childIndex);
+function findRef() {
+if (direction == "forward") {
+for (let j = treeIndex + 1; j < treeValues.length; j++) {
+if (treeValues[j].DOM.style.display != "none") {
+return treeValues[j];
+} }
+} else if (direction == "backward") {
+for (let j = treeIndex - 1; j >= 0; j--) {
+if (treeValues[j].DOM.style.display != "none") {
+return treeValues[j];
+} }
+}
+return treeValues[treeIndex];
+}
+const newLocation = findRef();
+const inputArray  = [];
+const matchArray  = [];
+for (let k = 0; k <= childIndex; k++) {
+inputArray.push(treeValues[treeIndex].path.text[k]);
+matchArray.push(          newLocation.path.text[k]);
+}
+     if (input == treeValues[treeIndex].path.DOM[treeValues[treeIndex].path.DOM.length - 1])
+{ return newLocation.path.DOM[newLocation.path.DOM.length - 1]; }
+else if (input == treeValues[treeIndex].path.DOM[treeValues[treeIndex].path.DOM.length - 2])
+{ return newLocation.path.DOM[newLocation.path.DOM.length - 2]; }
+else if (matchArray.toString() == inputArray.toString())
+{ return newLocation.path.DOM[childIndex]; }
+else
+{ return newLocation.path.DOM[newLocation.path.DOM.length - 1]; }
+}
+/* USE THE OLD WAY WHICH ALWAYS WORKS */
+function copyToClipboard(string) {
+const d = document;
+const x = d.body.appendChild(d.createElement("textarea"));
+x.value = string;
+x.select();
+d.execCommand("copy");
+x.remove();
+}
+
+
+function retrieve(scope,method,cmd1,cmd2) {
+let clips     = [];
+       if (scope  == "single") {
+   const dataIndex = treeFocus.dataset.treeIndex;
+   const dataTree  = treeValues[dataIndex];
+for (let j = 1; j < parseInt(treeFocus.dataset.childIndex) + 1; j++) { clips.push(dataTree.path.text[j]); }
+       if (method == "direct") {
+       copyToClipboard(" " + workingDirectory + "/" + clips.join("/"));
+       treeValues[dataIndex].end.notification.innerText = "copied";
+} else if (method == "command") {
+       copyToClipboard(cmd1 + " " + workingDirectory + "/" + clips.join("/") + " " + cmd2);
+       treeValues[dataIndex].end.notification.innerText = "CMD";
+} else if (method == "neat") {
+       if (clips.join("/").includes(".")) {
+       const filename = clips.pop(); 
+       copyToClipboard("\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\nclear;\nls;\n" + cmd1 + " " + filename + ";");
+       treeValues[dataIndex].end.notification.innerText = cmd1 + " cmd";
+       } else {
+       if (cmd1 == "notepad") {
+       copyToClipboard(workingDirectory.replace(/\/c\//g, "C:\\").replace(/\//g, "\\") + "\\" + clips.join("\\"));
+       treeValues[dataIndex].end.notification.innerText = "win dir";
+       } else {
+       copyToClipboard("\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\nclear;\nls;");
+       treeValues[dataIndex].end.notification.innerText = "copy";
+       }
+       }
+}
+let takeAway = 500 + Math.floor(Math.random() * 1000 + 10);
+setTimeout(() => { dataTree.end.notification.style.color = "magenta"; }, takeAway * 0.125);
+setTimeout(() => { dataTree.end.notification.style.color = "red"    ; }, takeAway * 0.250);
+setTimeout(() => { dataTree.end.notification.style.color = "green"  ; }, takeAway * 0.375);
+setTimeout(() => { dataTree.end.notification.style.color = "cyan"   ; }, takeAway * 0.500);
+setTimeout(() => { dataTree.end.notification.style.color = "purple" ; }, takeAway * 0.625);
+setTimeout(() => { dataTree.end.notification.style.color = "gold"   ; }, takeAway * 0.750);
+setTimeout(() => { dataTree.end.notification.style.color = "azure"  ; }, takeAway * 0.875);
+setTimeout(() => { dataTree.end.notification.innerText = ""; dataTree.end.notification.style.color = "white"; }, takeAway);
+} else if (scope == "multiple") {
+let dataGroup = [];
+const lineArray = key[tree[treeFocus.parentNode.dataset.name].key.name].array;
+for (let k = 0; k < lineArray.length; k++) {
+const dataName  = lineArray[k].dataset.name;
+const dataTree  = tree[dataName];
+clips = [];
+for (let j = 1; j < parseInt(dataTree.path.text.length) + 1; j++) { clips.push(dataTree.path.text[j]); }
+dataGroup.push(" " + workingDirectory + "/" + clips.join("/").slice(0,-1));
+let takeAway = 500 + Math.floor(Math.random() * 1000 + 10);
+if (method == "direct") {
+dataTree.end.notification.innerText = "copied";
+} else if (method == "neat") {
+dataTree.end.notification.innerText = cmd1 + " cmd";
+} else if (method == "command") {
+dataTree.end.notification.innerText = "CMD";
+}
+setTimeout(() => { dataTree.end.notification.style.color = "magenta"; }, takeAway * 0.125);
+setTimeout(() => { dataTree.end.notification.style.color = "red"    ; }, takeAway * 0.250);
+setTimeout(() => { dataTree.end.notification.style.color = "green"  ; }, takeAway * 0.375);
+setTimeout(() => { dataTree.end.notification.style.color = "cyan"   ; }, takeAway * 0.500);
+setTimeout(() => { dataTree.end.notification.style.color = "purple" ; }, takeAway * 0.625);
+setTimeout(() => { dataTree.end.notification.style.color = "gold"   ; }, takeAway * 0.750);
+setTimeout(() => { dataTree.end.notification.style.color = "azure"  ; }, takeAway * 0.875);
+setTimeout(() => { dataTree.end.notification.innerText = ""; dataTree.end.notification.style.color = "white"; }, takeAway);
+}
+       if (method == "direct") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += dataGroup[j];}
+copyToClipboard(output);
+
+} else if (method == "command") {
+
+
+if (cmd1 != "pad128" &&
+    cmd1 != "mv128" &&
+    cmd1 != "paste" &&
+    cmd1 != "grepTop" &&
+    cmd1 != "abc" &&
+    cmd1 != "abcPlus" &&
+    cmd1 != "catCAT") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += dataGroup[j]; }
+copyToClipboard("\n" + cmd1 + " " + output + " " + cmd2);
+
+} else if (cmd1 == "pad128") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += "     " + dataGroup[j].padEnd(123, " ") + "\n"; }
+copyToClipboard("\n" + output);
+
+} else if (cmd1 == "mv128") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += "mv" + "     " + dataGroup[j].padEnd(123, " ") + "     " + dataGroup[j].padEnd(123, " ") + ";" + "\n"; }
+copyToClipboard("\n" + output);
+
+} else if (cmd1 == "pasteUp") {
+let output = "";
+output += dataGroup[0] + " \\ \n";
+for (let j = 1; j < dataGroup.length - 1; j++) {
+output += "      " + dataGroup[j] + " \\ \n"; }
+output += "      " + dataGroup[dataGroup.length - 1];
+copyToClipboard("\n" + "paste" + " " + output + " " + ";");
+
+} else if (cmd1 == "grepTop") {
+
+/* more prep work for this one necessary */
+
+} else if (cmd1 == "abc") {
+
+
+
+
+
+
+
+
+
+let output = "";
+const alphabet =
+[ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+for (let j = 0; j < dataGroup.length; j++) {
+output += "mv " + dataGroup[j].padEnd(128, " ") + " " + dataGroup[j].replace(/(\/._)([^\/]*)$/g, "/" + "$2").replace(/\/([^\/]*)$/g, "/" + alphabet[j] + "_" + "$1") + ";\n"; }
+copyToClipboard("\n" + output);
+
+
+
+
+
+
+
+} else if (cmd1 == "abcPlus") {
+let output = "";
+const alphabet =
+[ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+output += "mkdir z_newDirectory; cd z_newDirectory; touch"
+for (let j = 0; j < 25; j++) {
+output += ` ${alphabet[j]}_.js`;
+}
+output += ` z_.js; clear; ls;`;
+copyToClipboard("\n" + output);
+
+} else if (cmd1 == "catCAT") {
+let output = "echo > temp;";
+for (let j = 0; j < dataGroup.length; j++) {
+output += 
+`
+echo >> temp;
+echo "/*** ${dataGroup[j]} ***/" >> temp; 
+echo >> temp;
+cat ${dataGroup[j]} >> temp;`;
+}
+output +=
+`
+${editorName} temp;
+rm temp;
+clear;
+`;
+copyToClipboard(output);
+
+}
+
+
+
+
+
+} else if (method == "neat") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += dataGroup[j]; }
+copyToClipboard("\n" + cmd1 + " " + output);
+}
+}
+}
+function setStoragePosition() {
+localStorage.setItem("treePosition", treeFocus.dataset.treeIndex + "," + treeFocus.dataset.childIndex);
+}
+function treeKey() {
+for (let k = 0; k < key.names.length; k++) {
+key[key.names[k]].array = [];
+let keyCounter = 0;
+for (let j = 0; j < treeValues.length; j++) {
+if (treeValues[j].key.name == key.names[k]) {
+key[key.names[k]].array.push(treeValues[j].DOM);
+treeValues[j].key.index = keyCounter;
+treeValues[j].DOM.dataset.keyName  = key.names[k];
+treeValues[j].DOM.dataset.keyIndex = keyCounter;
+keyCounter++;
+}
+}
+}
+}
+function changeView(argument) {
+key.names.forEach((char, index) => {
+key[char].display = key[char].view[argument];
+});
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.style.display              = key[treeValues[j].key.name].display;
+}
+for (let j = 0; j < 10; j++) {
+key["n" + j].GUI.classList.remove("currentView");
+}
+key[argument].GUI.classList.add("currentView");
+updateGUI();
+treeKey();
+activeView = view[argument];
+localStorage.setItem("activeView", view[argument]);
+move("up");
+move("down");
+}
+function search() {
+for (let j = 0; j < treeValues.length; j++) {
+       if (!treeValues[j].name.toLowerCase().includes(searchBar.value.toLowerCase())) {
+treeValues[j].DOM.style.display = "none";
+} else {
+treeValues[j].DOM.style.display = "block";
+}
+}
+}
+function grepSearch(value) {
+
+
+let query = [];
+
+if (treeFocus.classList.contains("directory")) {
+
+for (let j = 0; j < parseInt(treeFocus.dataset.childIndex); j++) {
+query.push(treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[j]);
+}
+
+}
+
+
+
+
+copyToClipboard(`
+cd ${workingDirectory};
+grep "${value}" $(find ${query.join("/")} -type f) | \
+sed '/\.swp/d' | sed '/\.git/d' | \
+sed 's/:.*//g' | uniq > "copy & paste this list back to a key";
+vi "copy & paste this list back to a key" $(cat "copy & paste this list back to a key");
+rm "copy & paste this list back to a key";
+clear;
+ls;`);
+
+/*
+
+let takeAway = 500 + Math.floor(Math.random() * 1000 + 10);
+setTimeout(() => { grepBar.style.color = "magenta"; }, takeAway * 0.125);
+setTimeout(() => { grepBar.style.color = "red"    ; }, takeAway * 0.250);
+setTimeout(() => { grepBar.style.color = "green"  ; }, takeAway * 0.375);
+setTimeout(() => { grepBar.style.color = "cyan"   ; }, takeAway * 0.500);
+setTimeout(() => { grepBar.style.color = "purple" ; }, takeAway * 0.625);
+setTimeout(() => { grepBar.style.color = "gold"   ; }, takeAway * 0.750);
+setTimeout(() => { grepBar.style.color = "azure"  ; }, takeAway * 0.875);
+setTimeout(() => { grepBar.innerText = ""; grepBar.style.color = "white"; }, takeAway);
+grepBar.style.display = "none";
+
+*/
+
+
+
+}
+function setSource(input) {
+if (!treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/").includes(".html")) {
+if (viewer["file" + input].window.src != treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/")) {
+viewer["file" + input].window.src = treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/");
+}
+} else {
+viewer["file" + input].window.src = null;
+}
+viewer["file" + input].reference = treeValues[parseInt(treeFocus.dataset.treeIndex)].name;
+localStorage.setItem("file" + input, viewer["file" + input].reference);
+viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
+viewer["file" + input].filter.innerHTML = `<button>${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.length - 1]} <button class="letter">${treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name}</button></button>`;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+}
+function updateViewerColour(input) {
+try {
+viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
+viewer["file" + input].filter.innerHTML = `<button>${tree[viewer["file" + input].reference].path.text[tree[viewer["file" + input].reference].path.text.length - 1]} <button class="letter">${tree[viewer["file" + input].reference].key.name}</button></button>`;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+} catch {}
+}
+function setFromStorage(input) {
+let value = tree[viewer["file" + input].reference].DOM;
+if (!treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/").includes(".html")) {
+if (viewer["file" + input].window.src != treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/")) {
+viewer["file" + input].window.src = treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/");
+}
+} else {
+viewer["file" + input].window.src = null;
+}
+viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
+viewer["file" + input].filter.innerHTML = `<button>${treeValues[parseInt(value.dataset.treeIndex)].path.text[treeValues[parseInt(value.dataset.treeIndex)].path.text.length - 1]} <button class="letter">${treeValues[parseInt(value.dataset.treeIndex)].key.name}</button></button>`;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+}
+function setLeftSemi() {
+if (viewer.file0.window.classList.contains("viewerQuad")) {
+viewer.file0.window.classList.remove("viewerQuad");
+viewer.file0.filter.classList.remove("viewerQuad");
+viewer.file0.window.classList.add("viewerSemi");
+viewer.file0.filter.classList.add("viewerSemi");
+localStorage.setItem("leftSemi","true");
+} else {
+viewer.file0.window.classList.add("viewerQuad");
+viewer.file0.filter.classList.add("viewerQuad");
+viewer.file0.window.classList.remove("viewerSemi");
+viewer.file0.filter.classList.remove("viewerSemi");
+localStorage.setItem("leftSemi","false");
+}
+}
+function setRightSemi() {
+if (viewer.file2.window.classList.contains("viewerQuad")) {
+viewer.file2.window.classList.remove("viewerQuad");
+viewer.file2.filter.classList.remove("viewerQuad");
+viewer.file2.window.classList.add("viewerSemi");
+viewer.file2.filter.classList.add("viewerSemi");
+localStorage.setItem("rightSemi","true");
+} else {
+viewer.file2.window.classList.add("viewerQuad");
+viewer.file2.filter.classList.add("viewerQuad");
+viewer.file2.window.classList.remove("viewerSemi");
+viewer.file2.filter.classList.remove("viewerSemi");
+localStorage.setItem("rightSemi","false");
+}
+}
+
+function copyToEditor() {
+if (fitSelection.choice == 1 || fitSelection.choice == 2) {
+       if (viewer.file0.window.classList.contains("viewerSemi") && viewer.file2.window.classList.contains("viewerSemi")) {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\. /g, " "));
+} else if (viewer.file0.window.classList.contains("viewerSemi")) {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file3.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\. /g, " "));
+} else if (viewer.file2.window.classList.contains("viewerSemi")) {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file1.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\. /g, " "));
+} else {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file1.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file3.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\. /g, " "));
+}
+for (let j = 0; j < 4; j++) {
+let takeAway = 250 + Math.floor(Math.random() * 500 + 10);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,  0,255,0.50)"; }, takeAway * 0.125);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,255,255,0.50)"    ; }, takeAway * 0.250);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(  0,255,  0,0.50)"  ; }, takeAway * 0.375);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(  0,255,255,0.50)"   ; }, takeAway * 0.500);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,  0,127,0.50)" ; }, takeAway * 0.625);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,255,  0,0.50)"   ; }, takeAway * 0.750);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,127,127,0.50)"  ; }, takeAway * 0.875);
+setTimeout(() => { updateGUI(); }, takeAway);
+}
+}
+}
+window.addEventListener("resize", function() {
+refit();
+});
+function refit() {
+treeMain.style.paddingTop    = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
+
+function removeLayouts() {
+for (let j = 0; j < 2;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(`viewerLayoutLeft${k}`);
+viewer["file" + j].filter.classList.remove(`viewerLayoutLeft${k}`);
+}}
+for (let j = 2; j < 4;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(`viewerLayoutRight${k}`);
+viewer["file" + j].filter.classList.remove(`viewerLayoutRight${k}`);
+}}
+}
+
+function addLayouts(input) {
+for (let j = 0; j < 2;  j++) {
+viewer["file" + j].window.classList.add(`viewerLayoutLeft${input}`);
+viewer["file" + j].filter.classList.add(`viewerLayoutLeft${input}`);
+}
+for (let j = 2; j < 4;  j++) {
+viewer["file" + j].window.classList.add(`viewerLayoutRight${input}`);
+viewer["file" + j].filter.classList.add(`viewerLayoutRight${input}`);
+}
+}
+
+       if ( (window.innerWidth / window.innerHeight) - (3 / 3) <= 0) {
+
+fitSelection.choice = 0;
+abbr = 2;
+abbreviate();
+document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`;
+removeLayouts();
+addLayouts(0);
+GUI.style.transform  = "scale(0.94)";
+treeMain.style.width = `calc(${parseInt(window.innerWidth)}px - 6vw)`;
+GUI.style.left       = `3vw`;
+treeMain.style.left  = `calc(0px + 3vw)`;
+} else if ( (window.innerWidth / window.innerHeight) - (14 / 9) >  0 && (fitSelection.choice == 2 || fitSelection.choice == null) ) {
+
+fitSelection.choice = 2;
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`;
+removeLayouts();
+addLayouts(2);
+GUI.style.transform  = "scale(0.274)";
+treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.33333)}px - 6vw)`;
+GUI.style.left       = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
+treeMain.style.left  = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
+} else if ( (window.innerWidth / window.innerHeight) - (3 / 3) >  0) {
+
+fitSelection.choice = 1;
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`;
+removeLayouts();
+addLayouts(1);
+GUI.style.transform  = "scale(0.439)";
+treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.5)}px - 6vw)`;
+GUI.style.left       = `calc(${window.innerWidth * 0.5}px + 3vw)`;
+treeMain.style.left  = `calc(${window.innerWidth * 0.5}px + 3vw)`;
+}
+treeFocus.focus();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function selectFit(selection) {
+
+fitSelection.choice = selection;
+
+treeMain.style.paddingTop    = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
+
+function removeLayouts() {
+for (let j = 0; j < 2;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(`viewerLayoutLeft${k}`);
+viewer["file" + j].filter.classList.remove(`viewerLayoutLeft${k}`);
+}}
+for (let j = 2; j < 4;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(`viewerLayoutRight${k}`);
+viewer["file" + j].filter.classList.remove(`viewerLayoutRight${k}`);
+}}
+}
+
+function addLayouts(input) {
+for (let j = 0; j < 2;  j++) {
+viewer["file" + j].window.classList.add(`viewerLayoutLeft${input}`);
+viewer["file" + j].filter.classList.add(`viewerLayoutLeft${input}`);
+}
+for (let j = 2; j < 4;  j++) {
+viewer["file" + j].window.classList.add(`viewerLayoutRight${input}`);
+viewer["file" + j].filter.classList.add(`viewerLayoutRight${input}`);
+}
+}
+
+       if (fitSelection.choice == 0) {
+
+abbr = 2;
+abbreviate();
+document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`;
+removeLayouts();
+addLayouts(0);
+GUI.style.transform  = "scale(0.94)";
+treeMain.style.width = `calc(${parseInt(window.innerWidth)}px - 6vw)`;
+GUI.style.left       = `3vw`;
+treeMain.style.left  = `calc(0px + 3vw)`;
+
+} else if (fitSelection.choice == 2) {
+
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`;
+removeLayouts();
+addLayouts(2);
+GUI.style.transform  = "scale(0.274)";
+treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.33333)}px - 6vw)`;
+GUI.style.left       = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
+treeMain.style.left  = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
+
+} else if (fitSelection.choice == 1) {
+
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`;
+removeLayouts();
+addLayouts(1);
+GUI.style.transform  = "scale(0.439)";
+treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.5)}px - 6vw)`;
+GUI.style.left       = `calc(${window.innerWidth * 0.5}px + 3vw)`;
+treeMain.style.left  = `calc(${window.innerWidth * 0.5}px + 3vw)`;
+
+}
+
+
+
+
+treeFocus.focus();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function switchFit() {
+       if (fitSelection.choice == 0) { fitSelection.choice =  1;
+} else if (fitSelection.choice == 1) { fitSelection.choice =  2;
+} else if (fitSelection.choice == 2) { fitSelection.choice =  1; }
+ selectFit(fitSelection.choice);
+}
+document.addEventListener("focus", () => {
+event.preventDefault();
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+});
+document.addEventListener("input", function() {
+
+
+});
+document.addEventListener("copy", event => {
+/*
+key.names.forEach((value, index) => {
+if (event.target == key[char].GUI) {
+
+event.preventDefault();
+let pastedText = event.clipboardData.getData('text/plain');
+
+
+treeValues[j].key.name = key[char].name;
+treeValues[j].DOM.style.backgroundColor      = key[char].colour;
+treeValues[j].DOM.style.display              = key[char].display;
+treeValues[j].end.letter.innerText = key[char].name;
+localStorage.setItem(treeValues[j].name, key[char].name);
+
+
+treeValues[tree["._e_script_a_declaration_e_keyEtc_js"].DOM.dataset.treeIndex]
+
+
+
+*** COPY ***
+event.clipboardData.setData('text/plain', mousemoveTarget.lastElementChild.firstElementChild.nextElementSibling.innerHTML);
+
+
+}
+});
+*/
+});document.addEventListener("paste", event => {
+
+event.preventDefault();
+const fileList = event.clipboardData.getData('text/plain').trim().split("\n");
+
+let targetKey = null;
+key.names.forEach((char, index) => {
+
+if (mouseMoveTarget != null) {
+if (mouseMoveTarget == key[char].GUI) {
+targetKey = char;
+showColour(targetKey);
+}
+} else {
+if (treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name == key[char].name) {
+targetKey = char;
+showColour(targetKey);
+}
+
+}
+});
+
+for (let j = 0; j < fileList.length; j++) {
+try {
+
+var reference = treeValues[parseInt(tree["." + fileList[j].replace(/\//g, "_").replace(/\./g, "_").slice(1)].DOM.dataset.treeIndex)]
+
+reference.key.name = key[targetKey].name;
+reference.DOM.style.backgroundColor      = key[targetKey].colour;
+reference.DOM.style.display              = key[targetKey].display;
+reference.end.letter.innerText = key[targetKey].name;
+localStorage.setItem(reference.name, key[targetKey].name);
+} catch {}
+}
+
+brush();
+treeKey();
+updateGUI();
+});
+
+
+
+
+document.addEventListener("click", function() {
+
+      if (event.target == key.command) {
+        if (editorName == "nano") {
+            editorName =  "vi";
+ key.command.innerText =  "vi";
+localStorage.setItem("editorName","vi");
+ } else if (editorName == "vi") {
+            editorName =  "nano";
+ key.command.innerText =  "nano";
+localStorage.setItem("editorName","nano");
+} else {    editorName =  "vi";
+ key.command.innerText =  "Vi";
+localStorage.setItem("editorName","vi");
+}
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+return;
+}
+
+if (event.target.dataset&&event.target.dataset.treeIndex&&event.target.dataset.childIndex) {
+treeFocus.parentNode.classList.remove("highlight");
+treeFocus = event.target;
+setStoragePosition();
+if (event.shiftKey) {
+retrieve("multiple","direct");
+} else {
+retrieve("single","neat","notepad");
+}
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+} else {
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+});
+
+
+
+
+
+document.addEventListener("mousemove", (event) => {
+
+mouseMoveTarget = event.target;
+
+
+});
+
+
+
+
+
+document.addEventListener("mouseover", (event) => {
+document.documentElement.style.cursor = "auto";
+event.target.style.cursor = "auto";
+});
+document.addEventListener("wheel", function() {
+if (!event.ctrlKey&&!event.altKey) {
+event.preventDefault();
+if (event.wheelDelta >= 0) {
+if (!event.shiftKey) {
+move("up");
+} else {
+move("up","skip");
+}
+} else if (event.wheelDelta < 0) {
+if (!event.shiftKey) {
+move("down");
+} else {
+move("down","skip");
+}
+}
+}
+}, { passive: false });
+var kC = 0, cC = 0;
+
+document.addEventListener("keydown", (event) => {
+
+if (!event.ctrlKey) { mouseMoveTarget = null; }
+
+if (event.shiftKey) { shiftKeyLabels(); }
+treeFocus.focus();
+kC = event.keyCode;
+let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*   esc   */ if (kC ==  27) { event.preventDefault();
+if (document.activeElement != searchBar && newSearch == false) {
+restoreAll();
+} else {
+newSearch = false;
+}
+}
+/*   tab   */ if (kC ==   9) {
+if (!event.ctrlKey) {
+event.preventDefault();
+
+       if (!event.shiftKey) {
+if (GUI.style.display == "none") {
+GUI.style.display = "block";
+localStorage.setItem("GUI", "block"); }
+GUIflip = "true";
+flipGUI();
+if (grepBar.style.display == "block") {
+    grepBar.style.display  = "none";
+}
+searchBar.style.display = "block";
+searchBar.focus();
+
+} else if ( event.shiftKey) {
+if (GUI.style.display == "none") {
+GUI.style.display = "block";
+localStorage.setItem("GUI", "block"); }
+GUIflip = "true";
+flipGUI();
+if (searchBar.style.display == "block") {
+    searchBar.style.display  = "none";
+}
+grepBar.style.display = "block";
+grepBar.focus();
+}
+
+}
+}
+/*backspace*/ if (kC ==   8) { event.preventDefault(); window.open("index.html","_blank"); }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F1    */ if (kC == 112)              { event.preventDefault();
+alert(`Open the console, CTRL + SHIFT + J or K.
+Within the console: Read minimal instructions for usage.`)
+}
+/*   F2    */ if (kC == 113)              {                                }
+/*   F3    */ if (kC == 114)              {                                }
+/*   F4    */ if (kC == 115)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F5    */ if (kC == 116)              {                                }
+/*   F6    */ if (kC == 117)              {                                }
+/*   F7    */ if (kC == 118)              {                                }
+/*   F8    */ if (kC == 119)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F9    */ if (kC == 120)              {                                }
+/*   F10   */ if (kC == 121)              {                                }
+/*   F11   */ if (kC == 122)              {                                }
+/*   F12   */ if (kC == 123)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* pauseBR */ if (kC ==  19)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   ins   */ if (kC ==  45) { event.preventDefault();                     }
+/*   home  */ if (kC ==  36) { event.preventDefault(); move("top");        }
+/* page up */ if (kC ==  33) { event.preventDefault(); move("up","skip");  }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  delete */ if (kC ==  46) {
+if (!event.shiftKey) {
+retrieve("single","neat","rm");
+} else if (event.shiftKey) {
+retrieve("multiple","neat","rm");
+}
+}
+/*   end   */ if (kC ==  35) { event.preventDefault(); move("bottom");     }
+/*page down*/ if (kC ==  34) { event.preventDefault(); move("down","skip");}
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* scr lck */ if (kC == 145)              {                                }
+/* num lock*/ if (kC == 144)              {                                }
+/*  caps   */ if (kC ==  20)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   up arr*/ if (kC ==  38) { event.preventDefault();
+if (event.shiftKey) {
+let keyHold = treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name;
+move("up"); setColour(keyHold);
+} else { move("up"); }
+}
+/* down arr*/ if (kC ==  40) { event.preventDefault();
+if (event.shiftKey) {
+let keyHold = treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name;
+move("down"); setColour(keyHold);
+} else { move("down"); }
+}
+
+/* left arr*/ if (kC ==  37) { event.preventDefault();
+if (event.shiftKey) {
+} else {
+move("left");
+}
+}
+/*right arr*/ if (kC ==  39) { event.preventDefault();
+if (event.shiftKey) {
+} else {
+move("right");
+}
+}
+
+/*                                                                        */
+/*  space  */ if (kC ==  32)              { event.preventDefault();
+     if (!event.shiftKey) { retrieve("single","neat",editorName);   }
+else if ( event.shiftKey) { retrieve("single","direct",editorName); }
+treeFocus.focus();
+treeFocus.parentNode.classList.add("copied");
+}
+/***********************************************************************/});
+document.addEventListener("keypress", (event) =>  { 
+cC = event.charCode;
+let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*    /    */ if (kC == 111 && cC ==  47) {                                }
+/*    *    */ if (kC == 106 && cC ==  42) {                                }
+/*                                                                        */
+/*    -    */ if (kC == 109 && cC ==  45) {                                }
+/*    +    */ if (kC == 107 && cC ==  43) {                                }
+/*                                                                        */
+/*    7    */ if (kC == 103 && cC ==  55) {                                }
+/*    8    */ if (kC == 104 && cC ==  56) {                                }
+/*    9    */ if (kC == 105 && cC ==  57) {                                }
+/*                                                                        */
+/*    4    */ if (kC == 100 && cC ==  52) {                                }
+/*    5    */ if (kC == 101 && cC ==  53) {                                }
+/*    6    */ if (kC == 102 && cC ==  54) {                                }
+/*                                                                        */
+/*    1    */ if (kC ==  97 && cC ==  49) {                                }
+/*    2    */ if (kC ==  98 && cC ==  50) {                                }
+/*    3    */ if (kC ==  99 && cC ==  51) {                                }
+/*                                                                        */
+/*    0    */ if (kC ==  96 && cC ==  48) {                                }
+/*    .    */ if (kC == 110 && cC ==  46) {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  enter  */ if (kC ==  13 && cC ==  13) { event.preventDefault();
+if (event.shiftKey) {
+retrieve("multiple","direct",editorName);
+} else if (!event.shiftKey) {
+retrieve("multiple","neat",editorName);
+}
+treeFocus.focus();
+treeFocus.parentNode.classList.add("copied");
+}
+/*                                                                        */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    `    */ if (kC == 192 && cC ==  96) { invertSelection();             }/*    ~    */ if (kC == 192 && cC == 126) { invertSelection();             }
+/*    1    */ if (kC ==  49 && cC ==  49) { changeView("n1");              }/*    !    */ if (kC ==  49 && cC ==  33) {retrieve("multiple","command","pad128");}
+/*    2    */ if (kC ==  50 && cC ==  50) { changeView("n2");              }/*    @    */ if (kC ==  50 && cC ==  64) {retrieve("multiple","command","mv128");}
+/*    3    */ if (kC ==  51 && cC ==  51) { changeView("n3");              }/*    #    */ if (kC ==  51 && cC ==  35) {retrieve("multiple","command","pasteUp");}
+/*    4    */ if (kC ==  52 && cC ==  52) { changeView("n4");              }/*    $    */ if (kC ==  52 && cC ==  36) {retrieve("multiple","command","grepTop");}
+/*    5    */ if (kC ==  53 && cC ==  53) { changeView("n5");              }/*    %    */ if (kC ==  53 && cC ==  37) {retrieve("multiple","command","abc");}
+/*    6    */ if (kC ==  54 && cC ==  54) { changeView("n6");              }/*    ^    */ if (kC ==  54 && cC ==  94) {retrieve("multiple","command","abcPlus");}
+/*    7    */ if (kC ==  55 && cC ==  55) { changeView("n7");              }/*    &    */ if (kC ==  55 && cC ==  38) {retrieve("multiple","command","catCAT");}
+/*    8    */ if (kC ==  56 && cC ==  56) { changeView("n8");              }/*    *    */ if (kC ==  56 && cC ==  42) { copyToEditor();                }
+/*    9    */ if (kC ==  57 && cC ==  57) { changeView("n9");              }/*    (    */ if (kC ==  57 && cC ==  40) { fontSizeDown();                }
+/*    0    */ if (kC ==  48 && cC ==  48) { changeView("n0");              }/*    )    */ if (kC ==  48 && cC ==  41) { fontSizeUp();                  }
+/*    -    */ if (kC == 173 && cC ==  45) {                                }/*    _    */ if (kC == 173 && cC ==  95) {                                }
+/*    =    */ if (kC ==  61 && cC ==  61) {                                }/*    +    */ if (kC ==  61 && cC ==  43) {                                }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    q    */ if (kC ==  81 && cC == 113) { setColour("Q");    press("Q"); }/*    Q    */ if (kC ==  81 && cC ==  81) { toggleColour("Q"); press("Q"); }
+/*    w    */ if (kC ==  87 && cC == 119) { setColour("W");    press("W"); }/*    W    */ if (kC ==  87 && cC ==  87) { toggleColour("W"); press("W"); }
+/*    e    */ if (kC ==  69 && cC == 101) { setColour("E");    press("E"); }/*    E    */ if (kC ==  69 && cC ==  69) { toggleColour("E"); press("E"); }
+/*    r    */ if (kC ==  82 && cC == 114) { setColour("R");    press("R"); }/*    R    */ if (kC ==  82 && cC ==  82) { toggleColour("R"); press("R"); }
+/*    t    */ if (kC ==  84 && cC == 116) { setColour("T");    press("T"); }/*    T    */ if (kC ==  84 && cC ==  84) { toggleColour("T"); press("T"); }
+/*    y    */ if (kC ==  89 && cC == 121) { setColour("Y");    press("Y"); }/*    Y    */ if (kC ==  89 && cC ==  89) { toggleColour("Y"); press("Y"); }
+/*    u    */ if (kC ==  85 && cC == 117) { setColour("U");    press("U"); }/*    U    */ if (kC ==  85 && cC ==  85) { toggleColour("U"); press("U"); }
+/*    i    */ if (kC ==  73 && cC == 105) { setColour("I");    press("I"); }/*    I    */ if (kC ==  73 && cC ==  73) { toggleColour("I"); press("I"); }
+/*    o    */ if (kC ==  79 && cC == 111) { setColour("O");    press("O"); }/*    O    */ if (kC ==  79 && cC ==  79) { toggleColour("O"); press("O"); }
+/*    p    */ if (kC ==  80 && cC == 112) { setColour("P");    press("P"); }/*    P    */ if (kC ==  80 && cC ==  80) { toggleColour("P"); press("P"); }
+/*    [    */ if (kC == 219 && cC ==  91) { setSource(0);                  }/*    {    */ if (kC == 219 && cC == 123) { setSource(1);                  }
+/*    ]    */ if (kC == 221 && cC ==  93) { setSource(2);                  }/*    }    */ if (kC == 221 && cC == 125) { setSource(3);                  }
+/*    \    */ if (kC == 220 && cC ==  92) { switchFit();                   }/*    |    */ if (kC == 220 && cC == 124) { selectFit(0);                  }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    a    */ if (kC ==  65 && cC ==  97) { toggleAll();                   }/*    A    */ if (kC ==  65 && cC ==  65) { abbreviate();                  }
+/*    s    */ if (kC ==  83 && cC == 115) { setColour("S");    press("S"); }/*    S    */ if (kC ==  83 && cC ==  83) { toggleColour("S"); press("S"); }
+/*    d    */ if (kC ==  68 && cC == 100) { setColour("D");    press("D"); }/*    D    */ if (kC ==  68 && cC ==  68) { toggleColour("D"); press("D"); }
+/*    f    */ if (kC ==  70 && cC == 102) { setColour("F");    press("F"); }/*    F    */ if (kC ==  70 && cC ==  70) { toggleColour("F"); press("F"); }
+/*    g    */ if (kC ==  71 && cC == 103) { move("top");                   }/*    G    */ if (kC ==  71 && cC ==  71) { move("bottom");                }
+/*    h    */ if (kC ==  72 && cC == 104) { move("left");                  }/*    H    */ if (kC ==  72 && cC ==  72) { move("first");                 }
+/*    j    */ if (kC ==  74 && cC == 106) { move("down");                  }/*    J    */ if (kC ==  74 && cC ==  74) { move("down","skip");           }
+/*    k    */ if (kC ==  75 && cC == 107) { move("up");                    }/*    K    */ if (kC ==  75 && cC ==  75) { move("up",  "skip");           }
+/*    l    */ if (kC ==  76 && cC == 108) { move("right");                 }/*    L    */ if (kC ==  76 && cC ==  76) { move("last");                  }
+/*    ;    */ if (kC ==  59 && cC ==  59) {                                }/*    :    */ if (kC ==  59 && cC ==  58) {                                }
+/* ' */ if (kC == 222 && cC ==  39)   { event.preventDefault(); toggleGUI(); }/* " */ if (kC == 222 && cC ==  34) { event.preventDefault(); flipGUI(); }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    z    */ if (kC ==  90 && cC == 122) { setColour("Z");    press("Z"); }/*    Z    */ if (kC ==  90 && cC ==  90) { toggleColour("Z"); press("Z"); }
+/*    x    */ if (kC ==  88 && cC == 120) { setColour("X");    press("X"); }/*    X    */ if (kC ==  88 && cC ==  88) { toggleColour("X"); press("X"); }
+/*    c    */ if (kC ==  67 && cC ==  99) { setColour("C");    press("C"); }/*    C    */ if (kC ==  67 && cC ==  67) { toggleColour("C"); press("C"); }
+/*    v    */ if (kC ==  86 && cC == 118) { setColour("V");    press("V"); }/*    V    */ if (kC ==  86 && cC ==  86) { toggleColour("V"); press("V"); }
+/*    b    */ if (kC ==  66 && cC ==  98) { setColour("B");    press("B"); }/*    B    */ if (kC ==  66 && cC ==  66) { toggleColour("B"); press("B"); }
+/*    n    */ if (kC ==  78 && cC == 110) { setColour("N");    press("N"); }/*    N    */ if (kC ==  78 && cC ==  78) { toggleColour("N"); press("N"); }
+/*    m    */ if (kC ==  77 && cC == 109) { setColour("M");    press("M"); }/*    M    */ if (kC ==  77 && cC ==  77) { toggleColour("M"); press("M"); }
+/*    ,    */ if (kC == 188 && cC ==  44) { previousInGroup();             }/*    <    */ if (kC == 188 && cC ==  60) { setLeftSemi();                 }
+/*    .    */ if (kC == 190 && cC ==  46) { nextInGroup();                 }/*    >    */ if (kC == 190 && cC ==  62) { setRightSemi();                }
+/* / */ if (kC==191&&cC==47)  { event.preventDefault(); toggleIsolation(); }/* ? */ if (kC==191&&cC==63)  { event.preventDefault(); toggleIsolation(); }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/******************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/});
+document.addEventListener("keyup", (event) => {
+unshiftKeyLabels();
+/*  space  */ if (kC ==  32)         { event.preventDefault(); }
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.classList.remove("copied");
+}
+});
+buildTree(0,1);
+treeKey();
+updateGUI();
+key[activeView].GUI.classList.add("currentView");
+{
+const coloursInArray = Object.values(colour);
+for (let j = 0; j < coloursInArray.length; j++) {
+coloursInArray[j].inverted = invertRGB(coloursInArray[j].rgb); }
+}
+
+if (localStorage.getItem("fitSelection")) {
+fitSelection = JSON.parse(localStorage.getItem("fitSelection"));
+}
+
+refit();
+brush();
+
+if (localStorage.getItem("GUI")) {
+GUI.style.display=localStorage.getItem("GUI");
+}
+
+
+if (localStorage.getItem("GUIflip")) {
+GUIflip = localStorage.getItem("GUIflip")
+flipGUI(); }
+
+for (let j = 0; j < 4; j++) {
+if (localStorage.getItem("file" + j)) {
+viewer["file" + j].reference = localStorage.getItem("file" + j);
+setFromStorage(j); } }
+
+if (localStorage.getItem("editorName")) {
+editorName = localStorage.getItem("editorName") }
+       if (editorName == "nano") {
+key.command.innerText =  "nano";
+} else if (editorName == "vi") {
+key.command.innerText =  "Vi";
+}
+
+if (localStorage.getItem("leftSemi") &&
+    localStorage.getItem("leftSemi") == "true") {
+viewer.file0.window.classList.remove("viewerQuad");
+viewer.file0.filter.classList.remove("viewerQuad");
+viewer.file0.window.classList.add("viewerSemi");
+viewer.file0.filter.classList.add("viewerSemi");
+}
+
+if (localStorage.getItem("rightSemi") &&
+    localStorage.getItem("rightSemi") == "true") {
+viewer.file2.window.classList.remove("viewerQuad");
+viewer.file2.filter.classList.remove("viewerQuad");
+viewer.file2.window.classList.add("viewerSemi");
+viewer.file2.filter.classList.add("viewerSemi");
+}
+
+console.log(`
+Sometimes you might need to use "localStorage.clear(); location.reload();"
+
+Welcome to shadowTree:
+    A file visualization tool which doesn't actually itself "DO" anything.
+
+    Oh good! I was worried nobody would find the notes for this program. Most of the notes are on the little keymap. It's a little bit more than a keymap though. It actually allows you to use "CTRL + V" to paste the file list back after using the "grep search" found on "SHIFT + TAB". That way it's easy to get the list in to the program on it's own colour. Paste over top of the alphabet key that you want, and the file list will be appended to it. That saves a lot of time.
+
+    Just for a basic start-up: Notice that most alphabet keys will set the colour of a file. Using the "SHIFT" key will toggle the visibility of the colour group. There are plenty of "tool-tips" on the keymap. The "ENTER" key gets the whole colour group into either an editor or a list format. The spacebar does just one at a time. Here is the script that you need to load the whole thing up!
+
+    Just put this program into it's own directory with this script, then run the script.
+I assume you will know how to do that: "chmod 755 filename; . ./filename;".
+
+
+************************
+    IMPORTANT SCRIPT    
+************************
+
+
+#!/bin/bash
+
+echo "findFileList =" > "./find -type f.js";
+echo "\`" >> "./find -type f.js";
+find ../ -type f | sed '/\.swp/d' | \
+                   sed '/\.git/d' | \
+                   sed '/^\.\.\/$/d' | \
+                   sed '/^\.\.\/\./d' | \
+                   sed '/'$(echo "$(pwd | sed 's/^.*\///g')")'/d' | \
+                   sed 's/\.\.\///g' | \
+                   sed 's/^/..\//g' >> "./find -type f.js";
+echo "\`;" >> "./find -type f.js";
+echo >> "./find -type f.js";
+
+echo "workingDirectory = \"$(pwd | sed 's/\/[^\/]*$//')\";" > pwd.js
+
+
+
+You will end up with something like this:
+
+/shadowTree/
+             find -type f.js
+             go.sh
+             pwd.js
+             shadowTree.html
+
+    Running the script will keep the shadowTree program up to date with any changes you made in the file-system.
+
+
+    It doesn't matter what you call the directory that you put this program into, and the one that you will be seeing in the visualizer will be the one that you have placed the program directory into. Just give it a try. If you have a script that builds your program, try to make it run this little script too. Hopefully this is obvious for you. Best wishes.
+
+    Remember, shadowTree doesn't really "DO" anything. It just copies commands to the clipboard and whatnot. It's not like one of those expensive utility programs or anything, and it's definitely not a file utility. It's basically just a file visualization tool, and a very poor viewer. The only thing it might be good for is making lists of files by colouring them. Anything else is just an "I guess it's there so I might use it sometimes". Basically, anything you already have or know about is probably better than this at absolutely everything that this might do.
+
+Sometimes you might need to use "localStorage.clear(); location.reload();"
+`);
+</script>
+</body>
+</html>

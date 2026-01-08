@@ -7,7 +7,7 @@ const furthest = findFurthestExtent();
 const least    = findLeastExtent()   ;
 
 if (coinTrip.sel2.length>1) {
-const newCoin2 = insertNewCoin([null,78,110,false,false,false]);
+const newCoin2 = insertNewCoin([null,78,78,false,false,false]);
 newCoin2.dataset.coinTrip=Ts2;
 readCoins();
 spaceViewOn();

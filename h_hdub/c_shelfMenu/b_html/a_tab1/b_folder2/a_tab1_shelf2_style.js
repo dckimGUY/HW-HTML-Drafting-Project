@@ -42,13 +42,13 @@ shelfMenuHTML.tab1.folder2.style = `
 
 .input_coin77671                 { position: absolute; border: none; margin: none; padding: none; left:     14px; top:     163px; width:    172px; height:     29px;
 outline-offset: -4px;
-color: lime;
+color: rgb(0, 161,238);
 padding: 0px;
 padding-left: 2px;
 padding-right: 2px;
 caret-color: red;
 text-align: center;
-text-shadow: 0px .5px 0px #FF00FF, .5px .5px 0px #5A0000, .5px 0px 0px #5A0000;
+text-shadow: 0px .5px 0px rgb(115,121,115), .5px .5px 0px rgb(164,170,164), .5px 0px 0px rgb(164,170,164);
 }
 
 
@@ -105,6 +105,21 @@ text-shadow: 0px .5px 0px #FF00FF, .5px .5px 0px #5A0000, .5px 0px 0px #5A0000;
 .button_setLevel:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_focus.png?v=20251102205813");  }
 .button_setLevel:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_hover.gif?v=20251120222931"); border-radius: 4px; outline-offset: -5px; outline: 3px double lime; }
 .button_setLevel:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_active.png?v=20251102205813"); }
+
+
+.pageDescription                { position: absolute; border: none; margin: none; padding: none; left:     14px; top:     450px; width:    172px; height:     35px;
+text-align: left;
+font-size: 10px;
+outline-offset: -4px;
+color: lime;
+padding: 2px;
+caret-color: red;
+text-shadow: 0px .5px 0px #FF00FF, .5px .5px 0px #5A0000, .5px 0px 0px #5A0000;
+}
+.pageDescription:hover          { background-color: rgb(63,63,63);  }
+.pageDescription:focus          { background-color: rgb(0,0,0); }
+.pageDescription:focus:hover    { outline-offset: -1px; outline: 1px solid #DEFF1C; }
+.pageDescription::selection     { background: rgba(90,0,0,1); color: #DEFF1C; }
 
 
 

@@ -46,10 +46,10 @@ shelfMenuHTML.tab2.folder2.HTML = `
 <button id="coin63249" class="button_grid button_coin63249" title=""></button>
 
 <button id="coin38634" class="button_ button_coin38634" title=""></button>
-<input id="coin18868" name="coin18868" class="input_ input_coin18868 dckimPixelMono" type="value" placeholder="empty">
+<input id="coin18868" name="coin18868" class="input_ input_coin18868 dckimPixelMono" type="value" placeholder="empty" title="mouseIncrement, ctrl+shift+MMB scroll">
 <input id="coin28281" name="coin28281" class="input_coin28281" type="color" value="#FFFF00">
 <button id="coin41046" class="button_ button_coin41046" title=""></button>
-<input id="coin21315" name="coin21315" class="input_ input_coin21315 dckimPixelMono" type="value" placeholder="empty">
+<input id="coin21315" name="coin21315" class="input_ input_coin21315 dckimPixelMono" type="value" placeholder="empty" title="ctrl+MMB scroll">
 <input id="coin30119" name="coin30119" class="input_coin30119" type="color" value="#00FFFF">
 <button id="coin07023" class="button_ button_coin07023" title=""></button>
 <input id="coin23538" name="coin23538" class="input_ input_coin23538 dckimPixelMono" type="value" placeholder="empty">

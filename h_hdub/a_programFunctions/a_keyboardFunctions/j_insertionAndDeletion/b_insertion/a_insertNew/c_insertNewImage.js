@@ -39,7 +39,6 @@ main.style = `position:absolute;z-index:100;overflow: hidden;left:0;top:0;width:
 
 button.style = buttonInitialStyle;
 div.style = `position:absolute;z-index:200;left:0;top:0;width: 100%;height: 100%;box-sizing: border-box;border:none;text-align:justify;pointer-events:none;background-color:transparent;`;
-
 img.style = `position:absolute;display:none;z-index:100;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;background-color:${noImageColour};`;
 img.alt = ``;
 div.style.color  = `rgba(0,0,0,1)`;
@@ -147,7 +146,10 @@ div.style.paddingTop              = template.defaultIMG.paddingTop              
 div.style.paddingBottom           = template.defaultIMG.paddingBottom           ;
 
 
+div.innerHTML = img.outerHTML;
 
+img.src = "";
+img.style.display = "none";
 
 
 utilityLayer0.appendChild(newCoin);

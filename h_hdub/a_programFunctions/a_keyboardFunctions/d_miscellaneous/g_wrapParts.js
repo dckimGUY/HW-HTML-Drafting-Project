@@ -8,7 +8,7 @@ const furthest = findFurthestExtent();
 const least    = findLeastExtent()   ;
 
 if (coinTrip.sel0.length>1) {
-const newCoin0 = insertNewCoin([null,78,110,false,false,false]);
+const newCoin0 = insertNewCoin([null,78,78,false,false,false]);
 newCoin0.dataset.coinTrip=Ts0;
 readCoins();
 spaceViewOn();
@@ -36,7 +36,7 @@ newCoin0.div.children[j].dataset.top  = parseInt(newCoin0.div.children[j].style.
 }
 
 if (coinTrip.sel1.length>1) {
-const newCoin1 = insertNewCoin([null,78,110,false,false,false]);
+const newCoin1 = insertNewCoin([null,78,78,false,false,false]);
 newCoin1.dataset.coinTrip=Ts1;
 readCoins();
 spaceViewOn();
@@ -64,7 +64,7 @@ newCoin1.div.children[j].dataset.top  = parseInt(newCoin1.div.children[j].style.
 }
 
 if (coinTrip.sel2.length>1) {
-const newCoin2 = insertNewCoin([null,78,110,false,false,false]);
+const newCoin2 = insertNewCoin([null,78,78,false,false,false]);
 newCoin2.dataset.coinTrip=Ts2;
 readCoins();
 spaceViewOn();

@@ -95,6 +95,48 @@ shelfMenuHTML.tab3.folder2.style = `
 .button_clearFocusActive:focus   { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/clear_focus.png?v=20251117195657");  }
 .button_clearFocusActive:hover   { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/clear_hover.png?v=20251117195600");  }
 .button_clearFocusActive:active  { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/clear_active.png?v=20251117195637"); }
+
+
+
+
+
+.button_hdub_b6                  { position: absolute; border: none; margin: none; padding: none; left:     28px; top:    270px; width:    140px; height:     19px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b6.png?v=20251231224356");        }
+.button_hdub_b6:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b6_focus.png?v=20251231224357");  }
+.button_hdub_b6:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b6_hover.png?v=20251231224639");  }
+.button_hdub_b6:active           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b6_active.png?v=20251231224854"); }
+.button_hdub_b4                  { position: absolute; border: none; margin: none; padding: none; left:     17px; top:    293px; width:    151px; height:     19px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b4.png?v=20251231224351");        }
+.button_hdub_b4:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b4_focus.png?v=20251231224353");  }
+.button_hdub_b4:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b4_hover.png?v=20251231224914");  }
+.button_hdub_b4:active           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b4_active.png?v=20251231224908"); }
+.button_hdub_b2                  { position: absolute; border: none; margin: none; padding: none; left:     30px; top:    317px; width:    137px; height:     19px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b2.png?v=20251231224348");        }
+.button_hdub_b2:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b2_focus.png?v=20251231224350");  }
+.button_hdub_b2:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b2_hover.png?v=20251231224628");  }
+.button_hdub_b2:active           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/b2_active.png?v=20251231224839"); }
+.button_hdub_i6                  { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    385px; width:    137px; height:     19px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i6.png?v=20251231224341");        }
+.button_hdub_i6:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i6_focus.png?v=20251231224346");  }
+.button_hdub_i6:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i6_hover.png?v=20251231225531");  }
+.button_hdub_i6:active           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i6_active.png?v=20251231225631"); }
+.button_hdub_i4                  { position: absolute; border: none; margin: none; padding: none; left:     33px; top:    408px; width:    146px; height:     19px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i4.png?v=20251231224403");        }
+.button_hdub_i4:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i4_focus.png?v=20251231224333");  }
+.button_hdub_i4:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i4_hover.png?v=20251231225542");  }
+.button_hdub_i4:active           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i4_active.png?v=20251231225618"); }
+.button_hdub_i2                  { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    432px; width:    135px; height:     19px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i2.png?v=20251231224359");        }
+.button_hdub_i2:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i2_focus.png?v=20251231224401");  }
+.button_hdub_i2:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i2_hover.png?v=20251231225518");  }
+.button_hdub_i2:active           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/i2_active.png?v=20251231225644"); }
+
+
+
+.input_templateIntake           { position: absolute; border: none; margin: none; padding: none; left:     29px; top:     464px; width:    142px; height:     17px; font-size: 10px; }
+
+
+
 </style>
 `;
 

@@ -44,9 +44,9 @@ groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.backg
 
 } else {
 
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = result;
+coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = result.toLowerCase();
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = result;
+groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = result.toLowerCase();
 } }
 
 }

@@ -21,7 +21,7 @@ Cur.dataset.top  = "0px";
 function colourMaker(topStart,leftStart,squaresHeight,squaresWidth,squareSize,scaleName) {
 let count255 = 0;
 for (let i = 0; i < squaresHeight; i++) { for (let j = 0; j < squaresWidth; j++) {
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 let newCoin = utilityLayer0.lastElementChild;
 let radiusLocation = newCoin.lastElementChild;
 radiusLocation.style.outline      = "2px solid black";

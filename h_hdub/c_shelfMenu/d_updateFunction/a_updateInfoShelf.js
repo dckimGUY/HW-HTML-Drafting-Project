@@ -8,8 +8,20 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 
 }
 
+document.getElementById("partStyle").value = coinFocus.lastElementChild.firstElementChild.nextElementSibling.getAttribute("style").replace(/\n/g, "").replace(/;/g, ";\n");
 
+document.getElementById("partCode").value = coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -29,7 +41,8 @@ ui.partText.ref.value  = "";
 let filenameEntryLayers = document.getElementById("coin77671");
 filenameEntryLayers.value = filename;
 
-ui.levelNotes.ref.value  = topLayer[topLayer.a_currentLayer].d_description;
+ui.levelNotes.ref.value  = topLayer[topLayer.a_currentLayer].h_notes;
+ui.pageDescription.ref.value  = topLayer[topLayer.a_currentLayer].d_description;
 ui.projectName.ref.value = topLayer.aa_project_name;
 
 let partY     = document.getElementById("partY"    ),

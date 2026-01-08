@@ -46,21 +46,21 @@ ui[name].ref   = document.getElementById(name);
 
 /* TAB 1, FOLDER 1 */
 
-["xrayGrey", "xrayMagenta", "xrayCyan", "partY", "partX", "partW", "partH", "cursorAuto", "cursorXS", "cursorS", "cursorM", "cursorL", "cursorXL", "cursorNum", "partNom", "partPrev", "showNames", "partNext", "partText", "pathEntry"].forEach((name) => {
+["xrayGrey", "xrayMagenta", "xrayCyan", "partY", "partX", "partW", "partH", "cursorAuto", "cursorXS", "cursorS", "cursorM", "cursorL", "cursorXL", "cursorNum", "partNom", "partPrev", "showNames", "partNext", "partText", "partStyle", "partCode", "pathEntry", "notesTab", "styleTab", "codeTab"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
 /* TAB 1, FOLDER 2 */
 
-["levelNotes", "projectName", "coin77671", "coin77155", "coin59760", "coin64291", "coin70038", "coin49592", "coin54398", "setLayer1", "setLayer2", "setLayer3", "setLayer4", "setLayer5", "setLayer6", "setLayer7", "setLayer8", "setLayer9", "setLayer10", "setLayer11", "setLayer12", "setLayer13", "setLayer14", "setLayer15", "setLayer16", "setLayer17", "setLayer18", "setLayer19", "setLayer20", "setLayer21", "setLayer22", "setLayer23", "setLayer24", "setLayer25"].forEach((name,index) => {
+["pageDescription", "levelNotes", "projectName", "coin77671", "coin77155", "coin59760", "coin64291", "coin70038", "coin49592", "coin54398", "setLayer1", "setLayer2", "setLayer3", "setLayer4", "setLayer5", "setLayer6", "setLayer7", "setLayer8", "setLayer9", "setLayer10", "setLayer11", "setLayer12", "setLayer13", "setLayer14", "setLayer15", "setLayer16", "setLayer17", "setLayer18", "setLayer19", "setLayer20", "setLayer21", "setLayer22", "setLayer23", "setLayer24", "setLayer25"].forEach((name,index) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
 
 /* TAB 2, FOLDER 1 */
 
-["modeZ", "modeEeM1", "modeD", "modeG", "modeEeM0", "modeT"].forEach((name) => {
+["setup_left", "setup_right", "setup_title", "setup_notes", "modeZ", "modeEeM1", "modeD", "modeG", "modeEeM0", "modeT"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
@@ -196,7 +196,7 @@ ui.buttonStyle.a_flat.right.src  = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg
 
 /* TAB 3, FOLDER 2 */
 
-["getButtons", "loadBase", "loadFocus", "loadHover", "loadActive", "loadFocusHover", "loadFocusActive", "viewBase", "viewFocus", "viewHover", "viewActive", "viewFocusHover", "viewFocusActive", "clearBase", "clearFocus", "clearHover", "clearActive", "clearFocusHover", "clearFocusActive"].forEach((name) => {
+["templateIntake", "hdub_b6", "hdub_b4", "hdub_b2", "hdub_i6", "hdub_i4", "hdub_i2", "getButtons", "loadBase", "loadFocus", "loadHover", "loadActive", "loadFocusHover", "loadFocusActive", "viewBase", "viewFocus", "viewHover", "viewActive", "viewFocusHover", "viewFocusActive", "clearBase", "clearFocus", "clearHover", "clearActive", "clearFocusHover", "clearFocusActive"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
@@ -285,6 +285,41 @@ mouseCatcher.addEventListener("mouseover",  function() { scaleRangeWrapper.style
 
 
 
+/* TAB 4, FOLDER 1 */
+
+["hdubSingleEntry", "hdubAdd", "hdubRoll", "hdubRollLeft", "hdubRollRight", "hdubEnter", "hdubSave", "hdubCanvas", "hdubSheetTemplate1x", "hdubSheetTemplate4x", "hdubSheetTemplate6x"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
+
+ui.hwString = {};
+ui.hwString.currentSel = "hwSel_a";
+
+["hwSel_a", "hwSel_b", "hwSel_c", "hwSel_d", "hwSel_e", "hwSel_f", "hwSel_g", "hwSel_i", "hwSel_j", "hwSel_k", "hwSel_l", "hwSel_m", "hwSel_n", "hwSel_o", "hwSel_p", "hwSel_q", "hwSel_r", "hwSel_s", "hwSel_t", "hwSel_u", "hwSel_v", "hwSel_x", "hwSel_y", "hwSel_z"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+ui[name].img   = ui[name].ref.firstElementChild;
+ui.hwString[name] = {};
+ui.hwString[name].string = "";
+ui[name].ref.style.outline = "";
+ui[name].ref.style.zIndex = 100;
+});
+
+["hwSel_a", "hwSel_d", "hwSel_g", "hwSel_k", "hwSel_n", "hwSel_q", "hwSel_t", "hwSel_x"].forEach((name) => { ui.hwString[name].colour = "mediumspringgreen"; });
+["hwSel_b", "hwSel_e", "hwSel_i", "hwSel_l", "hwSel_o", "hwSel_r", "hwSel_u", "hwSel_y"].forEach((name) => { ui.hwString[name].colour = "lawngreen"; });
+["hwSel_c", "hwSel_f", "hwSel_j", "hwSel_m", "hwSel_p", "hwSel_s", "hwSel_v", "hwSel_z"].forEach((name) => { ui.hwString[name].colour = "greenyellow"; });
+
+
+
+
+
+
+if (localStorage.getItem("hwString")) {
+ui.hwString = JSON.parse(localStorage.getItem("hwString"));
+}
 
 
 
@@ -292,3 +327,55 @@ mouseCatcher.addEventListener("mouseover",  function() { scaleRangeWrapper.style
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ui[ui.hwString.currentSel].ref.style.outline = "2px solid " + ui.hwString[ui.hwString.currentSel].colour;
+ui[ui.hwString.currentSel].ref.style.zIndex  = 200;
+
+
+
+
+
+
+/* TAB 4, FOLDER 2 */
+
+["save200", "save300", "save500", "save800", "save1000", "save1200", "save1500", "save1800", "elementArticle", "elementColour", "elementRadioBtn", "elementRange", "elementValue", "elementTextarea", "elementCheckbox", "elementNumber", "elementButton", "elementCanvas"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
+
+
+/* TAB 5, FOLDER 2 */
+
+["furyLeftMargin", "furyInputArticle", "furyBreakArticle", "furyInputParagraph", "furyBreakParagraph", "furyInputSentence", "furyInputHeading1", "furyInputHeading2", "furyInputHeading3", "furyInputBlockquote", "furyGlobb", "furyRulesInfo"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});

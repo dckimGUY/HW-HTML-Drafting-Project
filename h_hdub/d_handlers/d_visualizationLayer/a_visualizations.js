@@ -5,6 +5,7 @@ const Vis=document.createElement("canvas");
 const s=`position:fixed;left:0;top:0;pointer-events:none; border:none;`;
 Vis.style=s;
 Vis.style.opacity=1; //formerly K
+Vis.style.zIndex = 50;
 }
 
 visualizationsLayer.appendChild(Vis);
@@ -139,11 +140,15 @@ Y.lineWidth = 3;
      if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = greyColour; }
 else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = pinkColour; }
 else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = blueColour; }
-Y.font = "400 36px dckimPixelMono";
+
+
+Y.font = "400 32px dckimPixelMono";
 Y.textAlign = "start";
-Y.textBaseline = "bottom";
+Y.textBaseline = "top";
 //Y.strokeText(zStack[j].id.id, parseInt(zStack[j].id.style.left), parseInt(zStack[j].id.style.top));
-Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left) - window.scrollX, parseInt(zStack[j].id.style.top) - window.scrollY);
+Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left) - window.scrollX + edgeThickness + borderWidth, parseInt(zStack[j].id.style.top) - window.scrollY + edgeThickness + borderWidth);
+
+
 }
 
 } /* END OF THE FOR LOOP */

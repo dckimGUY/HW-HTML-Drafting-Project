@@ -10,7 +10,7 @@ const img = new Image();
 img.onload = () => {};
 sheetImages[sheetName].img.src = reader.result;
 
-setTimeout(viewImageSheet(sheetName), 1000);
+
 
 };
 reader.readAsDataURL(file);

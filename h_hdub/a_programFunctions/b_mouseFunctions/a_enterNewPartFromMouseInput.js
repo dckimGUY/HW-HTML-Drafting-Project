@@ -113,7 +113,6 @@ newCoin.style.transform               = "scale(1)";
 
 
 
-
 if (newXvalue >=0) {
 newCoin.style.left = newXvalue + "px";
 newCoin.style.width = newWidth  + "px";
@@ -171,6 +170,7 @@ newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 
 
+
 /* Initialize from the template. */
 
 div.style.background              = template.default.background              ;  
@@ -197,6 +197,13 @@ div.style.paddingLeft             = template.default.paddingLeft             ;
 div.style.paddingRight            = template.default.paddingRight            ;
 div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
+
+
+
+newCoin.div.setAttribute("contenteditable", true);
+newCoin.anchor.style.zIndex = 0;
+newCoin.div.style.fontSize = "32px";
+
 
 
 if (parseInt(newCoin.style.width) < 8 || parseInt(newCoin.style.height) < 8) { return; }

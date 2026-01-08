@@ -42,9 +42,9 @@ groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.color
 
 } else {
 
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.color = result;
+coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.color = result.toLowerCase();
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.color = result;
+groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.color = result.toLowerCase();
 } }
 
 }

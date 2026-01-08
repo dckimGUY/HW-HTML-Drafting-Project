@@ -1,20 +1,31 @@
 document.addEventListener("input", function() {
 switch (event.target) {
-/* */
+
+/* TAB 1 FOLDER 1 */
 case ui.partY.ref:               ui.partY.input()               ; break;
 case ui.partX.ref:               ui.partX.input()               ; break;
 case ui.partW.ref:               ui.partW.input()               ; break;
 case ui.partH.ref:               ui.partH.input()               ; break;
 case ui.partNom.ref:             ui.partNom.input()             ; break;
 case ui.partText.ref:            ui.partText.input()            ; break;
+case ui.partStyle.ref:           ui.partStyle.input()           ; break;
+case ui.partCode.ref:            ui.partCode.input()            ; break;
 case ui.pathEntry.ref:           ui.pathEntry.input()           ; break;
 
-/* */
+/* TAB 1 FOLDER 2 */
 case ui.coin77671.ref:           ui.coin77671.input()           ; break;
+case ui.pageDescription.ref:     ui.pageDescription.input()     ; break;
 case ui.projectName.ref:         ui.projectName.input()         ; break;
 case ui.levelNotes.ref:          ui.levelNotes.input()          ; break;
 
-/* */
+/* TAB 2 FOLDER 1 */
+
+
+
+
+case ui.setup_title.ref:         ui.setup_title.input()         ; break;
+case ui.setup_notes.ref:         ui.setup_notes.input()         ; break;
+
 
 /* TAB 2 FOLDER 2 */
 
@@ -79,7 +90,17 @@ case ui.buttonWordList.ref:      ui.buttonWordList.input()      ; break;
 
 
 
-/* */
+/* TAB 4 FOLDER 1 */
+
+
+case ui.hdubSingleEntry.ref:     ui.hdubSingleEntry.input()     ; break;
+case ui.hdubRoll.ref:            ui.hdubRoll.input()            ; break;
+case ui.hdubCanvas.ref:          ui.hdubCanvas.input()          ; break;
+case ui.hdubSheetTemplate4x.ref: ui.hdubSheetTemplate4x.input() ; break;
+
+
+/* TAB 5 FOLDER 2 */
+case ui.furyRulesInfo.ref:       ui.furyRulesInfo.input()       ; break;
 
 /* */
 

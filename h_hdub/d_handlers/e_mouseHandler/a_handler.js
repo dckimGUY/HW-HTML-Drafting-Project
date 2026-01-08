@@ -6,47 +6,98 @@ let mousemoveTarget=null;
 
 
 document.addEventListener("mousewheel", (event) => {
+
+
+if (event.target == ui.hdubCanvas.ref) {
+
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+ui.hdubSheetTemplate4x.ref.value++;displayDemo();
+} else if (event.wheelDelta < 0) {
+ui.hdubSheetTemplate4x.ref.value--;displayDemo();
+}
+
+
+}
+
+
+
 if (event.buttons===4) {
 event.preventDefault();
 }
-});
+}, { passive: false });
 
 
 
 document.addEventListener("mousemove", (event) => {
 
-if (mouseIsDogged==false) {
 
+
+
+
+if (mouseIsDogged==true) {
+if (mousedown.hold==true) {
+mouseX = mousedown.scrollX + mousedown.clientX - event.clientX;
+mouseY = mousedown.scrollY + mousedown.clientY - event.clientY;
+quarterMouseX = mousedown.scrollX + (mousedown.clientX - event.clientX) / 4;
+quarterMouseY = mousedown.scrollY + (mousedown.clientY - event.clientY) / 4;
+if (event.buttons===4) {
+event.preventDefault();
+if (!event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
+} else if (!event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
+}
+return;
+}
+}
+}
+
+
+
+
+
+
+
+if (mouseIsDogged==false) {
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const e = event;
 const mouseInfo = [e,ctrl,shift,alt];
+
 if (event.target.dataset&&event.target.dataset.coinTrip) {
 mousemoveTarget=event.target;
 } else {
 mousemoveTarget=null;
 }
 
-
 if (mousedown.hold==true) {
 mouseDeltaX = event.pageX - mousedown.pageX;
 mouseDeltaY = event.pageY - mousedown.pageY;
-}
-
-
-
-
-
-if (mousedown.hold==true) {
-mouseX = mousedown.clientX - event.clientX;
-mouseY = mousedown.clientY - event.clientY;
+mouseX = mousedown.scrollX + mousedown.clientX - event.clientX;
+mouseY = mousedown.scrollY + mousedown.clientY - event.clientY;
+quarterMouseX = mousedown.scrollX + (mousedown.clientX - event.clientX) / 4;
+quarterMouseY = mousedown.scrollY + (mousedown.clientY - event.clientY) / 4;
 
 
 if (event.buttons===4) {
 event.preventDefault();
-if ((mousedown.scrollX + mouseX >= 0)&&(mousedown.scrollY + mouseY >= 0)) {
-window.scrollTo({ left: mousedown.scrollX + mouseX, top: mousedown.scrollY + mouseY, behavior: "auto"});
+
+position1X = Math.floor(mouseX/mouseIncrement)*mouseIncrement;
+position1Y = Math.floor(mouseY/mouseIncrement)*mouseIncrement;
+position2X = Math.floor(mouseX/visualGridSize2)*visualGridSize2;
+position2Y = Math.floor(mouseY/visualGridSize2)*visualGridSize2;
+if (!event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: position1X, top: position1Y, behavior: "auto"});
+} else if (!event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: position2X, top: position2Y, behavior: "auto"});
+} else if ( event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
+} else if ( event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
 }
+
 return;
 }
 }
@@ -474,10 +525,15 @@ splashScreen.remove();
 }
 
 
+mousedown.clientX          = event.clientX;
+mousedown.clientY          = event.clientY;
+mousedown.scrollX          = window.scrollX;
+mousedown.scrollY          = window.scrollY;
 
 
 
-if (mouseIsDogged==false) {
+
+
 
 
 if (event.button===1) {
@@ -486,10 +542,33 @@ event.preventDefault();
 
 
 
-mousedown.clientX          = event.clientX;
-mousedown.clientY          = event.clientY;
-mousedown.scrollX          = window.scrollX;
-mousedown.scrollY          = window.scrollY;
+
+if (event.button!=2) {
+mousedown.hold           = true;
+} else {
+mousedown.hold=false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (mouseIsDogged==false) {
+
+
+
+
+
+
 
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
@@ -499,11 +578,30 @@ mouseGiveFocus(mouseInfo);
 
 mouseCursor.src          = currentIconSet.cur2.src;
 
-if (event.button!=2) {
-mousedown.hold           = true;
-} else {
-mousedown.hold=false;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 mousedown.modeNumber     = mode;
 mousedown.lastButton     = mousedown.button;
@@ -583,7 +681,7 @@ if (!alt&&ctrl&&!shift&&mode!=8) {
 
 
 if (event.target.dataset.coinTrip) {
-insertNewDuplicate([event,68,100,shift,ctrl,false]);
+insertNewDuplicate([event,68,68,shift,ctrl,false]);
 }
 
 focusFlip();
@@ -653,7 +751,9 @@ coinFocus.style.cursor = cursor.grab;
 
 
 
-
+mousedown.hold           = false;
+mousedown.pageX          = 0;
+mousedown.pageY          = 0;
 
 
 
@@ -675,9 +775,7 @@ mouseGiveFocus(mouseInfo);
 mode1.mouseup(mouseInfo);
 
 
-mousedown.hold           = false;
-mousedown.pageX          = 0;
-mousedown.pageY          = 0;
+
 
 
 switch (mode) {
@@ -730,6 +828,7 @@ updateInfoShelf();
 
 document.addEventListener("click", (event) => {
 
+
 if (coinFocus!=null&&drawPartNames=="true"&&event.target&&event.target.dataset&&event.target.dataset.coinTrip) {
 
 
@@ -746,12 +845,16 @@ setName = "sel1";
 } else if (coinFocus.dataset.coinTrip=="?") {
 setName = "sel2";
 }
-let clipList = '[\n"';
+let variableName = "n" + Date.now();
+let clipList =
+`const ${variableName} =
+[
+"`;
 for ( let j = 0; j < coinTrip[setName].length; j++) {
 if (j != coinTrip[setName].length - 1) {
 clipList += coinTrip[setName][j].id + '",\n"';
 } else {
-clipList += coinTrip[setName][j].id +'"\n]';
+clipList += coinTrip[setName][j].id +'"\n];';
 }
 }
 copyToClipboard(clipList);
@@ -818,7 +921,22 @@ const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
 
        if (event.target.dataset.coinTrip&&!shift&&!alt) {
-insertNewDuplicate([,68,100,,,]);
+//insertNewDuplicate([,68,100,,,]);
+
+
+hotDog = true; event.preventDefault(); spaceViewOn([event,32,32,event.shiftKey,event.ctrlKey,event.altKey]); removePointerEventsNone();
+if (coinFocus != null &&
+    coinFocus.div
+) {
+if (ui.folder52.ref.style.display == "block" &&
+    ui.tab5Wrapper.ref.style.display  == "block") {
+coinFocus.div.setAttribute("contentEditable", true);
+coinFocus.anchor.style.zIndex = "0";
+}
+coinFocus.div.focus();
+}
+
+
 } else if (event.target.dataset.coinTrip&& shift&&!alt) {
 cutOutImage();
 } else if (event.target.dataset.coinTrip&&!shift&& alt) {

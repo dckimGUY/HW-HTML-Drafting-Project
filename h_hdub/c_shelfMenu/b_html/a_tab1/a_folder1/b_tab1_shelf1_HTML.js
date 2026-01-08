@@ -20,6 +20,23 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <button id="partPrev" class="button_ button_partPrev" tabindex="-1" title=""></button>
 <button id="showNames" class="button_ button_showNames" title="show part names, click part to copy name, shift + click to copy the group as an array, ctrl + shift + click to get the innerHTML"></button>
 <button id="partNext" class="button_ button_partNext" tabindex="-1" title=""></button>
-<textarea id="partText" class="textarea_ input_partText dckimPixelMono" placeholder="empty" spellcheck="false"></textarea>
-<input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" placeholder="imagePath/" spellcheck="false">
+<textarea id="partText"  class="textarea_ input_partText  dckimPixelMono"        placeholder="empty" spellcheck="false"></textarea>
+<textarea id="partStyle" class="textarea_ input_partStyle dckimPixelMono hidden" placeholder="empty" spellcheck="false"></textarea>
+<textarea id="partCode"  class="textarea_ input_partCode  dckimPixelMono hidden" placeholder="empty" spellcheck="false"></textarea>
+<input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" title="I was using this for developing this menu, together with 'shift+Y' and 'b', which makes up some code for buttons. It only works if you are importing the images and base64 is turned off." placeholder="imagePath/" spellcheck="false">
+
+
+
+
+
+<button id="notesTab" class="button_ button_notesTab" title=""></button>
+<button id="styleTab" class="button_ button_styleTab" title=""></button>
+<button id="codeTab"  class="button_ button_codeTab"  title=""></button>
+
+
+
+
+
+
+
 `;

@@ -23,8 +23,8 @@ result = prompt("enter new outline colour: ", coinFocus.lastElementChild.style.o
 result = prompt("enter new outline colour: ", "rgba(0,0,0,1)");
 }
 if (result!=null) {
-coinFocus.lastElementChild.style.outlineColor = result;
-outlineColour = result;
+coinFocus.lastElementChild.style.outlineColor = result.toLowerCase();
+outlineColour = result.toLowerCase();
 } else {
 outlineColourPicker.click();
 }

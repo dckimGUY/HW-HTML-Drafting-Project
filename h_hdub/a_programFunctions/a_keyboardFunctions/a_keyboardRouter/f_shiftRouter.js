@@ -24,10 +24,10 @@ const uppercaseLetterReceived =
  (kC ==  88 && cC ==  88) || (kC ==  67 && cC ==  67) || (kC ==  86 && cC ==  86) || (kC ==  66 && cC ==  66) || (kC ==  78 && cC ==  78) ||
  (kC ==  77 && cC ==  77));
 
-if (lowercaseLetterReceived && shift==false) { CAPS=0; setHauptModeOff(keyInfo); }
-if (lowercaseLetterReceived && shift==true)  { CAPS=1; setHauptModeOn(keyInfo);  }
-if (uppercaseLetterReceived && shift==false) { CAPS=1; setHauptModeOn(keyInfo);  }
-if (uppercaseLetterReceived && shift==true)  { CAPS=0; setHauptModeOff(keyInfo); }
+if (lowercaseLetterReceived && shift==false) { CAPS=0; setHauptModeOn(keyInfo); }
+if (lowercaseLetterReceived && shift==true)  { CAPS=1; setHauptModeOff(keyInfo);  }
+if (uppercaseLetterReceived && shift==false) { CAPS=1; setHauptModeOff(keyInfo);  }
+if (uppercaseLetterReceived && shift==true)  { CAPS=0; setHauptModeOn(keyInfo); }
 
 /* Here we decide which of the two "Haupt-modes" are active and then route the keypresses to that system. */
 if (hauptMode==0) {

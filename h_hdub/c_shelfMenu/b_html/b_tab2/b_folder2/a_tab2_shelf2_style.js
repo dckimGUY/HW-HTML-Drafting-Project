@@ -15,7 +15,7 @@ border-radius: 2px;
 .button_grid:hover  { background-color: rgba(255,255,255,0.5); }
 .button_grid:active { background-color: rgba(  0,  0,255,0.5); }
 
-.input_snapGridIncrement         { position: absolute; border: none; margin: none; padding: none; left:     56px; top:     72px; width:     65px; height:     12px; outline-offset: -4px; font-size: 12px; }
+.input_snapGridIncrement         { position: absolute; border: none; margin: none; padding: none; left:     56px; top:     73px; width:     65px; height:     12px; outline-offset: -4px; font-size: 12px; }
 
 
 
@@ -67,27 +67,27 @@ border-radius: 2px;
 
 .button_coin38634                { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    140px; width:     39px; height:     16px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634.png?v=20251109154324");        }
-.button_coin38634:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634_focus.png?v=20251109154805");  }
-.button_coin38634:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634_hover.png?v=20251109154454");  }
-.button_coin38634:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634_active.png?v=20251109154648"); }
-.input_coin18868                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    141px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
-.input_coin28281                 { position: absolute; border: none; margin: none; padding: none; left:    110px; top:    141px; width:     14px; height:     14px; outline-offset: -4px; }
+.button_coin38634:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634_focus.png?v=20251201105541");  }
+.button_coin38634:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634_hover.png?v=20251201105524");  }
+.button_coin38634:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin38634_active.png?v=20251201105556"); }
+.input_coin18868                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    142px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
+.input_coin28281                 { position: absolute; border: none; margin: none; padding: none; left:    111px; top:    142px; width:     12px; height:     12px; outline-offset: -4px; }
 
 .button_coin41046                { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    160px; width:     39px; height:     16px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin41046.png?v=20251109154320");        }
 .button_coin41046:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin41046_focus.png?v=20251109154803");  }
 .button_coin41046:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin41046_hover.png?v=20251109154452");  }
-.button_coin41046:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin41046_active.png?v=20251109154643"); }
-.input_coin21315                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    161px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
-.input_coin30119                 { position: absolute; border: none; margin: none; padding: none; left:    110px; top:    161px; width:     14px; height:     14px; outline-offset: -4px; }
+.button_coin41046:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin41046_active.png?v=20251201105335"); }
+.input_coin21315                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    162px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
+.input_coin30119                 { position: absolute; border: none; margin: none; padding: none; left:    111px; top:    162px; width:     12px; height:     12px; outline-offset: -4px; }
 
 .button_coin07023                { position: absolute; border: none; margin: none; padding: none; left:      8px; top:    180px; width:     39px; height:     16px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023.png?v=20251109154314");        }
-.button_coin07023:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023_focus.png?v=20251109154800");  }
-.button_coin07023:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023_hover.png?v=20251109154449");  }
-.button_coin07023:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023_active.png?v=20251109154646"); }
-.input_coin23538                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    181px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
-.input_coin32259                 { position: absolute; border: none; margin: none; padding: none; left:    110px; top:    181px; width:     14px; height:     14px; outline-offset: -4px; }
+.button_coin07023:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023_focus.png?v=20251201105421");  }
+.button_coin07023:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023_hover.png?v=20251201105431");  }
+.button_coin07023:active         { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/coin07023_active.png?v=20251201105426"); }
+.input_coin23538                 { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    182px; width:     60px; height:     14px; outline-offset: -4px; font-size: 12px; }
+.input_coin32259                 { position: absolute; border: none; margin: none; padding: none; left:    111px; top:    182px; width:     12px; height:     12px; outline-offset: -4px; }
 
 
 .button_setMetric                { position: absolute; border: none; margin: none; padding: none; left:      6px; top:    198px; width:     55px; height:     24px;
@@ -136,8 +136,8 @@ border-radius: 2px;
 .input_coin88067                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:     73px; top:    232px; width:     22px; height:     17px; }
 .input_coin46861                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:     47px; top:    232px; width:     22px; height:     17px; }
 .input_coin44038                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    107px; top:    232px; width:     22px; height:     17px; }
-.input_coin72275                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    124px; top:     71px; width:     21px; height:     14px; }
-.input_coin43886                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    147px; top:     71px; width:     21px; height:     14px; }
+.input_coin72275                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    125px; top:     72px; width:     19px; height:     12px; }
+.input_coin43886                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    148px; top:     72px; width:     19px; height:     12px; }
 
 /* SLIDERS */
 

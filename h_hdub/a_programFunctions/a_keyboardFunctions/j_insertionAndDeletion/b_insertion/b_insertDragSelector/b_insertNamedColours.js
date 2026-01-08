@@ -20,7 +20,7 @@ for ( let j = 0; j < namedColourArray.length; j++) {
 
 hauptMode=0;
 curFocus=1;
-insertNewCoin(["",78,110,true,false,false]);
+insertNewCoin(["",78,78,false,false,false]);
 
 
 let newCoin = utilityLayer0.lastElementChild;

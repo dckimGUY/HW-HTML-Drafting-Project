@@ -60,9 +60,16 @@ const sheetImages                 =          {};
       sheetImages.focusHover.img  = new Image();
       sheetImages.focusActive.img = new Image();
 
-      sheetImages.base.filename        = "";
-      sheetImages.hover.filename       = "";
-      sheetImages.active.filename      = "";
-      sheetImages.focus.filename       = "";
-      sheetImages.focusHover.filename  = "";
-      sheetImages.focusActive.filename = "";
+      sheetImages.base.filename        =     "";
+      sheetImages.hover.filename       =     "";
+      sheetImages.active.filename      =     "";
+      sheetImages.focus.filename       =     "";
+      sheetImages.focusHover.filename  =     "";
+      sheetImages.focusActive.filename =     "";
+
+
+      sheetImages.star            =          {};
+      sheetImages.star.img        = new Image();
+      sheetImages.star.filename   =          "";
+      sheetImages.star.factor     =          10;
+      sheetImages.star.syntax     =          "";
