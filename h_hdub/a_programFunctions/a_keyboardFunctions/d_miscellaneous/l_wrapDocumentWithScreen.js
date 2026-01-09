@@ -26,6 +26,9 @@ utilityLayer0.innerHTML = "";
 
 utilityLayer0.appendChild(newCoin);
 
+
+newCoin.anchor.style.zIndex = 0;
+
 for (let j = 0; j < newCoin.div.children.length; j++) {
 newCoin.div.children[j].style.left   = parseInt(newCoin.div.children[j].style.left) - parseInt(window.scrollX) + "px";
 newCoin.div.children[j].dataset.left = parseInt(newCoin.div.children[j].style.left) + "px";

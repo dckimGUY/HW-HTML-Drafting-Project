@@ -26,6 +26,7 @@ utilityLayer0.innerHTML = "";
 
 utilityLayer0.appendChild(newCoin);
 
+newCoin.anchor.style.zIndex = 0;
 newCoin.style.left     =    least[3][1] + "px";
 newCoin.dataset.left   =    least[3][1] + "px";
 newCoin.style.top      =    least[3][0] + "px";

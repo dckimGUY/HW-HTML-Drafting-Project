@@ -96,7 +96,6 @@ mv c_insertNewWindow.js ./h_hdub/d_handlers/c_initialization/;
 ## Build the helpful tree
  
 
-. ./tree;
 
 
 

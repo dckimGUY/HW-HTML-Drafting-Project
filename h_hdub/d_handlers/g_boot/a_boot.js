@@ -1068,11 +1068,13 @@ coinFocus.div.innerHTML = `
 <li>F1 Help Menu</li>
 <li>spacebar: live preview</li>
 <li>enter/esc: live edit</li>
-<li>CAPS-lock: construction/style modes</li>
+<li>CAPS-lock: construction/style mode. (I switched them recently... much improved, soon maybe eliminate the caps lock scenario?)</li>
+<li>BE ON THE LOOK-OUT FOR TOOL-TIPS IN THE MENU: They lead you to some documentation that is readable from the console(using ctrl + shift + J/K, or F12 sometimes)</li>
 <li>V: document re-flow</li>
 <li>re-size the menu from the edge</li>
 <li>explore the program: It's NEW! (under active development)</li>
-<li>Vote for DCKIM in the PetraPixel Indie Web Contest!</li>
+<li>If you get the buttons working, try wrapping them using the 'y' key ('u' to unwrap). Then see if you can rotate the whole arrangement before saving it with the new 'vw' conversion save (or use 's'/'shift + s'). It gives a really neat effect, pixelated and slanted... weird!</li>
+<li>The hw syntax button system might seem complicated... It's not... You type 'h20', that gives the height, then type 'w20', that gives a box 'h20w20'... then if you want more in the row: 'h20w20w25' etc... Then next row starts 'h12' or whatever again. The number gives the height of the row. Try it and see how fast and easy it can be. Use 'alt + click' the menu tab headings to see if the console gets some instructions on how to use those things... there is a bit of a process, very well worth it. Just think, hundreds of pixelated(or not) buttons, all in single image sheets!</li>
 </ol>
 `;
 

@@ -240,8 +240,18 @@ inner.style.zIndex          = doc.body.children[j].style.zIndex;
 }
 
 let pattern     = new RegExp(`#${inner.id}`, "g");
+
+
+
+
+
 inner.innerHTML = inner.innerHTML.replace(pattern, "#" + doc.body.children[j].id);
+inner.innerHTML = inner.innerHTML.replace(/\#[^ ]+button/g, "#button");
+
+
+
 inner.id        = doc.body.children[j].id;
+
 cleanDOM += inner.outerHTML + "\n";
 
 
