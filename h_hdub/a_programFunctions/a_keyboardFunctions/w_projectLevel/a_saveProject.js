@@ -10,8 +10,7 @@ topLayer[topLayer.a_currentLayer].echelon = pageEchelon / 100000000;
 saveTheme("currentTheme");
 topLayer.projectThemes = userCustomTheme;
 
-
-const json = JSON.stringify(topLayer, (key, value) => {
+let json = JSON.stringify(topLayer, (key, value) => {
 if (value instanceof Element) { return value.outerHTML; }
 return value; }, 0);
 
@@ -30,6 +29,7 @@ const a = document.createElement('a');
 a.href = url;
 //filename = filename.replace(/ /g, '-');
 a.download = "HDUB_Project_" + topLayer.aa_project_name + "@_" + dateSuffix + ".html";
+
 a.click();
 URL.revokeObjectURL(url);
 }

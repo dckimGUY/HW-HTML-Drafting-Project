@@ -4,6 +4,11 @@ let mousemoveTarget=null;
 
 
 
+if (localStorage.getItem("animatorTiming")) {
+document.getElementById("animationTiming").value = localStorage.getItem("animatorTiming");
+}
+
+
 
 document.addEventListener("mousewheel", (event) => {
 
@@ -19,7 +24,350 @@ ui.hdubSheetTemplate4x.ref.value--;displayDemo();
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} else if (event.target == document.getElementById("partY")) {
+event.preventDefault(); event.stopPropagation();
+
+
+
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + mouseIncrement);
+}                              if (ui.partY.ref.value  < mouseIncrement)
+                                 { ui.partY.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + T);
+}                              if (ui.partY.ref.value  < T)
+                                 { ui.partY.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + 2);
+}                              if (ui.partY.ref.value  < 2)
+                                 { ui.partY.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + 1);
+}                              if (ui.partY.ref.value  < 1)
+                                 { ui.partY.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.top =     parseInt(ui.partY.ref.value) + "px";
+coinFocus.dataset.top =   parseInt(ui.partY.ref.value) + "px";
+updateInfoShelf();redraw();
 }
+
+
+
+
+
+
+
+} else if (event.target == document.getElementById("partX")) {
+event.preventDefault(); event.stopPropagation();
+
+
+
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + mouseIncrement);
+}                              if (ui.partX.ref.value  < mouseIncrement)
+                                 { ui.partX.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + T);
+}                              if (ui.partX.ref.value  < T)
+                                 { ui.partX.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + 2);
+}                              if (ui.partX.ref.value  < 2)
+                                 { ui.partX.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + 1);
+}                              if (ui.partX.ref.value  < 1)
+                                 { ui.partX.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.left =    parseInt(ui.partX.ref.value) + "px";
+coinFocus.dataset.left =  parseInt(ui.partX.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+
+
+
+
+
+
+
+
+
+
+} else if (event.target == document.getElementById("partW")) {
+event.preventDefault(); event.stopPropagation();
+
+
+
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + mouseIncrement);
+}                              if (ui.partW.ref.value  < mouseIncrement)
+                                 { ui.partW.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + T);
+}                              if (ui.partW.ref.value  < T)
+                                 { ui.partW.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + 2);
+}                              if (ui.partW.ref.value  < 2)
+                                 { ui.partW.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + 1);
+}                              if (ui.partW.ref.value  < 1)
+                                 { ui.partW.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.width =   parseInt(ui.partW.ref.value) + "px";
+coinFocus.dataset.width = parseInt(ui.partW.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} else if (event.target == document.getElementById("partH")) {
+event.preventDefault(); event.stopPropagation();
+
+
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + mouseIncrement);
+}                              if (ui.partH.ref.value  < mouseIncrement)
+                                 { ui.partH.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + T);
+}                              if (ui.partH.ref.value  < T)
+                                 { ui.partH.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + 2);
+}                              if (ui.partH.ref.value  < 2)
+                                 { ui.partH.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + 1);
+}                              if (ui.partH.ref.value  < 1)
+                                 { ui.partH.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.height =  parseInt(ui.partH.ref.value) + "px";
+coinFocus.dataset.height =parseInt(ui.partH.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+
+
+
+} else if (
+event.target == document.getElementById("setLayer1") ||
+event.target == document.getElementById("setLayer2") ||
+event.target == document.getElementById("setLayer3") ||
+event.target == document.getElementById("setLayer4") ||
+event.target == document.getElementById("setLayer5") ||
+event.target == document.getElementById("setLayer6") ||
+event.target == document.getElementById("setLayer7") ||
+event.target == document.getElementById("setLayer8") ||
+event.target == document.getElementById("setLayer9") ||
+event.target == document.getElementById("setLayer10") ||
+event.target == document.getElementById("setLayer11") ||
+event.target == document.getElementById("setLayer12") ||
+event.target == document.getElementById("setLayer13") ||
+event.target == document.getElementById("setLayer14") ||
+event.target == document.getElementById("setLayer15") ||
+event.target == document.getElementById("setLayer16") ||
+event.target == document.getElementById("setLayer17") ||
+event.target == document.getElementById("setLayer18") ||
+event.target == document.getElementById("setLayer19") ||
+event.target == document.getElementById("setLayer20") ||
+event.target == document.getElementById("setLayer21") ||
+event.target == document.getElementById("setLayer22") ||
+event.target == document.getElementById("setLayer23") ||
+event.target == document.getElementById("setLayer24") ||
+event.target == document.getElementById("setLayer25")
+) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+layerRight();
+} else if (event.wheelDelta < 0) {
+layerLeft();
+}
+
+
+} else if (
+event.target == document.getElementById("buttonWordList") ||
+event.target == document.getElementById("readButtonBack") ||
+event.target == document.getElementById("folder31") ||
+event.target == document.getElementById("navPoint1") ||
+event.target == document.getElementById("navPoint2") ||
+event.target == document.getElementById("navPoint3") ||
+event.target == document.getElementById("navPoint4") ||
+event.target == document.getElementById("navPoint5") ||
+event.target == document.getElementById("navPoint6") ||
+event.target == document.getElementById("navPoint7") ||
+event.target == document.getElementById("navPoint8") ||
+event.target == document.getElementById("navPoint9") ||
+event.target == document.getElementById("buttonScale").children[0] ||
+event.target == document.getElementById("buttonScale").children[1] ||
+event.target == document.getElementById("buttonScale").children[2] ||
+event.target == document.getElementById("buttonScale").children[3] ||
+event.target == document.getElementById("buttonScale").children[4] ||
+event.target == document.getElementById("buttonScale").children[5] ||
+event.target == document.getElementById("buttonScale").children[6] ||
+event.target == document.getElementById("buttonScale").children[7] ||
+event.target == document.getElementById("buttonScale").children[8] ||
+event.target == document.getElementById("buttonScale").children[9] ||
+event.target == document.getElementById("buttonScale").children[10] ||
+event.target == document.getElementById("buttonScale").children[11] ||
+event.target == document.getElementById("buttonScale").children[12] ||
+event.target == document.getElementById("buttonScale").children[13] ||
+event.target == document.getElementById("buttonScale").children[14] ||
+event.target == document.getElementById("buttonScale").children[15] ||
+event.target == document.getElementById("buttonScale").children[16] ||
+event.target == document.getElementById("buttonScale").children[17] ||
+event.target == document.getElementById("buttonScale").children[18] ||
+event.target == document.getElementById("popColours") ||
+event.target == document.getElementById("popButton") ||
+event.target == document.getElementById("ringButton") ||
+event.target == document.getElementById("yourButtonIsHere").firstElementChild
+) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+cycleColoursForward();
+drawButton7();
+} else if (event.wheelDelta < 0) {
+cycleColoursBackward();
+drawButton7();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} else if (event.target == document.getElementById("animatorDiv")) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+document.getElementById("animationTiming").value = parseInt(parseInt(document.getElementById("animationTiming").value) + 5);
+} else if (event.wheelDelta < 0) {
+document.getElementById("animationTiming").value -= 5;
+}
+if (document.getElementById("animationTiming").value < 5) {
+document.getElementById("animationTiming").value = 5;
+}
+
+
+
+setupTheAnimator();
+
+localStorage.setItem("animatorTiming", document.getElementById("animationTiming").value)
+
+
+
+
+
+
+} else if (event.target == ui.frameNumber.ref) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+ui.frameNumber.ref.value = parseInt(ui.frameNumber.ref.value) + 1;
+} else if (event.wheelDelta < 0) {
+ui.frameNumber.ref.value = parseInt(ui.frameNumber.ref.value) - 1;
+}
+if (ui.frameNumber.ref.value > imageRollArray.length) {
+ui.frameNumber.ref.value = imageRollArray.length;
+}
+
+
+if (ui.frameNumber.ref.value < 1) {
+ui.frameNumber.ref.value = 1;
+}
+
+
+
+setupTheAnimator();
+}
+
+
+
+
+
+
+
+//ui.frameNumber.ref
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -30,9 +378,32 @@ event.preventDefault();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("mousemove", (event) => {
-
-
 
 
 
@@ -57,9 +428,6 @@ return;
 
 
 
-
-
-
 if (mouseIsDogged==false) {
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
@@ -79,6 +447,7 @@ mouseX = mousedown.scrollX + mousedown.clientX - event.clientX;
 mouseY = mousedown.scrollY + mousedown.clientY - event.clientY;
 quarterMouseX = mousedown.scrollX + (mousedown.clientX - event.clientX) / 4;
 quarterMouseY = mousedown.scrollY + (mousedown.clientY - event.clientY) / 4;
+
 
 
 if (event.buttons===4) {
@@ -492,6 +861,9 @@ mousedown                =    {};
 mousedown.hold           = false;
 mousedown.modeNumber     =     0;
 mousedown.button         =     0;
+mousedown.button0        = false;
+mousedown.button1        = false;
+mousedown.button2        = false;
 mousedown.ctrl           =     0;
 mousedown.shift          =     0;
 mousedown.alt            =     0;
@@ -513,9 +885,11 @@ mousedown.targetRegion   =     5;
 document.addEventListener("mousedown",   (event) => {
 
 
-
-
-
+switch (event.button) {
+case 0: mousedown.button0 = true; break;
+case 1: mousedown.button1 = true; break;
+case 2: mousedown.button2 = true; break;
+}
 
 
 
@@ -733,6 +1107,26 @@ redraw();
 document.addEventListener("mouseup", (event) => {
 
 
+switch (event.button) {
+case 0: mousedown.button0 = false; break;
+case 1: mousedown.button1 = false; break;
+case 2: mousedown.button2 = false; break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
 
@@ -915,6 +1309,32 @@ redraw();
 
 
 document.addEventListener("dblclick", (event) => {
+
+
+if (mouseIsDogged==true) {
+if (event.target === document.documentElement) {
+
+if (ui.folder52.ref.style.display == "none" ||
+    ui.tab5Wrapper.ref.style.display  == "none") {
+hdubDemo.style.opacity = 0;
+}
+
+if (mode==0) { curFocus=0; modeRouter(event,1); }
+
+hotDog = false;
+spaceViewOff([event,32,32,event.shiftKey,event.ctrlKey,event.altKey]);
+restorePointerEventsNone(); 
+helpMenuOverlay.style.display="none";
+F.focus();
+
+return;
+
+}
+}
+
+
+
+
 
 if (mouseIsDogged==false) {
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;

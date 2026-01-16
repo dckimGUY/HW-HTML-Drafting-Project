@@ -21,7 +21,7 @@ if (shift==true||hauptMode==0) {
 /*    O    */ if (kC ==  79 && cC ==  79) {                                 aioNRouter(keyInfo);                                                                                 }
 /*    P    */ if (kC ==  80 && cC ==  80) {                                 pasteMultiple(keyInfo);                                                                              }
 /*    A    */ if (kC ==  65 && cC ==  65) {                                 aioNRouter(keyInfo);                                                                                 }
-/*    S    */ if (kC ==  83 && cC ==  83) {                                 saveProject();                                                                                  }
+/*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false);                                                                                  }
 /*    D    */ if (kC ==  68 && cC ==  68) { noteCoin("<u>D</u><br><span style='font-size: 0.5em;'>duplicate in place</span>",durationC); insertNewDuplicate(keyInfo);            }
 /*    F    */ if (kC ==  70 && cC ==  70) {                                 openFile();                                                                                          }
 /*    G    */ if (kC ==  71 && cC ==  71) {                                 gridArray();                                                                                         }

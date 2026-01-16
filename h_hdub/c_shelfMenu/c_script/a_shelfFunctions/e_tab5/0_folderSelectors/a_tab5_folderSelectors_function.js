@@ -1,9 +1,6 @@
 /* ARE YOU SURE YOU WANT TO TAKE ADVANTAGE OF THE WHITESPACE LIKE THAT? YES... */
                        ui.folder51button.click =
-             function() { folder5Selector(1);
-hdubDemo.style.opacity = 0;
-loadTheme(userCustomTheme.currentTheme);
-};
+             function() { folder5Selector(1); };
                        ui.folder52button.click =
              function() {
 folder5Selector(2);

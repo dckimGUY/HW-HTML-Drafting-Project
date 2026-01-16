@@ -23,6 +23,9 @@ if (localStorage.getItem("drawPartNames")) { drawPartNames = localStorage.getIte
 if (localStorage.getItem("xrayVision")) { xrayVision = localStorage.getItem("xrayVision"); };
 
 function redraw(element){
+
+if (visualOpacity == 0) return;
+
 Vis.width=window.innerWidth;
 Vis.height=window.innerHeight;
 if (showVisualizations=="true") {

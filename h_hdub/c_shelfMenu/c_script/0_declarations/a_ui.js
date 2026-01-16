@@ -136,6 +136,8 @@ ui[name].ref   = document.getElementById(name);
 /* TAB 3, FOLDER 1 */
   
 [
+"gridLock"             ,
+"ringButton"           ,
 "popButton"            ,
 "popColours"           ,
 "buttonWordList"       ,
@@ -194,12 +196,28 @@ ui.buttonStyle.a_flat.right.src  = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUg
 
 
 
+
+
+
+
 /* TAB 3, FOLDER 2 */
 
-["templateIntake", "hdub_b6", "hdub_b4", "hdub_b2", "hdub_i6", "hdub_i4", "hdub_i2", "getButtons", "loadBase", "loadFocus", "loadHover", "loadActive", "loadFocusHover", "loadFocusActive", "viewBase", "viewFocus", "viewHover", "viewActive", "viewFocusHover", "viewFocusActive", "clearBase", "clearFocus", "clearHover", "clearActive", "clearFocusHover", "clearFocusActive"].forEach((name) => {
+["templateIntake", "getButtons", "hdub_b6", "hdub_b4", "hdub_b2", "hdub_i6", "hdub_i4", "hdub_i2"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });
+
+["btnQuick1", "btnQuick2", "btnQuick3", "btnQuick4", "btn6", "btn4", "btn2", "img6", "img4", "img2", "imgQuick1", "imgQuick2", "imgQuick3", "imgQuick4", "spriteClick1", "spriteClick2", "spriteClick3", "spriteClick4", "spriteLoop1", "spriteLoop2", "spriteLoop3", "spriteLoop4", "paint0", "paint1", "paint2", "paint3", "paint4", "paint5", "paint6", "paint7", "paint8", "paint9", "paint10", "paint11", "paint12", "paint13", "paint14", "paint15", "paint16", "paint17", "paint18", "paint19"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+["animateClick", "animateLoop", "fewerFrames", "moreFrames", "frameNumber", "animatorImage", "viewOverlay"].forEach((name) => {
+ui[name]       = {};
+ui[name].ref   = document.getElementById(name);
+});
+
+
 
 
 

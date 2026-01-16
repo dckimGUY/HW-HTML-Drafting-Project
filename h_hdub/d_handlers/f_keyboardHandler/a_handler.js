@@ -1,3 +1,9 @@
+/* This tells us if the spacebar is being held down */
+
+const spacebar = {};
+      spacebar.hold = false;
+
+
 /* This will "dog-the-mouse" and allow us to drag displayed text from the objects. */
 var mouseIsDogged = false;
 var spaceView = false;
@@ -173,6 +179,8 @@ spaceViewToggle(keyInfo);
 /*                                                                        */
 /*  space  */ if (kC ==  32&&!es)              {
 
+spacebar.hold = true;
+
 event.preventDefault();
 spaceViewOn([e,32,32,es,ec,ea]);
 removePointerEventsNone();
@@ -236,6 +244,9 @@ if (hotDog) { return; }
 /*                                                                        */
 /*  enter  */ if (kC ==  13 && cC ==  13) {
 if (event.shiftKey) {
+
+
+/*
 tabSelector(5);
 folder5Selector(2);
 let selectedTheme = userCustomTheme.currentTheme;
@@ -243,6 +254,11 @@ loadTheme("i8");
 userCustomTheme.currentTheme = selectedTheme;
 localStorage.setItem("currentTheme", userCustomTheme.currentTheme);
 drawFury(true);
+*/
+
+
+
+
 } else {
 
 hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone();
@@ -365,6 +381,10 @@ mousemoveTarget.style.cursor = cursor.grab;
 utilityLayer0.style.cursor = "crosshair";
 
 /*  space  */ if (kC==32) {
+
+
+spacebar.hold = false;
+
 
 
 spaceViewOff([e,32,32,es,ec,ea]);

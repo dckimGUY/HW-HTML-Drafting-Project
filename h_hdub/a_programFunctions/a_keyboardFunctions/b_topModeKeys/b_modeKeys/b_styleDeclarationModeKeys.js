@@ -28,7 +28,7 @@ if (shift==false||hauptMode==1) {
 /*    O    */ if (kC ==  79 && cC ==  79) { enterClassNames(keyInfo);                                                                                                                                     }
 /*    P    */ if (kC ==  80 && cC ==  80) { styleKey = "p"; noteStyle("P<br><span style='font-size: 0.5em;'>grid to padding</span>",durationS);    gridToPadding(keyInfo); lastKey = "p";                 }
 /*    A    */ if (kC ==  65 && cC ==  65) { styleKey = "a"; cycleTextAlignment(keyInfo); lastKey = "a";            }
-/*    S    */ if (kC ==  83 && cC ==  83) {                 saveParticlePreparation(0,false);       }
+/*    S    */ if (kC ==  83 && cC ==  83) {                 saveProject();       }
 /*    D    */ if (kC ==  68 && cC ==  68) {                 promptDownloadLink();                   }
 /*    F    */ if (kC ==  70 && cC ==  70) { styleKey = "f"; noteStyle("F<br><span style='font-size: 0.5em;'>grid to font-size</span>",durationS);  gridToFontSize(keyInfo); lastKey = "f";                }
 /*    G    */ if (kC ==  71 && cC ==  71) { modeRouter(e,1);                                        }

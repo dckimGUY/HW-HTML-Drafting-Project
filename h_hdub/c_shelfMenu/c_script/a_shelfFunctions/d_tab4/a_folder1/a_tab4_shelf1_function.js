@@ -586,9 +586,15 @@ if (newHeight > 0 && newWidth > 0) {
 if (hauptMode==1) {
 hauptMode=0;
 insertNewCoin([null,78,78,false,false,false]);
+coinFocus.div.contentEditable = "true";
+coinFocus.div.style.fontSize = "32px";
+coinFocus.anchor.style.zIndex = "0";
 hauptMode=1;
 } else {
 insertNewCoin([null,78,78,false,false,false]);
+coinFocus.div.contentEditable = "true";
+coinFocus.div.style.fontSize = "32px";
+coinFocus.anchor.style.zIndex = "0";
 }
 
 

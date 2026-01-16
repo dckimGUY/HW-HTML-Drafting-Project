@@ -707,6 +707,93 @@ if (!file.type.startsWith("image/")&&!file.type.startsWith("audio/")&&!file.type
 const reader = new FileReader();
 reader.onload = evt => {
 
+
+
+
+
+
+
+
+
+
+if (file.name.startsWith("HDUB_Project")) {
+
+
+
+const restoredObject = JSON.parse(reader.result.toString(), (key, value) => {
+if (typeof value === "string" && value.startsWith("<")) {
+const temp = document.createElement("div");
+temp.innerHTML = value;
+return temp.firstElementChild;
+} return value; });
+topLayer = restoredObject;
+coinFocus = document.getElementById(topLayer[topLayer.a_currentLayer].e_coinFocus);
+coinFocus1 = document.getElementById(topLayer[topLayer.a_currentLayer].f_coinFocus);
+utilityLayer0.innerHTML = topLayer[topLayer.a_currentLayer].b_content.innerHTML;
+filename = topLayer[topLayer.a_currentLayer].filename;
+pageEchelon = topLayer[topLayer.a_currentLayer].echelon * 100000000;
+document.getElementById("documentTitle").innerText = filename;
+restorePointerEventsNone();
+recoverColouration();
+for (j=0; j<utilityLayer0.children.length; j++) { 
+utilityLayer0.children[j].style.outline = fA;
+utilityLayer0.children[j].style.outlineOffset = fAO;
+ }
+if (utilityLayer0.firstElementChild) {
+coinFocus = utilityLayer0.firstElementChild;
+pageEchelon = Math.floor(utilityLayer0.firstElementChild.style.zIndex/100000000)*100000000;
+}
+if (coinFocus!=null) {
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+}
+if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
+makeTopLayer("b_layer1")
+updateInfoShelf();
+redraw();
+readCoins();
+Z();
+ui.projectName.ref.value = topLayer.aa_project_name;
+userCustomTheme = topLayer.projectThemes;
+loadTheme("currentTheme");
+
+return 0;
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (!e.target.dataset.coinTrip) {
 
 
@@ -854,10 +941,37 @@ utilityLayer0.children[j].div.lastElementChild.classList = "pixelArt";
 
 
 
+/*
 
 
+function clearColour(colour,context) {
+const string = colour.replace("rgb(", "").replace(" ", "").replace(")", "");
+const r = string.split(",")[0];
+const g = string.split(",")[1];
+const b = string.split(",")[2];
+let d = context.getImageData(0,0,ui.canvasOutput2.ref.width,ui.canvasOutput2.ref.height);
+let p = d.data;
+for (let i = 0; i < p.length; i += 4) {
+if (
+p[i  ]==r&&
+p[i+1]==g&&
+p[i+2]==b
+)
+{
+p[i  ] =0;
+p[i+1] =0;
+p[i+2] =0;
+p[i+3]= 0;
+}
+}
+context.putImageData(d,0,0);
+}
 
 
+clearColour(paintClear.colour,ctx);
+
+
+*/
 
 
 
@@ -928,6 +1042,7 @@ imageCutter.width   =  sheetImages.star.img.width  / 2;
 imageCutter.height  =  sheetImages.star.img.height    ;
 let           ctx   = imageCutter.getContext("2d")    ;
 ctx.drawImage(sheetImages.star.img, 0, 0, sheetImages.star.img.width, sheetImages.star.img.height);
+
 sheetImages.base.img.src   = imageCutter.toDataURL("image/png");
 ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
 ctx.drawImage(sheetImages.star.img, -(sheetImages.star.img.width / 2), 0, sheetImages.star.img.width, sheetImages.star.img.height);
@@ -1115,15 +1230,203 @@ reader.readAsDataURL(file);
 
 
 
+
+
+
+
+
+
+
+
 } else if (file.name.includes("_2img_")) {
+ui.templateIntake.ref.value  = file.name.split("_HDUB_")[0];
+sheetImages.star.filename    = ui.templateIntake.ref.value;
+                                                  ui.hdubSingleEntry.ref.value = file.name.split("_HDUB_")[1].split("_2img_")[1].replace(".png", "");
+localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
+sheetImages.star.syntax = ui.hdubSingleEntry.ref.value;
+                                     ui.hdubSheetTemplate4x.ref.value = parseInt(file.name.split("_HDUB_")[1].split("_2img_")[0]);
+ui.hdubSheetTemplate4x.ref.setAttribute("title", "hdubEntryFactor = " + parseInt(file.name.split("_HDUB_")[1].split("_2img_")[0]));
+                                              sheetImages.star.factor = parseInt(file.name.split("_HDUB_")[1].split("_2img_")[0]);
+localStorage.setItem("hdubEntryFactor", ui.hdubSheetTemplate4x.ref.value);
+const reader  = new FileReader();
+reader.onload = evt => {
+const img  = new Image();
+img.onload = () => {
+img.width  = img.naturalWidth;
+img.height = img.naturalHeight;
+sheetImages.star.img = img;
+drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
+clearImageSheet("base");
+clearImageSheet("focus");
+clearImageSheet("hover");
+clearImageSheet("active");
+clearImageSheet("focusHover");
+clearImageSheet("focusActive");
+const originalLayer = topLayer.a_currentLayer;
+makeTopLayer("importer")   ;
+const imageCutter   = document.createElement("canvas");
+imageCutter.width   =  sheetImages.star.img.width  / 2;
+imageCutter.height  =  sheetImages.star.img.height    ;
+let           ctx   = imageCutter.getContext("2d")    ;
+ctx.drawImage(sheetImages.star.img, 0, 0, sheetImages.star.img.width, sheetImages.star.img.height);
+sheetImages.base.img.src   = imageCutter.toDataURL("image/png");
+ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
+ctx.drawImage(sheetImages.star.img, -(sheetImages.star.img.width / 2), 0, sheetImages.star.img.width, sheetImages.star.img.height);
+sheetImages.active.img.src = imageCutter.toDataURL("image/png");
+ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
+const previousScrollX = window.scrollX;
+const previousScrollY = window.scrollY;
+window.scrollTo(0,0);
+ui.hdubEnter.ref.click()   ;
+setTimeout(() => {
+ui.getButtons.ref.click()  ;
+pixelationScale(sheetImages.star.factor);
+Picture.style.display = "none";
+makeTopLayer(originalLayer);
+topLayer.importer.b_content.innerHTML = "";
+window.scrollTo(previousScrollX,previousScrollY);
+readCoins();
+recoverCoinFocus();
+}, 2000);
+};
+img.src = evt.target.result;
+};
+reader.readAsDataURL(file);
+
+tabSelector(3);
+folder3Selector(2);
+
+setTimeout(() => { setupTheAnimator(); }, 5000);
 
 } else if (file.name.includes("_4img_")) {
 
+
+ui.templateIntake.ref.value  = file.name.split("_HDUB_")[0];
+sheetImages.star.filename    = ui.templateIntake.ref.value;
+                                                  ui.hdubSingleEntry.ref.value = file.name.split("_HDUB_")[1].split("_4img_")[1].replace(".png", "");
+localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
+sheetImages.star.syntax = ui.hdubSingleEntry.ref.value;
+                                     ui.hdubSheetTemplate4x.ref.value = parseInt(file.name.split("_HDUB_")[1].split("_4img_")[0]);
+ui.hdubSheetTemplate4x.ref.setAttribute("title", "hdubEntryFactor = " + parseInt(file.name.split("_HDUB_")[1].split("_4img_")[0]));
+                                              sheetImages.star.factor = parseInt(file.name.split("_HDUB_")[1].split("_4img_")[0]);
+localStorage.setItem("hdubEntryFactor", ui.hdubSheetTemplate4x.ref.value);
+const reader  = new FileReader();
+reader.onload = evt => {
+const img  = new Image();
+img.onload = () => {
+img.width  = img.naturalWidth;
+img.height = img.naturalHeight;
+sheetImages.star.img = img;
+drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
+clearImageSheet("base");
+clearImageSheet("focus");
+clearImageSheet("hover");
+clearImageSheet("active");
+clearImageSheet("focusHover");
+clearImageSheet("focusActive");
+const originalLayer = topLayer.a_currentLayer;
+makeTopLayer("importer")   ;
+const imageCutter   = document.createElement("canvas");
+imageCutter.width   =  sheetImages.star.img.width  / 2;
+imageCutter.height  =  sheetImages.star.img.height    ;
+let           ctx   = imageCutter.getContext("2d")    ;
+ctx.drawImage(sheetImages.star.img, 0, 0, sheetImages.star.img.width, sheetImages.star.img.height);
+sheetImages.base.img.src   = imageCutter.toDataURL("image/png");
+ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
+ctx.drawImage(sheetImages.star.img, -(sheetImages.star.img.width / 2), 0, sheetImages.star.img.width, sheetImages.star.img.height);
+sheetImages.active.img.src = imageCutter.toDataURL("image/png");
+ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
+const previousScrollX = window.scrollX;
+const previousScrollY = window.scrollY;
+window.scrollTo(0,0);
+ui.hdubEnter.ref.click()   ;
+setTimeout(() => {
+ui.getButtons.ref.click()  ;
+pixelationScale(sheetImages.star.factor);
+Picture.style.display = "none";
+makeTopLayer(originalLayer);
+topLayer.importer.b_content.innerHTML = "";
+window.scrollTo(previousScrollX,previousScrollY);
+readCoins();
+recoverCoinFocus();
+}, 2000);
+};
+img.src = evt.target.result;
+};
+reader.readAsDataURL(file);
+
+
+tabSelector(3);
+folder3Selector(2);
+
+
+setTimeout(() => { setupTheAnimator(); }, 5000);
+
+
+
 } else if (file.name.includes("_6img_")) {
+ui.templateIntake.ref.value  = file.name.split("_HDUB_")[0];
+sheetImages.star.filename    = ui.templateIntake.ref.value;
+                                                  ui.hdubSingleEntry.ref.value = file.name.split("_HDUB_")[1].split("_6img_")[1].replace(".png", "");
+localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
+sheetImages.star.syntax = ui.hdubSingleEntry.ref.value;
+                                     ui.hdubSheetTemplate4x.ref.value = parseInt(file.name.split("_HDUB_")[1].split("_6img_")[0]);
+ui.hdubSheetTemplate4x.ref.setAttribute("title", "hdubEntryFactor = " + parseInt(file.name.split("_HDUB_")[1].split("_6img_")[0]));
+                                              sheetImages.star.factor = parseInt(file.name.split("_HDUB_")[1].split("_6img_")[0]);
+localStorage.setItem("hdubEntryFactor", ui.hdubSheetTemplate4x.ref.value);
+const reader  = new FileReader();
+reader.onload = evt => {
+const img  = new Image();
+img.onload = () => {
+img.width  = img.naturalWidth;
+img.height = img.naturalHeight;
+sheetImages.star.img = img;
+drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
+clearImageSheet("base");
+clearImageSheet("focus");
+clearImageSheet("hover");
+clearImageSheet("active");
+clearImageSheet("focusHover");
+clearImageSheet("focusActive");
+const originalLayer = topLayer.a_currentLayer;
+makeTopLayer("importer")   ;
+const imageCutter   = document.createElement("canvas");
+imageCutter.width   =  sheetImages.star.img.width  / 2;
+imageCutter.height  =  sheetImages.star.img.height    ;
+let           ctx   = imageCutter.getContext("2d")    ;
+ctx.drawImage(sheetImages.star.img, 0, 0, sheetImages.star.img.width, sheetImages.star.img.height);
+sheetImages.base.img.src   = imageCutter.toDataURL("image/png");
+ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
+ctx.drawImage(sheetImages.star.img, -(sheetImages.star.img.width / 2), 0, sheetImages.star.img.width, sheetImages.star.img.height);
+sheetImages.active.img.src = imageCutter.toDataURL("image/png");
+ctx.clearRect(0,0,imageCutter.width,imageCutter.height);
+const previousScrollX = window.scrollX;
+const previousScrollY = window.scrollY;
+window.scrollTo(0,0);
+ui.hdubEnter.ref.click()   ;
+setTimeout(() => {
+ui.getButtons.ref.click()  ;
+pixelationScale(sheetImages.star.factor);
+Picture.style.display = "none";
+makeTopLayer(originalLayer);
+topLayer.importer.b_content.innerHTML = "";
+window.scrollTo(previousScrollX,previousScrollY);
+readCoins();
+recoverCoinFocus();
+}, 2000);
+};
+img.src = evt.target.result;
+};
+reader.readAsDataURL(file);
 
 
+tabSelector(3);
+folder3Selector(2);
 
-
+setTimeout(() => { setupTheAnimator(); }, 5000);
 
 
 } else {

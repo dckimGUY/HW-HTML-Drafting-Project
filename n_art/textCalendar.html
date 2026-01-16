@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>textCalendar</title>
+<meta charset="UTF-8">
+<meta name="last-build" content="2025-12-21T22:20:24Z">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAADBJREFUGJVjYMACWOAAJsANBQgBJjDAKwAU4kYW4AYJcFMoALaEmxSHoatA9xwKAADgggOfwr1wrgAAAABJRU5ErkJggg==">
+<style>
+
+html, body              { overflow: scroll; scrollbar-width: none;                    }
+body                    { margin: none; padding: none; border: none; outline: none;   }
+body::-webkit-scrollbar { display: none;                                              }
+
+.wrapper { position: fixed; }
+.wrapper {
+outline-offset: 0.05vw;
+outline: 0.05vw solid rgb(127,127,127);
+}
+
+.heading {
+font-family: dckimPixelMono;
+padding-top: 0.25em;
+user-select: none;
+font-size: 1.5vw;
+background-color: rgb(127,127,127);
+outline-offset: -0.1vw;
+outline: 0.1vw solid white;
+text-align: center;
+}
+.heading sup { font-size: 0.5em; }
+
+.content   { position: absolute; top: 1.85vw; left: 0vw; width: 100%; height: calc(100% - 1.85vw); }
+.content   {
+font-family: dckimPixelMono;
+overflow: auto;
+text-indent: 1em;
+}
+.content:focus {
+outline: none;
+background-color: rgba(127,127,127,0.2);
+}
+
+</style>
+</head>
+<body>
+<script>
+
+const date = new Date();
+const dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+const shortDayNames = [ "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" ];
+const numberInWords = [ null, "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth", "twenty-first", "twenty-second", "twenty-third", "twenty-fourth", "twenty-fifth", "twenty-sixth", "twenty-seventh", "twenty-eighth", "twenty-ninth", "thirtieth", "thirty-first" ];
+const numberSuffix = [ null, "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "st", ];
+const monthName = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
+const millisecondsPerSecond = 1000;
+const millisecondsPerMinute = 60000;
+const millisecondsPerHour   = 3600000;
+const millisecondsPerDay    = 86400000;
+const millisecondsPerWeek   = 604800000;
+const sundayDate = Date.now() - date.getDay() * millisecondsPerDay;
+const weekStart  = new Date(sundayDate);
+
+var option = {};
+option.weekHeight =  2;
+option.dayWidth   =  7;
+option.dayOffset  =  0;
+option.weekOffset =  0;
+option.mode       = "light";
+
+if (localStorage.getItem("option")) {
+option = JSON.parse(localStorage.getItem("option")); }
+
+const planner  = {};
+
+function setup() {
+for (i = 0; i < document.body.children.length; i++) {
+document.body.children[i].remove(); }
+document.body.innerHTML = "";
+for (k = 0; k < option.weekHeight; k++) {
+planner[`week${k + option.weekOffset}`] = {};
+for (j = 0; j < option.dayWidth; j++) {
+const today = new Date(sundayDate + millisecondsPerDay * ((k + option.weekOffset) * 7) + millisecondsPerDay * (j + option.dayOffset));
+const currentDate = new Date();
+
+planner[`week${k + option.weekOffset}`][`day${j}`] = {};
+planner[`week${k + option.weekOffset}`][`day${j}`].wrapper = document.createElement("div");
+planner[`week${k + option.weekOffset}`][`day${j}`].heading = document.createElement("div");
+
+if (today.getDate() == currentDate.getDate() && today.getMonth() == currentDate.getMonth()) {
+planner[`week${k + option.weekOffset}`][`day${j}`].heading.style.color = "darksalmon";
+}
+
+planner[`week${k + option.weekOffset}`][`day${j}`].content   = document.createElement("article");
+planner[`week${k + option.weekOffset}`][`day${j}`].content.contentEditable = true;
+planner[`week${k + option.weekOffset}`][`day${j}`].content.tabIndex = (k * 7) + j;
+planner[`week${k + option.weekOffset}`][`day${j}`].wrapper.classList = `wrapper`;
+planner[`week${k + option.weekOffset}`][`day${j}`].wrapper.style = `height: calc(1/${option.weekHeight} * 100vh); width: calc(1/${option.dayWidth} * 100vw); top: calc(${k}/${option.weekHeight} * 100vh); left: calc(${j}/${option.dayWidth} * 100vw);`;
+
+
+planner[`week${k + option.weekOffset}`][`day${j}`].heading.innerHTML = `${monthName[today.getMonth()]} ${today.getDate()}<sup>${numberSuffix[today.getDate()]}</sup>, ${today.getFullYear()}`;
+planner[`week${k + option.weekOffset}`][`day${j}`].content.setAttribute("oninput", `localStorage.setItem("calendar-${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}", planner["week${k + option.weekOffset}"]["day${j}"].content.innerHTML)`);
+
+try {
+planner[`week${k + option.weekOffset}`][`day${j}`].content.innerHTML = localStorage.getItem(`calendar-${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`);
+} catch {
+planner[`week${k + option.weekOffset}`][`day${j}`].content.innerHTML = "<p></p>";
+};
+planner[`week${k + option.weekOffset}`][`day${j}`].heading.classList.add( `heading`      );
+planner[`week${k + option.weekOffset}`][`day${j}`].content.classList.add(   `content`        );
+planner[`week${k + option.weekOffset}`][`day${j}`].wrapper.append(planner[`week${k + option.weekOffset}`][`day${j}`].heading);
+planner[`week${k + option.weekOffset}`][`day${j}`].wrapper.append(planner[`week${k + option.weekOffset}`][`day${j}`].content  );
+document.body.append(planner[`week${k + option.weekOffset}`][`day${j}`].wrapper);
+}
+}
+
+switch (option.mode) {
+case "light":
+document.body.style.backgroundColor = "rgb(192,192,192)";
+document.body.style.color           = "rgb( 32, 32, 32)";
+break;
+case "dark":
+document.body.style.backgroundColor = "rgb( 32, 32, 32)";
+document.body.style.color           = "rgb(192,192,192)";
+break;
+}
+
+localStorage.setItem("option", JSON.stringify(option));
+}
+setup();
+
+function advanceWeek(direction) {
+switch (direction) {
+case "ahead": ++option.weekOffset    ; setup(); break;
+case  "back": --option.weekOffset    ; setup(); break;
+case  "home":   option.weekOffset = 0; setup(); break;
+}
+}
+
+function weekDays() {
+switch (option.dayOffset) {
+case 0: option.dayOffset = 1; option.dayWidth = 5; break;
+case 1: option.dayOffset = 0; option.dayWidth = 7; break;
+}
+setup();
+}
+
+function weekNumber(direction) {
+switch (direction) {
+case "more": if (option.weekHeight < 13) ++option.weekHeight; break;
+case "less": if (option.weekHeight >  1) --option.weekHeight; break;
+}
+setup();
+}
+
+function colourMode() {
+switch (option.mode) {
+case "light":
+option.mode = "dark";
+document.body.style.backgroundColor = "rgb( 32, 32, 32)";
+document.body.style.color           = "rgb(192,192,192)";
+break;
+case "dark":
+option.mode = "light";
+document.body.style.backgroundColor = "rgb(192,192,192)";
+document.body.style.color           = "rgb( 32, 32, 32)";
+break;
+}
+setup();
+}
+
+function singleView() {
+if (document.activeElement.contentEditable == "true") {
+document.activeElement.previousElementSibling.style.position = "fixed";
+document.activeElement.style.position = "fixed";
+document.activeElement.previousElementSibling.style.top  = "0vw";
+document.activeElement.style.top  = "1.8vw";
+document.activeElement.previousElementSibling.style.left = "0";
+document.activeElement.style.left = "0";
+document.activeElement.parentNode.style.zIndex = "1000";
+document.activeElement.previousElementSibling.style.width = "100vw";
+document.activeElement.style.width = "100vw";
+document.activeElement.style.height = "100vh";
+document.activeElement.style.backgroundColor = "black";
+switch (option.mode) {
+case "light":
+document.activeElement.style.backgroundColor = "rgb(192,192,192)";
+break;
+case "dark":
+document.activeElement.style.backgroundColor = "rgb( 32, 32, 32)";
+break;
+}
+}
+}
+
+
+function copyToClipboard() {
+const d = document;
+const x = d.body.appendChild(d.createElement("textarea"));
+x.value = date.toString();
+x.select();
+d.execCommand("copy");
+x.remove();
+}
+
+
+
+function richText() {
+
+let result = null;
+
+result = prompt(`
+a cl createlink
+b ii insertimage
+c rl unlink
+
+d fn fontname
+e fs fontsize
+f fc forecolor
+
+g jl justifyleft
+h jc justifycenter
+i jr justifyright
+
+j fm formatblock
+k rm removeformat
+
+l id indent
+m od outdent
+
+n ol insertorderedlist
+o ul insertunorderedlist
+
+p pp insertparagraph
+
+backcolor bold copy cut delete italic paste selectall underline
+`, "p");
+
+if (result!=null) {
+switch (result) {
+
+/* These are the ones not requiring additional prompt input */
+
+/* Shorthand alphabetical entry */
+case "k": document.execCommand("removeformat"       , false, null); break;
+case "l": document.execCommand("indent"             , false, null); break;
+case "m": document.execCommand("outdent"            , false, null); break;
+case "n": document.execCommand("insertorderedlist"  , false, null); break;
+case "o": document.execCommand("insertunorderedlist", false, null); break;
+case "p": document.execCommand("insertparagraph"    , false, null); break;
+case "g": document.execCommand("justifyleft"        , false, null); break;
+case "h": document.execCommand("justifycenter"      , false, null); break;
+case "i": document.execCommand("justifyright"       , false, null); break;
+case "c": document.execCommand("unlink"             , false, null); break;
+
+/* Shorthand pnemonic entry */
+case "rm": document.execCommand("removeformat"       , false, null); break;
+case "id": document.execCommand("indent"             , false, null); break;
+case "od": document.execCommand("outdent"            , false, null); break;
+case "ol": document.execCommand("insertorderedlist"  , false, null); break;
+case "ul": document.execCommand("insertunorderedlist", false, null); break;
+case "pp": document.execCommand("insertparagraph"    , false, null); break;
+case "jl": document.execCommand("justifyleft"        , false, null); break;
+case "jc": document.execCommand("justifycenter"      , false, null); break;
+case "jr": document.execCommand("justifyright"       , false, null); break;
+case "rl": document.execCommand("unlink"             , false, null); break;
+
+/* Explicit entry */
+case "removeformat"       : document.execCommand("removeformat"       , false, null); break;
+case "indent"             : document.execCommand("indent"             , false, null); break;
+case "outdent"            : document.execCommand("outdent"            , false, null); break;
+case "insertorderedlist"  : document.execCommand("insertorderedlist"  , false, null); break;
+case "insertunorderedlist": document.execCommand("insertunorderedlist", false, null); break;
+case "insertparagraph"    : document.execCommand("insertparagraph"    , false, null); break;
+case "justifycenter"      : document.execCommand("justifycenter"      , false, null); break;
+case "justifyleft"        : document.execCommand("justifyleft"        , false, null); break;
+case "justifyright"       : document.execCommand("justifyright"       , false, null); break;
+case "unlink"             : document.execCommand("unlink"             , false, null); break;
+
+
+/* These need a follow-up second prompt */
+
+/* Shorthand alphabetical entry */
+case "a": result = prompt(`enter link url`,      "createlink" ); if (result != null) document.execCommand("createlink" , false, result); break;
+case "b": result = prompt(`enter image url`,     "insertimage"); if (result != null) document.execCommand("insertimage", false, result); break;
+case "j": result = prompt(`enter tag name`,      "formatblock"); if (result != null) document.execCommand("formatblock", false, result); break;
+
+case "d": result = prompt(`enter font name`,     "fontname"   ); if (result != null) document.execCommand("fontname"   , false, result); break;
+case "e": result = prompt(`enter font size 1-7`, "fontsize"   ); if (result != null) document.execCommand("fontsize"   , false, result); break;
+case "f": result = prompt(`enter colour string`, "forecolor"  ); if (result != null) document.execCommand("forecolor"  , false, result); break;
+
+/* Shorthand pnemonic entry */
+case "cl": result = prompt(`enter link url`,      "createlink" ); if (result != null) document.execCommand("createlink" , false, result); break;
+case "ii": result = prompt(`enter image url`,     "insertimage"); if (result != null) document.execCommand("insertimage", false, result); break;
+case "fm": result = prompt(`enter tag name`,      "formatblock"); if (result != null) document.execCommand("formatblock", false, result); break;
+case "fn": result = prompt(`enter font name`,     "fontname"   ); if (result != null) document.execCommand("fontname"   , false, result); break;
+case "fs": result = prompt(`enter font size 1-7`, "fontsize"   ); if (result != null) document.execCommand("fontsize"   , false, result); break;
+case "fc": result = prompt(`enter colour string`, "forecolor"  ); if (result != null) document.execCommand("forecolor"  , false, result); break;
+
+/* Explicit entry */
+case "createlink" : result = prompt(`enter link url`,      "createlink" ); if (result != null) document.execCommand("createlink" , false, result); break;
+case "insertimage": result = prompt(`enter image url`,     "insertimage"); if (result != null) document.execCommand("insertimage", false, result); break;
+case "formatblock": result = prompt(`enter tag name`,      "formatblock"); if (result != null) document.execCommand("formatblock", false, result); break;
+case "fontname"   : result = prompt(`enter font name`,     "fontname"   ); if (result != null) document.execCommand("fontname"   , false, result); break;
+case "fontsize"   : result = prompt(`enter font size 1-7`, "fontsize"   ); if (result != null) document.execCommand("fontsize"   , false, result); break;
+case "forecolor"  : result = prompt(`enter colour string`, "forecolor"  ); if (result != null) document.execCommand("forecolor"  , false, result); break;
+
+
+/* A glob of options for testing purposes, and completeness */
+
+/* Explicit entry only*/
+case "backcolor": document.execCommand("backcolor", false, null); break;
+case "selectall": document.execCommand("selectall", false, null); break;
+case "copy"     : document.execCommand("copy"     , false, null); break;
+case "paste"    : document.execCommand("paste"    , false, null); break;
+case "cut"      : document.execCommand("cut"      , false, null); break;
+case "delete"   : document.execCommand("delete"   , false, null); break;
+case "bold"     : document.execCommand("bold"     , false, null); break;
+case "italic"   : document.execCommand("italic"   , false, null); break;
+case "underline": document.execCommand("underline", false, null); break;
+}
+}
+}
+
+
+var kC = 0, cC = 0;
+document.addEventListener("keydown", (event) => {
+kC = event.keyCode;
+
+/*   F1    */ if (kC == 112) { event.preventDefault();                     }
+/*   F2    */ if (kC == 113) {                                             }
+/*   F3    */ if (kC == 114) {                                             }
+/*   F4    */ if (kC == 115) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F5    */ if (kC == 116) { event.preventDefault(); event.stopPropagation(); copyToClipboard(); }
+/*   F6    */ if (kC == 117) {                                             }
+/*   F7    */ if (kC == 118) {                                             }
+/*   F8    */ if (kC == 119) { event.preventDefault(); if ( event.shiftKey && !event.ctrlKey) { event.preventDefault(); advanceWeek("home"); } }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F9    */ if (kC == 120) { event.preventDefault(); singleView();       }
+/*   F10   */ if (kC == 121) {                                             }
+/*   F11   */ if (kC == 122) {                                             }
+/*   F12   */ if (kC == 123) {                                             }
+
+/*   esc   */ if (kC ==  27) { event.preventDefault();
+if (!event.shiftKey && !event.ctrlKey) {
+setup();
+} else {
+colourMode();
+}
+}
+/*   ins   */ if (kC ==  45) { event.preventDefault(); weekDays(); }
+/* page up */ if (kC ==  33) { event.preventDefault();
+       if (!event.shiftKey && !event.ctrlKey) {
+advanceWeek("back");
+} else if ( event.shiftKey && !event.ctrlKey) {
+weekNumber("more");
+}
+}
+/*page down*/ if (kC ==  34) { event.preventDefault();
+       if (!event.shiftKey && !event.ctrlKey) {
+advanceWeek("ahead");
+} else if ( event.shiftKey && !event.ctrlKey) {
+weekNumber("less");
+}
+}
+/************************************************************************/});
+
+document.addEventListener("keypress", (event) =>  { 
+cC = event.charCode;
+/**************************************************************************/
+/*  enter  */ if (kC ==  13 && cC ==  13) {
+       if ( event.shiftKey) {
+richText();
+} else if (!event.shiftKey) {
+if (!document.queryCommandState("insertorderedlist") && !document.queryCommandState("insertunorderedlist")) {
+setTimeout(() => { document.execCommand("formatblock", false, "<p>"); }, 200);
+}
+}
+}
+/************************************************************************/});
+</script>
+</body>
+</html>

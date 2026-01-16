@@ -1,11 +1,11 @@
-ui.save200.click                 = function() { deMinimis(false, 1/2); };
-ui.save300.click                 = function() { deMinimis(false, 1/3.2); };
-ui.save500.click                 = function() { deMinimis(false, 1/5); };
-ui.save800.click                 = function() { deMinimis(false, 1/7.68); };
-ui.save1000.click                = function() { deMinimis(false, 1/10); };
-ui.save1200.click                = function() { deMinimis(false, 1/12.8); };
-ui.save1500.click                = function() { deMinimis(false, 1/15.36); };
-ui.save1800.click                = function() { deMinimis(false, 1/20); };
+ui.save200.click                 = function() { deMinimis(false);               };
+ui.save300.click                 = function() { deMinimis(false, "(100/320)" ); };
+ui.save500.click                 = function() { deMinimis(false, "(100/500)" ); };
+ui.save800.click                 = function() { deMinimis(false, "(100/768)" ); };
+ui.save1000.click                = function() { deMinimis(false, "(100/1000)"); };
+ui.save1200.click                = function() { deMinimis(false, "(100/1280)"); };
+ui.save1500.click                = function() { deMinimis(false, "(100/1536)"); };
+ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); };
 ui.elementArticle.click          = function() { copyToClipboard('<article               style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
 ui.elementColour.click           = function() { copyToClipboard('<input type="color"    name="colour"   style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
 ui.elementRadioBtn.click         = function() { copyToClipboard('<input type="radio"    name="radio"    style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
@@ -39,49 +39,49 @@ let lefts = string.match(/left: [0123456789]*px;/);
           while (lefts) {
 const currentValue = parseInt(lefts[0].replace(/left: /g, ""));
 const newValue = currentValue * factor;
-                   string = string.replace(/left: [0123456789]*px;/,   "left: " + newValue + "vw;");
+                   string = string.replace(/left: [0123456789]*px;/,   "left: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 lefts = string.match(/left: [0123456789]*px;/);
 }
 let tops = string.match(/top: [0123456789]*px;/);
           while (tops) {
 const currentValue = parseInt(tops[0].replace(/top: /, ""));
 const newValue = currentValue * factor;
-                   string = string.replace(/top: [0123456789]*px;/,    "top: " + newValue + "vw;");
+                   string = string.replace(/top: [0123456789]*px;/,    "top: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 tops = string.match(/top: [0123456789]*px;/);
 }
 let widths = string.match(/width: [0123456789]*px;/);
           while (widths) {
 const currentValue = parseInt(widths[0].replace(/width: /, ""));
 const newValue = currentValue * factor;
-                   string = string.replace(/width: [0123456789]*px;/,  "width: " + newValue + "vw;");
+                   string = string.replace(/width: [0123456789]*px;/,  "width: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 widths = string.match(/width: [0123456789]*px;/);
 }
 let heights = string.match(/height: [0123456789]*px;/);
           while (heights) {
 const currentValue = parseInt(heights[0].replace(/height: /, ""));
 const newValue = currentValue * factor;
-                   string = string.replace(/height: [0123456789]*px;/, "height: " + newValue + "vw;");
+                   string = string.replace(/height: [0123456789]*px;/, "height: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 heights = string.match(/height: [0123456789]*px;/);
 }
 let radiuses = string.match(/radius: [0123456789]*px;/);
           while (radiuses) {
 const currentValue = parseInt(radiuses[0].replace(/radius: /, ""));
 const newValue = currentValue * factor;
-                   string = string.replace(/radius: [0123456789]*px;/, "radius: " + newValue + "vw;");
+                   string = string.replace(/radius: [0123456789]*px;/, "radius: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 radiuses = string.match(/radius: [0123456789]*px;/);
 }
 let outlines = string.match(/outline: [^;]* [^;]* [0123456789]*px;/);
           while (outlines) {
 const currentValue = parseInt(outlines[0].replace(/outline: [^;]* [^;]* ([0123456789]*)px;/, "$1"));
 const newValue = currentValue * factor;
-                   string = string.replace(/(outline: [^;]* [^;]* )[0123456789]*px;/, "$1" + newValue + "vw;");
+                   string = string.replace(/(outline: [^;]* [^;]* )[0123456789]*px;/, "calc(" + "$1" + `(${currentValue} * ${factor}` + "* 1vw));");
 outlines = string.match(/outline: [^;]* [^;]* [0123456789]*px;/);
 }
 let outlineOffsets = string.match(/outline-offset: -[0123456789]*px;/);
           while (outlineOffsets) {
 const currentValue = parseFloat(outlineOffsets[0].replace(/outline-offset: (-[0123456789]*)px;/, "$1"));
 const newValue = currentValue * factor;
-                   string = string.replace(/outline-offset: -[0123456789]*px;/, "outline-offset: " + newValue + "vw;");
+                   string = string.replace(/outline-offset: -[0123456789]*px;/, "outline-offset: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 outlineOffsets = string.match(/outline-offset: -[0123456789]*px;/);
 }
 return string;
@@ -148,23 +148,17 @@ const fileFooter = `
 function deMinimis(header, factor, eventArg) {
 spaceViewOn();
 removePointerEventsNone();
-
 let string = utilityLayer0.innerHTML;
-
 let parser = new DOMParser();
 let doc = parser.parseFromString(string, 'text/html');
 
-
-
 for (let j = 0; j < doc.body.children.length; j++) {
-
 if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length > 1) {
 const wrapping = document.createElement("div");
 wrapping.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
 doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = wrapping.outerHTML;
 }
-
 }
 
 
@@ -186,10 +180,6 @@ let cleanDOM = document.createElement("div");
 for (let j = 0; j < doc.body.children.length; j++) {
 
 let inner;
-
-
-
-
 
        if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
 inner = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.firstElementChild;
@@ -276,7 +266,21 @@ const styleBlock = string.replace(/^[^"]*"([^"]*)"/g, "#\1").replace(/style="/g,
 console.log(styleBlock);
 */
 
+string = string.replace(/data-frame/g, "ditto-frame");
+string = string.replace(/data-max-frame/g, "ditto-max-frame");
+string = string.replace(/data-counter/g, "ditto-counter");
+string = string.replace(/data-timing/g, "ditto-timing");
+
 string = string.replace(/ data[^"]*"[^"]*"/g, "");
+
+string = string.replace(/ditto-frame/g, "data-frame");
+string = string.replace(/ditto-max-frame/g, "data-max-frame");
+string = string.replace(/ditto-counter/g, "data-counter");
+string = string.replace(/ditto-timing/g, "data-timing");
+
+
+
+
 string = string.replace(/<button style=.position: absolute; z-index: 300;[^>]*><\/button>/g, "");
 string = string.replace(/<img alt=""[^>]*>/g, "");
 
@@ -399,14 +403,23 @@ const rename = false;
 
 
 
-
+/*
 if (factor) {
 saveHTMLparticle(rename, string + "\n\n\n" + scriptStarter, false, false, false);
 } else if (header) {
+
+*/
+
+
 saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + string + "\n\n\n" + scriptStarter + fileFooter, false, false, false);
+
+/*
 } else {
 saveHTMLparticle(rename, string, false, false, false);
 }
+
+
+*/
 
 restorePointerEventsNone();
 spaceViewOff();

@@ -33,7 +33,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    o    */ if (kC ==  79 && cC == 111) {                          aioNRouter(keyInfo);                                                                                               }
 /*    p    */ if (kC ==  80 && cC == 112) {                          pasteSingle(keyInfo);                                                                                              }
 /*    a    */ if (kC ==  65 && cC ==  97) {                          aioNRouter(keyInfo);                                                                                               }
-/*    s    */ if (kC ==  83 && cC == 115) {                               deMinimis(false);                                                                               }
+/*    s    */ if (kC ==  83 && cC == 115) {                                    saveProject();                                                                          }
 /*    d    */ if (kC ==  68 && cC == 100) {                                                                                     modeRouter(e,6);                                        }
 /*    f    */ if (kC ==  70 && cC == 102) { noteCoin("F+<br><span style='font-size: 0.5em;'>paste out</span>",durationC); charQ1=0;charQ2=0;charM=0;charF=1;                            }
 /*    g    */ if (kC ==  71 && cC == 103) {                                                                              curFocus=0; modeRouter(e,1);                                   }

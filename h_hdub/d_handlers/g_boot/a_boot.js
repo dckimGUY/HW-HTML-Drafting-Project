@@ -465,6 +465,12 @@ gridLayer.appendChild(V);
 gridLayer.appendChild(F);
 
 function Z(){
+
+
+if (K == 0) return;
+
+
+
 F.style.width=`${window.innerWidth}px`;
 F.style.height=`${window.innerHeight}px`;
 V.width=window.innerWidth;

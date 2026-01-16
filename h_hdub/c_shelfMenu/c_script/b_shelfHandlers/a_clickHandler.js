@@ -195,27 +195,16 @@ case ui.readButtonBack.ref:      ui.readButtonBack.click()       ; break;
 
 case ui.popColours.ref:          ui.popColours.click()           ; break;
 case ui.popButton.ref:           ui.popButton.click()            ; break;
+case ui.ringButton.ref:          ui.ringButton.click()           ; break;
+
+case ui.gridLock.ref:            ui.gridLock.click()             ; break;
 
 /* tab 3 folder 2 */
+
+
+
+
 case ui.getButtons.ref:          ui.getButtons.click()           ; break;
-case ui.loadBase.ref:            ui.loadBase.click()             ; break;
-case ui.loadFocus.ref:           ui.loadFocus.click()            ; break;
-case ui.loadHover.ref:           ui.loadHover.click()            ; break;
-case ui.loadActive.ref:          ui.loadActive.click()           ; break;
-case ui.loadFocusHover.ref:      ui.loadFocusHover.click()       ; break;
-case ui.loadFocusActive.ref:     ui.loadFocusActive.click()      ; break;
-case ui.viewBase.ref:            ui.viewBase.click()             ; break;
-case ui.viewFocus.ref:           ui.viewFocus.click()            ; break;
-case ui.viewHover.ref:           ui.viewHover.click()            ; break;
-case ui.viewActive.ref:          ui.viewActive.click()           ; break;
-case ui.viewFocusHover.ref:      ui.viewFocusHover.click()       ; break;
-case ui.viewFocusActive.ref:     ui.viewFocusActive.click()      ; break;
-case ui.clearBase.ref:           ui.clearBase.click()            ; break;
-case ui.clearFocus.ref:          ui.clearFocus.click()           ; break;
-case ui.clearHover.ref:          ui.clearHover.click()           ; break;
-case ui.clearActive.ref:         ui.clearActive.click()          ; break;
-case ui.clearFocusHover.ref:     ui.clearFocusHover.click()      ; break;
-case ui.clearFocusActive.ref:    ui.clearFocusActive.click()     ; break;
 
 case ui.hdub_b6.ref:             ui.hdub_b6.click()              ; break;
 case ui.hdub_b4.ref:             ui.hdub_b4.click()              ; break;
@@ -223,6 +212,102 @@ case ui.hdub_b2.ref:             ui.hdub_b2.click()              ; break;
 case ui.hdub_i6.ref:             ui.hdub_i6.click()              ; break;
 case ui.hdub_i4.ref:             ui.hdub_i4.click()              ; break;
 case ui.hdub_i2.ref:             ui.hdub_i2.click()              ; break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+case ui.btnQuick1.ref:           ui.btnQuick1.click()            ; break;
+case ui.btnQuick2.ref:           ui.btnQuick2.click()            ; break;
+case ui.btnQuick3.ref:           ui.btnQuick3.click()            ; break;
+case ui.btnQuick4.ref:           ui.btnQuick4.click()            ; break;
+case ui.btn6.ref:                ui.btn6.click()                 ; break;
+case ui.btn4.ref:                ui.btn4.click()                 ; break;
+case ui.btn2.ref:                ui.btn2.click()                 ; break;
+case ui.img6.ref:                ui.img6.click()                 ; break;
+case ui.img4.ref:                ui.img4.click()                 ; break;
+case ui.img2.ref:                ui.img2.click()                 ; break;
+case ui.imgQuick1.ref:           ui.imgQuick1.click()            ; break;
+case ui.imgQuick2.ref:           ui.imgQuick2.click()            ; break;
+case ui.imgQuick3.ref:           ui.imgQuick3.click()            ; break;
+case ui.imgQuick4.ref:           ui.imgQuick4.click()            ; break;
+case ui.spriteClick1.ref:        ui.spriteClick1.click()         ; break;
+case ui.spriteClick2.ref:        ui.spriteClick2.click()         ; break;
+case ui.spriteClick3.ref:        ui.spriteClick3.click()         ; break;
+case ui.spriteClick4.ref:        ui.spriteClick4.click()         ; break;
+case ui.spriteLoop1.ref:         ui.spriteLoop1.click()          ; break;
+case ui.spriteLoop2.ref:         ui.spriteLoop2.click()          ; break;
+case ui.spriteLoop3.ref:         ui.spriteLoop3.click()          ; break;
+case ui.spriteLoop4.ref:         ui.spriteLoop4.click()          ; break;
+case ui.paint0.ref:              ui.paint0.click()               ; break;
+case ui.paint1.ref:              ui.paint1.click()               ; break;
+case ui.paint2.ref:              ui.paint2.click()               ; break;
+case ui.paint3.ref:              ui.paint3.click()               ; break;
+case ui.paint4.ref:              ui.paint4.click()               ; break;
+case ui.paint5.ref:              ui.paint5.click()               ; break;
+case ui.paint6.ref:              ui.paint6.click()               ; break;
+case ui.paint7.ref:              ui.paint7.click()               ; break;
+case ui.paint8.ref:              ui.paint8.click()               ; break;
+case ui.paint9.ref:              ui.paint9.click()               ; break;
+case ui.paint10.ref:             ui.paint10.click()              ; break;
+case ui.paint11.ref:             ui.paint11.click()              ; break;
+case ui.paint12.ref:             ui.paint12.click()              ; break;
+case ui.paint13.ref:             ui.paint13.click()              ; break;
+case ui.paint14.ref:             ui.paint14.click()              ; break;
+case ui.paint15.ref:             ui.paint15.click()              ; break;
+case ui.paint16.ref:             ui.paint16.click()              ; break;
+case ui.paint17.ref:             ui.paint17.click()              ; break;
+case ui.paint18.ref:             ui.paint18.click()              ; break;
+case ui.paint19.ref:             ui.paint19.click()              ; break;
+
+
+
+
+
+case ui.animateClick.ref:           ui.animateClick.click()            ; break;
+case ui.animateLoop.ref:            ui.animateLoop.click()             ; break;
+case ui.fewerFrames.ref:            ui.fewerFrames.click()             ; break;
+case ui.moreFrames.ref:             ui.moreFrames.click()              ; break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

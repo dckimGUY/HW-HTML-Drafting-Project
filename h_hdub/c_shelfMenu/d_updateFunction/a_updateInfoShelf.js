@@ -1,5 +1,18 @@
 function updateInfoShelf() {
 
+
+
+for (let j = 0; j < 20; j++) {
+ui["paint" + j].ref.style.outline = "";
+}
+paintClear.DOM.style.outline = "2px solid black";
+
+
+
+
+
+
+
 if (coinFocus!=null) {
 
 if (ui.buttonLink.ref.value=="") {
@@ -125,27 +138,6 @@ highlightLayer();
 
 
 
-
-
-
-
-
-function highlightButtonState() {
-const layerArray = ["loadBase", "loadFocus", "loadHover", "loadActive", "loadFocusHover", "loadFocusActive"];
-const layerArray2 = ["base", "focus", "hover", "active", "focusHover", "focusActive"];
-for (let j = 0; j < layerArray.length; j++) {
-if (sheetImages[layerArray2[j]].img&&sheetImages[layerArray2[j]].img.width!=0&&sheetImages[layerArray2[j]].img.height!=0) {
-ui[layerArray[j]].ref.style.outline       = "2px dashed black";
-ui[layerArray[j]].ref.style.outlineOffset = "-2px";
-} else {
-ui[layerArray[j]].ref.style.outline = "";
-}
-
-
-}
-}
-
-highlightButtonState();
 
 
 }

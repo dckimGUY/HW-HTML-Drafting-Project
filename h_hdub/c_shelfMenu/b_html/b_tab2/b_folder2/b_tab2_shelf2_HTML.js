@@ -45,13 +45,13 @@ shelfMenuHTML.tab2.folder2.HTML = `
 <button id="coin74420" class="button_grid button_coin74420" title=""></button>
 <button id="coin63249" class="button_grid button_coin63249" title=""></button>
 
-<button id="coin38634" class="button_ button_coin38634" title=""></button>
+<button id="coin38634" class="button_ button_coin38634" title="pull the number down from above"></button>
 <input id="coin18868" name="coin18868" class="input_ input_coin18868 dckimPixelMono" type="value" placeholder="empty" title="mouseIncrement, ctrl+shift+MMB scroll">
 <input id="coin28281" name="coin28281" class="input_coin28281" type="color" value="#FFFF00">
-<button id="coin41046" class="button_ button_coin41046" title=""></button>
+<button id="coin41046" class="button_ button_coin41046" title="pull the number down from above"></button>
 <input id="coin21315" name="coin21315" class="input_ input_coin21315 dckimPixelMono" type="value" placeholder="empty" title="ctrl+MMB scroll">
 <input id="coin30119" name="coin30119" class="input_coin30119" type="color" value="#00FFFF">
-<button id="coin07023" class="button_ button_coin07023" title=""></button>
+<button id="coin07023" class="button_ button_coin07023" title="pull the number down from above"></button>
 <input id="coin23538" name="coin23538" class="input_ input_coin23538 dckimPixelMono" type="value" placeholder="empty">
 <input id="coin32259" name="coin32259" class="input_coin32259" type="color" value="#FF00FF">
 
@@ -88,9 +88,9 @@ shelfMenuHTML.tab2.folder2.HTML = `
 <input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1">
 
 
-<input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005">
-<input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005">
-<input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005">
+<input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005" title="setting this to zero will speed up the program">
+<input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005" title="setting this to zero will speed up the program">
+<input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005" title="HTML parts opacity">
 <input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0.05" max="1"    step="0.005">
 
 <input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color">
