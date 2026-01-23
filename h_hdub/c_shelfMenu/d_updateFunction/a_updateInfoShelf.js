@@ -2,6 +2,7 @@ function updateInfoShelf() {
 
 
 
+
 for (let j = 0; j < 20; j++) {
 ui["paint" + j].ref.style.outline = "";
 }
@@ -21,7 +22,12 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 
 }
 
+
+/*
 document.getElementById("partStyle").value = coinFocus.lastElementChild.firstElementChild.nextElementSibling.getAttribute("style").replace(/\n/g, "").replace(/;/g, ";\n");
+*/
+
+
 
 document.getElementById("partCode").value = coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML;
 }
@@ -134,10 +140,5 @@ ui["setLayer" + (j + 1)].ref.style.outline = "";
 }
 
 highlightLayer();
-
-
-
-
-
 
 }

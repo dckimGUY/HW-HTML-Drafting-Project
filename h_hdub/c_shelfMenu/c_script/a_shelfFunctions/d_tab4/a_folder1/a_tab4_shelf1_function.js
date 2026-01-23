@@ -1,4 +1,48 @@
 
+
+
+
+
+function toggleSidebar4() {
+if (document.getElementById("sidebar4").style.left == "-148px") {
+document.getElementById("sidebar4").style.left = "0px";
+} else {
+document.getElementById("sidebar4").style.left = "-148px";
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const letters = [ "a", "b", "c", "d", "e", "f", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z" ]; 
 
 
@@ -119,12 +163,15 @@ localStorage.setItem("hwString",JSON.stringify(ui.hwString));
 
 ui.hwString.hwSel_a.string = "h20w20w20w20w20w20h50w50w50h40w20w30w40w10";
 
+function drawAllCells() {
 ["hwSel_a", "hwSel_b", "hwSel_c", "hwSel_d", "hwSel_e", "hwSel_f", "hwSel_g", "hwSel_i", "hwSel_j", "hwSel_k", "hwSel_l", "hwSel_m", "hwSel_n", "hwSel_o", "hwSel_p", "hwSel_q", "hwSel_r", "hwSel_s", "hwSel_t", "hwSel_u", "hwSel_v", "hwSel_x", "hwSel_y", "hwSel_z"].forEach((name) => {
 if (ui.hwString[name].string != "") {
 ui[name].img.src = drawCell(ui.hwString[name].string,ui.hwString[name].colour);
 }
 });
+}
 
+drawAllCells();
 
 
 
@@ -769,6 +816,101 @@ rowStart += array[j].rowHeight;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** THIS SETS UP THE REFERENCES ***/
+
+      ui.idNames =
+[
+    "hdubA",
+    "hdubB",
+    "hdubC",
+    "hdubD",
+    "hdubE",
+    "hdubF",
+    "hdubG",
+    "hdubH",
+    "hdubI",
+    "hdubJ",
+    "hdubK",
+    "hdubL",
+    "hdubM",
+    "hdubN",
+    "hdubO",
+    "hdubP",
+    "hdubQ",
+    "hdubR",
+    "hdubS",
+    "hdubT",
+    "hdubU",
+    "hdubV",
+    "hdubW",
+    "hdubY",
+    "hdubZ"
+];
+ui.idNames.forEach((name) => {
+ui[name]         = {};
+ui[name].ref     = document.getElementById(name);
+});
+
+/*** THIS SETS UP EVENT DELEGATION ***/
+
+document.addEventListener(       "click", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { return 0; } }); });
+document.addEventListener(  "mousewheel", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { return 0; } }); });
 
 
 

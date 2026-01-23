@@ -66,7 +66,7 @@ width: 84px;
 height: 107px;
 top: 158px;
 left: 98px;
-background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/covering.png?v=20260114204656");
+background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/covering.png?v=20260117214619");
 }
 
 
@@ -202,30 +202,118 @@ left: 22px;
 
 
 
-#buttonWordList            { position: absolute; border: none; margin: none; padding: none; left:    102px; top:    295px; width:     79px; height:    124px; outline-offset: -4px;
+#buttonWordList            { position: absolute; border: none; margin: none; padding: none; left:    102px; top:    296px; width:     77px;
+height:    128px; outline-offset: -4px;
 
-background-color: white; font-size: 8.5px;
+background-color: transparent;
+font-size: 8.5px;
 padding: 2px;
-border-radius: 2px;
+border-radius: 0px;
 text-align: center;
 }
 #buttonWordList:focus      { background-colour: white; }
 
-.button_popColours               { position: absolute; border: none; margin: none; padding: none; left:     18px; top:    295px; width:     78px; height:     36px; outline-offset: -4px;
-                                   background-color: transparent; border-radius: 4px; }
-.button_popColours:focus         { outline: 4px double white; }
-.button_popColours:hover         { outline: 8px double lime; }
-.button_popColours:active        { outline: 8px double magenta; }
-.button_popButton                { position: absolute; border: none; margin: none; padding: none; left:     18px; top:    339px; width:     78px; height:     36px; outline-offset: -4px;
-                                   background-color: rgba(127,255,127,0.75); outline: 4px double white; border-radius: 4px; }
-.button_popButton:focus          { outline: 4px double white; }
-.button_popButton:hover          { outline: 8px double lime; }
-.button_popButton:active         { outline: 8px double magenta; }
-.button_ringButton                { position: absolute; border: none; margin: none; padding: none; left:     18px; top:    383px; width:     78px; height:     36px; outline-offset: -4px;
-                                   background-color: rgba(127,255,255,0.75); outline: 4px double white; border-radius: 4px; }
-.button_ringButton:focus          { outline: 4px double white; }
-.button_ringButton:hover          { outline: 8px double lime; }
-.button_ringButton:active         { outline: 8px double magenta; }
+.button_popColours               { position: absolute; border: none; margin: none; padding: none; left:     21px; top:    297px; width:     73px; height:     33px; outline-offset: 1px;
+                                   background-color: transparent; border-radius: 2px; }
+.button_popColours:focus         {  }
+.button_popColours:hover         { outline: 2px dotted lime; }
+.button_popColours:active        { outline: 2px dotted magenta; }
+.button_popButton                { position: absolute; border: none; margin: none; padding: none; left:     21px; top:    339px; width:     73px; height:     33px; outline-offset: 1px;
+                                   background-color: transparent; border-radius: 2px; }
+.button_popButton:focus          {  }
+.button_popButton:hover          { outline: 2px dotted lime; }
+.button_popButton:active         { outline: 2px dotted magenta; }
+.button_ringButton                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    380px; width:     75px; height:     43px; outline-offset: 1px;
+                                   background-color: transparent; border-radius: 70px;
+
+
+font-size: 12px;
+color: transparent;
+
+
+}
+.button_ringButton:focus          {  }
+.button_ringButton:hover          {
+
+color: lime;
+text-shadow:
+-1px -0px 0px black,
+-0px -1px 0px black,
+-0px -0px 0px black,
+-1px -1px 0px black,
+ 1px -0px 0px black,
+-0px  1px 0px black,
+-0px -0px 0px black,
+ 1px  1px 0px black;
+
+
+}
+.button_ringButton:active         {
+
+color: magenta;
+text-shadow:
+-1px -0px 0px black,
+-0px -1px 0px black,
+-0px -0px 0px black,
+-1px -1px 0px black,
+ 1px -0px 0px black,
+-0px  1px 0px black,
+-0px -0px 0px black,
+ 1px  1px 0px black;
+
+}
+
+
+
+
+.navUpscale         {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+letter-spacing: 4px;
+left: 43px;
+top: 447px;
+width: 47px;
+height: 27px;
+background-color: transparent;
+font-size: 32px;
+color: lime;
+}
+
+
+
+
+
+.navAlphabet               { position: absolute; border: none; margin: none; padding: none;
+left:    103px;
+top:     431px;
+width:    75px;
+height:   22px;
+outline-offset: 1px;
+background-color: transparent;
+border-radius: 2px;
+}
+.navAlphabet:focus         {  }
+.navAlphabet:hover         { outline: 2px dotted lime;    }
+.navAlphabet:active        { outline: 2px dotted magenta; }
+
+
+
+
+
+.navNumber               { position: absolute; border: none; margin: none; padding: none;
+left:    103px;
+top:     459px;
+width:    75px;
+height:   21px;
+outline-offset: 1px;
+background-color: transparent;
+border-radius: 2px;
+}
+.navNumber:focus         {  }
+.navNumber:hover         { outline: 2px dotted lime;    }
+.navNumber:active        { outline: 2px dotted magenta; }
 
 
 
@@ -233,12 +321,19 @@ text-align: center;
 
 
 
-.input_buttonTooltip             { position: absolute; border: none; margin: none; padding: none; left:      0px; top:    328px; width:    152px; height:     16px; resize: none; padding: 2px; border-radius: 2px; outline: 2px solid grey; text-align: center; }
+
+
+
+
+
+
+
+.input_buttonTooltip             { display: none; position: absolute; border: none; margin: none; padding: none; left:      0px; top:    328px; width:    152px; height:     16px; resize: none; padding: 2px; border-radius: 2px; outline: 2px solid grey; text-align: center; }
 .input_buttonTooltip:hover  { outline: 2px solid cyan;    }
 .input_buttonTooltip:active { outline: 2px solid magenta; }
 .input_buttonTooltip:focus  { outline: 2px solid lime;    }
 
-.input_buttonLink             { position: absolute; border: none; margin: none; padding: none; left:      0px; top:    358px; width:    152px; height:     16px; resize: none; padding: 2px; border-radius: 2px; outline: 2px solid grey; text-align: center; }
+.input_buttonLink             { display: none; position: absolute; border: none; margin: none; padding: none; left:      0px; top:    358px; width:    152px; height:     16px; resize: none; padding: 2px; border-radius: 2px; outline: 2px solid grey; text-align: center; }
 .input_buttonLink:hover  { outline: 2px solid cyan;    }
 .input_buttonLink:active { outline: 2px solid magenta; }
 .input_buttonLink:focus  { outline: 2px solid lime;    }

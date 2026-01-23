@@ -990,8 +990,8 @@ key.n9.GUI.title = "- change font size";
 key.n0.GUI.title = "+ change font size";
 key.minus.GUI.title = "CTRL, browser scale";
 key.plus.GUI.title = "CTRL, browser scale";
-key.backspace.GUI.title = "open new tab";
-key.tab.GUI.title = "search, use shift for GREP search (use query in bash, paste file list back to a key)";
+key.backspace.GUI.title = "open file in new tab; 'SHIFT' to open again shadowTree";
+key.tab.GUI.title = "search, *broken?* use shift for GREP search (use query in bash, paste file list back to a key)";
 key.leftbracket.GUI.title = "set source top left, shift for bottom";
 key.rightbracket.GUI.title = "set source top right, shift for bottom";
 key.backslash.GUI.title = "alternate GUI, shift for wide";
@@ -2241,7 +2241,14 @@ grepBar.focus();
 
 }
 }
-/*backspace*/ if (kC ==   8) { event.preventDefault(); window.open("index.html","_blank"); }
+/*backspace*/ if (kC ==   8) {
+event.preventDefault();
+if (event.shiftKey) {
+window.open("shadowTree.html","_blank");
+} else if (!event.shiftKey) {
+window.open(`${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/")}`,"_blank");
+}
+}
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */

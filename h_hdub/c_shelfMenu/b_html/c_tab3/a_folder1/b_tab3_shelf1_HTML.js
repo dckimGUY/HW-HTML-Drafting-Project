@@ -66,8 +66,24 @@ shelfMenuHTML.tab3.folder1.HTML = `
 8
 9</textarea>
 <button id="popColours" class="button_ button_popColours dckimPixelMono" title="cycle colours and pop lines"></button>
-<button id="popButton" class="button_ button_popButton dckimPixelMono" title="pop lines into new buttons">pop lines</button>
-<button id="ringButton" class="button_ button_ringButton dckimPixelMono" title="set up a navigation ring from the list">nav ring</button>
+<button id="popButton" class="button_ button_popButton dckimPixelMono" title="pop lines into new buttons"></button>
+<button id="ringButton" class="button_ button_ringButton dckimPixelMono" title="set up a navigation ring from the list, use only two to get a 'back-and-forth'">navigation</button>
+
+<button id="navUpscale" class="navUpscale dckimPixelMono" disabled="true" title="that dot is written in pencil">16</button>
+
+<button id="navAlphabet" class="navAlphabet" onclick="
+document.getElementById('buttonWordList').value = alphabet.join('. \\n') + '. ';
+if (!event.shiftKey) {
+document.getElementById('buttonWordList').value = alphabet.reverse().join('. \\n') + '. ';
+alphabet.reverse();
+}
+"></button>
+<button id="navNumber"   class="navNumber"   onclick="
+document.getElementById('buttonWordList').value = ' 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26'.replace(/,/g, '. \\n') + '. ';
+if (!event.shiftKey) {
+document.getElementById('buttonWordList').value = ' 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26'.split(',').reverse().join(',').replace(/,/g, '. \\n') + '. ';
+}
+"></button>
 
 <button id="gridLock" class="button_ button_gridLock" title=""></button>
 

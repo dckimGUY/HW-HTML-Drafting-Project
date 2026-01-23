@@ -22,7 +22,7 @@ console.log(`
 Welcome to FONT-goblin ASCII-Art:
     A micro program for drawing textual art.
 
-    By using the enter key, we can copy the entire artwork to the computer clipboard.
+    By using the "ENTER" key, we can copy the entire artwork to the computer clipboard.
 
     Use the "TAB" key to change the colour scheme and use the "SPACE" key to enter the desired characters for the middle mouse input and right click input. Also notice that the "SHIFT" key will change the input character. Just test it out and you will see that the alphabet characters will become capitalized when using the left mouse button, and become lowercase without.
 
@@ -60,14 +60,14 @@ const mouseCursor  = [0,0];
 var artArray     = [];
 
 /* draw the initial array */
-var arrayWidth      = 18;
-var arrayHeight     = 48;
+var arrayHeight      = 42;
+var arrayWidth     = 47;
 
 function writeArray() {
 const arrayWide    = [];
-for (j = 0; j < arrayWidth; j++) {
-arrayWide[j] = " "; }
 for (j = 0; j < arrayHeight; j++) {
+arrayWide[j] = " "; }
+for (j = 0; j < arrayWidth; j++) {
 artArray[j] = Array.from(arrayWide); }
 }
 
@@ -76,19 +76,19 @@ writeArray();
 getArray();
 
 function getArray() {
-/*
 if (localStorage.getItem("artArray"))    {    artArray = JSON.parse(localStorage.getItem("artArray")); }
-if (localStorage.getItem("arrayWidth"))  {  arrayWidth = parseInt(localStorage.getItem("arrayWidth")); }
-if (localStorage.getItem("arrayHeight")) { arrayHeight = parseInt(localStorage.getItem("arrayHeight")); }
+/*
+if (localStorage.getItem("arrayHeight"))  {  arrayHeight = parseInt(localStorage.getItem("arrayHeight")); }
+if (localStorage.getItem("arrayWidth")) { arrayWidth = parseInt(localStorage.getItem("arrayWidth")); }
 */
 }
 
 
 function saveArray() {
-/*
 localStorage.setItem("artArray", JSON.stringify(artArray));
-localStorage.setItem("arrayWidth", arrayWidth);
+/*
 localStorage.setItem("arrayHeight", arrayHeight);
+localStorage.setItem("arrayWidth", arrayWidth);
 */
 }
 
@@ -104,24 +104,24 @@ document.body.append(canvas);
 var colourSet = {
 "names" : 
 	[
-	"blue",
-	"yellow",
 	"grey",
-	"lightgray"
+	"lightgray",
+	"blue",
+	"yellow"
 	],
 "rgb" : 
 	[
-	"rgb(  0,   0, 255)",
-	"rgb(255, 255,   0)",
 	"rgb(128, 128, 128)",
-	"rgb(211, 211, 211)"
+	"rgb(211, 211, 211)",
+	"rgb(  0,   0, 255)",
+	"rgb(255, 255,   0)"
 	],
 "inverted" : 
 	[
-	"rgb(255, 255,   0)",
-	"rgb(  0,   0, 255)",
 	"rgb(127, 127, 127)",
-	"rgb( 44,  44,  44)"
+	"rgb( 44,  44,  44)",
+	"rgb(255, 255,   0)",
+	"rgb(  0,   0, 255)"
 	]
 };
 
@@ -166,7 +166,7 @@ ctx.fillStyle = colour1;
 ctx.fillRect(0,0,window.innerWidth, window.innerHeight);
 ctx.fillStyle = colour2;
 ctx.strokeStyle = colour2;
-ctx.fillRect(0,0, arrayHeight * monoWidth,arrayWidth * monoWidth * 2);
+ctx.fillRect(0,0, arrayWidth * monoWidth,arrayHeight * monoWidth * 2);
 ctx.lineWidth = 2;
 ctx.fillStyle = colour1;
 ctx.fillStyle = colour2;
@@ -175,11 +175,11 @@ ctx.font = `normal ${monoWidth * 2}px dckimPixelMono`;
 ctx.textAlign = "start";
 ctx.textBaseline = "top";
 ctx.fillStyle = colour1;
-for (j = 0; j < arrayWidth; j++) {
-for (k = 0; k < arrayHeight; k++) {
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
 if (artArray[k][j]) {
 ctx.fillText(artArray[k][j],k * monoWidth - 1.5,j * monoWidth * 2); } } }
-ctx.strokeRect(0,0, arrayHeight * monoWidth,arrayWidth * monoWidth * 2);
+ctx.strokeRect(0,0, arrayWidth * monoWidth,arrayHeight * monoWidth * 2);
 }
 
 
@@ -200,15 +200,17 @@ redraw();
 
 
 function resize(direction) {
+/*
 switch (direction) {
-case    "up": --arrayWidth; break;
-case  "down": ++arrayWidth; break;
-case  "left":  --arrayHeight; break;
-case "right":  ++arrayHeight; break;
+case    "up": --arrayHeight; break;
+case  "down": ++arrayHeight; break;
+case  "left":  --arrayWidth; break;
+case "right":  ++arrayWidth; break;
 }
 saveArray();
 writeArray();
 redraw();
+*/
 }
 
 
@@ -285,25 +287,25 @@ redraw();
 
 
 function clear() {
-for (j = 0; j < arrayWidth; j++) {
-for (k = 0; k < arrayHeight; k++) {
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
 artArray[k][j] = " ";
 saveArray(); } } }
 
 
 function copy() {
 let string = "";
-for (j = 0; j < arrayWidth; j++) {
-for (k = 0; k < arrayHeight; k++) {
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
 if (artArray[k][j]) {
 string += artArray[k][j];
 } else {
 string += " ";
 }
 }
-if (j != arrayWidth - 1) {
+if (j != arrayHeight - 1) {
 string += "\n"; } }
-copyToClipboard(`<pre style="position: absolute; top: 0px; left: 0px; font-family: dckimPixelMono; color: ${colour1}; background-color: ${colour2};">` + string + '</pre>');
+copyToClipboard(`<pre style="position: absolute; top: 0px; left: 0px; font-family: inherit; color: inherit;">` + string + '</pre>');
 }
 
 

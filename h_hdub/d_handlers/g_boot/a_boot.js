@@ -399,6 +399,7 @@ ui.coin17325.ref.value = pictureOpacity;
 ui.menuWrapper.ref.style.opacity=pictureOpacity;
 }
 
+ui.menuWrapper.ref.style.transform="scale(2)";
 
 Picture.style.opacity=pictureOpacity;
 gridLayer.appendChild(Picture);
@@ -581,8 +582,8 @@ V.style.opacity=K;
 };
 
 Z();
-window.addEventListener("resize",()=>{Z(); redraw();});
-window.addEventListener("scroll",()=>{Z(); redraw();});
+window.addEventListener("resize",()=>{Z(); redraw(); drawSiteMap();});
+window.addEventListener("scroll",()=>{Z(); redraw(); drawSiteMap();});
 //document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
 var shelfMenuScale = 2;
@@ -1147,7 +1148,7 @@ spaceViewOff();
 
 
 /* Completion Message */
-
+console.clear();
 console.log(
 `%c${document.querySelector('meta[name="last-build"]').content}
 boot sequence successful:

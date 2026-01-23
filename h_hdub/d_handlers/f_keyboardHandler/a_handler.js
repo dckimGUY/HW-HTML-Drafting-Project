@@ -39,6 +39,10 @@ var shiftHold = false;
 
 document.addEventListener("keydown", (event) => { 
 
+
+
+drawSiteMap();
+
 if (splashScreenVisible==true) {
 splashScreen.remove();
 }
@@ -339,6 +343,9 @@ localStorage.setItem("grid0Viz", "false");
 } else {              grid0Viz = "true";
 localStorage.setItem("grid0Viz", "true"); }
 Z();                      }
+
+
+loadSidebar1();
 /*                                                                                                                                                    */
 
 redraw();
@@ -350,7 +357,7 @@ redraw();
 document.addEventListener("keyup", (event) => {
 
 
-
+drawSiteMap();
 
 edgeDetect.style.display= "none";
 

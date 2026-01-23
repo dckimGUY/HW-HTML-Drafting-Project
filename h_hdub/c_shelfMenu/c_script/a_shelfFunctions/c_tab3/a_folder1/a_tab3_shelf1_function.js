@@ -155,11 +155,11 @@ if (coinFocus!=null) {
 const targetButtonId = (Array.from(coinFocus.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";
 
 //if (targetButtonId.startsWith("button")) {
-//navLinkEntry = `(function(){try{document.getElementById('${targetButtonId}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${targetButtonId}').focus(); }catch{}})()`;
+//navLinkEntry = `(function(){try{document.getElementById('${targetButtonId}').scrollIntoView({ behavior:'auto'${navigationPoints[navPoint]} }); document.getElementById('${targetButtonId}').focus(); }catch{}})()`;
 //} else {
 
 
-navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${coinFocus.id}').focus(); }catch{}})()`;
+navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({ behavior:'auto'${navigationPoints[navPoint]} }); document.getElementById('${coinFocus.id}').focus(); }catch{}})()`;
 
 
 //}
@@ -202,16 +202,16 @@ coinFocus.id = "nav" + (parseInt(lastId.replace(/[a-z]/g, "")) + 1);
 }
 
 
+const upScaleFactor = parseInt(document.getElementById("navUpscale").innerText) / 10;
 
-
-coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
-coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * 304) + "px";
-coinFocus.style.top     = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
-coinFocus.dataset.top   = parseInt(window.scrollY) + (buttonStep.y * 112) + "px";
-coinFocus.style.width    = ui.canvasOutput2.ref.width  * 2 + "px";
-coinFocus.dataset.width  = ui.canvasOutput2.ref.width  * 2 + "px";
-coinFocus.style.height   = ui.canvasOutput2.ref.height * 2 + "px";
-coinFocus.dataset.height = ui.canvasOutput2.ref.height * 2 + "px";
+coinFocus.style.left    = parseInt(window.scrollX) + (buttonStep.x * ui.canvasOutput2.ref.height * upScaleFactor) + "px";
+coinFocus.dataset.left  = parseInt(window.scrollX) + (buttonStep.x * ui.canvasOutput2.ref.height * upScaleFactor) + "px";
+coinFocus.style.top     = parseInt(window.scrollY) + (buttonStep.y * ui.canvasOutput2.ref.height * upScaleFactor) + "px";
+coinFocus.dataset.top   = parseInt(window.scrollY) + (buttonStep.y * ui.canvasOutput2.ref.height * upScaleFactor) + "px";
+coinFocus.style.width    = ui.canvasOutput2.ref.width  * upScaleFactor + "px";
+coinFocus.dataset.width  = ui.canvasOutput2.ref.width  * upScaleFactor + "px";
+coinFocus.style.height   = ui.canvasOutput2.ref.height * upScaleFactor + "px";
+coinFocus.dataset.height = ui.canvasOutput2.ref.height * upScaleFactor + "px";
 coinFocus.div.innerHTML = buttonHTML1 + navLinkEntry + buttonHTML2;
 flipAnchorZ([,,,false,]);
 coinFocus.div.lastElementChild.style.width  = "100%";
@@ -525,7 +525,7 @@ document.getElementById(lastId).remove();
 const expression = new RegExp(lastId, "g");
 setTimeout(() => {
 document.getElementById(firstId).innerHTML = document.getElementById(firstId).innerHTML.replace(expression, coinFocus.id);
-}, (count + 1) * 100);
+}, (count + 5) * 100);
 }
 }
 
@@ -568,9 +568,9 @@ popTheButtonsOut(false);
 
 ui.gridLock.click                = function() {
        if (event.shiftKey) {
-gridLock260(window.innerWidth,window.innerHeight, 6, 10);
+gridLock260(window.innerWidth,window.innerHeight, 6, 5);
 } else if (!event.shiftKey) {
-gridLock260(window.innerWidth,window.innerHeight, 6,  5);
+gridLock260(parseInt(document.getElementById("coin23538").value),parseInt(document.getElementById("coin23538").value), 6,  5);
 }
 };
 
@@ -578,35 +578,7 @@ function gridLock260(locX, locY, depth, tall) {
 
 ui.gridLock.ref.blur();
 
-const alphabet =
-[
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z"
-];
+
 
 let gridLockId = "";
 
@@ -683,7 +655,7 @@ setTimeout(() => {
 ui.buttonTooltip.ref.value = "";
 ui.textEntry.ref.value = alphabet[j] + k;
 drawButton7();
-let navLinkEntry = `(function(){ document.getElementById('${gridLockId}').scrollIntoView({ behavior:'smooth', block: 'center', inline: 'center' }); })()`;
+let navLinkEntry = `(function(){ document.getElementById('${gridLockId}').scrollIntoView(); })()`; /*{ behavior:'', block: 'start', inline: 'start' }*/
 let lastId = "";
 if (coinFocus != null) {
 lastId = coinFocus.id.toString();

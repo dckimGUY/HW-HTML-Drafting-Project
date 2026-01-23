@@ -1,3 +1,291 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function toggleSidebar1() {
+if (document.getElementById("sidebar").style.left == "-148px") {
+document.getElementById("sidebar").style.left = "0px";
+} else {
+document.getElementById("sidebar").style.left = "-148px";
+}
+}
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+function loadSidebar1() {
+const itemSystem = document.getElementById("itemSystem");
+itemSystem.innerHTML = "";
+const topPad = document.createElement("div");
+      topPad.classList = "topPad";
+      topPad.dataset.scroll = "false";
+const bottomPad = document.createElement("div");
+      bottomPad.classList = "bottomPad";
+      bottomPad.dataset.scroll = "false";
+itemSystem.append(topPad);
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+const container = document.createElement("div");
+      container.classList = "coinItemContainer";
+const itemButton = document.createElement("button");
+      itemButton.classList = "coinItemList";
+      itemButton.dataset.scroll = "false";
+      itemButton.setAttribute("onclick", `
+coinFocus1 = coinFocus;
+coinFocus = document.getElementById('${utilityLayer0.children[j].id}');
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+document.getElementById('${utilityLayer0.children[j].id}').scrollIntoView({behavior:'auto', block: 'center', inline: 'center'});
+updateInfoShelf();
+`);
+      itemButton.innerText = `${utilityLayer0.children[j].id}`;
+const deletionButton = document.createElement("button");
+      deletionButton.classList = "coinDelete";
+      deletionButton.dataset.scroll = "false";
+      deletionButton.setAttribute("onclick", `
+coinFocus1 = coinFocus;
+coinFocus = document.getElementById('${utilityLayer0.children[j].id}');
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+deleteCoin([,88,120]);
+updateInfoShelf();
+if (coinFocus != null) { coinFocus.scrollIntoView({behavior:'auto', block: 'center', inline: 'center'});
+}
+`);
+      deletionButton.innerText = "x";
+if (coinFocus != null) {
+       if (utilityLayer0.children[j].dataset.coinTrip == "0") {
+itemButton.style.backgroundColor = greyColour;
+} else if (utilityLayer0.children[j].dataset.coinTrip == "1") {
+itemButton.style.backgroundColor = pinkColour;
+} else if (utilityLayer0.children[j].dataset.coinTrip == "?") {
+itemButton.style.backgroundColor = blueColour;
+}
+}
+if (coinFocus != null && utilityLayer0.children[j] == coinFocus) {
+      itemButton.classList = "coinItemList coinItemSelected";
+      itemButton.style.outlineColor = selectedColour;
+}
+container.appendChild(itemButton);
+container.appendChild(deletionButton);
+itemSystem.appendChild(container);
+}
+itemSystem.append(bottomPad);
+
+
+
+
+
+
+const phantomLair = document.getElementById("phantomLair");
+phantomLair.innerHTML = "";
+for (let j = 0; j < singlePasteBuffer.value.length; j++) {
+const container = document.createElement("div");
+      container.classList = "coinItemContainer";
+const itemButton = document.createElement("button");
+      itemButton.classList = "phantomItemList";
+      itemButton.dataset.scroll = "false";
+      itemButton.setAttribute("onclick", `
+pasteSingle();
+if (coinFocus != null) { coinFocus.scrollIntoView({behavior:'auto', block: 'center', inline: 'center'}); }
+updateInfoShelf();
+`);
+      itemButton.innerText = `${singlePasteBuffer.value[j].id}`;
+if (coinFocus != null) {
+       if (singlePasteBuffer.value[j].dataset.coinTrip == "0") {
+//itemButton.style.backgroundColor = greyColour;
+} else if (singlePasteBuffer.value[j].dataset.coinTrip == "1") {
+//itemButton.style.backgroundColor = pinkColour;
+} else if (singlePasteBuffer.value[j].dataset.coinTrip == "?") {
+//itemButton.style.backgroundColor = blueColour;
+}
+itemButton.style.backgroundColor = "lightgrey";
+}
+if (coinFocus != null && singlePasteBuffer.value[j] == coinFocus) {
+      itemButton.classList = "coinItemList coinItemSelected";
+      itemButton.style.outlineColor = selectedColour;
+}
+container.appendChild(itemButton);
+phantomLair.prepend(container);
+}
+
+for (let j = 0; j < phantomLair.children.length; j++) {
+      phantomLair.children[j].style.opacity = 0.65 - j/16;
+if (j == 0) {
+      phantomLair.children[j].style.opacity = 0.95;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const container = document.createElement("div");
+      container.classList = "coinItemContainer";
+
+const itemButton0 = document.createElement("button");
+      itemButton0.classList = "addItemList";
+      itemButton0.dataset.scroll = "false";
+      itemButton0.style.backgroundColor = blueColour;
+      itemButton0.innerText = "+";
+      itemButton0.setAttribute("onclick", `
+insertNewCoin([null,78,78]);
+coinFocus.style.left    = parseInt(window.scrollX) + "px";
+coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
+coinFocus.style.top     = parseInt(window.scrollY) + "px";
+coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
+coinFocus.div.contentEditable = "true";
+coinFocus.div.style.fontSize = "32px";
+flipAnchorZ([,,,false,]);
+coinFocus.dataset.coinTrip = "?";
+readCoins();
+recoverColouration();
+`);
+const itemButton1 = document.createElement("button");
+      itemButton1.classList = "addItemList";
+      itemButton1.dataset.scroll = "false";
+      itemButton1.style.backgroundColor = pinkColour;
+      itemButton1.innerText = "+";
+      itemButton1.setAttribute("onclick", `
+insertNewCoin([null,78,78]);
+coinFocus.style.left    = parseInt(window.scrollX) + "px";
+coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
+coinFocus.style.top     = parseInt(window.scrollY) + "px";
+coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
+coinFocus.div.contentEditable = "true";
+coinFocus.div.style.fontSize = "32px";
+flipAnchorZ([,,,false,]);
+coinFocus.dataset.coinTrip = "1";
+readCoins();
+recoverColouration();
+`);
+const itemButton2 = document.createElement("button");
+      itemButton2.classList = "addItemList";
+      itemButton2.dataset.scroll = "false";
+      itemButton2.style.backgroundColor = greyColour;
+      itemButton2.innerText = "+";
+      itemButton2.setAttribute("onclick", `
+insertNewCoin([null,78,78]);
+coinFocus.style.left    = parseInt(window.scrollX) + "px";
+coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
+coinFocus.style.top     = parseInt(window.scrollY) + "px";
+coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
+coinFocus.div.contentEditable = "true";
+coinFocus.div.style.fontSize = "32px";
+flipAnchorZ([,,,false,]);
+coinFocus.dataset.coinTrip = "0";
+readCoins();
+recoverColouration();
+
+`);
+
+
+container.appendChild(itemButton0);
+container.appendChild(itemButton1);
+container.appendChild(itemButton2);
+const addSystem = document.getElementById("addSystem");
+addSystem.innerHTML = "";
+addSystem.appendChild(container);
+
+
+
+
+for (let j = 0; j < itemSystem.children.length; j++) {
+
+try {
+if (itemSystem.children[j].innerText.includes(coinFocus.id.toString())) {
+itemSystem.children[j].scrollIntoView({behavior:'auto', block: 'center', inline: 'center'});
+}
+} catch {}
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ui.xrayGrey.click                = function() { if (xrayVision=="true") { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } else { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } };
 ui.xrayMagenta.click             = function() { if (xrayVision=="true") { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } else { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } };
 ui.xrayCyan.click                = function() { if (xrayVision=="true") { xrayVision="false"; localStorage.setItem("xrayVision", "false"); } else { xrayVision="true"; localStorage.setItem("xrayVision", "true"); } };
@@ -221,6 +509,270 @@ ui.codeTab.click                 = function() { partText.style.display =  "none"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** THIS SETS UP THE REFERENCES ***/
+const styleMenu = {};
+[
+    "styleFG",
+    "styleBG",
+    "styleOL",
+    "shadowRadius7",
+    "shadowRadius8",
+    "shadowRadius9",
+    "shadowRadius4",
+    "shadowRadius5",
+    "shadowRadius6",
+    "shadowRadius1",
+    "shadowRadius2",
+    "shadowRadius3",
+    "indentLine",
+    "fontShadow",
+    "charWord",
+    "fontSize",
+    "textAlignLeft",
+    "textAlignCenter",
+    "textAlignRight",
+    "outlineSize",
+    "outlineStyle",
+    "padding",
+    "opacity"
+].forEach((name) => {
+styleMenu[name]       = {};
+styleMenu[name].ref   = document.getElementById(name);
+});
+
+/*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
+          styleMenu.shadowRadius7.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius8.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius9.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius4.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius5.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius6.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius1.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius2.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius3.click = function() {                        }; /*                                                */
+             styleMenu.indentLine.click = function() { coinFocus.div.style.textIndent = ""; coinFocus.div.style.lineHeight = ""; }; /*                                                */
+             styleMenu.fontShadow.click = function() {                        }; /*                                                */
+               styleMenu.charWord.click = function() {
+
+       if (coinFocus.lastElementChild.style.overflow=="hidden") {
+coinFocus.lastElementChild.style.overflow="auto";
+noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style='color:lime;'>auto</span>",durationS);
+} else if (coinFocus.lastElementChild.style.overflow=="auto") {
+coinFocus.lastElementChild.style.overflow="visible";
+noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style='color:white;'>visible</span>",durationS);
+} else {
+coinFocus.lastElementChild.style.overflow="hidden";
+noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style='color:red;'>hidden</span>",durationS);
+}
+
+}; /*                                                */
+               styleMenu.fontSize.click = function() {                        }; /*                                                */
+          styleMenu.textAlignLeft.click = function() {
+coinFocus.div.style.textAlign = "justify";
+}; /*                                                */
+        styleMenu.textAlignCenter.click = function() {
+coinFocus.div.style.textAlign = "center";}; /*                                                */
+         styleMenu.textAlignRight.click = function() {
+coinFocus.div.style.textAlign = "right";}; /*                                                */
+
+
+
+            styleMenu.outlineSize.click = function() {
+       if ( event.shiftKey) {
+coinFocus.main.style.outlineOffset = "0px";
+} else if (!event.shiftKey) {
+try {
+coinFocus.main.style.outlineOffset = -parseFloat(coinFocus.main.style.outlineWidth) / 2 + "px";
+} catch {}
+}
+}; /*                                                */
+
+
+
+           styleMenu.outlineStyle.click = function() {
+const part = coinFocus.lastElementChild;
+function evaluateOutline() {
+part.style.outlineStyle = `${outlineStyleArray[outlineTunedStyle]}`;
+}
+outlineTunedStyle -= 1;
+if (outlineTunedStyle < 0) { outlineTunedStyle = outlineStyleArray.length - 1; }
+evaluateOutline();
+}; /*                                                */
+
+
+                styleMenu.padding.click = function() { coinFocus.div.style.padding = "0px";                       }; /*                                                */
+
+
+                styleMenu.opacity.click = function() {
+if (!event.shiftKey) {
+coinFocus.main.style.opacity = 1;
+} else if ( event.shiftKey) {
+coinFocus.main.style.opacity = 0;
+}
+
+
+
+}; /*                                                */
+
+       styleMenu.shadowRadius7.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius8.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius9.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius4.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius5.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius6.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius1.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius2.dblclick = function() {                        }; /*                                                */
+       styleMenu.shadowRadius3.dblclick = function() {                        }; /*                                                */
+          styleMenu.indentLine.dblclick = function() {                        }; /*                                                */
+          styleMenu.fontShadow.dblclick = function() {                        }; /*                                                */
+            styleMenu.charWord.dblclick = function() {                        }; /*                                                */
+            styleMenu.fontSize.dblclick = function() {                        }; /*                                                */
+       styleMenu.textAlignLeft.dblclick = function() {                        }; /*                                                */
+     styleMenu.textAlignCenter.dblclick = function() {                        }; /*                                                */
+      styleMenu.textAlignRight.dblclick = function() {                        }; /*                                                */
+         styleMenu.outlineSize.dblclick = function() {                        }; /*                                                */
+        styleMenu.outlineStyle.dblclick = function() {                        }; /*                                                */
+             styleMenu.padding.dblclick = function() {                        }; /*                                                */
+             styleMenu.opacity.dblclick = function() {                        }; /*                                                */
+
+
+
+
+          styleMenu.styleFG.input = function() {
+if (coinFocus != null) {
+coinFocus.div.style.color = styleMenu.styleFG.ref.value
+}
+}; /*                                                */
+          styleMenu.styleBG.input = function() {
+if (coinFocus != null) {
+coinFocus.div.style.backgroundColor = styleMenu.styleBG.ref.value
+}
+}; /*                                                */
+          styleMenu.styleOL.input = function() {
+if (coinFocus != null) {
+let oldOutline = coinFocus.main.style.outline;
+coinFocus.main.style.outlineColor = styleMenu.styleOL.ref.value
+}
+}; /*                                                */
+
+
+
+          styleMenu.shadowRadius7.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius8.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius9.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius4.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius5.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius6.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius1.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius2.input = function() {                        }; /*                                                */
+          styleMenu.shadowRadius3.input = function() {                        }; /*                                                */
+             styleMenu.indentLine.input = function() {                        }; /*                                                */
+             styleMenu.fontShadow.input = function() {                        }; /*                                                */
+               styleMenu.charWord.input = function() {                        }; /*                                                */
+               styleMenu.fontSize.input = function() {                        }; /*                                                */
+          styleMenu.textAlignLeft.input = function() {                        }; /*                                                */
+        styleMenu.textAlignCenter.input = function() {                        }; /*                                                */
+         styleMenu.textAlignRight.input = function() {                        }; /*                                                */
+            styleMenu.outlineSize.input = function() {                        }; /*                                                */
+           styleMenu.outlineStyle.input = function() {                        }; /*                                                */
+                styleMenu.padding.input = function() {                        }; /*                                                */
+                styleMenu.opacity.input = function() {                        }; /*                                                */
+
+
+
+/*** THIS SETS UP EVENT DELEGATION FOR "CLICK" EVENT ***/
+document.addEventListener("click", function() {
+if (coinFocus == null) return;
+switch (event.target) {
+       case styleMenu.shadowRadius7.ref:         styleMenu.shadowRadius7.click(); break;
+       case styleMenu.shadowRadius8.ref:         styleMenu.shadowRadius8.click(); break;
+       case styleMenu.shadowRadius9.ref:         styleMenu.shadowRadius9.click(); break;
+       case styleMenu.shadowRadius4.ref:         styleMenu.shadowRadius4.click(); break;
+       case styleMenu.shadowRadius5.ref:         styleMenu.shadowRadius5.click(); break;
+       case styleMenu.shadowRadius6.ref:         styleMenu.shadowRadius6.click(); break;
+       case styleMenu.shadowRadius1.ref:         styleMenu.shadowRadius1.click(); break;
+       case styleMenu.shadowRadius2.ref:         styleMenu.shadowRadius2.click(); break;
+       case styleMenu.shadowRadius3.ref:         styleMenu.shadowRadius3.click(); break;
+          case styleMenu.indentLine.ref:            styleMenu.indentLine.click(); break;
+          case styleMenu.fontShadow.ref:            styleMenu.fontShadow.click(); break;
+            case styleMenu.charWord.ref:              styleMenu.charWord.click(); break;
+            case styleMenu.fontSize.ref:              styleMenu.fontSize.click(); break;
+       case styleMenu.textAlignLeft.ref:         styleMenu.textAlignLeft.click(); break;
+     case styleMenu.textAlignCenter.ref:       styleMenu.textAlignCenter.click(); break;
+      case styleMenu.textAlignRight.ref:        styleMenu.textAlignRight.click(); break;
+         case styleMenu.outlineSize.ref:           styleMenu.outlineSize.click(); break;
+        case styleMenu.outlineStyle.ref:          styleMenu.outlineStyle.click(); break;
+             case styleMenu.padding.ref:               styleMenu.padding.click(); break;
+             case styleMenu.opacity.ref:               styleMenu.opacity.click(); break;
+}});
+
+/*** THIS SETS UP EVENT DELEGATION FOR "DBLCLICK" EVENT ***/
+document.addEventListener("dblclick", function() {
+switch (event.target) {
+       case styleMenu.shadowRadius7.ref:      styleMenu.shadowRadius7.dblclick(); break;
+       case styleMenu.shadowRadius8.ref:      styleMenu.shadowRadius8.dblclick(); break;
+       case styleMenu.shadowRadius9.ref:      styleMenu.shadowRadius9.dblclick(); break;
+       case styleMenu.shadowRadius4.ref:      styleMenu.shadowRadius4.dblclick(); break;
+       case styleMenu.shadowRadius5.ref:      styleMenu.shadowRadius5.dblclick(); break;
+       case styleMenu.shadowRadius6.ref:      styleMenu.shadowRadius6.dblclick(); break;
+       case styleMenu.shadowRadius1.ref:      styleMenu.shadowRadius1.dblclick(); break;
+       case styleMenu.shadowRadius2.ref:      styleMenu.shadowRadius2.dblclick(); break;
+       case styleMenu.shadowRadius3.ref:      styleMenu.shadowRadius3.dblclick(); break;
+          case styleMenu.indentLine.ref:         styleMenu.indentLine.dblclick(); break;
+          case styleMenu.fontShadow.ref:         styleMenu.fontShadow.dblclick(); break;
+            case styleMenu.charWord.ref:           styleMenu.charWord.dblclick(); break;
+            case styleMenu.fontSize.ref:           styleMenu.fontSize.dblclick(); break;
+       case styleMenu.textAlignLeft.ref:      styleMenu.textAlignLeft.dblclick(); break;
+     case styleMenu.textAlignCenter.ref:    styleMenu.textAlignCenter.dblclick(); break;
+      case styleMenu.textAlignRight.ref:     styleMenu.textAlignRight.dblclick(); break;
+         case styleMenu.outlineSize.ref:        styleMenu.outlineSize.dblclick(); break;
+        case styleMenu.outlineStyle.ref:       styleMenu.outlineStyle.dblclick(); break;
+             case styleMenu.padding.ref:            styleMenu.padding.dblclick(); break;
+             case styleMenu.opacity.ref:            styleMenu.opacity.dblclick(); break;
+}});
+
+/*** THIS SETS UP EVENT DELEGATION FOR "INPUT" EVENT ***/
+document.addEventListener("input", function() {
+switch (event.target) {
+       case styleMenu.styleFG.ref:         styleMenu.styleFG.input(); break;
+       case styleMenu.styleBG.ref:         styleMenu.styleBG.input(); break;
+       case styleMenu.styleOL.ref:         styleMenu.styleOL.input(); break;
+}});
 
 
 

@@ -43,8 +43,8 @@ shelfMenuHTML.tab4.folder2.style = `
 .button_elementArticle           { position: absolute; border: none; margin: none; padding: none; left:    109px; top:    360px; width:     76px; height:     17px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/article.png?v=20260102084154");        }
 .button_elementArticle:focus     { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/article_focus.png?v=20260102084202");  }
-.button_elementArticle:hover     { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/article_hover.png?v=20260102084309");  }
-.button_elementArticle:active    { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/article_active.png?v=20260102084333"); }
+.button_elementArticle:hover     { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/article_hover.png?v=20260118025843");  }
+.button_elementArticle:active    { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/article_active.png?v=20260118025912"); }
 .button_elementColour            { position: absolute; border: none; margin: none; padding: none; left:    117px; top:    391px; width:     65px; height:     14px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/colour.png?v=20260102084723");        }
 .button_elementColour:focus      { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/b_folder2/colour_focus.png?v=20260102084757");  }

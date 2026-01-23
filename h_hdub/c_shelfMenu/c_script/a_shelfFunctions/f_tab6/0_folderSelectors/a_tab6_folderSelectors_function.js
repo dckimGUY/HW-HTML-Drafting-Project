@@ -1,6 +1,10 @@
 /* ARE YOU SURE YOU WANT TO TAKE ADVANTAGE OF THE WHITESPACE LIKE THAT? YES... */
                        ui.folder61button.click =
-             function() { folder6Selector(1); };
+             function() { folder6Selector(1);
+if (event.shiftKey) {
+window.open("n_art/ASCII_art_fullVersion.html","_blank",`height=600,width=800,top=0,left=0,resizable=yes,noopener=no`);
+}
+};
                        ui.folder62button.click =
              function() { folder6Selector(2); };
                  function folder6Selector(folderNumber) { for (let j = 1; j < 3; j++) {

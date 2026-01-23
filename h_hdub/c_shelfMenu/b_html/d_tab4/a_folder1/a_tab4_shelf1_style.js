@@ -2,6 +2,71 @@ shelfMenuHTML.tab4.folder1.style = `
 <style>
 
 
+
+
+
+.sidebarOpener4 {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+left: 0px;
+top: 30px;
+width: 25px;
+height: 32px;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background: transparent;
+background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sidebar.png?v=20260118105805");
+z-index: 500;
+}
+
+.sidebarOpener4:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sidebar_focus.png?v=20260118103919"); }
+.sidebarOpener4:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sidebar_hover.png?v=20260122155608"); }
+.sidebarOpener4:active          { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sidebar_active.png?v=20260122155713"); }
+
+.sidebar4 {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+left: 0px;
+top: 36px;
+width: 174px;
+height: 463px;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/folder-1-sidebar.png?v=20260123090624");
+}
+
+
+
+.fMan {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+left: 27px;
+top: 62px;
+width: 150px;
+height: 300px;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background: transparent;
+transform-origin: top left;
+transform: scale(0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
 .hwSel {
 user-select: none;
 pointer-events: none;
@@ -151,7 +216,7 @@ image-rendering  :   pixelated;
 
 
 
-.input_hdubSingleEntry           { position: absolute; border: none; margin: none; padding: none; left:     7px; top:     67px; width:    186px; height:     50px; outline-offset: -4px; font-size: 10px;
+.input_hdubSingleEntry           { position: absolute; border: none; margin: none; padding: none; left:     27px; top:     67px; width:    166px; height:     50px; outline-offset: -4px; font-size: 10px;
 padding-top: 5px;
 background-color: rgba(255,255,255,0.5);
 }
@@ -211,6 +276,20 @@ outline: 1px solid lime;
 .button_hdubSheetTemplate1x:hover { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sheet1_hover.png?v=20260106204232");  }
 .button_hdubSheetTemplate1x:active { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sheet1_active.png?v=20260106204204"); }
 .button_hdubSheetTemplate4x      { position: absolute; border: none; margin: none; padding: none; left:     7px; top:    474px; width:     186px; height:     18px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 `;
 

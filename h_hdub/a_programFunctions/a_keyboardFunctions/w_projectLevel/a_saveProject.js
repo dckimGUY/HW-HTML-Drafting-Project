@@ -10,6 +10,20 @@ topLayer[topLayer.a_currentLayer].echelon = pageEchelon / 100000000;
 saveTheme("currentTheme");
 topLayer.projectThemes = userCustomTheme;
 
+
+
+topLayer.singlePasteBuffer = singlePasteBuffer;
+topLayer.multiplePasteBuffer = multiplePasteBuffer;
+topLayer.sel0PasteBuffer = sel0PasteBuffer;
+topLayer.sel1PasteBuffer = sel1PasteBuffer;
+topLayer.sel2PasteBuffer = sel2PasteBuffer;
+topLayer.hold = hold;
+
+topLayer.hwString = ui.hwString;
+
+
+
+
 let json = JSON.stringify(topLayer, (key, value) => {
 if (value instanceof Element) { return value.outerHTML; }
 return value; }, 0);

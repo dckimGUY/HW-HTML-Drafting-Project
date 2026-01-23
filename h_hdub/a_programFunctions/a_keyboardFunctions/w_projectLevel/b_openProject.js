@@ -42,14 +42,32 @@ coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 }
 if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
-makeTopLayer("b_layer1")
+makeTopLayer("b_layer1");
+
+
+
+
+singlePasteBuffer = topLayer.singlePasteBuffer;
+multiplePasteBuffer = topLayer.multiplePasteBuffer;
+sel0PasteBuffer = topLayer.sel0PasteBuffer;
+sel1PasteBuffer = topLayer.sel1PasteBuffer;
+sel2PasteBuffer = topLayer.sel2PasteBuffer;
+hold = topLayer.hold;
+ui.hwString = topLayer.hwString;
+
+
+
 updateInfoShelf();
 redraw();
 readCoins();
 Z();
+drawAllCells();
 ui.projectName.ref.value = topLayer.aa_project_name;
 userCustomTheme = topLayer.projectThemes;
 loadTheme("currentTheme");
+
+
+
 
 
 
@@ -63,4 +81,23 @@ document.body.appendChild(input);
 input.click();
 input.remove();
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

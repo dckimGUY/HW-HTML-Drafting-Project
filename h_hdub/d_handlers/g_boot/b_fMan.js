@@ -26,7 +26,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    w    */ if (kC ==  87 && cC == 119) { noteCoin("W<br><span style='font-size: 0.5em;'>window mode</span>",durationC); flipWindowEdge(); modeRouter(e,0);                           }
 /*    e    */ if (kC ==  69 && cC == 101) {                                                                              flipEdge(); modeRouter(e,5);                                   }
 /*    r    */ if (kC ==  82 && cC == 114) { noteCoin("R<br><span style='font-size: 0.5em;'>flip image</span>",durationC); innerRotationMin();                                           }
-/*    t    */ if (kC ==  84 && cC == 116) { noteCoin("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationC); modeRouter(e,8); if (lastKey=="T") { swapColours(); }        }
+/*    t    */ if (kC ==  84 && cC == 116) { noteCoin("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationC); modeRouter(e,8); if (lastKey=="t") { swapColours(); }        }
 /*    y    */ if (kC ==  89 && cC == 121) { wrapDocument(); noteCoin("Y<br><span style='font-size: 0.5em;'>wrap snug</span>",durationC);                                                }
 /*    u    */ if (kC ==  85 && cC == 117) { unwrapParts(); noteCoin("U<br><span style='font-size: 0.5em;'>unwrap</span>",durationC);                                                    }
 /*    i    */ if (kC ==  73 && cC == 105) {                          aioNRouter(keyInfo);                                                                                               }

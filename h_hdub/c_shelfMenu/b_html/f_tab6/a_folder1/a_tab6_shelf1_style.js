@@ -1,7 +1,6 @@
 shelfMenuHTML.tab6.folder1.style = `
 <style>
 
-
 .artProgram {
 position: absolute;
 top: 156px;
@@ -24,9 +23,5 @@ transform-origin: top left;
 transform: scale(0.125);
 }
 
-
-
-
 </style>
 `;
-

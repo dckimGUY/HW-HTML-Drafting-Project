@@ -1,0 +1,569 @@
+if (localStorage.getItem("animatorTiming")) {
+document.getElementById("animationTiming").value = localStorage.getItem("animatorTiming");
+}
+
+
+
+document.addEventListener("mousewheel", (event) => {
+if (event.target == ui.hdubCanvas.ref) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+ui.hdubSheetTemplate4x.ref.value++;displayDemo();
+} else if (event.wheelDelta < 0) {
+ui.hdubSheetTemplate4x.ref.value--;displayDemo();
+}
+} else if (event.target == document.getElementById("navUpscale")) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+document.getElementById("navUpscale").innerText = parseInt(document.getElementById("navUpscale").innerText) + 1;
+} else if (event.wheelDelta < 0) {
+document.getElementById("navUpscale").innerText = parseInt(document.getElementById("navUpscale").innerText) - 1;
+}
+if (parseInt(document.getElementById("navUpscale").innerText) < 1) {
+document.getElementById("navUpscale").innerText = 1;
+}
+if (parseInt(document.getElementById("navUpscale").innerText) > 64) {
+document.getElementById("navUpscale").innerText = 64;
+}
+} else if (event.target == document.getElementById("partY")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + mouseIncrement);
+}                              if (ui.partY.ref.value  < mouseIncrement)
+                                 { ui.partY.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + T);
+}                              if (ui.partY.ref.value  < T)
+                                 { ui.partY.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + 2);
+}                              if (ui.partY.ref.value  < 2)
+                                 { ui.partY.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+                 parseInt(parseInt(ui.partY.ref.value) + 1);
+}                              if (ui.partY.ref.value  < 1)
+                                 { ui.partY.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.top =     parseInt(ui.partY.ref.value) + "px";
+coinFocus.dataset.top =   parseInt(ui.partY.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("partX")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + mouseIncrement);
+}                              if (ui.partX.ref.value  < mouseIncrement)
+                                 { ui.partX.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + T);
+}                              if (ui.partX.ref.value  < T)
+                                 { ui.partX.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + 2);
+}                              if (ui.partX.ref.value  < 2)
+                                 { ui.partX.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+                 parseInt(parseInt(ui.partX.ref.value) + 1);
+}                              if (ui.partX.ref.value  < 1)
+                                 { ui.partX.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.left =    parseInt(ui.partX.ref.value) + "px";
+coinFocus.dataset.left =  parseInt(ui.partX.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("partW")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + mouseIncrement);
+}                              if (ui.partW.ref.value  < mouseIncrement)
+                                 { ui.partW.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + T);
+}                              if (ui.partW.ref.value  < T)
+                                 { ui.partW.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + 2);
+}                              if (ui.partW.ref.value  < 2)
+                                 { ui.partW.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+                 parseInt(parseInt(ui.partW.ref.value) + 1);
+}                              if (ui.partW.ref.value  < 1)
+                                 { ui.partW.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.width =   parseInt(ui.partW.ref.value) + "px";
+coinFocus.dataset.width = parseInt(ui.partW.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("partH")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + mouseIncrement);
+}                              if (ui.partH.ref.value  < mouseIncrement)
+                                 { ui.partH.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + T);
+}                              if (ui.partH.ref.value  < T)
+                                 { ui.partH.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + 2);
+}                              if (ui.partH.ref.value  < 2)
+                                 { ui.partH.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+       if (event.wheelDelta > 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+                 parseInt(parseInt(ui.partH.ref.value) + 1);
+}                              if (ui.partH.ref.value  < 1)
+                                 { ui.partH.ref.value  = 1; } } if (coinFocus!=null) {
+coinFocus.style.height =  parseInt(ui.partH.ref.value) + "px";
+coinFocus.dataset.height =parseInt(ui.partH.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("levelNotes")) {
+event.preventDefault(); event.stopPropagation();
+
+} else if (event.target.dataset.scroll && event.target.dataset.scroll == "false" ||
+           event.target == document.getElementById("itemSystem") ||
+           event.target == document.getElementById("sidebar") ||
+           event.target == document.getElementById("phantomLayer")) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+ focusPrevious(); updateInfoShelf(); redraw(); 
+} else if (event.wheelDelta < 0) {
+ focusNext(); updateInfoShelf(); redraw(); 
+}
+loadSidebar1();
+
+
+
+
+
+
+
+
+
+
+
+} else if (
+event.target == document.getElementById("pageDescription") ||
+event.target == document.getElementById("projectName") ||
+event.target == document.getElementById("coin49592") ||
+event.target == document.getElementById("coin54398") ||
+event.target == document.getElementById("coin77155") ||
+event.target == document.getElementById("coin59760") ||
+event.target == document.getElementById("coin64291") ||
+event.target == document.getElementById("coin70038") ||
+event.target == document.getElementById("coin77671") ||
+event.target == document.getElementById("folder12") ||
+event.target == document.getElementById("setLayer1") ||
+event.target == document.getElementById("setLayer2") ||
+event.target == document.getElementById("setLayer3") ||
+event.target == document.getElementById("setLayer4") ||
+event.target == document.getElementById("setLayer5") ||
+event.target == document.getElementById("setLayer6") ||
+event.target == document.getElementById("setLayer7") ||
+event.target == document.getElementById("setLayer8") ||
+event.target == document.getElementById("setLayer9") ||
+event.target == document.getElementById("setLayer10") ||
+event.target == document.getElementById("setLayer11") ||
+event.target == document.getElementById("setLayer12") ||
+event.target == document.getElementById("setLayer13") ||
+event.target == document.getElementById("setLayer14") ||
+event.target == document.getElementById("setLayer15") ||
+event.target == document.getElementById("setLayer16") ||
+event.target == document.getElementById("setLayer17") ||
+event.target == document.getElementById("setLayer18") ||
+event.target == document.getElementById("setLayer19") ||
+event.target == document.getElementById("setLayer20") ||
+event.target == document.getElementById("setLayer21") ||
+event.target == document.getElementById("setLayer22") ||
+event.target == document.getElementById("setLayer23") ||
+event.target == document.getElementById("setLayer24") ||
+event.target == document.getElementById("setLayer25")
+) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+layerRight();
+} else if (event.wheelDelta < 0) {
+layerLeft();
+}
+loadSidebar1();
+} else if (
+event.target == document.getElementById("readButtonBack") ||
+event.target == document.getElementById("folder31") ||
+event.target == document.getElementById("navPoint1") ||
+event.target == document.getElementById("navPoint2") ||
+event.target == document.getElementById("navPoint3") ||
+event.target == document.getElementById("navPoint4") ||
+event.target == document.getElementById("navPoint5") ||
+event.target == document.getElementById("navPoint6") ||
+event.target == document.getElementById("navPoint7") ||
+event.target == document.getElementById("navPoint8") ||
+event.target == document.getElementById("navPoint9") ||
+event.target == document.getElementById("buttonScale").children[0] ||
+event.target == document.getElementById("buttonScale").children[1] ||
+event.target == document.getElementById("buttonScale").children[2] ||
+event.target == document.getElementById("buttonScale").children[3] ||
+event.target == document.getElementById("buttonScale").children[4] ||
+event.target == document.getElementById("buttonScale").children[5] ||
+event.target == document.getElementById("buttonScale").children[6] ||
+event.target == document.getElementById("buttonScale").children[7] ||
+event.target == document.getElementById("buttonScale").children[8] ||
+event.target == document.getElementById("buttonScale").children[9] ||
+event.target == document.getElementById("buttonScale").children[10] ||
+event.target == document.getElementById("buttonScale").children[11] ||
+event.target == document.getElementById("buttonScale").children[12] ||
+event.target == document.getElementById("buttonScale").children[13] ||
+event.target == document.getElementById("buttonScale").children[14] ||
+event.target == document.getElementById("buttonScale").children[15] ||
+event.target == document.getElementById("buttonScale").children[16] ||
+event.target == document.getElementById("buttonScale").children[17] ||
+event.target == document.getElementById("buttonScale").children[18] ||
+event.target == document.getElementById("popColours") ||
+event.target == document.getElementById("popButton") ||
+event.target == document.getElementById("ringButton") ||
+event.target == document.getElementById("yourButtonIsHere").firstElementChild
+) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+cycleColoursForward();
+drawButton7();
+} else if (event.wheelDelta < 0) {
+cycleColoursBackward();
+drawButton7();
+}
+} else if (event.target == document.getElementById("animatorDiv")) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+document.getElementById("animationTiming").value = parseInt(parseInt(document.getElementById("animationTiming").value) + 5);
+} else if (event.wheelDelta < 0) {
+document.getElementById("animationTiming").value -= 5;
+}
+if (document.getElementById("animationTiming").value < 5) {
+document.getElementById("animationTiming").value = 5;
+}
+setupTheAnimator();
+localStorage.setItem("animatorTiming", document.getElementById("animationTiming").value)
+} else if (event.target == ui.frameNumber.ref) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+ui.frameNumber.ref.value = parseInt(ui.frameNumber.ref.value) + 1;
+} else if (event.wheelDelta < 0) {
+ui.frameNumber.ref.value = parseInt(ui.frameNumber.ref.value) - 1;
+}
+if (ui.frameNumber.ref.value > imageRollArray.length) {
+ui.frameNumber.ref.value = imageRollArray.length;
+}
+if (ui.frameNumber.ref.value < 1) {
+ui.frameNumber.ref.value = 1;
+}
+setupTheAnimator();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[
+    "styleFG",
+    "styleBG",
+    "styleOL",
+    "shadowRadius7",
+    "shadowRadius8",
+    "shadowRadius9",
+    "shadowRadius4",
+    "shadowRadius5",
+    "shadowRadius6",
+    "shadowRadius1",
+    "shadowRadius2",
+    "shadowRadius3",
+    "indentLine",
+    "fontShadow",
+    "charWord",
+    "fontSize",
+    "textAlignLeft",
+    "textAlignCenter",
+    "textAlignRight",
+    "outlineSize",
+    "outlineStyle",
+    "padding",
+    "opacity"
+].forEach((name) => {
+
+if (event.target == styleMenu[name].ref) {
+event.preventDefault();
+event.stopPropagation();
+if (coinFocus != null) {
+styleMenu[name].mousewheel();
+}
+}
+
+});
+
+
+
+if (event.buttons===4) {
+event.preventDefault();
+}
+
+}, { passive: false });
+
+/* THIS ENDS THE MOUSEWHEEL */
+
+
+
+
+styleMenu.styleFG.mousewheel = function() {  }
+styleMenu.styleBG.mousewheel = function() {  }
+styleMenu.styleOL.mousewheel = function() {  }
+styleMenu.shadowRadius7.mousewheel = function() {  }
+styleMenu.shadowRadius8.mousewheel = function() {  }
+styleMenu.shadowRadius9.mousewheel = function() {  }
+styleMenu.shadowRadius4.mousewheel = function() {  }
+styleMenu.shadowRadius5.mousewheel = function() {  }
+styleMenu.shadowRadius6.mousewheel = function() {  }
+styleMenu.shadowRadius1.mousewheel = function() {  }
+styleMenu.shadowRadius2.mousewheel = function() {  }
+styleMenu.shadowRadius3.mousewheel = function() {  }
+
+styleMenu.indentLine.mousewheel = function() {
+if (!event.shiftKey) {
+let upSize = 0.05;
+if (coinFocus.div.style.textIndent == "") {
+coinFocus.div.style.textIndent = "0em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.div.style.textIndent = parseFloat(coinFocus.div.style.textIndent) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.textIndent = parseFloat(coinFocus.div.style.textIndent) - upSize + "em";
+}
+} else if (event.shiftKey) {
+let upSize = 0.01;
+if (coinFocus.div.style.lineHeight == "") {
+coinFocus.div.style.lineHeight = "1em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.div.style.lineHeight = parseFloat(coinFocus.div.style.lineHeight) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.lineHeight = parseFloat(coinFocus.div.style.lineHeight) - upSize + "em";
+}
+}
+
+}
+
+styleMenu.fontShadow.mousewheel = function() {  }
+
+
+
+
+
+styleMenu.charWord.mousewheel = function() { 
+
+if (!event.shiftKey) {
+let upSize = 0.001;
+if (!coinFocus.div.style.letterSpacing) {
+coinFocus.div.style.letterSpacing = "0em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.div.style.letterSpacing = parseFloat(coinFocus.div.style.letterSpacing) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.letterSpacing = parseFloat(coinFocus.div.style.letterSpacing) - upSize + "em";
+}
+} else if (event.shiftKey) {
+let upSize = 0.02;
+if (coinFocus.div.style.wordSpacing == "") {
+coinFocus.div.style.wordSpacing = "1em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.div.style.wordSpacing = parseFloat(coinFocus.div.style.wordSpacing) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.wordSpacing = parseFloat(coinFocus.div.style.wordSpacing) - upSize + "em";
+}
+}
+
+
+
+}
+
+
+
+
+
+styleMenu.fontSize.mousewheel = function() {
+let upSize = 1;
+if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
+if (event.wheelDelta > 0) {
+coinFocus.div.style.fontSize = parseFloat(coinFocus.div.style.fontSize) + upSize + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.fontSize = parseFloat(coinFocus.div.style.fontSize) - upSize + "px";
+}
+}
+
+styleMenu.textAlignLeft.mousewheel = function() {  }
+styleMenu.textAlignCenter.mousewheel = function() {  }
+styleMenu.textAlignRight.mousewheel = function() {  }
+
+
+styleMenu.outlineSize.mousewheel = function() {
+let change = 0.5;
+if (coinFocus.main.style.outline == "") {
+coinFocus.main.style.outline = "black solid 2px";
+}
+if (!coinFocus.main.style.outlineOffset || coinFocus.main.style.outlineOffset == "") {
+coinFocus.main.style.outlineOffset = "0px";
+}
+if (event.ctrlKey) { change = 0.1; }
+if (!event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.main.style.outlineWidth = parseFloat(coinFocus.main.style.outlineWidth) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.main.style.outlineWidth = parseFloat(coinFocus.main.style.outlineWidth) - change + "px";
+}
+} else if ( event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.main.style.outlineOffset = parseFloat(coinFocus.main.style.outlineOffset) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.main.style.outlineOffset = parseFloat(coinFocus.main.style.outlineOffset) - change + "px";
+}
+}
+}
+
+
+styleMenu.outlineStyle.mousewheel = function() {
+const part = coinFocus.lastElementChild;
+function evaluateOutline() {
+part.style.outlineStyle = `${outlineStyleArray[outlineTunedStyle]}`;
+}
+
+if (event.wheelDelta > 0) {
+
+outlineTunedStyle -= 1;
+if (outlineTunedStyle < 0) { outlineTunedStyle = outlineStyleArray.length - 1; }
+evaluateOutline();
+} else if (event.wheelDelta <= 0) {
+outlineTunedStyle += 1;
+if (outlineTunedStyle > outlineStyleArray.length - 1) { outlineTunedStyle = 0; }
+evaluateOutline();
+}
+
+
+}
+
+styleMenu.padding.mousewheel = function() {
+let change = 1;
+if (coinFocus.div.style.padding == "") {
+coinFocus.div.style.padding = 0 + "px";
+}
+if (event.ctrlKey) { change = 5; }
+if (!event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.div.style.paddingLeft  = parseFloat(coinFocus.div.style.paddingLeft)  + change + "px";
+coinFocus.div.style.paddingRight = parseFloat(coinFocus.div.style.paddingRight) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.paddingLeft  = parseFloat(coinFocus.div.style.paddingLeft)  - change + "px";
+coinFocus.div.style.paddingRight = parseFloat(coinFocus.div.style.paddingRight) - change + "px";
+}
+} else if ( event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.div.style.paddingTop    = parseFloat(coinFocus.div.style.paddingTop)    + change + "px";
+coinFocus.div.style.paddingBottom = parseFloat(coinFocus.div.style.paddingBottom) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.div.style.paddingTop    = parseFloat(coinFocus.div.style.paddingTop)    - change + "px";
+coinFocus.div.style.paddingBottom = parseFloat(coinFocus.div.style.paddingBottom) - change + "px";
+}
+}
+
+
+
+}
+
+
+
+styleMenu.opacity.mousewheel = function() {
+let change = 0.05;
+if (coinFocus.main.style.opacity == "") {
+coinFocus.main.style.opacity = 1;
+}
+if (event.shiftKey) { change = 0.01; } else if (event.ctrlKey) { change = 0.1; }
+if (event.wheelDelta > 0) {
+coinFocus.main.style.opacity = parseFloat(coinFocus.main.style.opacity) + change;
+} else if (event.wheelDelta <= 0) {
+coinFocus.main.style.opacity = parseFloat(coinFocus.main.style.opacity) - change;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

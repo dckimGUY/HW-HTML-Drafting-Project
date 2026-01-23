@@ -6,7 +6,7 @@ ui.save1000.click                = function() { deMinimis(false, "(100/1000)"); 
 ui.save1200.click                = function() { deMinimis(false, "(100/1280)"); };
 ui.save1500.click                = function() { deMinimis(false, "(100/1536)"); };
 ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); };
-ui.elementArticle.click          = function() { copyToClipboard('<article               style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
+ui.elementArticle.click          = function() { copyToClipboard('<iframe                src="" style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></iframe>'); };
 ui.elementColour.click           = function() { copyToClipboard('<input type="color"    name="colour"   style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
 ui.elementRadioBtn.click         = function() { copyToClipboard('<input type="radio"    name="radio"    style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
 ui.elementRange.click            = function() { copyToClipboard('<input type="range"    name="range"    style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
@@ -102,8 +102,7 @@ return string;
 
 
 
-const fileHeader = `
-<!DOCTYPE html>
+const fileHeader = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -126,7 +125,7 @@ const fileHeader = `
 
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" >
 </head>
-<body>
+<body style="background-color: {{backgroundColour}};">
 `;
 
 const fileFooter = `
@@ -312,25 +311,6 @@ doc = parser.parseFromString(string, 'text/html');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let idRoll = [];
 for (let j = 0; j < doc.body.children.length; j++) {
 idRoll[j] = doc.body.children[j].id;
@@ -341,19 +321,24 @@ idRoll[j] = doc.body.children[j].id;
 
 
 let eventRoll = [];
-if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousemove", "input", "change"]; }
+if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change"]; }
 
 let scriptStarter = `
 <script>
+
 /*** THIS SETS UP THE REFERENCES ***/
-const ui = {};
-${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')}.forEach((name) => {
-ui[name]       = {};
-ui[name].ref   = document.getElementById(name);
+
+const ui         = {};
+      ui.idNames =
+${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+ui.idNames.forEach((name) => {
+ui[name]         = {};
+ui[name].ref     = document.getElementById(name);
 });
 `;
 scriptStarter += `
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
+
 `;
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
@@ -363,23 +348,18 @@ scriptStarter += `${("ui." + idRoll[j] + "." + eventRoll[k]).padStart(32, " ")} 
 scriptStarter += `
 `;
 }
+scriptStarter += `
+/*** THIS SETS UP EVENT DELEGATION ***/
+`;
 for (let k = 0; k < eventRoll.length; k++) {
 scriptStarter += `
-/*** THIS SETS UP EVENT DELEGATION FOR "${eventRoll[k].toUpperCase()}" EVENT ***/
-document.addEventListener("${eventRoll[k]}", function() {
-switch (event.target) {
-`;
-for (let j = 0; j < idRoll.length; j++) {
-scriptStarter += `${("case ui." + idRoll[j] + ".ref").padStart(32, " ")}: ${("ui." + idRoll[j] + "." + eventRoll[k] + "()").padStart(32, " ")}; break;
-`;
-}
-scriptStarter += `}});
-`;
+document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }); });`;
 }
 scriptStarter += `
 
 window.addEventListener("resize", (event) => {  });
 window.addEventListener("scroll", (event) => {  });
+
 </script>`;
 
 
@@ -411,7 +391,7 @@ saveHTMLparticle(rename, string + "\n\n\n" + scriptStarter, false, false, false)
 */
 
 
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + string + "\n\n\n" + scriptStarter + fileFooter, false, false, false);
+saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{backgroundColour}}/g, finishedBackgroundColour) + string + "\n\n\n" + scriptStarter + fileFooter, false, false, false);
 
 /*
 } else {
