@@ -94,6 +94,7 @@ case ui.buttonWordList.ref:      ui.buttonWordList.input()      ; break;
 
 
 case ui.hdubSingleEntry.ref:     ui.hdubSingleEntry.input()     ; break;
+case ui.hdubPartDesignations.ref:     ui.hdubPartDesignations.input()     ; break;
 case ui.hdubRoll.ref:            ui.hdubRoll.input()            ; break;
 case ui.hdubCanvas.ref:          ui.hdubCanvas.input()          ; break;
 case ui.hdubSheetTemplate4x.ref: ui.hdubSheetTemplate4x.input() ; break;

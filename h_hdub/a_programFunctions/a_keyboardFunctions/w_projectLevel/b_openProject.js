@@ -53,8 +53,18 @@ sel0PasteBuffer = topLayer.sel0PasteBuffer;
 sel1PasteBuffer = topLayer.sel1PasteBuffer;
 sel2PasteBuffer = topLayer.sel2PasteBuffer;
 hold = topLayer.hold;
+
+
 ui.hwString = topLayer.hwString;
 
+
+
+ui.idNames.forEach((name) => {
+ui[name].value   = topLayer.capitals[name].value.outerHTML;
+if (!topLayer.capitals[name].value.outerHTML) ui[name].value = topLayer.capitals[name].value.toString();
+ui[name].title   = topLayer.capitals[name].title.toString();
+ui[name].colour  = topLayer.capitals[name].colour.toString();
+});
 
 
 updateInfoShelf();
@@ -65,6 +75,7 @@ drawAllCells();
 ui.projectName.ref.value = topLayer.aa_project_name;
 userCustomTheme = topLayer.projectThemes;
 loadTheme("currentTheme");
+
 
 
 

@@ -19,7 +19,18 @@ topLayer.sel1PasteBuffer = sel1PasteBuffer;
 topLayer.sel2PasteBuffer = sel2PasteBuffer;
 topLayer.hold = hold;
 
+
 topLayer.hwString = ui.hwString;
+
+
+
+topLayer.capitals = {};
+ui.idNames.forEach((name) => {
+topLayer.capitals[name] = {};
+topLayer.capitals[name].value  = ui[name].value.toString();
+topLayer.capitals[name].title  = ui[name].title.toString();
+topLayer.capitals[name].colour = ui[name].colour.toString();
+});
 
 
 

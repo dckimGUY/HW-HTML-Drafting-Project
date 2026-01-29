@@ -2,6 +2,51 @@ shelfMenuHTML.tab4.folder1.style = `
 <style>
 
 
+.cancelEntries {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+background-color: transparent;
+border-radius: 8px;
+left: 7px;
+top: 101px;
+width: 18px;
+height: 18px;
+}
+.cancelEntries:hover {
+outline-offset: -2px;
+outline: 2px solid lime;	
+}
+.cancelEntries:active {
+background-color: rgba(255,0,255,0.5);
+
+outline: 0px solid lime;
+}
+
+
+.overlayButton {
+background-color: transparent;
+position        : absolute;
+padding         : 0px;
+padding-top     : 0.1em;
+margin          : 0px;
+border          : 0px;
+opacity         : 0.35;
+}
+
+.overlayButton:hover {
+background-color: rgba(0,255,0);
+outline-offset  : -1px;
+outline         : 1px solid lime;
+}
+
+.overlayButton:active {
+background-color: rgba(255,0,255);
+outline-offset  : -1px;
+outline         : 1px solid magenta;
+}
+
 
 
 
@@ -36,7 +81,7 @@ width: 174px;
 height: 463px;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
-background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/folder-1-sidebar.png?v=20260123090624");
+background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/folder-1-sidebar.png?v=20260125193826");
 }
 
 
@@ -216,10 +261,20 @@ image-rendering  :   pixelated;
 
 
 
-.input_hdubSingleEntry           { position: absolute; border: none; margin: none; padding: none; left:     27px; top:     67px; width:    166px; height:     50px; outline-offset: -4px; font-size: 10px;
+.input_hdubSingleEntry           { position: absolute; border: none; margin: none; padding: none; left:     27px; top:     67px; width:    110px; height:     50px; outline-offset: -4px; font-size: 10px;
 padding-top: 5px;
-background-color: rgba(255,255,255,0.5);
+background-color: rgba(195,195,255,0.5);
 }
+
+.input_hdubPartDesignations           { position: absolute; border: none; margin: none; padding: none; left:    138px; top:     67px; width:    55px; height:     50px; outline-offset: -4px; font-size: 10px;
+padding-top: 5px;
+background-color: rgba(255,195,195,0.5);
+}
+
+
+
+
+
 .button_hdubAdd                  { display: none; position: absolute; border: none; margin: none; padding: none; left:      7px; top:     69px; width:     37px; height:     19px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/add.png?v=20251230131412");        }
 .button_hdubAdd:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/add_focus.png?v=20251230131408");  }
@@ -263,12 +318,24 @@ height:    180px;
 border-radius: 1px;
 transform-origin: top left;
 transform: scale(1.3);
+}
 
+
+.input_hdubOverlay                {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+left:    34.5px;
+top:    190px;
+width:    100px;
+height:    180px;
+border-radius: 1px;
+transform-origin: top left;
+transform: scale(1.3);
 }
-.input_hdubCanvas:hover          {
-outline-offset: -1px;
-outline: 1px solid lime;
-}
+
+
 
 .button_hdubSheetTemplate1x      { position: absolute; border: none; margin: none; padding: none; left:    69px; top:    117px; width:     62px; height:     19px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/sheet1.png?v=20260106204145");        }

@@ -5,7 +5,8 @@ document.getElementById("animationTiming").value = localStorage.getItem("animato
 
 
 document.addEventListener("mousewheel", (event) => {
-if (event.target == ui.hdubCanvas.ref) {
+
+if (event.target.id == "hdubOverlay" || (event.target.dataset && event.target.dataset.hdubOverlay == "scroll")) {
 event.preventDefault();
 event.stopPropagation();
 if (event.wheelDelta > 0) {
@@ -13,6 +14,43 @@ ui.hdubSheetTemplate4x.ref.value++;displayDemo();
 } else if (event.wheelDelta < 0) {
 ui.hdubSheetTemplate4x.ref.value--;displayDemo();
 }
+
+
+
+
+
+
+
+
+} else if (event.target == document.getElementById("siteMapCanvas")) {
+
+
+
+event.preventDefault();
+event.stopPropagation();
+
+       if (event.wheelDelta > 0) {
+zoomSiteMapIn();
+} else if (event.wheelDelta < 0) {
+zoomSiteMapOut();
+}
+
+drawSiteMap();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 } else if (event.target == document.getElementById("navUpscale")) {
 event.preventDefault();
 event.stopPropagation();
@@ -156,8 +194,7 @@ event.preventDefault(); event.stopPropagation();
 
 } else if (event.target.dataset.scroll && event.target.dataset.scroll == "false" ||
            event.target == document.getElementById("itemSystem") ||
-           event.target == document.getElementById("sidebar") ||
-           event.target == document.getElementById("phantomLayer")) {
+           event.target == document.getElementById("sidebar")) {
 event.preventDefault(); event.stopPropagation();
        if (event.wheelDelta > 0) {
  focusPrevious(); updateInfoShelf(); redraw(); 
@@ -167,14 +204,22 @@ event.preventDefault(); event.stopPropagation();
 loadSidebar1();
 
 
+} else if (event.target == document.getElementById("phantomLair") || event.target == document.getElementById("phantomFlip") || (event.target.dataset && event.target.dataset.lair == "true")) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+thePhantomLair.style.opacity = parseFloat(thePhantomLair.style.opacity) + 0.01;
+} else if (event.wheelDelta < 0) {
+thePhantomLair.style.opacity = parseFloat(thePhantomLair.style.opacity) - 0.01;
+}
 
+if (thePhantomLair.style.opacity < 0.00) {
+thePhantomLair.style.opacity = 0.00;
+}
+if (thePhantomLair.style.opacity > 0.35) {
+thePhantomLair.style.opacity = 0.35;
+}
 
-
-
-
-
-
-
+localStorage.setItem("thePhantomLairOpacity", thePhantomLair.style.opacity);
 
 } else if (
 event.target == document.getElementById("pageDescription") ||
@@ -368,15 +413,76 @@ event.preventDefault();
 styleMenu.styleFG.mousewheel = function() {  }
 styleMenu.styleBG.mousewheel = function() {  }
 styleMenu.styleOL.mousewheel = function() {  }
-styleMenu.shadowRadius7.mousewheel = function() {  }
-styleMenu.shadowRadius8.mousewheel = function() {  }
-styleMenu.shadowRadius9.mousewheel = function() {  }
-styleMenu.shadowRadius4.mousewheel = function() {  }
-styleMenu.shadowRadius5.mousewheel = function() {  }
-styleMenu.shadowRadius6.mousewheel = function() {  }
-styleMenu.shadowRadius1.mousewheel = function() {  }
-styleMenu.shadowRadius2.mousewheel = function() {  }
-styleMenu.shadowRadius3.mousewheel = function() {  }
+
+
+
+
+
+
+
+
+
+
+styleMenu.shadowRadius7.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius8.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius9.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius4.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius5.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius6.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius1.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius2.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius3.mousewheel = function() { shadowRadiusWheel(); }
+
+
+function shadowRadiusWheel() {
+if (event.wheelDelta < 0) {
+       if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "r";
+kC = 109; cC = 45;
+borderRadiusTuner();
+} else if ( event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 109; cC = 45;
+boxShadowTuner();
+} else if (!event.shiftKey &&  event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 111; cC = 47;
+boxShadowTuner();
+} else if (!event.shiftKey && !event.ctrlKey &&  event.altKey) {
+styleKey = "u";
+kC = 96; cC = 48;
+boxShadowTuner();
+}
+} else if (event.wheelDelta > 0) {
+       if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "r";
+kC = 107; cC = 43;
+borderRadiusTuner();
+} else if ( event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 107; cC = 43;
+boxShadowTuner();
+} else if (!event.shiftKey &&  event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 106; cC = 42;
+boxShadowTuner();
+} else if (!event.shiftKey && !event.ctrlKey &&  event.altKey) {
+styleKey = "u";
+kC = 110; cC = 46;
+boxShadowTuner();
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
 
 styleMenu.indentLine.mousewheel = function() {
 if (!event.shiftKey) {

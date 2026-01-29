@@ -1,5 +1,13 @@
 shelfMenuHTML.tab4.folder1.HTML = `
 <textarea id="hdubSingleEntry" class="textarea_ input_hdubSingleEntry dckimPixelMono" placeholder="empty" title="single hdub manual entry, tip: use numpad with dot and dash, 'abc...' changes the slot. 'enter' inserts the shapes to HTML. Open to here using 'shift+space', 'esc' to return." spellcheck="false">h20w20w20w20w20w20h50w50w50h40w20w30w40w10</textarea>
+
+<textarea id="hdubPartDesignations" class="textarea_ input_hdubPartDesignations dckimPixelMono" placeholder="part" title="enter the part list here manually" spellcheck="false"></textarea>
+
+
+
+<button id="cancelEntries" class="button_ cancelEntries" onclick="document.getElementById('hdubSingleEntry').value = ''; document.getElementById('hdubPartDesignations').value = ''; hdubDemo.style.opacity = 0;"></button>
+
+
 <button id="hdubAdd" class="button_ button_hdubAdd" title="add this one to the comma separated list"></button>
 <textarea id="hdubRoll" class="textarea_ input_hdubRoll dckimPixelMono" placeholder="empty" title="comma separated hdub syntaxes" spellcheck="false"></textarea>
 <button id="hdubRollLeft" class="button_ button_hdubRollLeft" title="roll through shape keys left"></button>
@@ -8,6 +16,12 @@ shelfMenuHTML.tab4.folder1.HTML = `
 <button id="hdubSave" class="button_ button_hdubSave" title="save to image with syntax in filename"></button>
 
 <canvas id="hdubCanvas" class="textarea_ input_hdubCanvas" width="100" height="180" title="scales of 1,2,3,4 are for pixel-Art, 1 being very block-like"></canvas>
+
+<div id="hdubOverlay" class="textarea_ input_hdubOverlay" title="scales of 1,2,3,4 are for pixel-Art, 1 being very block-like"></div>
+
+
+
+
 <button id="hdubSheetTemplate1x" class="button_ button_hdubSheetTemplate1x" title="save *sheet template (be sure to set the scale)"></button>
 <input id="hdubSheetTemplate4x" class="button_ button_hdubSheetTemplate4x" type="range" min="1" max="20" step="1" value="10" title="hdubEntryFactor">
 

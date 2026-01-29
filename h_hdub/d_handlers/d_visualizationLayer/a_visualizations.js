@@ -22,7 +22,16 @@ var drawPartNames = "false";
 if (localStorage.getItem("drawPartNames")) { drawPartNames = localStorage.getItem("drawPartNames"); };
 if (localStorage.getItem("xrayVision")) { xrayVision = localStorage.getItem("xrayVision"); };
 
+
+
+
+
+
+
 function redraw(element){
+
+if (window.innerWidth  > 3500) { Vis.width  = 0; return 0; }
+if (window.innerHeight > 3500) { Vis.height = 0; return 0; }
 
 if (visualOpacity == 0) return;
 
@@ -33,8 +42,26 @@ const zArray = Array.from(utilityLayer0.children);
 const zStack = zArray.map(el => ({ id: el, z: parseInt(getComputedStyle(el).zIndex) || 0 })).sort((a, b) => a.z -b.z);
 let edgeThickness = edgeQ - thinOutline * 2;
 for (let j=0; j < zStack.length; j++) {
-let l, t, w, h;
 
+/* CHECK IF THE PART IS IN THE VIEW */
+/* HOW WILL I EVEN CHECK IF THIS WORKED? */
+const partLeft   = parseInt(zStack[j].id.style.left);
+const partRight  = parseInt(zStack[j].id.style.left) + parseInt(zStack[j].id.style.width);
+const partTop    = parseInt(zStack[j].id.style.top) ;
+const partBottom = parseInt(zStack[j].id.style.top) + parseInt(zStack[j].id.style.height);
+const windowLeft   = window.scrollX;
+const windowRight  = window.scrollX + window.innerWidth;
+const windowTop    = window.scrollY;
+const windowBottom = window.scrollY + window.innerHeight;
+
+if (
+(partLeft  < windowRight && partTop    < windowBottom) ||
+(partRight > windowLeft  && partTop    < windowBottom) ||
+(partLeft  < windowRight && partBottom > windowTop) ||
+(partRight > windowLeft  && partBottom > windowTop) ) {
+
+
+let l, t, w, h;
 function xray() {
 if (j!=0) {
 Y.setLineDash([8,4]);
@@ -50,7 +77,7 @@ Y.strokeStyle = selectedColour;
 Y.strokeRect(l,t,w,h);
 Y.fillStyle   = selectedColour;
 l = parseInt(zStack[k].id.style.left) - window.scrollX;
-t = parseInt(zStack[k].id.style.top) - window.scrollY;
+t = parseInt(zStack[k].id.style.top)  - window.scrollY;
 w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
 h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
 }
@@ -77,7 +104,7 @@ Y.setLineDash([0]);
 
 let Y=Vis.getContext("2d");
 l = parseInt(zStack[j].id.style.left) - window.scrollX;
-t = parseInt(zStack[j].id.style.top) - window.scrollY;
+t = parseInt(zStack[j].id.style.top)  - window.scrollY;
 w = parseInt(zStack[j].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
 h = parseInt(zStack[j].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
 Y.fillStyle   = lineColour;
@@ -155,5 +182,6 @@ Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left) - window.scrollX +
 }
 
 } /* END OF THE FOR LOOP */
+} /* END OF IN-VIEW CONDITION */
 } /* END OF CONDITION showVisualizations */
 };

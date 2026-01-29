@@ -6,16 +6,17 @@ ui.save1000.click                = function() { deMinimis(false, "(100/1000)"); 
 ui.save1200.click                = function() { deMinimis(false, "(100/1280)"); };
 ui.save1500.click                = function() { deMinimis(false, "(100/1536)"); };
 ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); };
-ui.elementArticle.click          = function() { copyToClipboard('<iframe                src="" style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></iframe>'); };
-ui.elementColour.click           = function() { copyToClipboard('<input type="color"    name="colour"   style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementRadioBtn.click         = function() { copyToClipboard('<input type="radio"    name="radio"    style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementRange.click            = function() { copyToClipboard('<input type="range"    name="range"    style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementValue.click            = function() { copyToClipboard('<input type="value"    name="value"    style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementTextarea.click         = function() { copyToClipboard('<textarea              name="textarea" style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></textarea>'); };
-ui.elementCheckbox.click         = function() { copyToClipboard('<input type="checkbox" name="checkbox" style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementNumber.click           = function() { copyToClipboard('<input type="number"   name="number"   style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementButton.click           = function() { copyToClipboard('<input type="button"   name="button"   style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></article>'); };
-ui.elementCanvas.click           = function() { copyToClipboard('<canvas                style="width: 98%; height: 98%; margin: 0; border: 0; padding: 0;"></canvas>'); };
+
+ui.elementArticle.click          = function() { copyToClipboard('<iframe src="" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></iframe>'); };
+ui.elementColour.click           = function() { copyToClipboard('<input type="color" name="colour" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementRadioBtn.click         = function() { copyToClipboard('<input type="radio" name="radio" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementRange.click            = function() { copyToClipboard('<input type="range" name="range" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementValue.click            = function() { copyToClipboard('<input type="value" name="value" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementTextarea.click         = function() { copyToClipboard('<textarea name="textarea" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></textarea>'); };
+ui.elementCheckbox.click         = function() { copyToClipboard('<input type="checkbox" name="checkbox" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementNumber.click           = function() { copyToClipboard('<input type="number" name="number" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementButton.click           = function() { copyToClipboard('<input type="button" name="button" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">'); };
+ui.elementCanvas.click           = function() { copyToClipboard('<canvas style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></canvas>'); };
 
 
 
@@ -352,8 +353,15 @@ scriptStarter += `
 /*** THIS SETS UP EVENT DELEGATION ***/
 `;
 for (let k = 0; k < eventRoll.length; k++) {
+if (eventRoll[k] == "mousewheel") {
+
+scriptStarter += `
+document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }, { passive: false }); });`;
+
+} else {
 scriptStarter += `
 document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }); });`;
+}
 }
 scriptStarter += `
 

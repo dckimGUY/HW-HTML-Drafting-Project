@@ -140,7 +140,7 @@ left: 22px;
 .button_navPoint9:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_hover.png?v=20260116054727");  }
 .button_navPoint9:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point9_active.png?v=20251120135447"); }
 .button_navPoint4                { position: absolute; border: none; margin: none; padding: none; left:     20px; top:    349px; width:     24px; height:     24px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4.png?v=20260112161221");        }
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4.png?v=20260128153805");        }
 .button_navPoint4:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_focus.png?v=20251120135518");  }
 .button_navPoint4:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_hover.png?v=20260116054342");  }
 .button_navPoint4:active         { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/point4_active.png?v=20251120135433"); }

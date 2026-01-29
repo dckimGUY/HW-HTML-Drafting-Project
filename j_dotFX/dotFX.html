@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.cBlock {
+position: absolute;
+width:  100px;
+height: 100px;
+margin:   0px;
+border:   0px;
+padding:  0px;
+outline: 1px dashed white;
+}
+.nBlock {
+position: absolute;
+width:  300px;
+height: 160px;
+margin:   0px;
+border:   0px;
+padding:  0px;
+outline: 1px dashed white;
+}
+.dBlock {
+position: absolute;
+width:    100%;
+height:   100%;
+margin:    0px;
+border:    0px;
+padding:   0px;
+background-image: url("test.png");
+}
+</style>
+</head>
+<body>
+<button                            class="dBlock" style="left:   0px; top: 0px;" id="dDiv"></button>
+<button  class="cBlock" style="left:   0px; top:   0px;" id="c1a"></button>
+<button  class="cBlock" style="left: 100px; top:   0px;" id="c1b"></button>
+<button  class="cBlock" style="left: 200px; top:   0px;" id="c1c"></button>
+<button  class="cBlock" style="left: 300px; top:   0px;" id="c1d"></button>
+<button  class="cBlock" style="left: 400px; top:   0px;" id="c1e"></button>
+<button  class="cBlock" style="left: 500px; top:   0px;" id="c1f"></button>
+<button  class="cBlock" style="left: 600px; top:   0px;" id="c1g"></button>
+<button  class="cBlock" style="left: 700px; top:   0px;" id="c1h"></button>
+<button  class="cBlock" style="left: 800px; top:   0px;" id="c1i"></button>
+<button  class="cBlock" style="left:   0px; top: 100px;" id="c2a"></button>
+<button  class="cBlock" style="left: 100px; top: 100px;" id="c2b"></button>
+<button  class="cBlock" style="left: 200px; top: 100px;" id="c2c"></button>
+<button  class="cBlock" style="left: 300px; top: 100px;" id="c2d"></button>
+<button  class="cBlock" style="left: 400px; top: 100px;" id="c2e"></button>
+<button  class="cBlock" style="left: 500px; top: 100px;" id="c2f"></button>
+<button  class="cBlock" style="left: 600px; top: 100px;" id="c2g"></button>
+<button  class="cBlock" style="left: 700px; top: 100px;" id="c2h"></button>
+<button  class="cBlock" style="left: 800px; top: 100px;" id="c2i"></button>
+<button  class="nBlock" style="left:   0px; top: 200px;" id="numStep"></button>
+<button  class="nBlock" style="left: 300px; top: 200px;" id="numRate"></button>
+<button  class="nBlock" style="left: 600px; top: 200px;" id="numScale"></button>
+
+
+
+
+<script>
+
+/*** THIS SETS UP THE REFERENCES ***/
+
+const ui         = {};
+      ui.idNames =
+[
+    "c1a",
+    "c1b",
+    "c1c",
+    "c1d",
+    "c1e",
+    "c1f",
+    "c1g",
+    "c1h",
+    "c1i",
+    "c2a",
+    "c2b",
+    "c2c",
+    "c2d",
+    "c2e",
+    "c2f",
+    "c2g",
+    "c2h",
+    "c2i",
+    "numStep",
+    "numRate",
+    "numScale",
+    "dDiv"
+];
+ui.idNames.forEach((name) => {
+ui[name]         = {};
+ui[name].name    = name;
+ui[name].ref     = document.getElementById(name);
+});
+
+/*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
+
+                    ui.c1a.click = function() { setGrey("c1a");        };
+                    ui.c1b.click = function() { setGrey("c1b");        };
+                    ui.c1c.click = function() { setGrey("c1c");        };
+                    ui.c1d.click = function() { setGrey("c1d");        };
+                    ui.c1e.click = function() { setGrey("c1e");        };
+                    ui.c1f.click = function() { setGrey("c1f");        };
+                    ui.c1g.click = function() { setGrey("c1g");        };
+                    ui.c1h.click = function() { setGrey("c1h");        };
+                    ui.c1i.click = function() { setGrey("c1i");        };
+                    ui.c2a.click = function() { setGrey("c2a");        };
+                    ui.c2b.click = function() { setGrey("c2b");        };
+                    ui.c2c.click = function() { setGrey("c2c");        };
+                    ui.c2d.click = function() { setGrey("c2d");        };
+                    ui.c2e.click = function() { setGrey("c2e");        };
+                    ui.c2f.click = function() { setGrey("c2f");        };
+                    ui.c2g.click = function() { setGrey("c2g");        };
+                    ui.c2h.click = function() { setGrey("c2h");        };
+                    ui.c2i.click = function() { setGrey("c2i");        };
+                ui.numStep.click = function() {                        };
+                ui.numRate.click = function() {                        };
+               ui.numScale.click = function() {                        };
+                   ui.dDiv.click = function() { crispy();              };
+
+function setGrey(name) {
+ui[name].ref.style.backgroundColor = "rgb(127,127,127)";
+}
+
+function crispy() {
+if (ui.dDiv.ref.style.imageRendering == "pixelated") {
+ui.dDiv.ref.style.imageRendering = "auto";
+} else {
+ui.dDiv.ref.style.imageRendering = "pixelated";
+}
+}
+
+               ui.c1a.mousewheel = function() { rollColour("c1a");     };
+               ui.c1b.mousewheel = function() { rollColour("c1b");     };
+               ui.c1c.mousewheel = function() { rollColour("c1c");     };
+               ui.c1d.mousewheel = function() { rollColour("c1d");     };
+               ui.c1e.mousewheel = function() { rollColour("c1e");     };
+               ui.c1f.mousewheel = function() { rollColour("c1f");     };
+               ui.c1g.mousewheel = function() { rollColour("c1g");     };
+               ui.c1h.mousewheel = function() { rollColour("c1h");     };
+               ui.c1i.mousewheel = function() { rollColour("c1i");     };
+               ui.c2a.mousewheel = function() { rollColour("c2a");     };
+               ui.c2b.mousewheel = function() { rollColour("c2b");     };
+               ui.c2c.mousewheel = function() { rollColour("c2c");     };
+               ui.c2d.mousewheel = function() { rollColour("c2d");     };
+               ui.c2e.mousewheel = function() { rollColour("c2e");     };
+               ui.c2f.mousewheel = function() { rollColour("c2f");     };
+               ui.c2g.mousewheel = function() { rollColour("c2g");     };
+               ui.c2h.mousewheel = function() { rollColour("c2h");     };
+               ui.c2i.mousewheel = function() { rollColour("c2i");     };
+           ui.numStep.mousewheel = function() {                        };
+           ui.numRate.mousewheel = function() {                        };
+          ui.numScale.mousewheel = function() {                        };
+              ui.dDiv.mousewheel = function() { dSize();               };
+
+function rollColour(name) {
+if (ui[name].ref.style.backgroundColor == "") {
+ui[name].ref.style.backgroundColor = "rgb(127,127,127)"; }
+const step = 16;
+const rgb = ui[name].ref.style.backgroundColor.slice(4,-1).split(",");
+const r = parseInt(rgb[0]);
+const g = parseInt(rgb[1]);
+const b = parseInt(rgb[2]);
+let newR = r;
+let newG = g;
+let newB = b;
+if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+       if (event.wheelDelta > 0) {
+if (r <= 255 - step &&
+    g <= 255 - step &&
+    b <= 255 - step) {
+newR = r + step;
+newG = g + step;
+newB = b + step;
+}
+} else if (event.wheelDelta < 0) {
+if (r !=   0 &&
+    g !=   0 &&
+    b !=   0) {
+newR = r - step;
+newG = g - step;
+newB = b - step;
+} } }
+       if (event.ctrlKey) { event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) { if (r <= 255 - step) { newR = r + step; }
+} else if (event.wheelDelta < 0) { if (r !=   0) { newR = r - step; } } }
+       if (event.shiftKey) { event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) { if (g <= 255 - step) { newG = g + step; }
+} else if (event.wheelDelta < 0) { if (g !=   0) { newG = g - step; } } }
+       if (event.altKey) { event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) { if (b <= 255 - step) { newB = b + step; }
+} else if (event.wheelDelta < 0) { if (b !=   0) { newB = b - step; } } }
+if (newR == step) newR = step - 1;
+if (newG == step) newG = step - 1;
+if (newB == step) newB = step - 1;
+ui[name].ref.style.backgroundColor = "rgb(" + newR + "," + newG + "," + newB + ")";
+}
+
+function dSize() {
+       if (ui.dDiv.ref.style.backgroundSize == "") { ui.dDiv.ref.style.backgroundSize = "1%"; }
+       if (event.shiftKey) {
+       if (event.wheelDelta > 0) { ui.dDiv.ref.style.backgroundSize = parseFloat(ui.dDiv.ref.style.backgroundSize) + 0.01 + "%";
+} else if (event.wheelDelta < 0) { ui.dDiv.ref.style.backgroundSize = parseFloat(ui.dDiv.ref.style.backgroundSize) - 0.01 + "%"; }
+} else if (!event.shiftKey) {
+       if (event.wheelDelta > 0) { ui.dDiv.ref.style.backgroundSize = parseFloat(ui.dDiv.ref.style.backgroundSize) + 0.25 + "%";
+} else if (event.wheelDelta < 0) { ui.dDiv.ref.style.backgroundSize = parseFloat(ui.dDiv.ref.style.backgroundSize) - 0.25 + "%"; } }
+       if (parseFloat(ui.dDiv.ref.style.backgroundSize) <= 0) { ui.dDiv.ref.style.backgroundSize = "0.01%"; }
+}
+
+
+
+      ui.cNames =
+[
+    "c1a",
+    "c1b",
+    "c1c",
+    "c1d",
+    "c1e",
+    "c1f",
+    "c1g",
+    "c1h",
+    "c1i",
+    "c2a",
+    "c2b",
+    "c2c",
+    "c2d",
+    "c2e",
+    "c2f",
+    "c2g",
+    "c2h",
+    "c2i"
+];
+
+
+function setFrames() {
+const canvas = document.createElement("canvas");
+const ctx    = canvas.getContext("2d");
+const imageHolder    = [];
+      imageHolder[0] = [];
+      imageHolder[1] = [];
+      imageHolder[2] = [];
+      imageHolder[3] = [];
+      
+for (let j = 0; j < 9; j++) {
+   imageHolder[0][j] = new Image();
+   imageHolder[1][j] = new Image();
+   imageHolder[2][j] = new Image();
+   imageHolder[3][j] = new Image();
+}
+
+
+ let nameList = [];
+
+     nameList = Array.from(ui.cNames);
+canvas.width  = 9;
+canvas.height = 2;
+for (let j = 0; j < canvas.width;  j++) {
+for (let k = 0; k < canvas.height; k++) {
+ctx.fillStyle = ui[nameList.shift()].ref.style.backgroundColor;
+ctx.fillRect(j,k,1,1); } }
+imageHolder[0] = canvas.toDataURL();
+
+     nameList = Array.from(ui.cNames);
+canvas.width  = 6;
+canvas.height = 3;
+for (let j = 0; j < canvas.width;  j++) {
+for (let k = 0; k < canvas.height; k++) {
+ctx.fillStyle = ui[nameList.shift()].ref.style.backgroundColor;
+ctx.fillRect(j,k,1,1); } }
+imageHolder[1] = canvas.toDataURL();
+
+     nameList = Array.from(ui.cNames);
+canvas.width  = 3;
+canvas.height = 6;
+for (let j = 0; j < canvas.width;  j++) {
+for (let k = 0; k < canvas.height; k++) {
+ctx.fillStyle = ui[nameList.shift()].ref.style.backgroundColor;
+ctx.fillRect(j,k,1,1); } }
+imageHolder[2] = canvas.toDataURL();
+
+     nameList = Array.from(ui.cNames);
+canvas.width  = 2;
+canvas.height = 9;
+for (let j = 0; j < canvas.width;  j++) {
+for (let k = 0; k < canvas.height; k++) {
+ctx.fillStyle = ui[nameList.shift()].ref.style.backgroundColor;
+ctx.fillRect(j,k,1,1); } }
+imageHolder[3] = canvas.toDataURL();
+
+return imageHolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** THIS SETS UP EVENT DELEGATION ***/
+
+document.addEventListener(       "click", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].click();       return 0; } }); });
+document.addEventListener(  "mousewheel", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].mousewheel();  return 0; } }); }, { passive: false });
+
+</script>
+</body>
+</html>

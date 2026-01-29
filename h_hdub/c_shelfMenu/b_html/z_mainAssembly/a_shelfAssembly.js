@@ -69,9 +69,71 @@ shelfMenuHTML.tab1.folderSelectors.HTML  +
 
 <div id="sidebar" class="sidebar">
 <button id="sidebarOpener" class="sidebarOpener" onclick="toggleSidebar1();"></button>
+
+<div class="itemSystem dckimPixelMono" style="font-size: 8px; color: #DEFF1C44; line-height: 1.1; padding-top: 2px; text-indent: 8px;">
+<p>This program has z-index management semi-automatic at the keyboard. Use "Z" for global management. Use "SHIFT + Z" for group management. Back: Pink; Middle: Grey; Front: Blue. Use "HJKL" to move within the z-index. Use "SHIFT + HJKL" to move within the colour group only.</p>
+<br>
+<p>This program also has document order managed semi-automatically from the keyboard. Use "V" for global management. Use "SHIFT V" for group management. First: Grey; Second: Pink; Third: Blue;</p>
+<br>
+<p>...it's all i know...</p>
+<br>
+<p> - dckimGUY</p>
+</div>
+
+<div class="phantomLair dckimPixelMono" style="font-size: 8px; color: #DEFF1C44; line-height: 1.1; padding-top: 2px; text-indent: 8px;">
+<p>Using the "X" key doesn't really delete anything, it just puts it here. Using the "P" key puts it back exactly in place but, we can only get them back in exactly the order that we removed them. It is also possible to use "SHIFT + X" to remove everything. Then use "SHIFT + P" to put all of it back. This might be useful when you want to move stuff to another level.</p>
+</div>
+
 <div id="itemSystem"  class="itemSystem"></div>
 <div id="addSystem"   class="addSystem"></div>
+
+
+<button id="phantomFlip" onclick="flipPhantomLair();" title="FLIP the phantomLair!" class="pixelArt" style="position: absolute; left: -422px; top: 179px; width: 1008px; height: 208px; transform-origin: top left; transform: scale(0.125); user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<style>
+.pixelArt           {
+image-rendering     : crisp-edges;
+image-rendering     :   pixelated;
+                    }
+#phantomFlip      {
+position            :    absolute;
+top                 :         0px;
+left                :         0px;
+background-color    : transparent;
+background-size     :   100% 100%;
+width               :        100%;
+height              :        100%;
+border              :         0px;
+padding             :         0px;
+margin              :         0px;
+                    }
+
+#phantomFlip               { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAAaCAYAAABxRujEAAAEu0lEQVR4AdRZsXLUQAzdpaJOTcN3ZIYOGjomVYaZ1MAnUFNSEmpmKIGSgjJMvoEfSE34A6O39vNp5bV3dWcnuczJkp6etPJql9yER+HYf7787dIreHVKWvnh7eEe+XsN/tuvt52VlbewvdzFSTwPoTu/OAnXV9fd9dM/ScMnrnW4OIntxZ1Mqa17YC/Quoe53u4Kxx7sNfizF5fbbZ5zrwNvTWuel99aFzyp/enZKaxMSlhGcDrvrq6DFmd6wJ7tNXj3QlsmyC1zlffyPcW3rO3po8aVPo9/8HLLau+Zxb38LLnibFm7srQrLH0e/+Dl9Lpe2sv3FN+ytqePGlf6PP7By+mtvWcW9/Kz5IqzZW21NL4zaFGhNlP6TIO339Ct31KNOTUueVYzz+LWJ2/Ucnr5RWfExCBmNb7RSnj82Prwx6AY8LUINP+RXuaD9YjtFX49a8cAXwsi2ocNDHuQBl/7ll548ZRfesxxiZdyPNikjpxeTz6+0bIGdCkXOGQphriWxPX2kpLC+A19cDM1DmtA4ZdkCGcKvAwQJ2HSZxq8+NkHB4GSBRYc8G0YG2Mx7esccjVGbgkjH6eX/+yRD03MavARp6A2hZjWiGl/zk79HHjjdW30TT8Na3A0PkCBGDVxauAQ+vi7QnHwJJR0esFSQLClTULMiqQ0f5BbJMvpLeJz4ALfrrH0rsXyC7WL/AHEUKwMoc2Ue/CHdIKNtOKpZweTcr23zMtPi+weugdtJ8YBtXGrraSaKz54uE6fncY7GTyHveI77Ep5b5mXv1upbu1Rm8OuF1+RIX2Ogz97fhkoegliWiOufdjAILC1lLAUlz/74sYke1gbXIjGYAOjwKckTG7ZzyevAuT29+NAgV8S/I5nPnSqoR7AtCA0509iQy/sgbrUBzFytH55/jFANEY+tMZhA6PAt8IYNfZgHDxeYiJd6P/nSwdiiNrdy44r1BgWlhanPQ4xqK9v3gcK/EW+BMHZVyR9sRddFz1pn/brzx9obqbR5/zgJTpZecWBpdqlNVKg/SEtxXZ2kBMXcz57oA7qJwpduaMJHDICvSFQ7K38aYds/Zzdey2cnul/xhBnfsfbTRBmgPjX6DN2ub2P+pDe2z1L2C5atCRlvGX6tmDjIDYp8Uv9WKLl2HjBR+3SmqACp8Cn6J6BlTjEtYZNQQ5sathaLI4+yzceL61FV4EtmVATKeHEdD3akwIzAGtQkya+lIp0W3QMw40XI0BKSRqXNTKK9rUtpNhFefo/GL4Vf5X2jBjizI2v1ZDMYAU5FqOPWEkY1xo87dOewWXvxxsPit1A7SNu+ZP3wHogUuBbmYl1sQt6vZrNMiVdygWvhANbijEODgR7UL7xiB6JyEyip9UYhhvvSWrkblm7sYUmGvo8+sHj9Da97UDy8oe0JrVl7aYGGkno8+gHj9Pb+L6J5uWnpMbHlrUbW2iioc9+8HIEsgzrZ8GH5Uir2e/4Wndefq2ejm9ZW69zqI0++8EfWuke83F6Pct7+Q+ltqePGhd70A9erGClln238dnVcHr/3fyItzffQ4sGf7bYgQHUbumhtdeteOizH/yBL3yf6XJeI9aPof+23qqRs7a0rv0QeP8BAAD//995MncAAAAGSURBVAMArzQKcV3lhlEAAAAASUVORK5CYII="); outline: none; }
+#phantomFlip:focus         { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAAaCAYAAABxRujEAAAEu0lEQVR4AdRZsXLUQAzdpaJOTcN3ZIYOGjomVYaZ1MAnUFNSEmpmKIGSgjJMvoEfSE34A6O39vNp5bV3dWcnuczJkp6etPJql9yER+HYf7787dIreHVKWvnh7eEe+XsN/tuvt52VlbewvdzFSTwPoTu/OAnXV9fd9dM/ScMnrnW4OIntxZ1Mqa17YC/Quoe53u4Kxx7sNfizF5fbbZ5zrwNvTWuel99aFzyp/enZKaxMSlhGcDrvrq6DFmd6wJ7tNXj3QlsmyC1zlffyPcW3rO3po8aVPo9/8HLLau+Zxb38LLnibFm7srQrLH0e/+Dl9Lpe2sv3FN+ytqePGlf6PP7By+mtvWcW9/Kz5IqzZW21NL4zaFGhNlP6TIO339Ct31KNOTUueVYzz+LWJ2/Ucnr5RWfExCBmNb7RSnj82Prwx6AY8LUINP+RXuaD9YjtFX49a8cAXwsi2ocNDHuQBl/7ll548ZRfesxxiZdyPNikjpxeTz6+0bIGdCkXOGQphriWxPX2kpLC+A19cDM1DmtA4ZdkCGcKvAwQJ2HSZxq8+NkHB4GSBRYc8G0YG2Mx7esccjVGbgkjH6eX/+yRD03MavARp6A2hZjWiGl/zk79HHjjdW30TT8Na3A0PkCBGDVxauAQ+vi7QnHwJJR0esFSQLClTULMiqQ0f5BbJMvpLeJz4ALfrrH0rsXyC7WL/AHEUKwMoc2Ue/CHdIKNtOKpZweTcr23zMtPi+weugdtJ8YBtXGrraSaKz54uE6fncY7GTyHveI77Ep5b5mXv1upbu1Rm8OuF1+RIX2Ogz97fhkoegliWiOufdjAILC1lLAUlz/74sYke1gbXIjGYAOjwKckTG7ZzyevAuT29+NAgV8S/I5nPnSqoR7AtCA0509iQy/sgbrUBzFytH55/jFANEY+tMZhA6PAt8IYNfZgHDxeYiJd6P/nSwdiiNrdy44r1BgWlhanPQ4xqK9v3gcK/EW+BMHZVyR9sRddFz1pn/brzx9obqbR5/zgJTpZecWBpdqlNVKg/SEtxXZ2kBMXcz57oA7qJwpduaMJHDICvSFQ7K38aYds/Zzdey2cnul/xhBnfsfbTRBmgPjX6DN2ub2P+pDe2z1L2C5atCRlvGX6tmDjIDYp8Uv9WKLl2HjBR+3SmqACp8Cn6J6BlTjEtYZNQQ5sathaLI4+yzceL61FV4EtmVATKeHEdD3akwIzAGtQkya+lIp0W3QMw40XI0BKSRqXNTKK9rUtpNhFefo/GL4Vf5X2jBjizI2v1ZDMYAU5FqOPWEkY1xo87dOewWXvxxsPit1A7SNu+ZP3wHogUuBbmYl1sQt6vZrNMiVdygWvhANbijEODgR7UL7xiB6JyEyip9UYhhvvSWrkblm7sYUmGvo8+sHj9Da97UDy8oe0JrVl7aYGGkno8+gHj9Pb+L6J5uWnpMbHlrUbW2iioc9+8HIEsgzrZ8GH5Uir2e/4Wndefq2ejm9ZW69zqI0++8EfWuke83F6Pct7+Q+ltqePGhd70A9erGClln238dnVcHr/3fyItzffQ4sGf7bYgQHUbumhtdeteOizH/yBL3yf6XJeI9aPof+23qqRs7a0rv0QeP8BAAD//995MncAAAAGSURBVAMArzQKcV3lhlEAAAAASUVORK5CYII="); outline: none; }
+#phantomFlip:hover         { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAAaCAYAAABxRujEAAAEo0lEQVR4AdRZMXLVQAzd5QgpOARdOhoaUtFwBYbhCBzjk5oqw3AF+pwhx4BhmFzB6On7fcvy2rvyt5P8TGRJT09aebULHniVLv3n52OnrxDVmrTxI9rDM/JXDb5LXedl4y1sL/fpKh/epu7w/So9/r3uHj/cqIZP3Ook/PbiQabUtj2wF2jbw1xvT4VjD1YNPqecg1uyH523pnWFKL+1LnhS++7jA6yRlLARIeh8+XWdrKToj/S5avDRdXblyy0L1Y/yI8X3rB3po8aVPi9/8HJ6a+85ikf5o+SKs2ftytKhsPR5+YOX0xt66Sg/UnzP2pE+alzp8/IHL6e39p6jeJQ/Sq44e9Y2S+ObwYoJtZnSpw7ef6F7v6Uac2pc8rxmnse9T95Jy+nlh84JE4OY1/iilfDp19eHfwqKAd+KQPO/0st8sB7xvcKvZw0M8K0gYn3YwLAHOvhc+UovvLjmlx5zXOKlnAg2qSOnN5KfhM8a0KVc4JClGOJWlCu1VQcfGAiklOZx+CVpyQUHudgDHTwAKzgIFIsv2eD7ODbGY9a3OeRajNwSRj5OL//YIx+amNfgI05BbQoxqxGz/pyt/Zx5421t9E1fh9U7Fu+hRIyaODVwCH38u0Jx8CSUtL5gKSDY0iYh5kVSmn+RWyRHb9kC36+x9K6b9NIXwVC89KHdVHjw53SCjfQSqecHo7nRWxbl6yLDw/ZgbWWcURu32ovW3PDBw3X1+iE/yeA57A3fYSi1cIMHkrGifJNaNVfU5rCrtbckSJ+nwedOzm8vdg2L00acNjUwCH3qEqYx+aCUFbPabl2LwUYNCnyKYnLLbt/dJ8jdv/tEgV8S/B3PfGitYR7ArCA0509ifS/sgbrUBzFyrH5z+JYgFiMf2uKwgVHge2GMGntwGjxeYiJyVSeYTGuCRYEtavRrSovH/53rfa++fr5OFMQW+RIEZ61I+mIvti56sj7t2x/Tf+tnbCuNPucHL9HJQhsOTGuX1tBA+0Nayu3slHJy/8HEHqiT+RGy8QYTOGRA1BIoq+Eefsjed3R1WzhKXPHIsgflwftNEGaCrFhEU4ZcdRPqQ47e8CxhQ7RoScrpltnbgo2D+CTll/rxRM/x8YKP2qU1QQVOgU+xPQMrcYhbDZuCHNjUsK14HH2WB4+XtmKrwJZMqImUcGK2Hu1JgRmANahJE19KZbotOqf+xouRIKUki8saI4r1rS0kfAuICv9i+F7CRQIJ8norv+olUzfNaixsfWsjVhLLoQ0ebatncNn7040HxW+g9RH3/Ml7YE0QKfC9zMS63CW7Xs1mmZIu5YJXwoEtxRgHB4I9KN94RC9EZCY50mpO/Y2PJDVy96zd2EITDX1e/OBxepvetidF+X1ak9qzdlMDjST0efGDx+ltfF+lRfma1PjYs3ZjC0009HkcvByBUYb3R8GX5Uiro7/ja91F+bV6Nr5nbbvOuTb6PA7+3ErPmI/TG1k+yn8ptSN91LjYg+PgxUpeatlPG59dDaf3z+Em/z68Ty0a/NliZwZQu6WH1l734qHP4+DPfOHnTJfzmrF+Tsev9VaNnK2lde2XwPsPAAD//84GFAQAAAAGSURBVAMA3FzuYtwHZI0AAAAASUVORK5CYII="); outline: none; }
+#phantomFlip:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAAaCAYAAABxRujEAAAEeElEQVR4AdSZsW5TQRBF39ItnVNE4hfooEykFPwRSlJE1IiCSDR8T4pISQkd8A0pQkdrcp5148lk9+0b+zm2kS6zc+fO7OzOOrKSV92e/7u/ezfnCFFLztSI9rBN/UqD/ze/n3tMfYlj6x0c/kynF6fzz98+dPNuPp8d/ugtvnhr0Y+tHdVR2/agXrC2h1pvL8XT50qDf50OUvRSNqXXp2Zs/ah+bF101D67OGP5BCXuiSDoXH657CyC6R19rjT46Eab1PN6I/Wj+l2pHemjpeUO9n7wvN7WQW08qre5rfUma7f2jsTpc+8Hz+uNHDqq35XakT5aWu5g7wfP620d1MajepvbWm+ytt2b7wwWNjZmTZ/94P03dO+PKaacllY6b5Xnee9LJ8vr1RcdcVhx3qInLvj6+Iph8S3gavC1a7oa73vFr2lLPHoLNNZnDUef/eBb39ILBye/iJpWfDEpQPo6vN5Aev+NVjWwpVx4MBQjboE22gs5gIEA1h6exy/B5+Gjw1rA0Wc/eBtgzUMQ8McAvddxMZ6zvs2R1nLSljjpeb36sSc9Vpy36IkL1BbEWUvM+rU1/fjaNe0Ynr6lY1haW95zpRgaeMAa8HuF4uAJ1sABa7GhSyLmUatT4skt8bzeEl/jhvR+j6GzluoP1S7pxTEUD8U2ZcODX6cRLtIjUs8PhtzopyyqZw8L24Ndo1mnNp9qD2pOCT2u1KX0IoPXsKc8hGpFP2VRvfYZY1eprWGPqT+Vhj4fB5/TrMtpAbtBTgsup6UlntPSz2kG1SOn53xOT7mcZh2fFpDTMtYXePgvpyWX07L2Q+ixx5wWPJ+yTx+vOvDm/KoT8EtAn9OyPjUtclrGclrskdOSQ5vTwrfrnGYdtdlTPcjC1SCNtX/v3nfAcjbf8qyHYj6Olj4fB88hPPiDg+f4MeG5qD9FDe15c33T/3VOvrdvv152ArEhfem85IzFUG1fg548h//r/Pnv+uGnBH1WB1+6hCkHxkFKe8BHcHxynNbRqwdZWyt1KVlf6/TAA/mytV78kL2vfGvHaKw+sqbP4uD9JXBIEClutSa3p6kPesf8V+JMuLjk9SpgPy1cHFBMFn2pH8VlvUb8kKV2aU9y4AV8wfYMV9KIt5a1QA5rWdYWnqfP4uA5tIUtwro2oBIvztbTmlpjoBqyysHn9cofY6Uf6oGYarGH1ljr2zWxo5MjTBgM3yNcJJDAHRQH36rBxXiQ4zn5xEpQ3Fp01te6xvN6iQn+Aq2PxutV31p0guW1rsVur287u19rrTolW8pFV+LhhmKKowHcwUqDJ3lXwOuN9BLV70rtSB8tLXew94Pn9bYOauNRvc1trTdZu7V3JE6fez94Xm/k0FH9rtSO9NHScgf94P2XFO+3Cm0zzuuN7B/V70rtSB8tLXfQD74l3OU4rzfSX1S/K7UjfbS03EE/eH1btbaV/MLx6na8Xn4F+fvP9/5Xpi2LvlpszQC1I720et1UnD77wa953q2m83ppIGrJmRrRHrap/w8AAP//36PCaQAAAAZJREFUAwCzw2Fxcai5TwAAAABJRU5ErkJggg=="); outline: none; }
+</style>
+</button>
+
+
 <div id="phantomLair" class="phantomLair"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div id="folder11" class="button_ folder folder11image">` +
@@ -115,23 +177,92 @@ shelfMenuHTML.tab4.folderSelectors.HTML  +
 
 
 <div id="sidebar4" class="sidebar4">
-<button id="sidebarOpener4" class="sidebarOpener4" onclick="toggleSidebar4();"></button>
+<button id="sidebarOpener4" class="sidebarOpener4" onclick="toggleSidebar4();" title="note: this has been integrated into the fMan system on the keyboard, some things don't copy completely"></button>
 <div id="fMan" class="fMan">
 
 
 
 
 
+<button title="" onclick="" class="hButton"
+style="
+position: absolute;
+left:    0px;
+top:   -595px;
+width:  282px;
+height: 320px;
+border-radius: 56px;
+">
+<style>
+.hButton        {outline: 3px solid lime;
+background-color: rgba(127,255,127,0.25);}
+.hButton:hover  {outline: 4px solid lime;
+background-color: rgba(127,255,127,0.30);}
+.hButton:active {outline: 5px solid lime;
+background-color: rgba(127,255,127,0.35);}
+</style>
+</button>
+
+<button title="" onclick="" class="dButton"
+style="
+position: absolute;
+left:   298px;
+top:   -595px;
+width:  282px;
+height: 320px;
+border-radius: 56px;
+">
+<style>
+.dButton        {outline: 3px solid magenta;
+background-color: rgba(255,127,255,0.25);}
+.dButton:hover  {outline: 4px solid magenta;
+background-color: rgba(255,127,255,0.30);}
+.dButton:active {outline: 5px solid magenta;
+background-color: rgba(255,127,255,0.35);}
+</style>
+</button>
+
+<button title="" onclick="" class="uButton"
+style="
+position: absolute;
+left:   598px;
+top:   -595px;
+width:  282px;
+height: 320px;
+border-radius: 56px;
+">
+<style>
+.uButton        {outline: 3px solid yellow;
+background-color: rgba(255,255,127,0.25);}
+.uButton:hover  {outline: 4px solid yellow;
+background-color: rgba(255,255,127,0.30);}
+.uButton:active {outline: 5px solid yellow;
+background-color: rgba(255,255,127,0.35);}
+</style>
+</button>
+
+<button title="" onclick="" class="bButton"
+style="
+position: absolute;
+left:   899px;
+top:   -595px;
+width:  282px;
+height: 320px;
+border-radius: 56px;
+">
+<style>
+.bButton        {outline: 3px solid cyan;
+background-color: rgba(127,255,255,0.25);}
+.bButton:hover  {outline: 4px solid cyan;
+background-color: rgba(127,255,255,0.30);}
+.bButton:active {outline: 5px solid cyan;
+background-color: rgba(127,255,255,0.35);}
+</style>
+</button>
 
 
 
-
-
-
-
-
-
-<button id="hdubA" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubA" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -156,7 +287,7 @@ margin              :         0px;
 #hdubA:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABFUlEQVR4AeyVTQ6CMBBGO+5mJ1ujl9IreCyvoJfSuMWdS+QVBwhthAIhLDT5HDo/jykdZeO+n+3+WMwpsB4OlEX+uLo5BAumh7MAijW9i9ylyOqwxqrhOE1Ad4ezSxE1Vm82ClfJ3PN+sZxeS65KFuRF4UHWSMd64GwfDd3Iejof2rHlLd85M8uMWwd9llxqunnLd97tYOw6qXO2j4beLAk+FGp5SXB+QMiK+2wA59RjWweqkjmV+J8aNdS2bxjA28Gp13949Aku91g4bU491gZ+4ojrXzkWW65zlWqGmemYVJo5j8XxqTQv6rrzbH/yu1GpACqh9Qnll0oYU6l8ZdgZy8Nfj5uYk8BUwYLp4bbAMZdgfgAAAP//xfmvAgAAAAZJREFUAwCTABhKDYUV8wAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubB" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubB" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -181,7 +312,7 @@ margin              :         0px;
 #hdubB:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABNklEQVR4AeyTQXLCMAwArd50a3rmVe0X+qx+obyKM3DjGGadyCgZwchMbsDMYlu2V7Zjf5T597n7HrcEbZUjpXE6/JctwIWzymkgpbyMp5KF8RHmanIGIf2Vr5KF8cDciIVcZSh/4zEaF8ZsEfcSLOShYQ6S1JhDrSBJlCAtx6QyFJV4d1GCLjkJQCVOQJ/nKbkXPKq/mDy6GdHxdB0LUuBmQCT0sbQcmeEF1O3+qww0G2l5mxFULCm78t1pua3OSi+5V0/LEahML1QlfkTswK++S06CHt7y8LS6joWPZfDx1kZuksrtrqflyDxrcdROy6PJPrZeNX0LOVtmdXRkQQoqt+OwuQu5yvQ4GJxFZXpYJvRlkw+7nxpXmQar5Mo6afVnrio/H/ZCP8EtwIWzyq1BYCtwXgEAAP//xFU8hAAAAAZJREFUAwApKDlKxYu5tgAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubC" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubC" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -206,7 +337,7 @@ margin              :         0px;
 #hdubC:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABR0lEQVR4AeyUu3LCMBBFtek2VdzzVUmfj0uffBU9qZISOBKL1/JaMuASZu5I+7hH8s6gl3T5ve3ej1sKbIYDJTjsv9MWggUzwwmAskb6Px5SS7XHWFd43UBswNevlFqyPjxei3AMBvSGaG99eHw9hNOEwTey//tMyURcCw9ey4dwK/oVqMqQVAafbu5ncE7mBi2XypC/oNVDbQYnWctu7fMq5QBqXirjl62Ce6jfq5QxqYyrr0/ga0bizb39BN5rvrX+hIcTe46lPxaV8q+rO3kO+A/U+V780Mw5sJY/8G44UL6oFnk7YAZXaY8GMwJqkKV1Bl9qJA/QRNxTCFeJb9+D8fSqrHhyVcoBGNZA6VMZwXjCm1NAKuWdxtiSSunD43WFD7sPn5/sVYpZJV4nzefAWBn+u/+Rcy6R3EKwYGa4BSS2EswTAAAA//9qfLbVAAAABklEQVQDALe9IUrh181jAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubD" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubD" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -231,7 +362,7 @@ margin              :         0px;
 #hdubD:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABIElEQVR4AeyVwQ3CMAxFY26+Uc4swhowBvMwBqzBIpyBG0fQS5tCUgclVS5IIP2m/rWfE4vCwg2f5Xr7bCmwHg6U4HY5uhaCBdPDCYCyPp43VyryLQXWCCcJ6GGzcqUiH1FrKYKrdG5/vlp5phc2kWsQwU3CYNIUDeFksRoUw6Gp9CdLm+ROUAUPDVhLVA0HqtKfgPtvmgXPARnP5+ybwtOmf3g6ER//x+LHkF5+Zyz85qh04wFm7Zy3kLdxpGRuZsEzrIldDWfXE0rGqIIDZhwo5aXz5nkED8U8SAUQpT6xBcaP4Bg1AopU3t+Qz/oIrtL/CVBQIpXOqdhgmozwbr0j9skqfZHK99UXGJfA8vD75STkYLYQLJgeHgKMVoL5AgAA//9WzybiAAAABklEQVQDAB/jGEoBrnKJAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubE" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubE" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 0px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -256,7 +387,7 @@ margin              :         0px;
 #hdubE:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABPElEQVR4AdSVMU4DMRBFPXTTsX1OBbcBUSG4DZwqfegog96anx1vvJG8dgGRvsb+M/PGK9nKXfr93R8eziMFdoYDZXM6fqQRggVzhrMBSvw+n9Je0Y/EusAxgb48vaW9oh+OVMDdpvT6/qxcdyzg0NxuD2B4FD1buoJvFeIDdZuS2yI8cjU1wWsAt/ylDHGbipJuODS3/CWso4bAIzCu/zacu43iibVuPjmgKD04PEEVm+ACxShQLTbBa4BbXhOcu7zWMDggt3yn3XLUMLfyAVHbdHIa1nLLQ9Y++244kC39Dzj3HMWv6D45QKS7z1oDruAkKVRBjPjko/BQrNO6gNO0VagG8lHya7GA1wp6vALutvyr6HG0RrflMV3g0+FxPqRbfhRu+yIQsWb41/HTZJLoFSyYM1wbjFGC+QMAAP//fMFv4AAAAAZJREFUAwAJrWBK6T4p/gAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubF" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubF" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -281,7 +412,7 @@ margin              :         0px;
 #hdubF:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABNklEQVR4AeyVMU4DMRBFPXTTsX0qbsBV4C4cgrvAVbgBVfrQUQY9m7+xN5OVrLWiFIn0M/b3+I135dE+pP/f4+7lOFJgMxwok8P+I40QLJgZzgQo8fd4SFsEQ6wZjgn06e0rbREMWKiBu03p+/0Zf4gaOES39QIUX4p9kc7gUZI8oG5TcmuFr5w6dsHrjfXYrTwtRdymeWkIHJpbeRrG0jC4gHW8bTj3GtUn1rj75IBqqeHwBFXsggtUR4Gi2AWPAGteF5x7vNQwOCC3cp/dSlQxt1PzkIe6Ts6GpdxKkaXPfDMcyCXd4eGbue5roY3pwOgo+KxHa5HXnJyNAKJEeayTp/labOBupy+KmiOKbucNExWZ4dPuNa+7laZwuxxz4sqfWBn+s/80cjFHCBbMDNcEY5Rg/gEAAP//+Rrn2gAAAAZJREFUAwCcsDxKYVAaEwAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubG" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubG" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -306,7 +437,7 @@ margin              :         0px;
 #hdubG:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABa0lEQVR4AayUQVLDMAxFLXbaEda9CNeAY3AejgHX4CJdU3Ysy7wYNbJix3EnnfljW9J/chNNHtL/7/H0cj1SYGc4UA6X80c6QrBgznAOQFmjfq+X1FP0GOsGjwUGfH9+Sj1RG/2cq3CKDUhRT9TiiXVVeCyy89vXd0J27q0rODfgJtEIVGVKKlO1AR683reC+6TtDWznvesuuIdxO27pY619AR8xtoA+XsB9orVXyc+cRxWlMhW2YThulfxiVcqVnNddcA/Y2g/DeS9b8s2G4ECZlC1RYw2G4Gbauw7BVZZJiQ1sclSWiRmCA1RZzJy9VMrcMNzDevsCrpL/ds+0N1/AWyamw09Bqy7Gd8ExWQOasCfW0wqu0n40QFENSpzGPreC++ToPjaowlXy7ZndVoOtnHmqcJIq+YsHpCaV5QI+r7LM+g0+nV5hrqSSm6iUK4UqZUwlg401w3/On0IxwSMEC+YMtwOBowTzDwAA//89DLx/AAAABklEQVQDAHznVEpz+IKxAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubH" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 290px; width: 230px; height: 290px; z-index: 100250100; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubH" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 290px; width: 230px; height: 290px; z-index: 100250100; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -331,7 +462,7 @@ margin              :         0px;
 #hdubH:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABCElEQVR4AeyVMQ6CQBBFd+ymk95T6W00VkZvo6eyx84SebsODi7ENVBC8tnZ/5cXMsnAKryv9WbbzCmwEQ6UTX2/hjkEC2aEswHK+mzqMCZyNJbjkxurg2MSHvfnMCZyNJbjk8NCPbhKFU6XA34mfJUqqPw+Yw/34GbOtS7wwU4ubZneFgYEDZIGzOKeM31eA6zMKoZnTxYYxXDG36uAHYrhwFTSt4W6RH/BS4D+zAL33ejqpS1dK3zRawvfDUbcH7AanxxRm+9XfHLzenCV9PP1k+hrlTRE3vuuVSpjfya02uyiqZIAKvkaD7Q3lTxTSV4bB2PFN3/cb2ImwVTBghnhtsGYSzBfAAAA//98PpT0AAAABklEQVQDAAb+HkpuG/05AAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubI" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubI" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -356,7 +487,7 @@ margin              :         0px;
 #hdubI:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAAA3klEQVR4AeyVMQ7CMAxFYzZvhLmngitwLK4Ap+pM2RhLXyBVRJ20UjOm6lcd5/s1siL54H7PsTuPNQU2wIGyGPq7qyFYMAOcBVC+qd7j4LYorSGOrBlOMhXQq5zcFuFNa2Ochat4dxuf0Zf94lHx5n4Wjlul/IMSmPoiHMMeNbjZvdaW1hazA2ay3ZbWFrMDZrJ4WxhfjDmzckqyh2cKzTcLp4hisypJ4sGbpOYwC58dO4IsXOU7P5mTa1JZGdC+uyzOqOKdyrr+CyMrnPzVPwQDyRqCBTPA44JELcH8AAAA//8c4yUSAAAABklEQVQDAH9U7juffWqOAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubJ" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubJ" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 290px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -381,7 +512,7 @@ margin              :         0px;
 #hdubJ:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABDElEQVR4AeyVsQ6CMBCGe27nJLtPpbsP565P5a6TjpivWATugKIkJgaSP6X/Xb9rC2lX4fVstrtyToGNcKB0rpdTmEOwYEY4HaC0nh7lNeSK8YlVwzE9AV0fQ8gV+YkzClcpwv0QotIgr005KkUdHoWTqVIElaoI/a4Aq1Q5zVgWvDlgyvsCd3dr2ZZ/3xbOhq7cNWeYrb8FqHdA4WewTEoLbqJfGr+FpxPvk0Vkz5x953tMKdKCq9gzG+AQeGhlLXjfrCjQFxvyDVzFzr4PMDRrxhg4psp4gTEwHBdOQKUqAMSTyvsiJt9TDS+2exNXqS5dFdua5IaRWBF+u5yFGOYcggUzwlMHYy7BfAIAAP//Dz6RjAAAAAZJREFUAwC0BP47GE8/aAAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubK" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubK" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -406,7 +537,7 @@ margin              :         0px;
 #hdubK:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABB0lEQVR4AcyUsQ7CIBRFwQ0nu/erdPfj3PWrutdJx5qDvgYaqH2VGkxuCvfB4UKxO/P5HdrjUFJgPRwonb67mhKCBdPD6QDl+Rx6s1bMR8Ia4ZhA9xdjcmJMrobPfMaIIrizjXmcpRQ/8Z39Xg9nRfCwUKJdD5wz5Wynu5Ijm/r1JNekZhd1JNemric5SbRafOZct83gKTDvgbufquEtTs5grVTw1NHMpVfBN02eg+fSq5I7m/+epxZWwVMA8VLpi8FlkfD5Pzh/CLYXri5t/Lk642QMbRQld/b9wrjPKTEh5Yeesw3DvEZ405684WxjnF0vIMLy8Ht3s2JS+FWwYHq4dDBKCeYLAAD//3LCSoQAAAAGSURBVAMAkBARStLUoiQAAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubL" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubL" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -431,7 +562,7 @@ margin              :         0px;
 #hdubL:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAAA3klEQVR4AeyVQQ6CMBBFO+66s645lV7BY3kFPRVrcecS86qDhA6SYjckJfkp/TPzgIEwO/c59s2xLymwEQ6UTddeXQnBghnhbICyomffuTkRX5KyBrgWAD3Lwc2JuOYurQncS3CX/m7W4XsJZswyE7iVtNarcLNztS21LWYHTLN+LRtuC/95NH6EIi8UqA4XzvUCWXAAFE+Fr8DxmgWnENBU+JYSOHdFsZWc6yXwXMCv/ATu5T2gGcZr5OU7wAd4aE7DTXgJzss6AVFWhD/am6hJ4F/BghnhusEoJZgvAAAA///EKEpmAAAABklEQVQDAOF/AEoRBcrQAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubM" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubM" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -456,7 +587,7 @@ margin              :         0px;
 #hdubM:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABHElEQVR4AeyVsbHCMAyGrdepe+mp2IBVYBeGYBdYhQ2o6KGjBD4bhdjEhzhcpIBDUaRf+k6ny9l/4fH7ny2vLQ1shAMlOB23oYXBghnhBEDxl+sp1Awdq+nk0Y3Vw0kiztf7UDN0rKaTR4eFZXCVLhw2C/IvRl6lCyrva6w5g1uylf/BRzfpXot9CXwNvI/SiqQbXvS5wunAWQfmGvteNJ3J78N89P9NProu11o4EcvusVxZ44KXTd54GnDWMDTP9O7JVdItpJJ8U7gHVtZkk9eOU84TNGvmnZzF5smhWZzBVdLlO9ytvat01tNf0qYNvcqzrod3s1VsVkk7Vcl9FAcPlVxXSTElxorw83EnlkT41mDBjHALSLQymDcAAAD//3rCzaIAAAAGSURBVAMAcLoeSlfcJ2UAAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubN" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubN" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -481,7 +612,7 @@ margin              :         0px;
 #hdubN:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABC0lEQVR4AeSVzQ2CQBCFd7zNTTzbiG1oGdZjGdqGjXhWbx413+IgCIuzSgwJJC/Lvjd8DMvfLDy3+XJ9H1JgIxwok8tpH4YQLJgRzgQo4+1+CSmRo1SOT26sCo5JuFstQkrkKJXjk8NCDbhKEbbHM35L+CpFUPlcYwc34GYONU4A/n6zPEs3gWVhGXKXJntZOAEn8igb7oFazVdwb/duOK+/deQd3XAvsF6XBc/tPgte78qzPx64Svpb3nUl4+m8q7s+73+d83NNvX34fTlXYDXso0bnKuUN43nukkp/zjEqBdyoCl4sN9FQKf/wKu2RApW2r/LyqDFWhF9PBzGT4FfBghnhNsEYSjAfAAAA///zUPvkAAAABklEQVQDANAgG0qXRPcDAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubO" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubO" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 580px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -506,7 +637,7 @@ margin              :         0px;
 #hdubO:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABOUlEQVR4AeyVsU5DMQxFYzZvvL1fBX8DYkLwN/BV3cvGWHTycIkcp/hVUadWuk3sXJ9YVqreld/P/e7hOFNgKxwowWH/UWYIFswKJwDK6vV9PJRz8n5iY53gJL2Avjy9lXPC4+ssHsIpAmrG0YoHb3QewjFTFBVEObzU+LMOjgmzNxK/vj8XxN6LGmrbfAdvD9s9UJWlqCzDC1o/+zQc81ZdD87MmN3WDs1PLQyLU53bvK1IJTf3FNygW9cbPJxYaiz+FfAiyIXEJpmCN/5N2+vBVXLvd9S+/z2kO2fGzBqxH13Q5tNwioAi9hl1cJXLRuNHwuUdnOQshXCVtXu6+e8iPEhl6awhHJfK378OxSOprD5qvE7wZffoz2qssharxGs1uS9jVfjX/lM4JzlDsGBWuAUkZgnmDwAAAP//4qlHKAAAAAZJREFUAwBKWxhKNjAisQAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubP" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubP" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -531,7 +662,7 @@ margin              :         0px;
 #hdubP:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABKUlEQVR4AeyVPY7CQAyFx9u52/Scavc2ICoEt4FT0UNHCfomOAyOE2VQKn6kx8Se58+JYZSfdP/8Lv6ucwpshgMlOB33aQ7BgpnhBEBZ0eV6SlOEN5KxOriZgK6X2zRFeJHV+rUHV2nSZrfyvjC2G6AB8qYe3BvKmKaozHFdNiE2VcEpUpn+ZNXwsQY8QTmel+A0mKIPg5dzHRtP9VgA88MhD+ZvqtJ06So4QNRVFxcezFYVnAIvoEjlccfmqYID8VJpkkofTIMqOAUqLUylXckNqRo+BIryX3g0lfRGY7HjHT0np5P9aC/KPY2FQgCR0XLs47N4bH2Cq7SvMH8KfawSn0jfqIM3i/+8p9KePJXhNRtHvoyV4efjQfCSnEOwYGa4BSTmEswbAAAA//8YCnTXAAAABklEQVQDAHdVHkpotYhBAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubQ" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubQ" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -556,7 +687,7 @@ margin              :         0px;
 #hdubQ:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABVUlEQVR4AeyVu00DQRCGd8gm4wiRKYQ2TAtk1EEJlAFt0MjFmIzQ6Dvfb/Yxd8bWSXZgS79m5/XNeK2Vb9L4uV2tt0sK7AAHirPp39MSggVzgOMAxdb62W7SnOp6fLH2cIK5BHx7vEtzUl3eq3MIp0FAFU5Z1dFT14TwuuhUv4GzAdtEwJfPr4SiHD305rkGnifzM1C3Lrl1kwPyes4FnMlsQCKXwIq5xQPohaG6Aq7gUva88PpK9K3c4qtRHnvezdngVF03D2/uMq+Fl8iLDFceg0dtDlAa+2fNQTjbCchZiqj1gyvgbodfnaAM0XnKFvCpIoHYbKqGnFtXpBu4W7w9A1DRPToRmFQDJ+gWDyAXiaH8LnUuhFPkthvAVrXI14oG7OHd6qmuH/7S3HZ/bW5/lmFNcRYQa4B/9x9GjuB/dP/wnF77dSPi9MOCOcDlEFhKMH8BAAD//2udnfsAAAAGSURBVAMA4jIuSnD1coEAAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubR" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubR" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -581,7 +712,7 @@ margin              :         0px;
 #hdubR:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABKUlEQVR4AeSTPQ7CMAyFYzZvdEVwKbgCx+IKcCkQK2yM0C8lqM1PcUQZEEiPNvbrZ8dtZu75my/X9ykF1sOBsric9m4KwYLp4SyAcr3dL84q/DkF1guOCehitXVW4ee5kgZwlcadj7uSN4nTxFiBATx5uhegKOqF/O1YATMckkrdzqrgpQKl7qvhFLDqj+C5T4+vSKVJplU1FsC8PJSQMgEzHCDqM+gYqaRd4zPDMceKi8V5M5wOUQygAOOK46zNcMwqXz6hFLGqqnMrNPgmgZfmXg1Xsc+9Gh62bLn+Bjw390HnHAZMuS0TJ4+4H/OE3ACu0r0sTmJOKo1Tee9J4M1y42MqHUAlvXpD+6eS5lS6WJt2geU7v54OEoIkPhUsmB4eFgSmEswHAAAA//9YPJTQAAAABklEQVQDAIoqLUq3fwxmAAAAAElFTkSuQmCC"); outline: none; }
 </style>
 </button>
-<button id="hdubS" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubS" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -606,7 +737,7 @@ margin              :         0px;
 #hdubS:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABZ0lEQVR4AayTQXLDIAwAUW+61T3nVe0X+qx+oX1Vzk1vPTpZCB5bCAIZMrNjC6SVwuCXcP+9nt7XmaCNcqQEl/N3mAEunFFOgJSn5X+9hBY2nzi7NjmLFqSf8hZakAO2lrgqpwApSS3IAfJtnisnkQKbTPy1/gbg/RGuvFaUpV5j1hhqXzskp1BliZPTyKKykLIxLKdSZQkqJezteUq+F7Teh+T5XDlbaInZc+Uq6VxJsNAgQ4OMzSN25Wz0kJvwpImtqcpV0vT2RlhBjr0GVTlFKuWNoBl7PRRy/l4NhCrpH/FusdMf5EhJqMG+Fbbig1ylPhXHoXL8Alti9g5yFmYyLOdoOLaeIbrlCB+J7dF1y5mUBjx7GZK3pHZqcgu5Sv3GUODhickr5CyqpAYUEbcgR8W/oq4cmUr69CluoeKLcWzy5fRBXKCSmqj4z6LgtpBdUf53/pHbWmBxBrhwRnkOWJgFzisAAAD//4U+1usAAAAGSURBVAMAQRxjSlgvnsgAAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubT" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubT" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 870px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -631,7 +762,7 @@ margin              :         0px;
 #hdubT:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAAA+ElEQVR4AeyVQQ6CMBBFO+5mJ1uDl9IreCyvoJeSuMWdS+QVW0poMYQuXNT46fR35kEGktmZ729fn7qcAmvhQNm0zc3kECyYFs4GKOu7a80WwXAsD8cEejhezBbBgIUmcIycSsKfj6txSt3QnbPGciZwlcoDVSqjUsVqJp7KkMcNkMpYM4FTpTIkE6+RyrxuBl8D/JVb4NEOlbaUtkQ7EDXL1/JnbWFkMfKij9WbnJHTh9F/8oVSRHG0KjDJITewfJiE+4wNQRKuMo48xteSVMbRFj6Lh1f1OfRtrDKMLpXl1SYHF8ey8FdzF84wcwgWTAt3G4xcgvkBAAD//99X5t4AAAAGSURBVAMA/koSSkMr2rEAAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubU" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubU" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 0px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -656,7 +787,7 @@ margin              :         0px;
 #hdubU:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAAA6ElEQVR4AeyVQQ6CMBBFO+5mJ1uDl9IreCyvoJeSuMWdS8wrDgaYxka7LMmn9P/2FSYkswnva9sehpICG+FAmfTdJZQQLJgRzgQo43PoQ0rkKJXjkxtrgmMS7vankBI5SuX45LDQDK7ShPvtjL8SvkoTVL6vsc0zuJmlxgp3K1nLUsviVsA1699Sy+JWwDWz/xbrMnQanl3awlzBVdKdBihaMJLTFTy5MiPgYL7MlrpwlfHt6Zu28JfRhQNS+TRjDsmVSsP2qAnetMdoLG8q4yEqeSP7jRXhj+4qZhL8K1gwI9wmGKUE8wUAAP//jh+1AgAAAAZJREFUAwBAmgxK507p9wAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubV" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubV" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 230px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -681,7 +812,7 @@ margin              :         0px;
 #hdubV:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABB0lEQVR4AdyVQQ6CMBBFO+5mJ645lV7BY3kFPRVrcecSecUSCB1oYxcGk5/SP+2j/mn04L6fY33uSgqshwNl0jZ3V0KwYHo4E6CM7651lqgjq45PPbBGOCbFq5ycJerIquNTh4VmcJXK3bon/kL4KpVT2V4TNs/gwSw17giuYme6FlfoyXTNf8QSrhlXjefpCa3nIiePRcILi8ABxZQNT42El2XD2ZSqKFwl/TpaeXOAKJxCTDmRsD8LzoYc7RCust3UtWYS3w5j4Wv9KjOWlF8/7j3rrEOYcJWhoTRtTSqVxXYjvKovi0Uqw7+9ij0uNvVGYHn4q3lI7znMEoIF08PDBKOUYH4AAAD//0voLEIAAAAGSURBVAMARQsSSvgA9N0AAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubW" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubW" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 460px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -706,7 +837,7 @@ margin              :         0px;
 #hdubW:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABA0lEQVR4AeyUMQ7CMAxFYzYz0Z1Twc7h2OFU3csEY+kLJCTEQqkUMaXSV9xv5zWy3Gzc+9ntD3NLgfVwoLxM48W1ECyYHs4LUNbHPDlL5FJZNXjUBFaEY5Lcnp2zRI4aRGzV4JGjBmVwlcHdT9i58FSGaKrU1WXwuLtR0OFmI1e1hUlAJskwC7hKOQlhxFgRH2BNed8TRa6AY1pKYWls1QavGh42rFk73OxWb0t9W1TKH4nd/CiIOBWeyudKDrne89CJbP1/W6xbjyNxYSHiVHjsST1i8+Qqr2lhCmql8mNahv2Rj0WpDE6lXnHjEgSWP/ltvMriOcwWggXTw8MLRivBfAIAAP//Tz6LWwAAAAZJREFUAwAXHAJKyq+UUAAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="hdubY" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubY" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -731,7 +862,7 @@ margin              :         0px;
 #hdubY:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAdCAYAAABBsffGAAABBElEQVR4AeyVTQ6CMBCFO+5mJ665iNfQY3gej6HX8CKsxZ1LzAcOgdpWExpwgclL2zfj1+nwt3Hv37Y8NDkFtoUDZVFXF5dDsGC2cBZAGZ9N7WIijmJxfOLG6uGYBM/7nYuJOIrF8YnDQiO4SuFOtzv+h/BVCqfyPcf+PIKbmWucF64SPrb1k54y909nbRv681Y+3HnqPFi5Srw1v7aEwoJwAjm0DFwl3Br/RKG7xHKSlaukN0iB2SAJJ2GKVniwe2tb/qwtsXe3lclLjBxb++NyF1Sle/x5zGNSKfyC+3VfeVEee3M4Uem++CrhcZhrc2O18Ed1FQKYOQQLZgu3BUYuwXwBAAD//9KjcBoAAAAGSURBVAMAP2wSSrEaaYAAAAAASUVORK5CYII="); outline: none; }
 </style>
 </button>
-<button id="hdubZ" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="hdubZ" title="SHIFT to insert, CTRL to insert new" onclick="" class="pixelArt" style="position: absolute; left: 920px; top: 1160px; width: 230px; height: 290px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -758,15 +889,45 @@ margin              :         0px;
 </button>
 
 
+<button id="hdubX" title="SHIFT to clear" onclick="" class="pixelArt" style="position: absolute; left: 690px; top: 1450px; width: 460px; height: 580px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<style>
+.pixelArt           {
+image-rendering     : crisp-edges;
+image-rendering     :   pixelated;
+                    }
+#hdubX      {
+position            :    absolute;
+top                 :         0px;
+left                :         0px;
+background-color    : transparent;
+background-size     :   100% 100%;
+width               :        100%;
+height              :        100%;
+border              :         0px;
+padding             :         0px;
+margin              :         0px;
+                    }
+
+#hdubX               { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAA6CAYAAADP/mu6AAAClklEQVR4AeyWTU7DMBCFA0dgxXmo2HAOrtAdS3a9Audgg8p5WHGFoi/iVZaVsceO07g/SE9O7Jk3nydOyv3w//e43R/ORSCP4ABz87TbDL0LTnhHcG4AZuxd4jyCW8Afh9+hRJaP5ku8iFVePCbBSfz8ehtKRE5cRPeslXgRS47ywzEJHgb2dn2Z4K93D8PL8/uoXMcVR44Vy5rirBjNK44czYVjtuNWYmiia0+sJ8bjlwWXSW9jU3DrCxBu2hMTxlvXzcD5dKEUGGvEIAvIO+8C51zqZfEa18apDjVTHi5wDHJGxLSSp5YbvBVUK58beK6TvJipGO/ZlsdJOg40XxKkwlOj52wrbxFwQFVgqbE5OF1FS8MXgfModRa9ncxtQH54ez2JKwInoaQA0HQfkWupxFMeNrgiOh0XA6fLaKl9LwaeA6492/JdDRyAmrNNHqoCp6A6hskaqgIHFHjGtVQNvhaw6l4fOD8u2n3tOMejquMU5BuNaqHJRXjVeFSB1xRqnXMDb93RnN/1dNz7MpX8sno9w6dQ1HEK8CVAocmca7wQ3iU+ReAeY3V66X8JmoOzuaWhqeEGL32UmLMBPQHucyqp4QLHkHOIcsXjdeDjual7vBG1ptbjORd4nNTDfTNwHQlvh+duvgbcrHkqaACy4N4zh5klNqQnYsWE856aSXAMeGFQaFxzDbwnj1qI2qn4JHgqUWvqpBdMeXPH2eAAnBqamiZ47lGRLHliPTHy05jKmQQngXOGZGKNxCByrBjWiEFWTDxPLCI3XuN+EpyF3nVZ4Lxs+lp4R3Ksp8Sa1yeOI3fK1+w4CSWaMg/nSrzC2NAjvD6Cf2/34Xy31+IcwX92mztImexdcMI7guuGiXMQvH8AAAD//6ZQWFAAAAAGSURBVAMApCWjk6bBTOMAAAAASUVORK5CYII="); outline: none; }
+#hdubX:focus         { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAA6CAYAAADP/mu6AAAClklEQVR4AeyWTU7DMBCFA0dgxXmo2HAOrtAdS3a9Audgg8p5WHGFoi/iVZaVsceO07g/SE9O7Jk3nydOyv3w//e43R/ORSCP4ABz87TbDL0LTnhHcG4AZuxd4jyCW8Afh9+hRJaP5ku8iFVePCbBSfz8ehtKRE5cRPeslXgRS47ywzEJHgb2dn2Z4K93D8PL8/uoXMcVR44Vy5rirBjNK44czYVjtuNWYmiia0+sJ8bjlwWXSW9jU3DrCxBu2hMTxlvXzcD5dKEUGGvEIAvIO+8C51zqZfEa18apDjVTHi5wDHJGxLSSp5YbvBVUK58beK6TvJipGO/ZlsdJOg40XxKkwlOj52wrbxFwQFVgqbE5OF1FS8MXgfModRa9ncxtQH54ez2JKwInoaQA0HQfkWupxFMeNrgiOh0XA6fLaKl9LwaeA6492/JdDRyAmrNNHqoCp6A6hskaqgIHFHjGtVQNvhaw6l4fOD8u2n3tOMejquMU5BuNaqHJRXjVeFSB1xRqnXMDb93RnN/1dNz7MpX8sno9w6dQ1HEK8CVAocmca7wQ3iU+ReAeY3V66X8JmoOzuaWhqeEGL32UmLMBPQHucyqp4QLHkHOIcsXjdeDjual7vBG1ptbjORd4nNTDfTNwHQlvh+duvgbcrHkqaACy4N4zh5klNqQnYsWE856aSXAMeGFQaFxzDbwnj1qI2qn4JHgqUWvqpBdMeXPH2eAAnBqamiZ47lGRLHliPTHy05jKmQQngXOGZGKNxCByrBjWiEFWTDxPLCI3XuN+EpyF3nVZ4Lxs+lp4R3Ksp8Sa1yeOI3fK1+w4CSWaMg/nSrzC2NAjvD6Cf2/34Xy31+IcwX92mztImexdcMI7guuGiXMQvH8AAAD//6ZQWFAAAAAGSURBVAMApCWjk6bBTOMAAAAASUVORK5CYII="); outline: none; }
+#hdubX:hover         { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAA6CAYAAADP/mu6AAACkElEQVR4AeyWTU7DMBCFA0tWiCWil+oZOBZn6KWKWKKu2IK+iFdZVsYeO3br/iA9ObFn3nyeOCmP0//f89v291IE8gwOMDeH/W4aXXDCO4NzAzDj6BLnEdwC/pm+pxJZPpov8SJWefGYBCfxdfM+lYicuIjuWSvxIpYc5YdjEjwMHO36OsGfppfpa/8xK9dxxZFjxbKmOCtG84ojR3PhmO24lRia6NoT64nx+GXBZTLa2BTc+gKEm/bEhPHWdTNwPl0oBcYaMcgC8s67wDmXelm8xrVxqkPNlIcLHIOcETGt5KnlBm8F1crnDp7rJC9mKsZ7tuVxko4DzZcEqfDS6DnbyusCDqgK9Bqbg9NV1Bu+CJxHqbPo7WRuA/LD2+tJXBE4CSUFgKb7iFxLJZ7ysMEVMejYDZwuo1777gaeA6492/I9GzgANWebPFQFTkF1DJNzqAocUOAZz6Vq8HMBq+7tgfPjot3Xjms8qjpOQb7RqBaaXIRXjUcVeE2h1jl38NYdzfndTse9L1PJL6vXM3wKRR2nAF8CFJqsucYL4V3iUwTuMVane/9L0ByczfWGpoYbvPRRYs4G9AS4z6mkhgscQ84hyhWP14GP55bu8UbUWlqP51zgcdII983AdSS8HV67+Rpws+apoAHIgnvPHGaW2JCeiBUTzntqJsEx4IVBoXHNNfCePGohaqfik+CpRK2pk14w5a0dV4MDcGpoaprguUdFsuSJ9cTIT2MqZxGcBM4Zkok1EoPIsWJYIwZZMfE8sYjceI37RXAWRtd1gfOy6WvhHcmxnhJrXp84jtwlX7PjJJRoyTycK/EKY0OP8PoI/rzZhvPDXotzBj987h4gZXJ0wQnvDK4bJi5B8P4BAAD//3HbLdUAAAAGSURBVAMAm0llk9Lk5pgAAAAASUVORK5CYII="); outline: none; }
+#hdubX:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAA6CAYAAADP/mu6AAACk0lEQVR4AeyWS3LcMAxE1dlhl8nap0qukGPlCsmpvI6983JcT2XYKnlAghQ1ln9VXRyJQOMJIml9m57+vt/8PL8XgTyDA8zF3e3f6eiCE94ZnAuAGY8u53wGj4AfzndTiyIfv9/iRaznrcciOIm/9WNqETnrIn7NXIsXseR4/nIsgi8Dj/b7Y4KbTtOf8/9ZtY57nOkUhprG+VU7bopB1oSmeqypHuO+pji2Cu4mRxuHgkcnwPKhMzHL+Oj3MHCOLlQCY44YFAFl76fATflNlS0cxWU2ObkpcAJN8UZhfqRM9Vpp8JFgI7y+wGtdZGOWYrJr2z2u0nGgOUmQF740mupr2/N2AQfUC+w1Dgenq2hv+CZwU/t5XnuA1rXtb7AJnCRTfh0CTfcRuZFMeU/3iME94qDjbuB0Ge313LuB14B717b7vhk4AKb2tU0e6gI3tZ8uFBupLnAATP3dIn+rusG3Ft6a//nA+eeytWtbPLo6TkHOaNQLTy7Cq8ejC7yn0OicL/DRHa35fZ6OZzeTf4vUOsd81pNYV1PHKcBJgNxg64gXwrvFqwk8Y+ydNu37STAcnIcz7QtNjTR466vE3NT2FdlSIwWOIesQAdQiU677eCNqZfxT4Bmja8cMA7/WpvQG9YB77qvRlFsWrxI7blTBs2uuVNs0fpMWwYFmw6ASWGbOlHsb1ELULvkWwUuJPnftte11N4NjZMp1k9hRCsFrr2oJkInNxCw9+V3KuQhOAusMYVASMYicKI45YlAUs75PLCJ3Pcf1RXAmjq6PBW56OXf91KiNpniDmtr9vJ7psm/YcdNpMuVVW1qmvJfpJTbyfQY/3fyKYg513zln8Pvbf4KOm0cXnPDO4H7BjfcgeB8BAAD//+Q7aEwAAAAGSURBVAMAICejk8d+ueEAAAAASUVORK5CYII="); outline: none; }
+</style>
+</button>
 
 
 
+<div style="position: absolute; left: -271px; top: -622px;">
 
+<button id="hdubPink" title="SHIFT to set colour" style="position: absolute; left: 300px; top: 2090px; width: 180px; height: 530px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;"></button>
+<button id="hdubGrey" title="SHIFT to set colour" style="position: absolute; left: 530px; top: 2090px; width: 180px; height: 530px; z-index: 100249999; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;"></button>
+<button id="hdubBlue" title="SHIFT to set colour" style="position: absolute; left: 760px; top: 2090px; width: 180px; height: 530px; z-index: 100249998; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;"></button>
 
+<textarea class="dckimPixelMono" name="textarea" style="width: 1080px; height: 190px; margin: 0px; border: 0px; padding: 0px; position: absolute; left: 310px; top: 2740px; z-index: 100249998; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: rgba(255,255,255,0.5); font-size: 128px; opacity: 1; text-align: left; overflow: scroll;" id="hdubTitle" title="this is enough to see something is in here, don't write directly into here, just copy things into it"></textarea>
 
+<textarea class="dckimPixelMono" name="textarea" style="width: 1080px; height: 1140px; margin: 0px; border: 0px; padding: 0px; position: absolute; left: 310px; top: 3070px; z-index: 100249999; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: rgba(255,255,255,0.5); font-size: 64px; opacity: 1; text-align: left; overflow: scroll;" id="hdubCode" title="this is enough to see something is in here, don't write directly into here, just copy things into it"></textarea>
 
-
-
+</div>
 
 
 

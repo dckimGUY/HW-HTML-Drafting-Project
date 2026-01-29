@@ -1,110 +1,106 @@
-
-
-
-
-
 function toggleSidebar4() {
 if (document.getElementById("sidebar4").style.left == "-148px") {
 document.getElementById("sidebar4").style.left = "0px";
+localStorage.setItem("sidebar4", "0px");
 } else {
 document.getElementById("sidebar4").style.left = "-148px";
+localStorage.setItem("sidebar4", "-148px");
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (localStorage.getItem("sidebar4")) {
+document.getElementById("sidebar4").style.left = localStorage.getItem("sidebar4");
+}
 
 const letters = [ "a", "b", "c", "d", "e", "f", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z" ]; 
 
-
-
-
-
-
 if (localStorage.getItem("hdubSingleEntry")) {
 ui.hdubSingleEntry.ref.value = localStorage.getItem("hdubSingleEntry"); }
+
+if (localStorage.getItem("hdubPartDesignations")) {
+ui.hdubPartDesignations.ref.value = localStorage.getItem("hdubPartDesignations"); }
+
+
+
 
 ui.hdubSingleEntry.ref.onfocus = function() {
 displayDemo();
 }
 
+
+
+
+
+
+/*
+document.getElementById("hdubOverlay");
+*/
+
+
+
+
+
+
+
+
+ui.hdubPartDesignations.input         = function() {
+ui.hdubPartDesignations.ref.value = ui.hdubPartDesignations.ref.value.replace(/[^A-Z]/g, "");
+localStorage.setItem("hdubPartDesignations", ui.hdubPartDesignations.ref.value);
+ui.hwString[ui.hwString.currentSel].part = ui.hdubPartDesignations.ref.value;
+localStorage.setItem("hwString",JSON.stringify(ui.hwString));
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ui.hdubSingleEntry.input         = function() {
 let input = ui.hdubSingleEntry.ref.value;
-
 
                   if (input.endsWith("\n") ||
                       input.includes("\n")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 let syntaxObject = cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value)));
 enterFromSyntax(syntaxObject);
-
 coinFocus.focus();
 ui.hdubSingleEntry.ref.blur();
-
 demoTime(1.5);
-
-
-
            } else if (input.endsWith( "*") ||
                       input.includes( "*") ||
                       input.endsWith( "?") ||
                       input.includes( "?")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-
            } else if (input.endsWith( "/") ||
                       input.includes( "/")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-
            } else if (input.endsWith("+") ||
                       input.includes("+")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-
            } else if (input.endsWith("<") ||
                       input.includes("<")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 layerLeft();updateInfoShelf();redraw();
-
            } else if (input.endsWith(">") ||
                       input.includes(">")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 layerRight();updateInfoShelf();redraw();
-
            } else if (input.endsWith("[") ||
                       input.includes("[")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 if (ui.hdubSheetTemplate4x.ref.value > 0) {
 ui.hdubSheetTemplate4x.ref.value--;
 }
-
            } else if (input.endsWith("]") ||
                       input.includes("]")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
@@ -115,17 +111,14 @@ ui.hdubSheetTemplate4x.ref.value++;
                       input.includes(" ")) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 saveSyntaxImage();
-
 }
 
 
 letters.forEach((letter) => {
-
 if (input.includes(letter)) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 switchString("hwSel_" + letter);
 }
-
 });
 
 
@@ -174,7 +167,12 @@ ui[name].img.src = drawCell(ui.hwString[name].string,ui.hwString[name].colour);
 drawAllCells();
 
 
+if (localStorage.getItem("hwString")) {
 
+hwString = JSON.parse(localStorage.getItem("hwString"));
+
+
+}
 
 
 
@@ -267,16 +265,7 @@ hdubDemo.style.opacity = 0;
 
 ui.hdubSave.click                = function() { saveSyntaxImage(); };
 
-ui.hdubCanvas.click              = function() {
-drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
-let initialDelay = 800;
-hdubDemo.style.opacity = 1;
-
-for (let j = 100; j >= 0; j--) {
-setTimeout(() => { hdubDemo.style.opacity =  j / 100; },   (100 - j) * 1.5 + initialDelay);
-}
-
-};
+ui.hdubCanvas.click              = function() {  };
 
 ui.hdubSheetTemplate1x.click     = function() { manufactureTemplate(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value)))); };
 
@@ -327,21 +316,25 @@ ui.hwSel_z.click                 = function() { switchString("hwSel_z"); };
 
 
 function switchString(cell) {
-
 ui.hwString.currentSel = cell;
+
+
 ui.hdubSingleEntry.ref.value = ui.hwString[cell].string;
+if (ui.hwString[cell].part) {
+ui.hdubPartDesignations.ref.value = ui.hwString[cell].part;
+} else {
+ui.hdubPartDesignations.ref.value = "";
+}
 drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
 localStorage.setItem("hwString",JSON.stringify(ui.hwString));
-
 letters.forEach((letter) => {
 ui["hwSel_" + letter].ref.style.outline = "";
 ui["hwSel_" + letter].ref.style.zIndex = 100;
 });
 ui[cell].ref.style.outline = "2px solid " + ui.hwString[cell].colour;
 ui[cell].ref.style.zIndex = 200;
-
-
 drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+loadLetterInputs();
 }
 
 
@@ -543,12 +536,35 @@ ctx.fillStyle   = "rgb(16,28,82)";
 ctx.fillRect(0, 0, ui.hdubCanvas.ref.width, ui.hdubCanvas.ref.height);
 let rowStart = 0;
 let shadeNumber = 0;
+
+
+const overlay = document.getElementById("hdubOverlay");
+      overlay.innerHTML = "";
+
+
 for (j = 0; j < array.length; j++) {
 let columnStart = 0;
 for (i = 0; i < array[j].column.length; i++) {
 ctx.fillStyle = shadeArray[shadeNumber];
 shadeNumber++;
 if (shadeNumber > 3) shadeNumber = 0;
+
+const newButton = document.createElement("button");
+      newButton.classList = "overlayButton dckimPixelMono";
+      newButton.style.left            = columnStart + "px";
+      newButton.style.top             = rowStart    + "px";
+      newButton.style.width           = array[j].column[i].width + "px";
+if (array[j].column[i].width < array[j].rowHeight) {
+      newButton.style.fontSize        = array[j].column[i].width + "px";
+} else {
+      newButton.style.fontSize        = array[j].rowHeight + "px";
+}
+      newButton.style.height          = array[j].rowHeight + "px";
+      newButton.style.color           = "black";
+      newButton.dataset.hdubOverlay   = "scroll";
+      newButton.setAttribute("onclick", "this.innerText = ui[ui.hdub.selected].letter; if (ui[ui.hdub.selected].colour == 'hdubPink') { this.style.backgroundColor = pinkColour; } else if (ui[ui.hdub.selected].colour == 'hdubGrey') { this.style.backgroundColor = greyColour; }  else if (ui[ui.hdub.selected].colour == 'hdubBlue') { this.style.backgroundColor = blueColour; }; evaluateLetterInputs();");
+      overlay.appendChild(newButton);
+
 ctx.clearRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
 ctx.fillRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
 ctx.strokeRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
@@ -559,6 +575,26 @@ rowStart += array[j].rowHeight;
 }
 
 drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -622,9 +658,20 @@ const hdub = syntaxObject;
 const entryFactor = ui.hdubSheetTemplate4x.ref.value;
 localStorage.setItem("hdubEntryFactor", entryFactor);
 let rowStart = 0;
+
+let parts   = document.getElementById("hdubPartDesignations").value.split("");
+
 for (j = 0; j < hdub.length; j++) {
+
+
 let columnStart = 0;
 for (i = 0; i < hdub[j].column.length; i++) {
+
+
+let nextLetter = parts.shift();
+
+if (nextLetter != "X") {
+
 let newHeight  = hdub[j].rowHeight       * entryFactor;
 let newWidth   = hdub[j].column[i].width * entryFactor;
 let rowTop     = rowStart                * entryFactor;
@@ -643,8 +690,6 @@ coinFocus.div.contentEditable = "true";
 coinFocus.div.style.fontSize = "32px";
 coinFocus.anchor.style.zIndex = "0";
 }
-
-
 utilityLayer0.lastElementChild.style.top      = rowTop     + window.scrollY + hdubTopOffset + "px";
 utilityLayer0.lastElementChild.dataset.top    = rowTop     + window.scrollY + hdubTopOffset + "px";
 utilityLayer0.lastElementChild.style.left     = columnLeft + window.scrollX + hdubLeftOffset + "px";
@@ -654,6 +699,26 @@ utilityLayer0.lastElementChild.dataset.width  = newWidth   + "px";
 utilityLayer0.lastElementChild.style.height   = newHeight  + "px";
 utilityLayer0.lastElementChild.dataset.height = newHeight  + "px";
 utilityLayer0.lastElementChild.id             = "hdub" + (serial + sequence);
+
+try {
+       if (ui["hdub" + nextLetter].colour == "hdubPink") {
+utilityLayer0.lastElementChild.dataset.coinTrip    = "1";
+} else if (ui["hdub" + nextLetter].colour == "hdubGrey") {
+utilityLayer0.lastElementChild.dataset.coinTrip    = "0";
+} else if (ui["hdub" + nextLetter].colour == "hdubBlue") {
+utilityLayer0.lastElementChild.dataset.coinTrip    = "?";
+}
+} catch { }
+
+try {
+utilityLayer0.lastElementChild.div.innerHTML  = ui["hdub" + nextLetter].value;
+} catch { }
+
+}
+
+
+
+
 sequence++;
 
 }
@@ -661,7 +726,28 @@ columnStart += hdub[j].column[i].width;
 }
 rowStart += hdub[j].rowHeight;
 }
+
+readCoins();
+recoverColouration();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -723,6 +809,12 @@ columnStart += array[j].column[i].width;
 }
 rowStart += array[j].rowHeight;
 }
+
+ctx.strokeStyle = "black";
+ctx.beginPath();
+ctx.moveTo(canvas.width, 0);
+ctx.lineTo(canvas.width, canvas.height);
+ctx.stroke();
 
 const datePrefix = Date.now().toString().slice(-6);
 const syntax = reString(array);
@@ -865,10 +957,11 @@ rowStart += array[j].rowHeight;
 
 
 
+/*
 
 
 
-
+*/
 
 
 
@@ -899,18 +992,360 @@ rowStart += array[j].rowHeight;
     "hdubU",
     "hdubV",
     "hdubW",
+    "hdubX",
     "hdubY",
     "hdubZ"
 ];
 ui.idNames.forEach((name) => {
 ui[name]         = {};
+ui[name].title   = "";
+ui[name].value   = "";
+ui[name].letter  = name.replace(/hdub/g, "");
+ui[name].colour  = "hdubBlue";
+});
+
+
+/* HERE ARE SOME DEFAULT EXAMPLE CONTENTS FOR THE ARRAY OF INSERTION HTML */
+
+/* THIS ONE IS ALWAYS PUT IN, IN CASE OF NO CONTENTS */
+ui.hdubO.title = "default";
+ui.hdubO.value = '<div style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></div>';
+
+ui.hdubA.title = '            '; ui.hdubA.value = '';
+ui.hdubB.title = 'button input'; ui.hdubB.value = '<input type="button" name="button" style="width: 100%; height: 100%;" value="">';
+ui.hdubC.title = 'HTML canvas '; ui.hdubC.value = `<canvas style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></canvas><!-- NORMALLY THE HTML CANVAS ELEMENT IS USED IN THE 'ABSTRACT SENSE' WITHOUT PLACING IT INTO THE PAGE, BUT FOR TESTING PURPOSES IT CAN BE CONVENIENT -->`;
+ui.hdubD.title = 'colour input'; ui.hdubD.value = '<input type="color" name="colour" value="#AAAAAA" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">';
+ui.hdubE.title = '            '; ui.hdubE.value = '';
+ui.hdubF.title = '            '; ui.hdubF.value = `<form                name="form"   style="width: 100%; height: 100%;">
+<!-- THERE IS NOTHING YOU CAN WRITE THAT WILL MAKE THIS 'FIT', EVER, OTHER THAN REMOVING THE DEFAULT STYLING -->
+<input type="value"  name="value1" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value1">
+<input type="value"  name="value2" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value2">
+<input type="value"  name="value3" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value3">
+<input type="value"  name="value4" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value4">
+<input type="button" name="button" style="width: 100%; height: 20%;" value="">
+</form>`;
+ui.hdubG.title = '            '; ui.hdubG.value = '';
+ui.hdubH.title = '            '; ui.hdubH.value = '';
+ui.hdubI.title = 'iframe      '; ui.hdubI.value = '<iframe src="" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></iframe>';
+ui.hdubJ.title = '            '; ui.hdubJ.value = '';
+ui.hdubK.title = '            '; ui.hdubK.value = '';
+ui.hdubL.title = '            '; ui.hdubL.value = '';
+ui.hdubM.title = 'marquee     '; ui.hdubM.value = '<marquee direction="left" scrollamount="4" behavior="scroll" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;" onmouseover="this.stop();" onmouseout="this.start();">default</marquee>';
+ui.hdubN.title = 'number input'; ui.hdubN.value = '<input type="number" name="number" min="" max="" step="" style="width: 100%; height: 100%;" value="" placeholder="">';
+ui.hdubP.title = '            '; ui.hdubP.value = '';
+ui.hdubQ.title = 'checkbox    '; ui.hdubQ.value = '<input type="checkbox" name="checkbox" style="width: 100%; height: 100%;">';
+ui.hdubR.title = 'radio button'; ui.hdubR.value = '<input type="radio" name="radio" style="width: 100%; height: 100%;">';
+ui.hdubS.title = 'slider range'; ui.hdubS.value = '<input type="range" name="range" min="" max="" step="" value="" style="width: 100%; height: 100%;">';
+ui.hdubT.title = 'textarea    '; ui.hdubT.value = '<textarea name="textarea" style="width: 100%; height: 100%;" value="" placeholder=""></textarea>';
+ui.hdubU.title = '            '; ui.hdubU.value = '';
+ui.hdubV.title = 'value input '; ui.hdubV.value = '<input type="value" name="value" style="width: 100%; height: 100%;" value="" placeholder="">';
+ui.hdubW.title = '            '; ui.hdubW.value = '';
+ui.hdubY.title = '            '; ui.hdubY.value = '';
+ui.hdubZ.title = '            '; ui.hdubZ.value = '';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ui.idNames.forEach((name) => {
+if (localStorage.getItem(name + ".title"))  {ui[name].title  = localStorage.getItem(name + ".title"); }
+if (localStorage.getItem(name + ".value"))  {ui[name].value  = localStorage.getItem(name + ".value"); }
+if (localStorage.getItem(name + ".colour")) {ui[name].colour = localStorage.getItem(name + ".colour");}
 ui[name].ref     = document.getElementById(name);
 });
 
+
+
+
+
+
+
+      ui.hdub = {};
+      ui.hdub.selected = "hdubA";
+      ui.hdubStuff =
+[
+    "hdubPink",
+    "hdubGrey",
+    "hdubBlue",
+    "hdubTitle",
+    "hdubCode"
+];
+ui.hdubStuff.forEach((name) => {
+ui[name]         = {};
+ui[name].ref     = document.getElementById(name);
+});
+
+
+ui.hdubX.title   = "no-part (empty)";
+ui.hdubX.value   = "This one just marks the part to not become rendered or entered. It's good when you want to leave empty spaces.";
+
+
+
+if (localStorage.getItem("hdubSelected")) {
+ui.hdub.selected = localStorage.getItem("hdubSelected");
+       if (ui[ui.hdub.selected].colour == "hdubPink") {
+ui.hdubPink.ref.style.outlineOffset = "-28px";
+ui.hdubPink.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubPink'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+} else if (ui[ui.hdub.selected].colour == "hdubGrey") {
+ui.hdubGrey.ref.style.outlineOffset = "-28px";
+ui.hdubGrey.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubGrey'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+} else if (ui[ui.hdub.selected].colour == "hdubBlue") {
+ui.hdubBlue.ref.style.outlineOffset = "-28px";
+ui.hdubBlue.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubBlue'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+}
+ui.hdubTitle.ref.value = ui[ui.hdub.selected].title;
+ui.hdubCode.ref.value = ui[ui.hdub.selected].value;
+}
+
+
+
+
+
+
+
+
+
+ui.hdubTitle.ref.setAttribute("oninput", "ui[ui.hdub.selected].title = ui.hdubTitle.ref.value; localStorage.setItem(ui.hdub.selected + '.title', ui[ui.hdub.selected].title);");
+ui.hdubCode.ref.setAttribute( "oninput", "ui[ui.hdub.selected].value = ui.hdubCode.ref.value;  localStorage.setItem(ui.hdub.selected + '.value', ui[ui.hdub.selected].value);");
+
+
+
+
+
+
+
+
+
+
 /*** THIS SETS UP EVENT DELEGATION ***/
 
-document.addEventListener(       "click", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { return 0; } }); });
+document.addEventListener(       "click", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) {
+ui.hdubTitle.ref.value = ui[name].title;
+ui.hdubCode.ref.value  = ui[name].value;
+ui.hdub.selected       = name;
+localStorage.setItem("hdubSelected", ui.hdub.selected);
+
+       if ( event.shiftKey && !event.ctrlKey && coinFocus != null) {
+if (name != "hdubX") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubCode.ref.value;
+} else if (name == "hdubX") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
+}
+} else if (!event.shiftKey &&  event.ctrlKey && name != "hdubX") {
+if (hauptMode==1) {
+hauptMode=0;
+insertNewCoin([null,78,78,false,false,false]);
+coinFocus.div.contentEditable = "true";
+coinFocus.anchor.style.zIndex = "0";
+coinFocus.style.left   = window.scrollX + "px";
+coinFocus.dataset.left = window.scrollX + "px";
+coinFocus.style.top    = window.scrollY + "px";
+coinFocus.dataset.top  = window.scrollY + "px";
+hauptMode=1;
+} else {
+insertNewCoin([null,78,78,false,false,false]);
+coinFocus.div.contentEditable = "true";
+coinFocus.anchor.style.zIndex = "0";
+coinFocus.style.left   = window.scrollX + "px";
+coinFocus.dataset.left = window.scrollX + "px";
+coinFocus.style.top    = window.scrollY + "px";
+coinFocus.dataset.top  = window.scrollY + "px";
+}
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubCode.ref.value;
+}
+
+
+
+return 0; } });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+loadHdubArray();
+
+
+ui.hdubPink.ref.style.outline = "";
+ui.hdubGrey.ref.style.outline = "";
+ui.hdubBlue.ref.style.outline = "";
+
+
+
+       if (ui[ui.hdub.selected].colour == "hdubPink") {
+ui.hdubPink.ref.style.outlineOffset = "-28px";
+ui.hdubPink.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubPink'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+} else if (ui[ui.hdub.selected].colour == "hdubGrey") {
+ui.hdubGrey.ref.style.outlineOffset = "-28px";
+ui.hdubGrey.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubGrey'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+} else if (ui[ui.hdub.selected].colour == "hdubBlue") {
+ui.hdubBlue.ref.style.outlineOffset = "-28px";
+ui.hdubBlue.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubBlue'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+}
+
+       if (event.target == ui.hdubPink.ref ||
+           event.target == ui.hdubGrey.ref ||
+           event.target == ui.hdubBlue.ref) {
+ui.hdubPink.ref.style.outline = "";
+ui.hdubGrey.ref.style.outline = "";
+ui.hdubBlue.ref.style.outline = "";
+}
+
+
+       if (event.target == ui.hdubPink.ref) {
+ui.hdubPink.ref.style.outlineOffset = "-28px";
+ui.hdubPink.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubPink'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+if (event.shiftKey && coinFocus != null) {
+coinFocus.dataset.coinTrip = "1";
+readCoins(); recoverColouration();
+}
+} else if (event.target == ui.hdubGrey.ref) {
+ui.hdubGrey.ref.style.outlineOffset = "-28px";
+ui.hdubGrey.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubGrey'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+if (event.shiftKey && coinFocus != null) {
+coinFocus.dataset.coinTrip = "0";
+readCoins(); recoverColouration();
+}
+} else if (event.target == ui.hdubBlue.ref) {
+ui.hdubBlue.ref.style.outlineOffset = "-28px";
+ui.hdubBlue.ref.style.outline       =  "28px dotted black";
+ui[ui.hdub.selected].colour = 'hdubBlue'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
+if (event.shiftKey && coinFocus != null) {
+coinFocus.dataset.coinTrip = "?";
+readCoins(); recoverColouration();
+}
+}
+
+
+loadLetterInputs();
+
+});
+
 document.addEventListener(  "mousewheel", function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { return 0; } }); });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function evaluateLetterInputs() {
+const overlay = document.getElementById("hdubOverlay");
+const parts   = document.getElementById("hdubPartDesignations");
+parts.value = "";
+for (let j = 0; j < overlay.children.length; j++) {
+if (overlay.children[j].innerText && overlay.children[j].innerText != "") {
+parts.value += overlay.children[j].innerText;
+}
+}
+//loadLetterInputs();
+}
+
+
+
+
+function loadLetterInputs() {
+const overlay = document.getElementById("hdubOverlay");
+let parts   = document.getElementById("hdubPartDesignations").value.split("");
+for (let j = 0; j < overlay.children.length; j++) {
+let nextLetter = parts.shift();
+if (!nextLetter) nextLetter = "O";
+overlay.children[j].innerText = nextLetter;
+if (ui["hdub" + nextLetter].colour == 'hdubPink') {
+overlay.children[j].style.backgroundColor = pinkColour;
+} else if (ui["hdub" + nextLetter].colour == 'hdubGrey') {
+overlay.children[j].style.backgroundColor = greyColour;
+}  else if (ui["hdub" + nextLetter].colour == 'hdubBlue') {
+overlay.children[j].style.backgroundColor = blueColour;
+};
+
+overlay.children[j].style.color = "black";
+if (nextLetter == "X") {
+overlay.children[j].style.backgroundColor = "black";
+overlay.children[j].style.color = "red";
+}
+
+}
+localStorage.setItem("hdubPartDesignations", ui.hdubPartDesignations.ref.value);
+ui.hwString[ui.hwString.currentSel].part = ui.hdubPartDesignations.ref.value;
+localStorage.setItem("hwString",JSON.stringify(ui.hwString));
+}
+
+
+
+
+
+function loadHdubArray() {
+ui.idNames.forEach((name) => {
+ui[name].ref.style.outline = "";
+ui[name].ref.style.borderRadius = "16px";
+});
+ui[ui.hdub.selected].ref.style.outlineOffset = "-28px";
+ui[ui.hdub.selected].ref.style.outline       = "28px dotted lime";
+ui.hdubPink.ref.style.backgroundColor = pinkColour;
+ui.hdubGrey.ref.style.backgroundColor = greyColour;
+ui.hdubBlue.ref.style.backgroundColor = blueColour;
+}
+loadHdubArray();
+loadLetterInputs();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -41,15 +41,15 @@ shelfMenuHTML.tab3.folder1.HTML = `
 
 <button id="cycleColourLeft" class="button_ button_cycleColourLeft" title="Cycle Colours Left"></button>
 <button id="cycleColoursRight" class="button_ button_cycleColoursRight" title="Cycle Colours Right"></button>
-<button id="navPoint7" class="button_ button_navPoint7" title="nav NW"></button>
-<button id="navPoint8" class="button_ button_navPoint8" title="nav N"></button>
-<button id="navPoint9" class="button_ button_navPoint9" title="nav NE"></button>
-<button id="navPoint4" class="button_ button_navPoint4" title="nav W"></button>
-<button id="navPoint5" class="button_ button_navPoint5" title="nav Center (hold shift when you click these buttons to use screen coordinates)"></button>
-<button id="navPoint6" class="button_ button_navPoint6" title="nav E"></button>
-<button id="navPoint1" class="button_ button_navPoint1" title="nav SW"></button>
-<button id="navPoint2" class="button_ button_navPoint2" title="nav S"></button>
-<button id="navPoint3" class="button_ button_navPoint3" title="nav SE"></button>
+<button id="navPoint7" class="button_ button_navPoint7" title="part: top left, SHIFT for screen"></button>
+<button id="navPoint8" class="button_ button_navPoint8" title="part: top centre, SHIFT for screen"></button>
+<button id="navPoint9" class="button_ button_navPoint9" title="part: top right, SHIFT for screen"></button>
+<button id="navPoint4" class="button_ button_navPoint4" title="part: left centre, SHIFT for screen"></button>
+<button id="navPoint5" class="button_ button_navPoint5" title="part: centre, SHIFT for screen"></button>
+<button id="navPoint6" class="button_ button_navPoint6" title="part: right centre, SHIFT for screen"></button>
+<button id="navPoint1" class="button_ button_navPoint1" title="part: bottom left, SHIFT for screen"></button>
+<button id="navPoint2" class="button_ button_navPoint2" title="part: bottom centre, SHIFT for screen"></button>
+<button id="navPoint3" class="button_ button_navPoint3" title="part: bottom right, SHIFT for screen"></button>
 
 
 
@@ -67,18 +67,18 @@ shelfMenuHTML.tab3.folder1.HTML = `
 9</textarea>
 <button id="popColours" class="button_ button_popColours dckimPixelMono" title="cycle colours and pop lines"></button>
 <button id="popButton" class="button_ button_popButton dckimPixelMono" title="pop lines into new buttons"></button>
-<button id="ringButton" class="button_ button_ringButton dckimPixelMono" title="set up a navigation ring from the list, use only two to get a 'back-and-forth'">navigation</button>
+<button id="ringButton" class="button_ button_ringButton dckimPixelMono" title="set up a navigation ring from the list, 'SHIFT' gives colours, use only two buttons to get a 'back-and-forth'">navigation</button>
 
 <button id="navUpscale" class="navUpscale dckimPixelMono" disabled="true" title="that dot is written in pencil">16</button>
 
-<button id="navAlphabet" class="navAlphabet" onclick="
+<button id="navAlphabet" class="navAlphabet" title="these look like they are in reverse, but they will make linkages in the forwards order. When saved, the webpage will be functionable from the keyboard." onclick="
 document.getElementById('buttonWordList').value = alphabet.join('. \\n') + '. ';
 if (!event.shiftKey) {
 document.getElementById('buttonWordList').value = alphabet.reverse().join('. \\n') + '. ';
 alphabet.reverse();
 }
 "></button>
-<button id="navNumber"   class="navNumber"   onclick="
+<button id="navNumber"   class="navNumber"  title="these look like they are in reverse, but they will make linkages in the forwards order. When saved, the webpage will be functionable from the keyboard."  onclick="
 document.getElementById('buttonWordList').value = ' 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26'.replace(/,/g, '. \\n') + '. ';
 if (!event.shiftKey) {
 document.getElementById('buttonWordList').value = ' 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26'.split(',').reverse().join(',').replace(/,/g, '. \\n') + '. ';

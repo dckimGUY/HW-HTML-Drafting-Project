@@ -22,6 +22,36 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/
 /*                                                                                                                                                            */
+
+
+/*    Q    */ if (kC ==  81 && cC ==  81) {                                 quitSave();                                                                                          }
+/*    W    */ if (kC ==  87 && cC ==  87) {                                 appendFile();                                                                                        }
+/*    E    */ if (kC ==  69 && cC ==  69) { noteCoin("<u>E</u><br><span style='font-size: 0.5em;'>scale/edge</span>",durationC); resetScale(); lastKey = "e";                    }
+/*    R    */ if (kC ==  82 && cC ==  82) { pullFromGuideLayer(keyInfo);                                                                                                         }
+/*    T    */ if (kC ==  84 && cC ==  84) { noteCoin("<u>T</u><br><span style='font-size: 0.5em;'>colour all</span>",durationC); assignAllColours();                             }
+/*    Y    */ if (kC ==  89 && cC ==  89) { wrapDocumentWithScreen(); noteCoin("<u>Y</u><br><span style='font-size: 0.5em;'>wrap screen</span>",durationC);                      }
+/*    U    */ if (kC ==  85 && cC ==  85) { wrapParts(); noteCoin("<u>U</u><br><span style='font-size: 0.5em;'>wrap colours</span>",durationC);                                  }
+/*    I    */ if (kC ==  73 && cC ==  73) {                                 aioNRouter(keyInfo);                                                                                 }
+/*    O    */ if (kC ==  79 && cC ==  79) {                                 aioNRouter(keyInfo);                                                                                 }
+/*    P    */ if (kC ==  80 && cC ==  80) {                                 pasteMultiple(keyInfo);                                                                              }
+/*    A    */ if (kC ==  65 && cC ==  65) {                                 aioNRouter(keyInfo);                                                                                 }
+/*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false);                                                                                  }
+/*    D    */ if (kC ==  68 && cC ==  68) { noteCoin("<u>D</u><br><span style='font-size: 0.5em;'>duplicate in place</span>",durationC); insertNewDuplicate(keyInfo);            }
+/*    F    */ if (kC ==  70 && cC ==  70) {                                 openFile();                                                                                          }
+/*    G    */ if (kC ==  71 && cC ==  71) {                                 gridArray();                                                                                         }
+/*    H    */ if (kC ==  72 && cC ==  72) { hjklRouter(keyInfo);                                                                                                                 }
+/*    J    */ if (kC ==  74 && cC ==  74) { hjklRouter(keyInfo);                                                                                                                 }
+/*    K    */ if (kC ==  75 && cC ==  75) { hjklRouter(keyInfo);                                                                                                                 }
+/*    L    */ if (kC ==  76 && cC ==  76) { hjklRouter(keyInfo);                                                                                                                 }
+/*    Z    */ if (kC ==  90 && cC ==  90) { noteCoin("<u>Z</u><br><span style='font-size: 0.5em;'>Z by colour</span>",durationC); manageTripartiteZ(0); modeRouter(e,9);         }
+/*    X    */ if (kC ==  88 && cC ==  88) {                                 deleteCoin(keyInfo);                                                                                 }
+/*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("<u>C</u><br><span style='font-size: 0.5em;'>coinToCursor</span>",durationC); coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                        }
+/*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("<u>V</u><br><span style='font-size: 0.5em;'>flow by colour</span>",durationC); lastFlow="colour"; reflowPerTrip(keyInfo);  }
+/*    B    */ if (kC ==  66 && cC ==  66) { noteCoin("<u>B</u><br><span style='font-size: 0.5em;'>copy opener contents</span>",durationC); copyOpenerContents(keyInfo);          }
+/*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                                                 }
+/*    M    */ if (kC ==  77 && cC ==  77) { guideLayer(keyInfo);                                                                                                                 }
+
+
 /*    q    */ if (kC ==  81 && cC == 113) {                          quitSave();                                                                                                        }
 /*    w    */ if (kC ==  87 && cC == 119) { noteCoin("W<br><span style='font-size: 0.5em;'>window mode</span>",durationC); flipWindowEdge(); modeRouter(e,0);                           }
 /*    e    */ if (kC ==  69 && cC == 101) {                                                                              flipEdge(); modeRouter(e,5);                                   }
@@ -88,6 +118,50 @@ hold[letter].value = null;
 } else if (kC ==  78 && cC == 110){spreadReference(coinFocus,hold.n);(`++ stored in "${hold.n.name}"...`);
 } else if (kC ==  77 && cC == 109){spreadReference(coinFocus,hold.m);(`++ stored in "${hold.m.name}"...`);
 }
+
+
+if (coinFocus != null) {
+       if (kC ==  81 && cC ==  81){ui.hdubQ.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubQ.value', ui.hdubQ.value);
+} else if (kC ==  87 && cC ==  87){ui.hdubW.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubW.value', ui.hdubW.value);
+} else if (kC ==  69 && cC ==  69){ui.hdubE.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubE.value', ui.hdubE.value);
+} else if (kC ==  82 && cC ==  82){ui.hdubR.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubR.value', ui.hdubR.value);
+} else if (kC ==  84 && cC ==  84){ui.hdubT.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubT.value', ui.hdubT.value);
+} else if (kC ==  89 && cC ==  89){ui.hdubY.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubY.value', ui.hdubY.value);
+} else if (kC ==  85 && cC ==  85){ui.hdubU.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubU.value', ui.hdubU.value);
+} else if (kC ==  73 && cC ==  73){ui.hdubI.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubI.value', ui.hdubI.value);
+} else if (kC ==  79 && cC ==  79){ui.hdubO.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubO.value', ui.hdubO.value);
+} else if (kC ==  80 && cC ==  80){ui.hdubP.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubP.value', ui.hdubP.value);
+} else if (kC ==  65 && cC ==  65){ui.hdubA.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubA.value', ui.hdubA.value);
+} else if (kC ==  83 && cC ==  83){ui.hdubS.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubS.value', ui.hdubS.value);
+} else if (kC ==  68 && cC ==  68){ui.hdubD.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubD.value', ui.hdubD.value);
+} else if (kC ==  70 && cC ==  70){ui.hdubF.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubF.value', ui.hdubF.value);
+} else if (kC ==  71 && cC ==  71){ui.hdubG.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubG.value', ui.hdubG.value);
+} else if (kC ==  72 && cC ==  72){ui.hdubH.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubH.value', ui.hdubH.value);
+} else if (kC ==  74 && cC ==  74){ui.hdubJ.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubJ.value', ui.hdubJ.value);
+} else if (kC ==  75 && cC ==  75){ui.hdubK.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubK.value', ui.hdubK.value);
+} else if (kC ==  76 && cC ==  76){ui.hdubL.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubL.value', ui.hdubL.value);
+} else if (kC ==  90 && cC ==  90){ui.hdubZ.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubZ.value', ui.hdubZ.value);
+} else if (kC ==  67 && cC ==  67){ui.hdubC.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubC.value', ui.hdubC.value);
+} else if (kC ==  86 && cC ==  86){ui.hdubV.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubV.value', ui.hdubV.value);
+} else if (kC ==  66 && cC ==  66){ui.hdubB.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubB.value', ui.hdubB.value);
+} else if (kC ==  78 && cC ==  78){ui.hdubN.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubN.value', ui.hdubN.value);
+} else if (kC ==  77 && cC ==  77){ui.hdubM.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubM.value', ui.hdubM.value);
+}
+}
+
+
+
+//} else if (kC ==  88 && cC ==  88){coinFocus.div.innerHTML = ui.hdubX.value;
+
+
+
+
+
+
+
+
+
+
 charM=0;charQ1=0;charQ2=0;charF=0;
 
 } else if (charF==1) {
@@ -119,6 +193,37 @@ pasteAfter=1;
 } else if (kC ==  78 && cC == 110){pasteOut(keyInfo,hold.n.value);
 } else if (kC ==  77 && cC == 109){pasteOut(keyInfo,hold.m.value);
 }
+
+if (coinFocus != null) {
+       if (kC ==  81 && cC ==  81){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubQ.value;
+} else if (kC ==  87 && cC ==  87){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubW.value;
+} else if (kC ==  69 && cC ==  69){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubE.value;
+} else if (kC ==  82 && cC ==  82){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubR.value;
+} else if (kC ==  84 && cC ==  84){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubT.value;
+} else if (kC ==  89 && cC ==  89){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubY.value;
+} else if (kC ==  85 && cC ==  85){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubU.value;
+} else if (kC ==  73 && cC ==  73){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubI.value;
+} else if (kC ==  79 && cC ==  79){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubO.value;
+} else if (kC ==  80 && cC ==  80){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubP.value;
+} else if (kC ==  65 && cC ==  65){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubA.value;
+} else if (kC ==  83 && cC ==  83){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubS.value;
+} else if (kC ==  68 && cC ==  68){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubD.value;
+} else if (kC ==  70 && cC ==  70){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubF.value;
+} else if (kC ==  71 && cC ==  71){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubG.value;
+} else if (kC ==  72 && cC ==  72){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubH.value;
+} else if (kC ==  74 && cC ==  74){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubJ.value;
+} else if (kC ==  75 && cC ==  75){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubK.value;
+} else if (kC ==  76 && cC ==  76){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubL.value;
+} else if (kC ==  90 && cC ==  90){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubZ.value;
+} else if (kC ==  67 && cC ==  67){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubC.value;
+} else if (kC ==  86 && cC ==  86){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubV.value;
+} else if (kC ==  66 && cC ==  66){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubB.value;
+} else if (kC ==  78 && cC ==  78){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubN.value;
+} else if (kC ==  77 && cC ==  77){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubM.value;
+} else if (kC ==  88 && cC ==  88){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
+}
+}
+
 charM=0;charQ1=0;charQ2=0;charF=0;
 pasteAfter=0;
 

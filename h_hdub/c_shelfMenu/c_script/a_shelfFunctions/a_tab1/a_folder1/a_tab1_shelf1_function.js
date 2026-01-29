@@ -1,23 +1,19 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function flipPhantomLair() {
+let middleman = document.createElement("div");
+middleman.innerHTML      = thePhantomLair.innerHTML;
+thePhantomLair.innerHTML = utilityLayer0.innerHTML;
+utilityLayer0.innerHTML  = middleman.innerHTML;
+singlePasteBuffer.value = [];
+for (let j = 0; j < thePhantomLair.children.length; j++) {
+singlePasteBuffer.value[j] = thePhantomLair.children[j];
+}
+if (utilityLayer0.children.length != 0) {
+coinFocus = utilityLayer0.children[0];
+}
+readCoins(); recoverColouration(); redraw();
+loadSidebar1();
+updateInfoShelf();
+}
 
 
 
@@ -35,34 +31,19 @@
 function toggleSidebar1() {
 if (document.getElementById("sidebar").style.left == "-148px") {
 document.getElementById("sidebar").style.left = "0px";
+localStorage.setItem("sidebar", "0px");
 } else {
 document.getElementById("sidebar").style.left = "-148px";
+localStorage.setItem("sidebar", "-148px");
 }
 }
 
 
-/*
+if (localStorage.getItem("sidebar")) {
+document.getElementById("sidebar").style.left = localStorage.getItem("sidebar");
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 
 
 
@@ -86,9 +67,16 @@ itemSystem.append(topPad);
 for (let j = 0; j < utilityLayer0.children.length; j++) {
 const container = document.createElement("div");
       container.classList = "coinItemContainer";
+      container.dataset.scroll = "false";
 const itemButton = document.createElement("button");
       itemButton.classList = "coinItemList";
       itemButton.dataset.scroll = "false";
+if (utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild &&
+    utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild.dataset &&
+    utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild.dataset.coinTrip) {
+      itemButton.style.textDecorationLine="underline";
+}
+
       itemButton.setAttribute("onclick", `
 coinFocus1 = coinFocus;
 coinFocus = document.getElementById('${utilityLayer0.children[j].id}');
@@ -138,12 +126,21 @@ itemSystem.append(bottomPad);
 
 const phantomLair = document.getElementById("phantomLair");
 phantomLair.innerHTML = "";
+
+
+thePhantomLair.innerHTML = "";
+
 for (let j = 0; j < singlePasteBuffer.value.length; j++) {
+
+thePhantomLair.appendChild(singlePasteBuffer.value[j]);
+
+
 const container = document.createElement("div");
       container.classList = "coinItemContainer";
+      container.dataset.lair = "true";
 const itemButton = document.createElement("button");
       itemButton.classList = "phantomItemList";
-      itemButton.dataset.scroll = "false";
+      itemButton.dataset.lair = "true";
       itemButton.setAttribute("onclick", `
 pasteSingle();
 if (coinFocus != null) { coinFocus.scrollIntoView({behavior:'auto', block: 'center', inline: 'center'}); }
@@ -195,8 +192,9 @@ const itemButton0 = document.createElement("button");
       itemButton0.classList = "addItemList";
       itemButton0.dataset.scroll = "false";
       itemButton0.style.backgroundColor = blueColour;
-      itemButton0.innerText = "+";
+      itemButton0.innerText = "";
       itemButton0.setAttribute("onclick", `
+if ( event.shiftKey) {
 insertNewCoin([null,78,78]);
 coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
@@ -208,13 +206,18 @@ flipAnchorZ([,,,false,]);
 coinFocus.dataset.coinTrip = "?";
 readCoins();
 recoverColouration();
+} else if (!event.shiftKey && coinFocus != null) {
+coinFocus.dataset.coinTrip = "?";
+readCoins(); recoverColouration();
+}
 `);
 const itemButton1 = document.createElement("button");
       itemButton1.classList = "addItemList";
       itemButton1.dataset.scroll = "false";
       itemButton1.style.backgroundColor = pinkColour;
-      itemButton1.innerText = "+";
+      itemButton1.innerText = "";
       itemButton1.setAttribute("onclick", `
+if ( event.shiftKey) {
 insertNewCoin([null,78,78]);
 coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
@@ -226,13 +229,18 @@ flipAnchorZ([,,,false,]);
 coinFocus.dataset.coinTrip = "1";
 readCoins();
 recoverColouration();
+} else if (!event.shiftKey && coinFocus != null) {
+coinFocus.dataset.coinTrip = "1";
+readCoins(); recoverColouration();
+}
 `);
 const itemButton2 = document.createElement("button");
       itemButton2.classList = "addItemList";
       itemButton2.dataset.scroll = "false";
       itemButton2.style.backgroundColor = greyColour;
-      itemButton2.innerText = "+";
+      itemButton2.innerText = "";
       itemButton2.setAttribute("onclick", `
+if ( event.shiftKey) {
 insertNewCoin([null,78,78]);
 coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
@@ -244,13 +252,16 @@ flipAnchorZ([,,,false,]);
 coinFocus.dataset.coinTrip = "0";
 readCoins();
 recoverColouration();
-
+} else if (!event.shiftKey && coinFocus != null) {
+coinFocus.dataset.coinTrip = "0";
+readCoins(); recoverColouration();
+}
 `);
 
 
-container.appendChild(itemButton0);
 container.appendChild(itemButton1);
 container.appendChild(itemButton2);
+container.appendChild(itemButton0);
 const addSystem = document.getElementById("addSystem");
 addSystem.innerHTML = "";
 addSystem.appendChild(container);
@@ -271,7 +282,6 @@ itemSystem.children[j].scrollIntoView({behavior:'auto', block: 'center', inline:
 
 
 }
-
 
 
 
@@ -497,14 +507,31 @@ layerRight();updateInfoShelf();redraw();ui[inputBoxName].ref.select();
 
 
 
+if (localStorage.getItem("tab1subTab")) {
+setTimeout(() => {
+ui[localStorage.getItem("tab1subTab")].click();
+}, 200);
+}
 
 
-
-
-
-ui.notesTab.click                = function() { partText.style.display = "block"; partStyle.style.display =  "none"; partCode.style.display =  "none"; };
-ui.styleTab.click                = function() { partText.style.display =  "none"; partStyle.style.display = "block"; partCode.style.display =  "none"; };
-ui.codeTab.click                 = function() { partText.style.display =  "none"; partStyle.style.display =  "none"; partCode.style.display = "block"; };
+ui.notesTab.click       = function() {
+partText.style.display  = "block";
+partStyle.style.display =  "none";
+partCode.style.display  =  "none";
+localStorage.setItem("tab1subTab", "notesTab");
+};
+ui.styleTab.click       = function() {
+partText.style.display  =  "none";
+partStyle.style.display = "block";
+partCode.style.display  =  "none";
+localStorage.setItem("tab1subTab", "styleTab");
+};
+ui.codeTab.click        = function() {
+partText.style.display  =  "none";
+partStyle.style.display =  "none";
+partCode.style.display  = "block";
+localStorage.setItem("tab1subTab", "codeTab");
+};
 
 
 
@@ -576,15 +603,105 @@ styleMenu[name].ref   = document.getElementById(name);
 });
 
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
-          styleMenu.shadowRadius7.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius8.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius9.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius4.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius5.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius6.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius1.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius2.click = function() {                        }; /*                                                */
-          styleMenu.shadowRadius3.click = function() {                        }; /*                                                */
+          styleMenu.shadowRadius7.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 103; cC = 55;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 103; cC = 55;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius8.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 104; cC = 56;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 104; cC = 56;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius9.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 105; cC = 57;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 105; cC = 57;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius4.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 100; cC = 52;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 100; cC = 52;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius5.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 101; cC = 53;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+try {
+coinFocus.lastElementChild.style.boxShadow =``;
+} catch { };
+}
+}; /*                                                */
+          styleMenu.shadowRadius6.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 102; cC = 54;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 102; cC = 54;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius1.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 97; cC = 49;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 97; cC = 49;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius2.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 98; cC = 50;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 98; cC = 50;
+boxShadowTuner();
+}
+}; /*                                                */
+          styleMenu.shadowRadius3.click = function() {
+if (!event.shiftKey) {
+styleKey = "r";
+kC = 99; cC = 51;
+borderRadiusTuner();
+} else if ( event.shiftKey) {
+styleKey = "u";
+kC = 99; cC = 51;
+boxShadowTuner();
+}
+}; /*                                                */
              styleMenu.indentLine.click = function() { coinFocus.div.style.textIndent = ""; coinFocus.div.style.lineHeight = ""; }; /*                                                */
              styleMenu.fontShadow.click = function() {                        }; /*                                                */
                styleMenu.charWord.click = function() {
@@ -603,7 +720,12 @@ noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style=
 }; /*                                                */
                styleMenu.fontSize.click = function() {                        }; /*                                                */
           styleMenu.textAlignLeft.click = function() {
+if (coinFocus.div.style.textAlign == "left") {
 coinFocus.div.style.textAlign = "justify";
+} else {
+coinFocus.div.style.textAlign = "left";
+}
+
 }; /*                                                */
         styleMenu.textAlignCenter.click = function() {
 coinFocus.div.style.textAlign = "center";}; /*                                                */

@@ -25,7 +25,50 @@ document.addEventListener("mousemove", (event) => {
 if (mousedown.hold==true && event.target.id.toString() == "siteMapCanvas") {
 drawSiteMap();
 const menuScale = parseFloat(document.getElementById("menuWrapper").style.transform.replace(/scale\(/g,"").replace(/\)/g,""));
-const factor = 5 * menuScale;
+const zoomFactor = parseFloat(document.getElementById("siteMapWrapper").style.transform.replace(/scale\(/g,"").replace(/\)/g,""));
+
+
+/* EXTRA CHEESY METHOD: JUST PICK NUMBERS */
+/* THIS MAKES THE VIEW-FINDER TRACK GOOD  */
+
+let trackFactor = 2.25;
+switch (parseInt(Math.floor(parseFloat(ui.menuWrapper.ref.style.transform.slice(6,-1)) * 4))) {
+case  1: trackFactor = 120.00  ; break;
+case  2: trackFactor =  33.60  ; break;
+case  3: trackFactor =  20.85  ; break;
+case  4: trackFactor =  11.50  ; break;
+case  5: trackFactor =   8.00  ; break;
+case  6: trackFactor =   5.80  ; break;
+case  7: trackFactor =   4.15  ; break;
+case  8: trackFactor =   3.35  ; break;
+case  9: trackFactor =   2.68  ; break;
+case 10: trackFactor =   2.28  ; break;
+case 11: trackFactor =   1.98  ; break;
+case 12: trackFactor =   1.60  ; break;
+case 13: trackFactor =   1.395 ; break;
+case 14: trackFactor =   1.22  ; break;
+case 15: trackFactor =   1.075 ; break;
+case 16: trackFactor =   0.925 ; break;
+case 17: trackFactor =   0.80  ; break;
+case 18: trackFactor =   0.73  ; break;
+case 19: trackFactor =   0.667 ; break;
+case 20: trackFactor =   0.61  ; break;
+case 21: trackFactor =   0.55  ; break;
+case 22: trackFactor =   0.515 ; break;
+case 23: trackFactor =   0.462 ; break;
+case 24: trackFactor =   0.43  ; break;
+case 25: trackFactor =   0.392 ; break;
+case 26: trackFactor =   0.36  ; break;
+case 27: trackFactor =   0.345 ; break;
+case 28: trackFactor =   0.315 ; break;
+case 29: trackFactor =   0.290 ; break;
+case 30: trackFactor =   0.268 ; break;
+case 31: trackFactor =   0.259 ; break;
+case 32: trackFactor =   0.25  ; break;
+case 33: trackFactor =   0.235 ; break;
+}
+
+const factor = trackFactor * menuScale / zoomFactor;
 mouseX = mousedown.scrollX + ((mousedown.clientX - event.clientX) * factor);
 mouseY = mousedown.scrollY + ((mousedown.clientY - event.clientY) * factor);
 quarterMouseX = mousedown.scrollX + ((mousedown.clientX - event.clientX) * factor) / 4;
@@ -1206,3 +1249,10 @@ redraw();
 
 
 });
+
+
+
+
+setTimeout(() => { loadSidebar1(); }, 200);
+
+

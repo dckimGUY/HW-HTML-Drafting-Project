@@ -178,7 +178,22 @@ const y_layer24 = document.createElement("div");
 const z_layer25 = document.createElement("div");
 const importer  = document.createElement("div");
 
+const thePhantomLair = document.createElement("div");
+
+thePhantomLair.innerHTML  = "";
+thePhantomLair.style.pointerEvents = "none";
+thePhantomLair.style.opacity     = "0.05";
+thePhantomLair.id = "thePhantomLair";
+document.body.prepend(thePhantomLair);
+
+
+if (localStorage.getItem("thePhantomLairOpacity")) {
+thePhantomLair.style.opacity = parseFloat(localStorage.getItem("thePhantomLairOpacity"));
+}
+
 const localView = document.createElement("div");
+
+
 
 var topLayer = 
 {
@@ -210,7 +225,8 @@ var topLayer =
 "y_layer24" : { "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1 },
 "z_layer25" : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1 },
 "importer"  : { "a_name" : "importer" , "b_content" :  importer, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "importer", "filename": "importer"     , "echelon" : 1 },
-"localView" : { "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LOCAL VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
+"thePhantomLair" : { "a_name" : "thePhantomLair", "b_content" : thePhantomLair, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "thePhantomLair", "filename" : "thePhantomLair", "echelon" : 1 },
+"localView" : { "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
 }
 
 pulledText.name = "pulledText";
@@ -467,6 +483,8 @@ gridLayer.appendChild(F);
 
 function Z(){
 
+if (window.innerWidth  > 3500) { V.width  = 0; return 0; }
+if (window.innerHeight > 3500) { V.height = 0; return 0; }
 
 if (K == 0) return;
 
@@ -582,8 +600,19 @@ V.style.opacity=K;
 };
 
 Z();
+
+
+
+function loadViewFinder() {
+
+document.getElementById("coordinates").innerHTML = `<pre style="font: inherit;">${parseInt(window.pageXOffset).toString().padStart(8, " ")} ${parseInt(window.pageYOffset).toString().padStart(10, " ")}</pre>`;
+
+}
+
+loadViewFinder();
+
 window.addEventListener("resize",()=>{Z(); redraw(); drawSiteMap();});
-window.addEventListener("scroll",()=>{Z(); redraw(); drawSiteMap();});
+window.addEventListener("scroll",()=>{Z(); redraw(); drawSiteMap(); loadViewFinder(); });
 //document.addEventListener("keydown",(event)=>{F.focus();F.value='';});
 
 var shelfMenuScale = 2;

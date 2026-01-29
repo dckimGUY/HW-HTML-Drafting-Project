@@ -183,7 +183,7 @@ ctx.lineWidth = 2;
 ctx.strokeStyle = "black";
 for (let j = 0; j < multiplier; j++) {
 ctx.drawImage(sheetImages.star.img, width * j, 0, width, height);
-ctx.strokeRect( width * j, 0, width, height);
+//ctx.strokeRect( width * j, 0, width, height);
 }
 const datePrefix = Date.now().toString().slice(-6);
 const syntax     = reString(cropObject(100, 180, makeObject(clean(sheetImages.star.syntax))));

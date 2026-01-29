@@ -305,7 +305,7 @@ mouseCatcher.addEventListener("mouseover",  function() { scaleRangeWrapper.style
 
 /* TAB 4, FOLDER 1 */
 
-["hdubSingleEntry", "hdubAdd", "hdubRoll", "hdubRollLeft", "hdubRollRight", "hdubEnter", "hdubSave", "hdubCanvas", "hdubSheetTemplate1x", "hdubSheetTemplate4x", "hdubSheetTemplate6x"].forEach((name) => {
+["hdubSingleEntry", "hdubPartDesignations", "hdubAdd", "hdubRoll", "hdubRollLeft", "hdubRollRight", "hdubEnter", "hdubSave", "hdubCanvas", "hdubSheetTemplate1x", "hdubSheetTemplate4x", "hdubSheetTemplate6x"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });

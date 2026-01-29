@@ -201,6 +201,12 @@ document.getElementById("hdubSingleEntry").focus();
 
 redraw();
 
+setTimeout(() => {
+loadSidebar1();
+updateInfoShelf();
+}, 10);
+
+
 /*                                                                        */
 /**************************************************************************/
 /**************************************************************************/
@@ -273,7 +279,6 @@ if (coinFocus != null &&
 if (ui.folder52.ref.style.display == "block" &&
     ui.tab5Wrapper.ref.style.display  == "block") {
 }
-coinFocus.div.focus();
 
 }
 }
@@ -345,7 +350,6 @@ localStorage.setItem("grid0Viz", "true"); }
 Z();                      }
 
 
-loadSidebar1();
 /*                                                                                                                                                    */
 
 redraw();
@@ -405,7 +409,10 @@ if (!(ec&&es)) {rdots();}
 
 redraw();
 
+setTimeout(() => {
+loadSidebar1();
 updateInfoShelf();
+}, 10);
 
 });
 

@@ -504,7 +504,7 @@ cycleColoursForward();
 
 
 
-function buttonRing() {
+function buttonRing(colour) {
 if (ui.buttonWordList.ref.value != "") {
 const count = ui.buttonWordList.ref.value.split("\n").length;
 ui.buttonTooltip.ref.value = "";
@@ -518,6 +518,7 @@ setTimeout(() => {
 ui.buttonTooltip.ref.value = "";
 popTheButtonsOut(false);
 if (j == 0) { firstId = coinFocus.id; }
+if (colour) cycleColoursForward();
 }, j * 100);
 }
 ui.buttonTooltip.ref.value = "";
@@ -709,5 +710,9 @@ popTheButtonsOut(false);
 };
 
 ui.ringButton.click               = function() {
-buttonRing();
+       if (!event.shiftKey) {
+buttonRing(false);
+} else if (event.shiftKey) {
+buttonRing(true);
+}
 };
