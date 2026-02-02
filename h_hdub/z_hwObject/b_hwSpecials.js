@@ -3,7 +3,7 @@ h_hdub.b_specials.a_info = "This is where custom commands can be brought in for 
 h_hdub.b_specials.b_prepareButton = function() {
 if (coinFocus!=null) {
 
-coinFocus.anchor.style.zIndex = "0";
+coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.button.style.display = "block";
 coinFocus.button.innerText = "input to button";
 

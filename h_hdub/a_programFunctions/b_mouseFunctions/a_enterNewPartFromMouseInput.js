@@ -199,6 +199,10 @@ div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
 
+div.innerHTML = '<p>default text</p>';
+
+
+
 
 newCoin.div.setAttribute("contenteditable", true);
 newCoin.anchor.style.zIndex = 0;

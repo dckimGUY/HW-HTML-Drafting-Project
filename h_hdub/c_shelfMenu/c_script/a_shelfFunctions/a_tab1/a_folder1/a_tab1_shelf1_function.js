@@ -71,11 +71,13 @@ const container = document.createElement("div");
 const itemButton = document.createElement("button");
       itemButton.classList = "coinItemList";
       itemButton.dataset.scroll = "false";
+try {
 if (utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild &&
     utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild.dataset &&
     utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild.dataset.coinTrip) {
       itemButton.style.textDecorationLine="underline";
 }
+} catch {  }
 
       itemButton.setAttribute("onclick", `
 coinFocus1 = coinFocus;
@@ -200,8 +202,8 @@ coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + "px";
 coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.div.contentEditable = "true";
-coinFocus.div.style.fontSize = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
 flipAnchorZ([,,,false,]);
 coinFocus.dataset.coinTrip = "?";
 readCoins();
@@ -223,8 +225,8 @@ coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + "px";
 coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.div.contentEditable = "true";
-coinFocus.div.style.fontSize = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
 flipAnchorZ([,,,false,]);
 coinFocus.dataset.coinTrip = "1";
 readCoins();
@@ -246,8 +248,8 @@ coinFocus.style.left    = parseInt(window.scrollX) + "px";
 coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
 coinFocus.style.top     = parseInt(window.scrollY) + "px";
 coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.div.contentEditable = "true";
-coinFocus.div.style.fontSize = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
 flipAnchorZ([,,,false,]);
 coinFocus.dataset.coinTrip = "0";
 readCoins();
@@ -420,7 +422,7 @@ ui.cursorL.click                 = function() { useCustomCursors = true ; cursor
 ui.cursorXL.click                = function() { useCustomCursors = true ; cursorSet = cursorSize[4][0]; cursorSetup(); };
 ui.cursorNum.click               = function() {  };
 
-ui.partNom.input                 = function() { inputPartNav("partNom"); if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; } redraw(); };
+ui.partNom.input                 = function() { inputPartNav("partNom"); if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; }; loadSidebar1(); redraw(); };
 ui.partPrev.click                = function() { focusPrevious(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); }; updateInfoShelf(); redraw(); };
 
 ui.showNames.click               = function() { if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw(); };
@@ -702,8 +704,35 @@ kC = 99; cC = 51;
 boxShadowTuner();
 }
 }; /*                                                */
-             styleMenu.indentLine.click = function() { coinFocus.div.style.textIndent = ""; coinFocus.div.style.lineHeight = ""; }; /*                                                */
-             styleMenu.fontShadow.click = function() {                        }; /*                                                */
+             styleMenu.indentLine.click = function() { coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = ""; coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = ""; }; /*                                                */
+             styleMenu.fontShadow.click = function() {
+       if (coinFocus != null) {
+       if (!event.shiftKey) {
+fitTheText();
+} else if ( event.shiftKey) {
+fitTheBox();
+}
+}
+}; /*                                                */
+
+
+
+
+
+
+function fitTheText() {
+}
+
+
+
+
+function fitTheBox() {
+}
+
+
+
+
+
                styleMenu.charWord.click = function() {
 
        if (coinFocus.lastElementChild.style.overflow=="hidden") {
@@ -720,26 +749,26 @@ noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style=
 }; /*                                                */
                styleMenu.fontSize.click = function() {                        }; /*                                                */
           styleMenu.textAlignLeft.click = function() {
-if (coinFocus.div.style.textAlign == "left") {
-coinFocus.div.style.textAlign = "justify";
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign == "left") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "justify";
 } else {
-coinFocus.div.style.textAlign = "left";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "left";
 }
 
 }; /*                                                */
         styleMenu.textAlignCenter.click = function() {
-coinFocus.div.style.textAlign = "center";}; /*                                                */
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "center";}; /*                                                */
          styleMenu.textAlignRight.click = function() {
-coinFocus.div.style.textAlign = "right";}; /*                                                */
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "right";}; /*                                                */
 
 
 
             styleMenu.outlineSize.click = function() {
        if ( event.shiftKey) {
-coinFocus.main.style.outlineOffset = "0px";
+coinFocus.lastElementChild.style.outlineOffset = "0px";
 } else if (!event.shiftKey) {
 try {
-coinFocus.main.style.outlineOffset = -parseFloat(coinFocus.main.style.outlineWidth) / 2 + "px";
+coinFocus.lastElementChild.style.outlineOffset = -parseFloat(coinFocus.lastElementChild.style.outlineWidth) / 2 + "px";
 } catch {}
 }
 }; /*                                                */
@@ -757,14 +786,14 @@ evaluateOutline();
 }; /*                                                */
 
 
-                styleMenu.padding.click = function() { coinFocus.div.style.padding = "0px";                       }; /*                                                */
+                styleMenu.padding.click = function() { coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "0px";                       }; /*                                                */
 
 
                 styleMenu.opacity.click = function() {
 if (!event.shiftKey) {
-coinFocus.main.style.opacity = 1;
+coinFocus.lastElementChild.style.opacity = 1;
 } else if ( event.shiftKey) {
-coinFocus.main.style.opacity = 0;
+coinFocus.lastElementChild.style.opacity = 0;
 }
 
 
@@ -797,18 +826,18 @@ coinFocus.main.style.opacity = 0;
 
           styleMenu.styleFG.input = function() {
 if (coinFocus != null) {
-coinFocus.div.style.color = styleMenu.styleFG.ref.value
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.color = styleMenu.styleFG.ref.value
 }
 }; /*                                                */
           styleMenu.styleBG.input = function() {
 if (coinFocus != null) {
-coinFocus.div.style.backgroundColor = styleMenu.styleBG.ref.value
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.backgroundColor = styleMenu.styleBG.ref.value
 }
 }; /*                                                */
           styleMenu.styleOL.input = function() {
 if (coinFocus != null) {
-let oldOutline = coinFocus.main.style.outline;
-coinFocus.main.style.outlineColor = styleMenu.styleOL.ref.value
+let oldOutline = coinFocus.lastElementChild.style.outline;
+coinFocus.lastElementChild.style.outlineColor = styleMenu.styleOL.ref.value
 }
 }; /*                                                */
 

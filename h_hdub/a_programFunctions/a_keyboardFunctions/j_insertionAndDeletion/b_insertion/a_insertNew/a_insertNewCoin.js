@@ -271,7 +271,7 @@ div.style.paddingRight            = template.default.paddingRight            ;
 div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
-
+div.innerHTML = '<p>default text</p>';
 
 
 if (hauptMode==0) {

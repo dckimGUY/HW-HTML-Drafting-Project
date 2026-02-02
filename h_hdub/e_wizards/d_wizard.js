@@ -9,12 +9,12 @@ this.parentNode.style.fontFamily=this.value;
 this.parentNode.parentNode.parentNode.dataset.dragPull='div.style.fontFamily';
 this.nextElementSibling.nextElementSibling.style.fontFamily=this.value;
 if (this.nextElementSibling.lastElementChild.checked) {
-try { window.opener.coinFocus.div.style.fontFamily=this.value; } catch {};
+try { window.opener.coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontFamily=this.value; } catch {};
 }
 "></select>
 
 <div style="display: flex; justify-content: left;">
-<button class="xqnBTN" style="font-size: 18px; font-family: monospace; width: 320px; height: 64px; margin: 0px; padding: 0px; border: none;" onclick="try { window.opener.coinFocus.div.style.fontFamily=this.parentElement.previousElementSibling.value; } catch {};" >set font on selected</button>
+<button class="xqnBTN" style="font-size: 18px; font-family: monospace; width: 320px; height: 64px; margin: 0px; padding: 0px; border: none;" onclick="try { window.opener.coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontFamily=this.parentElement.previousElementSibling.value; } catch {};" >set font on selected</button>
 <input type="checkbox" checked="true" style="font-size: 18px; font-family: monospace; width: 64px; height: 64px; margin: 0px; padding: 0px; border: none;" />
 </div>
 

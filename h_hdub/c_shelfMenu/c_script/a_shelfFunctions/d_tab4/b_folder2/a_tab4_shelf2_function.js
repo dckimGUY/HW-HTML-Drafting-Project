@@ -184,12 +184,16 @@ let inner;
        if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
 inner = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.firstElementChild;
 
+inner.dataset.textFit       = doc.body.children[j].dataset.textFit;
+inner.dataset.notes         = doc.body.children[j].dataset.notes;
+
 inner.style.position        = "absolute";
 inner.style.left            = doc.body.children[j].style.left;
 inner.style.top             = doc.body.children[j].style.top;
 inner.style.width           = doc.body.children[j].style.width;
 inner.style.height          = doc.body.children[j].style.height;
-inner.style.zIndex          = doc.body.children[j].style.zIndex;inner.style.userSelect      = doc.body.children[j].style.userSelect;
+inner.style.zIndex          = doc.body.children[j].style.zIndex;
+inner.style.userSelect      = doc.body.children[j].style.userSelect;
 inner.style.transform       = doc.body.children[j].lastElementChild.style.transform;
 inner.style.transformOrigin = doc.body.children[j].lastElementChild.style.transformOrigin;
 inner.style.outline         = doc.body.children[j].lastElementChild.style.outline;
@@ -204,7 +208,7 @@ inner.style.fontVariant     = doc.body.children[j].lastElementChild.lastElementC
 inner.style.fontStyle       = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontStyle;
 inner.style.fontWeight      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontWeight;
 inner.style.fontFamily      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontFamily;
-inner.style.opacity         = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.opacity;
+inner.style.opacity         = doc.body.children[j].lastElementChild.style.opacity;
 inner.style.textShadow      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textShadow;
 inner.style.textAlign       = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textAlign;
 inner.style.wordSpacing     = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing;
@@ -369,13 +373,6 @@ window.addEventListener("resize", (event) => {  });
 window.addEventListener("scroll", (event) => {  });
 
 </script>`;
-
-
-
-
-
-
-
 
 
 

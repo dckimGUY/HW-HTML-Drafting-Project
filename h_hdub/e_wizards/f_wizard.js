@@ -193,7 +193,7 @@ this.setAttribute('value',this.value);
 this.parentNode.parentNode.parentNode.dataset.dragPull='div.style.color';
 this.parentNode.style.color=this.value;
 try {
-window.opener.coinFocus.div.style.color=this.value;
+window.opener.coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.color=this.value;
 } catch {};
 " value="#3e21b0">
 </div><img data-name="img" alt="" style="position: absolute; display: none; z-index: 100; left: 0px; top: 0px; width: 100%; height: 100%; border: none; background-color: transparent;"></div></div>
@@ -203,7 +203,7 @@ this.setAttribute('value',this.value);
 this.parentNode.parentNode.parentNode.dataset.dragPull='div.style.backgroundColor';
 this.parentNode.style.backgroundColor=this.value;
 try {
-window.opener.coinFocus.div.style.backgroundColor=this.value;
+window.opener.coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.backgroundColor=this.value;
 } catch {};
 " value="#4ab056">
 </div><img data-name="img" alt="" style="position: absolute; display: none; z-index: 100; left: 0px; top: 0px; width: 100%; height: 100%; border: none; background-color: transparent;"></div></div>

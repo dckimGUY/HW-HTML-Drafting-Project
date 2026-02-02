@@ -680,15 +680,15 @@ if (newHeight > 0 && newWidth > 0) {
 if (hauptMode==1) {
 hauptMode=0;
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.div.contentEditable = "true";
-coinFocus.div.style.fontSize = "32px";
-coinFocus.anchor.style.zIndex = "0";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
+coinFocus.firstElementChild.style.zIndex = "0";
 hauptMode=1;
 } else {
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.div.contentEditable = "true";
-coinFocus.div.style.fontSize = "32px";
-coinFocus.anchor.style.zIndex = "0";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
+coinFocus.firstElementChild.style.zIndex = "0";
 }
 utilityLayer0.lastElementChild.style.top      = rowTop     + window.scrollY + hdubTopOffset + "px";
 utilityLayer0.lastElementChild.dataset.top    = rowTop     + window.scrollY + hdubTopOffset + "px";
@@ -1147,8 +1147,8 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "
 if (hauptMode==1) {
 hauptMode=0;
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.div.contentEditable = "true";
-coinFocus.anchor.style.zIndex = "0";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.style.left   = window.scrollX + "px";
 coinFocus.dataset.left = window.scrollX + "px";
 coinFocus.style.top    = window.scrollY + "px";
@@ -1156,8 +1156,8 @@ coinFocus.dataset.top  = window.scrollY + "px";
 hauptMode=1;
 } else {
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.div.contentEditable = "true";
-coinFocus.anchor.style.zIndex = "0";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.style.left   = window.scrollX + "px";
 coinFocus.dataset.left = window.scrollX + "px";
 coinFocus.style.top    = window.scrollY + "px";

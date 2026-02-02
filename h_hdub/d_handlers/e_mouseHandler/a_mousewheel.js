@@ -6,6 +6,15 @@ document.getElementById("animationTiming").value = localStorage.getItem("animato
 
 document.addEventListener("mousewheel", (event) => {
 
+
+if (coinFocus != null) {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling = coinFocus.lastElementChild.lastElementChild.previousElementSibling;
+}
+
+
+
+
+
 if (event.target.id == "hdubOverlay" || (event.target.dataset && event.target.dataset.hdubOverlay == "scroll")) {
 event.preventDefault();
 event.stopPropagation();
@@ -196,11 +205,21 @@ event.preventDefault(); event.stopPropagation();
            event.target == document.getElementById("itemSystem") ||
            event.target == document.getElementById("sidebar")) {
 event.preventDefault(); event.stopPropagation();
+       if ( event.shiftKey) {
+       if (event.wheelDelta > 0) {
+ focusPrevious(true); updateInfoShelf(); redraw(); 
+} else if (event.wheelDelta < 0) {
+ focusNext(true); updateInfoShelf(); redraw(); 
+}
+} else if (!event.shiftKey) {
        if (event.wheelDelta > 0) {
  focusPrevious(); updateInfoShelf(); redraw(); 
 } else if (event.wheelDelta < 0) {
  focusNext(); updateInfoShelf(); redraw(); 
 }
+}
+
+
 loadSidebar1();
 
 
@@ -487,23 +506,23 @@ boxShadowTuner();
 styleMenu.indentLine.mousewheel = function() {
 if (!event.shiftKey) {
 let upSize = 0.05;
-if (coinFocus.div.style.textIndent == "") {
-coinFocus.div.style.textIndent = "0em";
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent == "") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = "0em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.div.style.textIndent = parseFloat(coinFocus.div.style.textIndent) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.textIndent = parseFloat(coinFocus.div.style.textIndent) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent) - upSize + "em";
 }
 } else if (event.shiftKey) {
 let upSize = 0.01;
-if (coinFocus.div.style.lineHeight == "") {
-coinFocus.div.style.lineHeight = "1em";
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight == "") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = "1em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.div.style.lineHeight = parseFloat(coinFocus.div.style.lineHeight) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.lineHeight = parseFloat(coinFocus.div.style.lineHeight) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight) - upSize + "em";
 }
 }
 
@@ -519,23 +538,23 @@ styleMenu.charWord.mousewheel = function() {
 
 if (!event.shiftKey) {
 let upSize = 0.001;
-if (!coinFocus.div.style.letterSpacing) {
-coinFocus.div.style.letterSpacing = "0em";
+if (!coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = "0em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.div.style.letterSpacing = parseFloat(coinFocus.div.style.letterSpacing) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.letterSpacing = parseFloat(coinFocus.div.style.letterSpacing) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) - upSize + "em";
 }
 } else if (event.shiftKey) {
 let upSize = 0.02;
-if (coinFocus.div.style.wordSpacing == "") {
-coinFocus.div.style.wordSpacing = "1em";
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing == "") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = "1em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.div.style.wordSpacing = parseFloat(coinFocus.div.style.wordSpacing) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.wordSpacing = parseFloat(coinFocus.div.style.wordSpacing) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing) - upSize + "em";
 }
 }
 
@@ -551,9 +570,9 @@ styleMenu.fontSize.mousewheel = function() {
 let upSize = 1;
 if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
 if (event.wheelDelta > 0) {
-coinFocus.div.style.fontSize = parseFloat(coinFocus.div.style.fontSize) + upSize + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize) + upSize + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.fontSize = parseFloat(coinFocus.div.style.fontSize) - upSize + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize) - upSize + "px";
 }
 }
 
@@ -564,24 +583,24 @@ styleMenu.textAlignRight.mousewheel = function() {  }
 
 styleMenu.outlineSize.mousewheel = function() {
 let change = 0.5;
-if (coinFocus.main.style.outline == "") {
-coinFocus.main.style.outline = "black solid 2px";
+if (coinFocus.lastElementChild.style.outline == "") {
+coinFocus.lastElementChild.style.outline = "black solid 2px";
 }
-if (!coinFocus.main.style.outlineOffset || coinFocus.main.style.outlineOffset == "") {
-coinFocus.main.style.outlineOffset = "0px";
+if (!coinFocus.lastElementChild.style.outlineOffset || coinFocus.lastElementChild.style.outlineOffset == "") {
+coinFocus.lastElementChild.style.outlineOffset = "0px";
 }
 if (event.ctrlKey) { change = 0.1; }
 if (!event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.main.style.outlineWidth = parseFloat(coinFocus.main.style.outlineWidth) + change + "px";
+coinFocus.lastElementChild.style.outlineWidth = parseFloat(coinFocus.lastElementChild.style.outlineWidth) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.main.style.outlineWidth = parseFloat(coinFocus.main.style.outlineWidth) - change + "px";
+coinFocus.lastElementChild.style.outlineWidth = parseFloat(coinFocus.lastElementChild.style.outlineWidth) - change + "px";
 }
 } else if ( event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.main.style.outlineOffset = parseFloat(coinFocus.main.style.outlineOffset) + change + "px";
+coinFocus.lastElementChild.style.outlineOffset = parseFloat(coinFocus.lastElementChild.style.outlineOffset) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.main.style.outlineOffset = parseFloat(coinFocus.main.style.outlineOffset) - change + "px";
+coinFocus.lastElementChild.style.outlineOffset = parseFloat(coinFocus.lastElementChild.style.outlineOffset) - change + "px";
 }
 }
 }
@@ -609,25 +628,25 @@ evaluateOutline();
 
 styleMenu.padding.mousewheel = function() {
 let change = 1;
-if (coinFocus.div.style.padding == "") {
-coinFocus.div.style.padding = 0 + "px";
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding == "") {
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = 0 + "px";
 }
 if (event.ctrlKey) { change = 5; }
 if (!event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.div.style.paddingLeft  = parseFloat(coinFocus.div.style.paddingLeft)  + change + "px";
-coinFocus.div.style.paddingRight = parseFloat(coinFocus.div.style.paddingRight) + change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft)  + change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.paddingLeft  = parseFloat(coinFocus.div.style.paddingLeft)  - change + "px";
-coinFocus.div.style.paddingRight = parseFloat(coinFocus.div.style.paddingRight) - change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft)  - change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight) - change + "px";
 }
 } else if ( event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.div.style.paddingTop    = parseFloat(coinFocus.div.style.paddingTop)    + change + "px";
-coinFocus.div.style.paddingBottom = parseFloat(coinFocus.div.style.paddingBottom) + change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop    = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop)    + change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.div.style.paddingTop    = parseFloat(coinFocus.div.style.paddingTop)    - change + "px";
-coinFocus.div.style.paddingBottom = parseFloat(coinFocus.div.style.paddingBottom) - change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop    = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop)    - change + "px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom) - change + "px";
 }
 }
 
@@ -639,14 +658,14 @@ coinFocus.div.style.paddingBottom = parseFloat(coinFocus.div.style.paddingBottom
 
 styleMenu.opacity.mousewheel = function() {
 let change = 0.05;
-if (coinFocus.main.style.opacity == "") {
-coinFocus.main.style.opacity = 1;
+if (coinFocus.lastElementChild.style.opacity == "") {
+coinFocus.lastElementChild.style.opacity = 1;
 }
 if (event.shiftKey) { change = 0.01; } else if (event.ctrlKey) { change = 0.1; }
 if (event.wheelDelta > 0) {
-coinFocus.main.style.opacity = parseFloat(coinFocus.main.style.opacity) + change;
+coinFocus.lastElementChild.style.opacity = parseFloat(coinFocus.lastElementChild.style.opacity) + change;
 } else if (event.wheelDelta <= 0) {
-coinFocus.main.style.opacity = parseFloat(coinFocus.main.style.opacity) - change;
+coinFocus.lastElementChild.style.opacity = parseFloat(coinFocus.lastElementChild.style.opacity) - change;
 }
 }
 

@@ -1,6 +1,6 @@
 function buttonizer() {
 if (coinFocus != null) {
-if (coinFocus.div&&coinFocus.div.children&&coinFocus.div.children.length > 1) {
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling&&coinFocus.lastElementChild.lastElementChild.previousElementSibling.children&&coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length > 1) {
 let newInternals =
 `<div style="position: absolute; left: 0px; top: 0px; width: ${coinFocus.style.width}; height: ${coinFocus.style.height};">
 <style>
@@ -50,10 +50,10 @@ let functionPrep      = ''  ;
 
 let imageFolder = hdub_imagePath;
 
-for (let j = 0; j < coinFocus.div.children.length; j++) {
-if (coinFocus.div.children[j].dataset.name) { nameInput = coinFocus.div.children[j].dataset.name; } else { nameInput = coinFocus.div.children[j].id; }
-if (coinFocus.div.children[j].dataset.coinTrip==Ts2) {
-if (j != coinFocus.div.children.length - 1) {
+for (let j = 0; j < coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length; j++) {
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.name) { nameInput = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.name; } else { nameInput = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].id; }
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.coinTrip==Ts2) {
+if (j != coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length - 1) {
 scriptBlock  += nameInput + '", "';
 functionPrep += ('ui.' + nameInput + '.click').padEnd(32, " ") + ' = function() {  };\n';
 buttonHandlerPrep   += ('case ui.' + nameInput + '.ref:').padEnd(32, " ") + (' ui.' + nameInput + '.click()').padEnd(32, " ") + ' ; break;\n';
@@ -63,7 +63,7 @@ functionPrep += ('ui.' + nameInput + '.click').padEnd(32, " ") + ' = function() 
 buttonHandlerPrep   += ('case ui.' + nameInput + '.ref:').padEnd(32, " ") + (' ui.' + nameInput + '.click()').padEnd(32, " ") + ' ; break;';
 }
 } else {
-if (j != coinFocus.div.children.length - 1) {
+if (j != coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length - 1) {
 scriptBlock  += nameInput + '", "';
 functionPrep += ('ui.' + nameInput + '.change').padEnd(32, " ") + ' = function() {  };\n';
 changeHandlerPrep   += ('case ui.' + nameInput + '.ref:').padEnd(32, " ") + (' ui.' + nameInput + '.change()').padEnd(32, " ") + ' ; break;\n';
@@ -74,19 +74,19 @@ changeHandlerPrep   += ('case ui.' + nameInput + '.ref:').padEnd(32, " ") + (' u
 }
 }
 
-if (coinFocus.div.children[j].dataset.coinTrip==Ts2) {
-if (!!coinFocus.div.children[j].lastElementChild.lastElementChild.src && !coinFocus.div.children[j].lastElementChild.lastElementChild.src == "" && !coinFocus.div.children[j].lastElementChild.lastElementChild.src.startsWith("data")) {
-let extension = coinFocus.div.children[j].lastElementChild.lastElementChild.src.match(/(\.[^.\/]+)$/)[0];
-let filename  = coinFocus.div.children[j].lastElementChild.lastElementChild.src.match(/([^/]+)\.[^.]+$/)[1];
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.coinTrip==Ts2) {
+if (!!coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].lastElementChild.lastElementChild.src && !coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].lastElementChild.lastElementChild.src == "" && !coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].lastElementChild.lastElementChild.src.startsWith("data")) {
+let extension = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].lastElementChild.lastElementChild.src.match(/(\.[^.\/]+)$/)[0];
+let filename  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].lastElementChild.lastElementChild.src.match(/([^/]+)\.[^.]+$/)[1];
 newInternals += `
-.button_${nameInput.padEnd(24, " ")} { position: absolute; border: none; margin: none; padding: none; left: ${coinFocus.div.children[j].style.left.padStart(8, " ")}; top: ${coinFocus.div.children[j].style.top.padStart(8, " ")}; width: ${coinFocus.div.children[j].style.width.padStart(8, " ")}; height: ${coinFocus.div.children[j].style.height.padStart(8, " ")};
+.button_${nameInput.padEnd(24, " ")} { position: absolute; border: none; margin: none; padding: none; left: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.left.padStart(8, " ")}; top: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.top.padStart(8, " ")}; width: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.width.padStart(8, " ")}; height: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.height.padStart(8, " ")};
                                    background-image: url("${imageFolder}${filename}${extension}");        }
 .button_${(nameInput + ":focus").padEnd(24, " ")} { background-image: url("${imageFolder}${filename}_focus${extension}");  }
 .button_${(nameInput + ":hover").padEnd(24, " ")} { background-image: url("${imageFolder}${filename}_hover${extension}");  }
 .button_${(nameInput + ":active").padEnd(24, " ")} { background-image: url("${imageFolder}${filename}_active${extension}"); }`;
 } else {
 newInternals += `
-.button_${nameInput.padEnd(24, " ")} { position: absolute; border: none; margin: none; padding: none; left: ${coinFocus.div.children[j].style.left.padStart(8, " ")}; top: ${coinFocus.div.children[j].style.top.padStart(8, " ")}; width: ${coinFocus.div.children[j].style.width.padStart(8, " ")}; height: ${coinFocus.div.children[j].style.height.padStart(8, " ")}; outline-offset: -4px;
+.button_${nameInput.padEnd(24, " ")} { position: absolute; border: none; margin: none; padding: none; left: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.left.padStart(8, " ")}; top: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.top.padStart(8, " ")}; width: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.width.padStart(8, " ")}; height: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.height.padStart(8, " ")}; outline-offset: -4px;
                                    background-color: grey; outline: 4px outset grey; }
 .button_${(nameInput + ":focus").padEnd(24, " ")} { background-color: blue; outline: 4px outset blue; }
 .button_${(nameInput + ":hover").padEnd(24, " ")} { background-color: lime; outline: 4px outset lime; }
@@ -94,17 +94,17 @@ newInternals += `
 }
 } else {
 newInternals += `
-.input_${nameInput.padEnd(25, " ")} { position: absolute; border: none; margin: none; padding: none; left: ${coinFocus.div.children[j].style.left.padStart(8, " ")}; top: ${coinFocus.div.children[j].style.top.padStart(8, " ")}; width: ${coinFocus.div.children[j].style.width.padStart(8, " ")}; height: ${coinFocus.div.children[j].style.height.padStart(8, " ")}; outline-offset: -4px; }`;
+.input_${nameInput.padEnd(25, " ")} { position: absolute; border: none; margin: none; padding: none; left: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.left.padStart(8, " ")}; top: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.top.padStart(8, " ")}; width: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.width.padStart(8, " ")}; height: ${coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.height.padStart(8, " ")}; outline-offset: -4px; }`;
 }
 }
 newInternals += '\n</style>\n\n';
-for (let j = 0; j < coinFocus.div.children.length; j++) {
-if (coinFocus.div.children[j].dataset.name) { nameInput = coinFocus.div.children[j].dataset.name; } else { nameInput = coinFocus.div.children[j].id; }
-       if (coinFocus.div.children[j].dataset.coinTrip==Ts2) {
-newInternals += '<button id="' + nameInput + '" class="button_ button_' + nameInput + '" title="' + coinFocus.div.children[j].dataset.notes + '"></button>' + '\n';
-} else if (coinFocus.div.children[j].dataset.coinTrip==Ts1){
+for (let j = 0; j < coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length; j++) {
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.name) { nameInput = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.name; } else { nameInput = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].id; }
+       if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.coinTrip==Ts2) {
+newInternals += '<button id="' + nameInput + '" class="button_ button_' + nameInput + '" title="' + coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.notes + '"></button>' + '\n';
+} else if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.coinTrip==Ts1){
 newInternals += '<input id="' + nameInput + '" name="' + nameInput + '" class="input_ input_' + nameInput + '" type="value" placeholder="empty">' + '\n';
-} else if (coinFocus.div.children[j].dataset.coinTrip==Ts0){
+} else if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.coinTrip==Ts0){
 newInternals += '<textarea id="' + nameInput + '" class="textarea_ input_' + nameInput + '" placeholder="empty"></textarea>' + '\n';
 }
 }
@@ -136,7 +136,7 @@ ${changeHandlerPrep}
 }
 });
 </script>`;
-coinFocus.div.innerHTML = newInternals;
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = newInternals;
 }
 }
 }

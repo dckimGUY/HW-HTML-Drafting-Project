@@ -1108,14 +1108,14 @@ const mouseInfo = [event,ctrl,shift,alt];
 
 hotDog = true; event.preventDefault(); spaceViewOn([event,32,32,event.shiftKey,event.ctrlKey,event.altKey]); removePointerEventsNone();
 if (coinFocus != null &&
-    coinFocus.div
+    coinFocus.lastElementChild.lastElementChild.previousElementSibling
 ) {
 if (ui.folder52.ref.style.display == "block" &&
     ui.tab5Wrapper.ref.style.display  == "block") {
-coinFocus.div.setAttribute("contentEditable", true);
-coinFocus.anchor.style.zIndex = "0";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute("contentEditable", true);
+coinFocus.firstElementChild.style.zIndex = "0";
 }
-coinFocus.div.focus();
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.focus();
 }
 
 

@@ -373,12 +373,12 @@ infoMessage(`
 
 function infoMessage(message) {
 insertNewCoin([null,78,78]);
-coinFocus.div.innerHTML = message;
-coinFocus.div.style.fontSize = "32px";
-coinFocus.div.style.padding = "32px";
-coinFocus.div.style.fontFamily = "dckimPixelMono"
-coinFocus.div.style.overflow = "scroll";
-coinFocus.div.contenteditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = message;
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontFamily = "dckimPixelMono"
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflow = "scroll";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contenteditable = "true";
 coinFocus.style.width = "1536px";
 coinFocus.style.height = "1536px";
 coinFocus.dataset.width = "1536px";
@@ -554,7 +554,7 @@ coinFocus.dataset.height = imageDummy.naturalHeight * entryFactor + "px";
 flipAnchorZ([,,,false,]);
 anim.appendChild(script);
 randomDiv.appendChild(anim);
-coinFocus.div.appendChild(randomDiv);
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.appendChild(randomDiv);
 frameCounter++;
 
 

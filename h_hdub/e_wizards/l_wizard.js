@@ -6,7 +6,7 @@ z_wizardCode.l_wizard.b_code = `
 <div id="coin70543" data-js-name="coin70543" data-drag-pull="backgroundColor" data-parent="" data-children="" data-scale="1" data-finished-outline="none" data-outline-colour="grey" data-left="0px" data-top="192px" data-width="384px" data-height="64px" style="position: absolute; z-index: 100250000; user-select: none; transform-origin: left top; transform: scale(1); left: 0px; top: 192px; width: 384px; height: 64px; outline: none;" data-coin-trip="?" data-file-include="a_linkReader.html" data-flow="0"><a data-name="anchor" style="position: absolute; z-index: 0; left: 0px; top: 0px; width: 100%; height: 100%; border: 0px; margin: 0px; font-size: 32px; font-family: monospace; color: rgb(0, 0, 0); text-align: left; background-color: transparent; opacity: 1;"></a><div data-name="main" data-perspective="1536px" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-translate-z="0" style="position: absolute; z-index: 100; overflow: hidden; left: 0px; top: 0px; width: 100%; height: 100%; border: none; transform-origin: center center; display: block; border-radius: 64px; outline: grey solid 3px;"><button data-name="button" style="position: absolute; z-index: 300; left: 0px; top: 0px; width: 100%; height: 100%; border: none; display: none; background-color: transparent; color: rgb(222, 255, 28); text-shadow: black 2px 2px 2px, black -2px 2px 2px, black 2px -2px 2px, black -2px -2px 2px; font-size: 24px; font-weight: bold;"></button><div data-name="div" style="position: absolute; z-index: 200; left: 0px; top: 0px; width: 100%; height: 100%; box-sizing: border-box; border: none; text-align: justify; background-color: transparent; color: rgb(0, 0, 0); font-size: 24px; text-shadow: rgba(127, 127, 127, 0.75) 0.75px 0.75px 0.75px;"><div style="display: flex; justify-content: center;">
 <button class="xqnBTN" style="width: 10%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
 try {
-this.nextElementSibling.value = window.opener.coinFocus.anchor.href;
+this.nextElementSibling.value = window.opener.coinFocus.firstElementChild.href;
 } catch {};
 ">read</button>
 <input type="value" style="width: 90%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit; text-align: center;" placeholder="read link URL" oninput="
@@ -26,7 +26,7 @@ this.setAttribute('value',this.value);
 ">
 <button class="xqnBTN" style="width: 10%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
 try {
-window.opener.coinFocus.anchor.href = this.previousElementSibling.value;
+window.opener.coinFocus.firstElementChild.href = this.previousElementSibling.value;
 } catch {};
 ">set</button>
 </div></div><img data-name="img" alt="" style="position: absolute; display: none; z-index: 100; left: 0px; top: 0px; width: 100%; height: 100%; border: none; background-color: transparent;"></div></div>
@@ -35,7 +35,7 @@ window.opener.coinFocus.anchor.href = this.previousElementSibling.value;
 
 <button class="xqnBTN" style="width: 10%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
 try {
-this.nextElementSibling.value = window.opener.coinFocus.anchor.href;
+this.nextElementSibling.value = window.opener.coinFocus.firstElementChild.href;
 } catch {};
 ">read</button>
 
@@ -48,7 +48,7 @@ this.setAttribute('value',this.value);
 
 <button class="xqnBTN" style="width: 10%; height: 64px; font: inherit; margin: 0px; padding: 0px; border: none; color: inherit;" onclick="
 try {
-window.opener.coinFocus.anchor.href = this.previousElementSibling.value;
+window.opener.coinFocus.firstElementChild.href = this.previousElementSibling.value;
 } catch {};
 ">set</button>
 

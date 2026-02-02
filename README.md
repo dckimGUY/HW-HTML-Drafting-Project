@@ -12,9 +12,117 @@ __Open-Source All The Way!__
 
 [Visit the DCKIM.com](https://dckim.com/)
 
-[![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)](https://dckim.com/HW_project_online.html)
+[![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)](https://dckim.com/index.html)
 
 For the developers out there: The project is arranged conveniently for BASH with both file name and directory prefixes in the form of 'a_'. This takes advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
+
+Here is some other information so that you know that the project has some real traction. It seems that an actual company in the United States has made some sort of assessment of the project, which was conducted in an online forum. A little bit unprofessional, but, we'll take whatever free press we can get.
+
+The interest seems to be related to 'legal sourcing':
+https://mastodon.social/@glyph/115452884322460847
+https://mastodon.social/@glyph/115452658138339709
+
+DCKIM HTML Drafting Project is advertised on Mastodon.Social since the beginning of October 2025 on 4 hour intervals and in more than 40 different languages with matched pages in-language with individual RSS feeds in-language, all with alternate-language tags for both RSS and pages. It has been thoroughly done, and this has helped to approach the goal of global HTML Drafting domination (muhahahaha). The advertisements have been online at mastodon, and in physical locations in the City of North York with signage on the community sign-posting boards(large signs).
+
+Then here's the top linking sites for DCKIM, it's long, and that helps with brand-authority and visibility:
+
+As of 2026-01-23:
+
+Site,Linking pages,Target pages
+mastodon.social,29,6
+hli.fi,8,3
+fabrykajabo.li,7,1
+murkworks.net,7,2
+rando.social,6,4
+draconity.me,5,1
+github.com,5,1
+loud.computer,5,1
+pandapla.net,5,1
+silicon.moe,5,1
+techtett.de,5,1
+esgeroth.org,4,2
+persadon.com,4,1
+phantanews.de,4,1
+ruiguimaraes.net,4,1
+schleswig-holstein.de,4,3
+anothersuper.social,3,1
+bsky.app,3,3
+metikumity.com,3,1
+nighten.fr,3,1
+nwt.social,3,2
+oslo.town,3,1
+uninformation.org,3,1
+uvix.cc,3,1
+yumk.xyz,3,1
+ecoevo.social,2,1
+heads.social,2,1
+indiefilmmakers.social,2,1
+linux.it,2,1
+losno.co,2,1
+mastodon.nu,2,2
+meowstodon.eu,2,1
+nfdi.social,2,1
+resolutions.it,2,1
+return12.net,2,1
+sieprawski.pl,2,1
+someplace.social,2,1
+suomi.social,2,1
+yelvington.com,2,1
+2137.social,1,1
+academiccloud.social,1,1
+aleph.land,1,1
+avision-it.social,1,1
+birdbox.party,1,1
+canadiancivil.com,1,1
+critter.cafe,1,1
+danq.me,1,1
+digitalcourage.social,1,1
+evy.pet,1,1
+fedia.social,1,1
+fedica.com,1,1
+freefree.ps,1,1
+freesewing.social,1,1
+fromm.social,1,1
+gamedev.berlin,1,1
+gamedev.place,1,1
+ganyuss.com,1,1
+hachyderm.io,1,1
+hams.social,1,1
+infosec.exchange,1,1
+jmrp.io,1,1
+juuze.de,1,1
+kompektiva.org,1,1
+makearmy.io,1,1
+mastodns.net,1,1
+minidisc.tokyo,1,1
+mstdn-social.com,1,1
+mstdn.games,1,1
+mstdn.social,1,1
+mytech.nexus,1,1
+neocities.org,1,1
+neverhill.social,1,1
+notpickard.com,1,1
+ohai.social,1,1
+osumiakari.jp,1,1
+peaceful.social,1,1
+pepicrft.me,1,1
+photorat.org,1,1
+podcasts.social,1,1
+publicgood.social,1,1
+sadmin.io,1,1
+securitycafe.ca,1,1
+shuttle.eu,1,1
+snabelen.no,1,1
+stefanbohacek.online,1,1
+thebristolcable.social,1,1
+tweesecake.social,1,1
+urbanists.social,1,1
+uwa4d.com,1,1
+wake.st,1,1
+wildserver.ru,1,1
+witter.cz,1,1
+
+(That's just some of them, there are more in there, and more coming because advertisement continues until present. It's automated.)
 
 ## Menu
 - [Screen Grab HYPE](#screen-grab-hype)

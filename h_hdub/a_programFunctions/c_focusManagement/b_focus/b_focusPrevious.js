@@ -31,7 +31,7 @@ coinFocus = coinFocus.previousElementSibling;
 coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 if (!del) {
-coinFocus.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+coinFocus.scrollIntoView({behavior: 'auto', block: 'center', inline: 'center'});
 }
 return (1);
 }

@@ -514,11 +514,14 @@ Y.font = "400 32px dckimPixelMono";
 Y.textBaseline="top";
 
 if (gW!=0) {
-Y.fillText(`         ${window.innerWidth}x${window.innerHeight} KEY:${T.toString().padStart(' ',4)} MOUSE:${mouseIncrement.toString().padStart(' ',3)}`,bW,bW);
+Y.fillText(`${layerName} ${window.innerWidth}x${window.innerHeight} KEY:${T.toString().padStart(' ',4)} MOUSE:${mouseIncrement.toString().padStart(' ',3)} Z:${(pageEchelon / 100000000).toString().padStart(' ',3)}`,16,16);
 Y.font=bFarr;
-Y.font = "400 32px dckimPixelMono";
-//Y.fillText(`${visualFlowIndicator()}`,bW,bW);
-Y.fillText(`${layerName}`,bW,bW);
+Y.font = "400 64px dckimPixelMono";
+//Y.fillText(`${visualFlowIndicator()}`,0,0);
+Y.fillText(`
+
+لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰه
+`,768,16);
 Y.stroke();
 }
 
@@ -1090,15 +1093,15 @@ coinFocus.dataset.height = "512px";
 
 }
 
-coinFocus.div.style.fontSize = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
 
 
-coinFocus.div.style.color = invertHexColour(finishedBackgroundColour);
-coinFocus.div.style.textAlign = "left";
-coinFocus.div.style.padding = "32px";
-coinFocus.div.style.overflow = "auto";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.color = invertHexColour(finishedBackgroundColour);
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "left";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "32px";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflow = "auto";
 
-coinFocus.div.innerHTML = `
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = `
 <p><b>DCKIM - HTML Drafting Project:</b></p>
 <ol>
 <li>F1 Help Menu</li>

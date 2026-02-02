@@ -151,7 +151,7 @@ if (coinFocus != null) {
 
 
 
-//} else if (kC ==  88 && cC ==  88){coinFocus.div.innerHTML = ui.hdubX.value;
+//} else if (kC ==  88 && cC ==  88){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubX.value;
 
 
 

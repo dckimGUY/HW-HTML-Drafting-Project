@@ -103,9 +103,10 @@ if (hotDog) { return; }
 /**************************************************************************/
 /*                                                                        */
 /*   tab   */ if (kC ==   9)              {
+if (!event.ctrlKey) {
 event.preventDefault();
-
 toggleLocalView();
+}
 
 /*
 if (!es) {
@@ -274,7 +275,7 @@ drawFury(true);
 hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone();
 
 if (coinFocus != null &&
-    coinFocus.div
+    coinFocus.lastElementChild.lastElementChild.previousElementSibling
 ) {
 if (ui.folder52.ref.style.display == "block" &&
     ui.tab5Wrapper.ref.style.display  == "block") {

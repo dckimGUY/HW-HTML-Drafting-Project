@@ -34,7 +34,7 @@ justify-content: left;
 
 .coinItemList {
 font-family: dckimPixelMono;
-font-size: 16px;
+font-size: 10px;
 border: 2px solid white;
 background-color: lightgrey;
 border-radius: 2px;
@@ -50,7 +50,7 @@ background-color: lime;
 
 .coinDelete {
 font-family: dckimPixelMono;
-font-size: 16px;
+font-size: 10px;
 background-color: lightgrey;
 color: white;
 border: 2px solid white;
@@ -94,7 +94,7 @@ height: 128px;
 
 .phantomItemList {
 font-family: dckimPixelMono;
-font-size: 16px;
+font-size: 10px;
 border: 1px solid grey;
 color: grey;
 background-color: lightgrey;

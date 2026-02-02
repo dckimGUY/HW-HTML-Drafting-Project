@@ -69,7 +69,7 @@ window.opener.borderRadiusTuner();
 this.parentNode.parentNode.parentNode.dataset.dragPull='main.style.outlineColor';
 this.parentNode.parentNode.style.outlineColor=this.value;
 try {
-window.opener.coinFocus.main.style.outlineColor=this.value;
+window.opener.coinFocus.lastElementChild.style.outlineColor=this.value;
 window.opener.coinFocus.dataset.outlineColour=this.value;
 } catch {};
 ">
