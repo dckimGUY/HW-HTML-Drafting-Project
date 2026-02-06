@@ -35,28 +35,6 @@ shelfMenuHTML.tab3.folder2.HTML = `
 <button id="spriteLoop4" class="button_ button_spriteLoop4" title=""></button>
 
 
-<button dataset-colour="rgb(  0,  0,  0)" id="paint0"  class="button_ button_paint0  button_paint" title="Is there any better paint program?"></button>
-<button dataset-colour="rgb(127,127,127)" id="paint1"  class="button_ button_paint1  button_paint" title="Time tested simplicity, enjoyed by all."></button>
-<button dataset-colour="rgb(136,  0, 21)" id="paint2"  class="button_ button_paint2  button_paint" title="If it ain't broke, don't fix it. It's a fixture."></button>
-<button dataset-colour="rgb(237, 28, 36)" id="paint3"  class="button_ button_paint3  button_paint" title="The absolute standard of perfect minimal programming."></button>
-<button dataset-colour="rgb(255,127, 39)" id="paint4"  class="button_ button_paint4  button_paint" title="Avert yourself from the overblown mess of other programs."></button>
-<button dataset-colour="rgb(255,242,  0)" id="paint5"  class="button_ button_paint5  button_paint" title="What makes paint so amazing?"></button>
-<button dataset-colour="rgb( 34,177, 76)" id="paint6"  class="button_ button_paint6  button_paint" title="Anywhere you go, chances are, that computer has paint."></button>
-<button dataset-colour="rgb(  0,162,232)" id="paint7"  class="button_ button_paint7  button_paint" title="Dependable and reliable, why change this iconic classic?"></button>
-<button dataset-colour="rgb( 63, 72,204)" id="paint8"  class="button_ button_paint8  button_paint" title="Some people complain that it doesn't have '___', but that's what I like about it."></button>
-<button dataset-colour="rgb(163, 73,164)" id="paint9"  class="button_ button_paint9  button_paint" title="I like what it doesn't have."></button>
-<button dataset-colour="rgb(255,255,255)" id="paint10" class="button_ button_paint10 button_paint" title="I've tried other programs that are so complicated: You press a wrong key and must re-install it."></button>
-<button dataset-colour="rgb(195,195,195)" id="paint11" class="button_ button_paint11 button_paint" title="Is there any better starter swatch?"></button>
-<button dataset-colour="rgb(185,122, 87)" id="paint12" class="button_ button_paint12 button_paint" title="I hope this swatch isn't copywritten... Oops..."></button>
-<button dataset-colour="rgb(255,174,201)" id="paint13" class="button_ button_paint13 button_paint" title="Why doesn't it have transparency?"></button>
-<button dataset-colour="rgb(255,201, 14)" id="paint14" class="button_ button_paint14 button_paint" title="Because it doesn't need it."></button>
-<button dataset-colour="rgb(239,228,176)" id="paint15" class="button_ button_paint15 button_paint" title="This panel eliminates the issue."></button>
-<button dataset-colour="rgb(181,230, 29)" id="paint16" class="button_ button_paint16 button_paint" title="These are the last twenty colours you will even need."></button>
-<button dataset-colour="rgb(153,217,234)" id="paint17" class="button_ button_paint17 button_paint" title="Nineteen actually, if you spare one for transparency."></button>
-<button dataset-colour="rgb(112,146,190)" id="paint18" class="button_ button_paint18 button_paint" title="Who ever needs more than twenty colours anyhow?"></button>
-<button dataset-colour="rgb(200,191,231)" id="paint19" class="button_ button_paint19 button_paint" title="You could pull the customs, but why?"></button>
-
-
 
 <textarea id="frameNumber" class="input_ input_frameNumber dckimPixelMono" type="number" title="total number of frames" placeholder="#" spellcheck="false" style="text-align: center;" readonly >5</textarea>
 
@@ -67,7 +45,7 @@ shelfMenuHTML.tab3.folder2.HTML = `
 
 
 <button id="animateClick" class="button_ button_animateClick" title="animations begin when clicked"></button>
-<button id="animateLoop"  class="button_ button_animateLoop"  title="animations are looped"></button>
+<button id="animateLoop"  class="button_ button_animateLoop"  title="animations are looped, use 'SHIFT' to get image data without the annoying animation"></button>
 <button id="fewerFrames"  class="button_ button_fewerFrames"  title=""></button>
 <button id="moreFrames"   class="button_ button_moreFrames"   title=""></button>
 

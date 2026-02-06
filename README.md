@@ -10,11 +10,9 @@ __Open-Source All The Way!__
 
 [![HW HTML Drafting Project has a WIKI](./images-for-readme/h_wiki-promo.png)](https://github.com/dckimMysteryAuthor/HW-HTML-Drafting-Project/wiki/Home)
 
-[Visit the DCKIM.com](https://dckim.com/)
+[Visit DCKIM.com](https://dckim.com/)
 
 [![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)](https://dckim.com/index.html)
-
-For the developers out there: The project is arranged conveniently for BASH with both file name and directory prefixes in the form of 'a_'. This takes advantage of 'tab-autocompletion'. This should sweeten the deal for potential contributors.
 
 Here is some other information so that you know that the project has some real traction. It seems that an actual company in the United States has made some sort of assessment of the project, which was conducted in an online forum. A little bit unprofessional, but, we'll take whatever free press we can get.
 
@@ -22,7 +20,7 @@ The interest seems to be related to 'legal sourcing':
 https://mastodon.social/@glyph/115452884322460847
 https://mastodon.social/@glyph/115452658138339709
 
-DCKIM HTML Drafting Project is advertised on Mastodon.Social since the beginning of October 2025 on 4 hour intervals and in more than 40 different languages with matched pages in-language with individual RSS feeds in-language, all with alternate-language tags for both RSS and pages. It has been thoroughly done, and this has helped to approach the goal of global HTML Drafting domination (muhahahaha). The advertisements have been online at mastodon, and in physical locations in the City of North York with signage on the community sign-posting boards(large signs).
+DCKIM HTML Drafting Project is advertised on Mastodon.Social since the beginning of October 2025 on 4 hour intervals and in more than 40 different languages with matched pages in-language with individual RSS feeds in-language, all with alternate-language tags for both RSS and pages. It has been thoroughly done, and this has helped to approach the goal of global HTML Drafting Domination (muhahahaha). The advertisements have been online at mastodon, and in physical locations in the City of North York with signage on the community sign-posting boards(large signs).
 
 Then here's the top linking sites for DCKIM, it's long, and that helps with brand-authority and visibility:
 
@@ -183,7 +181,7 @@ The way forward for the project as a whole is fairly clear: Potential branches m
 
 A common general set will be identified, and perhaps this initial foundation will be expanded or restricted thoughtfully allowing a clean separation, with overlap handled in the foundation. The foundation will represent the overlap of all branches.
 
-In the earliest stage of branch design, the most crucial decisions are made, and can have a lasting effect on the project goind forward.
+In the earliest stage of branch design, the most crucial decisions are made, and can have a lasting effect on the project going forward.
 
 Even a decision being as simple as the number of branches could be crucial.
 
@@ -204,10 +202,8 @@ Just take some of that knowledge and then bring it into a totally obvious visual
 For information, and to promote this project a bit further: I can tell you that almost all of the files inside of the project directories are organized with the BASH prompt in mind. So, they all start with an alphabet letter, and then have an underscore. So, when you are working with your own clone of the project, you will get the following result:
 1. You will find the files neatly arranged: "/a_directory/b_directory/h_filename.js". Trust me this saves time and improves efficiency. For example, you can just use 'vi a *tab* b *tab* h *tab* enter'. (anyone who's been at this game a while will love that)
 2. There is a very easy BASH script solution that will build the 'HW_project_online.html' file again from what is in the 'hw' directory. You can just type '. ./chalk' from the prompt, and it assembles the vital project components again. So, you can basically add '.js' files into the 'hw/a_programFunctions' directory at will, and as long as the file has a function inside of it with the same name as the filename (excluding the 'a_') then you are good to go. If you are familiar with BASH, just have a quick look inside of the 'chalk' file so that you can see what it will affect.
-3. There are other convenient BASH scripts, basically ready to be used (as-is). If you just point your browser at the 'WEBSITE' directory, and start saving the browser downloads there, then you are set up pretty good for small-time website production. We just don't have any 'server-side' code happening. This project doesn't deal with any of that. It just deals with what can be easily understood, without any installs, and without any major programming knowledge. Basically 'regular-people-stuff'. That said, everyone can potentially benefit from opening up HTML for general daily use.
-4. The JavaScript (in the 'hw' directory): It's mostly broken down into a 'one-function-one-file' type scenario. So, it's pretty easy to find functions and handle them.
-5. It's even easier to find functions in the project by using the 'HW_treeDiagram.html' file. You can open that in the browser and then use 'ctrl+f' to find things.
-6. Even as an organizational or communication type solution, this program has it covered. Extensibility is to the 9s on this one.
+3. The JavaScript (in the 'hw' directory): It's mostly broken down into a 'one-function-one-file' type scenario. So, it's pretty easy to find functions and handle them.
+4. The tree diagram that was previously available has been replaced with a micro-program akin to a 'file-visualizer': Shadow-tree. It is accessible in-program on the last tab, at the bottom. It's set up as an example, with the fileset not spanning the entire application.
 
 I hope that you have a look for yourself, and then give it a go.
 

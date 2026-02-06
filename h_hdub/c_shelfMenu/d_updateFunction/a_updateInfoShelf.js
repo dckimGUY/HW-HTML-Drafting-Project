@@ -3,11 +3,6 @@ function updateInfoShelf() {
 
 
 
-for (let j = 0; j < 20; j++) {
-ui["paint" + j].ref.style.outline = "";
-}
-paintClear.DOM.style.outline = "2px solid black";
-
 
 
 

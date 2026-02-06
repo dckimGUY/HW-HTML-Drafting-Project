@@ -183,5 +183,12 @@ Y.fillText(zStack[j].id.id, parseInt(zStack[j].id.style.left) - window.scrollX +
 
 } /* END OF THE FOR LOOP */
 } /* END OF IN-VIEW CONDITION */
+
+
+
+
+
+
+
 } /* END OF CONDITION showVisualizations */
 };

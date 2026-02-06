@@ -70,6 +70,15 @@ shelfMenuHTML.tab1.folderSelectors.HTML  +
 <div id="sidebar" class="sidebar">
 <button id="sidebarOpener" class="sidebarOpener" onclick="toggleSidebar1();"></button>
 
+
+<button class="manageZ"     title="manage Z, use shift for colour groups"       onclick="if (!event.shiftKey) { manageGlobalZ(0); } else if ( event.shiftKey) { manageTripartiteZ(0); }"></button>
+<button class="clearZ"      title="clear the stacking order (note: stacking order is then determined by document flow order)" onclick="clearZ();"></button>
+<button class="zMove zHigh" title="move to top, use shift for colour groups"    onclick="if (!event.shiftKey) { manageGlobalZ(0); ceilingGlobalZ(); } else if ( event.shiftKey) { manageTripartiteZ(0); ceilingTripartiteZ(); }"></button>
+<button class="zMove zLow"  title="move to bottom, use shift for colour groups" onclick="if (!event.shiftKey) { manageGlobalZ(0); floorGlobalZ();   } else if ( event.shiftKey) { manageTripartiteZ(0); floorTripartiteZ();   }"></button>
+<button class="zMove zLess" title="move down, use shift for colour groups"      onclick="if (!event.shiftKey) { manageGlobalZ(0); lowerGlobalZ();   } else if ( event.shiftKey) { manageTripartiteZ(0); lowerTripartiteZ();   }"></button>
+<button class="zMove zMore" title="move up, use shift for colour groups"        onclick="if (!event.shiftKey) { manageGlobalZ(0); raiseGlobalZ();   } else if ( event.shiftKey) { manageTripartiteZ(0); raiseTripartiteZ();   }"></button>
+<button class="zMove vFlow" title="set the document order(google sees it, you don't), use shift for colour groups" onclick="if (!event.shiftKey) {  lastFlow = 'global'; reflowGlobal(rev,0); } else if ( event.shiftKey) {  lastFlow='colour'; reflowPerTrip(); }"></button>
+
 <div class="itemSystem dckimPixelMono" style="font-size: 8px; color: #DEFF1C44; line-height: 1.1; padding-top: 2px; text-indent: 8px;">
 <p>This program has z-index management semi-automatic at the keyboard. Use "Z" for global management. Use "SHIFT + Z" for group management. Back: Pink; Middle: Grey; Front: Blue. Use "HJKL" to move within the z-index. Use "SHIFT + HJKL" to move within the colour group only.</p>
 <br>
@@ -160,10 +169,44 @@ shelfMenuHTML.tab2.folder2.HTML  +
 `<div id="tab3folderSelectors" class="folderSelectors">` +
 shelfMenuHTML.tab3.folderSelectors.style +
 shelfMenuHTML.tab3.folderSelectors.HTML  +
-`</div><div id="folder31" class="button_ folder folder31image">` +
+`</div>
+
+
+
+
+<div id="sidebar3" class="sidebar3" title="if you aren't sure how to work the complicated machinery of the main tab, try some of these, they are ready to go with only one click... then just draw the images! BASE, FOCUS, HOVER, ACTIVE, use the shift key to get BASE, and ACTIVE only. Drag the finished product directly on to the program screen.">
+
+<button id="sidebarOpener3" class="sidebarOpener3" onclick="toggleSidebar3();"></button>
+
+<button class="quad quad1" onclick="saveReadyButton(20,20,4,1);" title="guaranteed lowest price on HTML buttons!"></button>
+<button class="quad quad2" onclick="saveReadyButton(20,20,4,2);" title="top quality square HTML buttons!"></button>
+<button class="quad quad3" onclick="saveReadyButton(20,20,4,3);" title="big discounts, huge value!"></button>
+<button class="quad quad4" onclick="saveReadyButton(20,20,4,4);" title="pixelated buttons never looked so good!"></button>
+
+<button class="wide wide1" onclick="saveReadyButton(50,20,4,1);" title="keep your pennies in your pocket!"></button>
+<button class="wide wide2" onclick="saveReadyButton(50,20,4,2);" title="our discounts are wall to wall!"></button>
+<button class="wide wide3" onclick="saveReadyButton(50,20,4,3);" title="everything must go!"></button>
+<button class="wide wide4" onclick="saveReadyButton(50,20,4,4);" title="at these prices, we're going out of business!"></button>
+
+<button class="tall tall1" onclick="saveReadyButton(20,45,4,1);" title="tallest buttons, lowest prices!"></button>
+<button class="tall tall2" onclick="saveReadyButton(20,45,4,2);" title="half the price, twice the value!"></button>
+<button class="tall tall3" onclick="saveReadyButton(20,45,4,3);" title="tall buttons that won't thin out your pocket book!"></button>
+<button class="tall tall4" onclick="saveReadyButton(20,45,4,4);" title="a top quality button that won't break the bank!"></button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="folder31" class="button_ folder folder31image">` +
 shelfMenuHTML.tab3.folder1.style +
 shelfMenuHTML.tab3.folder1.HTML  +
-`</div><div id="folder32" class="button_ folder folder32image">` +
+`</div><div id="folder32" title="when you save the file, the img part gets chopped into a new Image() object, check it out! (it just reads it back out from the datasets)" class="button_ folder folder32image">` +
 shelfMenuHTML.tab3.folder2.style +
 shelfMenuHTML.tab3.folder2.HTML  +
 `</div></div>` +
@@ -964,7 +1007,32 @@ shelfMenuHTML.tab5.folder2.HTML  +
 `<div id="tab6folderSelectors" class="folderSelectors">` +
 shelfMenuHTML.tab6.folderSelectors.style +
 shelfMenuHTML.tab6.folderSelectors.HTML  +
-`</div><div id="folder61" class="button_ folder folder61image">` +
+`</div>
+
+
+
+
+<div id="sidebar6" class="sidebar6">
+<button id="sidebarOpener6" class="sidebarOpener6" title="the 'SHIFT' key toggles markers in the main view" onclick="toggleSidebar6();"></button>
+
+<button id="buoy0" class="buoy buoyBorder buoy0" onclick="gotoBuoy(topLayer.buoyPoint.buoy0);"></button> <button id="setbuoy0" class="buoy setbuoy0" onclick="setBuoy(topLayer.buoyPoint.buoy0);"></button>
+<button id="buoy1" class="buoy buoyBorder buoy1" onclick="gotoBuoy(topLayer.buoyPoint.buoy1);"></button> <button id="setbuoy1" class="buoy setbuoy1" onclick="setBuoy(topLayer.buoyPoint.buoy1);"></button>
+<button id="buoy2" class="buoy buoyBorder buoy2" onclick="gotoBuoy(topLayer.buoyPoint.buoy2);"></button> <button id="setbuoy2" class="buoy setbuoy2" onclick="setBuoy(topLayer.buoyPoint.buoy2);"></button>
+<button id="buoy3" class="buoy buoyBorder buoy3" onclick="gotoBuoy(topLayer.buoyPoint.buoy3);"></button> <button id="setbuoy3" class="buoy setbuoy3" onclick="setBuoy(topLayer.buoyPoint.buoy3);"></button>
+<button id="buoy4" class="buoy buoyBorder buoy4" onclick="gotoBuoy(topLayer.buoyPoint.buoy4);"></button> <button id="setbuoy4" class="buoy setbuoy4" onclick="setBuoy(topLayer.buoyPoint.buoy4);"></button>
+<button id="buoy5" class="buoy buoyBorder buoy5" onclick="gotoBuoy(topLayer.buoyPoint.buoy5);"></button> <button id="setbuoy5" class="buoy setbuoy5" onclick="setBuoy(topLayer.buoyPoint.buoy5);"></button>
+<button id="buoya" class="buoy buoyBorder buoya" onclick="gotoBuoy(topLayer.buoyPoint.buoya);"></button> <button id="setbuoya" class="buoy setbuoya" onclick="setBuoy(topLayer.buoyPoint.buoya);"></button>
+<button id="buoyb" class="buoy buoyBorder buoyb" onclick="gotoBuoy(topLayer.buoyPoint.buoyb);"></button> <button id="setbuoyb" class="buoy setbuoyb" onclick="setBuoy(topLayer.buoyPoint.buoyb);"></button>
+<button id="buoyc" class="buoy buoyBorder buoyc" onclick="gotoBuoy(topLayer.buoyPoint.buoyc);"></button> <button id="setbuoyc" class="buoy setbuoyc" onclick="setBuoy(topLayer.buoyPoint.buoyc);"></button>
+<button id="buoyd" class="buoy buoyBorder buoyd" onclick="gotoBuoy(topLayer.buoyPoint.buoyd);"></button> <button id="setbuoyd" class="buoy setbuoyd" onclick="setBuoy(topLayer.buoyPoint.buoyd);"></button>
+<button id="buoye" class="buoy buoyBorder buoye" onclick="gotoBuoy(topLayer.buoyPoint.buoye);"></button> <button id="setbuoye" class="buoy setbuoye" onclick="setBuoy(topLayer.buoyPoint.buoye);"></button>
+<button id="buoyf" class="buoy buoyBorder buoyf" onclick="gotoBuoy(topLayer.buoyPoint.buoyf);"></button> <button id="setbuoyf" class="buoy setbuoyf" onclick="setBuoy(topLayer.buoyPoint.buoyf);"></button>
+</div>
+
+
+
+
+<div id="folder61" class="button_ folder folder61image">` +
 shelfMenuHTML.tab6.folder1.style +
 shelfMenuHTML.tab6.folder1.HTML  +
 `</div><div id="folder62" class="button_ folder folder62image">` +

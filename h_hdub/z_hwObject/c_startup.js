@@ -90,13 +90,13 @@ body::-webkit-scrollbar { display: none;                                        
 
 <title id="documentTitle">DCKIM HTML Drafting Project</title>
 
-<link rel="stylesheet" href="e_stylesheets/a_style.css?v=20251119090942"/>
+<link rel="stylesheet" href="e_stylesheets/a_style.css?v=20260205111714"/>
 <link rel="stylesheet" href="e_stylesheets/b_style.css?v=20251228104423"/>
 <link rel="stylesheet" href="e_stylesheets/c_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-02-02T13:24:06Z">
+<meta name="last-build" content="2026-02-05T16:20:43Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -192,6 +192,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/c_lowerGlobalZ.js?v=20251102205813"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/d_raiseGlobalZ.js?v=20251102205813"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/e_floorGlobalZ.js?v=20251102205813"></script>
+<script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/f_clearZ.js?v=20260205112038"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/b_tripartiteZManagement/a_manageTripartiteZ.js?v=20251102205813"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/b_tripartiteZManagement/b_ceilingTripartiteZ.js?v=20251102205813"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/f_documentOrder/b_zIndexManagement/b_tripartiteZManagement/c_lowerTripartiteZ.js?v=20251102205813"></script>
@@ -221,7 +222,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/i_tripartiteOperations/e_readCoins.js?v=20251102205812"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/a_deletion/a_deleteCoin.js?v=20260106190751"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/a_deletion/b_groupDeletion.js?v=20251102205813"></script>
-<script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/a_insertNewCoin.js?v=20260201163438"></script>
+<script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/a_insertNewCoin.js?v=20260205105718"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/b_insertNewDuplicate.js?v=20260125192641"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/c_insertNewImage.js?v=20260108094005"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/j_insertionAndDeletion/b_insertion/b_insertDragSelector/a_insertDragIns.js?v=20251102205813"></script>
@@ -324,7 +325,7 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/v_cleanConversion/b_copyToClipboard.js?v=20251120163140"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/w_projectLevel/a_saveProject.js?v=20260128195331"></script>
 <script src="./h_hdub/a_programFunctions/a_keyboardFunctions/w_projectLevel/b_openProject.js?v=20260128195933"></script>
-<script src="./h_hdub/a_programFunctions/b_mouseFunctions/a_enterNewPartFromMouseInput.js?v=20260201163419"></script>
+<script src="./h_hdub/a_programFunctions/b_mouseFunctions/a_enterNewPartFromMouseInput.js?v=20260205105738"></script>
 <script src="./h_hdub/a_programFunctions/b_mouseFunctions/b_mouseGiveFocus.js?v=20251102205812"></script>
 <script src="./h_hdub/a_programFunctions/b_mouseFunctions/c_mousePlaceCursor.js?v=20251118154654"></script>
 <script src="./h_hdub/a_programFunctions/c_focusManagement/a_spatialCursor/a_coinToCursor.js?v=20251102205812"></script>
@@ -363,49 +364,49 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/c_shelfMenu/b_html/0_tabSelectors/a_tabSelectors_style.js?v=20251111125627"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/0_tabSelectors/b_tabSelectors_HTML.js?v=20260118094537"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/0_tabSelectors/c_scaler.js?v=20260127135752"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/a_tab1_folderSelectors_style.js?v=20260129055851"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/b_tab1_folderSelectors_HTML.js?v=20260129055851"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/1_folderBackgrounds/a_tab1_background_style.js?v=20260129055856"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/a_tab1_shelf1_style.js?v=20260130161359"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/b_tab1_shelf1_HTML.js?v=20260201162402"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/a_tab1_shelf2_style.js?v=20260129055930"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/b_tab1_shelf2_HTML.js?v=20260129055930"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/a_tab2_folderSelectors_style.js?v=20260129055852"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/b_tab2_folderSelectors_HTML.js?v=20260129055852"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/1_folderBackgrounds/a_tab2_background_style.js?v=20260129055856"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/a_tab2_shelf1_style.js?v=20260129055916"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/b_tab2_shelf1_HTML.js?v=20260129055916"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/a_tab2_shelf2_style.js?v=20260129055934"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/b_tab2_shelf2_HTML.js?v=20260129055934"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/a_tab3_folderSelectors_style.js?v=20260129055853"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/b_tab3_folderSelectors_HTML.js?v=20260129055853"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/1_folderBackgrounds/a_tab3_background_style.js?v=20260129055857"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/a_folder1/a_tab3_shelf1_style.js?v=20260129055921"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/a_folder1/b_tab3_shelf1_HTML.js?v=20260129055921"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/b_folder2/a_tab3_shelf2_style.js?v=20260129055944"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/b_folder2/b_tab3_shelf2_HTML.js?v=20260129055944"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/a_tab4_folderSelectors_style.js?v=20260129055854"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/b_tab4_folderSelectors_HTML.js?v=20260129055854"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/1_folderBackgrounds/a_tab4_background_style.js?v=20260129055857"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/a_folder1/a_tab4_shelf1_style.js?v=20260129055925"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/a_folder1/b_tab4_shelf1_HTML.js?v=20260129055925"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/b_folder2/a_tab4_shelf2_style.js?v=20260129055951"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/b_folder2/b_tab4_shelf2_HTML.js?v=20260129055951"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/a_tab5_folderSelectors_style.js?v=20260129055855"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/b_tab5_folderSelectors_HTML.js?v=20260129055855"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/1_folderBackgrounds/a_tab5_background_style.js?v=20260129055858"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/a_tab1_folderSelectors_style.js?v=20260202082421"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/0_folderSelectors/b_tab1_folderSelectors_HTML.js?v=20260202082421"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/1_folderBackgrounds/a_tab1_background_style.js?v=20260202082426"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/a_tab1_shelf1_style.js?v=20260205104659"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/a_folder1/b_tab1_shelf1_HTML.js?v=20260202082435"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/a_tab1_shelf2_style.js?v=20260202082459"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/a_tab1/b_folder2/b_tab1_shelf2_HTML.js?v=20260202082459"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/a_tab2_folderSelectors_style.js?v=20260202082422"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/0_folderSelectors/b_tab2_folderSelectors_HTML.js?v=20260202082422"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/1_folderBackgrounds/a_tab2_background_style.js?v=20260202082426"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/a_tab2_shelf1_style.js?v=20260202082445"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/a_folder1/b_tab2_shelf1_HTML.js?v=20260202082445"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/a_tab2_shelf2_style.js?v=20260202082503"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/b_tab2/b_folder2/b_tab2_shelf2_HTML.js?v=20260202082503"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/a_tab3_folderSelectors_style.js?v=20260202082423"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/0_folderSelectors/b_tab3_folderSelectors_HTML.js?v=20260202082423"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/1_folderBackgrounds/a_tab3_background_style.js?v=20260202082427"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/a_folder1/a_tab3_shelf1_style.js?v=20260203192544"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/a_folder1/b_tab3_shelf1_HTML.js?v=20260202082450"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/b_folder2/a_tab3_shelf2_style.js?v=20260202082512"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/c_tab3/b_folder2/b_tab3_shelf2_HTML.js?v=20260202082512"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/a_tab4_folderSelectors_style.js?v=20260202082424"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/0_folderSelectors/b_tab4_folderSelectors_HTML.js?v=20260202082424"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/1_folderBackgrounds/a_tab4_background_style.js?v=20260202082427"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/a_folder1/a_tab4_shelf1_style.js?v=20260202082454"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/a_folder1/b_tab4_shelf1_HTML.js?v=20260202082454"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/b_folder2/a_tab4_shelf2_style.js?v=20260202082519"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/d_tab4/b_folder2/b_tab4_shelf2_HTML.js?v=20260202082519"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/a_tab5_folderSelectors_style.js?v=20260202082424"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/0_folderSelectors/b_tab5_folderSelectors_HTML.js?v=20260202082424"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/1_folderBackgrounds/a_tab5_background_style.js?v=20260202082428"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/e_tab5/a_folder1/a_tab5_shelf1_style.js?v=20260127095654"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/e_tab5/a_folder1/b_tab5_shelf1_HTML.js?v=20260127095526"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/b_folder2/a_tab5_shelf2_style.js?v=20260129055955"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/b_folder2/b_tab5_shelf2_HTML.js?v=20260129055955"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/a_tab6_folderSelectors_style.js?v=20260129055856"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/b_tab6_folderSelectors_HTML.js?v=20260129055856"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/1_folderBackgrounds/a_tab6_background_style.js?v=20260129055858"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/a_tab6_shelf1_style.js?v=20260129055927"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/b_tab6_shelf1_HTML.js?v=20260129055927"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/b_folder2/a_tab6_shelf2_style.js?v=20260129055955"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/b_folder2/b_tab6_shelf2_HTML.js?v=20260129055955"></script>
-<script src="./h_hdub/c_shelfMenu/b_html/z_mainAssembly/a_shelfAssembly.js?v=20260129080618"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/b_folder2/a_tab5_shelf2_style.js?v=20260202082523"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/e_tab5/b_folder2/b_tab5_shelf2_HTML.js?v=20260202082523"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/a_tab6_folderSelectors_style.js?v=20260202082425"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/0_folderSelectors/b_tab6_folderSelectors_HTML.js?v=20260202082425"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/1_folderBackgrounds/a_tab6_background_style.js?v=20260202082428"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/a_tab6_shelf1_style.js?v=20260204102937"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/a_folder1/b_tab6_shelf1_HTML.js?v=20260202082456"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/b_folder2/a_tab6_shelf2_style.js?v=20260202082523"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/f_tab6/b_folder2/b_tab6_shelf2_HTML.js?v=20260202082523"></script>
+<script src="./h_hdub/c_shelfMenu/b_html/z_mainAssembly/a_shelfAssembly.js?v=20260205105221"></script>
 <script src="./h_hdub/c_shelfMenu/b_html/z_mainAssembly/b_defaultUIshelfOld.js?v=20251102205813"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/0_declarations/a_ui.js?v=20260127134221"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/0_tabSelectors/a_tabSelectors_function.js?v=20260107074348"></script>
@@ -416,17 +417,17 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/b_tab2/a_folder1/a_tab2_shelf1_function.js?v=20260107150005"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/b_tab2/b_folder2/a_tab2_shelf2_function.js?v=20251118160952"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/c_tab3/0_folderSelectors/a_tab3_folderSelectors_function.js?v=20260103230440"></script>
-<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/c_tab3/a_folder1/a_tab3_shelf1_function.js?v=20260130135540"></script>
-<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/c_tab3/b_folder2/a_tab3_shelf2_function.js?v=20260130134825"></script>
+<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/c_tab3/a_folder1/a_tab3_shelf1_function.js?v=20260202184240"></script>
+<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/c_tab3/b_folder2/a_tab3_shelf2_function.js?v=20260204171838"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/d_tab4/0_folderSelectors/a_tab4_folderSelectors_function.js?v=20260104003038"></script>
-<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/d_tab4/a_folder1/a_tab4_shelf1_function.js?v=20260130135541"></script>
-<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/d_tab4/b_folder2/a_tab4_shelf2_function.js?v=20260201170743"></script>
+<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/d_tab4/a_folder1/a_tab4_shelf1_function.js?v=20260203192302"></script>
+<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/d_tab4/b_folder2/a_tab4_shelf2_function.js?v=20260204171543"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/e_tab5/0_folderSelectors/a_tab5_folderSelectors_function.js?v=20260111071701"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/e_tab5/a_folder1/a_tab5_shelf1_function.js?v=20260127095454"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/e_tab5/b_folder2/a_tab5_shelf2_function.js?v=20260107101755"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/f_tab6/0_folderSelectors/a_tab6_folderSelectors_function.js?v=20260118054544"></script>
-<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/f_tab6/a_folder1/a_tab6_shelf1_function.js?v=20251118152644"></script>
-<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/f_tab6/b_folder2/a_tab6_shelf2_function.js?v=20260127164955"></script>
+<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/f_tab6/a_folder1/a_tab6_shelf1_function.js?v=20260204142408"></script>
+<script src="./h_hdub/c_shelfMenu/c_script/a_shelfFunctions/f_tab6/b_folder2/a_tab6_shelf2_function.js?v=20260204115416"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/b_shelfHandlers/a_clickHandler.js?v=20260116005306"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/b_shelfHandlers/b_changeHandler.js?v=20251106175439"></script>
 <script src="./h_hdub/c_shelfMenu/c_script/b_shelfHandlers/c_inputHandler.js?v=20260125014602"></script>
@@ -448,16 +449,16 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/d_handlers/b_dragAndDrop/a_dragHandler.js?v=20260128195922"></script>
 <script src="./h_hdub/d_handlers/c_initialization/a_namedColourArray.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/b_loadReferenceData.js?v=20251102205813"></script>
-<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js?v=20260129055850"></script>
+<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js?v=20260202082420"></script>
 <script src="./h_hdub/d_handlers/c_initialization/d_helpMenu.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/e_defaultUI.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/f_defaultUIasObjects.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/c_initialization/g_splashScreenBase64.js?v=20251102205813"></script>
-<script src="./h_hdub/d_handlers/d_visualizationLayer/a_visualizations.js?v=20260127193243"></script>
+<script src="./h_hdub/d_handlers/d_visualizationLayer/a_visualizations.js?v=20260204132125"></script>
 <script src="./h_hdub/d_handlers/e_mouseHandler/a_mousewheel.js?v=20260130135516"></script>
 <script src="./h_hdub/d_handlers/e_mouseHandler/b_handler.js?v=20260130135541"></script>
 <script src="./h_hdub/d_handlers/f_keyboardHandler/a_handler.js?v=20260201120307"></script>
-<script src="./h_hdub/d_handlers/g_boot/a_boot.js?v=20260202082120"></script>
+<script src="./h_hdub/d_handlers/g_boot/a_boot.js?v=20260204141846"></script>
 <script src="./h_hdub/d_handlers/g_boot/b_fMan.js?v=20260130134854"></script>
 <script src="./h_hdub/d_handlers/g_boot/c_setMouseCursorIcon.js?v=20251102205813"></script>
 <script src="./h_hdub/d_handlers/h_copyAndPaste/a_copyAndPasteHandler.js?v=20251104221847"></script>
@@ -497,9 +498,9 @@ body::-webkit-scrollbar { display: none;                                        
 <script src="./h_hdub/e_wizards/x_wizard.js?v=20251102205813"></script>
 <script src="./h_hdub/e_wizards/y_wizard.js?v=20251102205813"></script>
 <script src="./h_hdub/e_wizards/z_wizard.js?v=20251102205813"></script>
-<script src="./h_hdub/z_hwObject/a_hwObject.js?v=20260202082407"></script>
+<script src="./h_hdub/z_hwObject/a_hwObject.js?v=20260205112044"></script>
 <script src="./h_hdub/z_hwObject/b_hwSpecials.js?v=20260130135544"></script>
-<script src="./h_hdub/z_hwObject/c_startup.js?v=20260129055850"></script>
+<script src="./h_hdub/z_hwObject/c_startup.js?v=20260202082420"></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 <script>
 utilityLayer0.innerHTML = \`

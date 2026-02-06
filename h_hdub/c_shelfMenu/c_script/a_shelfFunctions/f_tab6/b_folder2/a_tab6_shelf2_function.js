@@ -1,6 +1,3 @@
-
-
-
 function prepareSiteMap() {
 const wrapper = document.createElement("div");
       wrapper.id = "siteMapWrapper";
@@ -127,6 +124,22 @@ const windowWidth = Math.floor(window.innerWidth / downsize);
 const windowHeight = Math.floor(window.innerHeight / downsize);
 ctx.fillStyle = "rgba(127,127,127,0.25)";
 ctx.fillRect(1,1,windowWidth - 2,windowHeight - 2);
+
+
+try {
+const buoyValues = Object.values(topLayer.buoyPoint);
+for (let j = 0; j < buoyValues.length; j++) {
+ctx.beginPath();
+ctx.fillStyle = buoyValues[j].colour;
+ctx.font = "400 24px dckimPixelMono";
+ctx.textBaseline="top";
+ctx.fillText(`${buoyValues[j].name}`,Math.floor((buoyValues[j].location[0] - window.scrollX)/downsize),Math.floor((buoyValues[j].location[1] - window.scrollY)/downsize));
+ctx.stroke();
+}
+} catch {}
+
+
+
 }
 setTimeout(() => { drawSiteMap(); }, 500);
 

@@ -99,6 +99,7 @@ h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.a_globalZManagement.c_lowerGlobalZ	 = lowerGlobalZ;
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.a_globalZManagement.d_raiseGlobalZ	 = raiseGlobalZ;
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.a_globalZManagement.e_floorGlobalZ	 = floorGlobalZ;
+h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.a_globalZManagement.f_clearZ	 = clearZ;
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.b_tripartiteZManagement = {};
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.b_tripartiteZManagement.a_manageTripartiteZ	 = manageTripartiteZ;
 h_hdub.a_programFunctions.a_keyboardFunctions.f_documentOrder.b_zIndexManagement.b_tripartiteZManagement.b_ceilingTripartiteZ	 = ceilingTripartiteZ;

@@ -271,7 +271,7 @@ div.style.paddingRight            = template.default.paddingRight            ;
 div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
-div.innerHTML = '<p>default text</p>';
+div.innerHTML = '<div style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></div>';
 
 
 if (hauptMode==0) {

@@ -229,6 +229,104 @@ var topLayer =
 "localView" : { "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
 }
 
+
+
+
+
+
+
+
+topLayer.buoyHide        = "true";
+topLayer.buoyPoint       = {};
+topLayer.buoyPoint.buoy0 = {};
+topLayer.buoyPoint.buoy1 = {};
+topLayer.buoyPoint.buoy2 = {};
+topLayer.buoyPoint.buoy3 = {};
+topLayer.buoyPoint.buoy4 = {};
+topLayer.buoyPoint.buoy5 = {};
+topLayer.buoyPoint.buoya = {};
+topLayer.buoyPoint.buoyb = {};
+topLayer.buoyPoint.buoyc = {};
+topLayer.buoyPoint.buoyd = {};
+topLayer.buoyPoint.buoye = {};
+topLayer.buoyPoint.buoyf = {};
+
+
+
+
+
+
+topLayer.buoyPoint.buoy0.location = [0,   0];
+topLayer.buoyPoint.buoy1.location = [0, 200];
+topLayer.buoyPoint.buoy2.location = [0, 400];
+topLayer.buoyPoint.buoy3.location = [0, 600];
+topLayer.buoyPoint.buoy4.location = [0, 800];
+topLayer.buoyPoint.buoy5.location = [0,1000];
+topLayer.buoyPoint.buoya.location = [0,1200];
+topLayer.buoyPoint.buoyb.location = [0,1400];
+topLayer.buoyPoint.buoyc.location = [0,1600];
+topLayer.buoyPoint.buoyd.location = [0,1800];
+topLayer.buoyPoint.buoye.location = [0,2000];
+topLayer.buoyPoint.buoyf.location = [0,2200];
+
+topLayer.buoyPoint.buoy0.name = "0";
+topLayer.buoyPoint.buoy1.name = "1";
+topLayer.buoyPoint.buoy2.name = "2";
+topLayer.buoyPoint.buoy3.name = "3";
+topLayer.buoyPoint.buoy4.name = "4";
+topLayer.buoyPoint.buoy5.name = "5";
+topLayer.buoyPoint.buoya.name = "a";
+topLayer.buoyPoint.buoyb.name = "b";
+topLayer.buoyPoint.buoyc.name = "c";
+topLayer.buoyPoint.buoyd.name = "d";
+topLayer.buoyPoint.buoye.name = "e";
+topLayer.buoyPoint.buoyf.name = "f";
+
+topLayer.buoyPoint.buoy0.colour = "white";
+topLayer.buoyPoint.buoy1.colour = "red";
+topLayer.buoyPoint.buoy2.colour = "lime";
+topLayer.buoyPoint.buoy3.colour = "cyan";
+topLayer.buoyPoint.buoy4.colour = "magenta";
+topLayer.buoyPoint.buoy5.colour = "yellow";
+topLayer.buoyPoint.buoya.colour = "orange";
+topLayer.buoyPoint.buoyb.colour = "blue";
+topLayer.buoyPoint.buoyc.colour = "lightgrey";
+topLayer.buoyPoint.buoyd.colour = "purple";
+topLayer.buoyPoint.buoye.colour = "brown";
+topLayer.buoyPoint.buoyf.colour = "green";
+
+
+
+
+
+
+
+
+function gotoBuoy(point) {
+window.scrollTo(point.location[0], point.location[1]);
+}
+
+function setBuoy(point) {
+point.location[0] = window.scrollX;
+point.location[1] = window.scrollY;
+localStorage.setItem("buoyPoint", JSON.stringify(topLayer.buoyPoint));
+}
+
+if (localStorage.getItem("buoyPoint")) {
+topLayer.buoyPoint = JSON.parse(localStorage.getItem("buoyPoint"));
+}
+
+
+
+
+
+
+
+
+
+
+
+
 pulledText.name = "pulledText";
 pulledText.style.pointerEvents = "none";
 
@@ -507,24 +605,6 @@ Y.lineWidth=gW;
 
 
 
-Y.beginPath();
-Y.fillStyle=U;
-Y.font=bF;
-Y.font = "400 32px dckimPixelMono";
-Y.textBaseline="top";
-
-if (gW!=0) {
-Y.fillText(`${layerName} ${window.innerWidth}x${window.innerHeight} KEY:${T.toString().padStart(' ',4)} MOUSE:${mouseIncrement.toString().padStart(' ',3)} Z:${(pageEchelon / 100000000).toString().padStart(' ',3)}`,16,16);
-Y.font=bFarr;
-Y.font = "400 64px dckimPixelMono";
-//Y.fillText(`${visualFlowIndicator()}`,0,0);
-Y.fillText(`
-
-لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰه
-`,768,16);
-Y.stroke();
-}
-
 
 if (grid1Viz=="true") {
 W=visualGridSize1-(window.scrollY%visualGridSize1);
@@ -600,6 +680,60 @@ Y.moveTo(-window.pageXOffset,0);
 Y.lineTo(-window.pageXOffset,V.height);
 Y.stroke();
 V.style.opacity=K;
+
+
+
+if (topLayer.buoyHide == "false") {
+
+try {
+const buoyValues = Object.values(topLayer.buoyPoint);
+for (let j = 0; j < buoyValues.length; j++) {
+Y.fillStyle = buoyValues[j].colour;
+Y.font = "400 150px dckimPixelMono";
+Y.textBaseline="top";
+Y.fillText(`${buoyValues[j].name}`,Math.floor((buoyValues[j].location[0] - window.scrollX + 20)),Math.floor((buoyValues[j].location[1] - window.scrollY + 1)));
+}
+} catch {}
+
+}
+
+
+
+
+
+
+
+
+
+Y.beginPath();
+Y.fillStyle=U;
+Y.font=bF;
+Y.font = "400 32px dckimPixelMono";
+Y.textBaseline="top";
+
+if (gW!=0) {
+Y.fillText(`${layerName} ${window.innerWidth}x${window.innerHeight} KEY:${T.toString().padStart(' ',4)} MOUSE:${mouseIncrement.toString().padStart(' ',3)} Z:${(pageEchelon / 100000000).toString().padStart(' ',3)}`,16,16);
+Y.font=bFarr;
+Y.font = "400 64px dckimPixelMono";
+//Y.fillText(`${visualFlowIndicator()}`,0,0);
+Y.fillText(`
+
+لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰه
+`,768,16);
+Y.stroke();
+}
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 Z();
@@ -1103,17 +1237,19 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflo
 
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = `
 <p><b>DCKIM - HTML Drafting Project:</b></p>
+
+<p>All outgoing saved HTML has preparatory codework, basically ready to go for you to finish it out. Pretty much top notch for prep work. Everything is branched from a single object called 'ui'. You can access everything about your HTML parts by using 'ui.partName.ref.style.backgroundColor' for example.</p>
 <ol>
-<li>F1 Help Menu</li>
+<li>F1 Help Menu (mostly accurate, some is out of date)</li>
 <li>spacebar: live preview</li>
 <li>enter/esc: live edit</li>
-<li>CAPS-lock: construction/style mode. (I switched them recently... much improved, soon maybe eliminate the caps lock scenario?)</li>
+<li>try using the mousewheel on things, it works in a lot of places</li>
+<li>CAPS-lock: construction/style mode. (almost everything from the old 'style-mode' has been moved to the menu)</li>
 <li>BE ON THE LOOK-OUT FOR TOOL-TIPS IN THE MENU: They lead you to some documentation that is readable from the console(using ctrl + shift + J/K, or F12 sometimes)</li>
 <li>V: document re-flow</li>
 <li>re-size the menu from the edge</li>
-<li>explore the program: It's NEW! (under active development)</li>
-<li>If you get the buttons working, try wrapping them using the 'y' key ('u' to unwrap). Then see if you can rotate the whole arrangement before saving it with the new 'vw' conversion save (or use 's'/'shift + s'). It gives a really neat effect, pixelated and slanted... weird!</li>
-<li>The hw syntax button system might seem complicated... It's not... You type 'h20', that gives the height, then type 'w20', that gives a box 'h20w20'... then if you want more in the row: 'h20w20w25' etc... Then next row starts 'h12' or whatever again. The number gives the height of the row. Try it and see how fast and easy it can be. Use 'alt + click' the menu tab headings to see if the console gets some instructions on how to use those things... there is a bit of a process, very well worth it. Just think, hundreds of pixelated(or not) buttons, all in single image sheets!</li>
+<li>There are plenty of interesting features to check out! Don't be afraid to experiment and try things. Mostly they shouldn't be too difficult to figure out. Reading the little notes might help too!</li>
+<li>The hw syntax button system might seem complicated... It's not... You type 'h20', that gives the height, then type 'w20', that gives a box 'h20w20'... then if you want more in the row: 'h20w20w25' etc... Then next row starts 'h12' or whatever again. The number gives the height of the row. Try it and see how fast and easy it can be. Use 'alt + click' the menu tab headings to see if the console gets some instructions on how to use those things... there is a bit of a process, very well worth it. Just think, tonnes of pixelated(or not) buttons, in image sheets! Or use the 2img 4img or 6img to get the sheets in as data. The saved file will have them chopped up as new Image() data-chunks.</li>
 </ol>
 `;
 

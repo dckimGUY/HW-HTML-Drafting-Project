@@ -1,5 +1,120 @@
 shelfMenuHTML.tab3.folder1.style = `
 <style>
+
+.quad  {
+position: absolute;
+ border: 0px;
+ margin: 0px;
+padding: 0px;
+ width: 54px;
+height: 54px;
+border-radius: 4px;
+}
+.quad        { background-color: transparent; }
+.quad:hover  { background-color: rgba(  0,255,  0,0.35); }
+.quad:active { background-color: rgba(255,  0,255,0.35); }
+.quad1 { top: 21px; left: 24px; }
+.quad2 { top: 21px; left: 86px; }
+.quad3 { top: 83px; left: 24px; }
+.quad4 { top: 83px; left: 86px; }
+
+
+
+.wide  {
+position: absolute;
+ border: 0px;
+ margin: 0px;
+padding: 0px;
+ width: 116px;
+height: 30px;
+border-radius: 4px;
+}
+.wide        { background-color: transparent; }
+.wide:hover  { background-color: rgba(  0,255,  0,0.35); }
+.wide:active { background-color: rgba(255,  0,255,0.35); }
+.wide1 { top: 186px; left: 24px; }
+.wide2 { top: 224px; left: 24px; }
+.wide3 { top: 262px; left: 24px; }
+.wide4 { top: 300px; left: 24px; }
+
+.tall  {
+position: absolute;
+ border: 0px;
+ margin: 0px;
+padding: 0px;
+ width: 21px;
+height: 86px;
+border-radius: 4px;
+}
+.tall        { background-color: transparent; }
+.tall:hover  { background-color: rgba(  0,255,  0,0.35); }
+.tall:active { background-color: rgba(255,  0,255,0.35); }
+.tall1 { top: 358px; left: 24px; }
+.tall2 { top: 358px; left: 55px; }
+.tall3 { top: 358px; left: 86px; }
+.tall4 { top: 358px; left: 117px; }
+
+
+
+
+
+
+
+.sidebarOpener3 {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+left: 0px;
+top: 0px;
+width: 16px;
+height: 463px;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background: transparent;
+background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/sidebar.png?v=20260202190751");
+z-index: 500;
+}
+
+.sidebarOpener3:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/sidebar_focus.png?v=20260202190810"); }
+.sidebarOpener3:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/sidebar_hover.png?v=20260202191056"); }
+.sidebarOpener3:active          { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/sidebar_active.png?v=20260202190949"); }
+
+.sidebar3 {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+left: -16px;
+top: 36px;
+width: 174px;
+height: 463px;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/a_folder1/folder-1-sidebar.png?v=20260203181035");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .input_pos {
 position: absolute;
 border:  none;

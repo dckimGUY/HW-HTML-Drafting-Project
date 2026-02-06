@@ -1,3 +1,64 @@
+function saveReadyButton(width, height, repetition, upscaling) {
+let repetitions = 4;
+if (event.shiftKey) repetitions = 2;
+function readyButton(width, height, repetitions, upscaling) {
+const columnWidth   =  width * upscaling;
+const rowHeight     = height * upscaling;
+const canvas        = document.createElement("canvas");
+      canvas.width  = 100 * upscaling * repetitions;
+      canvas.height = 180 * upscaling;
+let   ctx           = canvas.getContext("2d");
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "red";
+      ctx.beginPath();
+const columns    = canvas.width  / columnWidth;
+const rows       = canvas.height / rowHeight;
+const widthStep  = canvas.width  / columns;
+const heightStep = canvas.height / rows;
+for (let j = 1; j <     columns; j++) { ctx.moveTo(j *  widthStep,   0);  ctx.lineTo(j *  widthStep, canvas.height); }
+for (let j = 1; j <        rows; j++) { ctx.moveTo(0  , j *  heightStep); ctx.lineTo(canvas.width, j *  heightStep); }
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.strokeStyle = "black";
+for (let j = 0; j < repetitions; j++) { ctx.strokeRect((canvas.width / repetitions) * j, 0, canvas.width / repetitions, canvas.height); }
+      ctx.stroke();
+return canvas;
+}
+let syntax = "";
+       if (width == 20 && height == 20) {
+syntax = 'h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20h20w20w20w20w20w20';
+} else if (width == 50 && height == 20) {
+syntax = 'h20w50w50h20w50w50h20w50w50h20w50w50h20w50w50h20w50w50h20w50w50h20w50w50h20w50w50';
+} else if (width == 20 && height == 45) {
+syntax = 'h45w20w20w20w20w20h45w20w20w20w20w20h45w20w20w20w20w20h45w20w20w20w20w20';
+}
+const datePrefix = Date.now().toString().slice(-6);
+const dataURL = readyButton(width, height, repetitions, upscaling).toDataURL('image/png');
+const link = document.createElement('a');
+link.href = dataURL;
+link.download = "READY_" + datePrefix + '_HDUB_' + upscaling + '_' + repetitions + 'btn_' + syntax + '.png';
+link.click();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function toggleSidebar4() {
 if (document.getElementById("sidebar4").style.left == "-148px") {
 document.getElementById("sidebar4").style.left = "0px";
@@ -759,7 +820,7 @@ const syntax = reString(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry
 const dataURL = hdubCanvas.toDataURL('image/png');
 const link = document.createElement('a');
 link.href = dataURL;
-link.download = "syxSHP_" + datePrefix + '_HDUB_' + syntax + '.png';
+link.download = "SHAPE_" + datePrefix + '_HDUB_' + syntax + '.png';
 link.click();
 }
 
@@ -821,7 +882,7 @@ const syntax = reString(array);
 const dataURL = canvas.toDataURL('image/png');
 const link = document.createElement('a');
 link.href = dataURL;
-link.download = "syxTMP_" + datePrefix + `_HDUB_${factor}_tmpl_` + syntax + '.png';
+link.download = "TEMPL_" + datePrefix + `_HDUB_${factor}_tmpl_` + syntax + '.png';
 link.click();
 }
 
@@ -1016,7 +1077,7 @@ ui.hdubB.title = 'button input'; ui.hdubB.value = '<input type="button" name="bu
 ui.hdubC.title = 'HTML canvas '; ui.hdubC.value = `<canvas style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></canvas><!-- NORMALLY THE HTML CANVAS ELEMENT IS USED IN THE 'ABSTRACT SENSE' WITHOUT PLACING IT INTO THE PAGE, BUT FOR TESTING PURPOSES IT CAN BE CONVENIENT -->`;
 ui.hdubD.title = 'colour input'; ui.hdubD.value = '<input type="color" name="colour" value="#AAAAAA" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">';
 ui.hdubE.title = '            '; ui.hdubE.value = '';
-ui.hdubF.title = '            '; ui.hdubF.value = `<form                name="form"   style="width: 100%; height: 100%;">
+ui.hdubF.title = 'form        '; ui.hdubF.value = `<form name="form" style="width: 100%; height: 100%;">
 <!-- THERE IS NOTHING YOU CAN WRITE THAT WILL MAKE THIS 'FIT', EVER, OTHER THAN REMOVING THE DEFAULT STYLING -->
 <input type="value"  name="value1" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value1">
 <input type="value"  name="value2" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value2">
@@ -1026,19 +1087,19 @@ ui.hdubF.title = '            '; ui.hdubF.value = `<form                name="fo
 </form>`;
 ui.hdubG.title = '            '; ui.hdubG.value = '';
 ui.hdubH.title = '            '; ui.hdubH.value = '';
-ui.hdubI.title = 'iframe      '; ui.hdubI.value = '<iframe src="" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></iframe>';
+ui.hdubI.title = 'iframe      '; ui.hdubI.value = '<iframe src="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;"></iframe>';
 ui.hdubJ.title = '            '; ui.hdubJ.value = '';
 ui.hdubK.title = '            '; ui.hdubK.value = '';
 ui.hdubL.title = '            '; ui.hdubL.value = '';
-ui.hdubM.title = 'marquee     '; ui.hdubM.value = '<marquee direction="left" scrollamount="4" behavior="scroll" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;" onmouseover="this.stop();" onmouseout="this.start();">default</marquee>';
-ui.hdubN.title = 'number input'; ui.hdubN.value = '<input type="number" name="number" min="" max="" step="" style="width: 100%; height: 100%;" value="" placeholder="">';
+ui.hdubM.title = 'marquee     '; ui.hdubM.value = '<marquee direction="left" scrollamount="4" behavior="scroll" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;" onmouseover="this.stop();" onmouseout="this.start();">default</marquee>';
+ui.hdubN.title = 'number input'; ui.hdubN.value = '<input type="number" name="number" min="" max="" step="" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
 ui.hdubP.title = '            '; ui.hdubP.value = '';
-ui.hdubQ.title = 'checkbox    '; ui.hdubQ.value = '<input type="checkbox" name="checkbox" style="width: 100%; height: 100%;">';
-ui.hdubR.title = 'radio button'; ui.hdubR.value = '<input type="radio" name="radio" style="width: 100%; height: 100%;">';
-ui.hdubS.title = 'slider range'; ui.hdubS.value = '<input type="range" name="range" min="" max="" step="" value="" style="width: 100%; height: 100%;">';
-ui.hdubT.title = 'textarea    '; ui.hdubT.value = '<textarea name="textarea" style="width: 100%; height: 100%;" value="" placeholder=""></textarea>';
+ui.hdubQ.title = 'checkbox    '; ui.hdubQ.value = '<input type="checkbox" name="checkbox" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
+ui.hdubR.title = 'radio button'; ui.hdubR.value = '<input type="radio" name="radio" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
+ui.hdubS.title = 'slider range'; ui.hdubS.value = '<input type="range" name="range" min="" max="" step="" value="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
+ui.hdubT.title = 'textarea    '; ui.hdubT.value = '<textarea name="textarea" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;"></textarea>';
 ui.hdubU.title = '            '; ui.hdubU.value = '';
-ui.hdubV.title = 'value input '; ui.hdubV.value = '<input type="value" name="value" style="width: 100%; height: 100%;" value="" placeholder="">';
+ui.hdubV.title = 'value input '; ui.hdubV.value = '<input type="value" name="value" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
 ui.hdubW.title = '            '; ui.hdubW.value = '';
 ui.hdubY.title = '            '; ui.hdubY.value = '';
 ui.hdubZ.title = '            '; ui.hdubZ.value = '';

@@ -339,6 +339,24 @@ ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace
 ui.idNames.forEach((name) => {
 ui[name]         = {};
 ui[name].ref     = document.getElementById(name);
+
+/*** SET UP FOR IMAGE DATA ***/
+let num = 0;
+if (ui[name].ref.firstElementChild &&
+    ui[name].ref.firstElementChild.dataset &&
+    ui[name].ref.firstElementChild.dataset["frame" + num]) {
+ui[name].frame = [];
+if (ui[name].ref.firstElementChild.children.length == 0) {
+ui[name].ref.style.display = "none";
+}
+}
+while (ui[name].ref.firstElementChild &&
+       ui[name].ref.firstElementChild.dataset &&
+       ui[name].ref.firstElementChild.dataset["frame" + num]) {
+ui[name].frame[num]      = new Image();
+ui[name].frame[num].src  = ui[name].ref.firstElementChild.dataset["frame" + num];
+num++;
+}
 });
 `;
 scriptStarter += `

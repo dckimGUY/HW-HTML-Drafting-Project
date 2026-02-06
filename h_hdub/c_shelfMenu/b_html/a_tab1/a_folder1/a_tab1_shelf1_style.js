@@ -1,6 +1,60 @@
 shelfMenuHTML.tab1.folder1.style = `
 <style>
 
+
+.manageZ {
+position: absolute;
+top:   354px;
+left:    1px;
+width:   9px;
+height: 66px;
+background: transparent;
+border:  0px;
+margin:  0px;
+padding: 0px;
+}
+
+.manageZ:hover  { background-color: rgba(  0, 255,   0, 0.5); }
+.manageZ:active { background-color: rgba(255,   0, 255, 0.5); }
+
+.clearZ {
+position: absolute;
+top:   429px;
+left:    2px;
+width:   7px;
+height: 26px;
+background: transparent;
+border:  0px;
+margin:  0px;
+padding: 0px;
+}
+
+
+.clearZ:hover  { background-color: rgba(  0, 255,   0, 0.5); }
+.clearZ:active { background-color: rgba(255,   0, 255, 0.5); }
+
+
+.zMove {
+position: absolute;
+top: 437px;
+width:  18px;
+height: 19px;
+background: transparent;
+border:  0px;
+margin:  0px;
+padding: 0px;
+}
+
+.zMove:hover  { background-color: rgba(  0, 255,   0, 0.5); }
+.zMove:active { background-color: rgba(255,   0, 255, 0.5); }
+
+.zHigh { left: 14px; }
+.zLow  { left: 36px; }
+.zLess { left: 58px; }
+.zMore { left: 80px; }
+.vFlow { left: 102px; width: 40px; }
+
+
 .coinItemSelected {
 border: 2px solid black;
 outline-offset: -2px;
@@ -194,7 +248,7 @@ width: 174px;
 height: 463px;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
-background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-sidebar.png?v=20260129020046");
+background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-sidebar.png?v=20260205101535");
 }
 
 

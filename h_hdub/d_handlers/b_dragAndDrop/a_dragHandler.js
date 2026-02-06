@@ -1,3 +1,28 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('dragover', e => { e.preventDefault();});
 
 /* Single Image Drag Handling OR Textual Input Handling. */
@@ -984,37 +1009,7 @@ utilityLayer0.children[j].div.lastElementChild.classList = "pixelArt";
 
 
 
-/*
 
-
-function clearColour(colour,context) {
-const string = colour.replace("rgb(", "").replace(" ", "").replace(")", "");
-const r = string.split(",")[0];
-const g = string.split(",")[1];
-const b = string.split(",")[2];
-let d = context.getImageData(0,0,ui.canvasOutput2.ref.width,ui.canvasOutput2.ref.height);
-let p = d.data;
-for (let i = 0; i < p.length; i += 4) {
-if (
-p[i  ]==r&&
-p[i+1]==g&&
-p[i+2]==b
-)
-{
-p[i  ] =0;
-p[i+1] =0;
-p[i+2] =0;
-p[i+3]= 0;
-}
-}
-context.putImageData(d,0,0);
-}
-
-
-clearColour(paintClear.colour,ctx);
-
-
-*/
 
 
 
@@ -1069,7 +1064,11 @@ const img  = new Image();
 img.onload = () => {
 img.width  = img.naturalWidth;
 img.height = img.naturalHeight;
+
+
 sheetImages.star.img = img;
+
+
 drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
 localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
 clearImageSheet("base");

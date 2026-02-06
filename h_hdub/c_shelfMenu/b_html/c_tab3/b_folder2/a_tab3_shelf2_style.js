@@ -198,35 +198,6 @@ height: 93px;
 .button_spriteLoop4:active       { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/spriteLoop4_active.png?v=20260114205604"); }
 
 
-.button_paint                    { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/paint.png?v=20260113130547");  }
-.button_paint:focus              { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/paint_focus.png?v=20260113130701");  }
-.button_paint:hover              { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/paint_hover.png?v=20260113131327");  }
-.button_paint:active             { background-image: url("h_hdub/c_shelfMenu/a_images/c_tab3/b_folder2/paint_active.png?v=20260113131321"); }
-
-.button_paint0                   { position: absolute; border: none; margin: none; padding: none; left:     14px; top:    451px; width:     16px; height:     18px;}
-.button_paint1                   { position: absolute; border: none; margin: none; padding: none; left:     31px; top:    451px; width:     16px; height:     18px;}
-.button_paint2                   { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    451px; width:     16px; height:     18px;}
-.button_paint3                   { position: absolute; border: none; margin: none; padding: none; left:     65px; top:    451px; width:     16px; height:     18px;}
-.button_paint4                   { position: absolute; border: none; margin: none; padding: none; left:     82px; top:    451px; width:     16px; height:     18px;}
-.button_paint5                   { position: absolute; border: none; margin: none; padding: none; left:    102px; top:    451px; width:     16px; height:     18px;}
-.button_paint6                   { position: absolute; border: none; margin: none; padding: none; left:    119px; top:    451px; width:     16px; height:     18px;}
-.button_paint7                   { position: absolute; border: none; margin: none; padding: none; left:    136px; top:    451px; width:     16px; height:     18px;}
-.button_paint8                   { position: absolute; border: none; margin: none; padding: none; left:    153px; top:    451px; width:     16px; height:     18px;}
-.button_paint9                   { position: absolute; border: none; margin: none; padding: none; left:    170px; top:    451px; width:     16px; height:     18px;}
-.button_paint10                  { position: absolute; border: none; margin: none; padding: none; left:     14px; top:    470px; width:     16px; height:     18px;}
-.button_paint11                  { position: absolute; border: none; margin: none; padding: none; left:     31px; top:    470px; width:     16px; height:     18px;}
-.button_paint12                  { position: absolute; border: none; margin: none; padding: none; left:     48px; top:    470px; width:     16px; height:     18px;}
-.button_paint13                  { position: absolute; border: none; margin: none; padding: none; left:     65px; top:    470px; width:     16px; height:     18px;}
-.button_paint14                  { position: absolute; border: none; margin: none; padding: none; left:     82px; top:    470px; width:     16px; height:     18px;}
-.button_paint15                  { position: absolute; border: none; margin: none; padding: none; left:    102px; top:    470px; width:     16px; height:     18px;}
-.button_paint16                  { position: absolute; border: none; margin: none; padding: none; left:    119px; top:    470px; width:     16px; height:     18px;}
-.button_paint17                  { position: absolute; border: none; margin: none; padding: none; left:    136px; top:    470px; width:     16px; height:     18px;}
-.button_paint18                  { position: absolute; border: none; margin: none; padding: none; left:    153px; top:    470px; width:     16px; height:     18px;}
-.button_paint19                  { position: absolute; border: none; margin: none; padding: none; left:    170px; top:    470px; width:     16px; height:     18px;}
-
-
-
-
 
 
 

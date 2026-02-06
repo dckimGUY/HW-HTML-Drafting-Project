@@ -1,3 +1,52 @@
+
+
+
+
+
+
+
+
+function toggleSidebar3() {
+if (document.getElementById("sidebar3").style.left == "-148px") {
+document.getElementById("sidebar3").style.left = "-16px";
+localStorage.setItem("sidebar3", "-16px");
+} else {
+document.getElementById("sidebar3").style.left = "-148px";
+localStorage.setItem("sidebar3", "-148px");
+}
+}
+
+
+if (localStorage.getItem("sidebar3")) {
+document.getElementById("sidebar3").style.left = localStorage.getItem("sidebar3");
+} else {
+document.getElementById("sidebar3").style.left = "-16px";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
 var lastNavPoint   =  5;
 var buttonStep     = {};

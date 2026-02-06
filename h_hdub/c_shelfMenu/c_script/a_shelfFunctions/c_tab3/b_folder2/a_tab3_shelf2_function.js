@@ -190,7 +190,7 @@ const syntax     = reString(cropObject(100, 180, makeObject(clean(sheetImages.st
 const dataURL    = canvas.toDataURL('image/png');
 const link       = document.createElement('a');
 link.href        = dataURL;
-link.download    = `syx${multiplier + type}_` + datePrefix + '_HDUB_' + sheetImages.star.factor + `_${multiplier + type}_` + syntax + '.png';
+link.download    = `READY_${multiplier + type}_` + datePrefix + '_HDUB_' + sheetImages.star.factor + `_${multiplier + type}_` + syntax + '.png';
 link.click();
 }
 
@@ -552,8 +552,12 @@ coinFocus.dataset.height = imageDummy.naturalHeight * entryFactor + "px";
 
 
 flipAnchorZ([,,,false,]);
+
+if (!event.shiftKey) {
 anim.appendChild(script);
+}
 randomDiv.appendChild(anim);
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.appendChild(randomDiv);
 frameCounter++;
 
