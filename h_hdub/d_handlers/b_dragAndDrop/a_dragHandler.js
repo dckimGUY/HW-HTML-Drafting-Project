@@ -1614,6 +1614,9 @@ utilityLayer0.lastElementChild.style.top         =    Math.floor(parseInt(e.page
 utilityLayer0.lastElementChild.dataset.left      =    Math.floor(parseInt(e.pageX)/T) * T         + "px";
 utilityLayer0.lastElementChild.dataset.top       =    Math.floor(parseInt(e.pageY)/T) * T          + "px";
 
+utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "audio");
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.innerHTML = "";
+utilityLayer0.lastElementChild.firstElementChild.style.zIndex = "0";
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.appendChild(audio);
 };
 reader.readAsDataURL(file);
@@ -1656,6 +1659,9 @@ utilityLayer0.lastElementChild.style.top         =    Math.floor(parseInt(e.page
 utilityLayer0.lastElementChild.dataset.left      =    Math.floor(parseInt(e.pageX)/T) * T         + "px";
 utilityLayer0.lastElementChild.dataset.top       =    Math.floor(parseInt(e.pageY)/T) * T          + "px";
 
+utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "video");
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.innerHTML = "";
+utilityLayer0.lastElementChild.firstElementChild.style.zIndex = "0";
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.appendChild(video);
 
 };

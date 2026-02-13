@@ -256,6 +256,7 @@ if (hotDog) { return; }
 /*  enter  */ if (kC ==  13 && cC ==  13) {
 if (event.shiftKey) {
 
+deMinimis(false,'','',true);
 
 /*
 tabSelector(5);

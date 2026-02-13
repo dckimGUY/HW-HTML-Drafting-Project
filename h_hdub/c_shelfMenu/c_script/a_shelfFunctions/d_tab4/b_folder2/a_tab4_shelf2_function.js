@@ -1,4 +1,4 @@
-ui.save200.click                 = function() { deMinimis(false);               };
+ui.save200.click                 = function() { deMinimis(false,         1   ); };
 ui.save300.click                 = function() { deMinimis(false, "(100/320)" ); };
 ui.save500.click                 = function() { deMinimis(false, "(100/500)" ); };
 ui.save800.click                 = function() { deMinimis(false, "(100/768)" ); };
@@ -64,6 +64,7 @@ const newValue = currentValue * factor;
                    string = string.replace(/height: [0123456789]*px;/, "height: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 heights = string.match(/height: [0123456789]*px;/);
 }
+
 let radiuses = string.match(/radius: [0123456789]*px;/);
           while (radiuses) {
 const currentValue = parseInt(radiuses[0].replace(/radius: /, ""));
@@ -71,6 +72,18 @@ const newValue = currentValue * factor;
                    string = string.replace(/radius: [0123456789]*px;/, "radius: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
 radiuses = string.match(/radius: [0123456789]*px;/);
 }
+
+
+
+let fontSizes = string.match(/font-size: [0123456789]*px;/);
+          while (fontSizes) {
+const currentValue = parseInt(fontSizes[0].replace(/font-size: /, ""));
+const newValue = currentValue * factor;
+                   string = string.replace(/font-size: [0123456789]*px;/, "font-size: " + `calc(${currentValue} * ${factor}` + "* 1vw);");
+fontSizes = string.match(/font-size: [0123456789]*px;/);
+}
+
+
 let outlines = string.match(/outline: [^;]* [^;]* [0123456789]*px;/);
           while (outlines) {
 const currentValue = parseInt(outlines[0].replace(/outline: [^;]* [^;]* ([0123456789]*)px;/, "$1"));
@@ -138,19 +151,33 @@ const fileFooter = `
 
 
 
+var lastFactor = "1";
+
+
+
+if (localStorage.getItem("lastFactor")) {
+lastFactor = localStorage.getItem("lastFactor");
+}
 
 
 
 
 
-
-
-function deMinimis(header, factor, eventArg) {
+function deMinimis(header, factor, eventArg, openInNewWindow) {
 spaceViewOn();
 removePointerEventsNone();
 let string = utilityLayer0.innerHTML;
 let parser = new DOMParser();
 let doc = parser.parseFromString(string, 'text/html');
+
+if (factor) {
+lastFactor = factor;
+localStorage.setItem("lastFactor", lastFactor);
+}
+
+if (openInNewWindow) factor = lastFactor;
+
+
 
 for (let j = 0; j < doc.body.children.length; j++) {
 if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length > 1) {
@@ -307,7 +334,7 @@ string = string.replace(/<img alt=""[^>]*>/g, "");
 
 
 
-if (factor) {
+if (factor && factor != 1) {
 string = vwConversion(string,factor);
 }
 
@@ -334,30 +361,44 @@ let scriptStarter = `
 /*** THIS SETS UP THE REFERENCES ***/
 
 const ui         = {};
-      ui.idNames =
+      ui.images  = [];
+      ui.audios  = [];
+      ui.idList  =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
-ui.idNames.forEach((name) => {
-ui[name]         = {};
-ui[name].ref     = document.getElementById(name);
+ui.idList.forEach((id) => {
+ui[id]         = {};
+ui[id].ref     = document.getElementById(id);
 
 /*** SET UP FOR IMAGE DATA ***/
+
 let num = 0;
-if (ui[name].ref.firstElementChild &&
-    ui[name].ref.firstElementChild.dataset &&
-    ui[name].ref.firstElementChild.dataset["frame" + num]) {
-ui[name].frame = [];
-if (ui[name].ref.firstElementChild.children.length == 0) {
-ui[name].ref.style.display = "none";
+if (ui[id].ref.firstElementChild &&
+    ui[id].ref.firstElementChild.dataset &&
+    ui[id].ref.firstElementChild.dataset["frame" + num]) {
+ui[id].images = [];
+if (ui[id].ref.firstElementChild.children.length == 0) {
+ui[id].ref.style.display = "none";
 }
 }
-while (ui[name].ref.firstElementChild &&
-       ui[name].ref.firstElementChild.dataset &&
-       ui[name].ref.firstElementChild.dataset["frame" + num]) {
-ui[name].frame[num]      = new Image();
-ui[name].frame[num].src  = ui[name].ref.firstElementChild.dataset["frame" + num];
+while (ui[id].ref.firstElementChild &&
+       ui[id].ref.firstElementChild.dataset &&
+       ui[id].ref.firstElementChild.dataset["frame" + num]) {
+ui[id].images[num]           = new Image();
+ui[id].images[num].src       = ui[id].ref.firstElementChild.dataset["frame" + num];
+ui.images[ui.images.length]  = ui[id].images[num];
 num++;
 }
+
+/*** SET UP FOR AUDIO DATA ***/
+
+if (ui[id].ref.tagName      == "AUDIO") {
+ui[id].audio                 = new Audio();
+ui[id].audio.src             = ui[id].ref.src;
+ui.audios[ui.audios.length]  = ui[id].audio;
+}
 });
+
+
 `;
 scriptStarter += `
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
@@ -378,11 +419,11 @@ for (let k = 0; k < eventRoll.length; k++) {
 if (eventRoll[k] == "mousewheel") {
 
 scriptStarter += `
-document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }, { passive: false }); });`;
+document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idList.forEach((id) => { if (event.target == ui[id].ref) { ui[id].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }, { passive: false }); });`;
 
 } else {
 scriptStarter += `
-document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idNames.forEach((name) => { if (event.target == ui[name].ref) { ui[name].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }); });`;
+document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { ui.idList.forEach((id) => { if (event.target == ui[id].ref) { ui[id].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }); });`;
 }
 }
 scriptStarter += `
@@ -390,10 +431,32 @@ scriptStarter += `
 window.addEventListener("resize", (event) => {  });
 window.addEventListener("scroll", (event) => {  });
 
+console.log(\`
+***DATA STRUCTURE***
+ui             = {};
+ui.images      = [];
+ui.audios      = [];
+ui.idList      = [];
+ui[id]         = {};
+ui[id].ref     = document.getElementById(id);
+\`);
+
 </script>`;
 
 
+/*
 
+console.log(\`
+ui             = {};
+ui.images      = [];
+ui.audios      = [];
+ui.idList      = [];
+ui[id]         = {};
+ui[id].ref     = document.getElementById(id);
+\`;
+
+
+*/
 
 string = string.replace(/\[object HTMLDivElement\]/g, "");
 
@@ -412,6 +475,18 @@ saveHTMLparticle(rename, string + "\n\n\n" + scriptStarter, false, false, false)
 } else if (header) {
 
 */
+
+
+if (openInNewWindow) {
+const newWindow = window.open();
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{backgroundColour}}/g, finishedBackgroundColour) + string + "\n\n\n" + scriptStarter + fileFooter);
+restorePointerEventsNone();
+spaceViewOff();
+Z();
+return;
+}
+
+
 
 
 saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{backgroundColour}}/g, finishedBackgroundColour) + string + "\n\n\n" + scriptStarter + fileFooter, false, false, false);
