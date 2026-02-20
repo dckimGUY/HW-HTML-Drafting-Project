@@ -5,8 +5,33 @@ function updateInfoShelf() {
 
 
 
+[
+"save200",
+"save300",
+"save500",
+"save800",
+"save1000",
+"save1200",
+"save1500",
+"save1800"
+].forEach((save) => {
+ui[save].ref.style.outline = "";
+});
+
+switch (lastFactor) {
+case         "1" :  ui.save200.ref.style.outline = "4px dotted lime"; break;
+case "(100/320)" :  ui.save300.ref.style.outline = "4px dotted lime"; break;
+case "(100/500)" :  ui.save500.ref.style.outline = "4px dotted lime"; break;
+case "(100/768)" :  ui.save800.ref.style.outline = "4px dotted lime"; break;
+case "(100/1000)": ui.save1000.ref.style.outline = "4px dotted lime"; break;
+case "(100/1280)": ui.save1200.ref.style.outline = "4px dotted lime"; break;
+case "(100/1536)": ui.save1500.ref.style.outline = "4px dotted lime"; break;
+case "(100/2000)": ui.save1800.ref.style.outline = "4px dotted lime"; break;
+}
 
 
+document.getElementById("headerText").value = fileHeader;
+document.getElementById("footerText").value = fileFooter;
 
 
 if (coinFocus!=null) {
@@ -18,9 +43,6 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 }
 
 
-/*
-document.getElementById("partStyle").value = coinFocus.lastElementChild.firstElementChild.nextElementSibling.getAttribute("style").replace(/\n/g, "").replace(/;/g, ";\n");
-*/
 
 
 
@@ -50,6 +72,13 @@ if (coinFocus!=null&&coinFocus.dataset.notes) {
 ui.partText.ref.value  = coinFocus.dataset.notes;
 } else {
 ui.partText.ref.value  = "";
+}
+
+ui.partText.ref.style.outline = "";
+try {
+JSON.parse(ui.partText.ref.value);
+} catch {
+ui.partText.ref.style.outline = "2px dashed red";
 }
 
 let filenameEntryLayers = document.getElementById("coin77671");
@@ -137,3 +166,6 @@ ui["setLayer" + (j + 1)].ref.style.outline = "";
 highlightLayer();
 
 }
+
+
+

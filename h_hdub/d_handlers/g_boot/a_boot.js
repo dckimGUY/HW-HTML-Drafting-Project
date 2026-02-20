@@ -159,7 +159,6 @@ const g_layer6 = document.createElement("div");
 const h_layer7 = document.createElement("div");
 const i_layer8 = document.createElement("div");
 const j_layer9 = document.createElement("div");
-
 const k_layer10 = document.createElement("div");
 const l_layer11 = document.createElement("div");
 const m_layer12 = document.createElement("div");
@@ -199,35 +198,80 @@ var topLayer =
 {
 "aa_project_name" : "emptyProject",
 "a_currentLayer" : "b_layer1",
-"b_layer1" :  { "a_name" : "b_layer1",  "b_content" : b_layer1,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 1",  "filename" : "100_emptyFile", "echelon" : 1 },
-"c_layer2" :  { "a_name" : "c_layer2",  "b_content" : c_layer2,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 2",  "filename" : "100_emptyFile", "echelon" : 1 },
-"d_layer3" :  { "a_name" : "d_layer3",  "b_content" : d_layer3,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 3",  "filename" : "100_emptyFile", "echelon" : 1 },
-"e_layer4" :  { "a_name" : "e_layer4",  "b_content" : e_layer4,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 4",  "filename" : "100_emptyFile", "echelon" : 1 },
-"f_layer5" :  { "a_name" : "f_layer5",  "b_content" : f_layer5,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 5",  "filename" : "100_emptyFile", "echelon" : 1 },
-"g_layer6" :  { "a_name" : "g_layer6",  "b_content" : g_layer6,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 6",  "filename" : "100_emptyFile", "echelon" : 1 },
-"h_layer7" :  { "a_name" : "h_layer7",  "b_content" : h_layer7,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 7",  "filename" : "100_emptyFile", "echelon" : 1 },
-"i_layer8" :  { "a_name" : "i_layer8",  "b_content" : i_layer8,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 8",  "filename" : "100_emptyFile", "echelon" : 1 },
-"j_layer9" :  { "a_name" : "j_layer9",  "b_content" : j_layer9,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 9",  "filename" : "100_emptyFile", "echelon" : 1 },
-"k_layer10" : { "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 10", "filename" : "100_emptyFile", "echelon" : 1 },
-"l_layer11" : { "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 11", "filename" : "100_emptyFile", "echelon" : 1 },
-"m_layer12" : { "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 12", "filename" : "100_emptyFile", "echelon" : 1 },
-"n_layer13" : { "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 13", "filename" : "100_emptyFile", "echelon" : 1 },
-"o_layer14" : { "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 14", "filename" : "100_emptyFile", "echelon" : 1 },
-"p_layer15" : { "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 15", "filename" : "100_emptyFile", "echelon" : 1 },
-"q_layer16" : { "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 16", "filename" : "100_emptyFile", "echelon" : 1 },
-"r_layer17" : { "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 17", "filename" : "100_emptyFile", "echelon" : 1 },
-"s_layer18" : { "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 18", "filename" : "100_emptyFile", "echelon" : 1 },
-"t_layer19" : { "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 19", "filename" : "100_emptyFile", "echelon" : 1 },
-"u_layer20" : { "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 20", "filename" : "100_emptyFile", "echelon" : 1 },
-"v_layer21" : { "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1 },
-"w_layer22" : { "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1 },
-"x_layer23" : { "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1 },
-"y_layer24" : { "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1 },
-"z_layer25" : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1 },
+"b_layer1" :  { "a_name" : "b_layer1",  "b_content" : b_layer1,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 1",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"c_layer2" :  { "a_name" : "c_layer2",  "b_content" : c_layer2,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 2",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"d_layer3" :  { "a_name" : "d_layer3",  "b_content" : d_layer3,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 3",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"e_layer4" :  { "a_name" : "e_layer4",  "b_content" : e_layer4,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 4",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"f_layer5" :  { "a_name" : "f_layer5",  "b_content" : f_layer5,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 5",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"g_layer6" :  { "a_name" : "g_layer6",  "b_content" : g_layer6,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 6",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"h_layer7" :  { "a_name" : "h_layer7",  "b_content" : h_layer7,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 7",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"i_layer8" :  { "a_name" : "i_layer8",  "b_content" : i_layer8,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 8",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"j_layer9" :  { "a_name" : "j_layer9",  "b_content" : j_layer9,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 9",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"k_layer10" : { "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 10", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"l_layer11" : { "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 11", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"m_layer12" : { "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 12", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"n_layer13" : { "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 13", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"o_layer14" : { "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 14", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"p_layer15" : { "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 15", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"q_layer16" : { "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 16", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"r_layer17" : { "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 17", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"s_layer18" : { "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 18", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"t_layer19" : { "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 19", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"u_layer20" : { "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 20", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"v_layer21" : { "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"w_layer22" : { "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"x_layer23" : { "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"y_layer24" : { "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"z_layer25" : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
 "importer"  : { "a_name" : "importer" , "b_content" :  importer, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "importer", "filename": "importer"     , "echelon" : 1 },
 "thePhantomLair" : { "a_name" : "thePhantomLair", "b_content" : thePhantomLair, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "thePhantomLair", "filename" : "thePhantomLair", "echelon" : 1 },
 "localView" : { "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
-}
+};
+
+
+[
+"b_layer1",
+"c_layer2",
+"d_layer3",
+"e_layer4",
+"f_layer5",
+"g_layer6",
+"h_layer7",
+"i_layer8",
+"j_layer9",
+"k_layer10",
+"l_layer11",
+"m_layer12",
+"n_layer13",
+"o_layer14",
+"p_layer15",
+"q_layer16",
+"r_layer17",
+"s_layer18",
+"t_layer19",
+"u_layer20",
+"v_layer21",
+"w_layer22",
+"x_layer23",
+"y_layer24",
+"z_layer25"
+].forEach((layerName) => {
+topLayer[layerName].header = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="{{description}}">
+<title>{{title}}</title>
+</head>
+<body style="background-color: {{backgroundColour}};">
+`;
+topLayer[layerName].footer = `
+</body>
+</html>
+`;
+});
+
+
 
 
 
@@ -516,6 +560,7 @@ ui.menuWrapper.ref.style.opacity=pictureOpacity;
 ui.menuWrapper.ref.style.transform="scale(2)";
 
 Picture.style.opacity=pictureOpacity;
+Picture.style.transformOrigin = "top left";
 gridLayer.appendChild(Picture);
 
 

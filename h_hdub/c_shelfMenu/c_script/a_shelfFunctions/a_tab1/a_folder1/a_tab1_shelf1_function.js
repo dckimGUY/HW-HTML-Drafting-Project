@@ -429,7 +429,7 @@ ui.showNames.click               = function() { if (drawPartNames=="false") { dr
 
 ui.partNext.click                = function() { focusNext(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); };     updateInfoShelf(); redraw(); };
 
-ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value;  } };
+ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value;  }; updateInfoShelf(); };
 ui.partStyle.input               = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.style = ui.partStyle.ref.value; } };
 ui.partCode.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML = ui.partCode.ref.value;  } };
 

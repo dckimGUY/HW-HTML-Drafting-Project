@@ -39,25 +39,8 @@ ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 const buttonName = "button" + Date.now();
 let   buttonCode = "";
 buttonCode += `
-<button id="${buttonName}" onclick="">
-<style>
-.pixelArt           {
-image-rendering     : crisp-edges;
-image-rendering     :   pixelated;
-                    }
-#${buttonName}      {
-position            :    absolute;
-top                 :         0px;
-left                :         0px;
-background-color    : transparent;
-background-size     :   100% 100%;
-width               :        100%;
-height              :        100%;
-border              :         0px;
-padding             :         0px;
-margin              :         0px;
-                    }
-`;
+<button id="${buttonName}" class="pixelArt" style="position: absolute; top: 0px; left: 0px; background-color: transparent; background-size: 100% 100%; width: 100%; height: 100%; border: 0px; padding: 0px; margin: 0px;" onclick="">
+<style>`;
 if (sheetImages.base.img.src&&sheetImages.base.img.width!=0&&sheetImages.base.img.height!=0) {
 viewImageSheet("base");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);

@@ -355,16 +355,6 @@ case ui.save1000.ref:            ui.save1000.click()             ; break;
 case ui.save1200.ref:            ui.save1200.click()             ; break;
 case ui.save1500.ref:            ui.save1500.click()             ; break;
 case ui.save1800.ref:            ui.save1800.click()             ; break;
-case ui.elementArticle.ref:      ui.elementArticle.click()       ; break;
-case ui.elementColour.ref:       ui.elementColour.click()        ; break;
-case ui.elementRadioBtn.ref:     ui.elementRadioBtn.click()      ; break;
-case ui.elementRange.ref:        ui.elementRange.click()         ; break;
-case ui.elementValue.ref:        ui.elementValue.click()         ; break;
-case ui.elementTextarea.ref:     ui.elementTextarea.click()      ; break;
-case ui.elementCheckbox.ref:     ui.elementCheckbox.click()      ; break;
-case ui.elementNumber.ref:       ui.elementNumber.click()        ; break;
-case ui.elementButton.ref:       ui.elementButton.click()        ; break;
-case ui.elementCanvas.ref:       ui.elementCanvas.click()        ; break;
 
 
 

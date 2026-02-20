@@ -284,6 +284,67 @@ layerRight();
 layerLeft();
 }
 loadSidebar1();
+
+
+
+
+
+} else if (
+event.target == document.getElementById("clipCSS") ||
+event.target == document.getElementById("clipHTML") ||
+event.target == document.getElementById("clipCODE") ||
+event.target == document.getElementById("save200") ||
+event.target == document.getElementById("save300") ||
+event.target == document.getElementById("save500") ||
+event.target == document.getElementById("save800") ||
+event.target == document.getElementById("save1000") ||
+event.target == document.getElementById("save1200") ||
+event.target == document.getElementById("save1500") ||
+event.target == document.getElementById("save1800") ||
+event.target == document.getElementById("textFlow") ||
+event.target == document.getElementById("header0") ||
+event.target == document.getElementById("header1") ||
+event.target == document.getElementById("header2") ||
+event.target == document.getElementById("header3") ||
+event.target == document.getElementById("header4") ||
+event.target == document.getElementById("footer0") ||
+event.target == document.getElementById("footer1") ||
+event.target == document.getElementById("footer2") ||
+event.target == document.getElementById("footer3") ||
+event.target == document.getElementById("footer4") ||
+event.target == document.getElementById("folder42")
+) {
+event.preventDefault();
+event.stopPropagation();
+       if (event.wheelDelta < 0) {
+switch (lastFactor) {
+case         "1" : lastFactor = "(100/320)" ; break;
+case "(100/320)" : lastFactor = "(100/500)" ; break;
+case "(100/500)" : lastFactor = "(100/768)" ; break;
+case "(100/768)" : lastFactor = "(100/1000)"; break;
+case "(100/1000)": lastFactor = "(100/1280)"; break;
+case "(100/1280)": lastFactor = "(100/1536)"; break;
+case "(100/1536)": lastFactor = "(100/2000)"; break;
+}
+} else if (event.wheelDelta > 0) {
+switch (lastFactor) {
+case "(100/320)" : lastFactor =         "1" ; break;
+case "(100/500)" : lastFactor = "(100/320)" ; break;
+case "(100/768)" : lastFactor = "(100/500)" ; break;
+case "(100/1000)": lastFactor = "(100/768)" ; break;
+case "(100/1280)": lastFactor = "(100/1000)"; break;
+case "(100/1536)": lastFactor = "(100/1280)"; break;
+case "(100/2000)": lastFactor = "(100/1536)"; break;
+}
+}
+localStorage.setItem("lastFactor", lastFactor);
+updateInfoShelf();
+} else if (
+event.target == document.getElementById("headerText") ||
+event.target == document.getElementById("footerText")
+) {
+event.preventDefault();
+event.stopPropagation();
 } else if (
 event.target == document.getElementById("readButtonBack") ||
 event.target == document.getElementById("folder31") ||

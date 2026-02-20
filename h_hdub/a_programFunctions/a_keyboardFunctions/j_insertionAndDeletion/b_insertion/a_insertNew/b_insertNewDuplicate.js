@@ -31,6 +31,12 @@ newCoin.dataset.finishedOutline       =  "none";
 newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
 newCoin.dataset.wrapper               =      coinFocus.dataset.wrapper ;
 newCoin.dataset.outlineColour         =      coinFocus.dataset.outlineColour;
+newCoin.dataset.notes                 = `{
+"notes" : "verbose notes",
+"YAML"  : "instructions for AI regarding this part",
+"initialDisplay" : "block",
+"other" : "enter additional data in JSON format"
+}`;
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
 

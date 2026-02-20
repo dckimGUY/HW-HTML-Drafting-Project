@@ -248,7 +248,7 @@ width: 174px;
 height: 463px;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
-background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-sidebar.png?v=20260205101535");
+background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/folder-1-sidebar.png?v=20260205121302");
 }
 
 
@@ -393,7 +393,7 @@ text-shadow: 0px .5px 0px rgb(24, 117, 189);
 
 
 .input_partText                  { position: absolute; border: none; margin: none; padding: 4px; left:      8px; top:    240px; width:    184px; height:    225px; font-size: 8px;
-background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notesBG.png?v=20251130171633"); z-index: 100;
+background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notesBG.png?v=20260219161121"); z-index: 100;
 caret-color: white;
 color: rgb(115,121,115);
 text-shadow: 0px .5px 0px rgb(  0, 161, 238);
@@ -455,10 +455,10 @@ text-shadow: 0px .5px 0px rgb(24, 117, 189);
 
 
 .button_notesTab                 { position: absolute; border: none; margin: none; padding: none; left:     11px; top:    215px; width:     58px; height:     25px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes.png?v=20251130170612");        }
-.button_notesTab:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes_focus.png?v=20251130170629");  }
-.button_notesTab:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes_hover.png?v=20251130170618");  }
-.button_notesTab:active          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes_active.png?v=20251130170623"); }
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes.png?v=20260219113323");        }
+.button_notesTab:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes_focus.png?v=20260219113333");  }
+.button_notesTab:hover           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes_hover.png?v=20260219113337");  }
+.button_notesTab:active          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/notes_active.png?v=20260219113327"); }
 .button_styleTab                 { position: absolute; border: none; margin: none; padding: none; left:     71px; top:    215px; width:     58px; height:     25px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/style.png?v=20251130170651");        }
 .button_styleTab:focus           { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/style_focus.png?v=20251130170709");  }

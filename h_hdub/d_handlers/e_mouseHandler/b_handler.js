@@ -20,6 +20,16 @@ let mousemoveTarget=null;
 document.addEventListener("mousemove", (event) => {
 
 
+if (event.target.dataset&&event.target.dataset.coinTrip) {
+mousemoveTarget=event.target;
+} else {
+mousemoveTarget=null;
+}
+
+
+
+
+
 
 /* basically seems to be working okay */
 if (mousedown.hold==true && event.target.id.toString() == "siteMapCanvas") {
@@ -110,17 +120,18 @@ return;
 
 
 
+
+
+
+
+
 if (mouseIsDogged==false) {
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const e = event;
 const mouseInfo = [e,ctrl,shift,alt];
 
-if (event.target.dataset&&event.target.dataset.coinTrip) {
-mousemoveTarget=event.target;
-} else {
-mousemoveTarget=null;
-}
+
 
 if (mousedown.hold==true) {
 
@@ -821,7 +832,7 @@ redraw();
 
 
 
-
+let mouseupTarget = null;
 
 
 
@@ -834,7 +845,11 @@ document.addEventListener("mouseup", (event) => {
 
 
 
-
+if (event.target.dataset&&event.target.dataset.coinTrip) {
+mouseupTarget=event.target;
+} else {
+mouseupTarget=null;
+}
 
 
 

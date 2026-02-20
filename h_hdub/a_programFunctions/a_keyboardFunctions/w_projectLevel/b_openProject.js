@@ -15,7 +15,7 @@ reader.onload = event => {
 
 
 const restoredObject = JSON.parse(reader.result.toString(), (key, value) => {
-if (typeof value === "string" && value.startsWith("<")) {
+if (typeof value === "string" && value.startsWith("<div")) {
 const temp = document.createElement("div");
 temp.innerHTML = value;
 return temp.firstElementChild;

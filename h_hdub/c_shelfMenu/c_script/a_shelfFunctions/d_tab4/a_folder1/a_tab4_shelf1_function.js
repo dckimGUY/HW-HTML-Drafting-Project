@@ -430,7 +430,26 @@ ui.hdubSheetTemplate4x.ref.setAttribute("title", "hdubEntryFactor = " + ui.hdubS
 localStorage.setItem("hdubEntryFactor", ui.hdubSheetTemplate4x.ref.value);
 drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
 hdubDemo.style.opacity = 1;
+if (Picture.style.display == "block") {
+let pictureScale = 1;
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': pictureScale = 10; break;
+case '2': pictureScale =  8; break;
+case '3': pictureScale =  6; break;
+case '4': pictureScale =  5; break;
 }
+Picture.style.transform = "scale(" + pictureScale + ")";
+}
+}
+
+
+
+
+
+
+
+
+
 
 function demoTime(max) {
 drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
@@ -917,12 +936,19 @@ hdubDemo.style.opacity = visualOpacity;
 
 
 function drawDemo(array){
-
 let factor = ui.hdubSheetTemplate4x.ref.value;
+let nominalFactor = factor;
+if (Picture.style.display == "block") {
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': factor = factor * 10; break;
+case '2': factor = factor *  8; break;
+case '3': factor = factor *  6; break;
+case '4': factor = factor *  5; break;
+}
+}
 
 hdubDemo.width  = 100 * factor;
 hdubDemo.height = 180 * factor;
-
 
 let ctx = hdubDemo.getContext("2d");
 ctx.clearRect(0,0,hdubDemo.width,hdubDemo.height);
@@ -930,30 +956,25 @@ ctx.fillStyle = "lime";
 ctx.font = "400 32px dckimPixelMono";
 ctx.textAlign = "start";
 ctx.textBaseline = "top";
-ctx.fillText("x " + factor, 16,16);
 
-if (factor > 4) {
+if (nominalFactor > 4) {
 ctx.lineWidth = 2;
 ctx.strokeStyle = "lime";
+ctx.fillStyle   = "lime";
+ctx.fillText("x " + nominalFactor, 16,16);
 ctx.fillStyle = "rgba(0,0,31,0.25)";
-} else if (factor == 1) {
+} else {
 ctx.lineWidth = 4;
+if (Picture.style.display == "block") {
+ctx.strokeStyle = "cyan";
+ctx.fillStyle   = "cyan";
+} else {
 ctx.strokeStyle = "darkorange";
-ctx.fillStyle = "rgba(31,0,31,0.35)";
-} else if (factor == 2) {
-ctx.lineWidth = 4;
-ctx.strokeStyle = "darkorange";
-ctx.fillStyle = "rgba(31,0,31,0.35)";
-} else if (factor == 3) {
-ctx.lineWidth = 4;
-ctx.strokeStyle = "darkorange";
-ctx.fillStyle = "rgba(31,0,31,0.35)";
-} else if (factor == 4) {
-ctx.lineWidth = 4;
-ctx.strokeStyle = "darkorange";
+ctx.fillStyle   = "darkorange";
+}
+ctx.fillText("x " + nominalFactor + " [pixelArt]", 16,16);
 ctx.fillStyle = "rgba(31,0,31,0.35)";
 }
-
 
 let rowStart = 0;
 for (j = 0; j < array.length; j++) {

@@ -383,7 +383,7 @@ ui[ui.hwString.currentSel].ref.style.zIndex  = 200;
 
 /* TAB 4, FOLDER 2 */
 
-["save200", "save300", "save500", "save800", "save1000", "save1200", "save1500", "save1800", "elementArticle", "elementColour", "elementRadioBtn", "elementRange", "elementValue", "elementTextarea", "elementCheckbox", "elementNumber", "elementButton", "elementCanvas"].forEach((name) => {
+["save200", "save300", "save500", "save800", "save1000", "save1200", "save1500", "save1800"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });

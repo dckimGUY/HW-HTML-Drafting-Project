@@ -1,5 +1,6 @@
 function makeTopLayer(chosenLayer) {
 
+
 edgeDetect.style.display= "none";
 
 if (coinFocus!=null) {
@@ -48,6 +49,10 @@ coinFocus1 = null;
 
 
 document.getElementById("documentTitle").innerText = filename;
+
+
+fileHeader = topLayer[topLayer.a_currentLayer].header;
+fileFooter = topLayer[topLayer.a_currentLayer].footer;
 
 
 readCoins();

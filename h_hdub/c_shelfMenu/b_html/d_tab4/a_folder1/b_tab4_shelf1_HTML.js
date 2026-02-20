@@ -5,7 +5,7 @@ shelfMenuHTML.tab4.folder1.HTML = `
 
 
 
-<button id="cancelEntries" class="button_ cancelEntries" onclick="document.getElementById('hdubSingleEntry').value = ''; document.getElementById('hdubPartDesignations').value = ''; hdubDemo.style.opacity = 0;"></button>
+<button id="cancelEntries" class="button_ cancelEntries" onclick="document.getElementById('hdubSingleEntry').value = ''; document.getElementById('hdubPartDesignations').value = ''; hdubDemo.style.opacity = 0; Picture.style.display='none';"></button>
 
 
 <button id="hdubAdd" class="button_ button_hdubAdd" title="add this one to the comma separated list"></button>

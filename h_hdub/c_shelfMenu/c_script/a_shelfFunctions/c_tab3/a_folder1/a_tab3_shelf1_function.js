@@ -500,22 +500,10 @@ const constructedButtonWidth  = ui.canvasOutput2.ref.width ;
 const constructedButtonHeight = ui.canvasOutput2.ref.height;
 
 buttonHTML1 = `
-<button id="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="right: -152px;" data-button-data="${buttonData}" onclick="`;
+<button id="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="position: absolute; top: 0px; right: -152px; border: 0px; margin: 0px; padding: 0px; width: ${constructedButtonWidth}px; height: ${constructedButtonHeight}px; background-color: transparent;" data-button-data="${buttonData}" class="pixelArt" onclick="`;
 
 buttonHTML2 = `">
 <style>
-#${uniqueIdentifier} {
-position: absolute;
-top:     0px;
-border:  0px;
-margin:  0px;
-padding: 0px;
-width    : ${constructedButtonWidth}px;
-height   : ${constructedButtonHeight}px;
-image-rendering: crisp-edges;
-image-rendering: pixelated;
-background-color: transparent;
-}
 #${uniqueIdentifier}        { background-image: url("${ui.canvasOutput2.ref.toDataURL("image/png")}"); outline: none; }
 #${uniqueIdentifier}:focus  { background-image: url("${ui.canvasOutput4.ref.toDataURL("image/png")}"); outline: none; }
 #${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); outline: none; }

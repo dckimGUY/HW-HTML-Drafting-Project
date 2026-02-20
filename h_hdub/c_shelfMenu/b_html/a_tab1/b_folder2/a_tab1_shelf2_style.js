@@ -23,18 +23,28 @@ shelfMenuHTML.tab1.folder2.style = `
 .button_coin77155:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/save_focus.png?v=20251119061127");  }
 .button_coin77155:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/save_hover.png?v=20251119061022");  }
 .button_coin77155:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/save_active.png?v=20251119061052"); }
-.button_coin59760                { position: absolute; border: none; margin: none; padding: none; left:     75px; top:    134px; width:     42px; height:     27px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left.png?v=20251102205813");        }
-.button_coin59760:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_focus.png?v=20251102205813");  }
-.button_coin59760:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_hover.png?v=20251102205813");  }
-.button_coin59760:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_active.png?v=20251102205813"); }
 
-.button_coin64291                { position: absolute; border: none; margin: none; padding: none; left:    120px; top:    134px; width:     42px; height:     27px;
+
+
+
+
+.button_coin59760                { position: absolute; border: none; margin: none; padding: none; left: 75px; top: 134px; width: 114px; height: 27px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left.png?v=20260219125313");        }
+.button_coin59760:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_focus.png?v=20260219130613");  }
+.button_coin59760:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_hover.png?v=20260219130510");  }
+.button_coin59760:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_active.png?v=20260219130418"); }
+
+
+
+
+
+
+.button_coin64291                { display: none; position: absolute; border: none; margin: none; padding: none; left:    120px; top:    134px; width:     42px; height:     27px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-right.png?v=20251102205813");        }
 .button_coin64291:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-right_focus.png?v=20251102205813");  }
 .button_coin64291:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-right_hover.png?v=20251102205813");  }
 .button_coin64291:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-right_active.png?v=20251102205813"); }
-.button_coin70038                { position: absolute; border: none; margin: none; padding: none; left:    165px; top:    134px; width:     24px; height:     27px;
+.button_coin70038                { display: none; position: absolute; border: none; margin: none; padding: none; left:    165px; top:    134px; width:     24px; height:     27px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/copy-level.png?v=20251102205813");        }
 .button_coin70038:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/copy-level_focus.png?v=20251102205813");  }
 .button_coin70038:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/copy-level_hover.png?v=20251102205813");  }

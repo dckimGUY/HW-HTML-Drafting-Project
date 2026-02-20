@@ -2,27 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('dragover', e => { e.preventDefault();});
 
 /* Single Image Drag Handling OR Textual Input Handling. */
@@ -746,7 +725,7 @@ if (file.name.startsWith("HDUB_Project")) {
 
 
 const restoredObject = JSON.parse(reader.result.toString(), (key, value) => {
-if (typeof value === "string" && value.startsWith("<")) {
+if (typeof value === "string" && value.startsWith("<div")) {
 const temp = document.createElement("div");
 temp.innerHTML = value;
 return temp.firstElementChild;
@@ -863,12 +842,6 @@ return 0;
 
 
 if (!e.target.dataset.coinTrip) {
-
-
-
-
-
-
 let sequestrationLayer = document.createElement("div");
 
 
@@ -976,7 +949,7 @@ if (!e.altKey) {
 if (file.name.includes("_HDUB_")) {
 
 
-
+document.getElementById("hdubPartDesignations").value = "";
 
 
 
@@ -1545,6 +1518,16 @@ Picture.height = img.height;
 let ctx = Picture.getContext("2d");
 ctx.drawImage(img, 0, 0, img.width, img.height);
 Picture.style.display="block";
+
+let pictureScale = 1;
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': pictureScale = 10; break;
+case '2': pictureScale =  8; break;
+case '3': pictureScale =  6; break;
+case '4': pictureScale =  5; break;
+}
+Picture.style.transform = "scale(" + pictureScale + ")";
+
 };
 img.src = evt.target.result;
 };
@@ -1575,51 +1558,67 @@ reader.readAsDataURL(file);
 
 
 } else if ( file.type.startsWith("audio/")) {
-
-
+const mouseCover = event.target;
 hauptModeOriginalState = hauptMode;
-
 hauptMode = 0;
-
 const reader = new FileReader();
 reader.onload = evt => {
 const audio = new Audio();
-
-
+if (mouseCover.dataset &&
+mouseCover.dataset.coinTrip &&
+mouseCover.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON") {
+mouseCover.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.dataset.audio = evt.target.result;
+mouseCover.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute("onclick", "let player = new Audio(); player.src = this.dataset.audio; player.play();");
+} else {
 insertNewCoin(["",78,78,true,false,false]);
-
 hauptMode = hauptModeOriginalState;
-
-
 if (useBase64forAudio==true) {
 audio.src = evt.target.result;
 } else {
 audio.src ="./b_audio/" + file.name;
 }
-
 audio.style.width = "100%";
 audio.style.height = "100%";
 audio.style.margin = "0";
 audio.style.padding = "0";
 audio.style.border = "0";
 audio.controls="true";
-
 utilityLayer0.lastElementChild.style.height   = "64";
 utilityLayer0.lastElementChild.style.width    = "256px";
 utilityLayer0.lastElementChild.dataset.height = "64";
 utilityLayer0.lastElementChild.dataset.width  = "256px";
-
 utilityLayer0.lastElementChild.style.left        =    Math.floor(parseInt(e.pageX)/T) * T         + "px";
 utilityLayer0.lastElementChild.style.top         =    Math.floor(parseInt(e.pageY)/T) * T          + "px";
 utilityLayer0.lastElementChild.dataset.left      =    Math.floor(parseInt(e.pageX)/T) * T         + "px";
 utilityLayer0.lastElementChild.dataset.top       =    Math.floor(parseInt(e.pageY)/T) * T          + "px";
-
 utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "audio");
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.innerHTML = "";
 utilityLayer0.lastElementChild.firstElementChild.style.zIndex = "0";
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSibling.appendChild(audio);
+}
 };
 reader.readAsDataURL(file);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 } else if ( file.type.startsWith("video/")) {
 
 

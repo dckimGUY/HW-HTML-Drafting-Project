@@ -159,9 +159,9 @@ border-radius: 2px;
 
 .button_setDragThresholdFromGrid { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    453px; width:     25px; height:     39px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid.png?v=20251110014415");        }
-.button_setDragThresholdFromGrid:focus { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid_focus.png?v=20251110012711");  }
-.button_setDragThresholdFromGrid:hover { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid_hover.png?v=20251110012508");  }
-.button_setDragThresholdFromGrid:active { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid_active.png?v=20251110012629"); }
+.button_setDragThresholdFromGrid:focus { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid_focus.png?v=20260217075951");  }
+.button_setDragThresholdFromGrid:hover { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid_hover.png?v=20260217075954");  }
+.button_setDragThresholdFromGrid:active { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/b_folder2/setDragFromGrid_active.png?v=20260217075925"); }
 
 
 

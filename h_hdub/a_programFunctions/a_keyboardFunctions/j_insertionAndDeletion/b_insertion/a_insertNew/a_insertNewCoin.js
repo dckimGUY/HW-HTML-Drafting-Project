@@ -65,6 +65,12 @@ newCoin.dataset.parent                =         "";
 newCoin.dataset.children              =         "";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
+newCoin.dataset.notes                 = `{
+"notes" : "verbose notes",
+"YAML"  : "instructions for AI regarding this part",
+"initialDisplay" : "block",
+"other" : "enter additional data in JSON format"
+}`;
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
