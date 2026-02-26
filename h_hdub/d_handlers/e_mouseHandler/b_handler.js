@@ -630,8 +630,14 @@ case 2: mousedown.button2 = true; break;
 
 
 
-if (splashScreenVisible==true) {
-splashScreen.remove();
+if (splashScreen.style.display != "none") {
+for (let j = 100; j >= 0; j--) {
+if (j == 100) {
+setTimeout(() => { splashScreen.style.display = "none"; },   150);
+} else {
+setTimeout(() => { splashScreen.style.opacity =  j / 100; },   (100 - j) * 1.5);
+}
+}
 }
 
 
@@ -952,7 +958,9 @@ if (!event.target.dataset.coinTrip) {
 
 redraw();
 
-updateInfoShelf();
+
+
+
 
 });
 
@@ -981,21 +989,23 @@ updateInfoShelf();
 document.addEventListener("click", (event) => {
 
 
+if (mouseIsDogged==false) {
 
+       if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
+}
 
-
-
+}
 
 drawSiteMap();
 
 
 
 
-
-
-
-
 loadSidebar1();
+updateInfoShelf();
 
 
 
@@ -1013,7 +1023,7 @@ let setName = "sel0";
 setName = "sel0";
 } else if (coinFocus.dataset.coinTrip=="1") {
 setName = "sel1";
-} else if (coinFocus.dataset.coinTrip=="?") {
+} else if (coinFocus.dataset.coinTrip=="2") {
 setName = "sel2";
 }
 let variableName = "n" + Date.now();
@@ -1127,7 +1137,6 @@ if (coinFocus != null &&
 ) {
 if (ui.folder52.ref.style.display == "block" &&
     ui.tab5Wrapper.ref.style.display  == "block") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute("contentEditable", true);
 coinFocus.firstElementChild.style.zIndex = "0";
 }
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.focus();
@@ -1189,7 +1198,6 @@ rdots();
 redraw();
 
 }
-
 
 
 });

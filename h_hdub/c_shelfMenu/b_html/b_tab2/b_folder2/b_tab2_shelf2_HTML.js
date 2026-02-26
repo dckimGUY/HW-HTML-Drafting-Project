@@ -47,13 +47,13 @@ shelfMenuHTML.tab2.folder2.HTML = `
 
 <button id="coin38634" class="button_ button_coin38634" title="pull the number down from above"></button>
 <input id="coin18868" name="coin18868" class="input_ input_coin18868 dckimPixelMono" type="value" placeholder="empty" title="mouseIncrement, ctrl+shift+MMB scroll">
-<input id="coin28281" name="coin28281" class="input_coin28281" type="color" value="#FFFF00">
+<input id="coin28281" name="coin28281" class="input_coin28281" type="color" value="#FFFF00" title="mouse snap grid colour">
 <button id="coin41046" class="button_ button_coin41046" title="pull the number down from above"></button>
 <input id="coin21315" name="coin21315" class="input_ input_coin21315 dckimPixelMono" type="value" placeholder="empty" title="ctrl+MMB scroll">
-<input id="coin30119" name="coin30119" class="input_coin30119" type="color" value="#00FFFF">
+<input id="coin30119" name="coin30119" class="input_coin30119" type="color" value="#00FFFF" title="additional grid colour">
 <button id="coin07023" class="button_ button_coin07023" title="pull the number down from above"></button>
 <input id="coin23538" name="coin23538" class="input_ input_coin23538 dckimPixelMono" type="value" placeholder="empty">
-<input id="coin32259" name="coin32259" class="input_coin32259" type="color" value="#FF00FF">
+<input id="coin32259" name="coin32259" class="input_coin32259" type="color" value="#FF00FF" title="additional large grid colour">
 
 <button id="setMetric" class="button_ button_setMetric" title="Keyboard Snap Metric"></button>
 <button id="setComp2" class="button_ button_setComp2" title="Keyboard Snap 2^2"></button>
@@ -73,32 +73,32 @@ shelfMenuHTML.tab2.folder2.HTML = `
 
 
 
-<input id="coin88067" name="coin88067" class="input_coin88067" type="color">
-<input id="coin46861" name="coin46861" class="input_coin46861" type="color">
-<input id="coin44038" name="coin44038" class="input_coin44038" type="color">
-<input id="coin72275" name="coin72275" class="input_coin72275" type="color">
+<input id="coin88067" name="coin88067" class="input_coin88067" type="color" title="style-mode background colour (CAPS lock)">
+<input id="coin46861" name="coin46861" class="input_coin46861" type="color" title="construction-mode background colour">
+<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="***finished-page background colour***">
+<input id="coin72275" name="coin72275" class="input_coin72275" type="color" title="keyboard snap grid colour">
 
 
-<input id="coin43886" name="coin43886" class="input_coin43886" type="color">
+<input id="coin43886" name="coin43886" class="input_coin43886" type="color" title="page top left boundary colour">
 
 
 <!-- THESE DETERMINE LINE THICKNESSES AND THEN THE LAST ONES OPACITIES --> 
-<input id="coin41267" name="coin41267" class="input_coin41267" type="range" min="0" max="4"   step="1">
-<input id="coin47497" name="coin47497" class="input_coin47497" type="range" min="1" max="16"  step="1">
-<input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1">
+<input id="coin41267" name="coin41267" class="input_coin41267" type="range" min="0" max="4"   step="1" title="size of the fine edge">
+<input id="coin47497" name="coin47497" class="input_coin47497" type="range" min="1" max="16"  step="1" title="size of the in-focus edge">
+<input id="coin50633" name="coin50633" class="input_coin50633" type="range" min="1" max="128" step="1" title="size of the draggable edges">
 
 
 <input id="coin53526" name="coin53526" class="input_coin53526" type="range" min="0" max="1"    step="0.005" title="setting this to zero will speed up the program">
 <input id="coin56897" name="coin56897" class="input_coin56897" type="range" min="0" max="1"    step="0.005" title="setting this to zero will speed up the program">
 <input id="coin59527" name="coin59527" class="input_coin59527" type="range" min="0" max="0.98" step="0.005" title="HTML parts opacity">
-<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0.05" max="1"    step="0.005">
+<input id="coin17325" name="coin17325" class="input_coin17325" type="range" min="0.05" max="1"    step="0.005" title="fade the menu. this also fades the background image dragged in with the ALT key">
 
-<input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color">
-<input id="coin62796" name="coin62796" class="input_ input_coin62796" type="color">
-<input id="coin65598" name="coin65598" class="input_ input_coin65598" type="color">
+<input id="coin59277" name="coin59277" class="input_ input_coin59277" type="color" title="middleGround, highest in document order">
+<input id="coin62796" name="coin62796" class="input_ input_coin62796" type="color" title="foreground, last in document order">
+<input id="coin65598" name="coin65598" class="input_ input_coin65598" type="color" title="background, second in document order">
 
-<input id="coin67938" name="coin67938" class="input_ input_coin67938" type="color">
-<input id="coin47065" name="coin47065" class="input_ input_coin47065" type="color">
+<input id="coin67938" name="coin67938" class="input_ input_coin67938" type="color" title="fine outline">
+<input id="coin47065" name="coin47065" class="input_ input_coin47065" type="color" title="in-focus colour">
 
 
 

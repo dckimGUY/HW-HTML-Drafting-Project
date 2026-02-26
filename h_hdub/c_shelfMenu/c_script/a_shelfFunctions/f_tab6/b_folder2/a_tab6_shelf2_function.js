@@ -111,7 +111,7 @@ const top    = Math.floor((parseInt(utilityLayer0.children[j].style.top   ) - wi
 const width  = Math.floor(parseInt(utilityLayer0.children[j].style.width ) / downsize);
 const height = Math.floor(parseInt(utilityLayer0.children[j].style.height) / downsize);
 ctx.lineWidth = 2;
-       if (utilityLayer0.children[j].dataset.coinTrip == "?") {
+       if (utilityLayer0.children[j].dataset.coinTrip == "2") {
 ctx.strokeStyle = blueColour;
 } else if (utilityLayer0.children[j].dataset.coinTrip == "0") {
 ctx.strokeStyle = greyColour;

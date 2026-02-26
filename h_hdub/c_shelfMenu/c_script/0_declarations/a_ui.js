@@ -393,7 +393,7 @@ ui[name].ref   = document.getElementById(name);
 
 /* TAB 5, FOLDER 2 */
 
-["furyLeftMargin", "furyInputArticle", "furyBreakArticle", "furyInputParagraph", "furyBreakParagraph", "furyInputSentence", "furyInputHeading1", "furyInputHeading2", "furyInputHeading3", "furyInputBlockquote", "furyGlobb", "furyRulesInfo"].forEach((name) => {
+["furyOrderedList", "furyUnorderedList", "furyListItem", "furyWrapArticle", "furyWrapSection", "furyInputParagraph", "furyInputHeading1", "furyInputHeading2", "furyInputHeading3", "furyInputBlockquote", "furyGlobb", "furyRulesInfo"].forEach((name) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });

@@ -24,46 +24,46 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*                                                                                                                                                            */
 
 
-/*    Q    */ if (kC ==  81 && cC ==  81) {                                 quitSave();                                                                                          }
-/*    W    */ if (kC ==  87 && cC ==  87) {                                 appendFile();                                                                                        }
-/*    E    */ if (kC ==  69 && cC ==  69) { noteCoin("<u>E</u><br><span style='font-size: 0.5em;'>scale/edge</span>",durationC); resetScale(); lastKey = "e";                    }
-/*    R    */ if (kC ==  82 && cC ==  82) { pullFromGuideLayer(keyInfo);                                                                                                         }
-/*    T    */ if (kC ==  84 && cC ==  84) { noteCoin("<u>T</u><br><span style='font-size: 0.5em;'>colour all</span>",durationC); assignAllColours();                             }
-/*    Y    */ if (kC ==  89 && cC ==  89) { wrapDocumentWithScreen(); noteCoin("<u>Y</u><br><span style='font-size: 0.5em;'>wrap screen</span>",durationC);                      }
-/*    U    */ if (kC ==  85 && cC ==  85) { wrapParts(); noteCoin("<u>U</u><br><span style='font-size: 0.5em;'>wrap colours</span>",durationC);                                  }
+/*    Q    */ if (kC ==  81 && cC ==  81) { wrapDocument(); noteCoin("T<br><span style='font-size: 0.5em;'>wrap all</span>",durationC);                                          }
+/*    W    */ if (kC ==  87 && cC ==  87) { noteCoin("<u>B</u><br><span style='font-size: 0.5em;'>copy opener contents</span>",durationC); copyOpenerContents(keyInfo);          }
+/*    E    */ if (kC ==  69 && cC ==  69) {                                                                              flipEdge(); modeRouter(e,5);                            }
+/*    R    */ if (kC ==  82 && cC ==  82) { removeGroup();                                                                                                                       }
+/*    T    */ if (kC ==  84 && cC ==  84) { noteCoin("<u>Q</u><br><span style='font-size: 0.5em;'>colour all</span>",durationC); modeRouter(e,8); if (lastKey=="T") { assignAllColours(); }  }
+/*    Y    */ if (kC ==  89 && cC ==  89) { isolateGroup(); }
+/*    U    */ if (kC ==  85 && cC ==  85) {}
 /*    I    */ if (kC ==  73 && cC ==  73) {                                 aioNRouter(keyInfo);                                                                                 }
 /*    O    */ if (kC ==  79 && cC ==  79) {                                 aioNRouter(keyInfo);                                                                                 }
-/*    P    */ if (kC ==  80 && cC ==  80) {                                 pasteMultiple(keyInfo);                                                                              }
+/*    P    */ if (kC ==  80 && cC ==  80) {                                 flipPhantomLair();                                                                                   }
 /*    A    */ if (kC ==  65 && cC ==  65) {                                 aioNRouter(keyInfo);                                                                                 }
-/*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false);                                                                                  }
+/*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false, lastFactor);                                                                        }
 /*    D    */ if (kC ==  68 && cC ==  68) { noteCoin("<u>D</u><br><span style='font-size: 0.5em;'>duplicate in place</span>",durationC); insertNewDuplicate(keyInfo);            }
-/*    F    */ if (kC ==  70 && cC ==  70) {                                 openFile();                                                                                          }
-/*    G    */ if (kC ==  71 && cC ==  71) {                                 gridArray();                                                                                         }
+/*    F    */ if (kC ==  70 && cC ==  70) {                                 gridArray();                                                                                         }
+/*    G    */ if (kC ==  71 && cC ==  71) { curFocus=0; modeRouter(e,1); }
 /*    H    */ if (kC ==  72 && cC ==  72) { hjklRouter(keyInfo);                                                                                                                 }
 /*    J    */ if (kC ==  74 && cC ==  74) { hjklRouter(keyInfo);                                                                                                                 }
 /*    K    */ if (kC ==  75 && cC ==  75) { hjklRouter(keyInfo);                                                                                                                 }
 /*    L    */ if (kC ==  76 && cC ==  76) { hjklRouter(keyInfo);                                                                                                                 }
 /*    Z    */ if (kC ==  90 && cC ==  90) { noteCoin("<u>Z</u><br><span style='font-size: 0.5em;'>Z by colour</span>",durationC); manageTripartiteZ(0); modeRouter(e,9);         }
-/*    X    */ if (kC ==  88 && cC ==  88) {                                 deleteCoin(keyInfo);                                                                                 }
-/*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("<u>C</u><br><span style='font-size: 0.5em;'>coinToCursor</span>",durationC); coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                        }
-/*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("<u>V</u><br><span style='font-size: 0.5em;'>flow by colour</span>",durationC); lastFlow="colour"; reflowPerTrip(keyInfo);  }
-/*    B    */ if (kC ==  66 && cC ==  66) { noteCoin("<u>B</u><br><span style='font-size: 0.5em;'>copy opener contents</span>",durationC); copyOpenerContents(keyInfo);          }
+/*    X    */ if (kC ==  88 && cC ==  88) { groupToPhantomLair(); }
+/*    C    */ if (kC ==  67 && cC ==  67) { noteCoin("<u>C</u><br><span style='font-size: 0.5em;'>coinToCursor</span>",durationC); coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});   }
+/*    V    */ if (kC ==  86 && cC ==  86) { noteCoin("<u>V</u><br><span style='font-size: 0.5em;'>flow by colour</span>",durationC); lastFlow="colour"; reflowPerTrip();  }
+/*    B    */ if (kC ==  66 && cC ==  66) { globbHTML(); }
 /*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                                                 }
-/*    M    */ if (kC ==  77 && cC ==  77) { guideLayer(keyInfo);                                                                                                                 }
+/*    M    */ if (kC ==  77 && cC ==  77) {}
 
 
-/*    q    */ if (kC ==  81 && cC == 113) {                          quitSave();                                                                                                        }
+/*    q    */ if (kC ==  81 && cC == 113) { unwrapParts(); noteCoin("t<br><span style='font-size: 0.5em;'>unwrap</span>",durationC);                                                    }
 /*    w    */ if (kC ==  87 && cC == 119) { noteCoin("W<br><span style='font-size: 0.5em;'>window mode</span>",durationC); flipWindowEdge(); modeRouter(e,0);                           }
 /*    e    */ if (kC ==  69 && cC == 101) {                                                                              flipEdge(); modeRouter(e,5);                                   }
-/*    r    */ if (kC ==  82 && cC == 114) { noteCoin("R<br><span style='font-size: 0.5em;'>flip image</span>",durationC); innerRotationMin();                                           }
-/*    t    */ if (kC ==  84 && cC == 116) { noteCoin("T<br><span style='font-size: 0.5em;'>colour mode</span>",durationC); modeRouter(e,8); if (lastKey=="t") { swapColours(); }        }
-/*    y    */ if (kC ==  89 && cC == 121) { wrapDocument(); noteCoin("Y<br><span style='font-size: 0.5em;'>wrap snug</span>",durationC);                                                }
-/*    u    */ if (kC ==  85 && cC == 117) { unwrapParts(); noteCoin("U<br><span style='font-size: 0.5em;'>unwrap</span>",durationC);                                                    }
+/*    r    */ if (kC ==  82 && cC == 114) { removeCoin();                                                                                                                               }
+/*    t    */ if (kC ==  84 && cC == 116) { noteCoin("Q<br><span style='font-size: 0.5em;'>colour mode</span>",durationC); modeRouter(e,8); if (lastKey=="t") { swapColours(); }        }
+/*    y    */ if (kC ==  89 && cC == 121) { isolateSingle(); }
+/*    u    */ if (kC ==  85 && cC == 117) {}
 /*    i    */ if (kC ==  73 && cC == 105) {                          aioNRouter(keyInfo);                                                                                               }
 /*    o    */ if (kC ==  79 && cC == 111) {                          aioNRouter(keyInfo);                                                                                               }
 /*    p    */ if (kC ==  80 && cC == 112) {                          pasteSingle(keyInfo);                                                                                              }
 /*    a    */ if (kC ==  65 && cC ==  97) {                          aioNRouter(keyInfo);                                                                                               }
-/*    s    */ if (kC ==  83 && cC == 115) {                                    saveProject();                                                                          }
+/*    s    */ if (kC ==  83 && cC == 115) {                                    saveProject();                                                                                           }
 /*    d    */ if (kC ==  68 && cC == 100) {                                                                                     modeRouter(e,6);                                        }
 /*    f    */ if (kC ==  70 && cC == 102) { noteCoin("F+<br><span style='font-size: 0.5em;'>paste out</span>",durationC); charQ1=0;charQ2=0;charM=0;charF=1;                            }
 /*    g    */ if (kC ==  71 && cC == 103) {                                                                              curFocus=0; modeRouter(e,1);                                   }
@@ -75,7 +75,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    x    */ if (kC ==  88 && cC == 120) {                          deleteCoin(keyInfo);                                                                                               }
 /*    c    */ if (kC ==  67 && cC ==  99) { noteCoin("C<br><span style='font-size: 0.5em;'>cursor</span>",durationC); cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});   }
 /*    v    */ if (kC ==  86 && cC == 118) { noteCoin("V<br><span style='font-size: 0.5em;'>flow document</span>",durationC); lastFlow = "global"; reflowGlobal(rev,0);                  }
-/*    b    */ if (kC ==  66 && cC ==  98) {                          buttonizer();                                                                                                      }
+/*    b    */ if (kC ==  66 && cC ==  98) { severHTML(); }
 /*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partY").focus(); document.getElementById("partY").select();                    }
 /*    m    */ if (kC ==  77 && cC == 109) { noteCoin("M+<br><span style='font-size: 0.5em;'>set mark</span>",durationC); charQ1=0;charM=1;charF=0;                                      }
 /*                                                                                                                                                            */

@@ -66,11 +66,11 @@ console.log(`
 
     This is the function call with the argument which would be used to convert from 1000px to 100vw:
 
-    vw100(1/10);
+    deMinimis(false, "(100/1000)");
 
     That should work for whatever number you need to do, for example: Maybe you want to convert 1536px into 100vw?
 
-    vw100(1/15.36);
+    deMinimis(false, "(100/1536)");
 
     I guess I'm just being weird about it, but, metric seems to give good numbers after the conversion. I would recommend using metric for the program settings, and then using 'save vw 1000' for that reason.
 

@@ -536,7 +536,7 @@ coinFocus.dataset.height = imageDummy.naturalHeight * entryFactor + "px";
 
 flipAnchorZ([,,,false,]);
 
-if (!event.shiftKey) {
+if (event.shiftKey) {
 anim.appendChild(script);
 }
 randomDiv.appendChild(anim);

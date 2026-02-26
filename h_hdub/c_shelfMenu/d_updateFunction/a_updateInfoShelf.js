@@ -138,7 +138,17 @@ const layerArray = ["b_layer1", "c_layer2", "d_layer3", "e_layer4", "f_layer5", 
 
 for (let j = 0; j < layerArray.length; j++) {
 
-ui["setLayer" + (j + 1)].ref.setAttribute("title", topLayer[layerArray[j]].filename);
+
+let nameList = topLayer[layerArray[j]].filename + " =\n[";
+for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
+nameList += '\n"' + topLayer[layerArray[j]].b_content.children[i].id + '"';
+if (i != topLayer[layerArray[j]].b_content.children.length - 1) {
+nameList += ',';
+}
+}
+nameList += "\n];";
+
+ui["setLayer" + (j + 1)].ref.setAttribute("title", nameList);
 
 if (topLayer[layerArray[j]].b_content.innerHTML!="") {
 let alphaValue = 0;

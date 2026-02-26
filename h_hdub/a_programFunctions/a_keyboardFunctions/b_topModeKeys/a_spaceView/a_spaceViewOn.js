@@ -31,4 +31,5 @@ utilityLayer0.style.opacity = "1.0";
 visualizationsLayer.style.display= "none";
 gridLayer.style.display      = "none";
 document.documentElement.style.backgroundColor = finishedBackgroundColour;
+
 }

@@ -45,7 +45,7 @@ shelfMenuHTML.tab3.folder2.HTML = `
 
 
 <button id="animateClick" class="button_ button_animateClick" title="animations begin when clicked"></button>
-<button id="animateLoop"  class="button_ button_animateLoop"  title="animations are looped, use 'SHIFT' to get image data without the annoying animation"></button>
+<button id="animateLoop"  class="button_ button_animateLoop"  title="IMAGE DATA (base64), use 'SHIFT' to get animations that are looped"></button>
 <button id="fewerFrames"  class="button_ button_fewerFrames"  title=""></button>
 <button id="moreFrames"   class="button_ button_moreFrames"   title=""></button>
 

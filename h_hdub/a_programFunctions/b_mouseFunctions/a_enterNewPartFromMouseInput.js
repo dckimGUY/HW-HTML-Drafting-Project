@@ -58,10 +58,10 @@ newCoin.dataset.scale              =        "1";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
 newCoin.dataset.notes                 = `{
-"notes" : "verbose notes",
-"YAML"  : "instructions for AI regarding this part",
 "initialDisplay" : "block",
-"other" : "enter additional data in JSON format"
+"notes" : "Written notes.",
+"YAML"  : "Coded instructions",
+"data"  : "Additional JSON"
 }`;
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
@@ -205,12 +205,8 @@ div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
 
-div.innerHTML = '<div style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></div>';
-
-
-
-
-newCoin.div.setAttribute("contenteditable", true);
+div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;" contenteditable="true"></p>';
+//newCoin.div.setAttribute("contenteditable", true);
 newCoin.anchor.style.zIndex = 0;
 newCoin.div.style.fontSize = "32px";
 

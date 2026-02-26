@@ -1,4 +1,4 @@
-function pasteMultiple(keyInfo) {
+function pasteMultiple() {
 
 if (multiplePasteBuffer.value&&multiplePasteBuffer.value.length > 0) {
 

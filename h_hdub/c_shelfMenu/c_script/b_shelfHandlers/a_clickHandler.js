@@ -362,12 +362,12 @@ case ui.save1800.ref:            ui.save1800.click()             ; break;
 
 
 /* tab 5 folder 2 */
-case ui.furyLeftMargin.ref:      ui.furyLeftMargin.click()       ; break;
-case ui.furyInputArticle.ref:    ui.furyInputArticle.click()     ; break;
-case ui.furyBreakArticle.ref:    ui.furyBreakArticle.click()     ; break;
-case ui.furyInputParagraph.ref:  ui.furyInputParagraph.click()   ; break;
-case ui.furyBreakParagraph.ref:  ui.furyBreakParagraph.click()   ; break;
-case ui.furyInputSentence.ref:   ui.furyInputSentence.click()    ; break;
+case ui.furyOrderedList.ref:      ui.furyOrderedList.click()       ; break;
+case ui.furyUnorderedList.ref:    ui.furyUnorderedList.click()     ; break;
+case ui.furyListItem.ref:    ui.furyListItem.click()     ; break;
+case ui.furyWrapArticle.ref:  ui.furyWrapArticle.click()   ; break;
+case ui.furyWrapSection.ref:  ui.furyWrapSection.click()   ; break;
+case ui.furyInputParagraph.ref:   ui.furyInputParagraph.click()    ; break;
 case ui.furyInputHeading1.ref:   ui.furyInputHeading1.click()    ; break;
 case ui.furyInputHeading2.ref:   ui.furyInputHeading2.click()    ; break;
 case ui.furyInputHeading3.ref:   ui.furyInputHeading3.click()    ; break;

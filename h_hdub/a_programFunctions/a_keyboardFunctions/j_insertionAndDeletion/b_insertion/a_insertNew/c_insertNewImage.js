@@ -65,10 +65,10 @@ newCoin.dataset.children              =         "";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
 newCoin.dataset.notes                 = `{
-"notes" : "verbose notes",
-"YAML"  : "instructions for AI regarding this part",
 "initialDisplay" : "block",
-"other" : "enter additional data in JSON format"
+"notes" : "Written notes.",
+"YAML"  : "Coded instructions",
+"data"  : "Additional JSON"
 }`;
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
@@ -159,6 +159,8 @@ img.style.display = "none";
 
 
 utilityLayer0.appendChild(newCoin);
+
+
 curFocus  = 0;
 if (coinFocus!=null) {
 coinFocus.style.outlineColor = Cs2;

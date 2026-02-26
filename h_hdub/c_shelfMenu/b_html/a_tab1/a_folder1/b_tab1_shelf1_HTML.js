@@ -5,10 +5,10 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <button id="xrayMagenta" class="button_ button_xrayMagenta" tabindex="-1" title=""></button>
 <button id="xrayCyan" class="button_ button_xrayCyan" tabindex="-1" title=""></button>
 
-<input id="partY" name="partY" class="input_ input_partY dckimPixelMono" type="value" placeholder="empty" title="/ * cycle parts, - + cycle fields">
-<input id="partX" name="partX" class="input_ input_partX dckimPixelMono" type="value" placeholder="empty" title="/ * cycle parts, - + cycle fields">
-<input id="partW" name="partW" class="input_ input_partW dckimPixelMono" type="value" placeholder="empty" title="/ * cycle parts, - + cycle fields">
-<input id="partH" name="partH" class="input_ input_partH dckimPixelMono" type="value" placeholder="empty" title="/ * cycle parts, - + cycle fields">
+<input id="partY" name="partY" class="input_ input_partY dckimPixelMono" type="value" placeholder="empty" title="/ * Cycle Parts\n- + Cycle Fields">
+<input id="partX" name="partX" class="input_ input_partX dckimPixelMono" type="value" placeholder="empty" title="/ * Cycle Parts\n- + Cycle Fields">
+<input id="partW" name="partW" class="input_ input_partW dckimPixelMono" type="value" placeholder="empty" title="/ * Cycle Parts\n- + Cycle Fields">
+<input id="partH" name="partH" class="input_ input_partH dckimPixelMono" type="value" placeholder="empty" title="/ * Cycle Parts\n- + Cycle Fields">
 
 <button id="cursorAuto" class="button_ button_cursorAuto" tabindex="-1" title=""></button>
 <button id="cursorXS" class="button_ button_cursorXS" tabindex="-1" title=""></button>
@@ -18,9 +18,9 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <button id="cursorXL" class="button_ button_cursorXL" tabindex="-1" title=""></button>
 <button id="cursorNum" class="button_ button_cursorNum" tabindex="-1" title=""></button>
 
-<input id="partNom" name="partNom" class="input_ input_partNom dckimPixelMono" type="value" placeholder="emptyFile" spellcheck="false" title="comma period = cycle parts, < > = cycle levels">
+<input id="partNom" name="partNom" class="input_ input_partNom dckimPixelMono" type="value" placeholder="emptyFile" spellcheck="false" tabindex="-1" title=", . Cycle Parts\n< > Cycle Levels\nSPACE Show Names\nESC Return to Drafting">
 <button id="partPrev" class="button_ button_partPrev" tabindex="-1" title=""></button>
-<button id="showNames" class="button_ button_showNames" title="show part names, click part to copy name, shift + click to copy the group as an array, ctrl + shift + click to get the innerHTML"></button>
+<button id="showNames" class="button_ button_showNames" tabindex="-1" title=""></button>
 <button id="partNext" class="button_ button_partNext" tabindex="-1" title=""></button>
 <textarea id="partText"  class="textarea_ input_partText  dckimPixelMono"        placeholder="empty" spellcheck="false"></textarea>
 <div id="partStyle" class="textarea_ input_partStyle dckimPixelMono hidden">
@@ -289,7 +289,7 @@ margin              :         0px;
 #indentLine:active        { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAADl0lEQVR4AeyYQY7UMBBFAydgi8RpOAJ34RSsOQMrOAKnGYklLNk184x+plRTZcc99nSU9EhfLv/6LtePnbQ0b5eT/a2GL8vlAt59+HQZDeqC0XV76ulci2EWijjqKI/FsDX5++H7Mhq2/q3jZ4Zv3dDs/e+G33/+uYzG7FPrqf/shP9++7qMRk9Ds7WrYZ3qjA1n1u7tdzX868vHBegL3VvI61WHkbrAa0bO2cciq70azgTX8ns6VethmmF9B+xme4hXwzoRjXtobkYPq2GdiEZtpveCuWKNcBGUZ2zl0VhYvXg4xRrhBDjFGuE8yBXDPqE5AgFOsUbPMQfKR+M1+WhNxEX7ea4Y5hr7RMR5DXNtrBEOsB4Q14AG1DRZTntG6+E8qFMMc42ZWEQceRUhzoCG9SDTwGc6GUFjgR5YjjjaB85jWZalGGbRVqhIpqchNFne8vw2Yw5YPoupC7L8Fr7bcKsoJloa5Xk4GaQZPQ43TINbT4yHw4kBYoE5dUaAXoBqDTPMSakoI5sA4hrQgJrmmhw1gV9bDEeJiNNin2O+5VTQ+QejmhpbeWpIy6h5ax1aUAwjjoDA8xGHJuPJWfBg7NzH5KkFfC7i0MCzjjgDGlAMI46AwPMRhybjyVm0dOQFu44YntEDHnjezsmDYpjgLCiGeQ8ytB5Ets7z1PGcnZMHlvNxK+/1ds5aUAxz75l4ZLzV9WgyreVtHO2T5a22FhfD3PVIlPFWi6bWBDk0rNFIbGF5G0eaLI+WvSzgPIphT/bOa03Ucr371PQYZS8LOL9miGFf9BZzjPp94TANlNuFYT4uamj0iGmgurswrGZeY7wbfo2nHO0x81o/7bf0/wPALh4djzZNPWD7PMyVxpiHNap4d4ZpWs3NGHdh2P5OXmuSGh5RrV0Ytr+TUZNbOGp46AHY9bswTEM0xzgSegC25m4M05xtbFa8G8OzDPq6Vxvmawp8wZfMZ1xr30/VcGYo433x3vmsa02/gH6qhhEg9IC3IG/nNq7lrO6lcbQPHLC1i2FPWkEr3rJ2i6a1j/K1WuQstMaOxbAlZsY0E9UXr7GmiXI9XDHMx2I2aKq2RyvP2i0adBlYXwzzsZgNNqvt0cqzdosGXQbWF8NcpTNgNUxwCjyaLCec3fmj8Y9+///HI7vzR+NXw2d4f/G4GiY4C+7v8NHeW+uHW1xOmOAsKIb/PPx4c3TD8lgMYxbiyMAj+AcAAP//YuHM0wAAAAZJREFUAwBa4P7ifwsbbwAAAABJRU5ErkJggg=="); outline: none; }
 </style>
 </button>
-<button id="fontShadow" title="set program font. this doesn't affect the saved pages (yet)" class="pixelArt" style="position: absolute; left: 480px; top: 32px; width: 480px; height: 480px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;" onclick="let result = null; result = prompt('Enter the font name. This will only affect the program, not the outgoing font (yet).', 'dckimPixelMono'); if (result!=null) { document.body.style.fontFamily = result; }">
+<button id="fontShadow" title="set program font. this doesn't affect the saved pages (yet)" class="pixelArt" style="position: absolute; left: 480px; top: 32px; width: 480px; height: 480px; z-index: 100250000; user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;" onclick="let result = null; result = prompt('Enter the font name. This will only affect the program, not the outgoing font (yet).', 'dckimPixelMono'); if (result!=null) { document.body.style.fontFamily = result; localStorage.setItem('pageFont', result); if (event.shiftKey) { localStorage.setItem('outgoingFont', result); }; }">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;
@@ -621,9 +621,9 @@ it still does not seem to be up to the task of presenting a complete documentary
 <marquee class="input_ randomTipMarquee dckimPixelMono" title="just click the marquee if you wanted to delete it" onclick="this.style.display='none';">Never eat yellow snow. If it doesn't click, try wheeling it. Also try using "SHIFT" and "CTRL". These tips are not valuable...        I thought maybe this was a good place to put one of those nonsensical run-on marquees. Did you know that you can put anything inside of an HTML "marquee" element? You can even put another marquee. You can also change the direction of the marquee... Wow, this is so weird, I wrote a marquee about marquees... and then it never stops going around? DCKIM - it's all i know...           </marquee>
 
 
-<button id="notesTab" class="button_ button_notesTab" title=""></button>
-<button id="styleTab" class="button_ button_styleTab" title=""></button>
-<button id="codeTab"  class="button_ button_codeTab"  title=""></button>
+<button id="notesTab" class="button_ button_notesTab" title="JSON is supported\nIf invalid, then it's text"></button>
+<button id="styleTab" class="button_ button_styleTab" title="A Busy Box of Styles"></button>
+<button id="codeTab"  class="button_ button_codeTab"  title="Needs more work here..."></button>
 
 
 

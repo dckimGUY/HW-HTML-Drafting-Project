@@ -38,21 +38,11 @@ echo '<div id="mouseIconLayer"          ></div>' >> index.html;
 echo '<div id="interfaceShelf"          ></div>' >> index.html;
 echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> index.html;
 echo '<div id="scripts">' >> index.html;
-echo 'const' > ./h_hdub/z_hwObject/a_hwObject.js;
-echo 'h_hdub = {};' >> ./h_hdub/z_hwObject/a_hwObject.js;
-find h_hdub/a_programFunctions/ | sed "s/$/ = {};/g" | sed "s/\.js = {};//g" | tr '/' '.' | sed "s/\. / /g" > pasteFirst;
-find h_hdub/a_programFunctions/ | sed "s/^.*_/ = /g" | sed "s/\.js/;/g" > pasteLast;
-paste pasteFirst pasteLast | sed "s/;.*$/;/g" >> ./h_hdub/z_hwObject/a_hwObject.js;
-rm pasteFirst pasteLast;
-sed -i "s/\.\././g" ./h_hdub/z_hwObject/a_hwObject.js;
-sed -i '/js\.swp/d' ./h_hdub/z_hwObject/a_hwObject.js;
 find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' >> chalk_tmp_filenames; find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' | sed 's/^/echo ?v=$(date -r /' | sed 's/$/ +"%Y%m%d%H%M%S") >> chalk_tmp_versions;/' > chalk_tmp_versionControl; chmod 755 chalk_tmp_versionControl; . ./chalk_tmp_versionControl; paste -d '' chalk_tmp_filenames chalk_tmp_versions | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> index.html; rm chalk_tmp_filenames chalk_tmp_versions chalk_tmp_versionControl;
 echo '<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>' >> index.html;
 echo '</div>' >> index.html;
 echo '</body>' >> index.html;
 echo '</html>' >> index.html;
-
-
 
 
 ## When we use insertWindow, we are actually writing the index.html file again to that new window.
@@ -92,45 +82,6 @@ mv c_insertNewWindow.js ./h_hdub/d_handlers/c_initialization/;
 
 
 
-
-## Build the helpful tree
- 
-
-
-
-
-
-## This is a handy header and footer pair that will allow in-program tutorials or start-up files to be made easily.
-
-head -n -3 index.html > b_0_topClip;
-echo "<script>" >> b_0_topClip;
-echo "utilityLayer0.innerHTML = " >> b_0_topClip;
-echo '`' >> b_0_topClip;
-
-
-
-
-## Also make up a piece of data for an in-program button that will save start-up files.
-
-
-echo 'h_hdub.c_startup = {};' > h_hdub/z_hwObject/c_startup.js;
-echo 'h_hdub.c_startup.a_note = "This data allow entry for your own startup file metadata in c_customMetaData";' >> h_hdub/z_hwObject/c_startup.js;
-echo 'h_hdub.c_startup.b_first = `' >> h_hdub/z_hwObject/c_startup.js;
-head -3 index.html >> h_hdub/z_hwObject/c_startup.js;
-echo '`;' >> h_hdub/z_hwObject/c_startup.js;
-echo >> h_hdub/z_hwObject/c_startup.js;
-echo 'h_hdub.c_startup.c_customMetaDataHere = ``;' >> h_hdub/z_hwObject/c_startup.js;
-echo >> h_hdub/z_hwObject/c_startup.js;
-echo 'h_hdub.c_startup.d_second = `' >> h_hdub/z_hwObject/c_startup.js;
-head -n -3 index.html | tail -n +4 >> h_hdub/z_hwObject/c_startup.js;
-echo "<script>" >> h_hdub/z_hwObject/c_startup.js;
-echo 'utilityLayer0.innerHTML = \`' >> h_hdub/z_hwObject/c_startup.js;
-echo '`;' >> h_hdub/z_hwObject/c_startup.js;
-echo >> h_hdub/z_hwObject/c_startup.js;
-echo 'h_hdub.c_startup.e_third = `' >> h_hdub/z_hwObject/c_startup.js;
-echo '\`;' >> h_hdub/z_hwObject/c_startup.js;
-cat b_1_bottomClip | tail -n +2 >> h_hdub/z_hwObject/c_startup.js;
-echo '`;' >> h_hdub/z_hwObject/c_startup.js;
 
 
 

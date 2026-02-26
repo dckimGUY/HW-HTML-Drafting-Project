@@ -9,7 +9,7 @@ border: none;
 margin: none;
 padding: none;
 outline-offset: -2px;
-border-radius: 2px;
+border-radius: 4px;
 }
 .button_grid:focus  { background-color: rgba(  0,255,  0,0.5); }
 .button_grid:hover  { background-color: rgba(255,255,255,0.5); }

@@ -124,8 +124,6 @@ if (event.shiftKey) {
 
 } else {
 
-pulledText.style.pointerEvents = "";
-spaceViewToggle(keyInfo);
 
 }
 
@@ -159,15 +157,65 @@ spaceViewToggle(keyInfo);
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*   ins   */ if (kC ==  45)              { event.preventDefault(); groupPaste(Ts0);               }
-/*   home  */ if (kC ==  36)              { event.preventDefault(); groupPaste(Ts1);               }
-/* page up */ if (kC ==  33)              { event.preventDefault(); groupPaste(Ts2);               }
+/*   ins   */ if (kC ==  45)              { event.preventDefault();
+       if (!event.shiftKey) {
+pasteSingle();
+} else if ( event.shiftKey) {
+flipPhantomLair();
+}
+}
+/*   home  */ if (kC ==  36)              { event.preventDefault();
+       if (utilityLayer0.children.length > 0) {
+utilityLayer0.children[0].scrollIntoView();
+} else if (utilityLayer0.children.length == 0 && Cur.style.display != "none") {
+Cur.scrollIntoView();
+} else       {
+window.scrollTo(0,0);
+}
+}
+/* page up */ if (kC ==  33)              { event.preventDefault();
+
+
+
+       if (!event.shiftKey) {
+window.scrollBy(0,       -visualGridSize3);
+} else if ( event.shiftKey) {
+window.scrollBy(0,-0.50 * visualGridSize3);
+}
+
+
+
+
+
+
+
+}
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*  delete */ if (kC ==  46)              { event.preventDefault(); groupDeletion(Ts0);            }
-/*   end   */ if (kC ==  35)              { event.preventDefault(); groupDeletion(Ts1);            }
-/*page down*/ if (kC ==  34)              { event.preventDefault(); groupDeletion(Ts2);            }
+/*  delete */ if (kC ==  46)              { event.preventDefault();
+       if (!event.shiftKey) {
+deleteCoin(['',88,120]);
+} else if ( event.shiftKey) {
+groupToPhantomLair();
+}
+}
+/*   end   */ if (kC ==  35)              { event.preventDefault();
+       if (utilityLayer0.children.length > 0) {
+utilityLayer0.lastElementChild.scrollIntoView();
+} else if (utilityLayer0.children.length == 0 && Cur.style.display != "none") {
+Cur.scrollIntoView();
+} else       {
+window.scrollTo(0,0);
+}
+}
+/*page down*/ if (kC ==  34)              { event.preventDefault();
+       if (!event.shiftKey) {
+window.scrollBy(0,        visualGridSize3);
+} else if ( event.shiftKey) {
+window.scrollBy(0, 0.50 * visualGridSize3);
+}
+}
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
@@ -356,11 +404,21 @@ Z();                      }
 
 redraw();
 
+       if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
+}
+
 /******************************************************************************************************************************************************/
 /******************************************************************************************************************************************************/
 /***************************************************************************************************************************************************/});
 
 document.addEventListener("keyup", (event) => {
+
+
+
+
 
 
 drawSiteMap();

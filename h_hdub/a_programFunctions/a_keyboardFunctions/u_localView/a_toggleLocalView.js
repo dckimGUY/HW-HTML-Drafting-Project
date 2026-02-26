@@ -1,14 +1,11 @@
+const coinIdArray = [];
+
 function toggleLocalView() {
 
-if (topLayer.a_currentLayer!="localView") {
-
-
-
+if (topLayer.a_currentLayer != "localView") {
 if (coinFocus!=null) {
-
-
+coinIdArray.push(coinFocus.id);
 localViewReturn = topLayer.a_currentLayer;
-
 topLayer.localView.b_content.innerHTML = '';
 insertNewDuplicate([event,68,68,,,]);
 coinFocus1.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
@@ -16,8 +13,8 @@ var localViewHighlightColour = "cyan";
 var iSZ = "0px 0px " + edgeQ + "px " + localViewHighlightColour;
 const iSZa = iSZ + ",";
 coinFocus1.style.boxShadow = iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZ;
-deleteCoin([event,88,120,,,]);
-guideLayer([event,77,77,,,]);
+deleteCoin(["",88,120,,,]);
+guideLayer(["",77,77,,,]);
 if(rev==1){focusPrevious()}else{focusNext()}
 makeTopLayer("localView");
 pasteSingle([event,80,112,,,]);
@@ -27,27 +24,10 @@ singlePasteBuffer.value.pop();
 } else {
 unwrapPartsAlways();
 }
-
-
-
 }
 
-
-
-
-
-
-
-
-
-
-} else if (topLayer.a_currentLayer=="localView") {
-
-
-
-
+} else if (topLayer.a_currentLayer == "localView") {
 utilityLayer1.innerHTML = "";
-
 for (j = 0; j < utilityLayer0.children.length;j ++) {
 if (utilityLayer0.children[j].style) {
 utilityLayer0.children[j].style.outline = utilityLayer0.children[j].dataset.finishedOutline; }
@@ -57,27 +37,36 @@ utilityLayer0.children[j].firstElementChild.innerText             =            "
 if (utilityLayer0.children[j].lastElementChild) {
 utilityLayer0.children[j].lastElementChild.style.display  = "block"; }
 }
-
-
 /* IN-SHALLAH THIS LITTLE TRICK MAKES THIS FUNCTIONAL */
-spaceViewOn([,32,32,,,]);
-removePointerEventsNone();
 
+mouseIsDogged=true;
+spaceView = true;
+edgeDetect.style.display= "none";
+document.documentElement.style.cursor = document.body.style.cursor = "auto";
+for (j=0;j<utilityLayer0.children.length;j++) {
+if (utilityLayer0.children[j].style) {
+utilityLayer0.children[j].style.outline = utilityLayer0.children[j].dataset.finishedOutline;
+utilityLayer0.children[j].style.cursor = "auto";
+}
+if (utilityLayer0.children[j].firstElementChild) {
+utilityLayer0.children[j].firstElementChild.style.backgroundColor = "transparent";
+utilityLayer0.children[j].firstElementChild.innerText             =            "";
+}
+if (utilityLayer0.children[j].lastElementChild) {
+utilityLayer0.children[j].lastElementChild.style.display  = "block";
+}
+}
+
+removePointerEventsNone();
 localViewString = utilityLayer0.innerHTML.toString();
- 
 setTimeout(() => {
 spaceViewOff([,32,32,,,]);
 restorePointerEventsNone();
 }, 1);
-
-
-
 makeTopLayer(localViewReturn);
 localViewReturn = null;
-
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = localViewString;
 coinFocus.style.boxShadow = "";
-
 for (let j = 0; j < coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length; j++) {
 let part = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j];
 part.style.left   = parseInt(part.style.left) - parseInt(coinFocus.style.left) + "px";
@@ -85,16 +74,16 @@ part.style.top    = parseInt(part.style.top)  - parseInt(coinFocus.style.top)  +
 part.dataset.left = part.style.left;
 part.dataset.top  = part.style.top ;
 }
+coinFocus.id = coinIdArray.pop();
+if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild && coinFocus.id == coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.id) {
+coinFocus.id = "wrapper_" + coinFocus.id;
+}
+}
 
-
-
-
-
-
-
-
-
-
+       if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
 }
 
 }

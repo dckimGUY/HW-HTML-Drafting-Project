@@ -32,10 +32,10 @@ newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
 newCoin.dataset.wrapper               =      coinFocus.dataset.wrapper ;
 newCoin.dataset.outlineColour         =      coinFocus.dataset.outlineColour;
 newCoin.dataset.notes                 = `{
-"notes" : "verbose notes",
-"YAML"  : "instructions for AI regarding this part",
 "initialDisplay" : "block",
-"other" : "enter additional data in JSON format"
+"notes" : "Written notes.",
+"YAML"  : "Coded instructions",
+"data"  : "Additional JSON"
 }`;
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
@@ -123,9 +123,6 @@ coinFocus.style.top       =    parseInt(Cur.dataset.top)          + "px";
 coinFocus.style.width     =    T + "px"                                ;
 coinFocus.style.height    =    T + "px"                                ;
 curFocus                =    1                                        ;
-logMessage=`"N"-insertion at cursor,     jsName : "${newCoin.dataset.jsName}"`;
-eM=0;modeRouter(e,5); 
-logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 }
 }
 

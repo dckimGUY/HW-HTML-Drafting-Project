@@ -720,7 +720,7 @@ reader.onload = evt => {
 
 
 
-if (file.name.startsWith("HDUB_Project")) {
+if (file.name.startsWith("HDUB_")) {
 
 
 
@@ -1485,7 +1485,6 @@ const img = new Image();
 img.onload = () => {
 img.loading = "lazy";
 insertNewImage([e,'','',e.shiftKey,e.ctrlKey,e.altKey],img);
-modeRouter('',1);
 };
 if (useBase64forImages==true) {
 img.src = evt.target.result;

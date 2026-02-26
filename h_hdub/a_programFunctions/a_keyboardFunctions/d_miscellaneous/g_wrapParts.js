@@ -1,94 +1,55 @@
 function wrapParts() {
-if (coinFocus!=null) {
+if (coinFocus != null && utilityLayer0.children.length>1) {
+
+const group = coinFocus.dataset.coinTrip;
 
 let originalScrollX = window.scrollX;
 let originalScrollY = window.scrollY;
 
+const newCoin = insertNewCoin([null,78,78,false,false,false]);
+
+newCoin.remove();
+
 const furthest = findFurthestExtent();
 const least    = findLeastExtent()   ;
+let   rank;
+       if (group == Ts0) {
+               rank = 0;
+} else if (group == Ts1) {
+               rank = 1;
+} else if (group == Ts2) {
+               rank = 2;
+}
 
-if (coinTrip.sel0.length>1) {
-const newCoin0 = insertNewCoin([null,78,78,false,false,false]);
-newCoin0.dataset.coinTrip=Ts0;
+
 readCoins();
 spaceViewOn();
 removePointerEventsNone();
-for (let j = 0; j < coinTrip.sel0.length; j++) {
-if (coinTrip.sel0[j]!=newCoin0) {
-newCoin0.div.appendChild(coinTrip.sel0[j]);
-}
-newCoin0.style.left     =    least[0][1] + "px";
-newCoin0.dataset.left   =    least[0][1] + "px";
-newCoin0.style.top      =    least[0][0] + "px";
-newCoin0.dataset.top    =    least[0][0] + "px";
-newCoin0.style.width    = furthest[0][1] - least[0][1] + "px";
-newCoin0.dataset.width  = furthest[0][1] - least[0][1] + "px";
-newCoin0.style.height   = furthest[0][0] - least[0][0] + "px";
-newCoin0.dataset.height = furthest[0][0] - least[0][0] + "px";
-newCoin0.dataset.wrapper = "true";
-}
-for (let j = 0; j < newCoin0.div.children.length; j++) {
-newCoin0.div.children[j].style.left   = parseInt(newCoin0.div.children[j].style.left) - least[0][1] + "px";
-newCoin0.div.children[j].dataset.left = parseInt(newCoin0.div.children[j].style.left) - least[0][1] + "px";
-newCoin0.div.children[j].style.top    = parseInt(newCoin0.div.children[j].style.top ) - least[0][0] + "px";
-newCoin0.div.children[j].dataset.top  = parseInt(newCoin0.div.children[j].style.top ) - least[0][0] + "px";
-}
+
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+utilityLayer0.children[j].lastElementChild.firstElementChild.style.display = "none";
+utilityLayer0.children[j].lastElementChild.firstElementChild.innerText = "";
+newCoin.div.appendChild(utilityLayer0.children[j]);
 }
 
-if (coinTrip.sel1.length>1) {
-const newCoin1 = insertNewCoin([null,78,78,false,false,false]);
-newCoin1.dataset.coinTrip=Ts1;
-readCoins();
-spaceViewOn();
-removePointerEventsNone();
-for (let j = 0; j < coinTrip.sel1.length; j++) {
-if (coinTrip.sel1[j]!=newCoin1) {
-newCoin1.div.appendChild(coinTrip.sel1[j]);
-}
-newCoin1.style.left     =    least[1][1] + "px";
-newCoin1.dataset.left   =    least[1][1] + "px";
-newCoin1.style.top      =    least[1][0] + "px";
-newCoin1.dataset.top    =    least[1][0] + "px";
-newCoin1.style.width    = furthest[1][1] - least[1][1] + "px";
-newCoin1.dataset.width  = furthest[1][1] - least[1][1] + "px";
-newCoin1.style.height   = furthest[1][0] - least[1][0] + "px";
-newCoin1.dataset.height = furthest[1][0] - least[1][0] + "px";
-newCoin1.dataset.wrapper = "true";
-}
-for (let j = 0; j < newCoin1.div.children.length; j++) {
-newCoin1.div.children[j].style.left   = parseInt(newCoin1.div.children[j].style.left) - least[1][1] + "px";
-newCoin1.div.children[j].dataset.left = parseInt(newCoin1.div.children[j].style.left) - least[1][1] + "px";
-newCoin1.div.children[j].style.top    = parseInt(newCoin1.div.children[j].style.top ) - least[1][0] + "px";
-newCoin1.div.children[j].dataset.top  = parseInt(newCoin1.div.children[j].style.top ) - least[1][0] + "px";
-}
-}
+utilityLayer0.appendChild(newCoin);
 
-if (coinTrip.sel2.length>1) {
-const newCoin2 = insertNewCoin([null,78,78,false,false,false]);
-newCoin2.dataset.coinTrip=Ts2;
-readCoins();
-spaceViewOn();
-removePointerEventsNone();
-for (let j = 0; j < coinTrip.sel2.length; j++) {
-if (coinTrip.sel2[j]!=newCoin2) {
-newCoin2.div.appendChild(coinTrip.sel2[j]);
-}
-newCoin2.style.left     =    least[2][1] + "px";
-newCoin2.dataset.left   =    least[2][1] + "px";
-newCoin2.style.top      =    least[2][0] + "px";
-newCoin2.dataset.top    =    least[2][0] + "px";
-newCoin2.style.width    = furthest[2][1] - least[2][1] + "px";
-newCoin2.dataset.width  = furthest[2][1] - least[2][1] + "px";
-newCoin2.style.height   = furthest[2][0] - least[2][0] + "px";
-newCoin2.dataset.height = furthest[2][0] - least[2][0] + "px";
-newCoin2.dataset.wrapper = "true";
-}
-for (let j = 0; j < newCoin2.div.children.length; j++) {
-newCoin2.div.children[j].style.left   = parseInt(newCoin2.div.children[j].style.left) - least[2][1] + "px";
-newCoin2.div.children[j].dataset.left = parseInt(newCoin2.div.children[j].style.left) - least[2][1] + "px";
-newCoin2.div.children[j].style.top    = parseInt(newCoin2.div.children[j].style.top ) - least[2][0] + "px";
-newCoin2.div.children[j].dataset.top  = parseInt(newCoin2.div.children[j].style.top ) - least[2][0] + "px";
-}
+newCoin.anchor.style.zIndex = 0;
+newCoin.style.left     =    least[rank][1] + "px";
+newCoin.dataset.left   =    least[rank][1] + "px";
+newCoin.style.top      =    least[rank][0] + "px";
+newCoin.dataset.top    =    least[rank][0] + "px";
+newCoin.style.width    = furthest[rank][1] - least[3][1] + "px";
+newCoin.dataset.width  = furthest[rank][1] - least[3][1] + "px";
+newCoin.style.height   = furthest[rank][0] - least[3][0] + "px";
+newCoin.dataset.height = furthest[rank][0] - least[3][0] + "px";
+newCoin.firstElementChild.style.pointerEvents = "none";
+
+for (let j = 0; j < newCoin.div.children.length; j++) {
+newCoin.div.children[j].style.left   = parseInt(newCoin.div.children[j].style.left) - least[rank][1] + "px";
+newCoin.div.children[j].dataset.left = parseInt(newCoin.div.children[j].style.left) - least[rank][1] + "px";
+newCoin.div.children[j].style.top    = parseInt(newCoin.div.children[j].style.top ) - least[rank][0] + "px";
+newCoin.div.children[j].dataset.top  = parseInt(newCoin.div.children[j].style.top ) - least[rank][0] + "px";
 }
 
 recoverColouration();
@@ -101,4 +62,6 @@ window.scrollTo(originalScrollX,originalScrollY);
 Z();
 
 }
+
+
 }

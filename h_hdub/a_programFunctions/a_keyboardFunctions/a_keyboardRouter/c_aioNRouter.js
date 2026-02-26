@@ -28,6 +28,5 @@ alt    = keyInfo[5];
 /*    o    */ if (kC ==  79 && cC == 111) { insertNewWindow(keyInfo);    }/*    O    */ if (kC ==  79 && cC ==  79) { insertNewWindow(keyInfo);    }
 }
 
-utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.setAttribute("contenteditable", true);
 utilityLayer0.lastElementChild.firstElementChild.style.zIndex = 0;
 }

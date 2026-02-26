@@ -2,16 +2,7 @@
                        ui.folder51button.click =
              function() { folder5Selector(1); };
                        ui.folder52button.click =
-             function() {
-folder5Selector(2);
-/*
-let selectedTheme = userCustomTheme.currentTheme;
-loadTheme("i8");
-userCustomTheme.currentTheme = selectedTheme;
-localStorage.setItem("currentTheme", userCustomTheme.currentTheme);
-drawFury(true);
-*/
-};
+             function() { folder5Selector(2); };
                  function folder5Selector(folderNumber) { for (let j = 1; j < 3; j++) {
  document.getElementById("folder5" + j).style.display = "none"; }
  document.getElementById("folder5" + folderNumber).style.display = "block";

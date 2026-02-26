@@ -59,6 +59,16 @@ body { background-color: white; font-size: 32px; font-family: JungYulKim2; }
 
 <br><br>
 
+
+
+
+
+<p><span class="heading1" style="color: red;">WARNING: MOST OF WHAT YOU ARE READING HERE HAS BEEN CHANGED, AND THIS HAS NOT BEEN UPDATED.</span></p>
+
+
+
+
+
 <p><span class="heading1">NEW: Mouse Functionality Described in Brief</span></p>
 <br>
 <p class="xyl0">The mouse functions have recently been enhanced greatly. The program now features 'draggable' edges, which is very convenient. The drag edges are used when the mouse is within the visible 'drag-region'. Keep in mind that the corners also work as expected.</p>

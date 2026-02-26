@@ -107,7 +107,7 @@ if (coinFocus != null) {
 itemButton.style.backgroundColor = greyColour;
 } else if (utilityLayer0.children[j].dataset.coinTrip == "1") {
 itemButton.style.backgroundColor = pinkColour;
-} else if (utilityLayer0.children[j].dataset.coinTrip == "?") {
+} else if (utilityLayer0.children[j].dataset.coinTrip == "2") {
 itemButton.style.backgroundColor = blueColour;
 }
 }
@@ -154,7 +154,7 @@ if (coinFocus != null) {
 //itemButton.style.backgroundColor = greyColour;
 } else if (singlePasteBuffer.value[j].dataset.coinTrip == "1") {
 //itemButton.style.backgroundColor = pinkColour;
-} else if (singlePasteBuffer.value[j].dataset.coinTrip == "?") {
+} else if (singlePasteBuffer.value[j].dataset.coinTrip == "2") {
 //itemButton.style.backgroundColor = blueColour;
 }
 itemButton.style.backgroundColor = "lightgrey";
@@ -205,12 +205,21 @@ coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
 flipAnchorZ([,,,false,]);
-coinFocus.dataset.coinTrip = "?";
+coinFocus.dataset.coinTrip = "2";
 readCoins();
 recoverColouration();
 } else if (!event.shiftKey && coinFocus != null) {
-coinFocus.dataset.coinTrip = "?";
+coinFocus.dataset.coinTrip = "2";
 readCoins(); recoverColouration();
+if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
+}
+setTimeout(() => {
+loadSidebar1();
+updateInfoShelf();
+}, 10);
 }
 `);
 const itemButton1 = document.createElement("button");
@@ -234,6 +243,15 @@ recoverColouration();
 } else if (!event.shiftKey && coinFocus != null) {
 coinFocus.dataset.coinTrip = "1";
 readCoins(); recoverColouration();
+if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
+}
+setTimeout(() => {
+loadSidebar1();
+updateInfoShelf();
+}, 10);
 }
 `);
 const itemButton2 = document.createElement("button");
@@ -257,6 +275,15 @@ recoverColouration();
 } else if (!event.shiftKey && coinFocus != null) {
 coinFocus.dataset.coinTrip = "0";
 readCoins(); recoverColouration();
+if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
+}
+setTimeout(() => {
+loadSidebar1();
+updateInfoShelf();
+}, 10);
 }
 `);
 

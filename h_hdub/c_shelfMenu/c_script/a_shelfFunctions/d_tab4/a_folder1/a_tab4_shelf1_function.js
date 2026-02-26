@@ -786,7 +786,7 @@ utilityLayer0.lastElementChild.dataset.coinTrip    = "1";
 } else if (ui["hdub" + nextLetter].colour == "hdubGrey") {
 utilityLayer0.lastElementChild.dataset.coinTrip    = "0";
 } else if (ui["hdub" + nextLetter].colour == "hdubBlue") {
-utilityLayer0.lastElementChild.dataset.coinTrip    = "?";
+utilityLayer0.lastElementChild.dataset.coinTrip    = "2";
 }
 } catch { }
 
@@ -1107,22 +1107,22 @@ ui.hdubF.title = 'form        '; ui.hdubF.value = `<form name="form" style="widt
 <input type="button" name="button" style="width: 100%; height: 20%;" value="">
 </form>`;
 ui.hdubG.title = '            '; ui.hdubG.value = '';
-ui.hdubH.title = '            '; ui.hdubH.value = '';
+ui.hdubH.title = 'header 1'    ; ui.hdubH.value = '<h1 style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed red;" contenteditable="true"></h1>';
 ui.hdubI.title = 'iframe      '; ui.hdubI.value = '<iframe src="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;"></iframe>';
 ui.hdubJ.title = '            '; ui.hdubJ.value = '';
 ui.hdubK.title = '            '; ui.hdubK.value = '';
-ui.hdubL.title = '            '; ui.hdubL.value = '';
-ui.hdubM.title = 'marquee     '; ui.hdubM.value = '<marquee direction="left" scrollamount="4" behavior="scroll" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;" onmouseover="this.stop();" onmouseout="this.start();">default</marquee>';
+ui.hdubL.title = 'ordered list'; ui.hdubL.value = '<ol style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed purple;" contenteditable="true"><li></li></ol>';
+ui.hdubM.title = 'marquee     '; ui.hdubM.value = '<marquee direction="left" scrollamount="4" behavior="scroll" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;" onmouseover="this.stop();" onmouseout="this.start();" contenteditable="true">default</marquee>';
 ui.hdubN.title = 'number input'; ui.hdubN.value = '<input type="number" name="number" min="" max="" step="" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
-ui.hdubP.title = '            '; ui.hdubP.value = '';
-ui.hdubQ.title = 'checkbox    '; ui.hdubQ.value = '<input type="checkbox" name="checkbox" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
+ui.hdubP.title = 'paragraph'   ; ui.hdubP.value = '<p style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed green;" contenteditable="true"></p>';
+ui.hdubQ.title = 'blockquote'  ; ui.hdubQ.value = '<blockquote style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed magenta;" contenteditable="true"></blockquote>';
 ui.hdubR.title = 'radio button'; ui.hdubR.value = '<input type="radio" name="radio" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
 ui.hdubS.title = 'slider range'; ui.hdubS.value = '<input type="range" name="range" min="" max="" step="" value="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
 ui.hdubT.title = 'textarea    '; ui.hdubT.value = '<textarea name="textarea" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;"></textarea>';
-ui.hdubU.title = '            '; ui.hdubU.value = '';
+ui.hdubU.title = 'unordered list'; ui.hdubU.value = '<ul style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed purple;" contenteditable="true"><li></li></ul>';
 ui.hdubV.title = 'value input '; ui.hdubV.value = '<input type="value" name="value" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
 ui.hdubW.title = '            '; ui.hdubW.value = '';
-ui.hdubY.title = '            '; ui.hdubY.value = '';
+ui.hdubY.title = 'checkbox    '; ui.hdubY.value = '<input type="checkbox" name="checkbox" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
 ui.hdubZ.title = '            '; ui.hdubZ.value = '';
 
 
@@ -1318,7 +1318,7 @@ ui.hdubBlue.ref.style.outlineOffset = "-28px";
 ui.hdubBlue.ref.style.outline       =  "28px dotted black";
 ui[ui.hdub.selected].colour = 'hdubBlue'; localStorage.setItem(ui.hdub.selected + '.colour', ui[ui.hdub.selected].colour);
 if (event.shiftKey && coinFocus != null) {
-coinFocus.dataset.coinTrip = "?";
+coinFocus.dataset.coinTrip = "2";
 readCoins(); recoverColouration();
 }
 }

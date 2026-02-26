@@ -15,7 +15,12 @@ var   edgeDetect        ; edgeDetect         = document.createElement("div")    
 
 var cursorDisplay = "block";
 
-var lastFlow = "global";
+var lastFlow = "colour";
+
+
+if (localStorage.getItem("pageFont")) {
+document.body.style.fontFamily = localStorage.getItem("pageFont");
+}
 
 edgeDetect.style.position        =           "absolute";
 edgeDetect.style.pointerEvents   =               "none";
@@ -181,7 +186,7 @@ const thePhantomLair = document.createElement("div");
 
 thePhantomLair.innerHTML  = "";
 thePhantomLair.style.pointerEvents = "none";
-thePhantomLair.style.opacity     = "0.05";
+thePhantomLair.style.opacity     = "0.15";
 thePhantomLair.id = "thePhantomLair";
 document.body.prepend(thePhantomLair);
 
@@ -262,8 +267,6 @@ topLayer[layerName].header = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="description" content="{{description}}">
 <title>{{title}}</title>
-</head>
-<body style="background-color: {{backgroundColour}};">
 `;
 topLayer[layerName].footer = `
 </body>
@@ -1283,7 +1286,7 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflo
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = `
 <p><b>DCKIM - HTML Drafting Project:</b></p>
 
-<p>All outgoing saved HTML has preparatory codework, basically ready to go for you to finish it out. Pretty much top notch for prep work. Everything is branched from a single object called 'ui'. You can access everything about your HTML parts by using 'ui.partName.ref.style.backgroundColor' for example.</p>
+<p>All outgoing saved HTML has preparatory codework, basically ready to go for you to finish it out. Pretty much top notch for prep work. Everything is branched from a single object.</p>
 <ol>
 <li>F1 Help Menu (mostly accurate, some is out of date)</li>
 <li>spacebar: live preview</li>
@@ -1320,26 +1323,34 @@ let splashScreen = document.createElement("img");
 let firstTime = "true";
 if (localStorage.getItem("firstTime")) { firstTime = localStorage.getItem("firstTime"); }
 
-if (!window.opener && firstTime == "true") {
-
-loadTheme("b1");
-
+if (firstTime == "true") {
+loadTheme("e4");
+tabSelector(4); folder4Selector(2);
 localStorage.setItem("firstTime", "false");
+}
 
-splashScreen.src="d_images/splash_screen.png";
-splashScreen.style.position="absolute";
-splashScreen.style.zIndex="999999999999";
-splashScreen.style.width="100%";
-splashScreen.style.border="none";
-//splashScreen.style.borderRadius="16px";
-//splashScreen.style.outline="lime solid 5px";
-//splashScreen.style.boxShadow="rgba(255, 255, 255, 0.75) 0px 0px 48px,rgba(255, 255, 255, 0.75) 0px 0px 48px";
 
-splashScreen.style.left=`0px`;
-splashScreen.style.top=`0px`;
 
+
+
+
+function keyMap() {
+const newWindow = window.open();
+newWindow.location = "./n_art/keyMap.html";
+}
+
+
+
+
+
+
+
+if (!window.opener) {
+splashScreen.classList = "splashScreen";
+splashScreen.src=splashScreenBase64;
+splashScreen.title = "CLICK TO OPEN KEYMAP"
+splashScreen.setAttribute("onclick", 'keyMap();');
 document.body.appendChild(splashScreen);
-
 splashScreenVisible = true;
 }
 
@@ -1348,6 +1359,7 @@ const z_wizardCode = {};
 /* DRAW INITIAL BUTTON AFTER THE FONT IS LOADED */
 document.fonts.load("16px 'dckimPixelMono'").then(() => {
 drawButton7();
+redraw();
 });
 
 redraw();
@@ -1358,10 +1370,9 @@ updateInfoShelf();
 
 spaceViewOn();
 spaceViewOff();
-
+coinFocus.click();
 
 /* Completion Message */
-console.clear();
 console.log(
 `%c${document.querySelector('meta[name="last-build"]').content}
 boot sequence successful:

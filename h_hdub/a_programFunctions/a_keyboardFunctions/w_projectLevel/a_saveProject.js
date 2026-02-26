@@ -53,7 +53,7 @@ const url = URL.createObjectURL(blob);
 const a = document.createElement('a');
 a.href = url;
 //filename = filename.replace(/ /g, '-');
-a.download = "HDUB_Project_" + topLayer.aa_project_name + "@_" + dateSuffix + ".html";
+a.download = "HDUB_" + topLayer.aa_project_name + "@_" + dateSuffix + ".html";
 
 a.click();
 URL.revokeObjectURL(url);

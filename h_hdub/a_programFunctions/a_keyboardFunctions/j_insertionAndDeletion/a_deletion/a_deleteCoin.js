@@ -84,7 +84,6 @@ multiplePasteBuffer.value = [];
 
 readCoins();
 multiplePasteBuffer.value = buffer.value;
-//spreadReference(buffer.value,multiplePasteBuffer);
 if (utilityLayer0.children.length!=0) {
 coinFocus=utilityLayer0.lastElementChild;
 coinFocus.style.outline = fB;

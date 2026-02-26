@@ -322,7 +322,7 @@ let
 /*                                                                                                  */
 /****************************************************************************************************/
 /*                        */                                                                      /**/
-/*    Tripartite Text     */      Ts0=         "0",      Ts1=         "1",      Ts2=         "?", /**/
+/*    Tripartite Text     */      Ts0=         "0",      Ts1=         "1",      Ts2=         "2", /**/
 /*    Font Family         */      Es0= "monospace",      Es1= "monospace",      Es2= "monospace", /**/
 /*    Foreground Color    */      Fs0=      "#000",      Fs1=      "#000",      Fs2=      "#000", /**/
 /*    Outline Color       */      Cs0=      "#CCC",      Cs1=      "#A0A",      Cs2=      "#0CC", /**/
@@ -337,7 +337,7 @@ let
 /*                                                                                                  */
 /****************************************************************************************************/
 /*                        */                                                                      /**/
-/*    Tripartite Text     */      Tm0=         "0",      Tm1=         "1",      Tm2=         "?", /**/
+/*    Tripartite Text     */      Tm0=         "0",      Tm1=         "1",      Tm2=         "2", /**/
 /*    Font Family         */      Em0= "monospace",      Em1= "monospace",      Em2= "monospace", /**/
 /*    Foreground Color    */      Fm0=      "#FFF",      Fm1=      "#FFF",      Fm2=      "#FFF", /**/
 /*    Outline Color       */      Cm0=      "#CCC",      Cm1=      "#A0A",      Cm2=      "#0CC", /**/

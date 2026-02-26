@@ -66,10 +66,10 @@ newCoin.dataset.children              =         "";
 newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
 newCoin.dataset.notes                 = `{
-"notes" : "verbose notes",
-"YAML"  : "instructions for AI regarding this part",
 "initialDisplay" : "block",
-"other" : "enter additional data in JSON format"
+"notes" : "Written notes.",
+"YAML"  : "Coded instructions",
+"data"  : "Additional JSON"
 }`;
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
@@ -176,7 +176,6 @@ newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    parseInt(coinFocus.dataset.width) +"px";
 newCoin.style.height    =    parseInt(coinFocus.dataset.height)+"px";
 logMessage=`"D"-duplicated in-place,      jsName : "${newCoin.dataset.jsName}"`;
-modeRouter(e,1);
 }
 
 }
@@ -196,9 +195,6 @@ newCoin.style.width    = T*Math.ceil((edgeQ*2)/T)+"px";
 newCoin.style.height   = T*Math.ceil((edgeQ*2)/T)+"px";
                               ;
 curFocus                =    1                                        ;
-logMessage=`"N"-insertion at cursor,     jsName : "${newCoin.dataset.jsName}"`;
-eM=0;modeRouter(e,5); 
-logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
 }
 
 
@@ -277,8 +273,8 @@ div.style.paddingRight            = template.default.paddingRight            ;
 div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
-div.innerHTML = '<div style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></div>';
-
+div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;" contenteditable="true"></p>';
+//newCoin.div.setAttribute("contenteditable", true);
 
 if (hauptMode==0) {
 utilityLayer0.appendChild(newCoin);
@@ -312,7 +308,6 @@ coinFocus =newCoin;
 curFocus  = 0;
 coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
-
 
 return(newCoin);
 

@@ -717,7 +717,7 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.lastElementCh
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.lastElementChild.style.height = "100%";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.lastElementChild.style.left   =  "0px";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.lastElementChild.style.backgroundSize = "100% 100%";
-coinFocus.dataset.coinTrip = "?";
+coinFocus.dataset.coinTrip = "2";
 }, time);
 time += 100;
 }

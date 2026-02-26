@@ -40,4 +40,18 @@ ui.setLayer23.click              = function() { if (!event.shiftKey) { makeTopLa
 ui.setLayer24.click              = function() { if (!event.shiftKey) { makeTopLayer("y_layer24"); } else if ( event.shiftKey) { deMinimis(false,lastFactor,'','','',topLayer.y_layer24.b_content.innerHTML); } };
 ui.setLayer25.click              = function() { if (!event.shiftKey) { makeTopLayer("z_layer25"); } else if ( event.shiftKey) { deMinimis(false,lastFactor,'','','',topLayer.z_layer25.b_content.innerHTML); } };
 
+/*
 
+THIS IS SOME PREPARATORY WORK TO COPY A FILE INFORMATION
+
+
+
+let nameList = topLayer[layerArray[j]].filename + " =\n[";
+for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
+nameList += '\n"' + topLayer[layerArray[j]].b_content.children[i].id + '"';
+if (i != topLayer[layerArray[j]].b_content.children.length - 1) {
+nameList += ',';
+}
+}
+nameList += "\n];";
+*/

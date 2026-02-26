@@ -4,6 +4,17 @@ document.getElementById("animationTiming").value = localStorage.getItem("animato
 
 
 
+
+
+
+
+if (localStorage.getItem("navUpscale")) {
+document.getElementById("navUpscale").innerText = localStorage.getItem("navUpscale");
+}
+
+
+
+
 document.addEventListener("mousewheel", (event) => {
 
 
@@ -74,6 +85,15 @@ document.getElementById("navUpscale").innerText = 1;
 if (parseInt(document.getElementById("navUpscale").innerText) > 64) {
 document.getElementById("navUpscale").innerText = 64;
 }
+
+localStorage.setItem("navUpscale", document.getElementById("navUpscale").innerText);
+
+
+
+
+
+
+
 } else if (event.target == document.getElementById("partY")) {
 event.preventDefault(); event.stopPropagation();
 if ( event.shiftKey&& event.ctrlKey) {

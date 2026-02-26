@@ -1,9 +1,15 @@
 function unwrapParts() {
 if (coinFocus!=null) {
 
-if (coinFocus.lastElementChild&&coinFocus.lastElementChild.firstElementChild&&coinFocus.lastElementChild.firstElementChild.nextElementSibling) {
+if (
+coinFocus.lastElementChild &&
+coinFocus.lastElementChild.firstElementChild &&
+coinFocus.lastElementChild.firstElementChild.nextElementSibling
+) {
 coinFocus.lastElementChild.lastElementChild.previousElementSibling = coinFocus.lastElementChild.firstElementChild.nextElementSibling;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length > 1 && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.dataset && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.dataset.coinTrip) {
+if (
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length >= 1 && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.dataset && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.dataset.coinTrip
+) {
 for (let j = 0; j < coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length; j++) {
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.left   = parseInt(coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.left) + parseInt(coinFocus.style.left) + "px"; 
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].dataset.left = parseInt(coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j].style.left) + "px"; 

@@ -2,18 +2,18 @@ shelfMenuHTML.tab1.folder2.HTML = `
 
 <input id="projectName" name="projectName" class="input_ input_projectName dckimPixelMono" type="value" title="Project Name" placeholder="projectName" spellcheck="false">
 
-<button id="coin49592" class="button_ button_coin49592" title="Just DRAG the project file back onto the screen, it's easier."></button>
-<button id="coin54398" class="button_ button_coin54398" title="Just use the 'S' key on the keyboard."></button>
+<button id="coin49592" class="button_ button_coin49592" title="To Open a Project:\nDrag the File to the Screen"></button>
+<button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
 <button id="coin77155" class="button_ button_coin77155" title="this does exactly the chosen type of save, also save using SHIFT on the level number below"></button>
 
-<button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="clipboard: minimal with no id/style/class; SHIFT for colour group, +CTRL to save '.txt'. This is working for textual HTML stuff only, no images or buttons yet."></button>
+<button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="CLIPBOARD: Minimal Without id/style/class;\n+SHIFT for Colour Group\n+CTRL to Save '.txt'.\nWorks for textual HTML stuff only,\nno images or buttons yet."></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>
 <button id="coin70038" class="button_ button_coin70038" title=""></button>
 
-<input  id="coin77671" class="input_  input_coin77671 dckimPixelMono"  type="value" placeholder="emptyFileName" spellcheck="false" title="this serves as the file name and the title, it should contain no spaces, this is inserted as the title in the metadata when you save using the button above">
+<input  id="coin77671" class="input_  input_coin77671 dckimPixelMono"  type="value" placeholder="emptyFileName" spellcheck="false" title="Filename/Title\n\Use Best File Naming Rules">
 
-<textarea id="levelNotes" class="textarea_ input_levelNotes" placeholder="level notes" spellcheck="false" title="this is only note space" ondblclick="if (parseInt(this.style.height) == 69) { this.style.height = '301px'; } else { this.style.height = '69px'; } this.selectionStart = this.selectionEnd; "></textarea>
+<textarea id="levelNotes" class="textarea_ input_levelNotes" placeholder="level notes" spellcheck="false" title="This is only note space.\n(for now)\nDoubleClick to Expand" ondblclick="if (parseInt(this.style.height) == 69) { this.style.height = '301px'; } else { this.style.height = '69px'; } this.selectionStart = this.selectionEnd; "></textarea>
 
 <button id="setLayer1"  class="button_ button_setLevel button_setLayer1"  title=""></button>
 <button id="setLayer2"  class="button_ button_setLevel button_setLayer2"  title=""></button>
@@ -41,5 +41,5 @@ shelfMenuHTML.tab1.folder2.HTML = `
 <button id="setLayer24" class="button_ button_setLevel button_setLayer24" title=""></button>
 <button id="setLayer25" class="button_ button_setLevel button_setLayer25" title=""></button>
 
-<textarea id="pageDescription" class="input_  pageDescription dckimPixelMono" placeholder="short description" spellcheck="false" title="OpenGraph page description text, this is inserted when you use the save button above"></textarea>
+<textarea id="pageDescription" class="input_  pageDescription dckimPixelMono" placeholder="short description" spellcheck="false" title="OpenGraph Page Description"></textarea>
 `;

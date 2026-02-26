@@ -1,5 +1,7 @@
 function makeItContentEditable(keyInfo) {
 
+
+
 const
 e      = keyInfo[0],
 kC     = keyInfo[1],
@@ -51,5 +53,14 @@ noteStyle("<u>E</u><br><span style='font-size: 0.5em;'>content-editable:</span><
 
 }
 }
+
 }
+
+
+
+
+
+
+
+
 }
