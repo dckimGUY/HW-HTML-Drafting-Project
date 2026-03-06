@@ -1,5 +1,8 @@
 function constructionTuner(keyInfo) {
 
+generalTuner();
+
+/*
        if (mode==0) {
 windowTuner();
 } else if (mode==1) {
@@ -12,5 +15,6 @@ duplicateTuner();
 tricolourTuner();
 } else if (mode==9) {
 }
+*/
 
 }

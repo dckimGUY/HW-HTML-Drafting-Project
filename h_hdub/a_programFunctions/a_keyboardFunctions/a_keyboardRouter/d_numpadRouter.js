@@ -20,4 +20,5 @@ styleTuner(keyInfo);
 
 }
 
+drawLiv();
 }

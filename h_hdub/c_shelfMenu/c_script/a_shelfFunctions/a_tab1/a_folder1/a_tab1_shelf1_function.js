@@ -1,4 +1,5 @@
 function flipPhantomLair() {
+if (utilityLayer0.children.length != 0 || thePhantomLair.children.length != 0) {
 let middleman = document.createElement("div");
 middleman.innerHTML      = thePhantomLair.innerHTML;
 thePhantomLair.innerHTML = utilityLayer0.innerHTML;
@@ -10,11 +11,21 @@ singlePasteBuffer.value[j] = thePhantomLair.children[j];
 if (utilityLayer0.children.length != 0) {
 coinFocus = utilityLayer0.children[0];
 }
-readCoins(); recoverColouration(); redraw();
+readCoins(); recoverColouration();
+
+
+buzzWord(2,"flip phantomLair",64,document.getElementById("coin72275").value,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32);
+
+if (lastFlow == "colour") reflowPerTrip();
+if (lastFlow == "global") reflowGlobal(rev,0);
+
+focusFirst();
+redraw();
+drawLiv();
 loadSidebar1();
 updateInfoShelf();
 }
-
+}
 
 
 
@@ -80,13 +91,21 @@ if (utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementS
 } catch {  }
 
       itemButton.setAttribute("onclick", `
-coinFocus1 = coinFocus;
-coinFocus = document.getElementById('${utilityLayer0.children[j].id}');
-coinFocus.style.outline = fB;
-coinFocus.style.outlineOffset = fBO;
+focusSet(document.getElementById('${utilityLayer0.children[j].id}'));
+if (event.shiftKey) {
 document.getElementById('${utilityLayer0.children[j].id}').scrollIntoView({behavior:'auto', block: 'center', inline: 'center'});
+}
 updateInfoShelf();
 `);
+
+
+
+
+      itemButton.title = JSON.stringify([utilityLayer0.children[j].id]);
+
+
+
+
       itemButton.innerText = `${utilityLayer0.children[j].id}`;
 const deletionButton = document.createElement("button");
       deletionButton.classList = "coinDelete";
@@ -104,11 +123,11 @@ if (coinFocus != null) { coinFocus.scrollIntoView({behavior:'auto', block: 'cent
       deletionButton.innerText = "x";
 if (coinFocus != null) {
        if (utilityLayer0.children[j].dataset.coinTrip == "0") {
-itemButton.style.backgroundColor = greyColour;
+itemButton.style.backgroundColor = coinColour0;
 } else if (utilityLayer0.children[j].dataset.coinTrip == "1") {
-itemButton.style.backgroundColor = pinkColour;
+itemButton.style.backgroundColor = coinColour1;
 } else if (utilityLayer0.children[j].dataset.coinTrip == "2") {
-itemButton.style.backgroundColor = blueColour;
+itemButton.style.backgroundColor = coinColour2;
 }
 }
 if (coinFocus != null && utilityLayer0.children[j] == coinFocus) {
@@ -151,11 +170,11 @@ updateInfoShelf();
       itemButton.innerText = `${singlePasteBuffer.value[j].id}`;
 if (coinFocus != null) {
        if (singlePasteBuffer.value[j].dataset.coinTrip == "0") {
-//itemButton.style.backgroundColor = greyColour;
+//itemButton.style.backgroundColor = coinColour0;
 } else if (singlePasteBuffer.value[j].dataset.coinTrip == "1") {
-//itemButton.style.backgroundColor = pinkColour;
+//itemButton.style.backgroundColor = coinColour1;
 } else if (singlePasteBuffer.value[j].dataset.coinTrip == "2") {
-//itemButton.style.backgroundColor = blueColour;
+//itemButton.style.backgroundColor = coinColour2;
 }
 itemButton.style.backgroundColor = "lightgrey";
 }
@@ -193,21 +212,12 @@ const container = document.createElement("div");
 const itemButton0 = document.createElement("button");
       itemButton0.classList = "addItemList";
       itemButton0.dataset.scroll = "false";
-      itemButton0.style.backgroundColor = blueColour;
+      itemButton0.style.backgroundColor = coinColour2;
       itemButton0.innerText = "";
       itemButton0.setAttribute("onclick", `
-if ( event.shiftKey) {
-insertNewCoin([null,78,78]);
-coinFocus.style.left    = parseInt(window.scrollX) + "px";
-coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
-coinFocus.style.top     = parseInt(window.scrollY) + "px";
-coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
-flipAnchorZ([,,,false,]);
-coinFocus.dataset.coinTrip = "2";
-readCoins();
-recoverColouration();
+if ( event.shiftKey || event.ctrlKey) {
+copyToClipboard(this.dataset.idNames);
+buzzWord(0,'GROUP',128,'magenta',200,200,25,'top','','',event);
 } else if (!event.shiftKey && coinFocus != null) {
 coinFocus.dataset.coinTrip = "2";
 readCoins(); recoverColouration();
@@ -225,21 +235,12 @@ updateInfoShelf();
 const itemButton1 = document.createElement("button");
       itemButton1.classList = "addItemList";
       itemButton1.dataset.scroll = "false";
-      itemButton1.style.backgroundColor = pinkColour;
+      itemButton1.style.backgroundColor = coinColour1;
       itemButton1.innerText = "";
       itemButton1.setAttribute("onclick", `
-if ( event.shiftKey) {
-insertNewCoin([null,78,78]);
-coinFocus.style.left    = parseInt(window.scrollX) + "px";
-coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
-coinFocus.style.top     = parseInt(window.scrollY) + "px";
-coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
-flipAnchorZ([,,,false,]);
-coinFocus.dataset.coinTrip = "1";
-readCoins();
-recoverColouration();
+if ( event.shiftKey || event.ctrlKey) {
+copyToClipboard(this.dataset.idNames);
+buzzWord(0,'GROUP',128,'magenta',200,200,25,'top','','',event);
 } else if (!event.shiftKey && coinFocus != null) {
 coinFocus.dataset.coinTrip = "1";
 readCoins(); recoverColouration();
@@ -257,21 +258,12 @@ updateInfoShelf();
 const itemButton2 = document.createElement("button");
       itemButton2.classList = "addItemList";
       itemButton2.dataset.scroll = "false";
-      itemButton2.style.backgroundColor = greyColour;
+      itemButton2.style.backgroundColor = coinColour0;
       itemButton2.innerText = "";
       itemButton2.setAttribute("onclick", `
-if ( event.shiftKey) {
-insertNewCoin([null,78,78]);
-coinFocus.style.left    = parseInt(window.scrollX) + "px";
-coinFocus.dataset.left  = parseInt(window.scrollX) + "px";
-coinFocus.style.top     = parseInt(window.scrollY) + "px";
-coinFocus.dataset.top   = parseInt(window.scrollY) + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
-flipAnchorZ([,,,false,]);
-coinFocus.dataset.coinTrip = "0";
-readCoins();
-recoverColouration();
+if ( event.shiftKey || event.ctrlKey) {
+copyToClipboard(this.dataset.idNames);
+buzzWord(0,'GROUP',128,'magenta',200,200,25,'top','','',event);
 } else if (!event.shiftKey && coinFocus != null) {
 coinFocus.dataset.coinTrip = "0";
 readCoins(); recoverColouration();
@@ -286,6 +278,32 @@ updateInfoShelf();
 }, 10);
 }
 `);
+
+let  pink = [];
+let white = [];
+let  blue = [];
+
+  for (let j = 0; j < utilityLayer0.children.length; j++) {
+                  if (utilityLayer0.children[j].dataset.coinTrip == "0") {
+white[white.length] = utilityLayer0.children[j].id;
+           } else if (utilityLayer0.children[j].dataset.coinTrip == "1") {
+ pink[pink.length]  = utilityLayer0.children[j].id;
+           } else if (utilityLayer0.children[j].dataset.coinTrip == "2") {
+ blue[blue.length]  = utilityLayer0.children[j].id;
+}
+}
+
+/* Pink */
+itemButton1.title           = `${JSON.stringify(pink)}`;
+itemButton1.dataset.idNames = `${JSON.stringify(pink)}`;
+/* White */
+itemButton2.title           = `${JSON.stringify(white)}`;
+itemButton2.dataset.idNames = `${JSON.stringify(white)}`;
+/* Blue */
+itemButton0.title           = `${JSON.stringify(blue)}`;
+itemButton0.dataset.idNames = `${JSON.stringify(blue)}`;
+
+
 
 
 container.appendChild(itemButton1);
@@ -449,7 +467,17 @@ ui.cursorL.click                 = function() { useCustomCursors = true ; cursor
 ui.cursorXL.click                = function() { useCustomCursors = true ; cursorSet = cursorSize[4][0]; cursorSetup(); };
 ui.cursorNum.click               = function() {  };
 
-ui.partNom.input                 = function() { inputPartNav("partNom"); if (coinFocus != null && curFocus ==0) { coinFocus.id = ui.partNom.ref.value; }; loadSidebar1(); redraw(); };
+ui.partNom.input                 = function() {
+inputPartNav("partNom");
+if (coinFocus != null && curFocus ==0) {
+coinFocus.id = ui.partNom.ref.value;
+coinFocus.name = ui.partNom.ref.value;
+}
+loadSidebar1();
+redraw();
+};
+
+
 ui.partPrev.click                = function() { focusPrevious(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); }; updateInfoShelf(); redraw(); };
 
 ui.showNames.click               = function() { if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw(); };

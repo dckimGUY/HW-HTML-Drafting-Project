@@ -13,12 +13,14 @@ findFileList =
 ../a_keyboardFunctions/a_keyboardRouter/h_styleTuner/f_paddingTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/h_styleTuner/g_alignmentTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/h_styleTuner/h_fontTuner.js
+../a_keyboardFunctions/a_keyboardRouter/h_styleTuner/i_normalTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/a_constructionTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/b_windowTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/c_grabTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/d_edgeTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/e_duplicateTuner.js
 ../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/f_tricolourTuner.js
+../a_keyboardFunctions/a_keyboardRouter/i_constructionTuner/g_generalTuner.js
 ../a_keyboardFunctions/b_topModeKeys/a_spaceView/a_spaceViewOn.js
 ../a_keyboardFunctions/b_topModeKeys/a_spaceView/b_spaceViewOff.js
 ../a_keyboardFunctions/b_topModeKeys/a_spaceView/c_spaceViewToggle.js
@@ -84,6 +86,7 @@ findFileList =
 ../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/c_lowerGlobalZ.js
 ../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/d_raiseGlobalZ.js
 ../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/e_floorGlobalZ.js
+../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/a_globalZManagement/f_clearZ.js
 ../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/b_tripartiteZManagement/a_manageTripartiteZ.js
 ../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/b_tripartiteZManagement/b_ceilingTripartiteZ.js
 ../a_keyboardFunctions/f_documentOrder/b_zIndexManagement/b_tripartiteZManagement/c_lowerTripartiteZ.js
@@ -111,8 +114,14 @@ findFileList =
 ../a_keyboardFunctions/i_tripartiteOperations/c_setCoinTrip.js
 ../a_keyboardFunctions/i_tripartiteOperations/d_recoverColouration.js
 ../a_keyboardFunctions/i_tripartiteOperations/e_readCoins.js
+../a_keyboardFunctions/i_tripartiteOperations/f_isolateSingle.js
+../a_keyboardFunctions/i_tripartiteOperations/g_isolateGroup.js
+../a_keyboardFunctions/i_tripartiteOperations/h_globbHTML.js
+../a_keyboardFunctions/i_tripartiteOperations/i_severHTML.js
+../a_keyboardFunctions/i_tripartiteOperations/j_toggleGlobb.js
 ../a_keyboardFunctions/j_insertionAndDeletion/a_deletion/a_deleteCoin.js
 ../a_keyboardFunctions/j_insertionAndDeletion/a_deletion/b_groupDeletion.js
+../a_keyboardFunctions/j_insertionAndDeletion/a_deletion/c_groupToPhantomLair.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/a_insertNewCoin.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/b_insertNewDuplicate.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/c_insertNewImage.js
@@ -127,6 +136,8 @@ findFileList =
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/b_insertDragSelector/i_insertSingleTemplates.js
 ../a_keyboardFunctions/j_insertionAndDeletion/c_guideLayer/a_guideLayer.js
 ../a_keyboardFunctions/j_insertionAndDeletion/c_guideLayer/b_pullFromGuideLayer.js
+../a_keyboardFunctions/j_insertionAndDeletion/d_remove/a_removeCoin.js
+../a_keyboardFunctions/j_insertionAndDeletion/d_remove/b_removeGroup.js
 ../a_keyboardFunctions/k_brickAndStack/a_brickHorizontal.js
 ../a_keyboardFunctions/k_brickAndStack/b_brickVertical.js
 ../a_keyboardFunctions/k_brickAndStack/c_stackHorizontal.js
@@ -179,6 +190,7 @@ findFileList =
 ../a_keyboardFunctions/r_topLayerManager/b_recoverCoinFocus.js
 ../a_keyboardFunctions/r_topLayerManager/c_layerLeft.js
 ../a_keyboardFunctions/r_topLayerManager/d_layerRight.js
+../a_keyboardFunctions/r_topLayerManager/e_changeLayer.js
 ../a_keyboardFunctions/s_interfaceLayer/a_toggleInterfaceLayer.js
 ../a_keyboardFunctions/s_interfaceLayer/b_enterWizardMaster.js
 ../a_keyboardFunctions/s_interfaceLayer/c_toggleInterfaceShelf.js
@@ -245,6 +257,7 @@ findFileList =
 ../c_focusManagement/b_focus/e_focusLast.js
 ../c_focusManagement/b_focus/f_focusNextColour.js
 ../c_focusManagement/b_focus/g_focusSet.js
+../c_focusManagement/b_focus/h_firstLastColour.js
 ../c_focusManagement/c_scanAndSet/a_scanForCoin.js
 ../c_focusManagement/c_scanAndSet/b_setCoinTripColouration.js
 `;

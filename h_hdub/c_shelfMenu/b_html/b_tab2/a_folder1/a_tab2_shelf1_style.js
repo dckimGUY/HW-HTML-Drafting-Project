@@ -30,9 +30,9 @@ shelfMenuHTML.tab2.folder1.style = `
 .button_modeEeM0:active          { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/e_mode-em0_active.png?v=20251108183517"); }
 .button_modeT                    { position: absolute; border: none; margin: none; padding: none; left:    164px; top:     75px; width:     26px; height:     26px;
                                    background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t.png?v=20251105095517");        }
-.button_modeT:focus              { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t_focus.png?v=20260222062210");  }
-.button_modeT:hover              { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t_hover.png?v=20260222062217");  }
-.button_modeT:active             { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t_active.png?v=20260222062153"); }
+.button_modeT:focus              { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t_focus.png?v=20251108183548");  }
+.button_modeT:hover              { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t_hover.png?v=20251108183555");  }
+.button_modeT:active             { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/a_zedget/f_mode-t_active.png?v=20251108183541"); }
 
 /* ROW 2 */
 
@@ -184,25 +184,25 @@ text-shadow: 0px .5px 0px rgb(115,121,115), .5px .5px 0px rgb(164,170,164), .5px
 .button_loadTheme_f5:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-f5_hover.png?v=20251110125018");  }
 .button_loadTheme_f5:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-f5_active.png?v=20251110125628"); }
 .button_loadTheme_g6             { position: absolute; border: none; margin: none; padding: none; left:     35px; top:    417px; width:     58px; height:     30px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6.png?v=20251110123247");        }
-.button_loadTheme_g6:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6_focus.png?v=20251110125936");  }
-.button_loadTheme_g6:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6_hover.png?v=20251110125038");  }
-.button_loadTheme_g6:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6_active.png?v=20251110141225"); }
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6.png?v=20260303135405");        }
+.button_loadTheme_g6:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6_focus.png?v=20260303135313");  }
+.button_loadTheme_g6:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6_hover.png?v=20260303135246");  }
+.button_loadTheme_g6:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-g6_active.png?v=20260303135302"); }
 .button_loadTheme_h7             { position: absolute; border: none; margin: none; padding: none; left:    125px; top:    417px; width:     58px; height:     30px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7.png?v=20251110123256");        }
-.button_loadTheme_h7:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7_focus.png?v=20251110125944");  }
-.button_loadTheme_h7:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7_hover.png?v=20251110125014");  }
-.button_loadTheme_h7:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7_active.png?v=20251110125622"); }
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7.png?v=20260303135519");        }
+.button_loadTheme_h7:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7_focus.png?v=20260303135054");  }
+.button_loadTheme_h7:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7_hover.png?v=20260303135137");  }
+.button_loadTheme_h7:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-h7_active.png?v=20260303135118"); }
 .button_loadTheme_i8             { position: absolute; border: none; margin: none; padding: none; left:     35px; top:    453px; width:     58px; height:     30px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8.png?v=20251110123303");        }
-.button_loadTheme_i8:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8_focus.png?v=20251110125951");  }
-.button_loadTheme_i8:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8_hover.png?v=20251110125012");  }
-.button_loadTheme_i8:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8_active.png?v=20251110125617"); }
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8.png?v=20260303135648");        }
+.button_loadTheme_i8:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8_focus.png?v=20260303134245");  }
+.button_loadTheme_i8:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8_hover.png?v=20260303134333");  }
+.button_loadTheme_i8:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-i8_active.png?v=20260303134308"); }
 .button_loadTheme_j9             { position: absolute; border: none; margin: none; padding: none; left:    125px; top:    453px; width:     58px; height:     30px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9.png?v=20251110123311");        }
-.button_loadTheme_j9:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9_focus.png?v=20251110125959");  }
-.button_loadTheme_j9:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9_hover.png?v=20251110141310");  }
-.button_loadTheme_j9:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9_active.png?v=20251110141232"); }
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9.png?v=20260303135708");        }
+.button_loadTheme_j9:focus       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9_focus.png?v=20260303134750");  }
+.button_loadTheme_j9:hover       { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9_hover.png?v=20260303134836");  }
+.button_loadTheme_j9:active      { background-image: url("h_hdub/c_shelfMenu/a_images/b_tab2/a_folder1/z_ld-j9_active.png?v=20260303134817"); }
 
 
 

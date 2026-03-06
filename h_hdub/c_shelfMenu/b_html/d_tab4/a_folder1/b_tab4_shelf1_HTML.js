@@ -1,11 +1,20 @@
 shelfMenuHTML.tab4.folder1.HTML = `
-<textarea id="hdubSingleEntry" class="textarea_ input_hdubSingleEntry dckimPixelMono" placeholder="empty" title="single hdub manual entry, tip: use numpad with dot and dash, 'abc...' changes the slot. 'enter' inserts the shapes to HTML. Open to here using 'shift+space', 'esc' to return." spellcheck="false">h20w20w20w20w20w20h50w50w50h40w20w30w40w10</textarea>
 
-<textarea id="hdubPartDesignations" class="textarea_ input_hdubPartDesignations dckimPixelMono" placeholder="part" title="enter the part list here manually" spellcheck="false"></textarea>
+<button id="saveBlank" class="button_ saveBlank" onclick="manufactureTemplate(cropObject(100, 180, makeObject(clean('h180w100')))); buzzWord(0,'SAVED',96,'yellow',200,200,25,'top','','',event);" title="SAVE: Blank Template\nAt This Scale Factor"></button>
+<button id="HDUBinfo"  class="button_ HDUBinfo"  onclick="programManual('information-for-button-crafting');" title="PROGRAM USER MANUAL:\nInformation For Button Crafting"></button>
 
 
 
-<button id="cancelEntries" class="button_ cancelEntries" onclick="document.getElementById('hdubSingleEntry').value = ''; document.getElementById('hdubPartDesignations').value = ''; hdubDemo.style.opacity = 0; Picture.style.display='none';"></button>
+<textarea id="hdubSingleEntry" class="textarea_ input_hdubSingleEntry dckimPixelMono" placeholder="empty"
+title="HDUB MANUAL ENTRY:\nTIP: Use NUMPAD with dot and dash\nthey replace the h and w.\nabc Changes the Slot.\nENTER inserts the shapes to HTML.\nSPACE saves a Shape-Key\nQuick-Access to this input\nusing SHIFT+SPACE\nESC returns to the workspace.\n< > Changes the Level
+[ ] Changes the Scale"
+spellcheck="false">h20w20w20w20w20w20h50w50w50h40w20w30w40w10</textarea>
+
+<textarea id="hdubPartDesignations" class="textarea_ input_hdubPartDesignations dckimPixelMono" placeholder="part" title="Manual Part Entry:\nUse Capital Letters\n[A-Z]" spellcheck="false"></textarea>
+
+
+
+<button id="cancelEntries" class="button_ cancelEntries" onclick="document.getElementById('hdubSingleEntry').value = ''; document.getElementById('hdubPartDesignations').value = ''; hdubDemo.style.opacity = 0; Picture.style.display='none'; buzzWord(0,'CANCEL',96,'red',200,200,25,'top','','',event);"></button>
 
 
 <button id="hdubAdd" class="button_ button_hdubAdd" title="add this one to the comma separated list"></button>
@@ -15,14 +24,14 @@ shelfMenuHTML.tab4.folder1.HTML = `
 <button id="hdubEnter" class="button_ button_hdubEnter" title="enter this into HTML Drafting as parts"></button>
 <button id="hdubSave" class="button_ button_hdubSave" title="save to image with syntax in filename"></button>
 
-<canvas id="hdubCanvas" class="textarea_ input_hdubCanvas" width="100" height="180" title="scales of 1,2,3,4 are for pixel-Art, 1 being very block-like"></canvas>
+<canvas id="hdubCanvas" class="textarea_ input_hdubCanvas" width="100" height="180" title=""></canvas>
 
-<div id="hdubOverlay" class="textarea_ input_hdubOverlay" title="scales of 1,2,3,4 are for pixel-Art, 1 being very block-like"></div>
-
-
+<div id="hdubOverlay" class="textarea_ input_hdubOverlay" title=""></div>
 
 
-<button id="hdubSheetTemplate1x" class="button_ button_hdubSheetTemplate1x" title="save *sheet template (be sure to set the scale)"></button>
+
+
+<button id="hdubSheetTemplate1x" class="button_ button_hdubSheetTemplate1x" title="SAVE: Base Image Sheet\n(This is part of a\nmulti-step process.\nFor more information\nuse the W? below.)"></button>
 <input id="hdubSheetTemplate4x" class="button_ button_hdubSheetTemplate4x" type="range" min="1" max="20" step="1" value="10" title="hdubEntryFactor">
 
 

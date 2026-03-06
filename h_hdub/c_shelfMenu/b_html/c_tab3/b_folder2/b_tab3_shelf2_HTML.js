@@ -12,7 +12,7 @@ shelfMenuHTML.tab3.folder2.HTML = `
 
 <button id="btn6" class="button_ button_btn6" title="When you drag the file back in, it produces buttons."></button>
 <button id="btn4" class="button_ button_btn4" title="Do all of the image work after saving the file."></button>
-<button id="btn2" class="button_ button_btn2" title="Everything you need for the button will be saved, then you work on the graphics and drag the image back onto the screen, where it becomes buttons, ready for code."></button>
+<button id="btn2" class="button_ button_btn2" title="Everything you need for the button will be saved,\nthen you work on the graphics and drag the image back onto the screen,\nwhere it becomes buttons, ready for code."></button>
 
 <button id="img6" class="button_ button_img6" title=""></button>
 <button id="img4" class="button_ button_img4" title=""></button>
@@ -44,7 +44,7 @@ shelfMenuHTML.tab3.folder2.HTML = `
 
 
 
-<button id="animateClick" class="button_ button_animateClick" title="animations begin when clicked"></button>
+<button id="animateClick" class="button_ button_animateClick" title="insert information box"></button>
 <button id="animateLoop"  class="button_ button_animateLoop"  title="IMAGE DATA (base64), use 'SHIFT' to get animations that are looped"></button>
 <button id="fewerFrames"  class="button_ button_fewerFrames"  title=""></button>
 <button id="moreFrames"   class="button_ button_moreFrames"   title=""></button>

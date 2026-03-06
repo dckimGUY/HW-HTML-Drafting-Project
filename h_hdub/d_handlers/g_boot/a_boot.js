@@ -5,7 +5,7 @@ utilityLayer1.style.pointerEvents = "none";
 
 utilityLayer0.style.cursor = "move";
 
-const defaultFilename = "100_emptyFile";
+const defaultFilename = "pixel-level-1";
 var filename = defaultFilename;
 
 var   gridLayer         ; gridLayer          = document.getElementById("gridLayer")     ;
@@ -16,6 +16,7 @@ var   edgeDetect        ; edgeDetect         = document.createElement("div")    
 var cursorDisplay = "block";
 
 var lastFlow = "colour";
+
 
 
 if (localStorage.getItem("pageFont")) {
@@ -201,28 +202,28 @@ const localView = document.createElement("div");
 
 var topLayer = 
 {
-"aa_project_name" : "emptyProject",
+"aa_project_name" : "pixel-art-project",
 "a_currentLayer" : "b_layer1",
-"b_layer1" :  { "a_name" : "b_layer1",  "b_content" : b_layer1,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 1",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"c_layer2" :  { "a_name" : "c_layer2",  "b_content" : c_layer2,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 2",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"d_layer3" :  { "a_name" : "d_layer3",  "b_content" : d_layer3,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 3",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"e_layer4" :  { "a_name" : "e_layer4",  "b_content" : e_layer4,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 4",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"f_layer5" :  { "a_name" : "f_layer5",  "b_content" : f_layer5,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 5",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"g_layer6" :  { "a_name" : "g_layer6",  "b_content" : g_layer6,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 6",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"h_layer7" :  { "a_name" : "h_layer7",  "b_content" : h_layer7,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 7",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"i_layer8" :  { "a_name" : "i_layer8",  "b_content" : i_layer8,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 8",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"j_layer9" :  { "a_name" : "j_layer9",  "b_content" : j_layer9,  "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 9",  "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"k_layer10" : { "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 10", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"l_layer11" : { "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 11", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"m_layer12" : { "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 12", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"n_layer13" : { "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 13", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"o_layer14" : { "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 14", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"p_layer15" : { "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 15", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"q_layer16" : { "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 16", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"r_layer17" : { "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 17", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"s_layer18" : { "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 18", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"t_layer19" : { "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 19", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"u_layer20" : { "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 20", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"b_layer1" :  { "a_name" : "b_layer1",  "b_content" : b_layer1,  "c_title" : "", "d_description" : "Page 1 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 1",  "filename" : "pixel-level-1", "echelon" : 1, "header" : "", "footer" : "" },
+"c_layer2" :  { "a_name" : "c_layer2",  "b_content" : c_layer2,  "c_title" : "", "d_description" : "Page 2 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 2",  "filename" : "pixel-level-2", "echelon" : 1, "header" : "", "footer" : "" },
+"d_layer3" :  { "a_name" : "d_layer3",  "b_content" : d_layer3,  "c_title" : "", "d_description" : "Page 3 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 3",  "filename" : "pixel-level-3", "echelon" : 1, "header" : "", "footer" : "" },
+"e_layer4" :  { "a_name" : "e_layer4",  "b_content" : e_layer4,  "c_title" : "", "d_description" : "Page 4 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 4",  "filename" : "pixel-level-4", "echelon" : 1, "header" : "", "footer" : "" },
+"f_layer5" :  { "a_name" : "f_layer5",  "b_content" : f_layer5,  "c_title" : "", "d_description" : "Page 5 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 5",  "filename" : "pixel-level-5", "echelon" : 1, "header" : "", "footer" : "" },
+"g_layer6" :  { "a_name" : "g_layer6",  "b_content" : g_layer6,  "c_title" : "", "d_description" : "Page 6 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 6",  "filename" : "pixel-level-6", "echelon" : 1, "header" : "", "footer" : "" },
+"h_layer7" :  { "a_name" : "h_layer7",  "b_content" : h_layer7,  "c_title" : "", "d_description" : "Page 7 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 7",  "filename" : "pixel-level-7", "echelon" : 1, "header" : "", "footer" : "" },
+"i_layer8" :  { "a_name" : "i_layer8",  "b_content" : i_layer8,  "c_title" : "", "d_description" : "Page 8 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 8",  "filename" : "pixel-level-8", "echelon" : 1, "header" : "", "footer" : "" },
+"j_layer9" :  { "a_name" : "j_layer9",  "b_content" : j_layer9,  "c_title" : "", "d_description" : "Page 9 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 9",  "filename" : "pixel-level-9", "echelon" : 1, "header" : "", "footer" : "" },
+"k_layer10" : { "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "Page 10 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 10", "filename" : "pixel-level-10", "echelon" : 1, "header" : "", "footer" : "" },
+"l_layer11" : { "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "Page 11 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 11", "filename" : "pixel-level-11", "echelon" : 1, "header" : "", "footer" : "" },
+"m_layer12" : { "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "Page 12 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 12", "filename" : "pixel-level-12", "echelon" : 1, "header" : "", "footer" : "" },
+"n_layer13" : { "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "Page 13 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 13", "filename" : "pixel-level-13", "echelon" : 1, "header" : "", "footer" : "" },
+"o_layer14" : { "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "Page 14 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 14", "filename" : "pixel-level-14", "echelon" : 1, "header" : "", "footer" : "" },
+"p_layer15" : { "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "Page 15 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 15", "filename" : "pixel-level-15", "echelon" : 1, "header" : "", "footer" : "" },
+"q_layer16" : { "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "Page 16 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 16", "filename" : "pixel-level-16", "echelon" : 1, "header" : "", "footer" : "" },
+"r_layer17" : { "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "Page 17 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 17", "filename" : "pixel-level-17", "echelon" : 1, "header" : "", "footer" : "" },
+"s_layer18" : { "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "Page 18 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 18", "filename" : "pixel-level-18", "echelon" : 1, "header" : "", "footer" : "" },
+"t_layer19" : { "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "Page 19 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 19", "filename" : "pixel-level-19", "echelon" : 1, "header" : "", "footer" : "" },
+"u_layer20" : { "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "Page 20 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 20", "filename" : "pixel-level-20", "echelon" : 1, "header" : "", "footer" : "" },
 "v_layer21" : { "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
 "w_layer22" : { "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
 "x_layer23" : { "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
@@ -278,7 +279,7 @@ topLayer[layerName].footer = `
 
 
 
-
+topLayer.programStateAccumulator = [];
 
 
 
@@ -291,43 +292,37 @@ topLayer.buoyPoint.buoy2 = {};
 topLayer.buoyPoint.buoy3 = {};
 topLayer.buoyPoint.buoy4 = {};
 topLayer.buoyPoint.buoy5 = {};
-topLayer.buoyPoint.buoya = {};
-topLayer.buoyPoint.buoyb = {};
-topLayer.buoyPoint.buoyc = {};
-topLayer.buoyPoint.buoyd = {};
-topLayer.buoyPoint.buoye = {};
-topLayer.buoyPoint.buoyf = {};
+topLayer.buoyPoint.buoy6 = {};
+topLayer.buoyPoint.buoy7 = {};
+topLayer.buoyPoint.buoy8 = {};
+topLayer.buoyPoint.buoy9 = {};
 
 
 
 
 
+topLayer.buoyPoint.buoy0.location = [0,    0];
+topLayer.buoyPoint.buoy1.location = [1000, 0];
+topLayer.buoyPoint.buoy2.location = [2000, 0];
+topLayer.buoyPoint.buoy3.location = [3000, 0];
+topLayer.buoyPoint.buoy4.location = [4000, 0];
+topLayer.buoyPoint.buoy5.location = [5000, 0];
+topLayer.buoyPoint.buoy6.location = [6000, 0];
+topLayer.buoyPoint.buoy7.location = [7000, 0];
+topLayer.buoyPoint.buoy8.location = [8000, 0];
+topLayer.buoyPoint.buoy9.location = [9000, 0];
 
-topLayer.buoyPoint.buoy0.location = [0,   0];
-topLayer.buoyPoint.buoy1.location = [0, 200];
-topLayer.buoyPoint.buoy2.location = [0, 400];
-topLayer.buoyPoint.buoy3.location = [0, 600];
-topLayer.buoyPoint.buoy4.location = [0, 800];
-topLayer.buoyPoint.buoy5.location = [0,1000];
-topLayer.buoyPoint.buoya.location = [0,1200];
-topLayer.buoyPoint.buoyb.location = [0,1400];
-topLayer.buoyPoint.buoyc.location = [0,1600];
-topLayer.buoyPoint.buoyd.location = [0,1800];
-topLayer.buoyPoint.buoye.location = [0,2000];
-topLayer.buoyPoint.buoyf.location = [0,2200];
 
-topLayer.buoyPoint.buoy0.name = "0";
-topLayer.buoyPoint.buoy1.name = "1";
-topLayer.buoyPoint.buoy2.name = "2";
-topLayer.buoyPoint.buoy3.name = "3";
-topLayer.buoyPoint.buoy4.name = "4";
-topLayer.buoyPoint.buoy5.name = "5";
-topLayer.buoyPoint.buoya.name = "a";
-topLayer.buoyPoint.buoyb.name = "b";
-topLayer.buoyPoint.buoyc.name = "c";
-topLayer.buoyPoint.buoyd.name = "d";
-topLayer.buoyPoint.buoye.name = "e";
-topLayer.buoyPoint.buoyf.name = "f";
+topLayer.buoyPoint.buoy0.name =  "0";
+topLayer.buoyPoint.buoy1.name =  "1";
+topLayer.buoyPoint.buoy2.name =  "2";
+topLayer.buoyPoint.buoy3.name =  "3";
+topLayer.buoyPoint.buoy4.name =  "4";
+topLayer.buoyPoint.buoy5.name =  "5";
+topLayer.buoyPoint.buoy6.name =  "6";
+topLayer.buoyPoint.buoy7.name =  "7";
+topLayer.buoyPoint.buoy8.name =  "8";
+topLayer.buoyPoint.buoy9.name =  "9";
 
 topLayer.buoyPoint.buoy0.colour = "white";
 topLayer.buoyPoint.buoy1.colour = "red";
@@ -335,12 +330,10 @@ topLayer.buoyPoint.buoy2.colour = "lime";
 topLayer.buoyPoint.buoy3.colour = "cyan";
 topLayer.buoyPoint.buoy4.colour = "magenta";
 topLayer.buoyPoint.buoy5.colour = "yellow";
-topLayer.buoyPoint.buoya.colour = "orange";
-topLayer.buoyPoint.buoyb.colour = "blue";
-topLayer.buoyPoint.buoyc.colour = "lightgrey";
-topLayer.buoyPoint.buoyd.colour = "purple";
-topLayer.buoyPoint.buoye.colour = "brown";
-topLayer.buoyPoint.buoyf.colour = "green";
+topLayer.buoyPoint.buoy6.colour = "orange";
+topLayer.buoyPoint.buoy7.colour = "blue";
+topLayer.buoyPoint.buoy8.colour = "lightgrey";
+topLayer.buoyPoint.buoy9.colour = "purple";
 
 
 
@@ -497,6 +490,11 @@ var
 singlePasteBuffer={};
 singlePasteBuffer.value=new Array();
 singlePasteBuffer.name="singlePasteBuffer";
+
+var
+singleRestoreBuffer={};
+singleRestoreBuffer.value=new Array();
+singleRestoreBuffer.name="singleRestoreBuffer";
 
 var
 multiplePasteBuffer={};
@@ -736,8 +734,8 @@ if (topLayer.buoyHide == "false") {
 try {
 const buoyValues = Object.values(topLayer.buoyPoint);
 for (let j = 0; j < buoyValues.length; j++) {
-Y.fillStyle = buoyValues[j].colour;
-Y.font = "400 150px dckimPixelMono";
+Y.fillStyle = visualGridColour3;
+Y.font = "400 96px dckimPixelMono";
 Y.textBaseline="top";
 Y.fillText(`${buoyValues[j].name}`,Math.floor((buoyValues[j].location[0] - window.scrollX + 20)),Math.floor((buoyValues[j].location[1] - window.scrollY + 1)));
 }
@@ -1062,10 +1060,8 @@ curImg.style.top             =        -cSZ/2 + "px";
 curImg.style.left            =        -cSZ/2 + "px";
 curImg.style.pointerEvents   =        "none";
 curImg.style.userSelect      =        "none";
-curImg.src                   =                 "iconSet/spatialCursor/customCursor.png?v=001"; /* If not present we use the fallback icon in BASE64. */
-curImg.onerror               = function() {
-this.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAgMAAADXB5lNAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAMUExURQAAAP///+0cJMPDw5kSAiMAAAABdFJOUwBA5thmAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB+kFBRQnJYhP8iYAAADTSURBVDjLzdKxDcJADAXQBOko0mcEmluCjJAinyBGYApGoKFPgxTMPFmCGShyPkeyTQkFsXTS3ZMS//hSFFJhKHx9AVX7O6wlx/7tzyXo4qAGjQ4AIheLwUbbMdhnHmgj3Q0Q0rrpeUPXFA2NxuQQJVoDubVCFOgUcsda4SXQLx0JAqHnvcBgIC2a8vurJ+8NRAGuqRPQ8XTafJlX7qcQBAYDDX+yQom039q5H1I32CmfaAw4G4hEwNHeLIO7XQZ3c5HMvGTuZua5Pn+H1fyn/84xAznlXBhTn9tKAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI1LTA1LTA1VDIwOjE4OjIxKzAwOjAw1KOWzgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNS0wNS0wNVQyMDozNzo1NiswMDowMMP7+6kAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjUtMDUtMDVUMjA6Mzk6MzcrMDA6MDDqP+j2AAAAAElFTkSuQmCC";
-}
+curImg.src                   = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAPdJREFUWIXl1tEOwyAIBVCfL4n//7mLUye1YMEmo9l8aXRyqrLSprRsRMB6xkX7AQAg+ncgPgvxQHwWwoH8btvhVBpK2w9vwA5BR8ArEM2Aj4AEOASgC7VTmyOhaALvg+xAu+FxiMgsiDseW7IC86gdUI7cvgQtZVYgr4Hzk9VT1q8qUIU8z1cAaW0KwDvlmtWt4vMzn28HoACnQ9ROuwHS2oStqsB1vPaPcTzSK8ASLy/BVVNaJToM+WoSTdVcTZkO8Do4iqMZGHUQvLza47kwAE88IzbDh7Adn0Y1v/GGv/l6T0/4SosHwr/SHgDEZyEeiM/CF4AXE18dqYulLVUAAAAASUVORK5CYII=";
+
 Cur.appendChild(curImg);
 gridLayer.appendChild(Cur);
 
@@ -1108,49 +1104,6 @@ window.hold=window.opener.hold;
 
 
 
-
-
-/* Initialize the cursor icon set. */
-
-const
-mouseCursor = document.createElement("img");
-mouseCursor.style.position           = "fixed";
-mouseCursor.style.width              =  mSZ + "px";
-mouseCursor.style.height             =  mSZ + "px";
-mouseCursor.style.pointerEvents      = "none";
-mouseCursor.style.userSelect         = "none";
-mouseCursor.style.display            = "none";
-mouseCursor.style.zIndex             = "999999999";
-mouseIconLayer.appendChild(mouseCursor)
-
-const iconSet = {
-mode0:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode1:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode2:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode3:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode4:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode5:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode6:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode7:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode8:{cur0:new Image(),cur1:new Image(),cur2:new Image()},
-mode9:{cur0:new Image(),cur1:new Image(),cur2:new Image()}
-}
-
-iconSet.mode0.cur0.src = "./iconSet/mode0/cur0.png"; iconSet.mode0.cur1.src = "./iconSet/mode0/cur1.png"; iconSet.mode0.cur2.src = "./iconSet/mode0/cur2.png";
-iconSet.mode1.cur0.src = "./iconSet/mode1/cur0.png"; iconSet.mode1.cur1.src = "./iconSet/mode1/cur1.png"; iconSet.mode1.cur2.src = "./iconSet/mode1/cur2.png";
-iconSet.mode2.cur0.src = "./iconSet/mode2/cur0.png"; iconSet.mode2.cur1.src = "./iconSet/mode2/cur1.png"; iconSet.mode2.cur2.src = "./iconSet/mode2/cur2.png";
-iconSet.mode3.cur0.src = "./iconSet/mode3/cur0.png"; iconSet.mode3.cur1.src = "./iconSet/mode3/cur1.png"; iconSet.mode3.cur2.src = "./iconSet/mode3/cur2.png";
-iconSet.mode4.cur0.src = "./iconSet/mode4/cur0.png"; iconSet.mode4.cur1.src = "./iconSet/mode4/cur1.png"; iconSet.mode4.cur2.src = "./iconSet/mode4/cur2.png";
-iconSet.mode5.cur0.src = "./iconSet/mode5/cur0.png"; iconSet.mode5.cur1.src = "./iconSet/mode5/cur1.png"; iconSet.mode5.cur2.src = "./iconSet/mode5/cur2.png";
-iconSet.mode6.cur0.src = "./iconSet/mode6/cur0.png"; iconSet.mode6.cur1.src = "./iconSet/mode6/cur1.png"; iconSet.mode6.cur2.src = "./iconSet/mode6/cur2.png";
-iconSet.mode7.cur0.src = "./iconSet/mode7/cur0.png"; iconSet.mode7.cur1.src = "./iconSet/mode7/cur1.png"; iconSet.mode7.cur2.src = "./iconSet/mode7/cur2.png";
-iconSet.mode8.cur0.src = "./iconSet/mode8/cur0.png"; iconSet.mode8.cur1.src = "./iconSet/mode8/cur1.png"; iconSet.mode8.cur2.src = "./iconSet/mode8/cur2.png";
-iconSet.mode9.cur0.src = "./iconSet/mode9/cur0.png"; iconSet.mode9.cur1.src = "./iconSet/mode9/cur1.png"; iconSet.mode9.cur2.src = "./iconSet/mode9/cur2.png";
-
-let
-
-currentIconSet = iconSet.mode1;
-mouseCursor.src = currentIconSet.cur0.src;
 
 
 
@@ -1275,50 +1228,43 @@ coinFocus.dataset.height = "512px";
 
 }
 
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
-
-
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "48px";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.color = invertHexColour(finishedBackgroundColour);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "left";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "32px";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflow = "auto";
-
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontFamily = "dckimPixelMono";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = `
-<p><b>DCKIM - HTML Drafting Project:</b></p>
-
-<p>All outgoing saved HTML has preparatory codework, basically ready to go for you to finish it out. Pretty much top notch for prep work. Everything is branched from a single object.</p>
-<ol>
-<li>F1 Help Menu (mostly accurate, some is out of date)</li>
-<li>spacebar: live preview</li>
-<li>enter/esc: live edit</li>
-<li>try using the mousewheel on things, it works in a lot of places</li>
-<li>CAPS-lock: construction/style mode. (almost everything from the old 'style-mode' has been moved to the menu)</li>
-<li>BE ON THE LOOK-OUT FOR TOOL-TIPS IN THE MENU: They lead you to some documentation that is readable from the console(using ctrl + shift + J/K, or F12 sometimes)</li>
-<li>V: document re-flow</li>
-<li>re-size the menu from the edge</li>
-<li>There are plenty of interesting features to check out! Don't be afraid to experiment and try things. Mostly they shouldn't be too difficult to figure out. Reading the little notes might help too!</li>
-<li>The hw syntax button system might seem complicated... It's not... You type 'h20', that gives the height, then type 'w20', that gives a box 'h20w20'... then if you want more in the row: 'h20w20w25' etc... Then next row starts 'h12' or whatever again. The number gives the height of the row. Try it and see how fast and easy it can be. Use 'alt + click' the menu tab headings to see if the console gets some instructions on how to use those things... there is a bit of a process, very well worth it. Just think, tonnes of pixelated(or not) buttons, in image sheets! Or use the 2img 4img or 6img to get the sheets in as data. The saved file will have them chopped up as new Image() data-chunks.</li>
-</ol>
+<p>
+Welcome to the Pixel Art Edition of the program.
+</p>
 `;
 
-makeItContentEditable([,,,true,,]);
-flipAnchorZ([,,,true,,]);
+
 
 }
 }
 hauptMode=0;
 if (coinFocus!=null) {
+
 };
-/* A refreshed window will start again with mode=0 */
+/* A refreshed window will start again with mode = 0 */
 try {
-if (window.opener) { mode=0; interfaceShelf.style.display="none"; }
+if (window.opener) {
+mode = 0;
+toggleMenu();
+}
 } catch {}
 } else {
 coinFocus = utilityLayer0.lastElementChild;
 }
+
+
+
+
+
+
 readCoins();
 let splashScreenVisible = false;
-let splashScreen = document.createElement("img");
+let splashScreen = document.createElement("div");
 
 let firstTime = "true";
 if (localStorage.getItem("firstTime")) { firstTime = localStorage.getItem("firstTime"); }
@@ -1334,22 +1280,15 @@ localStorage.setItem("firstTime", "false");
 
 
 
-function keyMap() {
-const newWindow = window.open();
-newWindow.location = "./n_art/keyMap.html";
-}
-
-
-
-
+function programManual(page) { window.open(`./program-user-manual-for-hdub/${page}.html`,"_blank"); }
 
 
 
 if (!window.opener) {
 splashScreen.classList = "splashScreen";
-splashScreen.src=splashScreenBase64;
-splashScreen.title = "CLICK TO OPEN KEYMAP"
-splashScreen.setAttribute("onclick", 'keyMap();');
+splashScreen.style.backgroundImage = "url(" + splashScreenBase64 + ")";
+splashScreen.style.backgroundSize = "100% 100%";
+splashScreen.title = `F1`;
 document.body.appendChild(splashScreen);
 splashScreenVisible = true;
 }
@@ -1367,14 +1306,15 @@ redraw();
 setTimeout(() => { redraw(); }, 2000);
 
 updateInfoShelf();
-
 spaceViewOn();
 spaceViewOff();
-coinFocus.click();
+
+document.documentElement.click();
+
+console.clear();
 
 /* Completion Message */
 console.log(
 `%c${document.querySelector('meta[name="last-build"]').content}
-boot sequence successful:
 HW - it's all i know...`,
 'color: rgb( 77,136,255); font-size: 32px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;');

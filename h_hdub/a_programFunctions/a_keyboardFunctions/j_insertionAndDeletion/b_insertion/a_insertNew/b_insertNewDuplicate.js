@@ -11,11 +11,22 @@ ctrl   = keyInfo[4],
 alt    = keyInfo[5];
 
 const idSuffix = Date.now().toString();
-newId = 'coin' + idSuffix.slice(idSuffix.length - 5, idSuffix.length);
+
+
+
+
 let logMessage = "";
 
 let
 newCoin = document.createElement("div");
+
+if (coinFocus.name) {
+newCoin.name = coinFocus.name;
+newId = newCoin.name + idSuffix.slice(idSuffix.length - 5, idSuffix.length);
+} else {
+newId = 'coin' + idSuffix.slice(idSuffix.length - 5, idSuffix.length);
+}
+
 newCoin.id                            =      newId;
 newCoin.dataset.jsName                =      newId;
 
@@ -66,6 +77,12 @@ newCoin.style.transformOrigin         =    coinFocus.style.transformOrigin
 newCoin.style.transform               =    coinFocus.style.transform;
 newCoin.dataset.scale                 =    coinFocus.dataset.scale;
 
+if (coinFocus!=null) {
+newCoin.dataset.coinTrip              =        coinFocus.dataset.coinTrip;
+} else {
+newCoin.dataset.coinTrip              =        Ts2;
+}
+
 
 let scaleFactor = 1;
 if (coinFocus.dataset.scale) { scaleFactor = parseFloat(coinFocus.dataset.scale); }
@@ -75,39 +92,109 @@ if (coinFocus.dataset.scale) { scaleFactor = parseFloat(coinFocus.dataset.scale)
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) - parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"i"-duplicated at left,       jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"i",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 /*    I    */ if (kC ==  73 && cC == 73) {
 coinFocus.style.left      =    document.body.scrollLeft + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"I"-duplicated at left edge,  jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"I",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 /*    o    */ if (kC ==  79 && cC ==  111) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top) + parseInt(coinFocus.dataset.height)*scaleFactor + "px";
 logMessage=`"o"-duplicated below,         jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"o",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 /*    O    */ if (kC ==  79 && cC == 79) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top) - parseInt(coinFocus.dataset.height)*scaleFactor + "px";
 logMessage=`"O"-duplicated above,         jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"O",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 /*    a    */ if (kC ==  65 && cC ==  97) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"a"-duplicated at right,      jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"a",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 /*    A    */ if (kC ==  65 && cC ==  65) {
 coinFocus.style.left      =    document.body.scrollLeft + window.innerWidth - parseInt(coinFocus.dataset.width)*scaleFactor + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"A"-duplicated at right edge, jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"A",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 /*    D    */ if (kC ==  68 && cC == 68) {
 coinFocus.style.left      =    parseInt(coinFocus.dataset.left) + "px";
 coinFocus.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 logMessage=`"D"-duplicated in-place,      jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"D",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 }
        if (mode!=5) {
@@ -147,11 +234,7 @@ newCoin.dataset.angle                 =        "0";
 newCoin.dataset.left                  =        newCoin.style.left;
 newCoin.dataset.top                   =        newCoin.style.top;
 
-if (coinFocus!=null) {
-newCoin.dataset.coinTrip              =        coinFocus.dataset.coinTrip;
-} else {
-newCoin.dataset.coinTrip              =        Ts2;
-}
+
 
 if (parseInt(newCoin.style.left)>=0&&parseInt(newCoin.style.top)>=0) {
        if (newCoin.dataset.coinTrip == Ts0) {

@@ -139,16 +139,73 @@ const layerArray = ["b_layer1", "c_layer2", "d_layer3", "e_layer4", "f_layer5", 
 for (let j = 0; j < layerArray.length; j++) {
 
 
-let nameList = topLayer[layerArray[j]].filename + " =\n[";
-for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
-nameList += '\n"' + topLayer[layerArray[j]].b_content.children[i].id + '"';
-if (i != topLayer[layerArray[j]].b_content.children.length - 1) {
-nameList += ',';
-}
-}
-nameList += "\n];";
 
-ui["setLayer" + (j + 1)].ref.setAttribute("title", nameList);
+
+
+
+
+
+
+let programState = {};
+
+for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
+
+    programState[topLayer[layerArray[j]].b_content.children[i].id] = {};
+    programState[topLayer[layerArray[j]].b_content.children[i].id].style = {};
+
+programState[topLayer[layerArray[j]].b_content.children[i].id].id = topLayer[layerArray[j]].b_content.children[i].id;
+
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.position        = "absolute";
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.left            = topLayer[layerArray[j]].b_content.children[i].style.left;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.top             = topLayer[layerArray[j]].b_content.children[i].style.top;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.width           = topLayer[layerArray[j]].b_content.children[i].style.width;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.height          = topLayer[layerArray[j]].b_content.children[i].style.height;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.zIndex          = topLayer[layerArray[j]].b_content.children[i].style.zIndex;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.userSelect      = topLayer[layerArray[j]].b_content.children[i].style.userSelect;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.transform       = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.transform;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.transformOrigin = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.transformOrigin;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.outline         = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.outline;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.outlineOffset   = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.outlineOffset;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.borderRadius    = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.borderRadius;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.overflow        = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.overflow;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.boxShadow       = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.boxShadow;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.color           = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.color;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.background      = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.background;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.backgroundColor = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.backgroundColor;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.backgroundSize  = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.backgroundSize;
+
+if (programState[topLayer[layerArray[j]].b_content.children[i].id].style.backgroundSize == "") {
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.backgroundSize  = "100% 100%";
+}
+
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.fontSize        = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.fontSize;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.fontVariant     = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.fontVariant;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.fontStyle       = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.fontStyle;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.fontWeight      = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.fontWeight;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.fontFamily      = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.fontFamily;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.opacity         = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.opacity;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.textShadow      = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.textShadow;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.textAlign       = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.textAlign;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.wordSpacing     = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.letterSpacing   = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.lineHeight      = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.lineHeight;
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.textIndent      = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.textIndent;
+
+if (topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.padding == "inherit") {
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.padding         = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style.padding;
+} else {
+programState[topLayer[layerArray[j]].b_content.children[i].id].style.padding         = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style.padding;
+}
+
+
+}
+
+
+if (topLayer[layerArray[j]].b_content.children.length > 0) {
+ui["setLayer" + (j + 1)].ref.dataset.programState = JSON.stringify(programState);
+} else {
+ui["setLayer" + (j + 1)].ref.dataset.programState = "";
+}
 
 if (topLayer[layerArray[j]].b_content.innerHTML!="") {
 let alphaValue = 0;
@@ -171,6 +228,12 @@ ui["setLayer" + (j + 1)].ref.style.outline       = "3px double rgb(255,255,255)"
 ui["setLayer" + (j + 1)].ref.style.outline = "";
 }
 }
+}
+
+try {
+document.getElementById("accumulatorCount").innerText = topLayer.programStateAccumulator.length;
+} catch {
+document.getElementById("accumulatorCount").innerText = "0";
 }
 
 highlightLayer();

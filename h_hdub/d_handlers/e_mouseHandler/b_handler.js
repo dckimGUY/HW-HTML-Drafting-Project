@@ -635,7 +635,10 @@ for (let j = 100; j >= 0; j--) {
 if (j == 100) {
 setTimeout(() => { splashScreen.style.display = "none"; },   150);
 } else {
-setTimeout(() => { splashScreen.style.opacity =  j / 100; },   (100 - j) * 1.5);
+setTimeout(() => {
+splashScreen.style.opacity =  j / 100;
+splashScreen.style.transform = `scale(${100 / j})`;
+}, (100 - j) * 2);
 }
 }
 }
@@ -692,7 +695,7 @@ const mouseInfo = [event,ctrl,shift,alt];
 
 mouseGiveFocus(mouseInfo);
 
-mouseCursor.src          = currentIconSet.cur2.src;
+
 
 
 

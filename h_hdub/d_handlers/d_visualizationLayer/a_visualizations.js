@@ -30,6 +30,8 @@ if (localStorage.getItem("xrayVision")) { xrayVision = localStorage.getItem("xra
 
 function redraw(element){
 
+drawLiv();
+
 if (window.innerWidth  > 3500) { Vis.width  = 0; return 0; }
 if (window.innerHeight > 3500) { Vis.height = 0; return 0; }
 
@@ -88,11 +90,11 @@ t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scroll
 w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
 h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
        if (zStack[k].id.dataset.coinTrip==Ts0) {
-Y.strokeStyle = greyColour;
+Y.strokeStyle = coinColour0;
 } else if (zStack[k].id.dataset.coinTrip==Ts1) {
-Y.strokeStyle = pinkColour;
+Y.strokeStyle = coinColour1;
 } else if (zStack[k].id.dataset.coinTrip==Ts2) {
-Y.strokeStyle = blueColour;
+Y.strokeStyle = coinColour2;
 }
 Y.strokeRect(l,t,w,h);
 }
@@ -110,9 +112,9 @@ h = parseInt(zStack[j].id.style.height) * parseFloat(zStack[j].id.dataset.scale)
 Y.fillStyle   = lineColour;
 Y.clearRect(l,t,w,h);
 Y.fillRect(l,t,w,h);
-     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = greyColour; }
-else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = pinkColour; }
-else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = blueColour; }
+     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = coinColour0; }
+else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = coinColour1; }
+else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = coinColour2; }
        if (mode==1&&(zStack[j].id==coinFocus||zStack[j].id==mousemoveTarget)) {
 Y.fillRect(l + thinOutline,t + thinOutline,w -(thinOutline * 2),h -(thinOutline * 2));
 Y.fillStyle   = lineColour;
@@ -167,9 +169,9 @@ xray();
 if (drawPartNames=="true") {
 Y.strokeStyle = lineColour;
 Y.lineWidth = 3;
-     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = greyColour; }
-else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = pinkColour; }
-else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = blueColour; }
+     if (zStack[j].id.dataset.coinTrip==Ts0) { Y.fillStyle = coinColour0; }
+else if (zStack[j].id.dataset.coinTrip==Ts1) { Y.fillStyle = coinColour1; }
+else if (zStack[j].id.dataset.coinTrip==Ts2) { Y.fillStyle = coinColour2; }
 
 
 Y.font = "400 32px dckimPixelMono";

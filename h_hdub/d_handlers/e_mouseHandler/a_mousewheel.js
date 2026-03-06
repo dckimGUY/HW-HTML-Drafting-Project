@@ -31,8 +31,20 @@ event.preventDefault();
 event.stopPropagation();
 if (event.wheelDelta > 0) {
 ui.hdubSheetTemplate4x.ref.value++;displayDemo();
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': buzzWord(0,"10x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '2': buzzWord(0, "8x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+}
 } else if (event.wheelDelta < 0) {
 ui.hdubSheetTemplate4x.ref.value--;displayDemo();
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': buzzWord(0,"10x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '2': buzzWord(0, "8x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+}
 }
 
 
@@ -227,15 +239,15 @@ event.preventDefault(); event.stopPropagation();
 event.preventDefault(); event.stopPropagation();
        if ( event.shiftKey) {
        if (event.wheelDelta > 0) {
- focusPrevious(true); updateInfoShelf(); redraw(); 
-} else if (event.wheelDelta < 0) {
- focusNext(true); updateInfoShelf(); redraw(); 
-}
-} else if (!event.shiftKey) {
-       if (event.wheelDelta > 0) {
  focusPrevious(); updateInfoShelf(); redraw(); 
 } else if (event.wheelDelta < 0) {
  focusNext(); updateInfoShelf(); redraw(); 
+}
+} else if (!event.shiftKey) {
+       if (event.wheelDelta > 0) {
+ focusPrevious(true); updateInfoShelf(); redraw(); 
+} else if (event.wheelDelta < 0) {
+ focusNext(true); updateInfoShelf(); redraw(); 
 }
 }
 

@@ -48,11 +48,18 @@ makeTopLayer("b_layer1");
 
 
 singlePasteBuffer = topLayer.singlePasteBuffer;
+singleRestoreBuffer = topLayer.singleRestoreBuffer;
 multiplePasteBuffer = topLayer.multiplePasteBuffer;
 sel0PasteBuffer = topLayer.sel0PasteBuffer;
 sel1PasteBuffer = topLayer.sel1PasteBuffer;
 sel2PasteBuffer = topLayer.sel2PasteBuffer;
 hold = topLayer.hold;
+
+
+if (!topLayer.programStateAccumulator) {
+topLayer.programStateAccumulator = [];
+}
+
 
 
 ui.hwString = topLayer.hwString;

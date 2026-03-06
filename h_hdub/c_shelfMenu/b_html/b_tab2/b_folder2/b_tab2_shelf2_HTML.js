@@ -75,7 +75,15 @@ shelfMenuHTML.tab2.folder2.HTML = `
 
 <input id="coin88067" name="coin88067" class="input_coin88067" type="color" title="style-mode background colour (CAPS lock)">
 <input id="coin46861" name="coin46861" class="input_coin46861" type="color" title="construction-mode background colour">
-<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="***finished-page background colour***">
+
+
+
+
+
+
+
+
+
 <input id="coin72275" name="coin72275" class="input_coin72275" type="color" title="keyboard snap grid colour">
 
 

@@ -13,6 +13,7 @@ topLayer.projectThemes = userCustomTheme;
 
 
 topLayer.singlePasteBuffer = singlePasteBuffer;
+topLayer.singleRestoreBuffer = singleRestoreBuffer;
 topLayer.multiplePasteBuffer = multiplePasteBuffer;
 topLayer.sel0PasteBuffer = sel0PasteBuffer;
 topLayer.sel1PasteBuffer = sel1PasteBuffer;
@@ -53,7 +54,7 @@ const url = URL.createObjectURL(blob);
 const a = document.createElement('a');
 a.href = url;
 //filename = filename.replace(/ /g, '-');
-a.download = "HDUB_" + topLayer.aa_project_name + "@_" + dateSuffix + ".html";
+a.download = "HDUB_Project_" + topLayer.aa_project_name + "@_" + dateSuffix + ".html";
 
 a.click();
 URL.revokeObjectURL(url);

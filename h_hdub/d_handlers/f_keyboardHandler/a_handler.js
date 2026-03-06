@@ -11,6 +11,8 @@ var spaceView = false;
 /* This stops the screen from being refreshed from the keys... which leaves a blank screen anyhow. */
 document.addEventListener("keydown", (event) => {
 
+/*
+
 if (hotDog) {
 if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') { event.preventDefault(); }
 if (event.key==='F5'){ event.preventDefault(); }
@@ -29,6 +31,7 @@ curFocus = 1;
 
 if (event.key==='F5'){ event.preventDefault(); }
 
+*/
 
 });
 
@@ -77,7 +80,7 @@ if (!es&&!ec&&!ea) {
 edgeDetect.style.display= "none";
 }
 
-mouseCursor.style.display            = "none";
+
 if (ec&&es&&mode!=8) {dot();}
 
 /*   esc   */ if (kC ==  27)              {
@@ -107,7 +110,6 @@ if (!event.ctrlKey) {
 event.preventDefault();
 toggleLocalView();
 }
-
 /*
 if (!es) {
 toggleInterfaceLayer();
@@ -121,10 +123,9 @@ enterWizardMaster();
 
 
 if (event.shiftKey) {
-
+flipTheBuffers();
 } else {
-
-
+flipPhantomLair();
 }
 
 
@@ -132,7 +133,7 @@ if (event.shiftKey) {
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*   F1    */ if (kC == 112)              { helpMenu(e);                   }
+/*   F1    */ if (kC == 112)              { programManual("index");        }
 /*   F2    */ if (kC == 113)              {                                }
 /*   F3    */ if (kC == 114)              {                                }
 /*   F4    */ if (kC == 115)              {                                }
@@ -159,11 +160,15 @@ if (event.shiftKey) {
 /*                                                                        */
 /*   ins   */ if (kC ==  45)              { event.preventDefault();
        if (!event.shiftKey) {
-pasteSingle();
+ try { topLayer.programStateAccumulator.push(JSON.parse(document.getElementById(topLayer.a_currentLayer.replace(/._l/g, 'setL')).dataset.programState));
+buzzWord(0,'+STATE',128,'orange',400,200,25,'top')} catch{}
 } else if ( event.shiftKey) {
-flipPhantomLair();
+if (topLayer.programStateAccumulator.length == 0) { return; };
+popAccumulator(JSON.stringify(topLayer.programStateAccumulator));
+buzzWord(0,'State Data',128,'orange',400,200,25,'top');
 }
 }
+
 /*   home  */ if (kC ==  36)              { event.preventDefault();
        if (utilityLayer0.children.length > 0) {
 utilityLayer0.children[0].scrollIntoView();
@@ -173,20 +178,13 @@ Cur.scrollIntoView();
 window.scrollTo(0,0);
 }
 }
+
 /* page up */ if (kC ==  33)              { event.preventDefault();
-
-
-
        if (!event.shiftKey) {
-window.scrollBy(0,       -visualGridSize3);
+layerLeft();updateInfoShelf();redraw();
 } else if ( event.shiftKey) {
-window.scrollBy(0,-0.50 * visualGridSize3);
+deMinimis(true); layerLeft(); buzzWord(0,'< + SAVE',128,'magenta',200,200,25,'top','','',event);
 }
-
-
-
-
-
 
 
 }
@@ -195,9 +193,9 @@ window.scrollBy(0,-0.50 * visualGridSize3);
 /*                                                                        */
 /*  delete */ if (kC ==  46)              { event.preventDefault();
        if (!event.shiftKey) {
-deleteCoin(['',88,120]);
+permanentRemoval(['',88,120]);
 } else if ( event.shiftKey) {
-groupToPhantomLair();
+permanentGroupRemoval();
 }
 }
 /*   end   */ if (kC ==  35)              { event.preventDefault();
@@ -211,9 +209,15 @@ window.scrollTo(0,0);
 }
 /*page down*/ if (kC ==  34)              { event.preventDefault();
        if (!event.shiftKey) {
-window.scrollBy(0,        visualGridSize3);
+layerRight();updateInfoShelf();redraw();
 } else if ( event.shiftKey) {
-window.scrollBy(0, 0.50 * visualGridSize3);
+
+
+deMinimis(true); layerRight(); buzzWord(0,'> + SAVE',128,'magenta',200,200,25,'top','','',event);
+
+
+
+
 }
 }
 /*                                                                        */
@@ -248,12 +252,13 @@ document.getElementById("hdubSingleEntry").focus();
 
 }
 
-redraw();
 
 setTimeout(() => {
 loadSidebar1();
 updateInfoShelf();
+redraw();
 }, 10);
+
 
 
 /*                                                                        */
@@ -272,30 +277,31 @@ edgeDetect.style.display= "none";
 cC = event.charCode;
 let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
 let keyInfo = [e,kC,cC,es,ec,ea];
+
 /**************************************************************************/
 /**************************************************************************/
 /**************************************************************************/
 /*                                                                        */
-/*    /    */ if (kC == 111 && cC ==  47) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    *    */ if (kC == 106 && cC ==  42) { e.preventDefault(); numpadRouter(keyInfo);         }
+/*    /    */ if (kC == 111 && cC ==  47) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n/";}
+/*    *    */ if (kC == 106 && cC ==  42) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n*";}
 /*                                                                        */
-/*    -    */ if (kC == 109 && cC ==  45) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    +    */ if (kC == 107 && cC ==  43) { e.preventDefault(); numpadRouter(keyInfo);         }
+/*    -    */ if (kC == 109 && cC ==  45) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n-";}
+/*    +    */ if (kC == 107 && cC ==  43) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n+";}
 /*                                                                        */
-/*    7    */ if (kC == 103 && cC ==  55) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
-/*    8    */ if (kC == 104 && cC ==  56) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
-/*    9    */ if (kC == 105 && cC ==  57) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    7    */ if (kC == 103 && cC ==  55) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n7";}
+/*    8    */ if (kC == 104 && cC ==  56) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n8";}
+/*    9    */ if (kC == 105 && cC ==  57) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n9";}
 /*                                                                        */
-/*    4    */ if (kC == 100 && cC ==  52) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
-/*    5    */ if (kC == 101 && cC ==  53) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
-/*    6    */ if (kC == 102 && cC ==  54) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    4    */ if (kC == 100 && cC ==  52) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n4";}
+/*    5    */ if (kC == 101 && cC ==  53) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n5";}
+/*    6    */ if (kC == 102 && cC ==  54) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n6";}
 /*                                                                        */
-/*    1    */ if (kC ==  97 && cC ==  49) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
-/*    2    */ if (kC ==  98 && cC ==  50) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
-/*    3    */ if (kC ==  99 && cC ==  51) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         }
+/*    1    */ if (kC ==  97 && cC ==  49) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n1";}
+/*    2    */ if (kC ==  98 && cC ==  50) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n2";}
+/*    3    */ if (kC ==  99 && cC ==  51) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n3";}
 /*                                                                        */
-/*    0    */ if (kC ==  96 && cC ==  48) { e.preventDefault(); numpadRouter(keyInfo);         }
-/*    .    */ if (kC == 110 && cC ==  46) { e.preventDefault(); numpadRouter(keyInfo);         }
+/*    0    */ if (kC ==  96 && cC ==  48) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n0";}
+/*    .    */ if (kC == 110 && cC ==  46) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n.";}
 /*                                                                        */
 /**************************************************************************/
 
@@ -333,22 +339,24 @@ if (ui.folder52.ref.style.display == "block" &&
 }
 }
 }
+
+
 /*                                                                        */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    `    */ if (kC == 192 && cC ==  96) { toggleInterfaceShelf();        }/*    ~    */ if (kC == 192 && cC == 126) { toggleInterfaceLayer();        }
-/*    1    */ if (kC ==  49 && cC ==  49) { makeTopLayer("b_layer1");      }/*    !    */ if (kC ==  49 && cC ==  33) { saveInternalImage();           }
-/*    2    */ if (kC ==  50 && cC ==  50) { makeTopLayer("c_layer2");      }/*    @    */ if (kC ==  50 && cC ==  64) { setDragPullFromContext();      }
-/*    3    */ if (kC ==  51 && cC ==  51) { makeTopLayer("d_layer3");      }/*    #    */ if (kC ==  51 && cC ==  35) {  if (drawPartNames=="false") { drawPartNames = "true"; } else { drawPartNames = "false"; }; localStorage.setItem("drawPartNames", drawPartNames); redraw();              }
-/*    4    */ if (kC ==  52 && cC ==  52) { makeTopLayer("e_layer4");      }/*    $    */ if (kC ==  52 && cC ==  36) { fMan(keyInfo);                 }
-/*    5    */ if (kC ==  53 && cC ==  53) { makeTopLayer("f_layer5");      }/*    %    */ if (kC ==  53 && cC ==  37) { enterPageEchelon();            }
-/*    6    */ if (kC ==  54 && cC ==  54) { makeTopLayer("g_layer6");      }/*    ^    */ if (kC ==  54 && cC ==  94) { fMan(keyInfo);                 }
-/*    7    */ if (kC ==  55 && cC ==  55) { makeTopLayer("h_layer7");      }/*    &    */ if (kC ==  55 && cC ==  38) { otherFontAndTemplates();       }
-/*    8    */ if (kC ==  56 && cC ==  56) { makeTopLayer("i_layer8");      }/*    *    */ if (kC ==  56 && cC ==  42) { goFullscreen();                }
-/*    9    */ if (kC ==  57 && cC ==  57) { makeTopLayer("j_layer9");      }/*    (    */ if (kC ==  57 && cC ==  40) { insertNamedColours();          }
-/*    0    */ if (kC ==  48 && cC ==  48) { copyFilenameLink();            }/*    )    */ if (kC ==  48 && cC ==  41) { insertGrayscale();             }
-/*    -    */ if (kC == 173 && cC ==  45) { lessG(e);                      }/*    _    */ if (kC == 173 && cC ==  95) { lessG(e);                      }
-/*    =    */ if (kC ==  61 && cC ==  61) { moreG(e);                      }/*    +    */ if (kC ==  61 && cC ==  43) { moreG(e);                      }
+/*    `    */ if (kC == 192 && cC ==  96) { toggleMenu();                  lastKey = "`";}/*    ~    */ if (kC == 192 && cC == 126) { toggleInterfaceLayer();        lastKey = "~";}
+/*    1    */ if (kC ==  49 && cC ==  49) { changeLayer("b_layer1");  lastKey = "1"; }/*    !    */ if (kC ==  49 && cC ==  33) { changeLayer("l_layer11");      lastKey = "!";}
+/*    2    */ if (kC ==  50 && cC ==  50) { changeLayer("c_layer2");  lastKey = "2"; }/*    @    */ if (kC ==  50 && cC ==  64) { changeLayer("m_layer12");      lastKey = "@";}
+/*    3    */ if (kC ==  51 && cC ==  51) { changeLayer("d_layer3");  lastKey = "3"; }/*    #    */ if (kC ==  51 && cC ==  35) { changeLayer("n_layer13");      lastKey = "#";}
+/*    4    */ if (kC ==  52 && cC ==  52) { changeLayer("e_layer4");  lastKey = "4"; }/*    $    */ if (kC ==  52 && cC ==  36) { changeLayer("o_layer14");      lastKey = "$";}
+/*    5    */ if (kC ==  53 && cC ==  53) { changeLayer("f_layer5");  lastKey = "5"; }/*    %    */ if (kC ==  53 && cC ==  37) { changeLayer("p_layer15");      lastKey = "%";}
+/*    6    */ if (kC ==  54 && cC ==  54) { changeLayer("g_layer6");  lastKey = "6"; }/*    ^    */ if (kC ==  54 && cC ==  94) { changeLayer("q_layer16");      lastKey = "^";}
+/*    7    */ if (kC ==  55 && cC ==  55) { changeLayer("h_layer7");  lastKey = "7"; }/*    &    */ if (kC ==  55 && cC ==  38) { changeLayer("r_layer17");      lastKey = "&";}
+/*    8    */ if (kC ==  56 && cC ==  56) { changeLayer("i_layer8");  lastKey = "8"; }/*    *    */ if (kC ==  56 && cC ==  42) { changeLayer("s_layer18");      lastKey = "*";}
+/*    9    */ if (kC ==  57 && cC ==  57) { changeLayer("j_layer9");  lastKey = "9"; }/*    (    */ if (kC ==  57 && cC ==  40) { changeLayer("t_layer19");      lastKey = "(";}
+/*    0    */ if (kC ==  48 && cC ==  48) { changeLayer("k_layer10"); lastKey = "0"; }/*    )    */ if (kC ==  48 && cC ==  41) { changeLayer("u_layer20");      lastKey = ")";}
+/*    -    */ if (kC == 173 && cC ==  45) { lessG(e);                 lastKey = "-"; }/*    _    */ if (kC == 173 && cC ==  95) { lessG(e);                      lastKey = "_";}
+/*    =    */ if (kC ==  61 && cC ==  61) { moreG(e);                 lastKey = "="; }/*    +    */ if (kC ==  61 && cC ==  43) { moreG(e);                      lastKey = "+";}
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -357,14 +365,17 @@ if (ui.folder52.ref.style.display == "block" &&
 /*    e    */ if (kC ==  69 && cC == 101) { shiftRouter(keyInfo);lastKey="e";}/*    E    */ if (kC ==  69 && cC ==  69) { shiftRouter(keyInfo);lastKey="E";}
 /*    r    */ if (kC ==  82 && cC == 114) { shiftRouter(keyInfo);lastKey="r";}/*    R    */ if (kC ==  82 && cC ==  82) { shiftRouter(keyInfo);lastKey="R";}
 /*    t    */ if (kC ==  84 && cC == 116) { shiftRouter(keyInfo);lastKey="t";}/*    T    */ if (kC ==  84 && cC ==  84) { shiftRouter(keyInfo);lastKey="T";}
-/*    y    */ if (kC ==  89 && cC == 121) { shiftRouter(keyInfo);lastKey="y";}/*    Y    */ if (kC ==  89 && cC ==  89) { shiftRouter(keyInfo);lastKey="Y";}
+
+/*    y    */ if (kC ==  89 && cC == 121) { shiftRouter(keyInfo);lastKey="y";}
+/*    Y    */ if (kC ==  89 && cC ==  89) { shiftRouter(keyInfo);lastKey="Y";}
+
 /*    u    */ if (kC ==  85 && cC == 117) { shiftRouter(keyInfo);lastKey="u";}/*    U    */ if (kC ==  85 && cC ==  85) { shiftRouter(keyInfo);lastKey="U";}
 /*    i    */ if (kC ==  73 && cC == 105) { shiftRouter(keyInfo);lastKey="i";}/*    I    */ if (kC ==  73 && cC ==  73) { shiftRouter(keyInfo);lastKey="I";}
 /*    o    */ if (kC ==  79 && cC == 111) { shiftRouter(keyInfo);lastKey="o";}/*    O    */ if (kC ==  79 && cC ==  79) { shiftRouter(keyInfo);lastKey="O";}
 /*    p    */ if (kC ==  80 && cC == 112) { shiftRouter(keyInfo);lastKey="p";}/*    P    */ if (kC ==  80 && cC ==  80) { shiftRouter(keyInfo);lastKey="P";}
-/*    [    */ if (kC == 219 && cC ==  91) { lessG(e);                        }/*    {    */ if (kC == 219 && cC == 123) { oneLessG(e);                     }
-/*    ]    */ if (kC == 221 && cC ==  93) { moreG(e);                        }/*    }    */ if (kC == 221 && cC == 125) { oneMoreG(e);                     }
-/*    \    */ if (kC == 220 && cC ==  92) { focusNextColour();               }/*    |    */ if (kC == 220 && cC == 124) {if(rev==1){focusLast()}else{focusFirst()}}
+/*    [    */ if (kC == 219 && cC ==  91) { lessG(e);                        lastKey = "[";} /*    {    */ if (kC == 219 && cC == 123) { oneLessG(e);                 lastKey = "{";}
+/*    ]    */ if (kC == 221 && cC ==  93) { moreG(e);                        lastKey = "]";} /*    }    */ if (kC == 221 && cC == 125) { oneMoreG(e);                 lastKey = "}";}
+/*    \    */ if (kC == 220 && cC ==  92) { focusNextColour();               lastKey = "\\";}/*    |    */ if (kC == 220 && cC == 124) { firstLastColour();           lastKey = "|";}
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -377,8 +388,8 @@ if (ui.folder52.ref.style.display == "block" &&
 /*    j    */ if (kC ==  74 && cC == 106) { shiftRouter(keyInfo);lastKey="j";}/*    J    */ if (kC ==  74 && cC ==  74) { shiftRouter(keyInfo);lastKey="J";}
 /*    k    */ if (kC ==  75 && cC == 107) { shiftRouter(keyInfo);lastKey="k";}/*    K    */ if (kC ==  75 && cC ==  75) { shiftRouter(keyInfo);lastKey="K";}
 /*    l    */ if (kC ==  76 && cC == 108) { shiftRouter(keyInfo);lastKey="l";}/*    L    */ if (kC ==  76 && cC ==  76) { shiftRouter(keyInfo);lastKey="L";}
-/*    ;    */ if (kC ==  59 && cC ==  59) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center'});} }/*    :    */ if (kC ==  59 && cC ==  58) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', inline: 'center'});} }
-/*    '    */ if (kC == 222 && cC ==  39) { fMan(keyInfo);                 }/*    "    */ if (kC == 222 && cC ==34){ if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center', inline: 'center'});} }
+/*    ;    */ if (kC ==  59 && cC ==  59) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center'});} lastKey = ";";}/*    :    */ if (kC ==  59 && cC ==  58) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', inline: 'center'});} lastKey = ":";}
+/*    '    */ if (kC == 222 && cC ==  39) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center', inline: 'center'});} lastKey = "'"; }/*    "    */ if (kC == 222 && cC ==34){ if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'smooth', block:'center', inline: 'center'});} lastKey = '"'; }
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -389,26 +400,35 @@ if (ui.folder52.ref.style.display == "block" &&
 /*    b    */ if (kC ==  66 && cC ==  98) { shiftRouter(keyInfo);lastKey="b";}/*    B    */ if (kC ==  66 && cC ==  66) { shiftRouter(keyInfo);lastKey="B";}
 /*    n    */ if (kC ==  78 && cC == 110) { shiftRouter(keyInfo);lastKey="n";}/*    N    */ if (kC ==  78 && cC ==  78) { shiftRouter(keyInfo);lastKey="N";}
 /*    m    */ if (kC ==  77 && cC == 109) { shiftRouter(keyInfo);lastKey="m";}/*    M    */ if (kC ==  77 && cC ==  77) { shiftRouter(keyInfo);lastKey="M";}
-/*    ,    */ if (kC == 188 && cC ==  44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}}/*    <    */ if (kC == 188 && cC ==  60) {layerLeft();updateInfoShelf();redraw();}
-/*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}}/*    >    */ if (kC == 190 && cC ==  62) {layerRight();updateInfoShelf();redraw();}
-/*    /    */ if (kC == 191 && cC ==  47) { event.preventDefault(); mouseIncrementCycle(); }/*    ?    */ if (kC == 191 && cC ==  63) { 
+/*    ,    */ if (kC == 188 && cC ==  44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}lastKey = ",";}/*    <    */ if (kC == 188 && cC ==  60) {setupLeft();  lastKey = "<";}
+/*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}lastKey = ".";}/*    >    */ if (kC == 190 && cC ==  62) {setupRight(); lastKey = ">";}
+/*    /    */ if (kC == 191 && cC ==  47) { event.preventDefault(); mouseIncrementCycle(); lastKey = "/";}/*    ?    */ if (kC == 191 && cC ==  63) { 
                  if ( grid0Viz == "true") {
                       grid0Viz = "false";
 localStorage.setItem("grid0Viz", "false");
 } else {              grid0Viz = "true";
 localStorage.setItem("grid0Viz", "true"); }
-Z();                      }
+Z();                      
+
+lastKey = "?";
+}
 
 
 /*                                                                                                                                                    */
 
-redraw();
+
+
+handleBuzz();
+
+
 
        if (lastFlow == "global") {
 reflowGlobal(rev,0)
 } else if (lastFlow == "colour") {
 reflowPerTrip();
 }
+
+
 
 /******************************************************************************************************************************************************/
 /******************************************************************************************************************************************************/
@@ -467,7 +487,7 @@ restorePointerEventsNone();
 
 if (!(ec&&es)) {rdots();}
 
-redraw();
+
 
 setTimeout(() => {
 loadSidebar1();

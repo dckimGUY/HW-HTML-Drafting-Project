@@ -135,7 +135,7 @@ border-radius: 4px;
 
 .input_coin88067                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:     73px; top:    232px; width:     22px; height:     17px; }
 .input_coin46861                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:     47px; top:    232px; width:     22px; height:     17px; }
-.input_coin44038                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    107px; top:    232px; width:     22px; height:     17px; }
+
 .input_coin72275                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    125px; top:     72px; width:     19px; height:     12px; }
 .input_coin43886                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    148px; top:     72px; width:     19px; height:     12px; }
 

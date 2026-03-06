@@ -7,6 +7,21 @@ ui.tab6.click                 = function() { tabSelector(6); };
 ui.crop.click                 = function() { ui.menuWrapper.ref.style.display = "none";  ui.menu_open.ref.style.display = "block"; };
 ui.menu_open.click            = function() { ui.menuWrapper.ref.style.display = "block"; ui.menu_open.ref.style.display = "none";  };
 
+
+function toggleMenu() {
+       if (ui.menuWrapper.ref.style.display == "block") {
+           ui.menuWrapper.ref.style.display  = "none";
+             ui.menu_open.ref.style.display  = "block";
+} else if (ui.menuWrapper.ref.style.display == "none") {
+           ui.menuWrapper.ref.style.display  = "block";
+             ui.menu_open.ref.style.display  = "none";
+} else {
+           ui.menuWrapper.ref.style.display  = "none";
+             ui.menu_open.ref.style.display  = "block";
+}
+}
+
+
 function tabSelector(tabNumber) {
 /* HIDE EVERYTHING */
 for (let j = 1; j < 7; j++) { document.getElementById("tab" + j + "Wrapper").style.display = "none"; }

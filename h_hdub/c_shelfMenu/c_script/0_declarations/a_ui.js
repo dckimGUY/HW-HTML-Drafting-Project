@@ -247,9 +247,9 @@ ui.coin43886.ref.value = bU;
 
 
 
-ui.coin59277.ref.value = greyColour;
-ui.coin62796.ref.value = blueColour;
-ui.coin65598.ref.value = pinkColour;
+ui.coin59277.ref.value = coinColour0;
+ui.coin62796.ref.value = coinColour2;
+ui.coin65598.ref.value = coinColour1;
 ui.coin67938.ref.value = lineColour;
 ui.coin47065.ref.value = selectedColour;
 

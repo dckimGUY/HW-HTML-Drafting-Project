@@ -1,5 +1,6 @@
 function flipAnchorZ(keyInfo) {
 
+/*
 const
 e      = keyInfo[0],
 kC     = keyInfo[1],
@@ -39,4 +40,6 @@ noteStyle("<u>Z</u><br><span style='font-size: 0.5em;'>anchor:</span><br><span s
 }
 }
 }
+*/
+
 }

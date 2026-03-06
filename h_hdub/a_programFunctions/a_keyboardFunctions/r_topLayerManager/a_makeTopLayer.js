@@ -54,18 +54,24 @@ document.getElementById("documentTitle").innerText = filename;
 fileHeader = topLayer[topLayer.a_currentLayer].header;
 fileFooter = topLayer[topLayer.a_currentLayer].footer;
 
-
 readCoins();
+if (!mouseIsDogged) {
 recoverColouration();
 if (coinFocus!=null) {
 coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 }
-
 if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
-
 redraw();
+} else {
+spaceViewOff();
+restorePointerEventsNone();
 
+spaceViewOn();
+removePointerEventsNone();
+interfaceLayer.style.display = "none";
+
+}
 
 updateInfoShelf();
 

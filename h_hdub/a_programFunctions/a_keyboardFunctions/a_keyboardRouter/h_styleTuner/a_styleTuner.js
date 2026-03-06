@@ -37,6 +37,9 @@ const tintArray =
 
 function styleTuner(keyInfo) {
 
+normalTuner();
+
+/*
        if (styleKey =="r"||styleKey =="R") {
 borderRadiusTuner();
 } else if (styleKey =="u"||styleKey =="U") {
@@ -52,5 +55,6 @@ alignmentTuner();
 } else if (styleKey =="f"||styleKey =="F") {
 fontTuner();
 }
+*/
 
 }

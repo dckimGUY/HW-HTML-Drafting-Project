@@ -26,14 +26,14 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 
 /*    Q    */ if (kC ==  81 && cC ==  81) { wrapDocument(); noteCoin("T<br><span style='font-size: 0.5em;'>wrap all</span>",durationC);                                          }
 /*    W    */ if (kC ==  87 && cC ==  87) { noteCoin("<u>B</u><br><span style='font-size: 0.5em;'>copy opener contents</span>",durationC); copyOpenerContents(keyInfo);          }
-/*    E    */ if (kC ==  69 && cC ==  69) {                                                                              flipEdge(); modeRouter(e,5);                            }
+/*    E    */ if (kC ==  69 && cC ==  69) { enterPageEchelon();                                                                                                                  }
 /*    R    */ if (kC ==  82 && cC ==  82) { removeGroup();                                                                                                                       }
 /*    T    */ if (kC ==  84 && cC ==  84) { noteCoin("<u>Q</u><br><span style='font-size: 0.5em;'>colour all</span>",durationC); modeRouter(e,8); if (lastKey=="T") { assignAllColours(); }  }
 /*    Y    */ if (kC ==  89 && cC ==  89) { isolateGroup(); }
-/*    U    */ if (kC ==  85 && cC ==  85) {}
+/*    U    */ if (kC ==  85 && cC ==  85) { duplicateU(); }
 /*    I    */ if (kC ==  73 && cC ==  73) {                                 aioNRouter(keyInfo);                                                                                 }
 /*    O    */ if (kC ==  79 && cC ==  79) {                                 aioNRouter(keyInfo);                                                                                 }
-/*    P    */ if (kC ==  80 && cC ==  80) {                                 flipPhantomLair();                                                                                   }
+/*    P    */ if (kC ==  80 && cC ==  80) { duplicateP(); }
 /*    A    */ if (kC ==  65 && cC ==  65) {                                 aioNRouter(keyInfo);                                                                                 }
 /*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false, lastFactor);                                                                        }
 /*    D    */ if (kC ==  68 && cC ==  68) { noteCoin("<u>D</u><br><span style='font-size: 0.5em;'>duplicate in place</span>",durationC); insertNewDuplicate(keyInfo);            }
@@ -58,7 +58,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    r    */ if (kC ==  82 && cC == 114) { removeCoin();                                                                                                                               }
 /*    t    */ if (kC ==  84 && cC == 116) { noteCoin("Q<br><span style='font-size: 0.5em;'>colour mode</span>",durationC); modeRouter(e,8); if (lastKey=="t") { swapColours(); }        }
 /*    y    */ if (kC ==  89 && cC == 121) { isolateSingle(); }
-/*    u    */ if (kC ==  85 && cC == 117) {}
+/*    u    */ if (kC ==  85 && cC == 117) { restoreSingle(); }
 /*    i    */ if (kC ==  73 && cC == 105) {                          aioNRouter(keyInfo);                                                                                               }
 /*    o    */ if (kC ==  79 && cC == 111) {                          aioNRouter(keyInfo);                                                                                               }
 /*    p    */ if (kC ==  80 && cC == 112) {                          pasteSingle(keyInfo);                                                                                              }
@@ -76,7 +76,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    c    */ if (kC ==  67 && cC ==  99) { noteCoin("C<br><span style='font-size: 0.5em;'>cursor</span>",durationC); cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});   }
 /*    v    */ if (kC ==  86 && cC == 118) { noteCoin("V<br><span style='font-size: 0.5em;'>flow document</span>",durationC); lastFlow = "global"; reflowGlobal(rev,0);                  }
 /*    b    */ if (kC ==  66 && cC ==  98) { severHTML(); }
-/*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partY").focus(); document.getElementById("partY").select();                    }
+/*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partNom").focus(); /* document.getElementById("partNom").select(); */          }
 /*    m    */ if (kC ==  77 && cC == 109) { noteCoin("M+<br><span style='font-size: 0.5em;'>set mark</span>",durationC); charQ1=0;charM=1;charF=0;                                      }
 /*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/

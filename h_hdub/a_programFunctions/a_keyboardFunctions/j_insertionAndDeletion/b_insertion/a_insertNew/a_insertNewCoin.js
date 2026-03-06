@@ -27,7 +27,7 @@ img         = document.createElement("img");
              img.dataset.name = `img`;
           main.dataset.name   = `main`;
 
-       anchor.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
+       anchor.style = `position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
 
        if (showPartName==true) {
 anchor.innerText      =    newId;
@@ -110,6 +110,45 @@ anchor.style.opacity                 =        Os2;
 
 newCoin.style.userSelect="none";
 
+
+
+
+
+
+if (curFocus==1) {
+if (coinFocus!=null) {
+       if (coinFocus.dataset.coinTrip==Ts0) {
+newCoin.dataset.coinTrip              =        Ts0;
+} else if (coinFocus.dataset.coinTrip==Ts1) {
+newCoin.dataset.coinTrip              =        Ts1;
+} else if (coinFocus.dataset.coinTrip==Ts2) {
+newCoin.dataset.coinTrip              =        Ts2;
+}
+} else {
+newCoin.dataset.coinTrip              =        Ts2;
+}
+} else {
+if (coinFocus != null) {
+newCoin.dataset.coinTrip              =        coinFocus.dataset.coinTrip;
+} else {
+newCoin.dataset.coinTrip              =        Ts2;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (coinFocus!=null) {
 let scaleFactor = 1;
 if (coinFocus.dataset.scale) { scaleFactor = parseFloat(coinFocus.dataset.scale); }
@@ -121,6 +160,16 @@ newCoin.style.height    =    parseInt(coinFocus.dataset.height)*scaleFactor + "p
 logMessage=`"i"-insertion at left,       jsName : "${newCoin.dataset.jsName}"`;
 eM=1;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : left and top ***`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"i",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 /*    I    */ if (kC ==  73 && cC == 73) {
 newCoin.style.left      =    document.body.scrollLeft + "px";
@@ -130,6 +179,16 @@ newCoin.style.height    =    parseInt(coinFocus.dataset.height)*scaleFactor + "p
 logMessage=`"I"-insertion at left edge,  jsName : "${newCoin.dataset.jsName}"`;
 eM=0;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"I",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 /*    o    */ if (kC ==  79 && cC ==  111) {
@@ -140,6 +199,16 @@ newCoin.style.height    =    T + "px"                              ;
 logMessage=`"o"-insertion below,         jsName : "${newCoin.dataset.jsName}"`;
 eM=0;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"o",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 /*    O    */ if (kC ==  79 && cC == 79) {
 newCoin.style.left      =    parseInt(coinFocus.dataset.left) + "px";
@@ -149,6 +218,16 @@ newCoin.style.height    =    T + "px"                              ;
 logMessage=`"O"-insertion above,         jsName : "${newCoin.dataset.jsName}"`;
 eM=1;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : left and top ***`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"O",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 /*    a    */ if (kC ==  65 && cC ==  97) {
@@ -159,6 +238,16 @@ newCoin.style.height    =    parseInt(coinFocus.dataset.height)*scaleFactor + "p
 logMessage=`"a"-insertion at right,      jsName : "${newCoin.dataset.jsName}"`;
 eM=0;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : right and down ***`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"a",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 /*    A    */ if (kC ==  65 && cC ==  65) {
 newCoin.style.left      =    document.body.scrollLeft + window.innerWidth - T + "px";
@@ -168,6 +257,16 @@ newCoin.style.height    =    parseInt(coinFocus.dataset.height)*scaleFactor + "p
 logMessage=`"A"-insertion at right edge, jsName : "${newCoin.dataset.jsName}"`;
 eM=1;modeRouter(e,5); 
 logMessage=`*** mode 5 - "e" - extendEdge : left and top ***`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"A",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 /*    D    */ if (kC ==  68 && cC == 68) {
@@ -176,6 +275,16 @@ newCoin.style.top       =    parseInt(coinFocus.dataset.top)  + "px";
 newCoin.style.width     =    parseInt(coinFocus.dataset.width) +"px";
 newCoin.style.height    =    parseInt(coinFocus.dataset.height)+"px";
 logMessage=`"D"-duplicated in-place,      jsName : "${newCoin.dataset.jsName}"`;
+const textColour = window["coinColour" + newCoin.dataset.coinTrip];
+let fontWidth;
+if (parseInt(newCoin.style.width) < parseInt(newCoin.style.height)) {
+fontWidth = parseInt(newCoin.style.width );} else {
+fontWidth = parseInt(newCoin.style.height);}
+const coinCentre = [
+parseInt(newCoin.style.left) + parseInt(newCoin.style.width ) / 2,
+parseInt(newCoin.style.top ) + parseInt(newCoin.style.height) / 2
+];
+buzzWord(1,"D",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 }
@@ -183,18 +292,13 @@ logMessage=`"D"-duplicated in-place,      jsName : "${newCoin.dataset.jsName}"`;
 
 
 /*    N    */ if (kC ==  78 && cC == 78) {
-if (Cur.style.display!="none") {
-newCoin.style.left      =    parseInt(Cur.dataset.left)         + "px";
-newCoin.style.top       =    parseInt(Cur.dataset.top)          + "px";
-} else {
-newCoin.style.left      =    window.scrollX         + "px";
-newCoin.style.top       =    window.scrollY         + "px";
-}
 
 newCoin.style.width    = T*Math.ceil((edgeQ*2)/T)+"px";
 newCoin.style.height   = T*Math.ceil((edgeQ*2)/T)+"px";
-                              ;
-curFocus                =    1                                        ;
+
+newCoin.style.left = window.scrollX + (window.innerWidth  / 2) - (parseInt(newCoin.style.width)  / 2) + "px";
+newCoin.style.top  = window.scrollY + (window.innerHeight / 2) - (parseInt(newCoin.style.height) / 2) + "px";
+
 }
 
 
@@ -214,21 +318,7 @@ newCoin.dataset.angle                 =        "0";
 newCoin.dataset.left                  =        parseInt(newCoin.style.left) + "px";
 newCoin.dataset.top                   =        parseInt(newCoin.style.top)  + "px";
 
-if (curFocus==1) {
-if (coinFocus!=null) {
-       if (coinFocus.dataset.coinTrip==Ts0) {
-newCoin.dataset.coinTrip              =        Ts0;
-} else if (coinFocus.dataset.coinTrip==Ts1) {
-newCoin.dataset.coinTrip              =        Ts1;
-} else if (coinFocus.dataset.coinTrip==Ts2) {
-newCoin.dataset.coinTrip              =        Ts2;
-}
-} else {
-newCoin.dataset.coinTrip              =        Ts2;
-}
-} else {
-newCoin.dataset.coinTrip              =        coinFocus.dataset.coinTrip;
-}
+
 
 if (parseInt(newCoin.style.left)>=0&&parseInt(newCoin.style.top)>=0) {
        if (newCoin.dataset.coinTrip == Ts0) { coinTrip.sel0[coinTrip.sel0.length] = newCoin;
@@ -245,6 +335,7 @@ newCoin.button = newCoin.lastElementChild.firstElementChild;
 newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
 newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
+newCoin.div.style.fontFamily = "inherit";
 
 /* Initialize from the template. */
 
@@ -273,8 +364,8 @@ div.style.paddingRight            = template.default.paddingRight            ;
 div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
-div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;" contenteditable="true"></p>';
-//newCoin.div.setAttribute("contenteditable", true);
+div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></p>';
+newCoin.div.setAttribute("contenteditable", true);
 
 if (hauptMode==0) {
 utilityLayer0.appendChild(newCoin);

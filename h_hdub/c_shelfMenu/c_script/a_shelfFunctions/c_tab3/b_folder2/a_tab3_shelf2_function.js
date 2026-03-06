@@ -361,13 +361,11 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSiz
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "32px";
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontFamily = "dckimPixelMono"
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflow = "scroll";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contenteditable = "true";
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
 coinFocus.style.width = "1536px";
 coinFocus.style.height = "1536px";
 coinFocus.dataset.width = "1536px";
 coinFocus.dataset.height = "1536px";
-flipAnchorZ([,,,false,]);
-makeItContentEditable([,,,false,]);
 }
 
 
@@ -533,8 +531,6 @@ coinFocus.style.height   = imageDummy.naturalHeight * entryFactor + "px";
 coinFocus.dataset.height = imageDummy.naturalHeight * entryFactor + "px";
 
 
-
-flipAnchorZ([,,,false,]);
 
 if (event.shiftKey) {
 anim.appendChild(script);

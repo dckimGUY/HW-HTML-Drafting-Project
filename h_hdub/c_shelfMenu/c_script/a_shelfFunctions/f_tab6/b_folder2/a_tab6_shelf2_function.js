@@ -112,11 +112,11 @@ const width  = Math.floor(parseInt(utilityLayer0.children[j].style.width ) / dow
 const height = Math.floor(parseInt(utilityLayer0.children[j].style.height) / downsize);
 ctx.lineWidth = 2;
        if (utilityLayer0.children[j].dataset.coinTrip == "2") {
-ctx.strokeStyle = blueColour;
+ctx.strokeStyle = coinColour2;
 } else if (utilityLayer0.children[j].dataset.coinTrip == "0") {
-ctx.strokeStyle = greyColour;
+ctx.strokeStyle = coinColour0;
 } else if (utilityLayer0.children[j].dataset.coinTrip == "1") {
-ctx.strokeStyle = pinkColour;
+ctx.strokeStyle = coinColour1;
 }
 ctx.strokeRect(left + 1,top + 1,width - 2,height - 2);
 }
@@ -130,8 +130,8 @@ try {
 const buoyValues = Object.values(topLayer.buoyPoint);
 for (let j = 0; j < buoyValues.length; j++) {
 ctx.beginPath();
-ctx.fillStyle = buoyValues[j].colour;
 ctx.font = "400 24px dckimPixelMono";
+ctx.fillStyle = visualGridColour3;
 ctx.textBaseline="top";
 ctx.fillText(`${buoyValues[j].name}`,Math.floor((buoyValues[j].location[0] - window.scrollX)/downsize),Math.floor((buoyValues[j].location[1] - window.scrollY)/downsize));
 ctx.stroke();

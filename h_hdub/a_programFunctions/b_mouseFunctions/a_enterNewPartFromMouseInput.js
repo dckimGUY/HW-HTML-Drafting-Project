@@ -29,7 +29,7 @@ div.dataset.name = `div`;
          main.dataset.name = `main`;
       main.style.transform = ``;
 
-      anchor.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
+      anchor.style = `position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
 
 anchor.innerText      =    "";
 
@@ -175,6 +175,7 @@ newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
 newCoin.img    = newCoin.lastElementChild.lastElementChild;
 
 
+newCoin.div.style.fontFamily = "inherit";
 
 
 /* Initialize from the template. */
@@ -205,8 +206,8 @@ div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
 
-div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;" contenteditable="true"></p>';
-//newCoin.div.setAttribute("contenteditable", true);
+div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></p>';
+newCoin.div.setAttribute("contenteditable", true);
 newCoin.anchor.style.zIndex = 0;
 newCoin.div.style.fontSize = "32px";
 

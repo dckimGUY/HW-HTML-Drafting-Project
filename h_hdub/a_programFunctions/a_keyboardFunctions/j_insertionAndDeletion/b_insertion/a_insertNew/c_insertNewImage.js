@@ -27,7 +27,7 @@ img         = document.createElement("img"); img.src = img1.src;
              img.dataset.name = `img`;
           main.dataset.name   = `main`;
 
-       anchor.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
+       anchor.style = `position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
 
        if (showPartName==true) {
 anchor.innerText      =    newId;

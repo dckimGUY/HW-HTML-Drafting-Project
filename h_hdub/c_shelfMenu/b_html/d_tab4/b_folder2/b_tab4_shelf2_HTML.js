@@ -1,7 +1,22 @@
 shelfMenuHTML.tab4.folder2.HTML = `
-<button   id="clipCSS"   onclick="copyToClipboard(deMinimis(false,false,'','','parts' )[0] + deMinimis(false,false,'','','parts')[1]);" class="button_ button_clip button_clipCSS"  title="CLIPBOARD:\n+SHIFT for colour group\n+CTRL for one"></button>
-<button   id="clipHTML"  onclick="copyToClipboard(deMinimis(false,false,'','','parts')[2]);" class="button_ button_clip button_clipHTML" title="CLIPBOARD:\n+SHIFT for colour group\n+CTRL for one"></button>
-<button   id="clipCODE"  onclick="copyToClipboard(deMinimis(false,false,'','','parts')[3]);" class="button_ button_clip button_clipCODE" title="CLIPBOARD:\n+SHIFT for colour group\n+CTRL for one"></button>
+<button   id="clipCSS"   onclick="
+if ( event.altKey) {
+copyToClipboard(deMinimis(false,false,'','','parts' )[0]);
+} else {
+copyToClipboard(deMinimis(false,false,'','','parts' )[0] + deMinimis(false,false,'','','parts')[1]);
+}
+buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
+" class="button_ button_clip button_clipCSS"  title="CLIPBOARD:\n+SHIFT for Colour Group\n+ALT for Position Only"></button>
+
+<button   id="clipHTML"  onclick="
+copyToClipboard(deMinimis(false,false,'','','parts')[2]);
+buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
+" class="button_ button_clip button_clipHTML" title="CLIPBOARD:\n+SHIFT for Colour Group"></button>
+
+<button   id="clipCODE"  onclick="
+copyToClipboard(deMinimis(false,false,'','','parts')[3]);
+buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
+" class="button_ button_clip button_clipCODE" title="CLIPBOARD:\n+SHIFT for Colour Group"></button>
 
 <button   id="save200"   class="button_ button_save200"  title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
 <button   id="save300"   class="button_ button_save300"  title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
@@ -12,7 +27,7 @@ shelfMenuHTML.tab4.folder2.HTML = `
 <button   id="save1500"  class="button_ button_save1500" title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
 
 <button   id="save1800"  class="button_ button_save1800" title="set metric in tab 2-1"></button>
-<button   id="textFlow"  onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" class="button_ button_clip button_textFlow" title="CLIPBOARD:\nMinimal without id/style/class;\n+SHIFT for colour group\n+CTRL to save .txt"></button>
+<button   id="textFlow"  onclick="cookieCutterSave();" class="button_ button_clip button_textFlow" title="AUTO-SAVE SLICES SEQUENTIALLY\n(an empty slice stops the process)\n(parts register in at top left only)"></button>
 
 <button   id="header0"   onclick="document.getElementById('headerText').value =      ''; topLayer[topLayer.a_currentLayer].header =      ''; fileHeader =      ''; localStorage.setItem('fileHeader', fileHeader);" class="button_ button_clip button_header0"  title="clear"></button>
 <button   id="header1"   onclick="document.getElementById('headerText').value = header1; topLayer[topLayer.a_currentLayer].header = header1; fileHeader = header1; localStorage.setItem('fileHeader', fileHeader);" class="button_ button_clip button_header1"  title=""></button>

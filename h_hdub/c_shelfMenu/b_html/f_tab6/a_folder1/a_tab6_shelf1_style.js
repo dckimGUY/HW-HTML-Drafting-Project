@@ -30,8 +30,8 @@ border-bottom-left-radius: 4px;
 .buoyb {left:    2px; top:  274px; } .setbuoyb {left:   28px; top:  274px; }
 .buoyc {left:    2px; top:  308px; } .setbuoyc {left:   28px; top:  308px; }
 .buoyd {left:    2px; top:  342px; } .setbuoyd {left:   28px; top:  342px; }
-.buoye {left:    2px; top:  376px; } .setbuoye {left:   28px; top:  376px; }
-.buoyf {left:    2px; top:  410px; } .setbuoyf {left:   28px; top:  410px; }
+.buoye { display: none; left:    2px; top:  376px; } .setbuoye {left:   28px; top:  376px; }
+.buoyf { display: none; left:    2px; top:  410px; } .setbuoyf {left:   28px; top:  410px; }
 
 
 
@@ -66,7 +66,7 @@ width: 174px;
 height: 463px;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
-background-image: url("h_hdub/c_shelfMenu/a_images/f_tab6/a_folder1/folder-1-sidebar.png?v=20260204121157");
+background-image: url("h_hdub/c_shelfMenu/a_images/f_tab6/a_folder1/folder-1-sidebar.png?v=20260301095037");
 }
 
 

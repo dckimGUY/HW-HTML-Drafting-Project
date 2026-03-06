@@ -1,11 +1,35 @@
 shelfMenuHTML.tab1.folder2.HTML = `
 
+
+
+<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="***finished-page background colour***" onclick="if (mode==0) { curFocus=0; modeRouter('',1); }
+hotDog = false;
+spaceViewOff(['',32,32,'','','']);
+restorePointerEventsNone(); 
+helpMenuOverlay.style.display='none';
+F.focus();">
+<div id="bgCover" class="bgCover"></div>
+
+
+
+
+<button id="dumpAccumulator" class="button_ dumpAccumulator" onclick="if (topLayer.programStateAccumulator.length == 0) { return; }; popAccumulator(JSON.stringify(topLayer.programStateAccumulator)); buzzWord(0,'DATA',128,'orange',200,200,25,'top','','',event);" title="State Accumulator:\nCTRL click levels to add.\nUse this button to bundle the\ndata and clear the accumulator."></button>
+
+
+<button id="accumulatorCount" class="button_ accumulatorCount">0</button>
+
+
+
+
+
+
+
 <input id="projectName" name="projectName" class="input_ input_projectName dckimPixelMono" type="value" title="Project Name" placeholder="projectName" spellcheck="false">
 
 <button id="coin49592" class="button_ button_coin49592" title="To Open a Project:\nDrag the File to the Screen"></button>
 <button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
-<button id="coin77155" class="button_ button_coin77155" title="this does exactly the chosen type of save, also save using SHIFT on the level number below"></button>
+<button id="coin77155" class="button_ button_coin77155" title="SEQUENTIAL SAVING\nSave Using SHIFT Below\nCTRL Add to the State Accumulator"></button>
 
 <button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="CLIPBOARD: Minimal Without id/style/class;\n+SHIFT for Colour Group\n+CTRL to Save '.txt'.\nWorks for textual HTML stuff only,\nno images or buttons yet."></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>

@@ -21,9 +21,9 @@ var thinOutline    =  2;
 var borderWidth    =  8;
 var opacityString  = '1.00';
 var selectedColour = "#DEFF1C";
-var greyColour     = "#FFFFFF";
-var blueColour     = "#00FFFF";
-var pinkColour     = "#DE80FF";
+var coinColour0     = "#FFFFFF";
+var coinColour2     = "#00FFFF";
+var coinColour1     = "#DE80FF";
 var lineColour     = "#000000";
 
 
@@ -442,6 +442,6 @@ if (localStorage.getItem("opacityString")) { opacityString   = localStorage.getI
 
 if (localStorage.getItem("lineColour"    )) { lineColour     = localStorage.getItem("lineColour"    ); }
 if (localStorage.getItem("selectedColour")) { selectedColour = localStorage.getItem("selectedColour"); }
-if (localStorage.getItem("greyColour"    )) { greyColour = localStorage.getItem("greyColour"); Bs0 = greyColour + "99"; Cs0 = greyColour + "99"; }
-if (localStorage.getItem("blueColour"    )) { blueColour = localStorage.getItem("blueColour"); Bs2 = blueColour + "99"; Cs2 = blueColour + "99";}
-if (localStorage.getItem("pinkColour"    )) { pinkColour = localStorage.getItem("pinkColour"); Bs1 = pinkColour + "99"; Cs1 = pinkColour + "99"; }
+if (localStorage.getItem("coinColour0"    )) { coinColour0 = localStorage.getItem("coinColour0"); Bs0 = coinColour0 + "99"; Cs0 = coinColour0 + "99"; }
+if (localStorage.getItem("coinColour2"    )) { coinColour2 = localStorage.getItem("coinColour2"); Bs2 = coinColour2 + "99"; Cs2 = coinColour2 + "99";}
+if (localStorage.getItem("coinColour1"    )) { coinColour1 = localStorage.getItem("coinColour1"); Bs1 = coinColour1 + "99"; Cs1 = coinColour1 + "99"; }

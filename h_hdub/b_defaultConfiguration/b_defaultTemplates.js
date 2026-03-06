@@ -38,7 +38,7 @@ template.default.boxShadow              = "";
 template.default.overflow               = "hidden";
 template.default.userSelect             = "none";
 template.default.anchorPosition         = ""; 
-template.default.contenteditable        = "false";
+template.default.contentEditable        = "true";
 template.default.transform              = ""; 
 
 template.defaultIMG = {};
@@ -78,7 +78,7 @@ template.defaultIMG.boxShadow              = "";
 template.defaultIMG.overflow               = "hidden";
 template.defaultIMG.userSelect             = "none";
 template.defaultIMG.anchorPosition         = ""; 
-template.defaultIMG.contenteditable        = "false";
+template.defaultIMG.contentEditable        = "false";
 template.defaultIMG.transform              = ""; 
 
 if (localStorage.getItem("template.default.background")) { template.default.background = localStorage.getItem("template.default.background"); }
@@ -114,7 +114,7 @@ if (localStorage.getItem("template.default.boxShadow")) { template.default.boxSh
 if (localStorage.getItem("template.default.overflow")) { template.default.overflow = localStorage.getItem("template.default.overflow"); }
 if (localStorage.getItem("template.default.userSelect")) { template.default.userSelect = localStorage.getItem("template.default.userSelect"); }
 if (localStorage.getItem("template.default.anchorPosition")) { template.default.anchorPosition = localStorage.getItem("template.default.anchorPosition"); }
-if (localStorage.getItem("template.default.contenteditable")) { template.default.contenteditable = localStorage.getItem("template.default.contenteditable"); }
+if (localStorage.getItem("template.default.contentEditable")) { template.default.contentEditable = localStorage.getItem("template.default.contentEditable"); }
 if (localStorage.getItem("template.default.transform")) { template.default.transform = localStorage.getItem("template.default.transform"); }
 if (localStorage.getItem("template.defaultIMG.background")) { template.defaultIMG.background = localStorage.getItem("template.defaultIMG.background"); }
 if (localStorage.getItem("template.defaultIMG.backgroundColor")) { template.defaultIMG.backgroundColor = localStorage.getItem("template.defaultIMG.backgroundColor"); }
@@ -149,5 +149,5 @@ if (localStorage.getItem("template.defaultIMG.boxShadow")) { template.defaultIMG
 if (localStorage.getItem("template.defaultIMG.overflow")) { template.defaultIMG.overflow = localStorage.getItem("template.defaultIMG.overflow"); }
 if (localStorage.getItem("template.defaultIMG.userSelect")) { template.defaultIMG.userSelect = localStorage.getItem("template.defaultIMG.userSelect"); }
 if (localStorage.getItem("template.defaultIMG.anchorPosition")) { template.defaultIMG.anchorPosition = localStorage.getItem("template.defaultIMG.anchorPosition"); }
-if (localStorage.getItem("template.defaultIMG.contenteditable")) { template.defaultIMG.contenteditable = localStorage.getItem("template.defaultIMG.contenteditable"); }
+if (localStorage.getItem("template.defaultIMG.contentEditable")) { template.defaultIMG.contentEditable = localStorage.getItem("template.defaultIMG.contentEditable"); }
 if (localStorage.getItem("template.defaultIMG.transform")) { template.defaultIMG.transform = localStorage.getItem("template.defaultIMG.transform"); }

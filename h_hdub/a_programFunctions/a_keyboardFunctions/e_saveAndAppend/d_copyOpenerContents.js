@@ -13,7 +13,7 @@ if (coinFocus!=null) {
 coinFocus.style.outline = fA;
 coinFocus.style.outlineOffset = fAO;
 }
-window.utilityLayer0.innerHTML += window.opener.utilityLayer0.innerHTML;
+window.utilityLayer0.innerHTML = window.opener.utilityLayer0.innerHTML;
 if (utilityLayer0.firstElementChild) {
 coinFocus=utilityLayer0.firstElementChild;
 curFocus=0;

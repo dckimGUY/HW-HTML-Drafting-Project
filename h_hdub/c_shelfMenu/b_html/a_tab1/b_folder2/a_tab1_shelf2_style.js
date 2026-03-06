@@ -1,6 +1,38 @@
 shelfMenuHTML.tab1.folder2.style = `
 <style>
 
+
+.input_coin44038                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    77px; top:    136px; width:     29px; height:     23px; }
+.bgCover                 { position: absolute; border: 0px; margin: 0px; padding: 0px; left:    77px; top:    136px; width:     29px; height:     23px; 
+pointer-events: none;
+z-index: 100;
+background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/bgCover.png?v=20260304132637");
+}
+
+
+
+
+
+
+.dumpAccumulator                { position: absolute; border: none; margin: none; padding: none; left: 113px; top: 136px; width: 84px; height: 23px;
+                                  background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/data-dump.png?v=20260304141009");        }
+.dumpAccumulator:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/data-dump_focus.png?v=20260305205052");  }
+.dumpAccumulator:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/data-dump_hover.png?v=20260305204649");  }
+.dumpAccumulator:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/data-dump_active.png?v=20260305204822"); }
+
+
+.accumulatorCount               { position: absolute; border: none; margin: none; padding: none; left: 168px; top: 134px; width: 24px; height: 23px; 
+pointer-events: none; background-color: transparent; color: rgba(255,255,255,0.5); font-size: 28px; font-family: dckimPixelMono;
+}
+
+
+
+
+
+
+
+
+
 .input_projectName                 { position: absolute; border: none; margin: none; padding: none; left:     14px; top:    74px; width:    172px; height:     29px; outline-offset: -4px; color: lime; text-align: left; padding: 0px; padding-left: 2px; padding-right: 2px; caret-color: red; text-align: center; }
 .input_projectName:hover           { background-color: rgb(63,63,63);  }
 .input_projectName:focus           { background-color: rgb(0,0,0); }
@@ -28,11 +60,11 @@ shelfMenuHTML.tab1.folder2.style = `
 
 
 
-.button_coin59760                { position: absolute; border: none; margin: none; padding: none; left: 75px; top: 134px; width: 114px; height: 27px;
-                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left.png?v=20260219125313");        }
-.button_coin59760:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_focus.png?v=20260219130613");  }
-.button_coin59760:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_hover.png?v=20260219130510");  }
-.button_coin59760:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_active.png?v=20260219130418"); }
+.button_coin59760                { position: absolute; border: none; margin: none; padding: none; left: 14px; top: 412px; width: 172px; height: 24px;
+                                   background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left.png?v=20260301193053");        }
+.button_coin59760:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_focus.png?v=20260301193135");  }
+.button_coin59760:hover          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_hover.png?v=20260301193518");  }
+.button_coin59760:active         { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/cycle-left_active.png?v=20260301193551"); }
 
 
 
@@ -105,11 +137,12 @@ text-shadow: 0px .5px 0px #FF00FF, .5px .5px 0px #5A0000, .5px 0px 0px #5A0000;
 .button_setLayer18               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    373px; width:     34px; height:     32px; }
 .button_setLayer19               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    373px; width:     34px; height:     32px; }
 .button_setLayer20               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    373px; width:     34px; height:     32px; }
-.button_setLayer21               { position: absolute; border: none; margin: none; padding: none; left:      7px; top:    408px; width:     34px; height:     32px; }
-.button_setLayer22               { position: absolute; border: none; margin: none; padding: none; left:     45px; top:    408px; width:     34px; height:     32px; }
-.button_setLayer23               { position: absolute; border: none; margin: none; padding: none; left:     83px; top:    408px; width:     34px; height:     32px; }
-.button_setLayer24               { position: absolute; border: none; margin: none; padding: none; left:    121px; top:    408px; width:     34px; height:     32px; }
-.button_setLayer25               { position: absolute; border: none; margin: none; padding: none; left:    159px; top:    408px; width:     34px; height:     32px; }
+
+.button_setLayer21               { display: none; position: absolute; border: none; margin: none; padding: none; left:      7px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer22               { display: none; position: absolute; border: none; margin: none; padding: none; left:     45px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer23               { display: none; position: absolute; border: none; margin: none; padding: none; left:     83px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer24               { display: none; position: absolute; border: none; margin: none; padding: none; left:    121px; top:    408px; width:     34px; height:     32px; }
+.button_setLayer25               { display: none; position: absolute; border: none; margin: none; padding: none; left:    159px; top:    408px; width:     34px; height:     32px; }
 
 .button_setLevel                { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level.png?v=20251102205813");        }
 .button_setLevel:focus          { background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/b_folder2/set-level_focus.png?v=20251102205813");  }

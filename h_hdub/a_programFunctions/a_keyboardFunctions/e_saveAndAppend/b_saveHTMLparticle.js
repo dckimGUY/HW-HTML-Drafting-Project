@@ -1,7 +1,7 @@
 function saveHTMLparticle(rename, fileInputString, codePrep, js, phpSub) {
 
 let fileExtension = ".html";
-if (event.ctrlKey) fileExtension = ".txt";
+if (event && event.ctrlKey) fileExtension = ".txt";
 
 const numberOfElements = utilityLayer0.children.length;
 

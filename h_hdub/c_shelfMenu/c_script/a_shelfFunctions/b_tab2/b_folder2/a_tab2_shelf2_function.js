@@ -190,34 +190,34 @@ Z();
 
 ui.invertPartVisuals.click       = function() {
 
-greyColour = invertHexColour(greyColour);
-blueColour = invertHexColour(blueColour);
-pinkColour = invertHexColour(pinkColour);
+coinColour0 = invertHexColour(coinColour0);
+coinColour2 = invertHexColour(coinColour2);
+coinColour1 = invertHexColour(coinColour1);
 lineColour = invertHexColour(lineColour);
 selectedColour = invertHexColour(selectedColour);
 
-Bs0 = greyColour + "99";
-Cs0 = greyColour + "99";
-Bs2 = blueColour + "99";
-Cs2 = blueColour + "99";
-Bs1 = pinkColour + "99";
-Cs1 = pinkColour + "99";
+Bs0 = coinColour0 + "99";
+Cs0 = coinColour0 + "99";
+Bs2 = coinColour2 + "99";
+Cs2 = coinColour2 + "99";
+Bs1 = coinColour1 + "99";
+Cs1 = coinColour1 + "99";
 
-localStorage.setItem('greyColour', greyColour);
-localStorage.setItem('blueColour', blueColour);
-localStorage.setItem('pinkColour', pinkColour);
+localStorage.setItem('coinColour0', coinColour0);
+localStorage.setItem('coinColour2', coinColour2);
+localStorage.setItem('coinColour1', coinColour1);
 localStorage.setItem('lineColour', lineColour);
 localStorage.setItem('selectedColour',selectedColour);
 
-ui.coin59277.ref.value = greyColour;
-ui.coin62796.ref.value = blueColour;
-ui.coin65598.ref.value = pinkColour;
+ui.coin59277.ref.value = coinColour0;
+ui.coin62796.ref.value = coinColour2;
+ui.coin65598.ref.value = coinColour1;
 ui.coin67938.ref.value = lineColour;
 ui.coin47065.ref.value = selectedColour;
 
-ui.coin59277.ref.setAttribute('value', greyColour);
-ui.coin62796.ref.setAttribute('value', blueColour);
-ui.coin65598.ref.setAttribute('value', pinkColour);
+ui.coin59277.ref.setAttribute('value', coinColour0);
+ui.coin62796.ref.setAttribute('value', coinColour2);
+ui.coin65598.ref.setAttribute('value', coinColour1);
 ui.coin67938.ref.setAttribute('value', lineColour);
 ui.coin47065.ref.setAttribute('value', selectedColour);
 
@@ -283,38 +283,38 @@ Z();
 
 
 /*
-if (localStorage.getItem("greyColour"    )) { greyColour     = localStorage.getItem("greyColour"    ); }
-if (localStorage.getItem("blueColour"    )) { blueColour     = localStorage.getItem("blueColour"    ); }
-if (localStorage.getItem("pinkColour"    )) { pinkColour     = localStorage.getItem("pinkColour"    ); }
+if (localStorage.getItem("coinColour0"    )) { coinColour0     = localStorage.getItem("coinColour0"    ); }
+if (localStorage.getItem("coinColour2"    )) { coinColour2     = localStorage.getItem("coinColour2"    ); }
+if (localStorage.getItem("coinColour1"    )) { coinColour1     = localStorage.getItem("coinColour1"    ); }
 */
 
 /* TRI-COLOURS */
 
 ui.coin59277.input              = function() {
-                      greyColour    = ui.coin59277.ref.value;
+                      coinColour0    = ui.coin59277.ref.value;
                       Bs0           = ui.coin59277.ref.value + "99";
                       Cs0           = ui.coin59277.ref.value + "99";
-localStorage.setItem('greyColour'    ,ui.coin59277.ref.value);
+localStorage.setItem('coinColour0'    ,ui.coin59277.ref.value);
                                       ui.coin59277.ref.setAttribute('value',
                                       ui.coin59277.ref.value); redraw();
 spaceViewOn();
 spaceViewOff();
 };
 ui.coin62796.input              = function() {
-                      blueColour    = ui.coin62796.ref.value;
+                      coinColour2    = ui.coin62796.ref.value;
                       Bs2           = ui.coin62796.ref.value + "99";
                       Cs2           = ui.coin62796.ref.value + "99";
-localStorage.setItem('blueColour'    ,ui.coin62796.ref.value);
+localStorage.setItem('coinColour2'    ,ui.coin62796.ref.value);
                                       ui.coin62796.ref.setAttribute('value',
                                       ui.coin62796.ref.value); redraw();
 spaceViewOn();
 spaceViewOff();
 };
 ui.coin65598.input              = function() {
-                      pinkColour    = ui.coin65598.ref.value;
+                      coinColour1    = ui.coin65598.ref.value;
                       Bs1           = ui.coin65598.ref.value + "99";
                       Cs1           = ui.coin65598.ref.value + "99";
-localStorage.setItem('pinkColour'    ,ui.coin65598.ref.value);
+localStorage.setItem('coinColour1'    ,ui.coin65598.ref.value);
                                       ui.coin65598.ref.setAttribute('value',
                                       ui.coin65598.ref.value); redraw();
 spaceViewOn();

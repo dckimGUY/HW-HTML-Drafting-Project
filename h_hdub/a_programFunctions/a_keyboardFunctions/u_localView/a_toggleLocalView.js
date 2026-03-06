@@ -3,7 +3,23 @@ const coinIdArray = [];
 function toggleLocalView() {
 
 if (topLayer.a_currentLayer != "localView") {
+
+
+
+
 if (coinFocus!=null) {
+
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"TAB",64,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+
 coinIdArray.push(coinFocus.id);
 localViewReturn = topLayer.a_currentLayer;
 topLayer.localView.b_content.innerHTML = '';
@@ -27,6 +43,8 @@ unwrapPartsAlways();
 }
 
 } else if (topLayer.a_currentLayer == "localView") {
+
+
 utilityLayer1.innerHTML = "";
 for (j = 0; j < utilityLayer0.children.length;j ++) {
 if (utilityLayer0.children[j].style) {
@@ -78,6 +96,20 @@ coinFocus.id = coinIdArray.pop();
 if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild && coinFocus.id == coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.id) {
 coinFocus.id = "wrapper_" + coinFocus.id;
 }
+
+if (coinFocus != null) {
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,"TAB",64,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+}
+
 }
 
        if (lastFlow == "global") {
@@ -85,5 +117,7 @@ reflowGlobal(rev,0)
 } else if (lastFlow == "colour") {
 reflowPerTrip();
 }
+
+redraw();
 
 }

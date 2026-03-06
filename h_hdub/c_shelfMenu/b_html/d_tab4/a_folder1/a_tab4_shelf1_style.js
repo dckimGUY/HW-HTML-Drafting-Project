@@ -1,6 +1,41 @@
 shelfMenuHTML.tab4.folder1.style = `
 <style>
 
+.saveBlank {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+background-color: transparent;
+border-radius: 0px;
+left:   10px;
+top:   181px;
+width:  24px;
+height: 42px;
+}
+.saveBlank:hover  { background-color: rgba(0  ,255,  0,0.5); }
+.saveBlank:active { background-color: rgba(255,0  ,255,0.5); }
+
+.HDUBinfo {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+background-color: transparent;
+border-radius: 0px;
+left:   87px;
+top:   433px;
+width:  26px;
+height: 42px;
+}
+.HDUBinfo:hover  { background-color: rgba(0  ,255,  0,0.5); }
+.HDUBinfo:active { background-color: rgba(255,0  ,255,0.5); }
+
+
+
+
+
+
 
 .cancelEntries {
 position: absolute;
@@ -81,7 +116,7 @@ width: 174px;
 height: 463px;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
-background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/folder-1-sidebar.png?v=20260125193826");
+background-image: url("h_hdub/c_shelfMenu/a_images/d_tab4/a_folder1/folder-1-sidebar.png?v=20260303125823");
 }
 
 

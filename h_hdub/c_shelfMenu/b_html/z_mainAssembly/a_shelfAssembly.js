@@ -174,7 +174,7 @@ shelfMenuHTML.tab3.folderSelectors.HTML  +
 
 
 
-<div id="sidebar3" class="sidebar3" title="if you aren't sure how to work the complicated machinery of the main tab, try some of these, they are ready to go with only one click... then just draw the images! BASE, FOCUS, HOVER, ACTIVE, use the shift key to get BASE, and ACTIVE only. Drag the finished product directly on to the program screen.">
+<div id="sidebar3" class="sidebar3" title="If you aren't sure how to work the complicated\nmachinery of the main tab, try some of these,\nthey are ready to go with only one click...\nthen just draw the images! BASE, FOCUS, HOVER, ACTIVE,\nuse the shift key to get BASE, and ACTIVE only.\nDrag the finished product directly on to the program screen.">
 
 <button id="sidebarOpener3" class="sidebarOpener3" onclick="toggleSidebar3();"></button>
 
@@ -1021,12 +1021,12 @@ shelfMenuHTML.tab6.folderSelectors.HTML  +
 <button id="buoy3" class="buoy buoyBorder buoy3" onclick="gotoBuoy(topLayer.buoyPoint.buoy3);"></button> <button id="setbuoy3" class="buoy setbuoy3" onclick="setBuoy(topLayer.buoyPoint.buoy3);"></button>
 <button id="buoy4" class="buoy buoyBorder buoy4" onclick="gotoBuoy(topLayer.buoyPoint.buoy4);"></button> <button id="setbuoy4" class="buoy setbuoy4" onclick="setBuoy(topLayer.buoyPoint.buoy4);"></button>
 <button id="buoy5" class="buoy buoyBorder buoy5" onclick="gotoBuoy(topLayer.buoyPoint.buoy5);"></button> <button id="setbuoy5" class="buoy setbuoy5" onclick="setBuoy(topLayer.buoyPoint.buoy5);"></button>
-<button id="buoya" class="buoy buoyBorder buoya" onclick="gotoBuoy(topLayer.buoyPoint.buoya);"></button> <button id="setbuoya" class="buoy setbuoya" onclick="setBuoy(topLayer.buoyPoint.buoya);"></button>
-<button id="buoyb" class="buoy buoyBorder buoyb" onclick="gotoBuoy(topLayer.buoyPoint.buoyb);"></button> <button id="setbuoyb" class="buoy setbuoyb" onclick="setBuoy(topLayer.buoyPoint.buoyb);"></button>
-<button id="buoyc" class="buoy buoyBorder buoyc" onclick="gotoBuoy(topLayer.buoyPoint.buoyc);"></button> <button id="setbuoyc" class="buoy setbuoyc" onclick="setBuoy(topLayer.buoyPoint.buoyc);"></button>
-<button id="buoyd" class="buoy buoyBorder buoyd" onclick="gotoBuoy(topLayer.buoyPoint.buoyd);"></button> <button id="setbuoyd" class="buoy setbuoyd" onclick="setBuoy(topLayer.buoyPoint.buoyd);"></button>
-<button id="buoye" class="buoy buoyBorder buoye" onclick="gotoBuoy(topLayer.buoyPoint.buoye);"></button> <button id="setbuoye" class="buoy setbuoye" onclick="setBuoy(topLayer.buoyPoint.buoye);"></button>
-<button id="buoyf" class="buoy buoyBorder buoyf" onclick="gotoBuoy(topLayer.buoyPoint.buoyf);"></button> <button id="setbuoyf" class="buoy setbuoyf" onclick="setBuoy(topLayer.buoyPoint.buoyf);"></button>
+<button id="buoya" class="buoy buoyBorder buoya" onclick="gotoBuoy(topLayer.buoyPoint.buoy6);"></button> <button id="setbuoya" class="buoy setbuoya" onclick="setBuoy(topLayer.buoyPoint.buoy6);"></button>
+<button id="buoyb" class="buoy buoyBorder buoyb" onclick="gotoBuoy(topLayer.buoyPoint.buoy7);"></button> <button id="setbuoyb" class="buoy setbuoyb" onclick="setBuoy(topLayer.buoyPoint.buoy7);"></button>
+<button id="buoyc" class="buoy buoyBorder buoyc" onclick="gotoBuoy(topLayer.buoyPoint.buoy8);"></button> <button id="setbuoyc" class="buoy setbuoyc" onclick="setBuoy(topLayer.buoyPoint.buoy8);"></button>
+<button id="buoyd" class="buoy buoyBorder buoyd" onclick="gotoBuoy(topLayer.buoyPoint.buoy9);"></button> <button id="setbuoyd" class="buoy setbuoyd" onclick="setBuoy(topLayer.buoyPoint.buoy9);"></button>
+<button id="buoye" class="buoy buoyBorder buoye" onclick=""></button> <button id="setbuoye" class="buoy setbuoye" onclick=""></button>
+<button id="buoyf" class="buoy buoyBorder buoyf" onclick=""></button> <button id="setbuoyf" class="buoy setbuoyf" onclick=""></button>
 </div>
 
 

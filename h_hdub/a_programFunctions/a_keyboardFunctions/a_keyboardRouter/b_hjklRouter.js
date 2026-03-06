@@ -38,10 +38,10 @@ if (!window.opener) { modeRouter(e,1); return; }
 /*    K    */ if (kC ==  75 && cC == 107) { setCoinTrip(e,1);                          }
 /*    L    */ if (kC ==  76 && cC == 108) {if(rev==1){focusPrevious()}else{focusNext()}}
 
-/*    H    */ if (kC ==  72 && cC ==  72) {if(rev==1){focusNext()}else{focusPrevious()};setCoinTrip(e,0);}
+/*    H    */ if (kC ==  72 && cC ==  72) {if(rev==1){focusNext()}else{focusPrevious()}; if (lastFlow == "global") { setCoinTrip(e,0); } }
 /*    J    */ if (kC ==  74 && cC ==  74) { setCoinTrip(e,1);                                            }
 /*    K    */ if (kC ==  75 && cC ==  75) { setCoinTrip(e,1);                                            }
-/*    L    */ if (kC ==  76 && cC ==  76) {if(rev==1){focusPrevious()}else{focusNext()};setCoinTrip(e,0);}
+/*    L    */ if (kC ==  76 && cC ==  76) {if(rev==1){focusPrevious()}else{focusNext()}; if (lastFlow == "global") { setCoinTrip(e,0); } }
 } else if (mode==9) {
 /*    h    */ if (kC ==  72 && cC == 104) { ceilingGlobalZ();         }/*    H    */ if (kC ==  72 && cC ==  72) { ceilingTripartiteZ();    }
 /*    j    */ if (kC ==  74 && cC == 106) { lowerGlobalZ();           }/*    J    */ if (kC ==  74 && cC ==  74) { lowerTripartiteZ();      }

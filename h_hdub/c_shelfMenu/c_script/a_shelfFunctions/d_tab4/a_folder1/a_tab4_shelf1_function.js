@@ -109,6 +109,7 @@ ui.hdubPartDesignations.ref.value = ui.hdubPartDesignations.ref.value.replace(/[
 localStorage.setItem("hdubPartDesignations", ui.hdubPartDesignations.ref.value);
 ui.hwString[ui.hwString.currentSel].part = ui.hdubPartDesignations.ref.value;
 localStorage.setItem("hwString",JSON.stringify(ui.hwString));
+loadLetterInputs();
 };
 
 
@@ -137,6 +138,7 @@ enterFromSyntax(syntaxObject);
 coinFocus.focus();
 ui.hdubSingleEntry.ref.blur();
 demoTime(1.5);
+redraw();
            } else if (input.endsWith( "*") ||
                       input.includes( "*") ||
                       input.endsWith( "?") ||
@@ -175,11 +177,14 @@ saveSyntaxImage();
 }
 
 
+
+
 letters.forEach((letter) => {
 if (input.includes(letter)) {
 ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
 switchString("hwSel_" + letter);
 }
+
 });
 
 
@@ -223,6 +228,11 @@ if (ui.hwString[name].string != "") {
 ui[name].img.src = drawCell(ui.hwString[name].string,ui.hwString[name].colour);
 }
 });
+
+
+
+
+
 }
 
 drawAllCells();
@@ -241,7 +251,7 @@ hwString = JSON.parse(localStorage.getItem("hwString"));
 
 
 
-ui.hdubSingleEntry.change        = function() { demoTime(1.5); }
+ui.hdubSingleEntry.change        = function() { demoTime(1.5); loadLetterInputs(); }
 
 
 
@@ -347,30 +357,30 @@ ui.hdubSheetTemplate1x.click     = function() { manufactureTemplate(cropObject(1
 
 
 
-ui.hwSel_a.click                 = function() { switchString("hwSel_a"); };
-ui.hwSel_b.click                 = function() { switchString("hwSel_b"); };
-ui.hwSel_c.click                 = function() { switchString("hwSel_c"); };
-ui.hwSel_d.click                 = function() { switchString("hwSel_d"); };
-ui.hwSel_e.click                 = function() { switchString("hwSel_e"); };
-ui.hwSel_f.click                 = function() { switchString("hwSel_f"); };
-ui.hwSel_g.click                 = function() { switchString("hwSel_g"); };
-ui.hwSel_i.click                 = function() { switchString("hwSel_i"); };
-ui.hwSel_j.click                 = function() { switchString("hwSel_j"); };
-ui.hwSel_k.click                 = function() { switchString("hwSel_k"); };
-ui.hwSel_l.click                 = function() { switchString("hwSel_l"); };
-ui.hwSel_m.click                 = function() { switchString("hwSel_m"); };
-ui.hwSel_n.click                 = function() { switchString("hwSel_n"); };
-ui.hwSel_o.click                 = function() { switchString("hwSel_o"); };
-ui.hwSel_p.click                 = function() { switchString("hwSel_p"); };
-ui.hwSel_q.click                 = function() { switchString("hwSel_q"); };
-ui.hwSel_r.click                 = function() { switchString("hwSel_r"); };
-ui.hwSel_s.click                 = function() { switchString("hwSel_s"); };
-ui.hwSel_t.click                 = function() { switchString("hwSel_t"); };
-ui.hwSel_u.click                 = function() { switchString("hwSel_u"); };
-ui.hwSel_v.click                 = function() { switchString("hwSel_v"); };
-ui.hwSel_x.click                 = function() { switchString("hwSel_x"); };
-ui.hwSel_y.click                 = function() { switchString("hwSel_y"); };
-ui.hwSel_z.click                 = function() { switchString("hwSel_z"); };
+ui.hwSel_a.click                 = function() { switchString("hwSel_a"); buzzWord(0,'<sup>a</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_b.click                 = function() { switchString("hwSel_b"); buzzWord(0,'<sup>b</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_c.click                 = function() { switchString("hwSel_c"); buzzWord(0,'<sup>c</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_d.click                 = function() { switchString("hwSel_d"); buzzWord(0,'<sup>d</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_e.click                 = function() { switchString("hwSel_e"); buzzWord(0,'<sup>e</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_f.click                 = function() { switchString("hwSel_f"); buzzWord(0,'<sup>f</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_g.click                 = function() { switchString("hwSel_g"); buzzWord(0,'<sup>g</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_i.click                 = function() { switchString("hwSel_i"); buzzWord(0,'<sup>i</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_j.click                 = function() { switchString("hwSel_j"); buzzWord(0,'<sup>j</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_k.click                 = function() { switchString("hwSel_k"); buzzWord(0,'<sup>k</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_l.click                 = function() { switchString("hwSel_l"); buzzWord(0,'<sup>l</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_m.click                 = function() { switchString("hwSel_m"); buzzWord(0,'<sup>m</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_n.click                 = function() { switchString("hwSel_n"); buzzWord(0,'<sup>n</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_o.click                 = function() { switchString("hwSel_o"); buzzWord(0,'<sup>o</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_p.click                 = function() { switchString("hwSel_p"); buzzWord(0,'<sup>p</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_q.click                 = function() { switchString("hwSel_q"); buzzWord(0,'<sup>q</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_r.click                 = function() { switchString("hwSel_r"); buzzWord(0,'<sup>r</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_s.click                 = function() { switchString("hwSel_s"); buzzWord(0,'<sup>s</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_t.click                 = function() { switchString("hwSel_t"); buzzWord(0,'<sup>t</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_u.click                 = function() { switchString("hwSel_u"); buzzWord(0,'<sup>u</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_v.click                 = function() { switchString("hwSel_v"); buzzWord(0,'<sup>v</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_x.click                 = function() { switchString("hwSel_x"); buzzWord(0,'<sup>x</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_y.click                 = function() { switchString("hwSel_y"); buzzWord(0,'<sup>y</sup>',144,'white',200,200,25,'top','','',event); };
+ui.hwSel_z.click                 = function() { switchString("hwSel_z"); buzzWord(0,'<sup>z</sup>',144,'white',200,200,25,'top','','',event); };
 
 
 
@@ -419,14 +429,23 @@ loadLetterInputs();
 
 
 /* display the demo */
-ui.hdubSheetTemplate4x.input     = function() { displayDemo(); };
+ui.hdubSheetTemplate4x.input     = function() {
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': buzzWord(0,"10x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '2': buzzWord(0, "8x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+}
+displayDemo();
+};
 
 /* fade the demo out */
-ui.hdubSheetTemplate4x.change    = function() { demoTime(1.5); };
+ui.hdubSheetTemplate4x.change    = function() {
+demoTime(1.5);
+};
 
 
 function displayDemo() {
-ui.hdubSheetTemplate4x.ref.setAttribute("title", "hdubEntryFactor = " + ui.hdubSheetTemplate4x.ref.value);
 localStorage.setItem("hdubEntryFactor", ui.hdubSheetTemplate4x.ref.value);
 drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
 hdubDemo.style.opacity = 1;
@@ -642,7 +661,7 @@ if (array[j].column[i].width < array[j].rowHeight) {
       newButton.style.height          = array[j].rowHeight + "px";
       newButton.style.color           = "black";
       newButton.dataset.hdubOverlay   = "scroll";
-      newButton.setAttribute("onclick", "this.innerText = ui[ui.hdub.selected].letter; if (ui[ui.hdub.selected].colour == 'hdubPink') { this.style.backgroundColor = pinkColour; } else if (ui[ui.hdub.selected].colour == 'hdubGrey') { this.style.backgroundColor = greyColour; }  else if (ui[ui.hdub.selected].colour == 'hdubBlue') { this.style.backgroundColor = blueColour; }; evaluateLetterInputs();");
+      newButton.setAttribute("onclick", "this.innerText = ui[ui.hdub.selected].letter; if (ui[ui.hdub.selected].colour == 'hdubPink') { this.style.backgroundColor = coinColour1; } else if (ui[ui.hdub.selected].colour == 'hdubGrey') { this.style.backgroundColor = coinColour0; }  else if (ui[ui.hdub.selected].colour == 'hdubBlue') { this.style.backgroundColor = coinColour2; }; evaluateLetterInputs();");
       overlay.appendChild(newButton);
 
 ctx.clearRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
@@ -1375,11 +1394,11 @@ let nextLetter = parts.shift();
 if (!nextLetter) nextLetter = "O";
 overlay.children[j].innerText = nextLetter;
 if (ui["hdub" + nextLetter].colour == 'hdubPink') {
-overlay.children[j].style.backgroundColor = pinkColour;
+overlay.children[j].style.backgroundColor = coinColour1;
 } else if (ui["hdub" + nextLetter].colour == 'hdubGrey') {
-overlay.children[j].style.backgroundColor = greyColour;
+overlay.children[j].style.backgroundColor = coinColour0;
 }  else if (ui["hdub" + nextLetter].colour == 'hdubBlue') {
-overlay.children[j].style.backgroundColor = blueColour;
+overlay.children[j].style.backgroundColor = coinColour2;
 };
 
 overlay.children[j].style.color = "black";
@@ -1405,9 +1424,9 @@ ui[name].ref.style.borderRadius = "16px";
 });
 ui[ui.hdub.selected].ref.style.outlineOffset = "-28px";
 ui[ui.hdub.selected].ref.style.outline       = "28px dotted lime";
-ui.hdubPink.ref.style.backgroundColor = pinkColour;
-ui.hdubGrey.ref.style.backgroundColor = greyColour;
-ui.hdubBlue.ref.style.backgroundColor = blueColour;
+ui.hdubPink.ref.style.backgroundColor = coinColour1;
+ui.hdubGrey.ref.style.backgroundColor = coinColour0;
+ui.hdubBlue.ref.style.backgroundColor = coinColour2;
 }
 loadHdubArray();
 loadLetterInputs();

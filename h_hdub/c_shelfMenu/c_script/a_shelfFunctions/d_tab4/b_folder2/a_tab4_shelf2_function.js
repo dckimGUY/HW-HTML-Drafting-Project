@@ -8,16 +8,14 @@ ui.save1500.click                = function() { deMinimis(false, "(100/1536)"); 
 ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); updateInfoShelf(); };
 
 
-const header1 = `
-<!DOCTYPE html>
+const header1 = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="{{description}}">
 <title>{{title}}</title>
 `;
-const header2 = `
-<!DOCTYPE html>
+const header2 = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -33,8 +31,7 @@ const header2 = `
 <meta property="og:title"  content="{{title}}">
 <meta property="og:type"   content="website">
 `;
-const header3 = `
-<!DOCTYPE html>
+const header3 = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -218,8 +215,7 @@ const footer4 = `
 
 
 
-let fileHeader = `
-<!DOCTYPE html>
+let fileHeader = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -297,6 +293,42 @@ return string;
 
 
 
+function cookieCutterSave() {
+let collection = "";
+let sliceWidth = visualGridSize3;
+for (let j = 0; j < 100; j++) {
+for (let k = 0; k < utilityLayer0.children.length; k++) {
+if (
+parseInt(utilityLayer0.children[k].style.left) >=  j      * sliceWidth &&
+parseInt(utilityLayer0.children[k].style.left) <  (j + 1) * sliceWidth
+) {
+utilityLayer0.children[k].style.left = parseInt(utilityLayer0.children[k].style.left) - (j * sliceWidth) + "px";
+collection += utilityLayer0.children[k].outerHTML;
+utilityLayer0.children[k].style.left = parseInt(utilityLayer0.children[k].style.left) + (j * sliceWidth) + "px";
+}
+}
+if (collection == "") return;
+deMinimis(false,lastFactor,'','','',collection);
+collection = "";
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -309,6 +341,26 @@ return string;
 
 
 function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef) {
+
+const rename = false;
+
+if (utilityLayer0.children.length == 0) {
+if (openInNewWindow) {
+const newWindow = window.open();
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</script>" + fileFooter);
+restorePointerEventsNone();
+spaceViewOff();
+Z();
+return;
+}
+
+saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</script>" + fileFooter, false, false, false);
+restorePointerEventsNone();
+spaceViewOff();
+Z();
+return;
+}
+
 
 /* BE SURE THAT THE DOCUMENT ORDERING IS REFLECTED IN THE TRIPARTITE COLOUR SETS */
 readCoins();
@@ -323,10 +375,8 @@ let string = "";
 
 if (coinFocus != null) {
 if (
-typeAlone == "css"  ||
-typeAlone == "html" ||
-typeAlone == "code" ||
-typeAlone == "flow" ||
+typeAlone == "parts" ||
+typeAlone == "flow"  ||
 event.target.id == "save200"  ||
 event.target.id == "save300"  ||
 event.target.id == "save500"  ||
@@ -417,7 +467,7 @@ lastFactor = factor;
 localStorage.setItem("lastFactor", lastFactor);
 }
 
-if (openInNewWindow || typeAlone == "css") factor = lastFactor;
+if (openInNewWindow || typeAlone == "parts") factor = lastFactor;
 
 
 
@@ -427,7 +477,7 @@ if (openInNewWindow || typeAlone == "css") factor = lastFactor;
 let innerStylePosition = "";
 let innerStyleEtc      = "";
 
-
+let addToScript = "";
 
 
 
@@ -440,17 +490,37 @@ let innerStyleEtc      = "";
 let idRoll = [];
 
 for (let j = 0; j < doc.body.children.length; j++) {
+
+
+
+
+
+if (doc.body.children[j].dataset.addScript) {
+addToScript += "\n" + doc.body.children[j].dataset.addScript;
+doc.body.children[j].remove();
+continue;
+}
+
+
+if (doc.body.children[j].dataset.json) {
+doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
+}
+
+
+
+
+
+
 idRoll.push(doc.body.children[j].id);
-
-
 if (
+(doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children &&
+ doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.childElementCount == 0) ||
 !doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children ||
 !doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children[0].dataset ||
 !doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children[0].dataset.coinTrip
 ) {
 continue;
 }
-
 if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length >= 1) {
 const wrapping = document.createElement("div");
 wrapping.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
@@ -459,6 +529,28 @@ let otherParser = new DOMParser();
 let otherDoc = otherParser.parseFromString(otherString, 'text/html');
 let otherCleanDOM = document.createElement("div");
 for (let j = 0; j < otherDoc.body.children.length; j++) {
+
+
+
+if (otherDoc.body.children[j].dataset.addScript) {
+addToScript += "\n" + otherDoc.body.children[j].dataset.addScript;
+otherDoc.body.children[j].remove();
+continue;
+}
+
+if (otherDoc.body.children[j].dataset.json) {
+try {
+otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
+} catch {};
+}
+
+
+
+
+
+
+
+
 idRoll.push(otherDoc.body.children[j].id);
 let otherInner;
        if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
@@ -517,11 +609,25 @@ otherInner.innerHTML = otherInner.innerHTML.replace(pattern, "#" + otherDoc.body
 otherInner.innerHTML = otherInner.innerHTML.replace(/\#[^ ]+button/g, "#button");
 otherInner.id        = otherDoc.body.children[j].id;
 otherInner.classList.add(`${otherInner.id}`);
+
+
+
+
+
+
 if (otherDoc.body.children[j].dataset.notes) {
 otherInner.dataset.notes         = otherDoc.body.children[j].dataset.notes;
 } else {
 otherInner.dataset.notes         = "";
 }
+
+if (otherDoc.body.children[j].dataset.json) { otherInner.dataset.json = otherDoc.body.children[j].dataset.json; }
+if (otherDoc.body.children[j].dataset.accumulator) { otherInner.dataset.accumulator = otherDoc.body.children[j].dataset.accumulator; }
+
+
+
+
+
 otherCleanDOM += otherInner.outerHTML + "\n";
 innerStylePosition += `
       .${otherInner.id} {
@@ -722,11 +828,40 @@ inner.id        = doc.body.children[j].id;
 
 inner.classList.add(`${inner.id}`);
 
+
+
+
+
+
+
+
+
+
+
+
 if (doc.body.children[j].dataset.notes) {
 inner.dataset.notes         = doc.body.children[j].dataset.notes;
 } else {
 inner.dataset.notes         = "";
 }
+
+if (doc.body.children[j].dataset.json) {
+inner.dataset.json          = doc.body.children[j].dataset.json;
+}
+
+if (doc.body.children[j].dataset.accumulator) {
+inner.dataset.accumulator   = doc.body.children[j].dataset.accumulator;
+}
+
+
+
+
+
+
+
+
+
+
 
 cleanDOM += inner.outerHTML + "\n";
 
@@ -810,33 +945,69 @@ doc = parser.parseFromString(string, 'text/html');
 let eventRoll = [];
 if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
 
+
+
+
+
+
 let scriptStarter = `
 
 /*** THIS SETS UP THE REFERENCES ***/
 
-const go     = {};
-      go.el  = {};
-      go.aud = {};
-      go.playAudio = function(trackName) { go.aud[trackName].play(); };
-      go.img = [];
-      go.ids =
+const go       = {};
+      go.el    = {};
+      go.state = {};
+      go.notes = {};
+      go.json  = {};
+      go.state.names = [];
+      go.json.names  = [];
+      go.aud   = {};
+      go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
+      go.img   = {};
+      go.ids   =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
 go.ids.forEach((id) => {
-go.el[id]     = {};
-go.el[id].ref = document.getElementById(id);
+go.el[id]      = {};
+go.el[id].ref  = document.getElementById(id);
+
+/*** SET UP FOR STATE ***/
+if (go.el[id].ref.dataset &&
+    go.el[id].ref.dataset.accumulator) {
+    go.el[id].state       = {};
+    go.state.names[go.state.names.length] = id;
+    go.state[id]    = {};
+              if (JSON.parse(go.el[id].ref.dataset.accumulator)) {
+go.el[id].state = JSON.parse(go.el[id].ref.dataset.accumulator);
+go.state[id]    = JSON.parse(go.el[id].ref.dataset.accumulator);
+} else {   go.el[id].state = go.el[id].ref.dataset.accumulator;
+           go.state[id]    = go.el[id].ref.dataset.accumulator; } }
+
+/*** SET UP FOR NOTE ***/
+if (go.el[id].ref.dataset &&
+    go.el[id].ref.dataset.notes) {
+    go.el[id].notes = {};
+ go.notes[id]       = {};
+              if (JSON.parse(go.el[id].ref.dataset.notes)) {
+go.el[id].notes = JSON.parse(go.el[id].ref.dataset.notes);
+go.notes[id]    = JSON.parse(go.el[id].ref.dataset.notes);
+} else {   go.el[id].notes = go.el[id].ref.dataset.notes;
+           go.notes[id]    = go.el[id].ref.dataset.notes; } }
+if (
+    go.el[id].notes.initialDisplay &&
+    go.el[id].notes.initialDisplay == "none"
+) { go.el[id].ref.style.display = "none"; }
 
 /*** SET UP FOR JSON ***/
 if (go.el[id].ref.dataset &&
-    go.el[id].ref.dataset.notes) {
+    go.el[id].ref.dataset.json) {
     go.el[id].json = {};
-if (JSON.parse(go.el[id].ref.dataset.notes)) {
-go.el[id].json = JSON.parse(go.el[id].ref.dataset.notes);
-} else {
-go.el[id].json = go.el[id].ref.dataset.notes; } }
-if (
-go.el[id].json.initialDisplay &&
-go.el[id].json.initialDisplay == "none"
-) { go.el[id].ref.style.display = "none"; }
+    go.json.names[go.json.names.length] = id;
+    go.json[id]    = {};
+             if (JSON.parse(go.el[id].ref.dataset.json)) {
+go.el[id].json = JSON.parse(go.el[id].ref.dataset.json);
+go.json[id]    = JSON.parse(go.el[id].ref.dataset.json);
+} else {   go.el[id].json = go.el[id].ref.dataset.json;
+           go.json[id]    = go.el[id].ref.dataset.json; } }
 
 /*** SET UP FOR AUDIO DATA ***/
 if (go.el[id].ref.tagName == "AUDIO") {
@@ -873,6 +1044,7 @@ if (go.el[id].ref.firstElementChild &&
     go.el[id].ref.firstElementChild.dataset &&
     go.el[id].ref.firstElementChild.dataset["frame" + num]) {
 go.el[id].img = [];
+go.img[id]    = [];
 if (go.el[id].ref.firstElementChild.children.length == 0) {
 go.el[id].ref.style.display = "none"; } }
 while (go.el[id].ref.firstElementChild &&
@@ -880,12 +1052,13 @@ while (go.el[id].ref.firstElementChild &&
        go.el[id].ref.firstElementChild.dataset["frame" + num]) {
 go.el[id].img[num]     = new Image();
 go.el[id].img[num].src = go.el[id].ref.firstElementChild.dataset["frame" + num];
-go.img[go.img.length]  = go.el[id].img[num];
+go.img[id][go.img[id].length] = go.el[id].img[num];
 num++; }
 });
 
-/*** DESCENDENTS ID LISTING ***/
 go.ids.forEach((id) => {
+/*** DESCENDENTS ID LISTING ***/
+const m = go.el[id];
 if (go.el[id].ref.children.length > 0) {
 for (let j = 0; j < go.el[id].ref.children.length; j++) {
 if ( !go.el[id].ids && !go.el[id].el  &&
@@ -895,7 +1068,30 @@ go.el[id].el  = {}; }
 if (!!go.el[id].ref.children[j].id) {
 go.el[id].ids.push(go.el[id].ref.children[j].id);
 go.el[id].el[go.el[id].ref.children[j].id] = go.el[go.el[id].ref.children[j].id]; } } }
+/*** PER ELEMENT STATE LOOKUP ***/
+go.el[id].state       = {};
+go.state.names.forEach((name) => {
+go.el[id].state[name] = [];
+for (let j = 0; j < go.state[name].length; j++) {
+try { go.el[id].state[name][go.el[id].state[name].length] = go.state[name][j][id]; } catch {}
+}
 });
+});
+
+go.style = [ "position", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "background", "backgroundColor", "backgroundSize", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow", "padding", "color", "textShadow", "userSelect", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+
+/*** A FUNCTION TO SET THE STATE ***/
+go.setState = function({stateName,idsArray,styleArray,frameNumber}) {
+let index  =          0;   if (frameNumber) {  index = frameNumber; }
+let style  =   go.style;   if (styleArray ) {  style = styleArray;  }
+let ids    =     go.ids;   if (  idsArray ) {    ids =   idsArray;  }
+for (j in ids) { for (i in style) {
+const target = document.getElementById(ids[j]);
+try { const value  = go.state[stateName][index][ids[j]].style[style[i]];
+target.style[style[i]] = value; } catch { target.style[style[i]] = ""; }
+} } return 0;
+}
+
 
 
 `;
@@ -932,30 +1128,63 @@ window.addEventListener("scroll", (event) => {  });
 
 
 
+/*** CUSTOM ADDED SCRIPT ***/
+
+${addToScript}
+
 
 
 
 
 console.log(\`
----------------------------------------------
->>>   PAGE DATA STRUCTURE LAYOUT KEYMAP   <<<
----------------------------------------------
-go             = {};       /* Basic Object */
-go.aud         = {};       /* Audio Tracks */
-go.img         = [];       /* Images Array */
-go.ids         = [];       /* List All IDs */
-go.el          = {};       /* Element Data */
-go.el[id]      = {};       /* Each Element */
-go.el[id].json = {};       /* JSON Entries */
-go.el[id].aud  = [];       /* Audio Tracks */
-go.el[id].img  = [];       /* Images Array */
-go.el[id].ids  = [];       /* List All IDs */
-go.el[id].el   = {};       /* Element Data */
-go.el[id].ref  = document.getElementById(id);
----------------------------------------------
->>>   SINGLE DEPTH NESTING IS SUPPORTED   <<<
->>>   TO ENABLE VISUAL ASSEMBLY OF DATA   <<<
----------------------------------------------
+
+
+-----------------------------------------------
+>>>    PAGE DATA STRUCTURE LAYOUT KEYMAP    <<<
+-----------------------------------------------
+go               = {};       /* Basic Object */
+go.state         = {};       /* State Setups */
+go.notes         = {};       /* Note Collect */
+go.json          = {};       /* JSON Entries */
+go.aud           = {};       /* Audio Tracks */
+go.img           = {};       /* Image Arrays */
+go.ids           = [];       /* List All IDs */
+go.el            = {};       /* Element Data */
+-----------------------------------------------
+>>>    PER ELEMENT COMPLIMENTARY DATASET    <<<
+-----------------------------------------------
+go.el[id]        = {};       /* Each Element */
+go.el[id].state  = {};       /* Select State */
+go.el[id].notes  = {};       /* Note Entries */
+go.el[id].json   = {};       /* Include JSON */
+go.el[id].aud    = [];       /* Audio Tracks */
+go.el[id].img    = [];       /* Images Array */
+go.el[id].ids    = [];       /* Internal IDs */
+go.el[id].el     = {};       /* Element Data */
+go.el[id].ref    = document.getElementById(id);
+-----------------------------------------------
+>>>    SINGLE DEPTH NESTING IS SUPPORTED    <<<
+>>>    TO ENABLE VISUAL ASSEMBLY OF DATA    <<<
+-----------------------------------------------
+go.playAudio(trackName);     /*Quote The Name*/
+
+go.setState({});             /* Reset  State */
+EXAMPLE: (you can copy this exactly)
+
+const
+setStateInput = {
+  "stateName" : "finalState",
+ "styleArray" : [ "top", "left", "transform" ],
+   "idsArray" : [ "part1", "part2", "etc"    ],
+"frameNumber" : 3
+                };
+go.setState(setStateInput);
+
+NOTE: The "stateName" is the name of the part
+while you are still in HDUB working on it. Same
+for the "idsArray". It's just the part names.
+
+
 \`);
 `;
 
@@ -964,7 +1193,7 @@ string = string.replace(/\[object HTMLDivElement\]/g, "");
 
 
 
-const rename = false;
+
 
 
        if (typeAlone == "parts" ) {
@@ -993,14 +1222,11 @@ return string;
 
 
 let stylesIncluded = "";
-
        if (!event.altKey) {
 stylesIncluded = stylePosition + styleEtc;
 } else if ( event.altKey) {
 stylesIncluded = stylePosition;
 }
-
-
 
 
 if (openInNewWindow) {
@@ -1013,20 +1239,12 @@ return;
 }
 
 
-
-
-
-
-
 saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
 }
-
-
-
 
 
 
