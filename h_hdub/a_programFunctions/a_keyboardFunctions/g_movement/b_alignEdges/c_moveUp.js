@@ -1,9 +1,6 @@
 function moveUp(keyInfo){
 
 const
-e      = keyInfo[0],
-kC     = keyInfo[1],
-cC     = keyInfo[2],
 shift  = keyInfo[3],
 ctrl   = keyInfo[4],
 alt    = keyInfo[5];

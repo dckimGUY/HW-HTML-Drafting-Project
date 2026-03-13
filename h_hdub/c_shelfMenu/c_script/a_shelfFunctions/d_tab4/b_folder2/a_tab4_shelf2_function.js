@@ -342,6 +342,14 @@ collection = "";
 
 function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef) {
 
+
+
+const styleFirst    = [ "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
+const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
+const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+
+
+
 const rename = false;
 
 if (utilityLayer0.children.length == 0) {
@@ -489,6 +497,17 @@ let addToScript = "";
 
 let idRoll = [];
 
+
+
+
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+
+
 for (let j = 0; j < doc.body.children.length; j++) {
 
 
@@ -551,63 +570,54 @@ otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibli
 
 
 
+
 idRoll.push(otherDoc.body.children[j].id);
 let otherInner;
        if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
 otherInner = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.firstElementChild;
-otherInner.style.position        = "absolute";
-otherInner.style.left            = otherDoc.body.children[j].style.left;
-otherInner.style.top             = otherDoc.body.children[j].style.top;
-otherInner.style.width           = otherDoc.body.children[j].style.width;
-otherInner.style.height          = otherDoc.body.children[j].style.height;
-otherInner.style.zIndex          = otherDoc.body.children[j].style.zIndex;
-otherInner.style.userSelect      = otherDoc.body.children[j].style.userSelect;
-otherInner.style.transform       = otherDoc.body.children[j].lastElementChild.style.transform;
-otherInner.style.transformOrigin = otherDoc.body.children[j].lastElementChild.style.transformOrigin;
-otherInner.style.outline         = otherDoc.body.children[j].lastElementChild.style.outline;
-otherInner.style.outlineOffset   = otherDoc.body.children[j].lastElementChild.style.outlineOffset;
-otherInner.style.borderRadius    = otherDoc.body.children[j].lastElementChild.style.borderRadius;
-otherInner.style.overflow        = otherDoc.body.children[j].lastElementChild.style.overflow;
-otherInner.style.boxShadow       = otherDoc.body.children[j].lastElementChild.style.boxShadow;
-otherInner.style.color           = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.color;
-otherInner.style.background      = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.background;
-otherInner.style.backgroundColor = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.backgroundColor;
-otherInner.style.backgroundSize  = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.backgroundSize;
-if (otherInner.style.backgroundSize == "") {
-otherInner.style.backgroundSize  = "100% 100%";
-}
-otherInner.style.fontSize        = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontSize;
-otherInner.style.fontVariant     = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontVariant;
-otherInner.style.fontStyle       = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontStyle;
-otherInner.style.fontWeight      = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontWeight;
-otherInner.style.fontFamily      = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontFamily;
-otherInner.style.opacity         = otherDoc.body.children[j].lastElementChild.style.opacity;
-otherInner.style.textShadow      = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textShadow;
-otherInner.style.textAlign       = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textAlign;
-otherInner.style.wordSpacing     = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing;
-otherInner.style.letterSpacing   = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing;
-otherInner.style.lineHeight      = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.lineHeight;
-otherInner.style.textIndent      = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textIndent;
-if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.padding == "inherit") {
-otherInner.style.padding         = otherDoc.body.children[j].lastElementChild.style.padding;
-} else {
-otherInner.style.padding         = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.padding;
-}
+for (y of styleFirst   ) { otherInner.style[y] = otherDoc.body.children[j].style[y]; }
+for (y of styleLast    ) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.style[y]; }
+for (y of styleLastLast) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+if (otherInner.style.backgroundSize == "") { otherInner.style.backgroundSize  = "100% 100%"; }
+
+
 } else if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 0) {
 otherInner = document.createElement("div");
-otherInner.style.position        = "absolute";
+otherInner.style.position        = otherDoc.body.children[j].style.position;
 otherInner.style.left            = otherDoc.body.children[j].style.left;
 otherInner.style.top             = otherDoc.body.children[j].style.top;
 otherInner.style.width           = otherDoc.body.children[j].style.width;
 otherInner.style.height          = otherDoc.body.children[j].style.height;
 otherInner.style.zIndex          = otherDoc.body.children[j].style.zIndex;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (otherInner.id != "") {
 let pattern = new RegExp(`#${otherInner.id}`, "g");
 otherInner.innerHTML = otherInner.innerHTML.replace(pattern, "#" + otherDoc.body.children[j].id);
 }
 otherInner.innerHTML = otherInner.innerHTML.replace(/\#[^ ]+button/g, "#button");
 otherInner.id        = otherDoc.body.children[j].id;
+
+const classes = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.classList.toString().trim().split(" ");
+for (let c of classes) { if (c != "") { otherInner.classList.add(c); } }
+
 otherInner.classList.add(`${otherInner.id}`);
 
 
@@ -622,7 +632,7 @@ otherInner.dataset.notes         = "";
 }
 
 if (otherDoc.body.children[j].dataset.json) { otherInner.dataset.json = otherDoc.body.children[j].dataset.json; }
-if (otherDoc.body.children[j].dataset.accumulator) { otherInner.dataset.accumulator = otherDoc.body.children[j].dataset.accumulator; }
+if (otherDoc.body.children[j].dataset.state) { otherInner.dataset.state = otherDoc.body.children[j].dataset.state; }
 
 
 
@@ -728,46 +738,26 @@ for (let j = 0; j < doc.body.children.length; j++) {
 let inner;
        if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
 inner = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.firstElementChild;
-inner.style.position        = "absolute";
-inner.style.left            = doc.body.children[j].style.left;
-inner.style.top             = doc.body.children[j].style.top;
-inner.style.width           = doc.body.children[j].style.width;
-inner.style.height          = doc.body.children[j].style.height;
-inner.style.zIndex          = doc.body.children[j].style.zIndex;
-inner.style.userSelect      = doc.body.children[j].style.userSelect;
-inner.style.transform       = doc.body.children[j].lastElementChild.style.transform;
-inner.style.transformOrigin = doc.body.children[j].lastElementChild.style.transformOrigin;
-inner.style.outline         = doc.body.children[j].lastElementChild.style.outline;
-inner.style.outlineOffset   = doc.body.children[j].lastElementChild.style.outlineOffset;
-inner.style.borderRadius    = doc.body.children[j].lastElementChild.style.borderRadius;
-inner.style.overflow        = doc.body.children[j].lastElementChild.style.overflow;
-inner.style.boxShadow       = doc.body.children[j].lastElementChild.style.boxShadow;
-inner.style.color           = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.color;
-inner.style.background      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.background;
-inner.style.backgroundColor = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.backgroundColor;
-inner.style.backgroundSize  = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.backgroundSize;
-if (inner.style.backgroundSize == "") {
-inner.style.backgroundSize  = "100% 100%";
-}
-inner.style.fontSize        = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontSize;
-inner.style.fontVariant     = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontVariant;
-inner.style.fontStyle       = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontStyle;
-inner.style.fontWeight      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontWeight;
-inner.style.fontFamily      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.fontFamily;
-inner.style.opacity         = doc.body.children[j].lastElementChild.style.opacity;
-inner.style.textShadow      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textShadow;
-inner.style.textAlign       = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textAlign;
-inner.style.wordSpacing     = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing;
-inner.style.letterSpacing   = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing;
-inner.style.lineHeight      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.lineHeight;
-inner.style.textIndent      = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.textIndent;
-if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.padding == "inherit") {
-inner.style.padding         = doc.body.children[j].lastElementChild.style.padding;
-} else {
-inner.style.padding         = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.padding;
-}
+
+
+
+
+for (y of styleFirst   ) { inner.style[y] = doc.body.children[j].style[y]; }
+for (y of styleLast    ) { inner.style[y] = doc.body.children[j].lastElementChild.style[y]; }
+for (y of styleLastLast) { inner.style[y] = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+if (inner.style.backgroundSize == "") { inner.style.backgroundSize  = "100% 100%"; }
+
+
+
+
+
+
+
+
 } else if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 0) {
 inner = document.createElement("div");
+
+
 inner.style.position        = "absolute";
 inner.style.left            = doc.body.children[j].style.left;
 inner.style.top             = doc.body.children[j].style.top;
@@ -776,6 +766,8 @@ inner.style.height          = doc.body.children[j].style.height;
 inner.style.zIndex          = doc.body.children[j].style.zIndex;
 } else if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length  > 1) {
 inner = document.createElement("div");
+
+
 inner.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 inner.style.position        = "absolute";
 inner.style.left            = doc.body.children[j].style.left;
@@ -816,6 +808,11 @@ inner.style.padding         = doc.body.children[j].lastElementChild.style.paddin
 inner.style.padding         = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style.padding;
 }
 
+
+
+
+
+
 }
 
 if (inner.id != "") {
@@ -825,6 +822,13 @@ inner.innerHTML = inner.innerHTML.replace(pattern, "#" + doc.body.children[j].id
 
 inner.innerHTML = inner.innerHTML.replace(/\#[^ ]+button/g, "#button");
 inner.id        = doc.body.children[j].id;
+
+
+
+
+const classes = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.classList.toString().trim().split(" ");
+for (let c of classes) { if (c != "") { inner.classList.add(c); } }
+
 
 inner.classList.add(`${inner.id}`);
 
@@ -849,8 +853,8 @@ if (doc.body.children[j].dataset.json) {
 inner.dataset.json          = doc.body.children[j].dataset.json;
 }
 
-if (doc.body.children[j].dataset.accumulator) {
-inner.dataset.accumulator   = doc.body.children[j].dataset.accumulator;
+if (doc.body.children[j].dataset.state) {
+inner.dataset.state   = doc.body.children[j].dataset.state;
 }
 
 
@@ -950,147 +954,340 @@ if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick",
 
 
 
+
+
+
 let scriptStarter = `
 
 /*** THIS SETS UP THE REFERENCES ***/
 
-const go       = {};
-      go.el    = {};
-      go.state = {};
-      go.notes = {};
-      go.json  = {};
-      go.state.names = [];
-      go.json.names  = [];
-      go.aud   = {};
+const go           = {};
+      go.vwFactor  = ${factor};
+      go.elm       = {};
+      go.dat       = {};
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
-      go.img   = {};
-      go.ids   =
+      go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+
+const dat = [ "notes", "json" ];
+for (t of dat) { go.dat[t] = {}; go.dat[t].nom = []; }
+
+
+go.anim          = {};
+go.anim.each     = {};
+go.anim.each.all = {};
+go.anim.each.grp = {};
+go.anim.each.one = {};
+go.anim.all      = {};
+go.anim.grp      = {};
+
+go.xqn       = {};
+go.xqn.nom   = [];
+go.xqn.grp   = {};
+go.xqn.all   = [];
+go.xqn.style = [ "top", "left", "width", "height" ];
+
 go.ids.forEach((id) => {
-go.el[id]      = {};
-go.el[id].ref  = document.getElementById(id);
+go.elm[id]      = {};
+go.elm[id].func = {};
+go.elm[id].dat = {};
+go.elm[id].ref  = document.getElementById(id);
 
 /*** SET UP FOR STATE ***/
-if (go.el[id].ref.dataset &&
-    go.el[id].ref.dataset.accumulator) {
-    go.el[id].state       = {};
-    go.state.names[go.state.names.length] = id;
-    go.state[id]    = {};
-              if (JSON.parse(go.el[id].ref.dataset.accumulator)) {
-go.el[id].state = JSON.parse(go.el[id].ref.dataset.accumulator);
-go.state[id]    = JSON.parse(go.el[id].ref.dataset.accumulator);
-} else {   go.el[id].state = go.el[id].ref.dataset.accumulator;
-           go.state[id]    = go.el[id].ref.dataset.accumulator; } }
+if (go.elm[id].ref.dataset.state) {
+const from = go.elm[id].ref.dataset.state;
+try { const input = JSON.parse(from);
+for (s of input) { go.xqn.all.push(s); }           
+go.xqn.grp[id] = go.elm[id].xqn = input;
+go.xqn.grp[id].nom = [];
+} catch {
+go.xqn.grp[id] = go.elm[id].xqn = from ; }
+go.xqn.nom[go.xqn.nom.length] = id; }
 
-/*** SET UP FOR NOTE ***/
-if (go.el[id].ref.dataset &&
-    go.el[id].ref.dataset.notes) {
-    go.el[id].notes = {};
- go.notes[id]       = {};
-              if (JSON.parse(go.el[id].ref.dataset.notes)) {
-go.el[id].notes = JSON.parse(go.el[id].ref.dataset.notes);
-go.notes[id]    = JSON.parse(go.el[id].ref.dataset.notes);
-} else {   go.el[id].notes = go.el[id].ref.dataset.notes;
-           go.notes[id]    = go.el[id].ref.dataset.notes; } }
-if (
-    go.el[id].notes.initialDisplay &&
-    go.el[id].notes.initialDisplay == "none"
-) { go.el[id].ref.style.display = "none"; }
+/*** SET UP FOR DATA ***/
+for (t of dat) {  if (go.elm[id].ref.dataset[t])                  {
+          const from = go.elm[id].ref.dataset[t];                   
+    try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from);  }
+  catch { go.dat[t][id] = go.elm[id].dat[t] =            from ;  }
+          go.dat[t].nom[go.dat[t].nom.length] = id; }       }
 
-/*** SET UP FOR JSON ***/
-if (go.el[id].ref.dataset &&
-    go.el[id].ref.dataset.json) {
-    go.el[id].json = {};
-    go.json.names[go.json.names.length] = id;
-    go.json[id]    = {};
-             if (JSON.parse(go.el[id].ref.dataset.json)) {
-go.el[id].json = JSON.parse(go.el[id].ref.dataset.json);
-go.json[id]    = JSON.parse(go.el[id].ref.dataset.json);
-} else {   go.el[id].json = go.el[id].ref.dataset.json;
-           go.json[id]    = go.el[id].ref.dataset.json; } }
+if (go.elm[id].dat.notes.initialDisplay &&
+    go.elm[id].dat.notes.initialDisplay == "none"
+) { go.elm[id].ref.style.display = "none"; }
 
 /*** SET UP FOR AUDIO DATA ***/
-if (go.el[id].ref.tagName == "AUDIO") {
+if (go.elm[id].ref.tagName == "AUDIO") {
 const audio = new Audio();
-  audio.src = go.el[id].ref.src;
-         if (!go.el[id].aud) {
-              go.el[id].aud = []; }
-              go.el[id].aud.push(audio);
+  audio.src = go.elm[id].ref.src;
+         if (!go.elm[id].aud) {
+              go.elm[id].aud = []; }
+              go.elm[id].aud.push(audio);
               go.aud[id] = audio; }
-  if (go.el[id].ref.dataset.audio) {
+  if (go.elm[id].ref.dataset.audio) {
 const audio = new Audio();
-  audio.src = go.el[id].ref.dataset.audio;
-         if (!go.el[id].aud) {
-              go.el[id].aud = []; }
-              go.el[id].aud.push(audio);
+  audio.src = go.elm[id].ref.dataset.audio;
+         if (!go.elm[id].aud) {
+              go.elm[id].aud = []; }
+              go.elm[id].aud.push(audio);
               go.aud[id] = audio; }
-  for (let j = 0; j < go.el[id].ref.children.length; j++) {
-  if (go.el[id].ref.children[j].tagName == "AUDIO") {
+  for (let j = 0; j < go.elm[id].ref.children.length; j++) {
+  if (go.elm[id].ref.children[j].tagName == "AUDIO") {
 const audio = new Audio();
-  audio.src = go.el[id].ref.children[j].src;
-         if (!go.el[id].aud) {
-              go.el[id].aud = []; }
-              go.el[id].aud.push(audio); }
-  if (go.el[id].ref.children[j].dataset.audio) {
+  audio.src = go.elm[id].ref.children[j].src;
+         if (!go.elm[id].aud) {
+              go.elm[id].aud = []; }
+              go.elm[id].aud.push(audio); }
+  if (go.elm[id].ref.children[j].dataset.audio) {
 const audio = new Audio();
-  audio.src = go.el[id].ref.children[j].dataset.audio;
-         if (!go.el[id].aud) {
-              go.el[id].aud = []; }
-              go.el[id].aud.push(audio); } }
+  audio.src = go.elm[id].ref.children[j].dataset.audio;
+         if (!go.elm[id].aud) {
+              go.elm[id].aud = []; }
+              go.elm[id].aud.push(audio); } }
 
 /*** SET UP FOR IMAGE DATA ***/
 let num = 0;
-if (go.el[id].ref.firstElementChild &&
-    go.el[id].ref.firstElementChild.dataset &&
-    go.el[id].ref.firstElementChild.dataset["frame" + num]) {
-go.el[id].img = [];
-go.img[id]    = [];
-if (go.el[id].ref.firstElementChild.children.length == 0) {
-go.el[id].ref.style.display = "none"; } }
-while (go.el[id].ref.firstElementChild &&
-       go.el[id].ref.firstElementChild.dataset &&
-       go.el[id].ref.firstElementChild.dataset["frame" + num]) {
-go.el[id].img[num]     = new Image();
-go.el[id].img[num].src = go.el[id].ref.firstElementChild.dataset["frame" + num];
-go.img[id][go.img[id].length] = go.el[id].img[num];
+   if (go.elm[id].ref.firstElementChild &&
+       go.elm[id].ref.firstElementChild.dataset &&
+       go.elm[id].ref.firstElementChild.dataset["frame" + num]) {
+       go.elm[id].img = []; go.img[id]    = [];
+   if (go.elm[id].ref.firstElementChild.children.length == 0) {
+       go.elm[id].ref.style.display = "none"; } }
+while (go.elm[id].ref.firstElementChild &&
+       go.elm[id].ref.firstElementChild.dataset &&
+       go.elm[id].ref.firstElementChild.dataset["frame" + num]) {
+       go.elm[id].img[num]     = new Image();
+       go.elm[id].img[num].src = go.elm[id].ref.firstElementChild.dataset["frame" + num];
+       go.img[id][go.img[id].length] = go.elm[id].img[num];
 num++; }
 });
 
+
+/* SECTION 1: SET UP FOR A BROAD ANIMATION AND STATE CHANGE REGIMENT */
+go.setupState  = function(obj,arg,ext) {
+function setup(nom,arg,ext) {
+nom.rate       =  {};
+nom.rate.value = 200;
+nom.rate.set   = function(val)  { nom.pause(); nom.rate.value = val; nom.resume(); return 0; }
+nom.rate.incr  = function(step) { nom.pause(); let val; val = step; if (!step) val = 10; if (nom.rate.value > 20) nom.rate.value -= val; nom.resume(); return 0; }
+nom.rate.decr  = function(step) { nom.pause(); let val; val = step; if (!step) val = 10;                          nom.rate.value += val; nom.resume(); return 0; }
+nom.now        =  {};
+nom.now.value  =   0;
+nom.now.set    = function(val)  { nom.now.value = val; return 0; }
+nom.now.incr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value < nom.length - 1) nom.now.value += val; return 0; }
+nom.now.decr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value > 0) nom.now.value -= val; return 0; }
+nom.set        = function(index) { go.setState(nom[index],arg); return 0; }
+nom.reset      = function() { nom.now.value = 0; nom.set(nom.now.value); return 0; }
+nom.next       = function() { if (nom.now.value == nom.length) { nom.now.value--; return 1; }
+                 else { nom.set(nom.now.value++); return 0; } }
+nom.prev       = function() {if (nom.now.value == -1) { nom.now.value++; return 1; }
+                 else { nom.set(nom.now.value--); return 0; } }
+nom.skip       = {};
+nom.skip.start = function()     { nom.now.value = 0; nom.set(nom.now.value); return 0; }
+nom.skip.rev   = function(step) { let val; val = step; if (!step) val = 5; for (s = 0; s < val; s++) { nom.prev(); } return 0; }
+nom.skip.fwd   = function(step) { let val; val = step; if (!step) val = 5; for (s = 0; s < val; s++) { nom.next(); } return 0; }
+nom.skip.end   = function()     { nom.now.value = nom.length - 1; nom.set(nom.now.value); return 0; }
+nom.pause      = function() { return 0; }
+nom.resume     = function() { nom.play.fwd(); return 0; }
+nom.stop       = function() { nom.pause(); nom.skip.start();
+                 nom.pause  = function() { return 0; };
+                 nom.resume = function() { return 0; }; return 0; }
+nom.play       = {};
+nom.play.fwd   = function() { nom.pause(); const intervalId = setInterval(() => {
+                 if (nom.next() == 1) { nom.pause(); } }, nom.rate.value);
+                 nom.pause  = function() { clearInterval(intervalId); return 0; };
+                 nom.resume = function() { nom.play.fwd(); }; return 0; }
+nom.play.rev   = function() { nom.pause(); const intervalId = setInterval(() => {
+                 if (nom.prev() == 1) { nom.pause(); } }, nom.rate.value);
+                 nom.pause  = function() { clearInterval(intervalId); return 0; };
+                 nom.resume = function() { nom.play.rev(); }; return 0; }
+nom.flow       = 0;
+nom.loop       = {};
+nom.loop.fwd   = function() { nom.pause(); const intervalId = setInterval(() => {
+                 if (nom.next() == 1) { nom.now.value = 0; nom.next(); } }, nom.rate.value);
+                 nom.pause  = function() { clearInterval(intervalId); return 0; };
+                 nom.resume = function() { nom.loop.fwd(); }; return 0; }
+nom.loop.rev   = function() { nom.pause(); const intervalId = setInterval(() => {
+                 if (nom.prev() == 1) { nom.now.value = nom.length - 1; nom.prev(); } }, nom.rate.value);
+                 nom.pause  = function() { clearInterval(intervalId); return 0; };
+                 nom.resume = function() { nom.loop.rev(); }; return 0; }
+nom.loop.cycl  = function() { nom.pause(); const intervalId = setInterval(() => {
+                 switch (nom.flow) {
+                 case 0: if (nom.next() == 1) { nom.flow = 1; nom.prev(); nom.prev(); }; break;
+                 case 1: if (nom.prev() == 1) { nom.flow = 0; nom.next(); nom.next(); }; break; } }, nom.rate.value);
+                 nom.pause  = function() { clearInterval(intervalId); return 0; };
+                 nom.resume = function() { nom.loop.cycl(); }; return 0; }
+return 0; }
+for (y of obj.nom) { setup(obj.grp[y],arg,ext); } setup(obj.all,arg,ext);
+return 0; }
+
+go.setupState(go.xqn,null,null);
+
+
 go.ids.forEach((id) => {
 /*** DESCENDENTS ID LISTING ***/
-const m = go.el[id];
-if (go.el[id].ref.children.length > 0) {
-for (let j = 0; j < go.el[id].ref.children.length; j++) {
-if ( !go.el[id].ids && !go.el[id].el  &&
-!!go.el[id].ref.children[j].id) {
-go.el[id].ids = [];
-go.el[id].el  = {}; }
-if (!!go.el[id].ref.children[j].id) {
-go.el[id].ids.push(go.el[id].ref.children[j].id);
-go.el[id].el[go.el[id].ref.children[j].id] = go.el[go.el[id].ref.children[j].id]; } } }
-/*** PER ELEMENT STATE LOOKUP ***/
-go.el[id].state       = {};
-go.state.names.forEach((name) => {
-go.el[id].state[name] = [];
-for (let j = 0; j < go.state[name].length; j++) {
-try { go.el[id].state[name][go.el[id].state[name].length] = go.state[name][j][id]; } catch {}
-}
-});
+const argE = go.elm[id]; const argD = argE.ref.children; if (argD.length > 0) {
+for (let j = 0; j < argD.length; j++) { if ( !argE.ids && !argE.elm && !!argD[j].id) {
+argE.ids = []; argE.elm = {}; } if (!!argD[j].id) { argE.ids.push(argD[j].id);
+argE.elm[argD[j].id] = go.elm[argD[j].id]; } } }
+/*** PER ELEMENT STATE SETUP ***/
+argE.xqn         = {};
+argE.xqn.nom     = [];
+argE.xqn.grp     = {};
+argE.xqn.all     = [];
+go.xqn.nom.forEach((name) => {
+    if (go.xqn.grp[name][0].dat[id]) {
+    argE.xqn.grp[name] = []; argE.xqn.nom.push(name); }
+    for (let j = 0; j < go.xqn.grp[name].length; j++) {
+    try { const entry = go.xqn.grp[name][j].dat[id];
+    if (entry != undefined) { argE.xqn.all.push(entry);
+    argE.xqn.grp[name].push(entry); } } catch { } } });
+    go.setupState(argE.xqn,argE);
 });
 
-go.style = [ "position", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "background", "backgroundColor", "backgroundSize", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow", "padding", "color", "textShadow", "userSelect", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+
+
+
 
 /*** A FUNCTION TO SET THE STATE ***/
-go.setState = function({stateName,idsArray,styleArray,frameNumber}) {
-let index  =          0;   if (frameNumber) {  index = frameNumber; }
-let style  =   go.style;   if (styleArray ) {  style = styleArray;  }
-let ids    =     go.ids;   if (  idsArray ) {    ids =   idsArray;  }
-for (j in ids) { for (i in style) {
-const target = document.getElementById(ids[j]);
-try { const value  = go.state[stateName][index][ids[j]].style[style[i]];
-target.style[style[i]] = value; } catch { target.style[style[i]] = ""; }
-} } return 0;
+go.setState = function(xqn,arg) {
+if (!!arg) {
+for (y of go.xqn.style) {
+const target = arg.ref;
+try {
+let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
+if (go.vwFactor == 1) value = xqn.style[y];
+target.style[y] = value;
+} catch {  } } return 0; }
+
+
+
+for (d of go.ids) { for (y of go.xqn.style) {
+const target = document.getElementById(d);
+try {
+let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
+if (go.vwFactor == 1) value = xqn.dat[d].style[y];
+target.style[y] = value;
+} catch {  } } } return 0; }
+
+
+
+
+
+
+
+
+/* SECTION 2: ANIMATION AND STATE CHANGE FOR EACH INDIVIDUALLY */
+
+for (y of go.xqn.nom) { for (x of go.ids) {
+for (q of go.elm[x].xqn.nom) { if (q == y) {
+go.xqn.grp[y].nom.push(x); } } } }
+
+go.setupAnimationsEach = function(point,source) {
+for (y of [point]) {
+y.pause      = function() { for (x of source) { go.elm[x].xqn.all.pause()     ; } }
+y.resume     = function() { for (x of source) { go.elm[x].xqn.all.resume()    ; } }
+y.stop       = function() { for (x of source) { go.elm[x].xqn.all.stop()      ; } }
+y.set        = function() { for (x of source) { go.elm[x].xqn.all.set()       ; } }
+y.reset      = function() { for (x of source) { go.elm[x].xqn.all.reset()     ; } }
+y.next       = function() { for (x of source) { go.elm[x].xqn.all.next()      ; } }
+y.prev       = function() { for (x of source) { go.elm[x].xqn.all.prev()      ; } }
+y.rate       = {};
+y.rate.set   = function(val) { for (x of source) { go.elm[x].xqn.all.rate.set(val)  ; } }
+y.rate.incr  = function(val) { for (x of source) { go.elm[x].xqn.all.rate.incr(val) ; } }
+y.rate.decr  = function(val) { for (x of source) { go.elm[x].xqn.all.rate.decr(val) ; } }
+y.now        = {};
+y.now.set    = function(val) { for (x of source) { go.elm[x].xqn.all.now.set(val)   ; } }
+y.now.incr   = function(val) { for (x of source) { go.elm[x].xqn.all.now.incr(val)  ; } }
+y.now.decr   = function(val) { for (x of source) { go.elm[x].xqn.all.now.decr(val)  ; } }
+y.skip       = {};
+y.skip.start = function()    { for (x of source) { go.elm[x].xqn.all.skip.start(); } }
+y.skip.rev   = function(val) { for (x of source) { go.elm[x].xqn.all.skip.rev(val)  ; } }
+y.skip.fwd   = function(val) { for (x of source) { go.elm[x].xqn.all.skip.fwd(val)  ; } }
+y.skip.end   = function()    { for (x of source) { go.elm[x].xqn.all.skip.end()  ; } }
+y.play       = {};
+y.play.fwd   = function() { for (x of source) { go.elm[x].xqn.all.play.fwd()  ; } }
+y.play.rev   = function() { for (x of source) { go.elm[x].xqn.all.play.rev()  ; } }
+y.loop       = {};
+y.loop.fwd   = function() { for (x of source) { go.elm[x].xqn.all.loop.fwd()  ; } }
+y.loop.rev   = function() { for (x of source) { go.elm[x].xqn.all.loop.rev()  ; } }
+y.loop.cycl  = function() { for (x of source) { go.elm[x].xqn.all.loop.cycl() ; } }
 }
+}
+
+go.setupAnimationsEach(go.anim.each.all,go.ids);
+
+
+
+
+
+for (p of go.xqn.nom) {
+const input = go.xqn.grp[p].nom;
+go.anim.each.grp[p] = {};
+go.setupAnimationsEach(go.anim.each.grp[p],input);
+go.anim.grp[p] = {};
+go.anim.grp[p].loop   = go.xqn.grp[p].loop  ;
+go.anim.grp[p].now    = go.xqn.grp[p].now   ;
+go.anim.grp[p].play   = go.xqn.grp[p].play  ;
+go.anim.grp[p].rate   = go.xqn.grp[p].rate  ;
+go.anim.grp[p].skip   = go.xqn.grp[p].skip  ;
+go.anim.grp[p].next   = function() { go.xqn.grp[p].next()  ; }
+go.anim.grp[p].pause  = function() { go.xqn.grp[p].pause() ; }
+go.anim.grp[p].prev   = function() { go.xqn.grp[p].prev()  ; }
+go.anim.grp[p].reset  = function() { go.xqn.grp[p].reset() ; }
+go.anim.grp[p].resume = function() { go.xqn.grp[p].resume(); }
+go.anim.grp[p].set    = function() { go.xqn.grp[p].set()   ; }
+go.anim.grp[p].stop   = function() { go.xqn.grp[p].stop()  ; }
+}
+
+go.anim.all.loop   = go.xqn.all.loop  ;
+go.anim.all.skip   = go.xqn.all.skip  ;
+go.anim.all.now    = go.xqn.all.now   ;
+go.anim.all.play   = go.xqn.all.play  ;
+go.anim.all.rate   = go.xqn.all.rate  ;
+go.anim.all.next   = function() { go.xqn.all.next()  ; }
+go.anim.all.pause  = function() { go.xqn.all.pause() ; }
+go.anim.all.prev   = function() { go.xqn.all.prev()  ; }
+go.anim.all.reset  = function() { go.xqn.all.reset() ; }
+go.anim.all.resume = function() { go.xqn.all.resume(); }
+go.anim.all.set    = function() { go.xqn.all.set()   ; }
+go.anim.all.stop   = function() { go.xqn.all.stop()  ; }
+
+
+
+
+
+
+
+
+
+
+/*
+
+go.xqn.grp[name].nom
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1101,7 +1298,7 @@ scriptStarter += `
 `;
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
-scriptStarter += `${("go.el." + idRoll[j] + "." + eventRoll[k]).padStart(32, " ")} = function() {  }; /*  */
+scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() {  }; /*  */
 `;
 }
 scriptStarter += `
@@ -1114,11 +1311,11 @@ for (let k = 0; k < eventRoll.length; k++) {
 if (eventRoll[k] == "mousewheel") {
 
 scriptStarter += `
-document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { go.ids.forEach((id) => { if (event.target == go.el[id].ref) { go.el[id].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }, { passive: false }); });`;
+document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { go.ids.forEach((id) => { if (event.target == go.elm[id].ref) { go.elm[id].func.${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }, { passive: false }); });`;
 
 } else {
 scriptStarter += `
-document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { go.ids.forEach((id) => { if (event.target == go.el[id].ref) { go.el[id].${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }); });`;
+document.addEventListener(${('"' + eventRoll[k] + '"').padStart(14," ")}, function() { go.ids.forEach((id) => { if (event.target == go.elm[id].ref) { go.elm[id].func.${(eventRoll[k] + '();').padEnd(14," ")} return 0; } }); });`;
 }
 }
 scriptStarter += `
@@ -1136,56 +1333,40 @@ ${addToScript}
 
 
 
-console.log(\`
+go.info = function() { console.log(\`
 
 
 -----------------------------------------------
 >>>    PAGE DATA STRUCTURE LAYOUT KEYMAP    <<<
 -----------------------------------------------
-go               = {};       /* Basic Object */
-go.state         = {};       /* State Setups */
-go.notes         = {};       /* Note Collect */
-go.json          = {};       /* JSON Entries */
-go.aud           = {};       /* Audio Tracks */
-go.img           = {};       /* Image Arrays */
-go.ids           = [];       /* List All IDs */
-go.el            = {};       /* Element Data */
+go                = {};       /* Basic Object */
+go.xqn            = {};       /* State Setups */
+go.dat.notes      = {};       /* Note Collect */
+go.dat.json       = {};       /* JSON Entries */
+go.aud            = {};       /* Audio Tracks */
+go.img            = {};       /* Image Arrays */
+go.ids            = [];       /* List All IDs */
+go.elm            = {};       /* Element Data */
 -----------------------------------------------
 >>>    PER ELEMENT COMPLIMENTARY DATASET    <<<
 -----------------------------------------------
-go.el[id]        = {};       /* Each Element */
-go.el[id].state  = {};       /* Select State */
-go.el[id].notes  = {};       /* Note Entries */
-go.el[id].json   = {};       /* Include JSON */
-go.el[id].aud    = [];       /* Audio Tracks */
-go.el[id].img    = [];       /* Images Array */
-go.el[id].ids    = [];       /* Internal IDs */
-go.el[id].el     = {};       /* Element Data */
-go.el[id].ref    = document.getElementById(id);
+go.elm[id]        = {};       /* Each Element */
+go.elm[id].xqn    = {};       /* Select State */
+go.elm[id].notes  = {};       /* Note Entries */
+go.elm[id].json   = {};       /* Include JSON */
+go.elm[id].aud    = [];       /* Audio Tracks */
+go.elm[id].img    = [];       /* Images Array */
+go.elm[id].ids    = [];       /* Internal IDs */
+go.elm[id].elm    = {};       /* Element Data */
+go.elm[id].ref    = document.getElementById(id);
 -----------------------------------------------
 >>>    SINGLE DEPTH NESTING IS SUPPORTED    <<<
 >>>    TO ENABLE VISUAL ASSEMBLY OF DATA    <<<
 -----------------------------------------------
 go.playAudio(trackName);     /*Quote The Name*/
 
-go.setState({});             /* Reset  State */
-EXAMPLE: (you can copy this exactly)
-
-const
-setStateInput = {
-  "stateName" : "finalState",
- "styleArray" : [ "top", "left", "transform" ],
-   "idsArray" : [ "part1", "part2", "etc"    ],
-"frameNumber" : 3
-                };
-go.setState(setStateInput);
-
-NOTE: The "stateName" is the name of the part
-while you are still in HDUB working on it. Same
-for the "idsArray". It's just the part names.
-
-
 \`);
+}
 `;
 
 

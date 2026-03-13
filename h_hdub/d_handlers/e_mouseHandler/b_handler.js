@@ -20,6 +20,18 @@ let mousemoveTarget=null;
 document.addEventListener("mousemove", (event) => {
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 if (event.target.dataset&&event.target.dataset.coinTrip) {
 mousemoveTarget=event.target;
 } else {
@@ -612,6 +624,25 @@ document.addEventListener("mousedown",   (event) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 drawSiteMap();
 
 
@@ -850,6 +881,13 @@ let mouseupTarget = null;
 
 
 document.addEventListener("mouseup", (event) => {
+
+
+
+
+
+activeUpdate();
+
 
 
 
@@ -1098,6 +1136,26 @@ redraw();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("dblclick", (event) => {
 
 
@@ -1131,6 +1189,70 @@ const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
 const mouseInfo = [event,ctrl,shift,alt];
 
        if (event.target.dataset.coinTrip&&!shift&&!alt) {
+
+/* TUCK THE EDGE INWARD TO THE NEAREST MOUSE GRID STEP */
+const originalEM = eM;
+const originalT  =  T;
+T = mouseIncrement;
+switch (mousedown.targetRegion) {
+case 1:
+eM = 0; extendEdge(['',74,106]); //j bottom down
+eM = 0; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',76,108]); //l right right
+redraw(); return;
+case 2:
+eM = 0; extendEdge(['',74,106]); //j bottom down
+eM = 0; extendEdge(['',75,107]); //k bottom up
+redraw(); return;
+case 6:
+eM = 0; extendEdge(['',76,108]); //l right right
+eM = 0; extendEdge(['',72,104]); //h right left
+redraw(); return;
+case 3:
+eM = 0; extendEdge(['',76,108]); //l right right
+eM = 0; extendEdge(['',72,104]); //h right left
+eM = 0; extendEdge(['',74,106]); //j bottom down
+eM = 0; extendEdge(['',75,107]); //k bottom up
+redraw(); return;
+case 8:
+eM = 1; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',74,106]); //j bottom down
+redraw(); return;
+case 4:
+eM = 1; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',76,108]); //l right right
+redraw(); return;
+case 7:
+eM = 1; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',74,106]); //j bottom down
+eM = 1; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',76,108]); //l right right
+redraw(); return;
+case 9:
+eM = 0; extendEdge(['',76,108]); //l right right
+eM = 0; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',74,106]); //j bottom down
+redraw(); return;
+}
+T  = originalT ;
+eM = originalEM;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //insertNewDuplicate([,68,100,,,]);
 
 
@@ -1147,7 +1269,7 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.focus();
 
 
 } else if (event.target.dataset.coinTrip&& shift&&!alt) {
-cutOutImage();
+try { cutOutImage(); } catch {}
 } else if (event.target.dataset.coinTrip&&!shift&& alt) {
 applyImageBack();
 } else if (event.target==document.documentElement) {

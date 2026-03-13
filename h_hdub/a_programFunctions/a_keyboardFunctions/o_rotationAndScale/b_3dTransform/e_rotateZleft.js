@@ -1,4 +1,4 @@
-function rotateZleft() {
+function rotateZleft(rotationStep) {
 if (coinFocus!=null) {
 
 const perspective =  parseInt(coinFocus.lastElementChild.dataset.perspective   );
@@ -7,7 +7,12 @@ const rotateY     =  parseInt(coinFocus.lastElementChild.dataset.rotateY       )
 const rotateZ     =  parseInt(coinFocus.lastElementChild.dataset.rotateZ       );
 const translateZ  =  parseInt(coinFocus.lastElementChild.dataset.translateZ    );
 let newRotateZ = 0;
+
+newRotateZ = rotateZ - rotationStep;
+
+if (!rotationStep) {
 newRotateZ = rotateZ - ZrotationStep;
+}
        if (newRotateZ>=360) {
 newRotateZ -= 360;
 } else if (newRotateZ<0) {

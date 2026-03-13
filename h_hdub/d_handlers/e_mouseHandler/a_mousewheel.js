@@ -3,8 +3,9 @@ document.getElementById("animationTiming").value = localStorage.getItem("animato
 }
 
 
-
-
+if (localStorage.getItem("stateTiming")) {
+document.getElementById("stateTiming").innerText = parseInt(localStorage.getItem("stateTiming"));
+}
 
 
 
@@ -21,6 +22,67 @@ document.addEventListener("mousewheel", (event) => {
 if (coinFocus != null) {
 coinFocus.lastElementChild.lastElementChild.previousElementSibling = coinFocus.lastElementChild.lastElementChild.previousElementSibling;
 }
+
+
+
+
+
+
+
+
+
+[
+"popStyle1",
+"popStyle2",
+"popStyle3",
+"activeStateEdit",
+"statename",
+"stateFrame",
+"firstFrame",
+"stateFrameLeft",
+"stateFrameRight",
+"lastFrame",
+"stateCodeCopy",
+"codeOutput",
+"folder51",
+"stateDel",
+"stateIns"
+].forEach((name) => {
+if (event.target.id == name) {
+event.preventDefault();
+event.stopPropagation();
+       if (event.wheelDelta > 0) { nextState();
+} else if (event.wheelDelta < 0) { previousState();
+}
+return;
+}
+});
+
+
+
+
+if (event.target.id == "stateTiming") {
+event.preventDefault();
+event.stopPropagation();
+let increment = event.shiftKey && !event.ctrlKey ? 100 : 10;
+if (event.ctrlKey) { increment = 1; }
+if (event.wheelDelta > 0) {
+document.getElementById("stateTiming").innerText = parseInt(document.getElementById("stateTiming").innerText) + increment;
+} else if (event.wheelDelta < 0) {
+document.getElementById("stateTiming").innerText = parseInt(document.getElementById("stateTiming").innerText) - increment;
+}
+if (parseInt(document.getElementById("stateTiming").innerText) < 0) { document.getElementById("stateTiming").innerText = 0; }
+localStorage.setItem("stateTiming", parseInt(document.getElementById("stateTiming").innerText));
+return;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -94,8 +156,8 @@ document.getElementById("navUpscale").innerText = parseInt(document.getElementBy
 if (parseInt(document.getElementById("navUpscale").innerText) < 1) {
 document.getElementById("navUpscale").innerText = 1;
 }
-if (parseInt(document.getElementById("navUpscale").innerText) > 64) {
-document.getElementById("navUpscale").innerText = 64;
+if (parseInt(document.getElementById("navUpscale").innerText) > 100) {
+document.getElementById("navUpscale").innerText = 100;
 }
 
 localStorage.setItem("navUpscale", document.getElementById("navUpscale").innerText);

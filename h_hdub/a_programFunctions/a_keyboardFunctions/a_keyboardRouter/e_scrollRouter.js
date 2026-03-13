@@ -26,10 +26,22 @@ alt    = keyInfo[5];
 /*right arr*/ if (kC ==  39) {moveAllRight();}
 
 } else if (!ctrl&&!shift) {
-/*   up arr*/ if (kC ==  38) { moveUp(keyInfo)   ; }
-/* down arr*/ if (kC ==  40) { moveDown(keyInfo) ; }
-/* left arr*/ if (kC ==  37) { moveLeft(keyInfo) ; }
-/*right arr*/ if (kC ==  39) { moveRight(keyInfo); }
+if (kC ==  38) { insertForArrows(); setTimeout(() => { moveUp(keyInfo)   ; }, 10); }
+if (kC ==  40) { insertForArrows(); setTimeout(() => { moveDown(keyInfo) ; }, 10); }
+if (kC ==  37) { insertForArrows(); setTimeout(() => { moveLeft(keyInfo) ; }, 10); }
+if (kC ==  39) { insertForArrows(); setTimeout(() => { moveRight(keyInfo); }, 10); }
+
+
+/*
+
+if (kC ==  38) { insertForArrows(); setTimeout(() => { moveUp(keyInfo)   ; }, 10); }
+if (kC ==  40) { insertForArrows(); setTimeout(() => { moveDown(keyInfo) ; }, 10); }
+if (kC ==  37) { insertForArrows(); setTimeout(() => { moveLeft(keyInfo) ; }, 10); }
+if (kC ==  39) { insertForArrows(); setTimeout(() => { moveRight(keyInfo); }, 10); }
+
+*/
+
+
 }
 
 }

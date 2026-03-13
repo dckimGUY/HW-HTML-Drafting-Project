@@ -57,11 +57,8 @@ var buttonStep     = {};
 ui.textEntry.ref.onblur = function() { buttonStep.x = 0; buttonStep.y = 0; buttonStep.num = 0; }
 
 ui.textEntry.input              = function() {
-
 if (ui.textEntry.ref.value.endsWith("\n")) {
-
 if (hauptMode==0) { enterNavLinkButton(lastNavPoint); } else if (hauptMode==1) { hauptMode = 0; enterNavLinkButton(lastNavPoint); hauptMode = 1; }
-
 ui.textEntry.ref.value = "";
 }
 ui.textEntry.ref.value = ui.textEntry.ref.value.slice(0,17);

@@ -71,6 +71,12 @@ newCoin.dataset.notes                 = `{
 "YAML"  : "Coded instructions",
 "data"  : "Additional JSON"
 }`;
+
+newCoin.dataset.json                  =      "";
+newCoin.dataset.addScript             =      "";
+newCoin.dataset.state                 =      "";
+
+
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";

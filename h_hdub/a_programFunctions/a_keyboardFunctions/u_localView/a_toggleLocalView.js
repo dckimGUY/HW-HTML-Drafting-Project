@@ -9,6 +9,13 @@ if (topLayer.a_currentLayer != "localView") {
 
 if (coinFocus!=null) {
 
+let colourInput = "";
+switch (coinFocus.dataset.coinTrip) {
+case "0": colourInput = window.coinColour0;
+case "1": colourInput = window.coinColour1;
+case "2": colourInput = window.coinColour2;
+}
+
 const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
 let fontWidth;
 if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
@@ -18,15 +25,17 @@ const coinCentre = [
 parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
 parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
 ];
-buzzWord(1,"TAB",64,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+buzzWord(1,"TAB",96,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 
 coinIdArray.push(coinFocus.id);
-localViewReturn = topLayer.a_currentLayer;
+localViewReturn = topLayer.a_currentLayer;	
 topLayer.localView.b_content.innerHTML = '';
 insertNewDuplicate([event,68,68,,,]);
 coinFocus1.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
-var localViewHighlightColour = "cyan";
-var iSZ = "0px 0px " + edgeQ + "px " + localViewHighlightColour;
+
+
+
+let iSZ = "0px 0px " + edgeQ + "px " + colourInput;
 const iSZa = iSZ + ",";
 coinFocus1.style.boxShadow = iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZa + iSZ;
 deleteCoin(["",88,120,,,]);
@@ -107,7 +116,7 @@ const coinCentre = [
 parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
 parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
 ];
-buzzWord(1,"TAB",64,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+buzzWord(1,"TAB",96,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
 
 }

@@ -995,7 +995,54 @@ shelfMenuHTML.tab4.folder2.HTML  +
 `<div id="tab5folderSelectors" class="folderSelectors">` +
 shelfMenuHTML.tab5.folderSelectors.style +
 shelfMenuHTML.tab5.folderSelectors.HTML  +
-`</div><div id="folder51" class="button_ folder folder51image">` +
+`</div>
+
+<div id="sidebar5" class="sidebar5" title="">
+<button id="sidebarOpener5" class="sidebarOpener5" onclick="toggleSidebar5();"></button>
+
+
+<button id="newStateBlock" class="newStateBlock stateHover" onclick="insertNewStateBlock();" title="Enter A New\nState Block\nThen Use Active Edit with +INS\nDEL removes frames.\nThis only holds\nthe data, keep it"></button>
+<button id="singleState"   class="singleState   stateHover" onclick="setSingleState();"      title="This one will put a\nbutton which sets the current\nstate. It only works on\nthe saved page."></button>
+<button id="rStepState"    class="rStepState    stateHover" onclick="stepStateForward();"    title="go.anim.all.next()"></button>
+<button id="lStepState"    class="lStepState    stateHover" onclick="stepStateBackward();"   title="go.anim.all.prev()"></button>
+<button id="rAnimState"    class="rAnimState    stateHover" onclick="animStateForward();"    title="go.anim.all.play.fwd()"></button>
+<button id="lAnimState"    class="lAnimState    stateHover" onclick="animStateBackward();"   title="go.anim.all.play.rev()"></button>
+<button id="loopState"     class="loopState     stateHover" onclick="loopState();"           title="go.anim.all.loop.cycl()"></button>
+
+<button id="noname1"     class="noname1 stateHover"     onclick="animStop();"      title="go.anim.all.stop()"></button>
+<button id="noname2"     class="noname2 stateHover"     onclick="animPause();"     title="go.anim.all.pause()"></button>
+<button id="noname3"     class="noname3 stateHover"     onclick="animResume();"    title="go.anim.all.resume()"></button>
+<button id="noname4"     class="noname4 stateHover"     onclick="rateUp();"        title="go.anim.all.rate.incr()"></button>
+<button id="noname5"     class="noname5 stateHover"     onclick="rateDown();"      title="go.anim.all.rate.decr()"></button>
+<button id="noname6"     class="noname6 stateHover"     onclick="allAnimBlocks();" title="ALL BLOCKS IN SEQUENCE"></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div id="folder51" class="button_ folder folder51image">` +
 shelfMenuHTML.tab5.folder1.style +
 shelfMenuHTML.tab5.folder1.HTML  +
 `</div><div id="folder52" class="button_ folder folder52image">` +

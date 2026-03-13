@@ -97,6 +97,12 @@ spaceViewOff([e,32,32,es,ec,ea]);
 restorePointerEventsNone(); 
 helpMenuOverlay.style.display="none";
 F.focus();
+
+if (activeStateEdit == true) {
+buzzWord(0,'<sup>DISABLED</sup>',96,'red',200,200,25,'top','','',event);
+}
+           activeStateEdit = false;
+document.getElementById("activeStateEdit").style.outline = "";
 }
 
 if (hotDog) { return; }
@@ -147,7 +153,8 @@ flipPhantomLair();
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*   F9    */ if (kC == 120)              {                                }
+/*   F9    */ if (kC == 120)              { event.preventDefault();  try { topLayer.programStateAccumulator.push(JSON.parse(document.getElementById(topLayer.a_currentLayer.replace(/._l/g, 'setL')).dataset.programState));
+buzzWord(0,'+STATE',128,'orange',400,200,25,'top')} catch{}; }
 /*   F10   */ if (kC == 121)              {                                }
 /*   F11   */ if (kC == 122)              {                                }
 /*   F12   */ if (kC == 123)              {                                }
@@ -158,73 +165,60 @@ flipPhantomLair();
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*   ins   */ if (kC ==  45)              { event.preventDefault();
-       if (!event.shiftKey) {
- try { topLayer.programStateAccumulator.push(JSON.parse(document.getElementById(topLayer.a_currentLayer.replace(/._l/g, 'setL')).dataset.programState));
-buzzWord(0,'+STATE',128,'orange',400,200,25,'top')} catch{}
-} else if ( event.shiftKey) {
-if (topLayer.programStateAccumulator.length == 0) { return; };
-popAccumulator(JSON.stringify(topLayer.programStateAccumulator));
-buzzWord(0,'State Data',128,'orange',400,200,25,'top');
-}
-}
-
+/*   ins   */ if (kC ==  45)              { event.preventDefault(); insertKey(); }
 /*   home  */ if (kC ==  36)              { event.preventDefault();
-       if (utilityLayer0.children.length > 0) {
-utilityLayer0.children[0].scrollIntoView();
-} else if (utilityLayer0.children.length == 0 && Cur.style.display != "none") {
-Cur.scrollIntoView();
-} else       {
-window.scrollTo(0,0);
+if (activeStateEdit) {
+firstState();
 }
 }
-
 /* page up */ if (kC ==  33)              { event.preventDefault();
+if (activeStateEdit) {
+nextState();
+} else {
        if (!event.shiftKey) {
-layerLeft();updateInfoShelf();redraw();
+nextState();
 } else if ( event.shiftKey) {
 deMinimis(true); layerLeft(); buzzWord(0,'< + SAVE',128,'magenta',200,200,25,'top','','',event);
 }
-
-
+}
 }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*  delete */ if (kC ==  46)              { event.preventDefault();
-       if (!event.shiftKey) {
-permanentRemoval(['',88,120]);
-} else if ( event.shiftKey) {
-permanentGroupRemoval();
-}
-}
+/*  delete */ if (kC ==  46)              { event.preventDefault(); deleteKey(); }
 /*   end   */ if (kC ==  35)              { event.preventDefault();
-       if (utilityLayer0.children.length > 0) {
-utilityLayer0.lastElementChild.scrollIntoView();
-} else if (utilityLayer0.children.length == 0 && Cur.style.display != "none") {
-Cur.scrollIntoView();
-} else       {
-window.scrollTo(0,0);
+if (activeStateEdit) {
+lastState();
 }
 }
 /*page down*/ if (kC ==  34)              { event.preventDefault();
+if (activeStateEdit) {
+previousState();
+} else {
        if (!event.shiftKey) {
-layerRight();updateInfoShelf();redraw();
+previousState();
 } else if ( event.shiftKey) {
-
-
 deMinimis(true); layerRight(); buzzWord(0,'> + SAVE',128,'magenta',200,200,25,'top','','',event);
-
-
-
-
+}
 }
 }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
 /* scr lck */ if (kC == 145)              {                                }
-/* num lock*/ if (kC == 144)              {                                }
+/* num lock*/ if (kC == 144)              { event.preventDefault(); 
+
+
+toggleActiveStateEdit();
+
+
+
+
+
+
+
+
+ }
 /*  caps   */ if (kC ==  20)              { flipHauptMode(keyInfo);        }
 /*                                                                        */
 /**************************************************************************/
@@ -288,17 +282,17 @@ let keyInfo = [e,kC,cC,es,ec,ea];
 /*    -    */ if (kC == 109 && cC ==  45) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n-";}
 /*    +    */ if (kC == 107 && cC ==  43) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n+";}
 /*                                                                        */
-/*    7    */ if (kC == 103 && cC ==  55) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n7";}
-/*    8    */ if (kC == 104 && cC ==  56) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n8";}
-/*    9    */ if (kC == 105 && cC ==  57) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n9";}
+/*    7    */ if (kC == 103 && cC ==  55) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n7";}
+/*    8    */ if (kC == 104 && cC ==  56) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n8";}
+/*    9    */ if (kC == 105 && cC ==  57) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n9";}
 /*                                                                        */
-/*    4    */ if (kC == 100 && cC ==  52) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n4";}
-/*    5    */ if (kC == 101 && cC ==  53) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n5";}
-/*    6    */ if (kC == 102 && cC ==  54) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n6";}
+/*    4    */ if (kC == 100 && cC ==  52) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n4";}
+/*    5    */ if (kC == 101 && cC ==  53) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n5";}
+/*    6    */ if (kC == 102 && cC ==  54) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n6";}
 /*                                                                        */
-/*    1    */ if (kC ==  97 && cC ==  49) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n1";}
-/*    2    */ if (kC ==  98 && cC ==  50) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n2";}
-/*    3    */ if (kC ==  99 && cC ==  51) { e.preventDefault(); e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n3";}
+/*    1    */ if (kC ==  97 && cC ==  49) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n1";}
+/*    2    */ if (kC ==  98 && cC ==  50) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n2";}
+/*    3    */ if (kC ==  99 && cC ==  51) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n3";}
 /*                                                                        */
 /*    0    */ if (kC ==  96 && cC ==  48) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n0";}
 /*    .    */ if (kC == 110 && cC ==  46) { e.preventDefault(); numpadRouter(keyInfo);         lastKey = "n.";}
@@ -344,7 +338,7 @@ if (ui.folder52.ref.style.display == "block" &&
 /*                                                                        */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    `    */ if (kC == 192 && cC ==  96) { toggleMenu();                  lastKey = "`";}/*    ~    */ if (kC == 192 && cC == 126) { toggleInterfaceLayer();        lastKey = "~";}
+/*    `    */ if (kC == 192 && cC ==  96) { toggleMenu();             lastKey = "`"; }/*    ~    */ if (kC == 192 && cC == 126) { toggleInterfaceLayer();        lastKey = "~";}
 /*    1    */ if (kC ==  49 && cC ==  49) { changeLayer("b_layer1");  lastKey = "1"; }/*    !    */ if (kC ==  49 && cC ==  33) { changeLayer("l_layer11");      lastKey = "!";}
 /*    2    */ if (kC ==  50 && cC ==  50) { changeLayer("c_layer2");  lastKey = "2"; }/*    @    */ if (kC ==  50 && cC ==  64) { changeLayer("m_layer12");      lastKey = "@";}
 /*    3    */ if (kC ==  51 && cC ==  51) { changeLayer("d_layer3");  lastKey = "3"; }/*    #    */ if (kC ==  51 && cC ==  35) { changeLayer("n_layer13");      lastKey = "#";}
@@ -365,17 +359,14 @@ if (ui.folder52.ref.style.display == "block" &&
 /*    e    */ if (kC ==  69 && cC == 101) { shiftRouter(keyInfo);lastKey="e";}/*    E    */ if (kC ==  69 && cC ==  69) { shiftRouter(keyInfo);lastKey="E";}
 /*    r    */ if (kC ==  82 && cC == 114) { shiftRouter(keyInfo);lastKey="r";}/*    R    */ if (kC ==  82 && cC ==  82) { shiftRouter(keyInfo);lastKey="R";}
 /*    t    */ if (kC ==  84 && cC == 116) { shiftRouter(keyInfo);lastKey="t";}/*    T    */ if (kC ==  84 && cC ==  84) { shiftRouter(keyInfo);lastKey="T";}
-
-/*    y    */ if (kC ==  89 && cC == 121) { shiftRouter(keyInfo);lastKey="y";}
-/*    Y    */ if (kC ==  89 && cC ==  89) { shiftRouter(keyInfo);lastKey="Y";}
-
+/*    y    */ if (kC ==  89 && cC == 121) { shiftRouter(keyInfo);lastKey="y";}/*    Y    */ if (kC ==  89 && cC ==  89) { shiftRouter(keyInfo);lastKey="Y";}
 /*    u    */ if (kC ==  85 && cC == 117) { shiftRouter(keyInfo);lastKey="u";}/*    U    */ if (kC ==  85 && cC ==  85) { shiftRouter(keyInfo);lastKey="U";}
 /*    i    */ if (kC ==  73 && cC == 105) { shiftRouter(keyInfo);lastKey="i";}/*    I    */ if (kC ==  73 && cC ==  73) { shiftRouter(keyInfo);lastKey="I";}
 /*    o    */ if (kC ==  79 && cC == 111) { shiftRouter(keyInfo);lastKey="o";}/*    O    */ if (kC ==  79 && cC ==  79) { shiftRouter(keyInfo);lastKey="O";}
 /*    p    */ if (kC ==  80 && cC == 112) { shiftRouter(keyInfo);lastKey="p";}/*    P    */ if (kC ==  80 && cC ==  80) { shiftRouter(keyInfo);lastKey="P";}
-/*    [    */ if (kC == 219 && cC ==  91) { lessG(e);                        lastKey = "[";} /*    {    */ if (kC == 219 && cC == 123) { oneLessG(e);                 lastKey = "{";}
-/*    ]    */ if (kC == 221 && cC ==  93) { moreG(e);                        lastKey = "]";} /*    }    */ if (kC == 221 && cC == 125) { oneMoreG(e);                 lastKey = "}";}
-/*    \    */ if (kC == 220 && cC ==  92) { focusNextColour();               lastKey = "\\";}/*    |    */ if (kC == 220 && cC == 124) { firstLastColour();           lastKey = "|";}
+/*    [    */ if (kC == 219 && cC ==  91) { lessG(e);            lastKey="[";}/*    {    */ if (kC == 219 && cC == 123) { oneLessG(e);         lastKey="{";}
+/*    ]    */ if (kC == 221 && cC ==  93) { moreG(e);            lastKey="]";}/*    }    */ if (kC == 221 && cC == 125) { oneMoreG(e);         lastKey="}";}
+/*    \    */ if (kC == 220 && cC ==  92) { focusNextColour();  lastKey="\\";}/*    |    */ if (kC == 220 && cC == 124) { firstLastColour();   lastKey="|";}
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -435,6 +426,20 @@ reflowPerTrip();
 /***************************************************************************************************************************************************/});
 
 document.addEventListener("keyup", (event) => {
+
+
+
+
+
+
+
+
+activeUpdate();
+
+
+
+
+
 
 
 

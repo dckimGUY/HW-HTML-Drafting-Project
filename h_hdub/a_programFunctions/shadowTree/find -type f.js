@@ -36,6 +36,8 @@ findFileList =
 ../a_keyboardFunctions/c_bufferOperations/d_pasteMultiple.js
 ../a_keyboardFunctions/c_bufferOperations/e_groupPaste.js
 ../a_keyboardFunctions/c_bufferOperations/f_spreadReference.js
+../a_keyboardFunctions/c_bufferOperations/g_restoreSingle.js
+../a_keyboardFunctions/c_bufferOperations/h_flipTheBuffers.js
 ../a_keyboardFunctions/d_miscellaneous/a_writeInfoToFace.js
 ../a_keyboardFunctions/d_miscellaneous/b_togglePartNames.js
 ../a_keyboardFunctions/d_miscellaneous/c_externalLink.js
@@ -125,6 +127,8 @@ findFileList =
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/a_insertNewCoin.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/b_insertNewDuplicate.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/c_insertNewImage.js
+../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/d_duplicateU.js
+../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/a_insertNew/e_duplicateP.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/b_insertDragSelector/a_insertDragIns.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/b_insertDragSelector/b_insertNamedColours.js
 ../a_keyboardFunctions/j_insertionAndDeletion/b_insertion/b_insertDragSelector/c_insertGrayscale.js
@@ -138,6 +142,8 @@ findFileList =
 ../a_keyboardFunctions/j_insertionAndDeletion/c_guideLayer/b_pullFromGuideLayer.js
 ../a_keyboardFunctions/j_insertionAndDeletion/d_remove/a_removeCoin.js
 ../a_keyboardFunctions/j_insertionAndDeletion/d_remove/b_removeGroup.js
+../a_keyboardFunctions/j_insertionAndDeletion/d_remove/c_permanentRemoval.js
+../a_keyboardFunctions/j_insertionAndDeletion/d_remove/d_permanentGroupRemoval.js
 ../a_keyboardFunctions/k_brickAndStack/a_brickHorizontal.js
 ../a_keyboardFunctions/k_brickAndStack/b_brickVertical.js
 ../a_keyboardFunctions/k_brickAndStack/c_stackHorizontal.js
@@ -260,5 +266,20 @@ findFileList =
 ../c_focusManagement/b_focus/h_firstLastColour.js
 ../c_focusManagement/c_scanAndSet/a_scanForCoin.js
 ../c_focusManagement/c_scanAndSet/b_setCoinTripColouration.js
+../d_programState/a_declarations.js
+../d_programState/b_setState.js
+../d_programState/c_toggleActiveStateEdit.js
+../d_programState/d_nextState.js
+../d_programState/e_previousState.js
+../d_programState/f_firstState.js
+../d_programState/g_lastState.js
+../d_programState/h_popInsert.js
+../d_programState/i_dumpAccumulator.js
+../d_programState/j_setCurrentState.js
+../d_programState/k_insertKey.js
+../d_programState/l_deleteKey.js
+../d_programState/m_pushState.js
+../d_programState/n_updateState.js
+../d_programState/p_activeUpdate.js
 `;
 

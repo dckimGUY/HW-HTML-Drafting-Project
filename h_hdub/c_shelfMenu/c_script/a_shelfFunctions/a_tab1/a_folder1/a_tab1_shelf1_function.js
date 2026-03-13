@@ -513,7 +513,7 @@ focusNext();updateInfoShelf();redraw();ui[inputBoxName].ref.select();
 ui[inputBoxName].ref.value = ui[inputBoxName].ref.value.replace(/\//g, "");
 focusPrevious();updateInfoShelf();redraw();ui[inputBoxName].ref.select();
 
-/* SWITCH PART NAMES ON AN OFF */
+/* SWITCH PART NAMES ON AND OFF */
 } else if (ui[inputBoxName].ref.value.includes(" ")) { 
 ui[inputBoxName].ref.value = ui[inputBoxName].ref.value.replace(/ /g, "");
 if (drawPartNames=="false") {
@@ -792,13 +792,10 @@ function fitTheBox() {
 
        if (coinFocus.lastElementChild.style.overflow=="hidden") {
 coinFocus.lastElementChild.style.overflow="auto";
-noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style='color:lime;'>auto</span>",durationS);
 } else if (coinFocus.lastElementChild.style.overflow=="auto") {
 coinFocus.lastElementChild.style.overflow="visible";
-noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style='color:white;'>visible</span>",durationS);
 } else {
 coinFocus.lastElementChild.style.overflow="hidden";
-noteStyle("M<br><span style='font-size: 0.5em;'>overflow:</span><br><span style='color:red;'>hidden</span>",durationS);
 }
 
 }; /*                                                */

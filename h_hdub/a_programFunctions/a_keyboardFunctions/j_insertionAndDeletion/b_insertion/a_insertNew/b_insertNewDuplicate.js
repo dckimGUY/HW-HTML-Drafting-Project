@@ -42,12 +42,18 @@ newCoin.dataset.finishedOutline       =  "none";
 newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
 newCoin.dataset.wrapper               =      coinFocus.dataset.wrapper ;
 newCoin.dataset.outlineColour         =      coinFocus.dataset.outlineColour;
-newCoin.dataset.notes                 = `{
-"initialDisplay" : "block",
-"notes" : "Written notes.",
-"YAML"  : "Coded instructions",
-"data"  : "Additional JSON"
-}`;
+
+newCoin.dataset.notes                 =      coinFocus.dataset.notes;
+if (coinFocus.dataset.json ) { newCoin.dataset.json = coinFocus.dataset.json  ; }
+if (coinFocus.dataset.state) { newCoin.dataset.state = coinFocus.dataset.state; }
+
+newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
+newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
+newCoin.dataset.dragPull              =      coinFocus.dataset.dragPull;
+
+
+
+
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
 

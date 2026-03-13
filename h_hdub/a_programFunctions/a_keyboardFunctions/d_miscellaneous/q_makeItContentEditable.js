@@ -23,13 +23,10 @@ if (!shift) {
 
        if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.contentEditable == "false") {
 coinFocus.lastElementChild.firstElementChild.nextElementSibling.contentEditable = "true";
-noteStyle("E<br><span style='font-size: 0.5em;'>content-editable:</span><br><span style='color:lime;'>true</span>",durationS);
 } else if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.contentEditable == "true") {
 coinFocus.lastElementChild.firstElementChild.nextElementSibling.contentEditable = "true";
-noteStyle("E<br><span style='font-size: 0.5em;'>content-editable:</span><br><span style='color:red;'>false</span>",durationS);
 } else {
 coinFocus.lastElementChild.firstElementChild.nextElementSibling.contentEditable = "true";
-noteStyle("E<br><span style='font-size: 0.5em;'>content-editable:</span><br><span style='color:lime;'>true</span>",durationS);
 }
 
 } else if ( shift) {
@@ -37,19 +34,16 @@ noteStyle("E<br><span style='font-size: 0.5em;'>content-editable:</span><br><spa
 for (let j = 0; j < setData.length; j++) {
 setData[j].lastElementChild.firstElementChild.nextElementSibling.contentEditable = "true";
 }
-noteStyle("<u>E</u><br><span style='font-size: 0.5em;'>content-editable:</span><br><span style='color:lime;'>true</span>",durationS,true);
 
 } else if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.contentEditable == "true") {
 for (let j = 0; j < setData.length; j++) {
 setData[j].lastElementChild.firstElementChild.nextElementSibling.contentEditable = "true";
 }
-noteStyle("<u>E</u><br><span style='font-size: 0.5em;'>content-editable:</span><br><span style='color:red;'>false</span>",durationS,true);
 
 } else {
 for (let j = 0; j < setData.length; j++) {
 setData[j].lastElementChild.firstElementChild.nextElementSibling.contentEditable = "true";
 }
-noteStyle("<u>E</u><br><span style='font-size: 0.5em;'>content-editable:</span><br><span style='color:lime;'>true</span>",durationS,true);
 
 }
 }

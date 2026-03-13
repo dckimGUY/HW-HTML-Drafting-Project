@@ -13,7 +13,7 @@ F.focus();">
 
 
 
-<button id="dumpAccumulator" class="button_ dumpAccumulator" onclick="if (topLayer.programStateAccumulator.length == 0) { return; }; popAccumulator(JSON.stringify(topLayer.programStateAccumulator)); buzzWord(0,'DATA',128,'orange',200,200,25,'top','','',event);" title="State Accumulator:\nCTRL click levels to add.\nUse this button to bundle the\ndata and clear the accumulator."></button>
+<button id="dumpAccumulator" class="button_ dumpAccumulator" onclick="dumpAccumulator();" title="Program State Accumulator:\nUse INS to add.\nCTRL click levels to add.\nUse this button to bundle the\ndata and clear the accumulator."></button>
 
 
 <button id="accumulatorCount" class="button_ accumulatorCount">0</button>

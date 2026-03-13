@@ -435,8 +435,8 @@ var CAPS = -1;
 document.addEventListener("blur", (event) => { CAPS = -1; });
 
 /* This decides the rotation step. */
-var rotationStep = 5;
-var ZrotationStep = 1;
+var rotationStep  = 5;
+var ZrotationStep = 5;
 
 /* This mode will tell us CSS or Construction. */
 var hauptMode = 0;
@@ -1311,10 +1311,23 @@ spaceViewOff();
 
 document.documentElement.click();
 
-console.clear();
+
 
 /* Completion Message */
 console.log(
 `%c${document.querySelector('meta[name="last-build"]').content}
-HW - it's all i know...`,
-'color: rgb( 77,136,255); font-size: 32px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;');
+
+%chdub 
+%c[ Pixel Art Edition ]
+
+  it's all i know...
+`,
+'color: rgb( 77,136,255); font-size:  24px; font-family: dckimPixelMono; text-shadow: 0px   1px 0px lime,   1px 0px 0px magenta,   1px   1px 0px magenta;',
+'color: rgb( 77,136,255); font-size: 120px; font-family: dckimPixelMono; text-shadow: 0px 3.5px 0px lime, 3.5px 0px 0px magenta, 3.5px 3.5px 0px magenta;',
+'color: rgb( 77,136,255); font-size:  24px; font-family: dckimPixelMono; text-shadow: 0px   1px 0px lime,   1px 0px 0px magenta,   1px   1px 0px magenta;',
+
+
+
+
+
+);
