@@ -27,6 +27,20 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling = coinFocus.l
 
 
 
+for (let j = 1; j < 21; j++) {
+if (event.target.id == `LVL${j}`) {
+event.preventDefault(); event.stopPropagation();
+       if (event.wheelDelta > 0) {
+layerRight();
+} else if (event.wheelDelta < 0) {
+layerLeft();
+}
+loadSidebar1();
+}
+}
+
+
+
 
 
 
@@ -46,13 +60,30 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling = coinFocus.l
 "codeOutput",
 "folder51",
 "stateDel",
-"stateIns"
+"stateIns",
+"animatorBar",
+"frameNumber1",
+"frameBackward",
+"frameForward",
+"skipBack",
+"skipAhead",
+"skipToStart",
+"skipToEnd",
+"leftBumper",
+"rightBumper"
+
 ].forEach((name) => {
 if (event.target.id == name) {
 event.preventDefault();
 event.stopPropagation();
+if (!event.shiftKey) {
        if (event.wheelDelta > 0) { nextState();
 } else if (event.wheelDelta < 0) { previousState();
+}
+} else {
+       if (event.wheelDelta > 0) { for (let j = 0; j < 5; j++) { nextState(); };
+} else if (event.wheelDelta < 0) { for (let j = 0; j < 5; j++) { previousState(); };
+}
 }
 return;
 }
@@ -78,7 +109,9 @@ return;
 
 
 
-
+if (localStorage.getItem("stateTiming")) {
+document.getElementById("stateTiming").innerText = localStorage.getItem("stateTiming");
+}
 
 
 
@@ -419,6 +452,7 @@ case "(100/768)" : lastFactor = "(100/1000)"; break;
 case "(100/1000)": lastFactor = "(100/1280)"; break;
 case "(100/1280)": lastFactor = "(100/1536)"; break;
 case "(100/1536)": lastFactor = "(100/2000)"; break;
+default          : lastFactor = "(100/2000)"; break;
 }
 } else if (event.wheelDelta > 0) {
 switch (lastFactor) {
@@ -429,6 +463,7 @@ case "(100/1000)": lastFactor = "(100/768)" ; break;
 case "(100/1280)": lastFactor = "(100/1000)"; break;
 case "(100/1536)": lastFactor = "(100/1280)"; break;
 case "(100/2000)": lastFactor = "(100/1536)"; break;
+default          : lastFactor =         "1" ; break;
 }
 }
 localStorage.setItem("lastFactor", lastFactor);

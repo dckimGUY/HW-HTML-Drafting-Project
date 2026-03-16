@@ -13,7 +13,7 @@ shelfMenuHTML.tab5.folder1.HTML = `
 <button id="stateFrameRight" class="button_ stateFrameRight" onclick="nextState();     buzzWord(0,'<sup>pgUP</sup>' ,112,'magenta',200,200,25,'top','','',event);" title="Use with Active Edit while\nmoving a part with the mouse."></button>
 <button id="lastFrame"       class="button_ lastFrame"       onclick="lastState();     buzzWord(0,'<sup>end</sup>' ,112,'magenta',200,200,25,'top','','',event);"></button>
 
-<button id="stateTiming" class="button_ stateTiming dckimPixelMono" title="This is not yet in use.">2000</button>
+<button id="stateTiming" class="button_ stateTiming dckimPixelMono" title="Set Speed">200</button>
 
 
 <button id="stateDel" class="button_ stateDel" onclick="deleteKey();" title="Use the DEL key.\nNumPad has everything going."></button>

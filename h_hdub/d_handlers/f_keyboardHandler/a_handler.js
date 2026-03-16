@@ -103,6 +103,7 @@ buzzWord(0,'<sup>DISABLED</sup>',96,'red',200,200,25,'top','','',event);
 }
            activeStateEdit = false;
 document.getElementById("activeStateEdit").style.outline = "";
+document.getElementById("activeStateEdit").style.backgroundColor = "transparent";
 }
 
 if (hotDog) { return; }
@@ -134,7 +135,7 @@ flipTheBuffers();
 flipPhantomLair();
 }
 
-
+//
 }
 /*                                                                        */
 /**************************************************************************/
@@ -149,12 +150,11 @@ flipPhantomLair();
 /*   F5    */ if (kC == 116)              {                                }
 /*   F6    */ if (kC == 117)              {                                }
 /*   F7    */ if (kC == 118)              {                                }
-/*   F8    */ if (kC == 119)              {                                }
+/*   F8    */ if (kC == 119)              { event.preventDefault(); toggleLevelBar(); }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
-/*   F9    */ if (kC == 120)              { event.preventDefault();  try { topLayer.programStateAccumulator.push(JSON.parse(document.getElementById(topLayer.a_currentLayer.replace(/._l/g, 'setL')).dataset.programState));
-buzzWord(0,'+STATE',128,'orange',400,200,25,'top')} catch{}; }
+/*   F9    */ if (kC == 120)              { event.preventDefault();  try { topLayer.programStateAccumulator.push(JSON.parse(document.getElementById(topLayer.a_currentLayer.replace(/._l/g, 'setL')).dataset.programState)); buzzWord(0,'+STATE',128,'orange',400,200,25,'top')} catch{}; }
 /*   F10   */ if (kC == 121)              {                                }
 /*   F11   */ if (kC == 122)              {                                }
 /*   F12   */ if (kC == 123)              {                                }

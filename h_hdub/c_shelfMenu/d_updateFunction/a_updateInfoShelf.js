@@ -35,13 +35,13 @@ ui[save].ref.style.outline = "";
 
 switch (lastFactor) {
 case         "1" :  ui.save200.ref.style.outline = "4px dotted lime"; break;
-case "(100/320)" :  ui.save300.ref.style.outline = "4px dotted lime"; break;
 case "(100/500)" :  ui.save500.ref.style.outline = "4px dotted lime"; break;
 case "(100/768)" :  ui.save800.ref.style.outline = "4px dotted lime"; break;
 case "(100/1000)": ui.save1000.ref.style.outline = "4px dotted lime"; break;
 case "(100/1280)": ui.save1200.ref.style.outline = "4px dotted lime"; break;
 case "(100/1536)": ui.save1500.ref.style.outline = "4px dotted lime"; break;
 case "(100/2000)": ui.save1800.ref.style.outline = "4px dotted lime"; break;
+default          :  ui.save300.ref.style.outline = "4px dotted lime"; break;
 }
 
 
@@ -58,10 +58,16 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 }
 
 
+if (
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
+) {
+ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("onclick");
+} else {
+ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
+}
 
 
-
-document.getElementById("partCode").value = coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML;
 }
 
 

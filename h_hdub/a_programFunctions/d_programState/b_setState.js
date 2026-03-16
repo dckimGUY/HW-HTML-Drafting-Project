@@ -3,7 +3,7 @@ function setState (quotedStateName,frameNumber) {
 
 
 try {
-const style = [ "top", "left", "width", "height" ];
+const style = [ "top", "left" ];
 let index   =        0; if (frameNumber) { index = frameNumber; }
 let ids     =  stateHolder[index].ids;
 

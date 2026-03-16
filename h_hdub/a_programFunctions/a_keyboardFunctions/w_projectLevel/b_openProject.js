@@ -80,7 +80,9 @@ readCoins();
 Z();
 drawAllCells();
 ui.projectName.ref.value = topLayer.aa_project_name;
+
 userCustomTheme = topLayer.projectThemes;
+
 loadTheme("currentTheme");
 
 

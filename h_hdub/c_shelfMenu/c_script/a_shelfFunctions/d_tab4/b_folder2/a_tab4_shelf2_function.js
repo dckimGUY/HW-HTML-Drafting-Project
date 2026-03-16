@@ -347,10 +347,38 @@ function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRe
 const styleFirst    = [ "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
-
-
-
 const rename = false;
+
+
+
+
+
+
+
+
+if (factor) {
+lastFactor = factor;
+localStorage.setItem("lastFactor", lastFactor);
+}
+
+if (openInNewWindow || typeAlone == "parts") factor = lastFactor;
+
+if (lastFactor == "(100/320)") {
+factor     = `(100/${window.innerWidth})`;
+lastFactor = `(100/${window.innerWidth})`;
+localStorage.setItem("lastFactor", "(100/320)");
+}
+
+
+
+
+
+
+
+
+
+
+
 
 if (utilityLayer0.children.length == 0) {
 if (openInNewWindow) {
@@ -470,12 +498,6 @@ let styleEtc      = "";
 let parser = new DOMParser();
 let doc = parser.parseFromString(string, 'text/html');
 
-if (factor) {
-lastFactor = factor;
-localStorage.setItem("lastFactor", lastFactor);
-}
-
-if (openInNewWindow || typeAlone == "parts") factor = lastFactor;
 
 
 
@@ -939,6 +961,7 @@ string = string.replace(/<img alt=""[^>]*>/g, "");
 
 
 
+
 if (factor && factor != 1) {
 stylePosition = vwConversion(stylePosition,factor);
 styleEtc      = vwConversion(styleEtc,factor);
@@ -952,15 +975,9 @@ if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick",
 
 
 
-
-
-
-
-
 let scriptStarter = `
 
 /*** THIS SETS UP THE REFERENCES ***/
-
 const go           = {};
       go.vwFactor  = ${factor};
       go.elm       = {};
@@ -971,7 +988,6 @@ ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace
 
 const dat = [ "notes", "json" ];
 for (t of dat) { go.dat[t] = {}; go.dat[t].nom = []; }
-
 
 go.anim          = {};
 go.anim.each     = {};
@@ -985,7 +1001,7 @@ go.xqn       = {};
 go.xqn.nom   = [];
 go.xqn.grp   = {};
 go.xqn.all   = [];
-go.xqn.style = [ "top", "left", "width", "height" ];
+go.xqn.style = [ "top", "left" ];
 
 go.ids.forEach((id) => {
 go.elm[id]      = {};
@@ -1010,7 +1026,6 @@ for (t of dat) {  if (go.elm[id].ref.dataset[t])                  {
     try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from);  }
   catch { go.dat[t][id] = go.elm[id].dat[t] =            from ;  }
           go.dat[t].nom[go.dat[t].nom.length] = id; }       }
-
 if (go.elm[id].dat.notes.initialDisplay &&
     go.elm[id].dat.notes.initialDisplay == "none"
 ) { go.elm[id].ref.style.display = "none"; }
@@ -1061,7 +1076,6 @@ while (go.elm[id].ref.firstElementChild &&
 num++; }
 });
 
-
 /* SECTION 1: SET UP FOR A BROAD ANIMATION AND STATE CHANGE REGIMENT */
 go.setupState  = function(obj,arg,ext) {
 function setup(nom,arg,ext) {
@@ -1075,7 +1089,8 @@ nom.now.value  =   0;
 nom.now.set    = function(val)  { nom.now.value = val; return 0; }
 nom.now.incr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value < nom.length - 1) nom.now.value += val; return 0; }
 nom.now.decr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value > 0) nom.now.value -= val; return 0; }
-nom.set        = function(index) { go.setState(nom[index],arg); return 0; }
+
+nom.set        = function(index) { go.setState(nom[index], arg); return 0; }
 nom.reset      = function() { nom.now.value = 0; nom.set(nom.now.value); return 0; }
 nom.next       = function() { if (nom.now.value == nom.length) { nom.now.value--; return 1; }
                  else { nom.set(nom.now.value++); return 0; } }
@@ -1122,7 +1137,6 @@ return 0; }
 
 go.setupState(go.xqn,null,null);
 
-
 go.ids.forEach((id) => {
 /*** DESCENDENTS ID LISTING ***/
 const argE = go.elm[id]; const argD = argE.ref.children; if (argD.length > 0) {
@@ -1148,26 +1162,38 @@ go.xqn.nom.forEach((name) => {
 
 
 
+
+
+
+
 /*** A FUNCTION TO SET THE STATE ***/
-go.setState = function(xqn,arg) {
-if (!!arg) {
-for (y of go.xqn.style) {
-const target = arg.ref;
-try {
+go.setState = function(xqn,arg) { if (!!arg) {
+for (y of go.xqn.style) { const target = arg.ref; try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.style[y];
-target.style[y] = value;
-} catch {  } } return 0; }
-
-
-
+target.style[y] = value; } catch {  } } return 0; }
 for (d of go.ids) { for (y of go.xqn.style) {
-const target = document.getElementById(d);
-try {
+const target = document.getElementById(d); try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.dat[d].style[y];
 target.style[y] = value;
-} catch {  } } } return 0; }
+} catch { } } } return 0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1177,11 +1203,9 @@ target.style[y] = value;
 
 
 /* SECTION 2: ANIMATION AND STATE CHANGE FOR EACH INDIVIDUALLY */
-
 for (y of go.xqn.nom) { for (x of go.ids) {
 for (q of go.elm[x].xqn.nom) { if (q == y) {
 go.xqn.grp[y].nom.push(x); } } } }
-
 go.setupAnimationsEach = function(point,source) {
 for (y of [point]) {
 y.pause      = function() { for (x of source) { go.elm[x].xqn.all.pause()     ; } }
@@ -1216,10 +1240,6 @@ y.loop.cycl  = function() { for (x of source) { go.elm[x].xqn.all.loop.cycl() ; 
 
 go.setupAnimationsEach(go.anim.each.all,go.ids);
 
-
-
-
-
 for (p of go.xqn.nom) {
 const input = go.xqn.grp[p].nom;
 go.anim.each.grp[p] = {};
@@ -1251,44 +1271,6 @@ go.anim.all.reset  = function() { go.xqn.all.reset() ; }
 go.anim.all.resume = function() { go.xqn.all.resume(); }
 go.anim.all.set    = function() { go.xqn.all.set()   ; }
 go.anim.all.stop   = function() { go.xqn.all.stop()  ; }
-
-
-
-
-
-
-
-
-
-
-/*
-
-go.xqn.grp[name].nom
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 `;

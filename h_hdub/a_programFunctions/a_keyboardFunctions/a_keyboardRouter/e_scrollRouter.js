@@ -20,10 +20,10 @@ alt    = keyInfo[5];
 /*right arr*/ if (kC ==  39) {window.scrollTo({left: window.pageXOffset + visualGridSize2, behavior:'auto'});}
 } else if (!ctrl&& shift) {
 
-/*   up arr*/ if (kC ==  38) {moveAllUp();   }
-/* down arr*/ if (kC ==  40) {moveAllDown(); }
-/* left arr*/ if (kC ==  37) {moveAllLeft(); }
-/*right arr*/ if (kC ==  39) {moveAllRight();}
+/*   up arr*/ if (kC ==  38) { insertForArrows(); setTimeout(() => { moveAllUp()   ; }, 10); }
+/* down arr*/ if (kC ==  40) { insertForArrows(); setTimeout(() => { moveAllDown() ; }, 10); }
+/* left arr*/ if (kC ==  37) { insertForArrows(); setTimeout(() => { moveAllLeft() ; }, 10); }
+/*right arr*/ if (kC ==  39) { insertForArrows(); setTimeout(() => { moveAllRight(); }, 10); }
 
 } else if (!ctrl&&!shift) {
 if (kC ==  38) { insertForArrows(); setTimeout(() => { moveUp(keyInfo)   ; }, 10); }

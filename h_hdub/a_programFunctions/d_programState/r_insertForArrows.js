@@ -8,6 +8,7 @@ setTimeout(() => { try {
 stateHolder = JSON.parse(document.getElementById(coinFocus.id).dataset.state);
 document.getElementById("statename").innerText = coinFocus.id;
 document.getElementById("stateFrame").innerText = currentStateNumber;
+focusFlip();
 } catch {
 if (!(!!document.getElementById(document.getElementById("statename").innerText))) {
 stateHolder = null;

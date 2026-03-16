@@ -19,7 +19,7 @@ buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
 " class="button_ button_clip button_clipCODE" title="CLIPBOARD:\n+SHIFT for Colour Group"></button>
 
 <button   id="save200"   class="button_ button_save200"  title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
-<button   id="save300"   class="button_ button_save300"  title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
+<button   id="save300"   class="button_ button_save300"  title="This One Uses Your Window Width"></button>
 <button   id="save500"   class="button_ button_save500"  title="SHIFT + ENTER\nOPEN in WINDOW"></button>
 <button   id="save800"   class="button_ button_save800"  title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
 <button   id="save1000"  class="button_ button_save1000" title="set metric in tab 2-1"></button>

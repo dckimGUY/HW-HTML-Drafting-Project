@@ -80,6 +80,33 @@ case ui.setLayer23.ref:          ui.setLayer23.click()           ; break;
 case ui.setLayer24.ref:          ui.setLayer24.click()           ; break;
 case ui.setLayer25.ref:          ui.setLayer25.click()           ; break;
 
+case ui.LVL1.ref:           ui.LVL1.click()            ; break;
+case ui.LVL2.ref:           ui.LVL2.click()            ; break;
+case ui.LVL3.ref:           ui.LVL3.click()            ; break;
+case ui.LVL4.ref:           ui.LVL4.click()            ; break;
+case ui.LVL5.ref:           ui.LVL5.click()            ; break;
+case ui.LVL6.ref:           ui.LVL6.click()            ; break;
+case ui.LVL7.ref:           ui.LVL7.click()            ; break;
+case ui.LVL8.ref:           ui.LVL8.click()            ; break;
+case ui.LVL9.ref:           ui.LVL9.click()            ; break;
+case ui.LVL10.ref:          ui.LVL10.click()           ; break;
+case ui.LVL11.ref:          ui.LVL11.click()           ; break;
+case ui.LVL12.ref:          ui.LVL12.click()           ; break;
+case ui.LVL13.ref:          ui.LVL13.click()           ; break;
+case ui.LVL14.ref:          ui.LVL14.click()           ; break;
+case ui.LVL15.ref:          ui.LVL15.click()           ; break;
+case ui.LVL16.ref:          ui.LVL16.click()           ; break;
+case ui.LVL17.ref:          ui.LVL17.click()           ; break;
+case ui.LVL18.ref:          ui.LVL18.click()           ; break;
+case ui.LVL19.ref:          ui.LVL19.click()           ; break;
+case ui.LVL20.ref:          ui.LVL20.click()           ; break;
+case ui.LVL21.ref:          ui.LVL21.click()           ; break;
+case ui.LVL22.ref:          ui.LVL22.click()           ; break;
+case ui.LVL23.ref:          ui.LVL23.click()           ; break;
+case ui.LVL24.ref:          ui.LVL24.click()           ; break;
+case ui.LVL25.ref:          ui.LVL25.click()           ; break;
+
+
 /* tab 2 folder 1 */
 case ui.modeZ.ref:               ui.modeZ.click()                ; break;
 case ui.modeEeM1.ref:            ui.modeEeM1.click()             ; break;

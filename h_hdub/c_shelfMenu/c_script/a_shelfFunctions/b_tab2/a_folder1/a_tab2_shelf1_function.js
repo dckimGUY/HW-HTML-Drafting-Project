@@ -24,7 +24,7 @@ localStorage.setItem("themeDescription", ui.setup_notes.ref.value);
 
 
 function setupRight() {
-switch (userCustomTheme.currentTheme) {
+switch (userCustomTheme.currentThemeName) {
 case "a0": loadTheme("b1"); break;
 case "b1": loadTheme("c2"); break;
 case "c2": loadTheme("d3"); break;
@@ -35,11 +35,12 @@ case "g6": loadTheme("h7"); break;
 case "h7": loadTheme("i8"); break;
 case "i8": loadTheme("j9"); break;
 case "j9": loadTheme("a0"); break;
+default:   loadTheme("a0"); break;
 }
 }
 
 function setupLeft() {
-switch (userCustomTheme.currentTheme) {
+switch (userCustomTheme.currentThemeName) {
 case "a0": loadTheme("j9"); break;
 case "b1": loadTheme("a0"); break;
 case "c2": loadTheme("b1"); break;
@@ -50,6 +51,7 @@ case "g6": loadTheme("f5"); break;
 case "h7": loadTheme("g6"); break;
 case "i8": loadTheme("h7"); break;
 case "j9": loadTheme("i8"); break;
+default:   loadTheme("a0"); break;
 }
 }
 
@@ -64,7 +66,8 @@ ui.cursorShutoff.click               = function() { if (Cur.style.display=='none
 
 
 var   userCustomTheme    = {};
-      userCustomTheme.currentTheme = "c2";
+      userCustomTheme.currentTheme = {};
+      userCustomTheme.currentThemeName = "currentTheme";
       userCustomTheme.a0 = {};
       userCustomTheme.b1 = {};
       userCustomTheme.c2 = {};
@@ -159,8 +162,8 @@ gridIncrementArray        = userCustomTheme[configName].gridIncrementArray      
 cursorDisplay             = userCustomTheme[configName].cursorDisplay            ? userCustomTheme[configName].cursorDisplay            : cursorDisplay              ; localStorage.setItem("cursorDisplay"             , cursorDisplay             ); Cur.style.display = cursorDisplay ;
 mouseIncrement            = visualGridSize1;
 localStorage.setItem("mouseIncrement", mouseIncrement);
-localStorage.setItem("currentTheme", userCustomTheme.currentTheme);
-userCustomTheme.currentTheme = configName;
+localStorage.setItem("currentTheme", JSON.stringify(userCustomTheme.currentTheme));
+userCustomTheme.currentThemeName = configName;
 spaceViewOn();
 spaceViewOff();
 Z();

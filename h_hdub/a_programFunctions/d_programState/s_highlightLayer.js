@@ -18,14 +18,8 @@ for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
     programState.dat[topLayer[layerArray[j]].b_content.children[i].id] = {};
     programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style = {};
 
-/*
-
-programState.dat[topLayer[layerArray[j]].b_content.children[i].id].classList = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.classList.value.toString().trim().split(" ");
-
-*/
-
 programState.dat[topLayer[layerArray[j]].b_content.children[i].id].id = topLayer[layerArray[j]].b_content.children[i].id;
-const styleFirst    = [ "top", "left", "width", "height" ];
+const styleFirst    = [ "top", "left" ];
 for (y of styleFirst   ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].style[y]; }
 }
 if (topLayer[layerArray[j]].b_content.children.length > 0) {
@@ -37,6 +31,13 @@ ui["setLayer" + (j + 1)].ref.dataset.programState = "";
 
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -52,7 +53,20 @@ const timeStamp = Date.now().toString().slice(-5);
 runUpdate();
 
 
+for (let j = 1; j < 21; j++) {
 
+
+if (topLayer[topLayer.a_currentLayer].g_layerTitle == j) {
+document.getElementById("LVL" + j).style.backgroundColor = "rgba(0,255,0,1)";
+document.getElementById("LVL" + j).style.zIndex  = "999999999";
+} else {
+document.getElementById("LVL" + j).style.backgroundColor = "transparent";
+document.getElementById("LVL" + j).style.zIndex  =   "0";
+}
+
+
+
+}
 
 
 for (let j = 0; j < layerArray.length; j++) {

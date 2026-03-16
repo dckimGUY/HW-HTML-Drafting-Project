@@ -88,7 +88,7 @@ width: 174px;
 height: 463px;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
-background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/a_folder1/folder-1-sidebar.png?v=20260313054944");
+background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/a_folder1/folder-1-sidebar.png?v=20260314225713");
 }
 
 

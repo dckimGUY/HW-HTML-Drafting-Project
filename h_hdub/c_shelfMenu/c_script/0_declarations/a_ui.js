@@ -1,3 +1,25 @@
+function toggleLevelBar() {
+if (document.getElementById("levelBar").style.display == "none") {
+document.getElementById("levelBar").style.display = "block";
+animatorBar.style.display = "block";
+} else {
+document.getElementById("levelBar").style.display = "none";
+animatorBar.style.display = "none";
+}
+localStorage.setItem("levelBar", document.getElementById("levelBar").style.display);
+}
+
+
+if (localStorage.getItem("levelBar")) {
+document.getElementById("levelBar").style.display = localStorage.getItem("levelBar");
+animatorBar.style.display = localStorage.getItem("levelBar");
+} else {
+document.getElementById("levelBar").style.display = "block";
+animatorBar.style.display = "block";
+
+}
+
+
 /* AN OBJECT FOR THE USER INTERFACE */
 
 const ui = {};
@@ -53,7 +75,7 @@ ui[name].ref   = document.getElementById(name);
 
 /* TAB 1, FOLDER 2 */
 
-["pageDescription", "levelNotes", "projectName", "coin77671", "coin77155", "coin59760", "coin64291", "coin70038", "coin49592", "coin54398", "setLayer1", "setLayer2", "setLayer3", "setLayer4", "setLayer5", "setLayer6", "setLayer7", "setLayer8", "setLayer9", "setLayer10", "setLayer11", "setLayer12", "setLayer13", "setLayer14", "setLayer15", "setLayer16", "setLayer17", "setLayer18", "setLayer19", "setLayer20", "setLayer21", "setLayer22", "setLayer23", "setLayer24", "setLayer25"].forEach((name,index) => {
+["pageDescription", "levelNotes", "projectName", "coin77671", "coin77155", "coin59760", "coin64291", "coin70038", "coin49592", "coin54398", "setLayer1", "setLayer2", "setLayer3", "setLayer4", "setLayer5", "setLayer6", "setLayer7", "setLayer8", "setLayer9", "setLayer10", "setLayer11", "setLayer12", "setLayer13", "setLayer14", "setLayer15", "setLayer16", "setLayer17", "setLayer18", "setLayer19", "setLayer20", "setLayer21", "setLayer22", "setLayer23", "setLayer24", "setLayer25", "LVL1", "LVL2", "LVL3", "LVL4", "LVL5", "LVL6", "LVL7", "LVL8", "LVL9", "LVL10", "LVL11", "LVL12", "LVL13", "LVL14", "LVL15", "LVL16", "LVL17", "LVL18", "LVL19", "LVL20", "LVL21", "LVL22", "LVL23", "LVL24", "LVL25"].forEach((name,index) => {
 ui[name]       = {};
 ui[name].ref   = document.getElementById(name);
 });

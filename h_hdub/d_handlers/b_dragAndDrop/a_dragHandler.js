@@ -752,7 +752,7 @@ coinFocus.style.outline = fB;
 coinFocus.style.outlineOffset = fBO;
 }
 if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
-makeTopLayer("b_layer1");
+makeTopLayer(topLayer.a_currentLayer);
 
 
 
@@ -793,11 +793,8 @@ Z();
 drawAllCells();
 ui.projectName.ref.value = topLayer.aa_project_name;
 userCustomTheme = topLayer.projectThemes;
+
 loadTheme("currentTheme");
-
-
-
-
 
 
 
