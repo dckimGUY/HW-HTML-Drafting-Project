@@ -343,7 +343,7 @@ collection = "";
 function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef) {
 
 
-
+const translateMove = [ "top", "left" ];
 const styleFirst    = [ "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
@@ -463,6 +463,13 @@ if (layerRef) string = layerRef;
 
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
+.trs {
+  transition-property: top, left;
+  transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
+  transition-timing-function: linear;
+  transition-delay: ;
+  transition-behavior: ;
+}
 .pixelArt {
 border: none; padding: none;
 margin: none; outline: none;
@@ -640,6 +647,7 @@ otherInner.id        = otherDoc.body.children[j].id;
 const classes = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.classList.toString().trim().split(" ");
 for (let c of classes) { if (c != "") { otherInner.classList.add(c); } }
 
+otherInner.classList.add(`trs`);
 otherInner.classList.add(`${otherInner.id}`);
 
 
@@ -852,6 +860,7 @@ const classes = doc.body.children[j].lastElementChild.lastElementChild.previousE
 for (let c of classes) { if (c != "") { inner.classList.add(c); } }
 
 
+inner.classList.add(`trs`);
 inner.classList.add(`${inner.id}`);
 
 
@@ -1080,22 +1089,21 @@ num++; }
 go.setupState  = function(obj,arg,ext) {
 function setup(nom,arg,ext) {
 nom.rate       =  {};
-nom.rate.value = 200;
+nom.rate.value = ${document.getElementById("stateTiming").innerText};
 nom.rate.set   = function(val)  { nom.pause(); nom.rate.value = val; nom.resume(); return 0; }
-nom.rate.incr  = function(step) { nom.pause(); let val; val = step; if (!step) val = 10; if (nom.rate.value > 20) nom.rate.value -= val; nom.resume(); return 0; }
-nom.rate.decr  = function(step) { nom.pause(); let val; val = step; if (!step) val = 10;                          nom.rate.value += val; nom.resume(); return 0; }
+nom.rate.incr  = function(step) { nom.pause(); let val; val = step; if (!step) val = 10;
+                 if (nom.rate.value > 20) nom.rate.value -= val; nom.resume(); return 0; }
+nom.rate.decr  = function(step) { nom.pause(); let val; val = step; if (!step) val = 10;
+                                          nom.rate.value += val; nom.resume(); return 0; }
 nom.now        =  {};
 nom.now.value  =   0;
 nom.now.set    = function(val)  { nom.now.value = val; return 0; }
 nom.now.incr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value < nom.length - 1) nom.now.value += val; return 0; }
 nom.now.decr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value > 0) nom.now.value -= val; return 0; }
-
-nom.set        = function(index) { go.setState(nom[index], arg); return 0; }
-nom.reset      = function() { nom.now.value = 0; nom.set(nom.now.value); return 0; }
-nom.next       = function() { if (nom.now.value == nom.length) { nom.now.value--; return 1; }
-                 else { nom.set(nom.now.value++); return 0; } }
-nom.prev       = function() {if (nom.now.value == -1) { nom.now.value++; return 1; }
-                 else { nom.set(nom.now.value--); return 0; } }
+nom.set        = function(index) { go.setState(nom[index], nom.rate.value, arg); return 0; }
+nom.reset      = function() { nom.pause(); nom.now.value = 0; nom.set(nom.now.value); return 0; }
+nom.next       = function() { nom.pause(); if (nom.now.value != nom.length - 1) { ++nom.now.value; nom.set(nom.now.value); }; return 0; }
+nom.prev       = function() { nom.pause(); if (nom.now.value !=              0) { --nom.now.value; nom.set(nom.now.value); }; return 0; }
 nom.skip       = {};
 nom.skip.start = function()     { nom.now.value = 0; nom.set(nom.now.value); return 0; }
 nom.skip.rev   = function(step) { let val; val = step; if (!step) val = 5; for (s = 0; s < val; s++) { nom.prev(); } return 0; }
@@ -1105,32 +1113,45 @@ nom.pause      = function() { return 0; }
 nom.resume     = function() { nom.play.fwd(); return 0; }
 nom.stop       = function() { nom.pause(); nom.skip.start();
                  nom.pause  = function() { return 0; };
-                 nom.resume = function() { return 0; }; return 0; }
+                 nom.resume = function() { return 0; };
+                 return 0; }
 nom.play       = {};
-nom.play.fwd   = function() { nom.pause(); const intervalId = setInterval(() => {
-                 if (nom.next() == 1) { nom.pause(); } }, nom.rate.value);
+nom.play.fwd   = function() { nom.pause(); nom.next(); const intervalId = setInterval(() => {
+                 if (nom.now.value != nom.length - 1) { ++nom.now.value; nom.set(nom.now.value); }
+                 }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
-                 nom.resume = function() { nom.play.fwd(); }; return 0; }
-nom.play.rev   = function() { nom.pause(); const intervalId = setInterval(() => {
-                 if (nom.prev() == 1) { nom.pause(); } }, nom.rate.value);
+                 nom.resume = function() { nom.play.fwd();            return 0; };
+                 return 0; }
+nom.play.rev   = function() { nom.pause(); nom.prev(); const intervalId = setInterval(() => {
+                 if (nom.now.value !=              0) { --nom.now.value; nom.set(nom.now.value); }
+                 }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
-                 nom.resume = function() { nom.play.rev(); }; return 0; }
+                 nom.resume = function() { nom.play.rev();            return 0; };
+                 return 0; }
 nom.flow       = 0;
 nom.loop       = {};
-nom.loop.fwd   = function() { nom.pause(); const intervalId = setInterval(() => {
-                 if (nom.next() == 1) { nom.now.value = 0; nom.next(); } }, nom.rate.value);
+nom.loop.fwd   = function() { nom.pause(); nom.next(); const intervalId = setInterval(() => {
+                 nom.now.value = (nom.now.value == nom.length - 1) ? 0 : (nom.now.value + 1);
+                 nom.set(nom.now.value); }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
-                 nom.resume = function() { nom.loop.fwd(); }; return 0; }
-nom.loop.rev   = function() { nom.pause(); const intervalId = setInterval(() => {
-                 if (nom.prev() == 1) { nom.now.value = nom.length - 1; nom.prev(); } }, nom.rate.value);
+                 nom.resume = function() { nom.loop.fwd();            return 0; };
+                 return 0; }
+nom.loop.rev   = function() { nom.pause(); nom.prev(); const intervalId = setInterval(() => {
+                 nom.now.value = (nom.now.value == 0) ? nom.length - 1 : (nom.now.value - 1);
+                 nom.set(nom.now.value); }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
-                 nom.resume = function() { nom.loop.rev(); }; return 0; }
+                 nom.resume = function() { nom.loop.rev();            return 0; };
+                 return 0; }
+
+
 nom.loop.cycl  = function() { nom.pause(); const intervalId = setInterval(() => {
                  switch (nom.flow) {
                  case 0: if (nom.next() == 1) { nom.flow = 1; nom.prev(); nom.prev(); }; break;
-                 case 1: if (nom.prev() == 1) { nom.flow = 0; nom.next(); nom.next(); }; break; } }, nom.rate.value);
+                 case 1: if (nom.prev() == 1) { nom.flow = 0; nom.next(); nom.next(); }; break; }
+                 }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
                  nom.resume = function() { nom.loop.cycl(); }; return 0; }
+
 return 0; }
 for (y of obj.nom) { setup(obj.grp[y],arg,ext); } setup(obj.all,arg,ext);
 return 0; }
@@ -1160,45 +1181,28 @@ go.xqn.nom.forEach((name) => {
 
 
 
-
-
-
-
-
-
 /*** A FUNCTION TO SET THE STATE ***/
-go.setState = function(xqn,arg) { if (!!arg) {
-for (y of go.xqn.style) { const target = arg.ref; try {
+go.setState = function(xqn,rate,arg) { if (!!arg) {
+for (y of go.xqn.style) { const target = arg.ref;
+try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.style[y];
-target.style[y] = value; } catch {  } } return 0; }
+target.style[y] = value;
+if (target.style.transitionDuration != rate + "ms") {
+target.style.transitionDuration = rate + "ms";
+}
+} catch {  } } return 0; }
+
 for (d of go.ids) { for (y of go.xqn.style) {
-const target = document.getElementById(d); try {
+const target = document.getElementById(d);
+try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.dat[d].style[y];
 target.style[y] = value;
+if (target.style.transitionDuration != rate + "ms") {
+target.style.transitionDuration = rate + "ms";
+}
 } catch { } } } return 0; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1274,18 +1278,36 @@ go.anim.all.stop   = function() { go.xqn.all.stop()  ; }
 
 
 `;
+
+
+
+
+
+
+
 scriptStarter += `
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
 
 `;
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
-scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() {  }; /*  */
+
+const extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+
+scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
 }
 scriptStarter += `
 `;
 }
+
+
+
+
+
+
+
+
 scriptStarter += `
 /*** THIS SETS UP EVENT DELEGATION ***/
 `;
@@ -1305,6 +1327,9 @@ scriptStarter += `
 window.addEventListener("resize", (event) => {  });
 window.addEventListener("scroll", (event) => {  });
 
+
+/* SET THE SCROLL LOCATION TO WHERE IT WAS WHEN THE FILE WAS SAVED */
+window.scrollTo(${window.scrollX}, ${window.scrollY});
 
 
 /*** CUSTOM ADDED SCRIPT ***/

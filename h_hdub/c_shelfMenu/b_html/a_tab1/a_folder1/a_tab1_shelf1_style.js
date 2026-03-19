@@ -418,6 +418,7 @@ background-image: url("h_hdub/c_shelfMenu/a_images/a_tab1/a_folder1/codeBG.png?v
 caret-color: magenta;
 color: rgb(180,133,205);
 text-shadow: 0px .5px 0px rgb(139, 56, 0);
+padding-top: 20px;
 }
 .input_partCode::selection      { background: rgb(180,133,205); color: rgb(139, 56, 0); }
 

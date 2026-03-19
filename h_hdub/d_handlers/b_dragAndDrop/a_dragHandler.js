@@ -798,6 +798,12 @@ loadTheme("currentTheme");
 
 
 
+if (topLayer.lastScroll) {
+window.scrollTo(topLayer.lastScroll);
+}
+
+
+
 
 
 
@@ -949,7 +955,7 @@ if ( file.type.startsWith("image/")) {
 
 
 
-if (!e.altKey) {
+if (!e.altKey && e.target.parentNode != document.getElementById("hdubOverlay") && e.target != document.getElementById("hdubOverlay")) {
 
 
 /* this handles the special importing */
@@ -1511,7 +1517,7 @@ reader.readAsDataURL(file);
 
 
 
-} else if (e.altKey) {
+} else if (e.altKey || e.target.parentNode != document.getElementById("hdubOverlay") || e.target != document.getElementById("hdubOverlay")) {
 /* retarded hack-job */
 const reader  = new FileReader();
 reader.onload = evt => {

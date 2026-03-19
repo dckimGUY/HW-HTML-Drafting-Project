@@ -88,6 +88,12 @@ loadTheme("currentTheme");
 
 
 
+if (topLayer.lastScroll) {
+window.scrollTo(topLayer.lastScroll);
+}
+
+
+
 
 
 

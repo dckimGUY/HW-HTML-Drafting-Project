@@ -102,6 +102,10 @@ window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
 } else if (!event.ctrlKey&& event.shiftKey) {
 window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
 }
+
+topLayer.lastScroll = { left: window.scrollX, top: window.scrollY, behavior: "auto"};
+localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
+
 return;
 }
 }
@@ -124,6 +128,12 @@ window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
 } else if (!event.ctrlKey&& event.shiftKey) {
 window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
 }
+
+
+topLayer.lastScroll = { left: window.scrollX, top: window.scrollY, behavior: "auto"};
+localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
+
+
 return;
 }
 }
@@ -176,6 +186,12 @@ window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
 } else if ( event.ctrlKey&&!event.shiftKey) {
 window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
 }
+
+
+topLayer.lastScroll = { left: window.scrollX, top: window.scrollY, behavior: "auto"};
+localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
+
+
 return;
 }
 }

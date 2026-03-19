@@ -85,6 +85,12 @@ if (ec&&es&&mode!=8) {dot();}
 
 /*   esc   */ if (kC ==  27)              {
 
+hdubDemo.style.opacity = 0;
+Picture.style.display='none';
+
+buzzWord(0,'ESC',256,'magenta',400,200,25);
+
+
 if (ui.folder52.ref.style.display == "none" ||
     ui.tab5Wrapper.ref.style.display  == "none") {
 hdubDemo.style.opacity = 0;
@@ -332,6 +338,10 @@ if (ui.folder52.ref.style.display == "block" &&
 
 }
 }
+
+
+buzzWord(0,'ENTER',256,'magenta',400,200,25);
+
 }
 
 

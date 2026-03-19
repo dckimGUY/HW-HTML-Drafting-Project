@@ -339,6 +339,20 @@ topLayer.buoyPoint.buoy9.colour = "purple";
 
 
 
+topLayer.lastScroll = { left: 0, top: 0, behavior: "auto"};
+if (localStorage.getItem("lastScroll")) {
+topLayer.lastScroll = JSON.parse(localStorage.getItem("lastScroll"));
+}
+setTimeout(() => {
+window.scrollTo(topLayer.lastScroll);
+}, 200);
+
+
+
+
+
+
+
 
 
 

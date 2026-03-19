@@ -915,6 +915,11 @@ ctx.moveTo(canvas.width, 0);
 ctx.lineTo(canvas.width, canvas.height);
 ctx.stroke();
 
+if (Picture.style.display == "block") {
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.drawImage(Picture, 0,0);
+}
+
 const datePrefix = Date.now().toString().slice(-6);
 const syntax = reString(array);
 const dataURL = canvas.toDataURL('image/png');
