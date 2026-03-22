@@ -63,8 +63,10 @@ if (left && top) {
 lefting = left - (window.innerWidth  / 2) - window.scrollX;
 topping = top  - (window.innerHeight / 2) - window.scrollY;
 } else if (event) {
-lefting = event.clientX  - (window.innerWidth  / 2) - window.scrollX;
-topping = event.clientY  - (window.innerHeight / 2) - window.scrollY;
+
+lefting = event.clientX  - (window.innerWidth  / 2);
+topping = event.clientY  - (window.innerHeight / 2);
+
 }
 if (method_0_1_2 == (1 || 2)) {
 switch (sweepTo) {

@@ -1,4 +1,11 @@
 function setSingleState() {
+
+if (event.ctrlKey) {
+copyToClipboard(`try { go.setState(go.xqn.grp['${document.getElementById('statename').innerText}'][0]); } catch { }`);
+buzzWord(0,'<sup>copy</sup><sub>code</sub>',112,'white',200,200,25,'top','','',event);
+return;
+}
+
 ui.textEntry.ref.value = document.getElementById("statename").innerText;
 ui.buttonTooltip.ref.value = "";
 drawButton7();
