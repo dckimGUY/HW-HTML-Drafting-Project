@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:09,000
+Hoje vamos falar sobre fazer seus próprios botões personalizados para este programa.
+
+2
+00:00:09,000 --> 00:00:16,000
+Este é o primeiro tutorial que estou fazendo e espero que você vai entender facilmente e apreciá-lo.
+
+3
+00:00:16,000 --> 00:00:19,000
+Vejamos aqui: 'Informações para elaboração de botões'.
+
+4
+00:00:21,000 --> 00:00:24,000
+Então, isso é basicamente o que estamos olhando com este tutorial.
+
+5
+00:00:24,000 --> 00:00:26,000
+Então, vamos direto ao assunto.
+
+6
+00:00:26,000 --> 00:00:32,000
+Estamos aqui no programa, e podemos ver imediatamente que eu coloquei algo nesta caixa aqui.
+
+7
+00:00:32,000 --> 00:00:38,000
+Está nos dando uma designação de altura e largura, apenas uma muito simples.
+
+8
+00:00:38,000 --> 00:00:50,000
+Isso nos dá a maior largura e altura que poderíamos usar, e é mostrado dentro desse grande retângulo lá com a grande letra 'B'.
+
+9
+00:00:50,000 --> 00:01:07,000
+O primeiro passo que precisamos fazer para que possamos rastrear nosso botão personalizado é que estamos precisando arrastar uma imagem do sistema de arquivos diretamente para esta área onde ele tem a grande letra 'B'.
+
+10
+00:01:07,000 --> 00:01:12,000
+Agora vamos arrastar nossa imagem do sistema de arquivos para cá, e para onde vemos a letra 'B'.
+
+11
+00:01:12,000 --> 00:01:20,000
+Agora vamos arrastar nossa imagem do sistema de arquivos para cá, e para onde vemos a letra 'B'.
+
+12
+00:01:20,000 --> 00:01:23,000
+E lá temos ele e ele aparece lá na tela.
+
+13
+00:01:23,000 --> 00:01:24,000
+O problema que podemos ver é que parece muito pequeno.
+
+14
+00:01:24,000 --> 00:01:26,000
+O que devemos fazer?
+
+15
+00:01:26,000 --> 00:01:37,000
+Devemos mover nosso cursor do mouse sobre o topo dessa região com a grande letra 'B' e então podemos rolar com o mousewheel. Agora vemos que algo interessante está acontecendo.
+
+16
+00:01:37,000 --> 00:01:45,000
+Nós somos capazes de ajustar a escala do guia de tela.
+
+17
+00:01:45,000 --> 00:01:54,000
+Quando descemos para 4, 3, 2 e 1, vemos que há um fator de elevação especial aplicado.
+
+18
+00:01:54,000 --> 00:01:58,000
+Eu construí isso para o programa com o propósito de pixel art.
+
+19
+00:01:58,000 --> 00:02:03,000
+Assim, quando você traz os botões de volta para o programa eles serão escalados em tamanho.
+
+20
+00:02:03,000 --> 00:02:07,000
+Eles não serão do tamanho que você vê enquanto você os desenha.
+
+21
+00:02:07,000 --> 00:02:16,000
+Então, você pode desenhá-los com esse pequeno tamanho de pixel e então você pode trazê-los para o programa e eles vão de repente se tornar maiores.
+
+22
+00:02:16,000 --> 00:02:22,000
+Por essa razão, você está recebendo uma economia muito boa no tamanho de sua imagem e seus botões.
+
+23
+00:02:22,000 --> 00:02:31,000
+Então, seu botão não é muito caro em termos de quanto custa para tranferá-lo através da internet.
+
+24
+00:02:31,000 --> 00:02:41,000
+Aí está. Este aqui tem 180 unidades de altura e 100 unidades de largura, mas não é particularmente útil para nós neste momento.
+
+25
+00:02:41,000 --> 00:02:45,000
+Agora vou descrever uma das primeiras coisas que podem ver aqui: É este botão de salvamento.
+
+26
+00:02:45,000 --> 00:02:54,000
+Se clicarmos neste botão de gravação, o que acontecerá é que vamos salvar uma chave de forma.
+
+27
+00:02:54,000 --> 00:03:08,000
+E se clicássemos neste outro aqui, folha de estrela marcada, um único modelo que é representado por este desenho seria salvo.
+
+28
+00:03:08,000 --> 00:03:12,000
+Não te preocupes muito com isso.
+
+29
+00:03:12,000 --> 00:03:15,000
+Agora vamos a algo que eu preparei antes.
+
+30
+00:03:15,000 --> 00:03:20,000
+Se pressionarmos a fuga, note que todas essas coisas desaparecerão.
+
+31
+00:03:20,000 --> 00:03:24,000
+Está bem, agora acabou tudo.
+
+32
+00:03:24,000 --> 00:03:33,000
+Vamos ver se consigo voltar a pô-lo.
+
+33
+00:03:33,000 --> 00:03:39,000
+Agora vou escalá-lo para um tamanho que pode ser facilmente visto.
+
+34
+00:03:39,000 --> 00:03:48,000
+Eu vou me livrar desse pequeno pedaço de sintaxe lá, e então eu vou te mostrar uma chave de forma que eu fiz antes.
+
+35
+00:03:48,000 --> 00:03:55,000
+Vamos abri-lo em MS Paint e ver o que realmente parece.
+
+36
+00:03:55,000 --> 00:04:04,000
+Então, esta é uma chave de forma que tinha alguma definição dada com a sintaxe 'h' e 'w'.
+
+37
+00:04:04,000 --> 00:04:15,000
+A parte importante não é que esta chave de forma é uma imagem gráfica útil agora. Não é.
+
+38
+00:04:15,000 --> 00:04:26,000
+Todo o propósito da chave de forma é ter uma boa imagem em seu sistema de arquivos, permitindo que você identifique visualmente a chave de forma.
+
+39
+00:04:26,000 --> 00:04:28,000
+Essa é a razão pela qual está ali.
+
+40
+00:04:28,000 --> 00:04:31,000
+Agora vou mostrar como usá-lo.
+
+41
+00:04:31,000 --> 00:04:36,000
+Depois de ter produzido uma chave de forma, salvando uma usando a sintaxe. (As teclas de forma não são obrigatórias.)
+
+42
+00:04:36,000 --> 00:04:41,000
+Podes ignorá-los.
+
+43
+00:04:41,000 --> 00:04:52,000
+A chave de forma tem uma sintaxe especial claramente visível no nome do arquivo.
+
+44
+00:04:52,000 --> 00:05:17,000
+Agora vou descrever a sintaxe. Ele usa a sintaxe 'h' e 'w'.
+
+45
+00:05:17,000 --> 00:05:27,000
+Isto descreve linhas de retângulos que compartilham a mesma altura.
+
+46
+00:05:27,000 --> 00:05:51,000
+Apenas certifique-se de não remover esta sintaxe do fim do seu nome de arquivo, se você deseja renomear o arquivo.
+
+47
+00:05:51,000 --> 00:06:02,000
+A coisa boa sobre isso é que você pode simplesmente arrastar esta coisa diretamente para uma das letras, e ele será instalado nesse local.
+
+48
+00:06:02,000 --> 00:06:06,000
+Estou a escolher a letra 'n'.
+
+49
+00:06:06,000 --> 00:06:10,000
+A letra 'n' contém agora a informação para essa chave de formato.
+
+50
+00:06:10,000 --> 00:06:23,000
+Então usamos a roda de rolagem um pouco e vemos que toda esta chave de forma definida foi desenhada para nós.
+
+51
+00:06:23,000 --> 00:06:32,000
+Eu fiz este com antecedência, e então eu posso facilmente mostrar-lhe que isso se encaixa perfeitamente com o desenho.
+
+52
+00:06:32,000 --> 00:06:45,000
+Mas, brevemente, vou passar pelo processo para demonstrar a localização.
+
+53
+00:06:45,000 --> 00:07:01,000
+Vamos inserir manualmente a sintaxe. Vou usar período e hífen no bloco de números, mas, você também pode usar as letras 'h' e 'w'.
+
+54
+00:07:01,000 --> 00:07:04,000
+Para começar, escolheremos os dois primeiros números: 'h10w10'.
+
+55
+00:07:04,000 --> 00:07:08,000
+Isto é apenas para que tenhamos algo a considerar como um ponto de partida.
+
+56
+00:07:08,000 --> 00:07:37,000
+Agora podemos ajustar e adicionar 'w' para obter mais larguras.
+
+57
+00:07:37,000 --> 00:07:45,000
+Então, temos as definições e rastreamos com sucesso as primeiras quatro letras.
+
+58
+00:07:45,000 --> 00:07:51,000
+Já localizei isto com antecedência, por isso vamos seguir em frente.
+
+59
+00:07:51,000 --> 00:07:55,000
+Então, aqui está concluída.
+
+60
+00:07:55,000 --> 00:08:10,000
+Se você foi bem sucedido e completou este processo para sua própria imagem, o próximo passo é salvá-lo.
+
+61
+00:08:10,000 --> 00:08:15,000
+Você vai usar esse botão aqui que diz folha de estrela.
+
+62
+00:08:15,000 --> 00:08:18,000
+null
+
+63
+00:08:18,000 --> 00:08:25,000
+Quando você clicar nele, um arquivo especial será salvo.
+
+64
+00:08:25,000 --> 00:08:30,000
+Você deve então arrastar esse arquivo de volta para a tela do programa.
+
+65
+00:08:30,000 --> 00:08:35,000
+Vou mostrar-lhe isso em breve, mas primeiro vou contar sobre a sintaxe do arquivo que acabou de ser salvo.
+
+66
+00:08:35,000 --> 00:09:11,000
+Podemos ver que temos a mesma sintaxe que foi armazenada na chave de forma. (prefixo do nome do ficheiro 'TEMPL')
+
+67
+00:09:11,000 --> 00:09:13,000
+Vamos ver o que podemos fazer.
+
+68
+00:09:13,000 --> 00:09:19,000
+Usamos a fuga para termos uma tela em branco.
+
+69
+00:09:19,000 --> 00:09:25,000
+A seguir arrastarei este modelo de volta para o programa.
+
+70
+00:09:25,000 --> 00:09:37,000
+Isto pode parecer complicado, mas não é.
+
+71
+00:09:37,000 --> 00:09:47,000
+Se queremos botões, agora temos que escolher entre 6, 4 ou 2.
+
+72
+00:09:47,000 --> 00:09:52,000
+Este não é o número de botões, mas sim o número de estados de botões que serão usados.
+
+73
+00:09:52,000 --> 00:10:12,000
+Quando pairamos com o mouse sobre o botão, este é o estado de pairar.
+
+74
+00:10:12,000 --> 00:10:15,000
+Quando clicamos para baixo, este é o estado ativo.
+
+75
+00:10:15,000 --> 00:10:17,000
+E quando o botão clicado, ele então começa o estado focado.
+
+76
+00:10:17,000 --> 00:10:24,000
+Temos a escolha de fazer todos os 6, o que dá apenas 5 estados utilizáveis.
+
+77
+00:10:24,000 --> 00:10:31,000
+Preferimos usar ou 4, que é ideal para computadores desktop ou 2 que é suficiente para telefones móveis.
+
+78
+00:10:31,000 --> 00:10:35,000
+Vou agora dar uma breve descrição, assumindo que 4 estados de botão são usados.
+
+79
+00:10:35,000 --> 00:11:01,000
+base
+
+80
+00:11:01,000 --> 00:11:02,000
+foco
+
+81
+00:11:02,000 --> 00:11:03,000
+hover
+
+82
+00:11:03,000 --> 00:11:05,000
+ativo
+
+83
+00:11:05,000 --> 00:11:27,000
+Isso é muito importante para saber se você não está familiarizado com HTML.
+
+84
+00:11:27,000 --> 00:11:32,000
+Vamos agora continuar com o nosso processo.
+
+85
+00:11:32,000 --> 00:11:41,000
+Vou escolher os 4 estados do botão clicando nisso.
+
+86
+00:11:41,000 --> 00:11:45,000
+Agora salvamos um arquivo novamente.
+
+87
+00:11:45,000 --> 00:11:55,000
+Vamos ver se podemos abrir esse arquivo no nosso programa de arte favorito.
+
+88
+00:11:55,000 --> 00:12:00,000
+Onde está? Libre-Pixel.
+
+89
+00:12:00,000 --> 00:12:04,000
+Vamos ver como é este ficheiro.
+
+90
+00:12:04,000 --> 00:12:06,000
+Preparei-o mais cedo, alterando as colorações.
+
+91
+00:12:06,000 --> 00:12:18,000
+Aqui também podemos ver que é possível cortar o tamanho da imagem em sua altura.
+
+92
+00:12:18,000 --> 00:12:27,000
+Ainda vai funcionar mais tarde.
+
+93
+00:12:27,000 --> 00:12:37,000
+Podemos ver que a gravação do arquivo o quadruplicou, e agora temos quatro representações.
+
+94
+00:12:37,000 --> 00:12:53,000
+Vou agora trazer de volta a nossa imagem guia para mostrar que estado de botão cada imagem representa.
+
+95
+00:12:53,000 --> 00:12:59,000
+Desta forma sabemos em que estado estamos trabalhando quando mudamos as cores ou desenhamos nossas imagens.
+
+96
+00:12:59,000 --> 00:13:13,000
+Estes não resultarão em apenas um único botão, mas serão exatamente os botões que rastreamos usando os retângulos.
+
+97
+00:13:13,000 --> 00:13:32,000
+Este trabalho gráfico já foi concluído com antecedência, e assim, vou continuar com o nosso processo.
+
+98
+00:13:32,000 --> 00:13:49,000
+Então, agora que temos uma imagem terminada, vou mostrar novamente a sintaxe, que tem o prefixo 'READY'.
+
+99
+00:13:49,000 --> 00:14:03,000
+Este botão está terminado e pode ser arrastado imediatamente.
+
+100
+00:14:03,000 --> 00:14:08,000
+Agora veremos o que acontece quando arrastarmos este ficheiro de botão acabado para o programa.
+
+101
+00:14:08,000 --> 00:14:13,000
+Parece que algo está acontecendo aqui no canto superior esquerdo da nossa tela, e então sai seus botões acabados.
+
+102
+00:14:13,000 --> 00:14:25,000
+Lá estão eles, e vamos tentar se podemos testá-los usando a barra de espaço, e segurando-a.
+
+103
+00:14:25,000 --> 00:14:38,000
+Agora podemos ver que nossos botões funcionam corretamente, e se parecem exatamente com os gráficos que desenhamos.
+
+104
+00:14:38,000 --> 00:14:45,000
+Este arquivo que produzimos pode ser usado e reutilizado a qualquer momento.
+
+105
+00:14:45,000 --> 00:14:51,000
+Temos um sistema muito bom, persistente e tentador.
+
+106
+00:14:51,000 --> 00:14:53,000
+O sistema é composto por: Uma chave de forma (prefixo do nome do arquivo 'SHAPE');
+
+107
+00:14:53,000 --> 00:14:59,000
+Um primeiro modelo, que recebe uma única imagem (prefixo do nome do arquivo 'TEMPL');
+
+108
+00:14:59,000 --> 00:15:08,000
+e o conjunto de botões acabados (prefixo do nome do ficheiro 'READY').
+
+109
+00:15:08,000 --> 00:15:15,000
+Podemos até copiar este botão acabado em nosso sistema de arquivos e fazer algum tipo de imagem alternativa, e ainda funcionaria.
+
+110
+00:15:15,000 --> 00:15:26,000
+Não sei se isto funciona. Vamos tentar.
+
+111
+00:15:26,000 --> 00:15:43,000
+Então, você poderia pegar aquele ali, e mudá-lo, tornando-o cores diferentes ou movendo pequenas coisas ao redor.
+
+112
+00:15:43,000 --> 00:15:54,000
+Você tem um bom botão tornando capacidade disponível aqui, e você pode fazer quantos quiser.
+
+113
+00:15:54,000 --> 00:15:59,000
+Aqui você pode ver que nós nem sequer quase enchemos esta área com botões, mas, é claro, se você ficar sem espaço, você vai simplesmente fazer outro.
+
+114
+00:15:59,000 --> 00:16:19,000
+Uma coisa que vou salientar é que pode ser difícil encontrar uma sintaxe que se encaixe quando seus botões estão muito próximos em seu desenho.
+
+115
+00:16:19,000 --> 00:16:54,000
+Então, para facilitar o rastreamento, deixe mais espaço entre as imagens.
+
+116
+00:16:54,000 --> 00:17:24,000
+Vou agora usar a tecla 'z' que irá garantir que eu não redimensione os botões.
+
+117
+00:17:24,000 --> 00:17:33,000
+Eu vou fazer que um mais alto que os outros, selecionando a partir desse menu. Eu uso o atalho de teclado (z-mode: 'h').
+
+118
+00:17:33,000 --> 00:17:39,000
+Então, eu coloquei isso no topo da ordem z-index usando 'h'.
+
+119
+00:17:39,000 --> 00:18:01,000
+Porque eu configurei o incremento do mouse para combinar com o incremento de pixel do meu desenho em escala, é fácil alinhar tudo.
+
+120
+00:18:01,000 --> 00:18:06,00
+Há todas as configurações diferentes disponíveis no programa, mas, eu não vou cobri-los aqui.
+
+121
+00:18:06,000 --> 00:18:14,00
+Talvez um pouco mais assim.
+
+122
+00:18:14,000 --> 00:18:19,000
+Está muito perto.
+
+123
+00:18:19,000 --> 00:18:36,000
+Vou agora usar a roda de rolagem do mouse para selecionar o tipo de salvar da aba IV-2.
+
+124
+00:18:36,000 --> 00:18:47,000
+Estou economizando em um fator de largura de visualização de 1280.
+
+125
+00:18:47,000 --> 00:18:55,000
+Isto será convertido automaticamente.
+
+126
+00:18:55,000 --> 00:19:43,000
+Para salvar o arquivo do teclado: Use 'shift + s'. Em vez disso, para abrir apenas o arquivo para visualização: Use 'shift + enter'.
+
+127
+00:19:43,000 --> 00:19:48,000
+Isso é muito bom.
+
+128
+00:19:48,000 --> 00:19:56,000
+Muito bem.
+
+129
+00:19:56,000 --> 00:20:20,000
+Tutorial terminado.
+

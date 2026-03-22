@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:09,000
+Vandaag gaan we praten over het maken van uw eigen aangepaste knoppen voor dit programma.
+
+2
+00:00:09,000 --> 00:00:16,000
+Dit is de eerste tutorial die ik maak en hopelijk zul je het gemakkelijk begrijpen en ervan genieten.
+
+3
+00:00:16,000 --> 00:00:19,000
+Eens kijken: 'Informatie voor het maken van knopen'.
+
+4
+00:00:21,000 --> 00:00:24,000
+Dat zien we met deze tutorial.
+
+5
+00:00:24,000 --> 00:00:26,000
+Dus, laten we meteen beginnen.
+
+6
+00:00:26,000 --> 00:00:32,000
+We zijn hier in het programma, en we kunnen meteen zien dat ik iets in deze doos heb gedaan.
+
+7
+00:00:32,000 --> 00:00:38,000
+Het geeft ons een hoogte en breedte aanduiding, slechts een zeer eenvoudige.
+
+8
+00:00:38,000 --> 00:00:50,000
+Dat geeft ons de grootste breedte en hoogte die we zouden kunnen gebruiken, en het wordt getoond binnenin die grote rechthoek daar met de grote letter 'B'.
+
+9
+00:00:50,000 --> 00:01:07,000
+De eerste stap die we moeten doen zodat we onze aangepaste knop kunnen traceren is dat we een afbeelding van het bestandssysteem direct naar dit gebied moeten slepen waar het de grote letter 'B' heeft.
+
+10
+00:01:07,000 --> 00:01:12,000
+We gaan nu onze afbeelding van het bestandssysteem hierheen slepen, en naar waar we de letter 'B' zien.
+
+11
+00:01:12,000 --> 00:01:20,000
+We gaan nu onze afbeelding van het bestandssysteem hierheen slepen, en naar waar we de letter 'B' zien.
+
+12
+00:01:20,000 --> 00:01:23,000
+En daar hebben we het en het verschijnt daar op het scherm.
+
+13
+00:01:23,000 --> 00:01:24,000
+Het probleem dat we kunnen zien is dat het te klein lijkt.
+
+14
+00:01:24,000 --> 00:01:26,000
+Wat moeten we doen?
+
+15
+00:01:26,000 --> 00:01:37,000
+We moeten onze muiscursor over dat gebied bewegen met de grote letter 'B' en dan kunnen we met het muiswiel scrollen. Nu zien we dat er iets interessants gebeurt.
+
+16
+00:01:37,000 --> 00:01:45,000
+We zijn in staat om de schaal van op het scherm gids aan te passen.
+
+17
+00:01:45,000 --> 00:01:54,000
+Wanneer we naar beneden scrollen naar 4, 3, 2 en 1, zien we dat er een speciale opschalingsfactor wordt toegepast.
+
+18
+00:01:54,000 --> 00:01:58,000
+Ik heb dat in het programma ingebouwd voor pixel art.
+
+19
+00:01:58,000 --> 00:02:03,000
+Zodat wanneer je de knoppen terugbrengt in het programma ze in grootte worden vergroot.
+
+20
+00:02:03,000 --> 00:02:07,000
+Ze zullen niet de grootte zijn die je ziet terwijl je ze tekent.
+
+21
+00:02:07,000 --> 00:02:16,000
+Dus, je kunt ze tekenen op die kleine pixelgrootte en dan kun je ze in het programma brengen en ze zullen plotseling groter worden.
+
+22
+00:02:16,000 --> 00:02:22,000
+Vanwege die reden, je krijgt een echt goede economie op de grootte van uw afbeelding en uw knoppen.
+
+23
+00:02:22,000 --> 00:02:31,000
+Dus, uw knop is niet te duur in termen van hoeveel het kost voor het transferen via het internet.
+
+24
+00:02:31,000 --> 00:02:41,000
+Dus daar hebben we het. Deze hier heeft 180 eenheden hoogte en 100 eenheden breedte, maar het is niet bijzonder nuttig voor ons op dit moment.
+
+25
+00:02:41,000 --> 00:02:45,000
+Nu zal ik een van de eerste dingen beschrijven die je hier zou kunnen zien: Het is deze knop.
+
+26
+00:02:45,000 --> 00:02:54,000
+Als we op deze knop klikken, wat er gebeurt is dat we een vormsleutel gaan opslaan.
+
+27
+00:02:54,000 --> 00:03:08,000
+En als we op deze andere klikken, gemarkeerd met sterrenvel, zou een enkel sjabloon dat wordt weergegeven door deze tekening worden opgeslagen.
+
+28
+00:03:08,000 --> 00:03:12,000
+Maak je daar geen zorgen over.
+
+29
+00:03:12,000 --> 00:03:15,000
+Laten we nu naar iets gaan dat ik eerder heb voorbereid.
+
+30
+00:03:15,000 --> 00:03:20,000
+Als we op ontsnapping drukken, zie dan dat al deze dingen verdwijnen.
+
+31
+00:03:20,000 --> 00:03:24,000
+Nu is alles weg.
+
+32
+00:03:24,000 --> 00:03:33,000
+Eens kijken of ik het er weer in kan doen.
+
+33
+00:03:33,000 --> 00:03:39,000
+Ik zal het nu opschalen tot een grootte die gemakkelijk te zien is.
+
+34
+00:03:39,000 --> 00:03:48,000
+Ik haal dat stukje syntax weg en dan laat ik je een vormsleutel zien die ik eerder gemaakt heb.
+
+35
+00:03:48,000 --> 00:03:55,000
+Laten we het openen in MS Paint en zien hoe het er echt uitziet.
+
+36
+00:03:55,000 --> 00:04:04,000
+Dit is dus een vormsleutel die een definitie had gegeven met de 'h' en 'w' syntax.
+
+37
+00:04:04,000 --> 00:04:15,000
+Het belangrijkste deel is niet dat deze vorm sleutel is handig grafische afbeelding op dit moment. Dat is het niet.
+
+38
+00:04:15,000 --> 00:04:26,000
+Het hele doel van de vormsleutel is om een mooi beeld in uw bestandssysteem, zodat u visueel de vormsleutel te identificeren.
+
+39
+00:04:26,000 --> 00:04:28,000
+Dat is de reden waarom het er is.
+
+40
+00:04:28,000 --> 00:04:31,000
+Nu zal ik laten zien hoe het te gebruiken.
+
+41
+00:04:31,000 --> 00:04:36,000
+Zodra u een vormsleutel hebt geproduceerd door het opslaan van een met behulp van de syntax. (De vormtoetsen zijn niet verplicht.)
+
+42
+00:04:36,000 --> 00:04:41,000
+Je kunt ze negeren.
+
+43
+00:04:41,000 --> 00:04:52,000
+De vormtoets heeft een speciale syntax die duidelijk zichtbaar is in de bestandsnaam.
+
+44
+00:04:52,000 --> 00:05:17,000
+Nu zal ik de syntax beschrijven. Het gebruikt de 'h' en 'w' syntax.
+
+45
+00:05:17,000 --> 00:05:27,000
+Dit beschrijft rijen rechthoeken die dezelfde hoogte hebben.
+
+46
+00:05:27,000 --> 00:05:51,000
+Zorg ervoor dat u deze syntax niet verwijdert van het einde van uw bestandsnaam als u het bestand wilt hernoemen.
+
+47
+00:05:51,000 --> 00:06:02,000
+Het leuke is dat je dit ding direct op één van de letters kunt slepen, en het zal op die locatie worden geïnstalleerd.
+
+48
+00:06:02,000 --> 00:06:06,000
+Ik kies de letter 'n'.
+
+49
+00:06:06,000 --> 00:06:10,000
+De letter 'n' bevat nu de informatie voor die vormsleutel.
+
+50
+00:06:10,000 --> 00:06:23,000
+Dan gebruiken we het scrollwiel een beetje en we zien dat al deze gedefinieerde vorm sleutel is getrokken voor ons.
+
+51
+00:06:23,000 --> 00:06:32,000
+Ik heb deze bij voorbaat gemaakt, en dus kan ik je dan gemakkelijk laten zien dat dit perfect aansluit bij de tekening.
+
+52
+00:06:32,000 --> 00:06:45,000
+Maar kort zal ik het proces doorlopen om tracering aan te tonen.
+
+53
+00:06:45,000 --> 00:07:01,000
+We zullen handmatig de syntax invoeren. Ik zal periode en koppelteken gebruiken op het nummerbord, maar, je kunt ook de letters 'h' en 'w' gebruiken.
+
+54
+00:07:01,000 --> 00:07:04,000
+Om te beginnen zullen we de eerste twee nummers kiezen: 'h10w10'.
+
+55
+00:07:04,000 --> 00:07:08,000
+Dit is gewoon zo dat we iets hebben om als uitgangspunt te zien.
+
+56
+00:07:08,000 --> 00:07:37,000
+Nu kunnen we aanpassen en 'w' toevoegen om meer breedtes te krijgen.
+
+57
+00:07:37,000 --> 00:07:45,000
+We hebben de definities en hebben de eerste vier letters met succes getraceerd.
+
+58
+00:07:45,000 --> 00:07:51,000
+Ik heb dit al van tevoren getraceerd, dus laten we verder gaan.
+
+59
+00:07:51,000 --> 00:07:55,000
+Dus, hier is het voltooid.
+
+60
+00:07:55,000 --> 00:08:10,000
+Als je succesvol bent geweest en dit proces hebt voltooid voor je eigen afbeelding, is de volgende stap het opslaan.
+
+61
+00:08:10,000 --> 00:08:15,000
+Je gebruikt die knop daar waar sterrenblad staat.
+
+62
+00:08:15,000 --> 00:08:18,000
+null
+
+63
+00:08:18,000 --> 00:08:25,000
+Wanneer u erop klikt, wordt een speciaal bestand opgeslagen.
+
+64
+00:08:25,000 --> 00:08:30,000
+Je moet dat bestand dan terug slepen naar het programmascherm.
+
+65
+00:08:30,000 --> 00:08:35,000
+Ik zal je dit snel laten zien, maar eerst zal ik vertellen over de syntaxis van het bestand dat zojuist is opgeslagen.
+
+66
+00:08:35,000 --> 00:09:11,000
+We zien dat we dezelfde syntax hebben die in de vormsleutel is opgeslagen. (bestandsnaam prefix "TEMPL")
+
+67
+00:09:11,000 --> 00:09:13,000
+Eens kijken wat we kunnen doen.
+
+68
+00:09:13,000 --> 00:09:19,000
+We gebruiken ontsnapping zodat we een mooi leeg scherm hebben.
+
+69
+00:09:19,000 --> 00:09:25,000
+Ik sleep deze sjabloon terug naar het programma.
+
+70
+00:09:25,000 --> 00:09:37,000
+Dit lijkt misschien lastig, maar dat is het niet.
+
+71
+00:09:37,000 --> 00:09:47,000
+Als we knoppen willen, moeten we nu kiezen tussen 6, 4 of 2.
+
+72
+00:09:47,000 --> 00:09:52,000
+Dit is niet het aantal knoppen, maar het is het aantal knoppen dat gebruikt zal worden.
+
+73
+00:09:52,000 --> 00:10:12,000
+Als we met de muis over de knop zweven, is dit de zweeftoestand.
+
+74
+00:10:12,000 --> 00:10:15,000
+Als we naar beneden klikken, is dit de actieve staat.
+
+75
+00:10:15,000 --> 00:10:17,000
+En als de knop klikte, dan krijgt het de gefocuste toestand.
+
+76
+00:10:17,000 --> 00:10:24,000
+We hebben de keuze om alle 6 te doen, wat slechts 5 bruikbare staten geeft.
+
+77
+00:10:24,000 --> 00:10:31,000
+We gebruiken liever 4, wat ideaal is voor desktop computers of 2, wat voldoende is voor mobiele telefoons.
+
+78
+00:10:31,000 --> 00:10:35,000
+Ik zal nu een korte beschrijving geven ervan uitgaande dat 4 knop staten worden gebruikt.
+
+79
+00:10:35,000 --> 00:11:01,000
+basis
+
+80
+00:11:01,000 --> 00:11:02,000
+focus
+
+81
+00:11:02,000 --> 00:11:03,000
+zweven
+
+82
+00:11:03,000 --> 00:11:05,000
+actief
+
+83
+00:11:05,000 --> 00:11:27,000
+Dat is erg belangrijk om te weten als je niet bekend bent met HTML.
+
+84
+00:11:27,000 --> 00:11:32,000
+Laten we nu doorgaan met ons proces.
+
+85
+00:11:32,000 --> 00:11:41,000
+Ik kies de 4 knop staten door op deze te klikken.
+
+86
+00:11:41,000 --> 00:11:45,000
+Nu hebben we weer een bestand opgeslagen.
+
+87
+00:11:45,000 --> 00:11:55,000
+Laten we eens kijken of we dat bestand kunnen openen in ons favoriete kunstprogramma.
+
+88
+00:11:55,000 --> 00:12:00,000
+Waar is het? Libre-Pixel.
+
+89
+00:12:00,000 --> 00:12:04,000
+We zullen zien hoe dit dossier eruit ziet.
+
+90
+00:12:04,000 --> 00:12:06,000
+Ik heb het eerder voorbereid door de kleuren te veranderen.
+
+91
+00:12:06,000 --> 00:12:18,000
+Hier kunnen we ook zien dat het mogelijk is om de grootte van de afbeelding in zijn hoogte te bijsnijden.
+
+92
+00:12:18,000 --> 00:12:27,000
+Het zal later nog steeds werken.
+
+93
+00:12:27,000 --> 00:12:37,000
+We zien dat het bestand is verviervoudigd en we hebben nu vier voorstellingen.
+
+94
+00:12:37,000 --> 00:12:53,000
+Ik zal nu onze gids afbeelding terug te brengen om te laten zien welke knop staat elke afbeelding vertegenwoordigt.
+
+95
+00:12:53,000 --> 00:12:59,000
+Zo weten we aan welke staat we werken wanneer we de kleuren veranderen of onze beelden tekenen.
+
+96
+00:12:59,000 --> 00:13:13,000
+Dit resulteert niet in slechts één enkele knop, maar zal in plaats daarvan precies de knoppen zijn die we hebben opgespoord met behulp van de rechthoeken.
+
+97
+00:13:13,000 --> 00:13:32,000
+Dit grafische werk is al van tevoren afgerond, en dus zal ik doorgaan met ons proces.
+
+98
+00:13:32,000 --> 00:13:49,000
+Dus, nu we een voltooide afbeelding hebben, zal ik de syntax opnieuw tonen, die het voorvoegsel 'READY' heeft.
+
+99
+00:13:49,000 --> 00:14:03,000
+Deze knop is klaar en kan direct naar binnen worden gesleept.
+
+100
+00:14:03,000 --> 00:14:08,000
+Nu zullen we zien wat er gebeurt als we dit voltooide knopbestand in het programma slepen.
+
+101
+00:14:08,000 --> 00:14:13,000
+Het lijkt erop dat er iets gebeurt hier in de linkerbovenhoek van ons scherm, en dan komt je voltooide knoppen.
+
+102
+00:14:13,000 --> 00:14:25,000
+Daar zijn ze, en laten we proberen of we ze kunnen testen door de spatiebalk te gebruiken, en het vast te houden.
+
+103
+00:14:25,000 --> 00:14:38,000
+We kunnen nu zien dat onze knoppen goed functioneren, en precies lijken op de graphics die we hebben getekend.
+
+104
+00:14:38,000 --> 00:14:45,000
+Dit bestand dat we hebben geproduceerd kan op elk moment worden gebruikt en hergebruikt.
+
+105
+00:14:45,000 --> 00:14:51,000
+We hebben een heel mooi, hardnekkig, templating systeem op zijn plaats.
+
+106
+00:14:51,000 --> 00:14:53,000
+Het systeem bestaat uit: A shape key (file name prefix 'SHAPE');
+
+107
+00:14:53,000 --> 00:14:59,000
+Een eerste sjabloon, dat een enkele afbeelding krijgt (bestandsnaam prefix 'TEMPL');
+
+108
+00:14:59,000 --> 00:15:08,000
+en de voltooide knopset (bestandsnaam prefix 'READY').
+
+109
+00:15:08,000 --> 00:15:15,000
+We kunnen zelfs deze voltooide knop in ons bestandssysteem kopiëren en een soort alternatieve afbeelding maken, en het zou nog steeds werken.
+
+110
+00:15:15,000 --> 00:15:26,000
+Ik weet niet of dit werkt. Laten we het proberen.
+
+111
+00:15:26,000 --> 00:15:43,000
+Dus, je kunt die daar nemen, en het veranderen, waardoor het verschillende kleuren of bewegende kleine dingen.
+
+112
+00:15:43,000 --> 00:15:54,000
+Je hebt hier een goede knop die capaciteit beschikbaar stelt, en je kunt er zoveel maken als je wilt.
+
+113
+00:15:54,000 --> 00:15:59,000
+Hier kun je zien dat we dit gebied nog lang niet gevuld hebben met knoppen, maar als je natuurlijk geen ruimte meer hebt, maak je er gewoon nog een.
+
+114
+00:15:59,000 --> 00:16:19,000
+Een ding dat ik erop wil wijzen is dat het misschien moeilijk is om een syntax te vinden die past wanneer je knoppen zeer dicht bij elkaar in uw tekening.
+
+115
+00:16:19,000 --> 00:16:54,000
+Dus, om het makkelijker te maken om te traceren, laat meer ruimte tussen de beelden.
+
+116
+00:16:54,000 --> 00:17:24,000
+Ik zal nu de 'z' sleutel gebruiken die ervoor zorgt dat ik de knoppen niet verklein.
+
+117
+00:17:24,000 --> 00:17:33,000
+Ik maak die hoger dan de anderen door uit dat menu te kiezen. Ik gebruik de sneltoets (z-mode: 'h').
+
+118
+00:17:33,000 --> 00:17:39,000
+Dus zet ik dit bovenaan de z-indexvolgorde door 'h' te gebruiken.
+
+119
+00:17:39,000 --> 00:18:01,000
+Omdat ik de verhoging van de muis ingesteld heb om de verhoging van de pixels van mijn opgeschaalde tekening aan te passen, is het gemakkelijk om alles uit te lijnen.
+
+120
+00:18:01,000 --> 00:18:06,00
+Er zijn allemaal verschillende instellingen beschikbaar in het programma, maar ik zal ze hier niet behandelen.
+
+121
+00:18:06,000 --> 00:18:14,00
+Misschien iets meer zo.
+
+122
+00:18:14,000 --> 00:18:19,000
+Dat is vrij dichtbij.
+
+123
+00:18:19,000 --> 00:18:36,000
+Ik zal nu het schuifwiel van de muis gebruiken om het type op te slaan van tab IV-2.
+
+124
+00:18:36,000 --> 00:18:47,000
+Ik bespaar op een kijkbreedtefactor van 1280.
+
+125
+00:18:47,000 --> 00:18:55,000
+Dit wordt automatisch omgezet.
+
+126
+00:18:55,000 --> 00:19:43,000
+Om het bestand van het toetsenbord op te slaan: Gebruik 'shift + s'. In plaats daarvan, om alleen het bestand te openen voor het bekijken: Gebruik 'shift + enter'.
+
+127
+00:19:43,000 --> 00:19:48,000
+Dat is best goed.
+
+128
+00:19:48,000 --> 00:19:56,000
+Goed gedaan.
+
+129
+00:19:56,000 --> 00:20:20,000
+Tutorial over.
+

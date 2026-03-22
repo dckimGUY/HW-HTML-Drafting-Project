@@ -1,0 +1,5 @@
+Here we are learning a method of drawing our own custom HTML buttons by tracing them out from a single image. First you must draw your image, and then follow along with me, as we us the HTML Drafting Program to get fully customizable buttons out. These buttons can be reused anywhere, and will come out together with all of the assorted templates which you define along the path to construction.
+
+It's easier than it sounds! You are only a few clicks away, and the most of your work will be in drawing the custom artwork, not functioning this program. Follow along, and give it a first attempt.
+
+Remember, what you are producing is reusable and universal. That is the benefit of producing your own templates with this veritable templating factory.

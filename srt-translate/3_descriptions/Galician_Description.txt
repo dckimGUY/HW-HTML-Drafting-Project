@@ -1,0 +1,5 @@
+Aquí estamos aprendendo un método para debuxar os nosos propios botóns HTML personalizados, tracándoos dunha soa imaxe. Primeiro ten que debuxar a súa imaxe e logo seguirme, mentres nós, o Programa de Redacción de HTML para obter botóns totalmente personalizables. Estes botóns poden ser reutilizados en calquera lugar, e vai saír xunto con todos os moldes variados que define ao longo do camiño para a construción.
+
+É máis fácil do que sona! Vostede é só uns poucos clics de distancia, ea maior parte do seu traballo será para deseñar a arte personalizada, non funcionando este programa. Seguídeme e dádelle un primeiro intento.
+
+Lembra que o que estás a facer é reutilizable e universal. Isto é o beneficio de producir os seus propios modelos con esta verdadeira fábrica de templatación.

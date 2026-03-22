@@ -194,17 +194,18 @@ const winY  = window.scrollY;
 const winIY = window.innerHeight;
 
 
+
        if (!event || event.shiftKey == false) {
 
 if (coinFocus!=null) {
 const targetButtonId = (Array.from(coinFocus.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";
 
 //if (targetButtonId.startsWith("button")) {
-//navLinkEntry = `(function(){try{document.getElementById('${targetButtonId}').scrollIntoView({ behavior:'auto'${navigationPoints[navPoint]} }); document.getElementById('${targetButtonId}').focus(); }catch{}})()`;
+//navLinkEntry = `(function(){try{document.getElementById('${targetButtonId}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${targetButtonId}').focus(); }catch{}})()`;
 //} else {
 
 
-navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({ behavior:'auto'${navigationPoints[navPoint]} }); document.getElementById('${coinFocus.id}').focus(); }catch{}})()`;
+navLinkEntry = `(function(){try{document.getElementById('${coinFocus.id}').scrollIntoView({ behavior:'smooth'${navigationPoints[navPoint]} }); document.getElementById('${coinFocus.id}').focus(); }catch{}})()`;
 
 
 //}
@@ -215,18 +216,49 @@ navLinkEntry = ``;
 
 } else if (event.shiftKey == true) {
 
-       if (navPoint == 7) { navLinkEntry = `(function(){ window.scrollTo(${winX}, ${winY}); })()`;
-} else if (navPoint == 8) { navLinkEntry = `(function(){ window.scrollTo(${winX + (winIX/2)} - (window.innerWidth/2), ${winY}); })()`;
-} else if (navPoint == 9) { navLinkEntry = `(function(){ window.scrollTo(${winX + winIX} - window.innerWidth, ${winY}); })()`;
-} else if (navPoint == 4) { navLinkEntry = `(function(){ window.scrollTo(${winX}, ${winY + (window.innerHeight/2)} - (window.innerHeight/2)); })()`;
-} else if (navPoint == 5) { navLinkEntry = `(function(){ window.scrollTo(${winX + (winIX/2)} - (window.innerWidth/2), ${winY + (winIY/2)} - (window.innerHeight/2)); })()`;
-} else if (navPoint == 6) { navLinkEntry = `(function(){ window.scrollTo(${winX + winIX} - window.innerWidth, ${winY + (winIY/2)} - (window.innerHeight/2)); })()`;
-} else if (navPoint == 1) { navLinkEntry = `(function(){ window.scrollTo(${winX}, ${winY + winIY} - window.innerHeight); })()`;
-} else if (navPoint == 2) { navLinkEntry = `(function(){ window.scrollTo(${winX + (winIX/2)} - (window.innerWidth/2),  ${winY + winIY} - window.innerHeight); })()`;
-} else if (navPoint == 3) { navLinkEntry = `(function(){ window.scrollTo(${winX + winIX} - window.innerWidth, ${winY + winIY} - window.innerHeight); })()`;
+       if (navPoint == 7) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX}, top: ${winY}, behavior: 'smooth' }); })()`;
+} else if (navPoint == 8) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX + (winIX/2)} - (window.innerWidth/2), top: ${winY}, behavior: 'smooth' }); })()`;
+} else if (navPoint == 9) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX + winIX} - window.innerWidth, top: ${winY}, behavior: 'smooth' }); })()`;
+} else if (navPoint == 4) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX}, top: ${winY + (window.innerHeight/2)} - (window.innerHeight/2), behavior: 'smooth' }); })()`;
+} else if (navPoint == 5) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX + (winIX/2)} - (window.innerWidth/2), top: ${winY + (winIY/2)} - (window.innerHeight/2), behavior: 'smooth' }); })()`;
+} else if (navPoint == 6) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX + winIX} - window.innerWidth, top: ${winY + (winIY/2)} - (window.innerHeight/2), behavior: 'smooth' }); })()`;
+} else if (navPoint == 1) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX}, top: ${winY + winIY} - window.innerHeight, behavior: 'smooth' }); })()`;
+} else if (navPoint == 2) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX + (winIX/2)} - (window.innerWidth/2), top: ${winY + winIY} - window.innerHeight, behavior: 'smooth' }); })()`;
+} else if (navPoint == 3) { navLinkEntry = `(function(){ window.scrollTo({ left: ${winX + winIX} - window.innerWidth, top: ${winY + winIY} - window.innerHeight, behavior: 'smooth' }); })()`;
 }
 
+
+
 }
+
+
+
+
+if (event.ctrlKey == true) {
+
+
+console.log(navLinkEntry);
+
+
+if (coinFocus != null) {
+copyToClipboard(navLinkEntry);
+buzzWord(0,'<sup>copy</sup><sub>code</sub>',112,'white',200,200,25,'top','','',event);
+}
+
+
+
+return;
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -652,7 +684,7 @@ setTimeout(() => {
 ui.buttonTooltip.ref.value = "";
 ui.textEntry.ref.value = alphabet[j] + k;
 drawButton7();
-let navLinkEntry = `(function(){ window.scrollTo(${locX * j}, ${locY * k}); })()`;
+let navLinkEntry = `(function() { window.scrollTo({ left: locX * j, top: locY * k, behavior: 'smooth' }); })();`;
 let lastId = "";
 if (coinFocus != null) {
 lastId = coinFocus.id.toString();

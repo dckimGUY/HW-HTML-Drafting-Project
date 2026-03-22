@@ -1,0 +1,5 @@
+Siin õpime meetodit oma kohandatud HTML-nuppude joonistamiseks, jälgides neid ühest pildist. Kõigepealt peate joonistama oma pildi ja seejärel järgima koos minuga, nagu me oleme HTML-i koostamise programm, et saada täielikult kohandatavad nupud välja. Neid nuppe saab igal pool uuesti kasutada ja need tulevad välja koos kõigi valitud mallidega, mille määratlete ehituse teel.
+
+See on lihtsam, kui kõlab! Olete vaid mõne kliki kaugusel ja enamik teie tööst on kohandatud kunstiteose joonistamine, mitte selle programmi toimimine. Tee seda ja tee esimene katse.
+
+Pidage meeles, et see, mida te toodate, on korduvkasutatav ja universaalne. See on kasu, et luua oma mallid selle tõelise ahvatleva tehasega.

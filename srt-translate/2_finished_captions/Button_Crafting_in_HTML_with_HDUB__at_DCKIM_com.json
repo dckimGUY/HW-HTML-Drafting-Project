@@ -1,0 +1,651 @@
+{
+  "title": "Button Crafting in HTML with HDUB, at DCKIM.com",
+  "description": "Here we are learning a method of drawing our own custom HTML buttons by tracing them out from a single image. First you must draw your image, and then follow along with me, as we us the HTML Drafting Program to get fully customizable buttons out. These buttons can be reused anywhere, and will come out together with all of the assorted templates which you define along the path to construction.\n\nIt's easier than it sounds! You are only a few clicks away, and the most of your work will be in drawing the custom artwork, not functioning this program. Follow along, and give it a first attempt.\n\nRemember, what you are producing is reusable and universal. That is the benefit of producing your own templates with this veritable templating factory.",
+  "captions": [
+    {
+      "lineOne": 1,
+      "lineTwo": "00:00:00,000 --> 00:00:09,000",
+      "lineThree": "Today we're going to be talking about making your own custom buttons for this program."
+    },
+    {
+      "lineOne": 2,
+      "lineTwo": "00:00:09,000 --> 00:00:16,000",
+      "lineThree": "This is the first tutorial that I'm making and hopefully you will understand it easily and enjoy it."
+    },
+    {
+      "lineOne": 3,
+      "lineTwo": "00:00:16,000 --> 00:00:19,000",
+      "lineThree": "Let's see here: 'Information for button crafting'."
+    },
+    {
+      "lineOne": 4,
+      "lineTwo": "00:00:21,000 --> 00:00:24,000",
+      "lineThree": "So, that's pretty much what we're looking at with this tutorial."
+    },
+    {
+      "lineOne": 5,
+      "lineTwo": "00:00:24,000 --> 00:00:26,000",
+      "lineThree": "So, let's get right into it."
+    },
+    {
+      "lineOne": 6,
+      "lineTwo": "00:00:26,000 --> 00:00:32,000",
+      "lineThree": "We are over here in the program, and we can see right away that I have put something into this box here."
+    },
+    {
+      "lineOne": 7,
+      "lineTwo": "00:00:32,000 --> 00:00:38,000",
+      "lineThree": "It is giving us a height and width designation, just a very simple one."
+    },
+    {
+      "lineOne": 8,
+      "lineTwo": "00:00:38,000 --> 00:00:50,000",
+      "lineThree": "That gives us the largest width and height that we could possibly use, and it is shown inside of that large rectangle there with the large letter 'B'."
+    },
+    {
+      "lineOne": 9,
+      "lineTwo": "00:00:50,000 --> 00:01:07,000",
+      "lineThree": "The first step that we need to do so that we can trace our custom button is that we are needing to drag an image from the file system directly onto this area where it has the large letter 'B'."
+    },
+    {
+      "lineOne": 10,
+      "lineTwo": "00:01:07,000 --> 00:01:12,000",
+      "lineThree": "We are now going to drag over our image from the file system over here, and to where we see the letter 'B'."
+    },
+    {
+      "lineOne": 11,
+      "lineTwo": "00:01:12,000 --> 00:01:20,000",
+      "lineThree": "We are now going to drag over our image from the file system over here, and to where we see the letter 'B'."
+    },
+    {
+      "lineOne": 12,
+      "lineTwo": "00:01:20,000 --> 00:01:23,000",
+      "lineThree": "And there we have it and it shows up there on the screen."
+    },
+    {
+      "lineOne": 13,
+      "lineTwo": "00:01:23,000 --> 00:01:24,000",
+      "lineThree": "The problem we can see is that it seems too small."
+    },
+    {
+      "lineOne": 14,
+      "lineTwo": "00:01:24,000 --> 00:01:26,000",
+      "lineThree": "What should we do?"
+    },
+    {
+      "lineOne": 15,
+      "lineTwo": "00:01:26,000 --> 00:01:37,000",
+      "lineThree": "We must move our mouse cursor over top of that region with the large letter 'B' and we can then scroll with the mousewheel. Now we see that something interesting is happening."
+    },
+    {
+      "lineOne": 16,
+      "lineTwo": "00:01:37,000 --> 00:01:45,000",
+      "lineThree": "We are able to adjust the scale of on screen guide."
+    },
+    {
+      "lineOne": 17,
+      "lineTwo": "00:01:45,000 --> 00:01:54,000",
+      "lineThree": "When we scroll down to 4, 3, 2, and 1, we see that there is a special upscaling factor applied."
+    },
+    {
+      "lineOne": 18,
+      "lineTwo": "00:01:54,000 --> 00:01:58,000",
+      "lineThree": "I built that in to the program for the purpose of pixel art."
+    },
+    {
+      "lineOne": 19,
+      "lineTwo": "00:01:58,000 --> 00:02:03,000",
+      "lineThree": "So that when you bring the buttons back into the program they will be scaled up in size."
+    },
+    {
+      "lineOne": 20,
+      "lineTwo": "00:02:03,000 --> 00:02:07,000",
+      "lineThree": "They will not be the size that you see while you are drawing them."
+    },
+    {
+      "lineOne": 21,
+      "lineTwo": "00:02:07,000 --> 00:02:16,000",
+      "lineThree": "So, you can draw them at that small pixel size and then you can bring them into the program and they will suddenly become larger."
+    },
+    {
+      "lineOne": 22,
+      "lineTwo": "00:02:16,000 --> 00:02:22,000",
+      "lineThree": "Because of that reason, you are getting a really good economy on the size of your image and your buttons."
+    },
+    {
+      "lineOne": 23,
+      "lineTwo": "00:02:22,000 --> 00:02:31,000",
+      "lineThree": "So, your button is not too expensive in terms of how much it costs for tranfering it through the internet."
+    },
+    {
+      "lineOne": 24,
+      "lineTwo": "00:02:31,000 --> 00:02:41,000",
+      "lineThree": "So there we have it. This one here has 180 units of height and 100 units of width, but it's not particularly useful to us at the moment."
+    },
+    {
+      "lineOne": 25,
+      "lineTwo": "00:02:41,000 --> 00:02:45,000",
+      "lineThree": "Now I will describe one of the first things that you might see here: It's this save button."
+    },
+    {
+      "lineOne": 26,
+      "lineTwo": "00:02:45,000 --> 00:02:54,000",
+      "lineThree": "If we were to click this save button, what will happen is that we are going to save a shape key."
+    },
+    {
+      "lineOne": 27,
+      "lineTwo": "00:02:54,000 --> 00:03:08,000",
+      "lineThree": "And if we were to click this other one here, marked star sheet, a single template that is represented by this drawing would be saved."
+    },
+    {
+      "lineOne": 28,
+      "lineTwo": "00:03:08,000 --> 00:03:12,000",
+      "lineThree": "Don't worry too much about that."
+    },
+    {
+      "lineOne": 29,
+      "lineTwo": "00:03:12,000 --> 00:03:15,000",
+      "lineThree": "Now let's go over to something which I have prepared earlier."
+    },
+    {
+      "lineOne": 30,
+      "lineTwo": "00:03:15,000 --> 00:03:20,000",
+      "lineThree": "If we press escape, notice that all of these things will fade away."
+    },
+    {
+      "lineOne": 31,
+      "lineTwo": "00:03:20,000 --> 00:03:24,000",
+      "lineThree": "Okay, so now it's all gone."
+    },
+    {
+      "lineOne": 32,
+      "lineTwo": "00:03:24,000 --> 00:03:33,000",
+      "lineThree": "So, now let's see if I can put it back in again."
+    },
+    {
+      "lineOne": 33,
+      "lineTwo": "00:03:33,000 --> 00:03:39,000",
+      "lineThree": "I will now scale it to a size that can be easily seen."
+    },
+    {
+      "lineOne": 34,
+      "lineTwo": "00:03:39,000 --> 00:03:48,000",
+      "lineThree": "I will get rid of that little piece of syntax there, and then I'll show you a shape key that I have made earlier."
+    },
+    {
+      "lineOne": 35,
+      "lineTwo": "00:03:48,000 --> 00:03:55,000",
+      "lineThree": "Let's open it up in MS Paint and see what it really looks like."
+    },
+    {
+      "lineOne": 36,
+      "lineTwo": "00:03:55,000 --> 00:04:04,000",
+      "lineThree": "So, this is a shape key which had some definition given with the 'h' and 'w' syntax."
+    },
+    {
+      "lineOne": 37,
+      "lineTwo": "00:04:04,000 --> 00:04:15,000",
+      "lineThree": "The important part is not that this shape key is useful graphical image right now. It isn't."
+    },
+    {
+      "lineOne": 38,
+      "lineTwo": "00:04:15,000 --> 00:04:26,000",
+      "lineThree": "The entire purpose of the shape key is to have a nice picture in your file system, allowing you to visually identify the shape key."
+    },
+    {
+      "lineOne": 39,
+      "lineTwo": "00:04:26,000 --> 00:04:28,000",
+      "lineThree": "That is the whole reason that it is there."
+    },
+    {
+      "lineOne": 40,
+      "lineTwo": "00:04:28,000 --> 00:04:31,000",
+      "lineThree": "Now I will show how to use it."
+    },
+    {
+      "lineOne": 41,
+      "lineTwo": "00:04:31,000 --> 00:04:36,000",
+      "lineThree": "Once you have produced a shape key by saving one using the syntax. (The shape keys are not mandatory.)"
+    },
+    {
+      "lineOne": 42,
+      "lineTwo": "00:04:36,000 --> 00:04:41,000",
+      "lineThree": "You can ignore them."
+    },
+    {
+      "lineOne": 43,
+      "lineTwo": "00:04:41,000 --> 00:04:52,000",
+      "lineThree": "The shape key has a special syntax plainly visible in the file name."
+    },
+    {
+      "lineOne": 44,
+      "lineTwo": "00:04:52,000 --> 00:05:17,000",
+      "lineThree": "Now I will describe the syntax. It uses the 'h' and 'w' syntax."
+    },
+    {
+      "lineOne": 45,
+      "lineTwo": "00:05:17,000 --> 00:05:27,000",
+      "lineThree": "This describes rows of rectangles which share the same height."
+    },
+    {
+      "lineOne": 46,
+      "lineTwo": "00:05:27,000 --> 00:05:51,000",
+      "lineThree": "Just be sure not to remove this syntax from the end of your file name if you wish to rename the file."
+    },
+    {
+      "lineOne": 47,
+      "lineTwo": "00:05:51,000 --> 00:06:02,000",
+      "lineThree": "The nice thing about this is that you can simply drag this thing directly onto one of the letters, and it will be installed in that location."
+    },
+    {
+      "lineOne": 48,
+      "lineTwo": "00:06:02,000 --> 00:06:06,000",
+      "lineThree": "I am choosing the letter 'n'."
+    },
+    {
+      "lineOne": 49,
+      "lineTwo": "00:06:06,000 --> 00:06:10,000",
+      "lineThree": "The letter 'n' now contains the information for that shape key."
+    },
+    {
+      "lineOne": 50,
+      "lineTwo": "00:06:10,000 --> 00:06:23,000",
+      "lineThree": "Then we use the scroll wheel a bit and we see that all of this defined shape key has been drawn in for us."
+    },
+    {
+      "lineOne": 51,
+      "lineTwo": "00:06:23,000 --> 00:06:32,000",
+      "lineThree": " I have made this one in advance, and so I can then easily show you that this lines up perfectly with the drawing."
+    },
+    {
+      "lineOne": 52,
+      "lineTwo": "00:06:32,000 --> 00:06:45,000",
+      "lineThree": "But, just briefly I will go through the process to demonstrate tracing."
+    },
+    {
+      "lineOne": 53,
+      "lineTwo": "00:06:45,000 --> 00:07:01,000",
+      "lineThree": "We will manually enter the syntax. I will use period and hyphen on the number pad, but, you can also use the letters 'h' and 'w'."
+    },
+    {
+      "lineOne": 54,
+      "lineTwo": "00:07:01,000 --> 00:07:04,000",
+      "lineThree": "To begin, we will pick the first two numbers: 'h10w10'."
+    },
+    {
+      "lineOne": 55,
+      "lineTwo": "00:07:04,000 --> 00:07:08,000",
+      "lineThree": "This is just so that we have something to look at as a starting point."
+    },
+    {
+      "lineOne": 56,
+      "lineTwo": "00:07:08,000 --> 00:07:37,000",
+      "lineThree": "Now we can adjust and add 'w' to get more widths."
+    },
+    {
+      "lineOne": 57,
+      "lineTwo": "00:07:37,000 --> 00:07:45,000",
+      "lineThree": "So, we have the definitions and have successfully traced the first four letters."
+    },
+    {
+      "lineOne": 58,
+      "lineTwo": "00:07:45,000 --> 00:07:51,000",
+      "lineThree": "I have already traced this out in advance, so let's just move along."
+    },
+    {
+      "lineOne": 59,
+      "lineTwo": "00:07:51,000 --> 00:07:55,000",
+      "lineThree": "So, here it is completed."
+    },
+    {
+      "lineOne": 60,
+      "lineTwo": "00:07:55,000 --> 00:08:10,000",
+      "lineThree": "If you have been successful and completed this process for your own image, the next step is to save it."
+    },
+    {
+      "lineOne": 61,
+      "lineTwo": "00:08:10,000 --> 00:08:15,000",
+      "lineThree": "You will use that button right there which says star sheet."
+    },
+    {
+      "lineOne": 62,
+      "lineTwo": "00:08:15,000 --> 00:08:18,000",
+      "lineThree": ""
+    },
+    {
+      "lineOne": 63,
+      "lineTwo": "00:08:18,000 --> 00:08:25,000",
+      "lineThree": "When you click it, a special file will be saved."
+    },
+    {
+      "lineOne": 64,
+      "lineTwo": "00:08:25,000 --> 00:08:30,000",
+      "lineThree": "You must then drag that file back on to the program screen."
+    },
+    {
+      "lineOne": 65,
+      "lineTwo": "00:08:30,000 --> 00:08:35,000",
+      "lineThree": "I will show you this soon, but first I will tell about the syntax of the file which has just now been saved."
+    },
+    {
+      "lineOne": 66,
+      "lineTwo": "00:08:35,000 --> 00:09:11,000",
+      "lineThree": "We can see that we have the same syntax that was stored in the shape key. (file name prefix 'TEMPL')"
+    },
+    {
+      "lineOne": 67,
+      "lineTwo": "00:09:11,000 --> 00:09:13,000",
+      "lineThree": "So, let's see what we can do."
+    },
+    {
+      "lineOne": 68,
+      "lineTwo": "00:09:13,000 --> 00:09:19,000",
+      "lineThree": "We use escape so that we have a nice blank screen."
+    },
+    {
+      "lineOne": 69,
+      "lineTwo": "00:09:19,000 --> 00:09:25,000",
+      "lineThree": "I will next drag this template back into the program."
+    },
+    {
+      "lineOne": 70,
+      "lineTwo": "00:09:25,000 --> 00:09:37,000",
+      "lineThree": "This might seem tricky, but it isn't."
+    },
+    {
+      "lineOne": 71,
+      "lineTwo": "00:09:37,000 --> 00:09:47,000",
+      "lineThree": "If we want buttons, we must now choose between 6, 4, or 2."
+    },
+    {
+      "lineOne": 72,
+      "lineTwo": "00:09:47,000 --> 00:09:52,000",
+      "lineThree": "This is not the number of buttons but, rather, it is the number of button states which will be used."
+    },
+    {
+      "lineOne": 73,
+      "lineTwo": "00:09:52,000 --> 00:10:12,000",
+      "lineThree": "When we hover with the mouse over the button, this is the hover state."
+    },
+    {
+      "lineOne": 74,
+      "lineTwo": "00:10:12,000 --> 00:10:15,000",
+      "lineThree": "When we click down, this is the active state."
+    },
+    {
+      "lineOne": 75,
+      "lineTwo": "00:10:15,000 --> 00:10:17,000",
+      "lineThree": "And when the button clicked, it then gets the focused state."
+    },
+    {
+      "lineOne": 76,
+      "lineTwo": "00:10:17,000 --> 00:10:24,000",
+      "lineThree": "We have the choice of doing all 6, which gives only 5 useable states."
+    },
+    {
+      "lineOne": 77,
+      "lineTwo": "00:10:24,000 --> 00:10:31,000",
+      "lineThree": "We prefer to use either 4, which is ideal for desktop computers or 2 which is enough for mobile telephones."
+    },
+    {
+      "lineOne": 78,
+      "lineTwo": "00:10:31,000 --> 00:10:35,000",
+      "lineThree": "I will now give a brief description assuming 4 button states are used."
+    },
+    {
+      "lineOne": 79,
+      "lineTwo": "00:10:35,000 --> 00:11:01,000",
+      "lineThree": "base"
+    },
+    {
+      "lineOne": 80,
+      "lineTwo": "00:11:01,000 --> 00:11:02,000",
+      "lineThree": "focus"
+    },
+    {
+      "lineOne": 81,
+      "lineTwo": "00:11:02,000 --> 00:11:03,000",
+      "lineThree": "hover"
+    },
+    {
+      "lineOne": 82,
+      "lineTwo": "00:11:03,000 --> 00:11:05,000",
+      "lineThree": "active"
+    },
+    {
+      "lineOne": 83,
+      "lineTwo": "00:11:05,000 --> 00:11:27,000",
+      "lineThree": "That is very important to know about if you are not familiar with HTML."
+    },
+    {
+      "lineOne": 84,
+      "lineTwo": "00:11:27,000 --> 00:11:32,000",
+      "lineThree": "Let's now continue with our process."
+    },
+    {
+      "lineOne": 85,
+      "lineTwo": "00:11:32,000 --> 00:11:41,000",
+      "lineThree": "I will choose the 4 button states by clicking this."
+    },
+    {
+      "lineOne": 86,
+      "lineTwo": "00:11:41,000 --> 00:11:45,000",
+      "lineThree": "Now we have saved a file again."
+    },
+    {
+      "lineOne": 87,
+      "lineTwo": "00:11:45,000 --> 00:11:55,000",
+      "lineThree": "Let's see if we can open that file in our favorite art program."
+    },
+    {
+      "lineOne": 88,
+      "lineTwo": "00:11:55,000 --> 00:12:00,000",
+      "lineThree": "Where is it? Libre-Pixel."
+    },
+    {
+      "lineOne": 89,
+      "lineTwo": "00:12:00,000 --> 00:12:04,000",
+      "lineThree": "We will see what this file looks like."
+    },
+    {
+      "lineOne": 90,
+      "lineTwo": "00:12:04,000 --> 00:12:06,000",
+      "lineThree": "I have prepared it earlier by changing the colorations."
+    },
+    {
+      "lineOne": 91,
+      "lineTwo": "00:12:06,000 --> 00:12:18,000",
+      "lineThree": "Here we can also see that it is possible to crop the size of the image in it's height."
+    },
+    {
+      "lineOne": 92,
+      "lineTwo": "00:12:18,000 --> 00:12:27,000",
+      "lineThree": "It will still work later."
+    },
+    {
+      "lineOne": 93,
+      "lineTwo": "00:12:27,000 --> 00:12:37,000",
+      "lineThree": "We can see the saving the file has quadrupled it, and we now have four representations."
+    },
+    {
+      "lineOne": 94,
+      "lineTwo": "00:12:37,000 --> 00:12:53,000",
+      "lineThree": "I will now bring back our guide image to show which button state each image represents."
+    },
+    {
+      "lineOne": 95,
+      "lineTwo": "00:12:53,000 --> 00:12:59,000",
+      "lineThree": "This way we know which state we are working on when we change the colors or draw our images."
+    },
+    {
+      "lineOne": 96,
+      "lineTwo": "00:12:59,000 --> 00:13:13,000",
+      "lineThree": "These will not result in only one single button, but will instead be exactly the buttons which we have traced out using the rectangles."
+    },
+    {
+      "lineOne": 97,
+      "lineTwo": "00:13:13,000 --> 00:13:32,000",
+      "lineThree": "This graphical work has already been completed in advance, and so, I will continue with our process."
+    },
+    {
+      "lineOne": 98,
+      "lineTwo": "00:13:32,000 --> 00:13:49,000",
+      "lineThree": "So, now that we have a finished image, I will show again the syntax, which has the prefix 'READY'."
+    },
+    {
+      "lineOne": 99,
+      "lineTwo": "00:13:49,000 --> 00:14:03,000",
+      "lineThree": "This button is finished and can be dragged in immediately."
+    },
+    {
+      "lineOne": 100,
+      "lineTwo": "00:14:03,000 --> 00:14:08,000",
+      "lineThree": "Now we will see what happens when we drag this finished button file into the program."
+    },
+    {
+      "lineOne": 101,
+      "lineTwo": "00:14:08,000 --> 00:14:13,000",
+      "lineThree": "It looks like something is happening up over here in the top left corner of our screen, and then out comes your finished buttons."
+    },
+    {
+      "lineOne": 102,
+      "lineTwo": "00:14:13,000 --> 00:14:25,000",
+      "lineThree": "There they are, and let's just try if we can test them out by using the spacebar, and holding it down."
+    },
+    {
+      "lineOne": 103,
+      "lineTwo": "00:14:25,000 --> 00:14:38,000",
+      "lineThree": "We can now see that our buttons function properly, and look exactly like the graphics that we drew."
+    },
+    {
+      "lineOne": 104,
+      "lineTwo": "00:14:38,000 --> 00:14:45,000",
+      "lineThree": "This file that we have produced can be used and reused at any time."
+    },
+    {
+      "lineOne": 105,
+      "lineTwo": "00:14:45,000 --> 00:14:51,000",
+      "lineThree": "We have a very nice, persistent, templating system in place."
+    },
+    {
+      "lineOne": 106,
+      "lineTwo": "00:14:51,000 --> 00:14:53,000",
+      "lineThree": "The system is comprised of: A shape key (file name prefix 'SHAPE');"
+    },
+    {
+      "lineOne": 107,
+      "lineTwo": "00:14:53,000 --> 00:14:59,000",
+      "lineThree": "A first template, which gets a single image (file name prefix 'TEMPL');"
+    },
+    {
+      "lineOne": 108,
+      "lineTwo": "00:14:59,000 --> 00:15:08,000",
+      "lineThree": "and the finished button set (file name prefix 'READY')."
+    },
+    {
+      "lineOne": 109,
+      "lineTwo": "00:15:08,000 --> 00:15:15,000",
+      "lineThree": "We can even copy this finished button in our file system and make some kind of alternate imagery, and it would still work."
+    },
+    {
+      "lineOne": 110,
+      "lineTwo": "00:15:15,000 --> 00:15:26,000",
+      "lineThree": "I am not sure if this works. Let's try it."
+    },
+    {
+      "lineOne": 111,
+      "lineTwo": "00:15:26,000 --> 00:15:43,000",
+      "lineThree": "So, you could take that one there, and change it out, making it different colors or moving little things around."
+    },
+    {
+      "lineOne": 112,
+      "lineTwo": "00:15:43,000 --> 00:15:54,000",
+      "lineThree": "You have a good button making capacity available here, and you can make as many as you wish."
+    },
+    {
+      "lineOne": 113,
+      "lineTwo": "00:15:54,000 --> 00:15:59,000",
+      "lineThree": "Here you can see that we have not even nearly filled this area with buttons, but, of course if you do run out of space, you will simply make another one."
+    },
+    {
+      "lineOne": 114,
+      "lineTwo": "00:15:59,000 --> 00:16:19,000",
+      "lineThree": "One thing that I will point out is that it might be difficult to find a syntax that fits when your buttons are very close together in your drawing."
+    },
+    {
+      "lineOne": 115,
+      "lineTwo": "00:16:19,000 --> 00:16:54,000",
+      "lineThree": "So, to make it easier to trace, leave more space between the images."
+    },
+    {
+      "lineOne": 116,
+      "lineTwo": "00:16:54,000 --> 00:17:24,000",
+      "lineThree": "I will now use the 'z' key which will ensure that I do not resize the buttons."
+    },
+    {
+      "lineOne": 117,
+      "lineTwo": "00:17:24,000 --> 00:17:33,000",
+      "lineThree": "I will make that one higher that the others by selecting from that menu. I use the keyboard shortcut (z-mode: 'h')."
+    },
+    {
+      "lineOne": 118,
+      "lineTwo": "00:17:33,000 --> 00:17:39,000",
+      "lineThree": "So, I put this to the top of the z-index order by using 'h'."
+    },
+    {
+      "lineOne": 119,
+      "lineTwo": "00:17:39,000 --> 00:18:01,000",
+      "lineThree": "Because I have set the mouse increment to match the pixel increment of my upscaled drawing, it is easy to align everything."
+    },
+    {
+      "lineOne": 120,
+      "lineTwo": "00:18:01,000 --> 00:18:06,00",
+      "lineThree": "There are all different setting available in the program, but, I will not cover them here."
+    },
+    {
+      "lineOne": 121,
+      "lineTwo": "00:18:06,000 --> 00:18:14,00",
+      "lineThree": "Maybe a little more this way."
+    },
+    {
+      "lineOne": 122,
+      "lineTwo": "00:18:14,000 --> 00:18:19,000",
+      "lineThree": "That's pretty close."
+    },
+    {
+      "lineOne": 123,
+      "lineTwo": "00:18:19,000 --> 00:18:36,000",
+      "lineThree": "I will now use the scroll wheel of the mouse to select the type of save from tab IV-2."
+    },
+    {
+      "lineOne": 124,
+      "lineTwo": "00:18:36,000 --> 00:18:47,000",
+      "lineThree": "I am saving at a Viewing width factor of 1280."
+    },
+    {
+      "lineOne": 125,
+      "lineTwo": "00:18:47,000 --> 00:18:55,000",
+      "lineThree": "This will be converted automatically."
+    },
+    {
+      "lineOne": 126,
+      "lineTwo": "00:18:55,000 --> 00:19:43,000",
+      "lineThree": "To save the file from the keyboard: Use 'shift + s'. Instead, to only open the file for viewing: Use 'shift + enter'."
+    },
+    {
+      "lineOne": 127,
+      "lineTwo": "00:19:43,000 --> 00:19:48,000",
+      "lineThree": "That's pretty good."
+    },
+    {
+      "lineOne": 128,
+      "lineTwo": "00:19:48,000 --> 00:19:56,000",
+      "lineThree": "Well done."
+    },
+    {
+      "lineOne": 129,
+      "lineTwo": "00:19:56,000 --> 00:20:20,000",
+      "lineThree": "Tutorial over."
+    }
+  ]
+}

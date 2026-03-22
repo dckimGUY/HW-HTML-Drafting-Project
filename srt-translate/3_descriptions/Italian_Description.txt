@@ -1,0 +1,5 @@
+Qui stiamo imparando un metodo di disegnare i nostri pulsanti HTML personalizzati tracciandoli da un'unica immagine. Prima devi disegnare la tua immagine, e poi seguire con me, come noi il programma di bozza HTML per ottenere pulsanti completamente personalizzabili fuori. Questi pulsanti possono essere riutilizzati ovunque, e usciranno insieme a tutti i modelli assortiti che si definiscono lungo il percorso di costruzione.
+
+E' piu' facile di quanto sembri! Siete a pochi clic di distanza, e la maggior parte del vostro lavoro sarà nel disegno delle opere d'arte personalizzate, non funzionando questo programma. Seguire, e dare un primo tentativo.
+
+Ricordate, ciò che state producendo è riutilizzabile e universale. Questo è il vantaggio di produrre i propri modelli con questa vera e propria fabbrica di templating.

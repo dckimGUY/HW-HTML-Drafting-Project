@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:09,000
+Tänään puhumme oman mukautetun painikkeet tähän ohjelmaan.
+
+2
+00:00:09,000 --> 00:00:16,000
+Tämä on ensimmäinen opetusohjelma, että teen ja toivottavasti ymmärrät sen helposti ja nauttia siitä.
+
+3
+00:00:16,000 --> 00:00:19,000
+Katsotaanpa tätä: "Tietoa nappien työstämisestä.".
+
+4
+00:00:21,000 --> 00:00:24,000
+Joten, sitä me olemme katsomassa tällä tutoriaalilla.
+
+5
+00:00:24,000 --> 00:00:26,000
+Aloitetaan.
+
+6
+00:00:26,000 --> 00:00:32,000
+Olemme täällä ohjelmassa ja näemme heti, että olen laittanut jotain tähän laatikkoon.
+
+7
+00:00:32,000 --> 00:00:38,000
+Se antaa meille korkeuden ja leveyden, vain hyvin yksinkertainen.
+
+8
+00:00:38,000 --> 00:00:50,000
+Tämä antaa meille suurimman leveyden ja korkeuden, jota voisimme käyttää, ja se näkyy tuon suuren suorakulmion sisällä, jossa on suuri kirjain 'B'.
+
+9
+00:00:50,000 --> 00:01:07,000
+Ensimmäinen askel, joka meidän on tehtävä, jotta voimme jäljittää mukautetun painikkeemme, on se, että meidän on vedettävä kuva tiedostojärjestelmästä suoraan tälle alueelle, jossa sillä on suuri kirjain B.
+
+10
+00:01:07,000 --> 00:01:12,000
+Nyt vedämme kuvaamme täällä olevasta tiedostojärjestelmästä ja B-kirjaimesta.
+
+11
+00:01:12,000 --> 00:01:20,000
+Nyt vedämme kuvaamme täällä olevasta tiedostojärjestelmästä ja B-kirjaimesta.
+
+12
+00:01:20,000 --> 00:01:23,000
+Siinä se on ja näkyy ruudulla.
+
+13
+00:01:23,000 --> 00:01:24,000
+Ongelmana on, että se vaikuttaa liian pieneltä.
+
+14
+00:01:24,000 --> 00:01:26,000
+Mitä meidän pitäisi tehdä?
+
+15
+00:01:26,000 --> 00:01:37,000
+Meidän on siirrettävä hiiren kursorimme tuon alueen yläpuolelle suurella B-kirjaimella ja sitten voimme selata hiirenpyörällä. Nyt näemme, että jotain mielenkiintoista tapahtuu.
+
+16
+00:01:37,000 --> 00:01:45,000
+Pystymme säätämään näytönohjaimen mittakaavaa.
+
+17
+00:01:45,000 --> 00:01:54,000
+Kun selaamme alaspäin 4, 3, 2 ja 1, näemme, että on erityinen nousutekijä sovellettu.
+
+18
+00:01:54,000 --> 00:01:58,000
+Rakensin sen ohjelmaan pikselitaiteen vuoksi.
+
+19
+00:01:58,000 --> 00:02:03,000
+Kun tuot nappisi takaisin ohjelmaan, ne kasvavat.
+
+20
+00:02:03,000 --> 00:02:07,000
+Ne eivät ole kokoa, jonka näet piirtäessäsi niitä.
+
+21
+00:02:07,000 --> 00:02:16,000
+Voit piirtää ne pienellä pikselikokoa ja sitten voit tuoda ne ohjelmaan ja ne yhtäkkiä kasvavat.
+
+22
+00:02:16,000 --> 00:02:22,000
+Siksi saat todella hyvä talous koko kuva ja painikkeet.
+
+23
+00:02:22,000 --> 00:02:31,000
+Joten, painikkeesi ei ole liian kallis kannalta, kuinka paljon se maksaa trafering sen Internetin kautta.
+
+24
+00:02:31,000 --> 00:02:41,000
+Siinä se on. Tässä on 180 yksikköä korkeutta ja 100 yksikköä leveyttä, mutta siitä ei ole juuri nyt hyötyä.
+
+25
+00:02:41,000 --> 00:02:45,000
+Nyt kuvailen yhtä ensimmäisistä asioista, jotka saatatte nähdä tässä: Se on tämä tallennusnappi.
+
+26
+00:02:45,000 --> 00:02:54,000
+Jos klikkaamme tätä tallenna-painiketta, mitä tapahtuu on, että aiomme tallentaa muoto-avain.
+
+27
+00:02:54,000 --> 00:03:08,000
+Ja jos napsauttaisimme tätä toista tässä, merkittyä tähtiarkkia, yksi malli, jota tämä piirustus edustaa, olisi tallennettu.
+
+28
+00:03:08,000 --> 00:03:12,000
+Älä murehdi sitä liikaa.
+
+29
+00:03:12,000 --> 00:03:15,000
+Mennään asiaan, jonka olen tehnyt aiemmin.
+
+30
+00:03:15,000 --> 00:03:20,000
+Jos painamme pakoa, huomaa, että kaikki nämä katoavat.
+
+31
+00:03:20,000 --> 00:03:24,000
+Nyt se on poissa.
+
+32
+00:03:24,000 --> 00:03:33,000
+Katsotaan, saanko sen takaisin.
+
+33
+00:03:33,000 --> 00:03:39,000
+Aion nyt skaalata sen kokoon, joka voidaan helposti nähdä.
+
+34
+00:03:39,000 --> 00:03:48,000
+Hankkiudun eroon tuosta syntaksista ja näytän sinulle aiemmin tekemäni muodonavaimen.
+
+35
+00:03:48,000 --> 00:03:55,000
+Avataan se MS Paintilla ja katsotaan miltä se todella näyttää.
+
+36
+00:03:55,000 --> 00:04:04,000
+Joten, tämä on muoto-avain, joka oli jonkinlainen määritelmä annetaan 'h' ja 'w' syntaksi.
+
+37
+00:04:04,000 --> 00:04:15,000
+Tärkeintä ei ole, että tämä muoto avain on hyödyllinen graafinen kuva juuri nyt. Ei ole.
+
+38
+00:04:15,000 --> 00:04:26,000
+Koko muotoavaimen tarkoitus on saada mukava kuva tiedostojärjestelmään, jonka avulla voit visuaalisesti tunnistaa muotoavaimen.
+
+39
+00:04:26,000 --> 00:04:28,000
+Tämä on koko syy siihen.
+
+40
+00:04:28,000 --> 00:04:31,000
+Nyt näytän, miten sitä käytetään.
+
+41
+00:04:31,000 --> 00:04:36,000
+Kun olet tuottanut muoto-avaimen tallentamalla yhden käyttäen syntaksi. (Muotoavaimet eivät ole pakollisia.)
+
+42
+00:04:36,000 --> 00:04:41,000
+Voit olla välittämättä heistä.
+
+43
+00:04:41,000 --> 00:04:52,000
+Muoto-avaimessa on erityinen syntaksi selvästi näkyvissä tiedoston nimessä.
+
+44
+00:04:52,000 --> 00:05:17,000
+Nyt kuvailen syntaksin. Se käyttää "h" ja "w" syntaksia.
+
+45
+00:05:17,000 --> 00:05:27,000
+Tämä kuvaa rivejä suorakulmiot, jotka jakavat saman korkeuden.
+
+46
+00:05:27,000 --> 00:05:51,000
+Muista olla poistamatta tätä syntaksia tiedostonimen lopusta, jos haluat nimetä tiedoston uudelleen.
+
+47
+00:05:51,000 --> 00:06:02,000
+Mukavaa tässä on se, että voit vain vetää tämän asian suoraan yhteen kirjainten, ja se asennetaan siihen paikkaan.
+
+48
+00:06:02,000 --> 00:06:06,000
+Minä valitsen n-kirjaimen.
+
+49
+00:06:06,000 --> 00:06:10,000
+Kirje "n" sisältää nyt tiedot, että muoto avain.
+
+50
+00:06:10,000 --> 00:06:23,000
+Sitten käytämme käärö pyörän hieman ja näemme, että kaikki tämä määritelty muoto avain on vedetty meille.
+
+51
+00:06:23,000 --> 00:06:32,000
+Olen tehnyt tämän etukäteen, joten voin helposti näyttää, että tämä sopii täydellisesti piirustukseen.
+
+52
+00:06:32,000 --> 00:06:45,000
+Mutta vain lyhyesti käyn läpi prosessin osoittaa jäljitys.
+
+53
+00:06:45,000 --> 00:07:01,000
+Syötämme syntaksin käsin. Käytän aikaa ja väliviivaa numerossa, mutta voit käyttää myös kirjaimia "h" ja "w.".
+
+54
+00:07:01,000 --> 00:07:04,000
+Valitsemme aluksi kaksi ensimmäistä numeroa: h10w10.
+
+55
+00:07:04,000 --> 00:07:08,000
+Tämä on vain siksi, että meillä on jotain nähtävää lähtökohtana.
+
+56
+00:07:08,000 --> 00:07:37,000
+Nyt voimme säätää ja lisätä "w" saada enemmän leveydet.
+
+57
+00:07:37,000 --> 00:07:45,000
+Meillä on siis määritelmät ja olemme onnistuneet jäljittämään ensimmäiset neljä kirjainta.
+
+58
+00:07:45,000 --> 00:07:51,000
+Jäljitin tämän jo etukäteen, joten jatketaan.
+
+59
+00:07:51,000 --> 00:07:55,000
+Tässä se on.
+
+60
+00:07:55,000 --> 00:08:10,000
+Jos olet onnistunut ja tehnyt tämän prosessin oman kuvan, seuraava askel on tallentaa se.
+
+61
+00:08:10,000 --> 00:08:15,000
+Käytät tuota nappia, jossa lukee tähtiarkki.
+
+62
+00:08:15,000 --> 00:08:18,000
+null
+
+63
+00:08:18,000 --> 00:08:25,000
+Kun napsautat sitä, tallennetaan erityinen tiedosto.
+
+64
+00:08:25,000 --> 00:08:30,000
+Sitten sinun täytyy vetää tiedosto takaisin ohjelman näytön.
+
+65
+00:08:30,000 --> 00:08:35,000
+Näytän tämän pian, mutta ensin kerron tallennetun tiedoston syntaksista.
+
+66
+00:08:35,000 --> 00:09:11,000
+Voimme nähdä, että meillä on sama syntaksi, joka oli tallennettu muodossa avain. (tiedoston nimen etuliite "TEMPL")
+
+67
+00:09:11,000 --> 00:09:13,000
+Katsotaan, mitä voimme tehdä.
+
+68
+00:09:13,000 --> 00:09:19,000
+Käytämme paeta, jotta meillä on mukava tyhjä näyttö.
+
+69
+00:09:19,000 --> 00:09:25,000
+Seuraavaksi vedän tämän mallin takaisin ohjelmaan.
+
+70
+00:09:25,000 --> 00:09:37,000
+Tämä voi tuntua hankalalta, mutta ei ole.
+
+71
+00:09:37,000 --> 00:09:47,000
+Jos haluamme nappeja, meidän on nyt valittava 6, 4 tai 2.
+
+72
+00:09:47,000 --> 00:09:52,000
+Tämä ei ole määrä painikkeita, vaan se on määrä painiketta, joka käytetään.
+
+73
+00:09:52,000 --> 00:10:12,000
+Kun leijumme hiirellä napin päällä, tämä on leijuntatila.
+
+74
+00:10:12,000 --> 00:10:15,000
+Kun klikkaamme alas, tämä on aktiivinen tila.
+
+75
+00:10:15,000 --> 00:10:17,000
+Kun nappia napsahti, se saa keskitetyn tilan.
+
+76
+00:10:17,000 --> 00:10:24,000
+Meillä on mahdollisuus tehdä kaikki kuusi, mikä antaa vain viisi käyttökelpoista valtiota.
+
+77
+00:10:24,000 --> 00:10:31,000
+Käytämme mieluummin joko 4, joka on ihanteellinen pöytätietokoneiden tai 2, joka riittää matkapuhelinten.
+
+78
+00:10:31,000 --> 00:10:35,000
+Annan nyt lyhyen kuvauksen olettaen 4 painiketta käytetään.
+
+79
+00:10:35,000 --> 00:11:01,000
+emäs
+
+80
+00:11:01,000 --> 00:11:02,000
+keskittyä
+
+81
+00:11:02,000 --> 00:11:03,000
+leiju
+
+82
+00:11:03,000 --> 00:11:05,000
+aktiivinen
+
+83
+00:11:05,000 --> 00:11:27,000
+Tämä on erittäin tärkeää tietää, jos et tunne HTML.
+
+84
+00:11:27,000 --> 00:11:32,000
+Jatketaan nyt prosessiamme.
+
+85
+00:11:32,000 --> 00:11:41,000
+Valitsen 4 painiketta klikkaamalla tätä.
+
+86
+00:11:41,000 --> 00:11:45,000
+Tallensimme taas tiedoston.
+
+87
+00:11:45,000 --> 00:11:55,000
+Yritetään avata se tiedosto lempitaideohjelmassamme.
+
+88
+00:11:55,000 --> 00:12:00,000
+Missä se on? Libre-Pixel.
+
+89
+00:12:00,000 --> 00:12:04,000
+Katsotaan, miltä tämä kansio näyttää.
+
+90
+00:12:04,000 --> 00:12:06,000
+Olen valmistellut sen aiemmin muuttamalla värit.
+
+91
+00:12:06,000 --> 00:12:18,000
+Täällä voimme myös nähdä, että on mahdollista leikata kuvan koko sen korkeus.
+
+92
+00:12:18,000 --> 00:12:27,000
+Se toimii vielä myöhemmin.
+
+93
+00:12:27,000 --> 00:12:37,000
+Tiedoston tallentaminen on nelinkertaistanut sen. Meillä on neljä edustustoa.
+
+94
+00:12:37,000 --> 00:12:53,000
+Tuon nyt takaisin ohjekuvamme näyttääkseni, minkä painikkeen tilan jokainen kuva edustaa.
+
+95
+00:12:53,000 --> 00:12:59,000
+Näin tiedämme, minkä valtion parissa työskentelemme, kun vaihdamme värejä tai piirrämme kuvia.
+
+96
+00:12:59,000 --> 00:13:13,000
+Nämä eivät johda vain yksi painike, vaan on juuri painikkeet, jotka olemme jäljittäneet käyttämällä suorakulmioita.
+
+97
+00:13:13,000 --> 00:13:32,000
+Tämä graafinen työ on jo tehty etukäteen, joten jatkan prosessiamme.
+
+98
+00:13:32,000 --> 00:13:49,000
+Nyt kun meillä on valmis kuva, näytän uudelleen syntaksin, jossa on etuliite "RAATI.".
+
+99
+00:13:49,000 --> 00:14:03,000
+Tämä painike on valmis ja voidaan vetää välittömästi.
+
+100
+00:14:03,000 --> 00:14:08,000
+Nyt näemme mitä tapahtuu, kun vedämme tämän valmiin nappitiedoston ohjelmaan.
+
+101
+00:14:08,000 --> 00:14:13,000
+Näyttää siltä, että jotain tapahtuu täällä vasemmassa yläkulmassa ruudun, ja sitten ulos tulee valmiit painikkeet.
+
+102
+00:14:13,000 --> 00:14:25,000
+Kokeillaan, jos voimme testata ne käyttämällä välilyöntiä.
+
+103
+00:14:25,000 --> 00:14:38,000
+Voimme nyt nähdä, että painikkeemme toimivat oikein, ja näyttävät täsmälleen piirtämämme grafiikka.
+
+104
+00:14:38,000 --> 00:14:45,000
+Tämä tuottamamme tiedosto voidaan käyttää ja käyttää uudelleen milloin tahansa.
+
+105
+00:14:45,000 --> 00:14:51,000
+Meillä on erittäin mukava, sinnikäs, templatointijärjestelmä käytössä.
+
+106
+00:14:51,000 --> 00:14:53,000
+Järjestelmä koostuu: muotoavaimesta (tiedoston nimi etuliite 'SHAPE');
+
+107
+00:14:53,000 --> 00:14:59,000
+Ensimmäinen malli, joka saa yhden kuvan (tiedoston nimi etuliite 'TEMPL');
+
+108
+00:14:59,000 --> 00:15:08,000
+ja valmis painike setti (tiedoston nimi etuliite 'RAEDY').
+
+109
+00:15:08,000 --> 00:15:15,000
+Voimme jopa kopioida tämän valmiin painikkeen tiedostojärjestelmässämme ja tehdä jonkinlaisia vaihtoehtoisia kuvia, ja se toimisi silti.
+
+110
+00:15:15,000 --> 00:15:26,000
+En ole varma toimiiko tämä. Kokeillaan.
+
+111
+00:15:26,000 --> 00:15:43,000
+Joten, voisit ottaa tuon ja vaihtaa sen pois, tehdä siitä eri värejä tai siirtää pieniä asioita.
+
+112
+00:15:43,000 --> 00:15:54,000
+Sinulla on hyvä painike, joka mahdollistaa kapasiteetin täällä, ja voit tehdä niin monta kuin haluat.
+
+113
+00:15:54,000 --> 00:15:59,000
+Täällä näet, että emme ole edes lähes täynnä tätä aluetta painikkeilla, mutta tietenkin jos ei loppuu tilaa, voit yksinkertaisesti tehdä toisen.
+
+114
+00:15:59,000 --> 00:16:19,000
+Yksi asia, että aion huomauttaa on, että se voi olla vaikea löytää syntaksin, joka sopii, kun painikkeet ovat hyvin lähellä yhdessä teidän piirustus.
+
+115
+00:16:19,000 --> 00:16:54,000
+Joten, helpottaa jäljittää, jättää enemmän tilaa kuvien väliin.
+
+116
+00:16:54,000 --> 00:17:24,000
+Käytän nyt z-näppäintä, jolla varmistetaan, etten muuta painikkeiden kokoa.
+
+117
+00:17:24,000 --> 00:17:33,000
+Teen siitä korkeamman. Käytän näppäimistön pikanäppäintä (z-tila: 'h').
+
+118
+00:17:33,000 --> 00:17:39,000
+Joten laitoin tämän Z-indeksi tilauksen päälle käyttämällä "h.".
+
+119
+00:17:39,000 --> 00:18:01,000
+Koska olen asettanut hiiren lisäyksen vastaamaan pikselikasvua minun upscaled piirustus, se on helppo yhdenmukaistaa kaiken.
+
+120
+00:18:01,000 --> 00:18:06,00
+Ohjelmassa on kaikki erilaiset asetukset, mutta en kata niitä täällä.
+
+121
+00:18:06,000 --> 00:18:14,00
+Ehkä vähän enemmän näin.
+
+122
+00:18:14,000 --> 00:18:19,000
+Aika lähellä.
+
+123
+00:18:19,000 --> 00:18:36,000
+Nyt käytän hiiren rullapyörää valitakseni tallennuksen tyypin välilehdestä IV-2.
+
+124
+00:18:36,000 --> 00:18:47,000
+Säästän katselun leveyskerrointa 1280.
+
+125
+00:18:47,000 --> 00:18:55,000
+Tämä muunnetaan automaattisesti.
+
+126
+00:18:55,000 --> 00:19:43,000
+Tallenna tiedosto näppäimistöltä: Käytä "muuta + s." Sen sijaan, vain avata tiedoston katseltavaksi: Käytä 'shift + enter'.
+
+127
+00:19:43,000 --> 00:19:48,000
+Aika hyvä.
+
+128
+00:19:48,000 --> 00:19:56,000
+Hyvin tehty.
+
+129
+00:19:56,000 --> 00:20:20,000
+Tutoriaali ohi.
+

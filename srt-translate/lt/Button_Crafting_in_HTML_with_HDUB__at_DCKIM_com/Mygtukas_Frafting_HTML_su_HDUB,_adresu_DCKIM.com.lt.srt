@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:09,000
+Šiandien mes ketiname kalbėti apie savo užsakymą mygtukai šios programos.
+
+2
+00:00:09,000 --> 00:00:16,000
+Čia pirmasis pamoka, kad aš darau, ir, tikiuosi, jums bus suprasti lengvai ir mėgautis.
+
+3
+00:00:16,000 --> 00:00:19,000
+Pažiūrėkime: "Informacija mygtukų meistriškumui".
+
+4
+00:00:21,000 --> 00:00:24,000
+Štai į ką mes žiūrime su šiuo pamoka.
+
+5
+00:00:24,000 --> 00:00:26,000
+Baikime.
+
+6
+00:00:26,000 --> 00:00:32,000
+Mes esame čia, programoje, ir mes iš karto matome, kad aš kažką įdėjau į šį langelį.
+
+7
+00:00:32,000 --> 00:00:38,000
+Čia pateikiamas aukštis ir plotis, tiesiog labai paprastas.
+
+8
+00:00:38,000 --> 00:00:50,000
+Mus tai suteikia didžiausią plotį ir aukštį, kuriuos galbūt galėtume panaudoti, ir tai yra parodyta tame dideliame stačiakampyje didžiąja raide "B".
+
+9
+00:00:50,000 --> 00:01:07,000
+Pirmasis žingsnis, kurį turime padaryti, kad galėtume atsekti savo pasirinktinį mygtuką, yra tai, kad mums reikia nutempti vaizdą nuo failų sistemos tiesiai į šią sritį, kurioje ji turi didelę raidę B.
+
+10
+00:01:07,000 --> 00:01:12,000
+Dabar mes ketiname nutempti savo paveikslą nuo failų sistemos čia, ir ten, kur matome raidę "B".
+
+11
+00:01:12,000 --> 00:01:20,000
+Dabar mes ketiname nutempti savo paveikslą nuo failų sistemos čia, ir ten, kur matome raidę "B".
+
+12
+00:01:20,000 --> 00:01:23,000
+Ten mes turime ir jis pasirodo ekrane.
+
+13
+00:01:23,000 --> 00:01:24,000
+Bėda, kurią matome, yra tai, kad ji atrodo per maža.
+
+14
+00:01:24,000 --> 00:01:26,000
+Ką mums daryti?
+
+15
+00:01:26,000 --> 00:01:37,000
+Mes turime perkelti savo pelės žymeklį virš šio regiono su didele raide "B", ir tada mes galime slinkti su mouse. Dabar matome, kad vyksta kažkas įdomaus.
+
+16
+00:01:37,000 --> 00:01:45,000
+Mes galime pritaikyti ekrano gido skalę.
+
+17
+00:01:45,000 --> 00:01:54,000
+Vos pasiekę 4, 3, 2, ir 1, matome, kad taikomas specialus didinimo faktorius.
+
+18
+00:01:54,000 --> 00:01:58,000
+Aš pastačiau tai į programą pikselių meno tikslais.
+
+19
+00:01:58,000 --> 00:02:03,000
+Taipogi, kai jūs grąžinsite mygtukus į programą, jie bus padidinti.
+
+20
+00:02:03,000 --> 00:02:07,000
+Nesi tokio dydžio, kokį matai juos piešdamas.
+
+21
+00:02:07,000 --> 00:02:16,000
+Jūs galite juos nupiešti tokiu mažu pikseliu, ir tada galite įtraukti juos į programą, ir jie staiga taps didesni.
+
+22
+00:02:16,000 --> 00:02:22,000
+Nes dėl šios priežasties, jūs gaunate tikrai gerą ekonomiką savo vaizdo ir savo mygtukų dydžio.
+
+23
+00:02:22,000 --> 00:02:31,000
+Jūsų mygtukas nėra per brangus kalbant apie tai, kiek kainuoja tranfering jį per internetą.
+
+24
+00:02:31,000 --> 00:02:41,000
+Štai ir mes. Čia yra 180 vienetų aukščio ir 100 vienetų pločio, bet šiuo metu mums tai nėra labai naudinga.
+
+25
+00:02:41,000 --> 00:02:45,000
+Dabar aš apibūdinsiu vieną iš pirmųjų dalykų, kuriuos jūs galite pamatyti: Čia šis mygtukas.
+
+26
+00:02:45,000 --> 00:02:54,000
+@ info: whatsthis.
+
+27
+00:02:54,000 --> 00:03:08,000
+NAME OF TRANSLATORS.
+
+28
+00:03:08,000 --> 00:03:12,000
+Nesirūpink dėl to.
+
+29
+00:03:12,000 --> 00:03:15,000
+Dabar pereikime prie to, ką anksčiau paruošiau.
+
+30
+00:03:15,000 --> 00:03:20,000
+Matote, kad visi šie dalykai išnyks.
+
+31
+00:03:20,000 --> 00:03:24,000
+Gerai, dabar viskas dingo.
+
+32
+00:03:24,000 --> 00:03:33,000
+Pažiūrėkim, ar galiu jį vėl įdėti.
+
+33
+00:03:33,000 --> 00:03:39,000
+Dabar aš jį padidinsiu iki tokio dydžio, kuris gali būti lengvai matomas.
+
+34
+00:03:39,000 --> 00:03:48,000
+Ten atsikratysiu tos mažytės sintaksės dalies, ir tada parodysiu jums anksčiau mano sukurtą formą.
+
+35
+00:03:48,000 --> 00:03:55,000
+Leiskite atidaryti MS Paint ir pamatyti, kaip jis tikrai atrodo.
+
+36
+00:03:55,000 --> 00:04:04,000
+Taigi, tai yra formos raktas, kuris turėjo tam tikrą apibrėžimą, pateiktą su "h" ir "w" sintakse.
+
+37
+00:04:04,000 --> 00:04:15,000
+Svarbiausia, ne tai, kad šis formos raktas yra naudingas grafinis vaizdas dabar. Tikrai ne.
+
+38
+00:04:15,000 --> 00:04:26,000
+Formos rakto visas tikslas yra turėti gražią nuotrauką savo failų sistemoje, leidžianti vizualiai nustatyti formos raktą.
+
+39
+00:04:26,000 --> 00:04:28,000
+Štai kodėl jis yra ten.
+
+40
+00:04:28,000 --> 00:04:31,000
+Dabar parodysiu, kaip juo naudotis.
+
+41
+00:04:31,000 --> 00:04:36,000
+Vos tik pagaminsite formos raktą, išsaugosite jį sintaksės pagalba. (Formos raktai nėra privalomi)
+
+42
+00:04:36,000 --> 00:04:41,000
+Jūs galite ignoruoti juos.
+
+43
+00:04:41,000 --> 00:04:52,000
+Formos raktas turi specialią sintaksę, aiškiai matomą failo pavadinime.
+
+44
+00:04:52,000 --> 00:05:17,000
+Dabar aš apibūdinsiu sintaksą. Čia naudojama "h" ir "w" sintaksė.
+
+45
+00:05:17,000 --> 00:05:27,000
+Čia aprašomos to paties aukščio stačiakampių eilutės.
+
+46
+00:05:27,000 --> 00:05:51,000
+Tiesiog įsitikinkite, kad ne pašalinti šią sintaksę iš savo failo pavadinimo pabaigoje, jei norite pervadinti failą.
+
+47
+00:05:51,000 --> 00:06:02,000
+Gražus dalykas, kad jūs galite tiesiog vilkite šį daiktą tiesiai į vieną iš raidžių, ir jis bus įdiegtas toje vietoje.
+
+48
+00:06:02,000 --> 00:06:06,000
+Renkuosi laišką "n".
+
+49
+00:06:06,000 --> 00:06:10,000
+Laiške "n" dabar yra šios formos rakto informacija.
+
+50
+00:06:10,000 --> 00:06:23,000
+Tada mes naudojame slinkties ratą šiek tiek ir matome, kad visas šis apibrėžtas formos raktas buvo sudarytas už mus.
+
+51
+00:06:23,000 --> 00:06:32,000
+Aš padariau šį iš anksto, ir todėl galiu lengvai jums parodyti, kad šis linijos puikiai su piešiniu.
+
+52
+00:06:32,000 --> 00:06:45,000
+Vos trumpai kalbėsiu, kad parodyčiau sekimą.
+
+53
+00:06:45,000 --> 00:07:01,000
+Mes rankiniu būdu įvesime sintaksę. Aš naudoju laikotarpį ir hiphen ant skaičių kilimėlis, bet, taip pat galite naudoti raides "h" ir "w".
+
+54
+00:07:01,000 --> 00:07:04,000
+Pirmiausia pasirinksime pirmuosius du skaičius: "h10W10".
+
+55
+00:07:04,000 --> 00:07:08,000
+Tiesiog tam, kad turėtume kai ką apsvarstyti kaip išeities tašką.
+
+56
+00:07:08,000 --> 00:07:37,000
+Dabar mes galime pritaikyti ir pridėti "w" gauti daugiau pločio.
+
+57
+00:07:37,000 --> 00:07:45,000
+Taigi, mes turime apibrėžtis ir sėkmingai atsekti pirmuosius keturis laiškus.
+
+58
+00:07:45,000 --> 00:07:51,000
+Aš jau radau tai iš anksto, todėl judam toliau.
+
+59
+00:07:51,000 --> 00:07:55,000
+Čia viskas baigta.
+
+60
+00:07:55,000 --> 00:08:10,000
+@ info: whatsthis.
+
+61
+00:08:10,000 --> 00:08:15,000
+Tu naudosi tą mygtuką, kuriame parašyta žvaigždė.
+
+62
+00:08:15,000 --> 00:08:18,000
+null
+
+63
+00:08:18,000 --> 00:08:25,000
+Spaudžiant jį, bus išsaugotas specialus failas.
+
+64
+00:08:25,000 --> 00:08:30,000
+Jūs turite vilkite tą failą atgal į programos ekraną.
+
+65
+00:08:30,000 --> 00:08:35,000
+Greitai tai parodysiu, bet pirmiausia papasakosiu apie ką tik išgelbėto failo sintaksę.
+
+66
+00:08:35,000 --> 00:09:11,000
+Mes matome, kad mes turime tą patį sintaksę, kuri buvo saugoma formos rakte. (failo pavadinimo priešdėlis 'TEMPL')
+
+67
+00:09:11,000 --> 00:09:13,000
+Pažiūrėkim, ką galime padaryti.
+
+68
+00:09:13,000 --> 00:09:19,000
+Mes naudojame pabėgti, kad mes turime gražus tuščias ekranas.
+
+69
+00:09:19,000 --> 00:09:25,000
+Aš vėliau vilkiu šį šabloną atgal į programą.
+
+70
+00:09:25,000 --> 00:09:37,000
+Gal ir sudėtinga, bet taip nėra.
+
+71
+00:09:37,000 --> 00:09:47,000
+Norite mygtukų, dabar turime pasirinkti tarp 6, 4, arba 2.
+
+72
+00:09:47,000 --> 00:09:52,000
+Čia ne mygtukų skaičius, bet, vietoje to, tai mygtukų būsenų, kurios bus naudojamos, skaičius.
+
+73
+00:09:52,000 --> 00:10:12,000
+Kylant su pele virš mygtuko, tai yra buvimo būsena.
+
+74
+00:10:12,000 --> 00:10:15,000
+Kuomet paspausime žemyn, tai yra aktyvi būsena.
+
+75
+00:10:15,000 --> 00:10:17,000
+O kai mygtukas spragtelėjo, jis tampa susikaupęs.
+
+76
+00:10:17,000 --> 00:10:24,000
+Mes turime pasirinkimą daryti visus 6, kuris suteikia tik 5 naudotinas valstybes.
+
+77
+00:10:24,000 --> 00:10:31,000
+Mes norime naudoti arba 4, kuris yra idealus stalinių kompiuterių arba 2, kuris yra pakankamai mobiliųjų telefonų.
+
+78
+00:10:31,000 --> 00:10:35,000
+Dabar pateiksiu trumpą aprašymą, jei bus naudojamos 4 mygtukų būsenos.
+
+79
+00:10:35,000 --> 00:11:01,000
+bazė
+
+80
+00:11:01,000 --> 00:11:02,000
+fokusavimas
+
+81
+00:11:02,000 --> 00:11:03,000
+hover
+
+82
+00:11:03,000 --> 00:11:05,000
+aktyvus
+
+83
+00:11:05,000 --> 00:11:27,000
+Labai svarbu žinoti, ar nepažįstate HTML.
+
+84
+00:11:27,000 --> 00:11:32,000
+Tęskime savo procesą.
+
+85
+00:11:32,000 --> 00:11:41,000
+Aš pasirinksiu 4 mygtukus, paspaudę tai.
+
+86
+00:11:41,000 --> 00:11:45,000
+Dabar mes vėl išsaugojome failą.
+
+87
+00:11:45,000 --> 00:11:55,000
+Pažiūrėkim, ar galime atverti tą failą mūsų mėgstamiausioje meno programoje.
+
+88
+00:11:55,000 --> 00:12:00,000
+Kur jis? Libre- Pixel.
+
+89
+00:12:00,000 --> 00:12:04,000
+Pamatysime, kaip atrodo šis failas.
+
+90
+00:12:04,000 --> 00:12:06,000
+Paruošiau tai anksčiau pakeisdamas spalvas.
+
+91
+00:12:06,000 --> 00:12:18,000
+Čia taip pat galima matyti, kad galima pasėti jo aukščio vaizdo dydį.
+
+92
+00:12:18,000 --> 00:12:27,000
+Lieka dirbti vėliau.
+
+93
+00:12:27,000 --> 00:12:37,000
+Matom, kad išsaugojus failą jis išaugo keturis kartus, ir dabar turime keturis pareiškimus.
+
+94
+00:12:37,000 --> 00:12:53,000
+Dabar aš atnešiu mūsų gido vaizdą, kad parodyčiau, kuris mygtukas rodo, kuris kiekvienas vaizdas atstovauja.
+
+95
+00:12:53,000 --> 00:12:59,000
+Čia mes žinome, kurios valstybės mes dirbame, kai mes pakeisti spalvas arba atkreipti savo vaizdus.
+
+96
+00:12:59,000 --> 00:13:13,000
+Čia bus ne tik vienas mygtukas, bet bus tiksliai mygtukai, kuriuos mes atsekti naudojant stačiakampį.
+
+97
+00:13:13,000 --> 00:13:32,000
+Grafinis darbas jau baigtas iš anksto, todėl tęsiu mūsų procesą.
+
+98
+00:13:32,000 --> 00:13:49,000
+Dabar, kai turime baigtą vaizdą, vėl parodysiu sintaksę, kuri turi priešdėlį "RUOŠIMAS".
+
+99
+00:13:49,000 --> 00:14:03,000
+NAME OF TRANSLATORS.
+
+100
+00:14:03,000 --> 00:14:08,000
+Dabar mes pamatysime, kas nutinka, kai mes vilkite šį užbaigtą mygtuką failą į programą.
+
+101
+00:14:08,000 --> 00:14:13,000
+Atrodo, kad kažkas vyksta čia viršutiniame kairiajame ekrano kampe, ir tada išeina jūsų baigti mygtukai.
+
+102
+00:14:13,000 --> 00:14:25,000
+Ten jie, ir pabandykime, jei mes galime išbandyti juos naudojant tarpo, ir laikyti jį žemyn.
+
+103
+00:14:25,000 --> 00:14:38,000
+Dabar galime matyti, kad mūsų mygtukai veikia tinkamai, ir atrodo kaip grafika, kad mes pieštas.
+
+104
+00:14:38,000 --> 00:14:45,000
+Šį mūsų sukurtą failą bet kuriuo metu galima naudoti ir pakartotinai naudoti.
+
+105
+00:14:45,000 --> 00:14:51,000
+Mes turime labai gražią, patvarią, tempančią sistemą.
+
+106
+00:14:51,000 --> 00:14:53,000
+Sistemą sudaro: Formos raktas (failo pavadinimas priešdėlis 'ŠAPE');
+
+107
+00:14:53,000 --> 00:14:59,000
+Pirmasis šablonas, kuris gauna vieną atvaizdą (failo pavadinimas priešdėlis 'TEMPL');
+
+108
+00:14:59,000 --> 00:15:08,000
+ir gatavo mygtuko rinkinys (failo pavadinimas priešdėlis 'RUOŠIMAS').
+
+109
+00:15:08,000 --> 00:15:15,000
+Mes netgi galime nukopijuoti šį užbaigtą mygtuką į savo failų sistemą ir padaryti kažkokį kitą vaizdą, ir jis vis tiek veiktų.
+
+110
+00:15:15,000 --> 00:15:26,000
+Aš nesu tikras, ar tai veikia. Pamėginkim.
+
+111
+00:15:26,000 --> 00:15:43,000
+Jūs galite pasiimti tą ir pakeisti jį, kad jis skirtingų spalvų arba juda mažų dalykų aplink.
+
+112
+00:15:43,000 --> 00:15:54,000
+Jūs turite gerą mygtuką, kad pajėgumus čia, ir Jūs galite padaryti, kiek norite.
+
+113
+00:15:54,000 --> 00:15:59,000
+Čia Jūs galite pamatyti, kad mes net ne beveik užpildyti šią sritį su mygtukais, bet, žinoma, jei jūs iš kosmoso, jūs tiesiog padaryti kitą.
+
+114
+00:15:59,000 --> 00:16:19,000
+Noriu atkreipti dėmesį, kad gali būti sunku rasti sintaksę, kuri tinka, kai jūsų mygtukai yra labai arti kartu piešinį.
+
+115
+00:16:19,000 --> 00:16:54,000
+NAME OF TRANSLATORS.
+
+116
+00:16:54,000 --> 00:17:24,000
+Dabar naudosiu "z" raktą, kuris užtikrins, kad nepakeisiu mygtukų dydžio.
+
+117
+00:17:24,000 --> 00:17:33,000
+Aš padarysiu, kad vienas didesnis, kad kiti, pasirinkdami iš to meniu. Aš naudoju klaviatūros klavišą (Z- mode: 'h').
+
+118
+00:17:33,000 --> 00:17:39,000
+Aš uždėjau tai į viršų, naudojant "h".
+
+119
+00:17:39,000 --> 00:18:01,000
+Nes aš nustatyti pelės prieaugį, kad atitiktų pikselių prieaugį savo padidintą piešinį, tai lengva suderinti viską.
+
+120
+00:18:01,000 --> 00:18:06,00
+Programoje yra visi skirtingi nustatymai, bet aš jų čia neapdengsiu.
+
+121
+00:18:06,000 --> 00:18:14,00
+Gal ir daugiau.
+
+122
+00:18:14,000 --> 00:18:19,000
+Čia gana arti.
+
+123
+00:18:19,000 --> 00:18:36,000
+Dabar naudosiu pelės slinkties ratą, kad pasirinkčiau įrašymo tipą nuo IV2 skirtuko.
+
+124
+00:18:36,000 --> 00:18:47,000
+Aš taupau ne peržiūros pločio koeficientas 1280.
+
+125
+00:18:47,000 --> 00:18:55,000
+@ info: whatsthis.
+
+126
+00:18:55,000 --> 00:19:43,000
+Failą įrašyti iš klaviatūros: naudoti 'Shift + s'. Vietoj to, atverti tik failą peržiūrai: Naudokite 'Shift + Enter'.
+
+127
+00:19:43,000 --> 00:19:48,000
+Gerai.
+
+128
+00:19:48,000 --> 00:19:56,000
+Gerai padirbėta.
+
+129
+00:19:56,000 --> 00:20:20,000
+Tutorialas baigtas.
+

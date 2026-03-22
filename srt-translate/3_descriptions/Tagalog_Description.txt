@@ -1,0 +1,5 @@
+Dito ay natututo tayo ng isang paraan ng pagguhit ng ating sariling kaugalian na mga butones na HTML sa pamamagitan ng pagtalunton sa mga ito mula sa iisang larawan. Una muna'y kailangan mong gumuhit ng iyong larawan, at pagkatapos ay sundan mo ako, habang kami ang HTML Drafting Program upang makuha ang ganap na maaaring gamiting mga buton. Ang mga butones na ito ay maaaring gamiting muli saanman, at lalabas na kasama ng lahat ng may markang mga template na binibigyang - kahulugan mo sa landas ng pagtatayo.
+
+Mas madali ito kaysa sa tunog! Mga ilang klik lamang ang layo mo, at ang karamihan ng iyong trabaho ay ang pagguhit ng kinaugaliang gawang - sining, hindi ang pagsasagawa ng programang ito. Sumunod, at gawin itong unang pagtatangka.
+
+Tandaan, ang iyong ginagawa ay maaaring baguhin at pansansinukob. Iyan ang pakinabang ng paggawa ng iyong sariling mga template sa tunay na makabagong pabrikang ito.

@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:09,000
+Sa lá atá inniu táimid ag dul a bheith ag caint faoi a dhéanamh do cnaipí saincheaptha féin don chlár seo.
+
+2
+00:00:09,000 --> 00:00:16,000
+Is é seo an chéad teagaisc go bhfuil mé ag déanamh agus tá súil agam go mbeidh tú a thuiscint go héasca agus taitneamh a bhaint as é.
+
+3
+00:00:16,000 --> 00:00:19,000
+A ligean ar a fheiceáil anseo: 'Faisnéis maidir le ceardaíocht cnaipe'.
+
+4
+00:00:21,000 --> 00:00:24,000
+Mar sin, tá go leor i bhfad cad tá muid ag lorg ar leis an teagaisc.
+
+5
+00:00:24,000 --> 00:00:26,000
+Mar sin, a ligean ar a fháil ceart isteach é.
+
+6
+00:00:26,000 --> 00:00:32,000
+Táimid thar anseo sa chlár, agus is féidir linn a fheiceáil ar dheis ar shiúl go bhfuil mé rud éigin a chur isteach sa bhosca seo anseo.
+
+7
+00:00:32,000 --> 00:00:38,000
+Tá sé ag tabhairt dúinn airde agus ainmniú leithead, ach ceann an-simplí.
+
+8
+00:00:38,000 --> 00:00:50,000
+Tugann sin dúinn an leithead is mó agus airde a d'fhéadfadh muid a úsáid, b'fhéidir, agus tá sé léirithe taobh istigh den dronuilleog mór ann leis an litir mór 'B'.
+
+9
+00:00:50,000 --> 00:01:07,000
+Is é an chéad chéim gur gá dúinn a dhéanamh ionas gur féidir linn a rianú ár n-cnaipe saincheaptha go bhfuil gá againn a tharraingt íomhá as an gcóras comhaid go díreach isteach ar an réimse seo áit a bhfuil sé an litir mór 'B'.
+
+10
+00:01:07,000 --> 00:01:12,000
+Táimid ag dul anois a tharraingt thar ár n-íomhá as an gcóras comhad thar anseo, agus go dtí an áit a fheicimid an litir 'B'.
+
+11
+00:01:12,000 --> 00:01:20,000
+Táimid ag dul anois a tharraingt thar ár n-íomhá as an gcóras comhad thar anseo, agus go dtí an áit a fheicimid an litir 'B'.
+
+12
+00:01:20,000 --> 00:01:23,000
+Agus tá muid é agus léiríonn sé suas ann ar an scáileán.
+
+13
+00:01:23,000 --> 00:01:24,000
+Is é an fhadhb is féidir linn a fheiceáil gur cosúil sé ró-bheag.
+
+14
+00:01:24,000 --> 00:01:26,000
+Cad ba cheart dúinn a dhéanamh?
+
+15
+00:01:26,000 --> 00:01:37,000
+Ní mór dúinn bogadh ár cúrsóir luch thar barr an réigiúin sin leis an litir mór 'B' agus is féidir linn a scrollaigh ansin leis an roth luch. Anois feicimid go bhfuil rud éigin suimiúil ag tarlú.
+
+16
+00:01:37,000 --> 00:01:45,000
+Táimid in ann a choigeartú an scála ar threoir scáileán.
+
+17
+00:01:45,000 --> 00:01:54,000
+Nuair a scrollaigh muid síos go dtí 4, 3, 2, agus 1, feicimid go bhfuil fachtóir upscaling speisialta i bhfeidhm.
+
+18
+00:01:54,000 --> 00:01:58,000
+Thóg mé go sa chlár chun críche ealaín picteilín.
+
+19
+00:01:58,000 --> 00:02:03,000
+Mar sin, nuair a thugann tú na cnaipí ar ais isteach sa chlár beidh siad a scála suas i méid.
+
+20
+00:02:03,000 --> 00:02:07,000
+Ní bheidh siad an méid a fheiceann tú agus tú ag tarraingt orthu.
+
+21
+00:02:07,000 --> 00:02:16,000
+Mar sin, is féidir leat iad a tharraingt ag an méid picteilín beag agus ansin is féidir leat iad a thabhairt isteach sa chlár agus beidh siad níos mó go tobann.
+
+22
+00:02:16,000 --> 00:02:22,000
+Mar gheall ar an gcúis, tá tú ag fáil geilleagar i ndáiríre maith ar an méid de do íomhá agus do cnaipí.
+
+23
+00:02:22,000 --> 00:02:31,000
+Mar sin, nach bhfuil do cnaipe ró-chostasach i dtéarmaí cé mhéad costais sé chun tranfering sé tríd an idirlíon.
+
+24
+00:02:31,000 --> 00:02:41,000
+Mar sin, ní mór dúinn é. Tá an ceann seo anseo 180 aonad ar airde agus 100 aonad leithead, ach níl sé úsáideach go háirithe dúinn faoi láthair.
+
+25
+00:02:41,000 --> 00:02:45,000
+Anois beidh mé cur síos ar cheann de na chéad rudaí a d'fhéadfá a fheiceáil anseo: Tá sé an cnaipe seo a shábháil.
+
+26
+00:02:45,000 --> 00:02:54,000
+Má bhí muid chun cliceáil ar an cnaipe a shábháil, cad a tharlóidh go bhfuil muid ag dul a shábháil eochair cruth.
+
+27
+00:02:54,000 --> 00:03:08,000
+Agus má bhí muid chun cliceáil ar an gceann eile anseo, marcáilte bileog réalta, bheadh teimpléad amháin a bhfuil ionadaíocht ag an líníocht a shábháil.
+
+28
+00:03:08,000 --> 00:03:12,000
+Ná bíodh imní ort i bhfad ró faoi sin.
+
+29
+00:03:12,000 --> 00:03:15,000
+Anois, téigh go dtí rud éigin a d'ullmhaigh mé níos luaithe.
+
+30
+00:03:15,000 --> 00:03:20,000
+Má táimid ag brú éalú, faoi deara go mbeidh gach ceann de na rudaí seo céimnithe ar shiúl.
+
+31
+00:03:20,000 --> 00:03:24,000
+Okay, mar sin anois tá sé go léir imithe.
+
+32
+00:03:24,000 --> 00:03:33,000
+Mar sin, a ligean anois a fheiceáil más féidir liom é a chur ar ais i arís.
+
+33
+00:03:33,000 --> 00:03:39,000
+Beidh mé ag scála anois é go dtí méid is féidir a fheiceáil go héasca.
+
+34
+00:03:39,000 --> 00:03:48,000
+Beidh mé ag fáil réidh leis an píosa beag de syntax ann, agus ansin beidh mé a thaispeáint duit eochair cruth go bhfuil déanta agam níos luaithe.
+
+35
+00:03:48,000 --> 00:03:55,000
+A ligean ar oscailt sé suas i MS Paint agus a fheiceáil cad a bhreathnaíonn sé i ndáiríre cosúil.
+
+36
+00:03:55,000 --> 00:04:04,000
+Mar sin, tá sé seo ina eochair cruth a raibh roinnt sainmhíniú a tugadh leis an 'h' agus 'w' syntax.
+
+37
+00:04:04,000 --> 00:04:15,000
+Níl an chuid thábhachtach go bhfuil an eochair cruth seo íomhá grafach úsáideach anois. Níl sé.
+
+38
+00:04:15,000 --> 00:04:26,000
+Is é cuspóir iomlán an eochair cruth go bhfuil pictiúr deas i do chóras comhad, ag ligean duit a aithint amhairc an eochair cruth.
+
+39
+00:04:26,000 --> 00:04:28,000
+Is é sin an chúis ar fad go bhfuil sé ann.
+
+40
+00:04:28,000 --> 00:04:31,000
+Anois beidh mé a thaispeáint conas é a úsáid.
+
+41
+00:04:31,000 --> 00:04:36,000
+Nuair a bheidh tú a tháirgtear eochair cruth trí shábháil amháin ag baint úsáide as an syntax. (Níl na heochracha cruth éigeantach.)
+
+42
+00:04:36,000 --> 00:04:41,000
+Is féidir leat neamhaird a dhéanamh orthu.
+
+43
+00:04:41,000 --> 00:04:52,000
+Tá an eochair cruth syntax speisialta le feiceáil go soiléir in ainm an chomhaid.
+
+44
+00:04:52,000 --> 00:05:17,000
+Anois beidh mé cur síos ar an syntax. Úsáideann sé an 'h' agus 'w' syntax.
+
+45
+00:05:17,000 --> 00:05:27,000
+Seo cur síos sraitheanna de dronuilleoga a roinnt ar an airde céanna.
+
+46
+00:05:27,000 --> 00:05:51,000
+Just a bheith cinnte gan a bhaint seo syntax ó dheireadh d'ainm comhaid más mian leat a athainmniú an comhad.
+
+47
+00:05:51,000 --> 00:06:02,000
+Is é an rud deas faoi seo gur féidir leat an rud seo a tharraingt go díreach isteach ar cheann de na litreacha, agus beidh sé suiteáilte sa suíomh sin.
+
+48
+00:06:02,000 --> 00:06:06,000
+Tá mé ag roghnú an litir 'n'.
+
+49
+00:06:06,000 --> 00:06:10,000
+Tá an t-eolas don eochair cruth sin sa litir 'n' anois.
+
+50
+00:06:10,000 --> 00:06:23,000
+Ansin, bainimid úsáid as an roth scrollbharra le beagán agus feicimid go bhfuil gach ceann den eochair cruth sainithe seo tarraingthe i dúinn.
+
+51
+00:06:23,000 --> 00:06:32,000
+Rinne mé an ceann seo roimh ré, agus mar sin is féidir liom a thaispeáint go héasca duit go bhfuil na línte seo suas go foirfe leis an líníocht.
+
+52
+00:06:32,000 --> 00:06:45,000
+Ach, ach go hachomair beidh mé ag dul tríd an bpróiseas a léiriú rianú.
+
+53
+00:06:45,000 --> 00:07:01,000
+Déanfaimid dul isteach de láimh ar an syntax. Úsáidfidh mé tréimhse agus hyphen ar an eochaircheap uimhir, ach, is féidir leat na litreacha 'h' agus 'w' a úsáid freisin.
+
+54
+00:07:01,000 --> 00:07:04,000
+Chun tús a chur, beidh muid ag piocadh an chéad dá uimhir: 'h10w10'.
+
+55
+00:07:04,000 --> 00:07:08,000
+Tá sé seo ach ionas go mbeidh muid rud éigin chun breathnú ar mar phointe tosaigh.
+
+56
+00:07:08,000 --> 00:07:37,000
+Anois is féidir linn a choigeartú agus a chur 'w' a fháil leithead níos mó.
+
+57
+00:07:37,000 --> 00:07:45,000
+Mar sin, ní mór dúinn na sainmhínithe agus a rianú go rathúil an chéad cheithre litreacha.
+
+58
+00:07:45,000 --> 00:07:51,000
+Mé rianú cheana féin seo amach roimh ré, mar sin a ligean ar bogadh díreach chomh maith.
+
+59
+00:07:51,000 --> 00:07:55,000
+Mar sin, anseo tá sé críochnaithe.
+
+60
+00:07:55,000 --> 00:08:10,000
+Má tá tú rathúil agus críochnaithe an próiseas do do íomhá féin, is é an chéad chéim eile a shábháil.
+
+61
+00:08:10,000 --> 00:08:15,000
+Úsáidfidh tú an cnaipe sin ceart ann a deir bileog réalta.
+
+62
+00:08:15,000 --> 00:08:18,000
+null
+
+63
+00:08:18,000 --> 00:08:25,000
+Nuair a chliceálann tú é, beidh comhad speisialta a shábháil.
+
+64
+00:08:25,000 --> 00:08:30,000
+Ní mór duit a tharraingt ansin go comhad ar ais ar an scáileán clár.
+
+65
+00:08:30,000 --> 00:08:35,000
+Beidh mé léiríonn tú seo go luath, ach ar dtús beidh mé ag insint faoi na syntax an comhad a bhfuil ach a shábháil anois.
+
+66
+00:08:35,000 --> 00:09:11,000
+Is féidir linn a fheiceáil go bhfuil muid ar an syntax céanna a bhí stóráilte sa eochair cruth. (uimhir ainm comhaid 'TEMPL')
+
+67
+00:09:11,000 --> 00:09:13,000
+Mar sin, a ligean ar a fheiceáil cad is féidir linn a dhéanamh.
+
+68
+00:09:13,000 --> 00:09:19,000
+Bainimid úsáid as éalú ionas go mbeidh scáileán bán deas againn.
+
+69
+00:09:19,000 --> 00:09:25,000
+Beidh mé tarraing seo chugainn an teimpléad ar ais isteach sa chlár.
+
+70
+00:09:25,000 --> 00:09:37,000
+D'fhéadfadh sé seo cosúil tricky, ach nach bhfuil sé.
+
+71
+00:09:37,000 --> 00:09:47,000
+Más mian linn cnaipí, ní mór dúinn a roghnú anois idir 6, 4, nó 2.
+
+72
+00:09:47,000 --> 00:09:52,000
+Ní hé seo an líon cnaipí ach, in áit, is é an líon stát cnaipe a bheidh in úsáid.
+
+73
+00:09:52,000 --> 00:10:12,000
+Nuair a théann muid leis an luch thar an cnaipe, is é seo an stát hover.
+
+74
+00:10:12,000 --> 00:10:15,000
+Nuair a chliceálann muid síos, is é seo an stát gníomhach.
+
+75
+00:10:15,000 --> 00:10:17,000
+Agus nuair a chliceáil an cnaipe, faigheann sé ansin an stát dírithe.
+
+76
+00:10:17,000 --> 00:10:24,000
+Tá an rogha a dhéanamh go léir 6, a thugann ach 5 stáit inúsáidte.
+
+77
+00:10:24,000 --> 00:10:31,000
+Is fearr linn a úsáid 4 atá oiriúnach do ríomhairí deisce nó 2 atá go leor le haghaidh fóin phóca.
+
+78
+00:10:31,000 --> 00:10:35,000
+Beidh mé a thabhairt anois cur síos gairid ag glacadh 4 stáit cnaipe a úsáidtear.
+
+79
+00:10:35,000 --> 00:11:01,000
+bonn
+
+80
+00:11:01,000 --> 00:11:02,000
+fócas
+
+81
+00:11:02,000 --> 00:11:03,000
+hover
+
+82
+00:11:03,000 --> 00:11:05,000
+gníomhach
+
+83
+00:11:05,000 --> 00:11:27,000
+Tá sé sin an-tábhachtach a fhios faoi más rud é nach bhfuil tú eolach ar HTML.
+
+84
+00:11:27,000 --> 00:11:32,000
+A ligean ar aghaidh anois lenár bpróiseas.
+
+85
+00:11:32,000 --> 00:11:41,000
+Beidh mé a roghnú na 4 stáit cnaipe trí chliceáil seo.
+
+86
+00:11:41,000 --> 00:11:45,000
+Anois ní mór dúinn comhad a shábháil arís.
+
+87
+00:11:45,000 --> 00:11:55,000
+A ligean ar a fheiceáil más féidir linn a oscailt go comhad in ár gclár ealaíne is fearr leat.
+
+88
+00:11:55,000 --> 00:12:00,000
+Cá bhfuil sé? Libre-Pixel.
+
+89
+00:12:00,000 --> 00:12:04,000
+Feicfidh muid cad a bhreathnaíonn an comhad seo cosúil.
+
+90
+00:12:04,000 --> 00:12:06,000
+D'ullmhaigh mé é níos luaithe trí na colorations a athrú.
+
+91
+00:12:06,000 --> 00:12:18,000
+Anseo is féidir linn a fheiceáil freisin go bhfuil sé indéanta a barr an méid an íomhá i sé ar airde.
+
+92
+00:12:18,000 --> 00:12:27,000
+Oibreoidh sé fós ina dhiaidh sin.
+
+93
+00:12:27,000 --> 00:12:37,000
+Is féidir linn a fheiceáil ar an shábháil ar an comhad quadrupled é, agus tá muid anois ceithre uiríll.
+
+94
+00:12:37,000 --> 00:12:53,000
+Beidh mé a thabhairt ar ais anois ár n-íomhá treoir a thaispeáint a léiríonn an cnaipe stáit gach íomhá.
+
+95
+00:12:53,000 --> 00:12:59,000
+Ar an mbealach seo tá a fhios againn a bhfuil muid ag obair ar nuair a athraíonn muid na dathanna nó a tharraingt ar ár n-íomhánna.
+
+96
+00:12:59,000 --> 00:13:13,000
+Ní bheidh siad mar thoradh ar ach cnaipe amháin amháin, ach beidh a bheith ina ionad sin go díreach na cnaipí atá againn rianú amach ag baint úsáide as na dronuilleoga.
+
+97
+00:13:13,000 --> 00:13:32,000
+Tá an obair grafach curtha i gcrích cheana féin roimh ré, agus mar sin, beidh mé ar aghaidh lenár bpróiseas.
+
+98
+00:13:32,000 --> 00:13:49,000
+Mar sin, anois go bhfuil íomhá críochnaithe againn, taispeánfaidh mé an chomhréir arís, a bhfuil an réimír 'READY' aige.
+
+99
+00:13:49,000 --> 00:14:03,000
+Tá an cnaipe críochnaithe agus is féidir é a dragged i láithreach.
+
+100
+00:14:03,000 --> 00:14:08,000
+Anois beidh muid a fheiceáil cad a tharlaíonn nuair a tharraingt muid an comhad cnaipe críochnaithe isteach sa chlár.
+
+101
+00:14:08,000 --> 00:14:13,000
+Breathnaíonn sé cosúil go bhfuil rud éigin ag tarlú suas os cionn anseo sa chúinne barr ar chlé ar ár scáileán, agus ansin amach a thagann do cnaipí críochnaithe.
+
+102
+00:14:13,000 --> 00:14:25,000
+Tá siad, agus a ligean ar iarracht ach más féidir linn iad a thástáil amach ag baint úsáide as an spacebar, agus a bhfuil sé síos.
+
+103
+00:14:25,000 --> 00:14:38,000
+Is féidir linn a fheiceáil anois go bhfeidhmíonn ár cnaipí i gceart, agus breathnú go díreach cosúil leis na grafaicí a tharraing muid.
+
+104
+00:14:38,000 --> 00:14:45,000
+Is féidir an comhad a bhfuil a tháirgtear againn a úsáid agus a athúsáid ag am ar bith.
+
+105
+00:14:45,000 --> 00:14:51,000
+Tá córas an-deas, leanúnach, templating i bhfeidhm.
+
+106
+00:14:51,000 --> 00:14:53,000
+Tá an córas comhdhéanta de: A eochair cruth (ainm comhaid réimír 'SHAPE');
+
+107
+00:14:53,000 --> 00:14:59,000
+An chéad teimpléad, a fhaigheann íomhá amháin (folaíonn ainm comhaid 'TEMPL');
+
+108
+00:14:59,000 --> 00:15:08,000
+agus an leagan cnaipe críochnaithe (fomhír ainm comhaid 'READY').
+
+109
+00:15:08,000 --> 00:15:15,000
+Is féidir linn a chóipeáil fiú an cnaipe críochnaithe in ár gcóras comhaid agus a dhéanamh ar chineál éigin de imagery malartach, agus bheadh sé ag obair go fóill.
+
+110
+00:15:15,000 --> 00:15:26,000
+Níl mé cinnte má oibríonn sé seo. Déanfaimid iarracht é.
+
+111
+00:15:26,000 --> 00:15:43,000
+Mar sin, d'fhéadfaí tú a chur go ceann ann, agus é a athrú amach, rud a chiallaíonn sé dathanna éagsúla nó rudaí beag ag gluaiseacht timpeall.
+
+112
+00:15:43,000 --> 00:15:54,000
+Tá tú cumas a dhéanamh cnaipe maith ar fáil anseo, agus is féidir leat a dhéanamh an oiread agus is mian leat.
+
+113
+00:15:54,000 --> 00:15:59,000
+Anseo is féidir leat a fheiceáil nach bhfuil muid ag líonadh beagnach an réimse seo le cnaipí, ach, ar ndóigh, má dhéanann tú a reáchtáil amach as an spás, beidh tú a dhéanamh ach ceann eile.
+
+114
+00:15:59,000 --> 00:16:19,000
+Rud amháin go mbeidh mé in iúl go bhféadfadh sé a bheith deacair a fháil ar syntax a oireann nuair a bhíonn do cnaipí an-dlúth le chéile i do líníocht.
+
+115
+00:16:19,000 --> 00:16:54,000
+Mar sin, chun é a dhéanamh níos éasca a rianú, spás níos mó a fhágáil idir na híomhánna.
+
+116
+00:16:54,000 --> 00:17:24,000
+Bainfidh mé úsáid as an eochair 'z' anois a chinnteoidh nach féidir liom na cnaipí a athrú.
+
+117
+00:17:24,000 --> 00:17:33,000
+Beidh mé a dhéanamh go ceann níos airde go bhfuil na daoine eile ag roghnú as an roghchlár. Úsáid mé an gearrtha méarchlár (z-mode: 'h').
+
+118
+00:17:33,000 --> 00:17:39,000
+Mar sin, chuir mé é seo go barr an ordaithe z-innéacs trí 'h' a úsáid.
+
+119
+00:17:39,000 --> 00:18:01,000
+Toisc go bhfuil mé a leagtar ar an incrimint luch a mheaitseáil leis an incrimint picteilín de mo líníocht upscaled, tá sé éasca a ailíniú gach rud.
+
+120
+00:18:01,000 --> 00:18:06,00
+Tá gach suíomh éagsúla ar fáil sa chlár, ach, Ní bheidh mé a chlúdach anseo.
+
+121
+00:18:06,000 --> 00:18:14,00
+B'fhéidir beagán níos mó ar an mbealach seo.
+
+122
+00:18:14,000 --> 00:18:19,000
+Sin gar go leor.
+
+123
+00:18:19,000 --> 00:18:36,000
+Bainfidh mé úsáid as an roth scrolla den luch chun an cineál sábhála a roghnú ó chluaisín IV-2.
+
+124
+00:18:36,000 --> 00:18:47,000
+Tá mé ag coigilt ar fhachtóir leithead Viewing de 1280.
+
+125
+00:18:47,000 --> 00:18:55,000
+Déanfar é seo a thiontú go huathoibríoch.
+
+126
+00:18:55,000 --> 00:19:43,000
+Chun an comhad a shábháil ón méarchlár: Úsáid 'athrú + s'. Ina áit sin, a oscailt ach an comhad le haghaidh féachana: Úsáid 'athrú + dul isteach'.
+
+127
+00:19:43,000 --> 00:19:48,000
+Sin maith go leor.
+
+128
+00:19:48,000 --> 00:19:56,000
+Bhuel a dhéanamh.
+
+129
+00:19:56,000 --> 00:20:20,000
+Teagasc os a chionn.
+

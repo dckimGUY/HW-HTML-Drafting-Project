@@ -1,0 +1,5 @@
+Aqui estamos aprendendo um método de desenhar nossos próprios botões HTML personalizados rastreando-os a partir de uma única imagem. Primeiro você deve desenhar sua imagem, e depois seguir comigo, como nós o Programa de Redação HTML para obter botões totalmente personalizáveis para fora. Esses botões podem ser reutilizados em qualquer lugar, e sairão junto com todos os modelos variados que você define no caminho da construção.
+
+É mais fácil do que parece! Você está a poucos cliques de distância, e a maior parte do seu trabalho será em desenhar a arte personalizada, não funcionando este programa. Siga em frente, e faça uma primeira tentativa.
+
+Lembre-se, o que você está produzindo é reutilizável e universal. Esse é o benefício de produzir seus próprios modelos com esta verdadeira fábrica templating.

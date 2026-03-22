@@ -1,0 +1,516 @@
+1
+00:00:00,000 --> 00:00:09,000
+Dnes budeme mluvit o výrobě vlastních tlačítek pro tento program.
+
+2
+00:00:09,000 --> 00:00:16,000
+Tohle je první doučování, které dělám a doufám, že to pochopíš a užiješ si to.
+
+3
+00:00:16,000 --> 00:00:19,000
+Podívejme se zde: 'Informace pro tvorbu tlačítek'.
+
+4
+00:00:21,000 --> 00:00:24,000
+To je přesně to, na co se díváme s tímto návodem.
+
+5
+00:00:24,000 --> 00:00:26,000
+Tak se do toho pustíme.
+
+6
+00:00:26,000 --> 00:00:32,000
+Jsme tady v programu a můžeme hned vidět, že jsem do této krabice něco vložil.
+
+7
+00:00:32,000 --> 00:00:38,000
+To nám dává výšku a šířku označení, jen velmi jednoduché.
+
+8
+00:00:38,000 --> 00:00:50,000
+To nám dává největší šířku a výšku, kterou můžeme použít, a je zobrazena uvnitř tohoto velkého obdélníku s velkým písmenem "B".
+
+9
+00:00:50,000 --> 00:01:07,000
+První krok, který musíme udělat, abychom mohli vysledovat naše vlastní tlačítko, je, že musíme přetáhnout obrázek ze souborového systému přímo do této oblasti, kde má velké písmeno "B".
+
+10
+00:01:07,000 --> 00:01:12,000
+Nyní přetáhneme náš obrázek ze souborového systému sem a tam, kde vidíme písmeno "B".
+
+11
+00:01:12,000 --> 00:01:20,000
+Nyní přetáhneme náš obrázek ze souborového systému sem a tam, kde vidíme písmeno "B".
+
+12
+00:01:20,000 --> 00:01:23,000
+A tady to máme a ukazuje se to na obrazovce.
+
+13
+00:01:23,000 --> 00:01:24,000
+Problém, který vidíme, je, že se zdá příliš malý.
+
+14
+00:01:24,000 --> 00:01:26,000
+Co budeme dělat?
+
+15
+00:01:26,000 --> 00:01:37,000
+Musíme přesunout náš kurzor myši přes vrchol této oblasti s velkým písmenem 'B' a pak můžeme posunout s myši. Teď vidíme, že se děje něco zajímavého.
+
+16
+00:01:37,000 --> 00:01:45,000
+Jsme schopni nastavit měřítko na obrazovce průvodce.
+
+17
+00:01:45,000 --> 00:01:54,000
+Když posuneme dolů na 4, 3, 2 a 1, vidíme, že existuje speciální zvýšený faktor.
+
+18
+00:01:54,000 --> 00:01:58,000
+Postavil jsem to do programu pro účely pixelového umění.
+
+19
+00:01:58,000 --> 00:02:03,000
+Takže když přivezete tlačítka zpět do programu, budou zvětšena ve velikosti.
+
+20
+00:02:03,000 --> 00:02:07,000
+Nebudou tak velké, jak vidíte, když je kreslíte.
+
+21
+00:02:07,000 --> 00:02:16,000
+Takže je můžete nakreslit v té malé velikosti pixelů a pak je můžete přivést do programu a najednou se zvětšují.
+
+22
+00:02:16,000 --> 00:02:22,000
+Z tohoto důvodu získáváte opravdu dobrou ekonomiku na velikosti vašeho obrazu a tlačítek.
+
+23
+00:02:22,000 --> 00:02:31,000
+Takže, vaše tlačítko není příliš drahé, pokud jde o to, kolik stojí tranfering přes internet.
+
+24
+00:02:31,000 --> 00:02:41,000
+Tady to máme. Tento má 180 jednotek výšky a 100 jednotek šířky, ale není nám zrovna užitečný.
+
+25
+00:02:41,000 --> 00:02:45,000
+Nyní popíšu jednu z prvních věcí, které zde můžete vidět: Je to tohle tlačítko pro uložení.
+
+26
+00:02:45,000 --> 00:02:54,000
+Pokud klikneme na toto tlačítko uložit, stane se to, že uložíme klávesu tvaru.
+
+27
+00:02:54,000 --> 00:03:08,000
+A kdybychom klikli na tento druhý, označený hvězdný list, jediná šablona reprezentovaná touto kresbou by byla uložena.
+
+28
+00:03:08,000 --> 00:03:12,000
+S tím si nedělej starosti.
+
+29
+00:03:12,000 --> 00:03:15,000
+Nyní přejděme k něčemu, co jsem připravil dříve.
+
+30
+00:03:15,000 --> 00:03:20,000
+Pokud tlačíme na útěk, všimněte si, že všechny tyto věci zmizí.
+
+31
+00:03:20,000 --> 00:03:24,000
+Dobře, takže teď je to všechno pryč.
+
+32
+00:03:24,000 --> 00:03:33,000
+Takže teď se podíváme, jestli to můžu vrátit.
+
+33
+00:03:33,000 --> 00:03:39,000
+Nyní ji změřím na velikost, kterou lze snadno vidět.
+
+34
+00:03:39,000 --> 00:03:48,000
+Zbavím se toho malého syntaxu a pak vám ukážu klíč, který jsem předtím vyrobil.
+
+35
+00:03:48,000 --> 00:03:55,000
+Otevřeme to v MS Paint a uvidíme, jak to opravdu vypadá.
+
+36
+00:03:55,000 --> 00:04:04,000
+Toto je tedy tvarový klíč, který měl určitou definici vyjádřenou pomocí 'h' a 'w' syntaxe.
+
+37
+00:04:04,000 --> 00:04:15,000
+Důležitou částí není, že tento tvarový klíč je právě teď užitečný grafický obrázek. Není.
+
+38
+00:04:15,000 --> 00:04:26,000
+Celý účel klávesy tvaru je mít pěkný obrázek ve vašem souborovém systému, který vám umožní vizuálně identifikovat klíč tvaru.
+
+39
+00:04:26,000 --> 00:04:28,000
+To je jediný důvod, proč tam je.
+
+40
+00:04:28,000 --> 00:04:31,000
+Teď vám ukážu, jak se to používá.
+
+41
+00:04:31,000 --> 00:04:36,000
+Jakmile jste vytvořili tvarový klíč uložením jednoho pomocí syntaxe. (Klávesy tvaru nejsou povinné.)
+
+42
+00:04:36,000 --> 00:04:41,000
+Můžeš je ignorovat.
+
+43
+00:04:41,000 --> 00:04:52,000
+Klávesa tvaru má v názvu souboru jasně viditelnou speciální syntaxi.
+
+44
+00:04:52,000 --> 00:05:17,000
+Teď popíšu syntaxi. Používá 'h' a 'w' syntax.
+
+45
+00:05:17,000 --> 00:05:27,000
+To popisuje řádky obdélníků, které mají stejnou výšku.
+
+46
+00:05:27,000 --> 00:05:51,000
+Jen se ujistěte, že tuto syntaxi ze konce vašeho názvu souboru neodstraníte, pokud chcete soubor přejmenovat.
+
+47
+00:05:51,000 --> 00:06:02,000
+Dobrá věc na tom je, že můžete jednoduše přetáhnout tuto věc přímo na jedno z písmen, a bude nainstalována na tomto místě.
+
+48
+00:06:02,000 --> 00:06:06,000
+Vybírám si písmeno 'n'.
+
+49
+00:06:06,000 --> 00:06:10,000
+Písmeno 'n' nyní obsahuje informace pro tento klíč tvaru.
+
+50
+00:06:10,000 --> 00:06:23,000
+Pak trochu použijeme svislé kolo a uvidíme, že všechen tento definovaný klíč byl nakreslený pro nás.
+
+51
+00:06:23,000 --> 00:06:32,000
+Tohle jsem vyrobil předem, a tak vám mohu snadno ukázat, že se to dokonale shoduje s kresbou.
+
+52
+00:06:32,000 --> 00:06:45,000
+Ale jen krátce projdu tímto procesem, abych vám ukázal stopy.
+
+53
+00:06:45,000 --> 00:07:01,000
+Ručně zadáme syntaxi. Použiji periodu a pomlčku na číselné pole, ale můžete také použít písmena 'h' a 'w'.
+
+54
+00:07:01,000 --> 00:07:04,000
+Pro začátek vybereme první dvě čísla: 'h10w10'.
+
+55
+00:07:04,000 --> 00:07:08,000
+To je jen proto, abychom měli na co se dívat jako na výchozí bod.
+
+56
+00:07:08,000 --> 00:07:37,000
+Nyní můžeme upravit a přidat 'w', abychom získali větší šířku.
+
+57
+00:07:37,000 --> 00:07:45,000
+Takže máme definice a úspěšně jsme vysledovali první čtyři písmena.
+
+58
+00:07:45,000 --> 00:07:51,000
+Už jsem to vysledoval předem, tak pojďme dál.
+
+59
+00:07:51,000 --> 00:07:55,000
+Takže, tady je to hotové.
+
+60
+00:07:55,000 --> 00:08:10,000
+Pokud jste byli úspěšní a dokončili tento proces pro svůj vlastní obraz, dalším krokem je uložit.
+
+61
+00:08:10,000 --> 00:08:15,000
+Použijete to tlačítko, které říká hvězdný list.
+
+62
+00:08:15,000 --> 00:08:18,000
+null
+
+63
+00:08:18,000 --> 00:08:25,000
+Když kliknete, speciální soubor bude uložen.
+
+64
+00:08:25,000 --> 00:08:30,000
+Pak musíte přetáhnout ten soubor zpět na obrazovku programu.
+
+65
+00:08:30,000 --> 00:08:35,000
+Ukážu vám to brzy, ale nejdřív vám řeknu o syntaxe souboru, který byl právě zachráněn.
+
+66
+00:08:35,000 --> 00:09:11,000
+Můžeme vidět, že máme stejnou syntaxi, která byla uložena ve tvaru klíče. (prefix názvu souboru 'TEMPL')
+
+67
+00:09:11,000 --> 00:09:13,000
+Uvidíme, co se dá dělat.
+
+68
+00:09:13,000 --> 00:09:19,000
+Používáme útěk, abychom měli pěknou prázdnou obrazovku.
+
+69
+00:09:19,000 --> 00:09:25,000
+Příště přetáhnu tuto šablonu zpět do programu.
+
+70
+00:09:25,000 --> 00:09:37,000
+Může to vypadat složitě, ale není.
+
+71
+00:09:37,000 --> 00:09:47,000
+Pokud chceme tlačítka, musíme si vybrat mezi6,4 nebo2.
+
+72
+00:09:47,000 --> 00:09:52,000
+To není počet tlačítek, ale spíše je to počet stavů tlačítka, které budou použity.
+
+73
+00:09:52,000 --> 00:10:12,000
+Když se vznášíme s myší nad tlačítkem, toto je stav vznášení.
+
+74
+00:10:12,000 --> 00:10:15,000
+Když klikneme dolů, tohle je aktivní stav.
+
+75
+00:10:15,000 --> 00:10:17,000
+A když zaklaplo tlačítko, dostal se do soustředěného stavu.
+
+76
+00:10:17,000 --> 00:10:24,000
+Máme na výběr dělat všech 6, což dává pouze 5 použitelných stavů.
+
+77
+00:10:24,000 --> 00:10:31,000
+Preferujeme použití buď 4, což je ideální pro stolní počítače nebo 2, což je dost pro mobilní telefony.
+
+78
+00:10:31,000 --> 00:10:35,000
+Nyní dám stručný popis za předpokladu, že budou použity 4 stavy tlačítek.
+
+79
+00:10:35,000 --> 00:11:01,000
+základ
+
+80
+00:11:01,000 --> 00:11:02,000
+zaměření
+
+81
+00:11:02,000 --> 00:11:03,000
+vznášedlo
+
+82
+00:11:03,000 --> 00:11:05,000
+aktivní
+
+83
+00:11:05,000 --> 00:11:27,000
+To je velmi důležité vědět, pokud nejste obeznámeni s HTML.
+
+84
+00:11:27,000 --> 00:11:32,000
+Pokračujme v našem procesu.
+
+85
+00:11:32,000 --> 00:11:41,000
+Zvolím 4 stavy tlačítka kliknutím na toto.
+
+86
+00:11:41,000 --> 00:11:45,000
+Teď jsme zase uložili složku.
+
+87
+00:11:45,000 --> 00:11:55,000
+Uvidíme, jestli můžeme otevřít ten soubor v našem oblíbeném uměleckém programu.
+
+88
+00:11:55,000 --> 00:12:00,000
+Kde je? Libre- Pixel.
+
+89
+00:12:00,000 --> 00:12:04,000
+Uvidíme, jak ta složka vypadá.
+
+90
+00:12:04,000 --> 00:12:06,000
+Připravil jsem to dříve změnou barvy.
+
+91
+00:12:06,000 --> 00:12:18,000
+Zde můžeme také vidět, že je možné oříznout velikost obrazu v jeho výšce.
+
+92
+00:12:18,000 --> 00:12:27,000
+Bude to fungovat i později.
+
+93
+00:12:27,000 --> 00:12:37,000
+Můžeme vidět, že záchrana složky čtyřnásobně ztrojnásobila a nyní máme čtyři reprezentace.
+
+94
+00:12:37,000 --> 00:12:53,000
+Nyní přivedu zpět náš obrázek průvodce, abych ukázal, který stav tlačítka představuje každý obrázek.
+
+95
+00:12:53,000 --> 00:12:59,000
+Takto víme, na jakém stavu pracujeme, když měníme barvy nebo kreslíme obrázky.
+
+96
+00:12:59,000 --> 00:13:13,000
+Tyto nebudou mít za následek pouze jedno jediné tlačítko, ale místo toho budou přesně tlačítka, které jsme vysledovali pomocí obdélníků.
+
+97
+00:13:13,000 --> 00:13:32,000
+Tato grafická práce již byla dokončena předem, a tak budu pokračovat v našem procesu.
+
+98
+00:13:32,000 --> 00:13:49,000
+Takže teď, když máme hotovou fotku, znovu ukážu syntaxi, která má předponu "READY".
+
+99
+00:13:49,000 --> 00:14:03,000
+Toto tlačítko je dokončeno a lze jej okamžitě přitáhnout.
+
+100
+00:14:03,000 --> 00:14:08,000
+Nyní uvidíme, co se stane, když přetáhneme tento dokončený soubor tlačítka do programu.
+
+101
+00:14:08,000 --> 00:14:13,000
+Vypadá to, že se něco děje tady v levém horním rohu naší obrazovky, a pak se objeví vaše hotové knoflíky.
+
+102
+00:14:13,000 --> 00:14:25,000
+Tady jsou a zkusme je otestovat pomocí mezerníku.
+
+103
+00:14:25,000 --> 00:14:38,000
+Nyní vidíme, že naše tlačítka fungují správně a vypadají přesně jako grafika, kterou jsme nakreslili.
+
+104
+00:14:38,000 --> 00:14:45,000
+Tento soubor, který jsme vytvořili, lze kdykoli použít a znovu použít.
+
+105
+00:14:45,000 --> 00:14:51,000
+Máme tu velmi pěkný, vytrvalý, naváděcí systém.
+
+106
+00:14:51,000 --> 00:14:53,000
+Systém se skládá z: Tvar klíč (jméno souboru prefix 'SHAPE');
+
+107
+00:14:53,000 --> 00:14:59,000
+První šablona, která dostane jeden obrázek (předvolba názvu souboru 'TEMPL');
+
+108
+00:14:59,000 --> 00:15:08,000
+a dokončené tlačítko (předvolba názvu souboru 'READY').
+
+109
+00:15:08,000 --> 00:15:15,000
+Můžeme dokonce zkopírovat toto dokončené tlačítko v našem souborovém systému a vytvořit nějaký alternativní obrázek, který by stále fungoval.
+
+110
+00:15:15,000 --> 00:15:26,000
+Nejsem si jistý, jestli to funguje. Zkusíme to.
+
+111
+00:15:26,000 --> 00:15:43,000
+Takže můžete vzít tenhle a změnit ho, udělat z něj různé barvy nebo pohybovat malými věcmi.
+
+112
+00:15:43,000 --> 00:15:54,000
+Máte dobré tlačítko, aby kapacita k dispozici zde, a můžete dělat, kolik chcete.
+
+113
+00:15:54,000 --> 00:15:59,000
+Zde můžete vidět, že jsme ani zdaleka nezaplnili tuto oblast tlačítky, ale samozřejmě, pokud vám dojde prostor, budete prostě udělat další.
+
+114
+00:15:59,000 --> 00:16:19,000
+Jedna věc, na kterou poukážu je, že by mohlo být obtížné najít syntaxi, která by odpovídala, když jsou vaše tlačítka velmi blízko u sebe ve vaší kresbě.
+
+115
+00:16:19,000 --> 00:16:54,000
+Takže, aby to bylo jednodušší vystopovat, nechte více prostoru mezi obrázky.
+
+116
+00:16:54,000 --> 00:17:24,000
+Nyní použiji klíč 'z', který zajistí, že nebudu předimenzovat tlačítka.
+
+117
+00:17:24,000 --> 00:17:33,000
+Zvyšuji to, že ostatní výběrem z menu. Používám klávesovou zkratku (z-mode: 'h').
+
+118
+00:17:33,000 --> 00:17:39,000
+Takže jsem to dal na začátek z-indexu pomocí 'h'.
+
+119
+00:17:39,000 --> 00:18:01,000
+Protože jsem nastavil přírůstek myši tak, aby odpovídal přírůstku pixelů v mém vylepšeném výkresu, je snadné vše sladit.
+
+120
+00:18:01,000 --> 00:18:06,00
+V programu jsou k dispozici různá nastavení, ale nebudu je krýt tady.
+
+121
+00:18:06,000 --> 00:18:14,00
+Možná trochu víc tudy.
+
+122
+00:18:14,000 --> 00:18:19,000
+To je docela blízko.
+
+123
+00:18:19,000 --> 00:18:36,000
+Nyní použiji kolečko myši pro volbu typu uložení z karty IV-2.
+
+124
+00:18:36,000 --> 00:18:47,000
+Šetřím na dělicí faktor1280.
+
+125
+00:18:47,000 --> 00:18:55,000
+To bude převedeno automaticky.
+
+126
+00:18:55,000 --> 00:19:43,000
+Pro uložení souboru z klávesnice použijte 'posun + s'. Místo toho otevřít soubor pouze pro prohlížení: použijte 'shift + enter'.
+
+127
+00:19:43,000 --> 00:19:48,000
+To je dost dobré.
+
+128
+00:19:48,000 --> 00:19:56,000
+Dobrá práce.
+
+129
+00:19:56,000 --> 00:20:20,000
+Výuka skončila.
+
