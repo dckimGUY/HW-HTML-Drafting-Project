@@ -234,7 +234,7 @@ navLinkEntry = ``;
 
 
 
-if (event.ctrlKey == true) {
+if (!!event && event.ctrlKey == true) {
 
 
 console.log(navLinkEntry);
