@@ -1,5 +1,4 @@
-var   utilityLayer0     ; utilityLayer0      = document.getElementById("utilityLayer0");
-var   utilityLayer1     ; utilityLayer1      = document.getElementById("utilityLayer1");
+
 
 utilityLayer1.style.pointerEvents = "none";
 

@@ -988,7 +988,9 @@ for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
-} }
+}
+
+}
 
 
 let scriptStarter = `
@@ -999,9 +1001,14 @@ const go           = {};
       go.elm       = {};
       go.dat       = {};
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
-      go.dspl      = {};
-      go.dspl.ids  =
+      go.level     = {};
+      go.level.ids =
 ${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+      go.level.show = {}; for (let i = 1; i < 21; i++) {
+      go.level.show["LVL" + i] = function() { for (g of go.level.ids["LVL" + i]) { document.getElementById(g).style.display = "block"; } return 0; }; }
+      go.level.hide = {}; for (let i = 1; i < 21; i++) {
+      go.level.hide["LVL" + i] = function() { for (g of go.level.ids["LVL" + i]) { document.getElementById(g).style.display = "none" ; } return 0; }; }
+
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
 
