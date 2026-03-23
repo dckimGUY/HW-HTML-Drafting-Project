@@ -984,6 +984,19 @@ if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick",
 
 
 
+/*
+
+for (let i = 1; i < 21; i++) {
+for (level[i].body.children.length) {
+lvlRoll.push(level[i].body.children[j].id);
+} }
+
+*/
+
+
+
+
+
 let scriptStarter = `
 
 /*** THIS SETS UP THE REFERENCES ***/
@@ -992,6 +1005,8 @@ const go           = {};
       go.elm       = {};
       go.dat       = {};
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
+      go.display   = {};
+
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
 

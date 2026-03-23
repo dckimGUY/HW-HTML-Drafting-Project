@@ -1,6 +1,6 @@
 ## Here is the 'CHALKING-UP' of the online program file.
 
-
+. ./bundler.sh;
 
 cat y_header.txt > index.html;
 
@@ -38,7 +38,7 @@ echo '<div id="mouseIconLayer"          ></div>' >> index.html;
 echo '<div id="interfaceShelf"          ></div>' >> index.html;
 echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> index.html;
 echo '<div id="scripts">' >> index.html;
-find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' >> chalk_tmp_filenames; find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' | sed 's/^/echo ?v=$(date -r /' | sed 's/$/ +"%Y%m%d%H%M%S") >> chalk_tmp_versions;/' > chalk_tmp_versionControl; chmod 755 chalk_tmp_versionControl; . ./chalk_tmp_versionControl; paste -d '' chalk_tmp_filenames chalk_tmp_versions | sed 's/^/<script src=".\//g' | sed 's/$/"><\/script>/g' >> index.html; rm chalk_tmp_filenames chalk_tmp_versions chalk_tmp_versionControl;
+echo "<script src='./bundle.js?v=$(date +%Y%m%d%H%M%S)'></script>" >> index.html;
 echo '<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>' >> index.html;
 echo '</div>' >> index.html;
 echo '</body>' >> index.html;
