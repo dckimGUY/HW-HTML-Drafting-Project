@@ -1,5 +1,0 @@
-Aici suntem de învățare o metodă de desen propriile noastre butoane HTML personalizate prin urmărirea le dintr-o singură imagine. Intai trebuie sa-ti desenezi imaginea, si apoi sa o urmezi impreuna cu mine, caci noi suntem Programul de Proiectare HTML pentru a obtine butoane complet personalizabile. Aceste butoane pot fi reutilizate oriunde, și va veni împreună cu toate șabloane asortate pe care le definesc de-a lungul calea spre construcție.
-
-E mai uşor decât pare! Sunteti la doar cateva click-uri distanta, iar cea mai mare parte a lucrarii dumneavoastra va fi in desenul artei personalizate, nefunctionand acest program. Urmează-mă şi fă o primă încercare.
-
-Amintiţi-vă, ceea ce produceţi este reutilizabil şi universal. Acesta este beneficiul de a produce propriile șabloane cu această veritabilă fabrică de templating.

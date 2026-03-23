@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+Heute werden wir darüber reden, eigene benutzerdefinierte Tasten für dieses Programm zu machen.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Dies ist das erste Tutorial, das ich mache und hoffentlich werden Sie es leicht verstehen und genießen.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Sehen wir uns hier: 'Informationen zum Knopfhandling'.
+
+4
+00:00:21, 001 --> 00:00:24,000
+So, das ist ziemlich, was wir mit diesem Tutorial betrachten.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Also, gehen wir rein.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Wir sind hier im Programm, und wir können sofort sehen, dass ich hier etwas in diese Kiste gelegt habe.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Es gibt uns eine Höhen- und Breitenbezeichnung, nur eine sehr einfache.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Das gibt uns die größte Breite und Höhe, die wir möglicherweise nutzen könnten, und es ist innerhalb dieses großen Rechtecks dort mit dem großen Buchstaben 'B' gezeigt.
+
+9
+00:00:50, 001 --> 00:01:07,000
+Der erste Schritt, den wir tun müssen, damit wir unsere benutzerdefinierte Schaltfläche verfolgen können, ist, dass wir ein Bild vom Dateisystem direkt auf diesen Bereich ziehen müssen, wo es den großen Buchstaben 'B' hat.
+
+10
+00:01:07, 001 --> 00:01:12,000
+Wir ziehen jetzt unser Bild vom Dateisystem hier rüber und dort, wo wir den Buchstaben 'B' sehen.
+
+11
+00:01:12, 001 --> 00:01:20,000
+Wir ziehen jetzt unser Bild vom Dateisystem hier rüber und dort, wo wir den Buchstaben 'B' sehen.
+
+12
+00:01:20, 001 --> 00:01:23,000
+Und da haben wir es und es zeigt sich dort auf dem Bildschirm.
+
+13
+00:01:23, 001 --> 00:01:24,000
+Das Problem, das wir sehen können, ist, dass es zu klein scheint.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Was sollen wir tun?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Wir müssen unseren Mauszeiger über die Spitze dieser Region mit dem großen Buchstaben 'B' bewegen und wir können dann mit dem Mausrad scrollen. Jetzt sehen wir, dass etwas Interessantes passiert.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Wir sind in der Lage, die Skala der Bildschirmführung anzupassen.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Wenn wir bis zu 4, 3, 2 und 1 scrollen, sehen wir, dass es einen speziellen Upscaling-Faktor angewendet.
+
+18
+00:01:54, 001 --> 00:01:58,000
+Ich habe das in das Programm für den Zweck der Pixelkunst eingebaut.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Damit, wenn Sie die Tasten wieder in das Programm bringen, werden sie in der Größe nach oben skaliert.
+
+20
+00:02:03, 001 --> 00:02:07,000
+Sie werden nicht die Größe sein, die Sie sehen, während Sie sie zeichnen.
+
+21
+00:02:07, 001 --> 00:02:16,000
+So können Sie sie an dieser kleinen Pixelgröße zeichnen und dann können Sie sie in das Programm bringen und sie werden plötzlich größer werden.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Aus diesem Grund erhalten Sie eine wirklich gute Wirtschaft auf der Größe Ihres Bildes und Ihrer Tasten.
+
+23
+00:02:22, 001 --> 00:02:31,000
+So, Ihre Schaltfläche ist nicht zu teuer in Bezug auf, wie viel es kostet, um es durch das Internet zu übertragen.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Da haben wir es. Dieser hier hat 180 Höheneinheiten und 100 Breiteneinheiten, aber er ist momentan nicht besonders nützlich.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Jetzt werde ich eines der ersten Dinge beschreiben, die Sie hier sehen könnten: Es ist dieser rettende Knopf.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Wenn wir auf diese Speichertaste klicken, was passieren wird, ist, dass wir einen Formschlüssel speichern werden.
+
+27
+00:02:54, 001 --> 00:03:08,000
+Und wenn wir hier auf diese andere klicken, würde ein markiertes Sternblatt, eine einzelne Vorlage, die durch diese Zeichnung dargestellt wird, gespeichert.
+
+28
+00:03:08, 001 --> 00:03:12,000
+Keine Sorge.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Gehen wir jetzt zu etwas, das ich früher vorbereitet habe.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Wenn wir die Flucht drücken, merke, dass all diese Dinge verschwinden werden.
+
+31
+00:03:20, 001 --> 00:03:24,000
+Okay, jetzt ist alles weg.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Mal sehen, ob ich es wieder reinstecken kann.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Ich werde es jetzt auf eine Größe skalieren, die leicht zu sehen ist.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Ich werde das kleine Stück Syntax loswerden, und dann zeige ich Ihnen einen Formschlüssel, den ich früher gemacht habe.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Öffnen wir es in MS Paint und sehen, wie es aussieht.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Es handelt sich also um einen Formschlüssel, der mit der 'h'- und 'w'-Syntax definiert wurde.
+
+37
+00:04:04, 001 --> 00:04:15,000
+Wichtig ist nicht, dass diese Formtaste gerade nützliches grafisches Bild ist. Ist es nicht.
+
+38
+00:04:15, 001 --> 00:04:26,000
+Der gesamte Zweck des Formschlüssels ist, ein schönes Bild in Ihrem Dateisystem zu haben, so dass Sie den Formschlüssel visuell identifizieren können.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Das ist der Grund, warum es da ist.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Jetzt werde ich zeigen, wie man es benutzt.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Sobald Sie einen Formschlüssel erstellt haben, indem Sie einen mit der Syntax speichern. (Die Formschlüssel sind nicht obligatorisch.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Sie können sie ignorieren.
+
+43
+00:04:41, 001 --> 00:04:52,000
+Der Formschlüssel hat eine spezielle Syntax deutlich sichtbar im Dateinamen.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Jetzt werde ich die Syntax beschreiben. Es verwendet die 'h' und 'w' Syntax.
+
+45
+00:05:17, 001 --> 00:05:27,000
+Dies beschreibt Reihen von Rechtecken, die die gleiche Höhe teilen.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Falls Sie die Datei umbenennen möchten, sollten Sie diese Syntax nicht vom Ende Ihres Dateinamens entfernen.
+
+47
+00:05:51, 001 --> 00:06:02,000
+Das Schöne daran ist, dass Sie diese Sache einfach direkt auf einen der Buchstaben ziehen können, und es wird in diesem Ort installiert werden.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Ich wähle den Brief 'n'.
+
+49
+00:06:06, 001 --> 00:06:10,000
+Der Buchstabe 'n' enthält jetzt die Informationen für diesen Formschlüssel.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Dann verwenden wir das Scroll-Rad ein bisschen und wir sehen, dass all diese definierte Form-Taste für uns eingezeichnet wurde.
+
+51
+00:06:23, 001 --> 00:06:32,000
+Ich habe dies im Voraus gemacht, und so kann ich Ihnen dann leicht zeigen, dass diese Linie perfekt mit der Zeichnung.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Aber ich werde kurz durch den Prozess gehen, um die Verfolgung zu demonstrieren.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Wir geben die Syntax manuell ein. Ich werde Zeit und Bindestrich auf dem Nummernfeld verwenden, aber Sie können auch die Buchstaben 'h' und 'w' verwenden.
+
+54
+00:07:01, 001 --> 00:07:04,000
+Zunächst werden wir die ersten beiden Zahlen auswählen: 'h10w10'.
+
+55
+00:07:04, 001 --> 00:07:08,000
+Das ist nur so, dass wir etwas als Ausgangspunkt betrachten können.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Jetzt können wir 'w' anpassen und hinzufügen, um mehr Breiten zu erhalten.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Wir haben also die Definitionen und haben die ersten vier Buchstaben erfolgreich verfolgt.
+
+58
+00:07:45, 001 --> 00:07:51,000
+Ich habe das schon im Voraus verfolgt.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Also, hier ist es fertig.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Wenn Sie diesen Prozess für Ihr eigenes Bild erfolgreich abgeschlossen haben, ist der nächste Schritt, ihn zu speichern.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Sie werden den Knopf dort benutzen, der Sternzeichen sagt.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Wenn Sie darauf klicken, wird eine spezielle Datei gespeichert.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Sie müssen die Datei dann wieder auf den Programm-Bildschirm ziehen.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Ich werde Ihnen das bald zeigen, aber zuerst werde ich über die Syntax der Datei erzählen, die gerade jetzt gespeichert wurde.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Wir können sehen, dass wir dieselbe Syntax haben, die in der Formtaste gespeichert wurde. (Dateiname prefix 'TEMPL')
+
+67
+00:09:11, 001 --> 00:09:13,000
+Mal sehen, was wir tun können.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Wir verwenden Flucht, damit wir einen schönen leeren Bildschirm haben.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Ich werde diese Vorlage dann wieder in das Programm ziehen.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Das mag schwierig erscheinen, aber das ist es nicht.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Wenn wir Tasten wollen, müssen wir jetzt zwischen 6, 4 oder 2 wählen.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Dies ist nicht die Anzahl der Tasten, sondern es ist die Anzahl der Tastenzustände, die verwendet werden.
+
+73
+00:09:52, 001 --> 00:10:12,000
+Wenn wir mit der Maus über die Schaltfläche schweben, ist dies der Hover-Zustand.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Wenn wir nach unten klicken, ist dies der aktive Zustand.
+
+75
+00:10:15, 001 --> 00:10:17,000
+Und wenn die Schaltfläche geklickt hat, bekommt sie dann den fokussierten Zustand.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Wir haben die Wahl, alle 6 zu tun, was nur 5 nutzbare Staaten gibt.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Wir bevorzugen entweder 4, die ideal für Desktop-Computer oder 2 ist genug für Mobiltelefone.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Ich werde jetzt eine kurze Beschreibung unter der Annahme, dass 4 Tastenzustände verwendet werden.
+
+79
+00:10:35, 001 --> 00:11:01,000
+basis
+
+80
+00:11:01, 001 --> 00:11:02,000
+schwerpunkt
+
+81
+00:11:02, 001 --> 00:11:03,000
+hopfen
+
+82
+00:11:03, 001 --> 00:11:05,000
+wirkstoff
+
+83
+00:11:05, 001 --> 00:11:27,000
+Das ist sehr wichtig zu wissen, ob Sie mit HTML nicht vertraut sind.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Gehen wir jetzt weiter.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Ich werde die 4 Button-Zustände durch Anklicken auswählen.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Jetzt haben wir wieder eine Datei gespeichert.
+
+87
+00:11:45, 001 --> 00:11:55,000
+Mal sehen, ob wir diese Datei in unserem Lieblingskunstprogramm öffnen können.
+
+88
+00:11:55, 001 --> 00:12:00,000
+Wo ist er? Libre-Pixel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Wir werden sehen, wie diese Datei aussieht.
+
+90
+00:12:04, 001 --> 00:12:06,000
+Ich habe es früher durch die Veränderung der Färbungen vorbereitet.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Hier können wir auch sehen, dass es möglich ist, die Größe des Bildes in seiner Höhe zu pflanzen.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Es wird später noch funktionieren.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Wir können sehen, dass das Speichern der Datei sie vervierfacht hat, und wir haben jetzt vier Darstellungen.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Ich bringe nun unser Leitbild zurück, um zu zeigen, welche Schaltfläche jedes Bild darstellt.
+
+95
+00:12:53, 001 --> 00:12:59,000
+So wissen wir, an welchem Zustand wir arbeiten, wenn wir die Farben ändern oder unsere Bilder zeichnen.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Diese werden nicht nur eine einzige Taste führen, sondern werden genau die Tasten sein, die wir mit den Rechtecken nachverfolgt haben.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Diese grafische Arbeit wurde bereits im Voraus abgeschlossen, und so werde ich mit unserem Prozess fortfahren.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Nun, da wir ein fertiges Bild haben, werde ich wieder die Syntax zeigen, die das Präfix 'READY' hat.
+
+99
+00:13:49, 001 --> 00:14:03,000
+Diese Taste ist fertig und kann sofort eingezogen werden.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Jetzt werden wir sehen, was passiert, wenn wir diese fertige Schaltfläche Datei in das Programm ziehen.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Es sieht so aus, als ob etwas hier oben in der oberen linken Ecke unseres Bildschirms passiert, und dann heraus kommt Ihre fertigen Tasten.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Da sind sie, und versuchen wir einfach, wenn wir sie ausprobieren können, indem wir die Leertaste benutzen und sie aufhalten.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Wir können jetzt sehen, dass unsere Buttons richtig funktionieren und genau wie die Grafiken aussehen, die wir gezeichnet haben.
+
+104
+00:14:38, 001 --> 00:14:45,000
+Diese Datei, die wir erstellt haben, kann jederzeit verwendet und wiederverwendet werden.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Wir haben ein sehr schönes, hartnäckiges, verlockendes System.
+
+106
+00:14:51, 001 --> 00:14:53,000
+Das System besteht aus: einem Formschlüssel (Dateiname Präfix 'SHAPE');
+
+107
+00:14:53, 001 --> 00:14:59,000
+Eine erste Vorlage, die ein einzelnes Bild erhält (Dateiname prefix 'TEMPL');
+
+108
+00:14:59, 001 --> 00:15:08,000
+und der fertige Knopfsatz (Dateiname prefix 'READY').
+
+109
+00:15:08, 001 --> 00:15:15,000
+Wir können sogar diese fertige Schaltfläche in unserem Dateisystem kopieren und eine Art alternierende Bilder machen, und es würde noch funktionieren.
+
+110
+00:15:15, 001 --> 00:15:26,000
+Ich bin mir nicht sicher, ob das funktioniert. Versuchen wir es.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Du könntest das hier hinnehmen und es auswechseln, es unterschiedliche Farben machen oder kleine Dinge herum bewegen.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Sie haben eine gute Schaltfläche, die Kapazität zur Verfügung zu stellen, und Sie können so viele wie Sie wünschen.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Hier können Sie sehen, dass wir diesen Bereich nicht einmal fast mit Knöpfen gefüllt haben, aber natürlich, wenn Sie aus dem Raum laufen, werden Sie einfach einen anderen machen.
+
+114
+00:15:59, 001 --> 00:16:19,000
+Eine Sache, die ich darauf hinweisen werde, ist, dass es schwierig sein könnte, eine Syntax zu finden, die passt, wenn Ihre Tasten in Ihrer Zeichnung sehr eng sind.
+
+115
+00:16:19, 001 --> 00:16:54,000
+So, um es einfacher zu verfolgen, lassen Sie mehr Raum zwischen den Bildern.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Ich werde nun den 'z'-Schlüssel verwenden, der dafür sorgt, dass ich die Tasten nicht verändere.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Ich werde das eine höher machen, dass die anderen durch die Auswahl aus diesem Menü. Ich benutze die Tastenkombination (z-Mode: 'h').
+
+118
+00:17:33, 001 --> 00:17:39,000
+Also, ich habe das an die Spitze der z-Index-Bestellung gelegt, indem ich 'h' verwendet.
+
+119
+00:17:39, 001 --> 00:18:01,000
+Weil ich das Maus-Inkrement eingestellt habe, um das Pixel-Inkrement meiner gehobenen Zeichnung anzupassen, ist es einfach, alles auszurichten.
+
+120
+00:18:01, 001 --> 00:18:06,00
+Es gibt alle verschiedenen Einstellungen im Programm, aber ich werde sie hier nicht abdecken.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Vielleicht ein bisschen mehr.
+
+122
+00:18:14, 001 --> 00:18:19,000
+Das ist ziemlich nah dran.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Ich werde nun das Scroll-Rad der Maus verwenden, um die Art des Speichers von Tab IV-2 auszuwählen.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Ich spare bei einem Betrachtungsbreitenfaktor von 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Dies wird automatisch umgesetzt.
+
+126
+00:18:55, 001 --> 00:19:43,000
+Um die Datei von der Tastatur zu speichern: Verwenden Sie 'Schalten + s'. Stattdessen, um nur die Datei zum Anzeigen zu öffnen: Verwenden Sie 'Schalten + geben'.
+
+127
+00:19:43, 001 --> 00:19:48,000
+Das ist ziemlich gut.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Gut gemacht.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Tutorial.
+

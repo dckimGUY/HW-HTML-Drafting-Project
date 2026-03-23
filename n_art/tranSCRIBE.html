@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>tranSCRIBE</title><style>
+/* ============================================================
+   EDITABLE SETTINGS (ACCESS EASILY HERE)
+   ============================================================ */
+:root {
+    /* Fonts & Sizes */
+    --main-font-family: monospace;
+    --universal-text-size: 32px;
+    --time-number-size: 3.5vw;
+    --divider-font-size: 3vw;
+    
+    /* Colors */
+    --bg-main: rgb(95,95,95);
+    --bg-section: rgb(127,127,127);
+    --bg-block: rgb(111,111,111);
+    --bg-input: rgb(31,31,31);
+    --text-main: #fff;
+    --accent-green: #DEFF1C;    /* Text & Borders */
+    --accent-blue: cyan;   /* Insert Button & Arrows */
+    --accent-red: maroon;    /* Delete & Reset Buttons */
+    --border-color: transparent;
+}
+
+.universal-font { font-size: var(--universal-text-size); }
+.time-number-font { font-size: var(--time-number-size); }
+.divider-font { font-size: var(--divider-font-size); color: var(--accent-green); }
+/* ============================================================ */
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--main-font-family);background:var(--bg-main);color:var(--text-main);padding:1vw;display:flex;flex-direction:column;min-height:100vh}
+.container{width:100%;display:flex;flex-direction:column;gap:1vw;flex-grow:1}
+section{background:var(--bg-section);padding:1vw;border:0.1vw solid var(--border-color);border-radius:0.4vw}
+input[type=text],textarea,#jsonOutput{background:var(--bg-input);color:var(--accent-green);border:2px solid var(--accent-green);padding:15px;font-family:var(--main-font-family);width:100%;outline:0}
+input:focus,textarea:focus{box-shadow:0 0 10px var(--accent-green)}
+#captionList{display:flex;flex-direction:column;gap:1vw}
+.block{background:var(--bg-block);border:0.2vw solid var(--border-color);padding:1vw;border-radius:0.4vw;display:flex;flex-direction:column;gap:1vw;position:relative}
+.del-btn{position:absolute;top:0;right:0;width:3vw;height:3vw;background:var(--accent-red);color:#fff;border:none;cursor:pointer;font-weight:700;font-size:1.5vw;display:flex;align-items:center;justify-content:center;border-radius:0 0 0 0.4vw}
+.ins-btn{position:absolute;top:0;left:0;width:3vw;height:3vw;background:var(--accent-blue);color:#fff;border:none;cursor:pointer;font-weight:700;font-size:1.5vw;display:flex;align-items:center;justify-content:center;border-radius:0 0 0.4vw 0}
+.time-row{display:flex;width:100%;gap:0.5vw;align-items:center;justify-content:space-between;padding:0 3.5vw}
+.time-box{flex:1;display:flex;background:var(--bg-input);border:0.1vw solid #555;height:6vw;align-items:center;justify-content:center}
+.t-in{width:100%;height:100%;background:0 0;border:none;color:var(--accent-green);text-align:center;font-weight:700;cursor:ns-resize;outline:0}
+.divider{font-weight:700;padding:0 2px}
+.arrow-divider{font-size:3vw;color:var(--accent-blue);padding:0 1vw}
+.text-in{height:60px;border:2px solid var(--accent-green);overflow-y:hidden;white-space:nowrap}
+.controls{display:flex;gap:1vw;margin-top:1vw;width:100%}
+.controls button,.controls #dragIcon{height:10vw;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-weight:700;text-transform:uppercase;font-family:var(--main-font-family);font-size:3.5vw}
+.add-btn,.save-btn,#dragIcon{flex:1}
+.reset-btn{width:10vw;background:var(--accent-red);color:#fff}
+.add-btn{background:#333;color:#fff;border:0.1vw solid #666}
+.save-btn{background:#28a745;color:#fff}
+#dragIcon{background:#444;border:0.2vw dashed #888;border-radius:0.4vw}
+#jsonOutput{width:100%;height:300px;margin-top:1vw;border:2px solid var(--accent-green)}
+.ms-box, .divider-ms { display: none; }
+</style></head><body oninput="autoUpdate()"><div class="container"><section><input type="text" id="title" class="universal-font" placeholder="TITLE" tabindex="-1"><textarea id="description" class="universal-font" placeholder="enter the description text without any newlines." title="ENTER makes a new caption. SHIFT + BACKSPACE removes a caption. < > : Change the end time. End time carries over into next start time." style="margin-top:10px" tabindex="-1"></textarea></section><div id="captionList"></div><div class="controls"><button class="reset-btn" onclick="resetPage()" tabindex="-1">X</button><button class="add-btn" onclick="addBlock()" tabindex="-1">+ADD</button><button class="save-btn" onclick="saveJSON()" tabindex="-1">SAVE</button><div id="dragIcon" draggable="true" tabindex="-1">📄 DRAG</div></div><textarea id="jsonOutput" class="universal-font" readonly tabindex="-1"></textarea></div><script>
+function autoUpdate(){const d=buildData();document.getElementById('jsonOutput').value=JSON.stringify(d,null,2);localStorage.setItem('srt_backup',JSON.stringify(d))}
+function updateVal(i,d,m){let c=(parseInt(i.value)||0)+d;if(c<0)c=0;if(c>m)c=m;i.value=c.toString().padStart(i.className.includes('ms')?3:2,'0');autoUpdate()}
+function rollTime(b,delta){let h=parseInt(b.querySelector('.eh').value),m=parseInt(b.querySelector('.em').value),s=parseInt(b.querySelector('.es').value);let total=h*3600+m*60+s+delta;if(total<0)total=0;h=Math.floor(total/3600);m=Math.floor((total%3600)/60);s=total%60;b.querySelector('.eh').value=h.toString().padStart(2,'0');b.querySelector('.em').value=m.toString().padStart(2,'0');b.querySelector('.es').value=s.toString().padStart(2,'0');autoUpdate()}
+function createTimeInput(c,m,v){const ct=document.createElement('div');ct.className='time-box ' + (c.includes('ms') ? 'ms-box' : '');const i=document.createElement('input');i.type='text';i.className=`${c} t-in time-number-font`;i.value=v.toString().padStart(c==='ms'?3:2,'0');i.readOnly=true;i.tabIndex=-1;i.onwheel=(e)=>{e.preventDefault();updateVal(i,e.deltaY<0?(e.shiftKey?5:1):(e.shiftKey?-5:-1),m)};ct.appendChild(i);return ct}
+function addBlock(dat=null, targetBlock=null){const l=document.getElementById('captionList');let h=0,m=0,s=0,ms=1,eh=0,em=0,es=5,ems=0,txt="";
+if(dat){h=dat.h;m=dat.m;s=dat.s;ms=1;eh=dat.eh;em=dat.em;es=dat.es;ems=0;txt=dat.txt}
+else{const ref = targetBlock ? targetBlock : l.lastElementChild; if(ref){h=parseInt(ref.querySelector('.eh').value);m=parseInt(ref.querySelector('.em').value);s=parseInt(ref.querySelector('.es').value);ms=1}
+es=s+5;em=m;eh=h;if(es>59){es-=60;em++}if(em>59){em-=60;eh++}ms=1;ems=0}
+const b=document.createElement('div'),r=document.createElement('div');b.className='block';r.className='time-row';
+const d=document.createElement('button');d.className='del-btn';d.innerText='X';d.tabIndex=-1;d.onclick=()=>{b.remove();autoUpdate()};
+const ins=document.createElement('button');ins.className='ins-btn';ins.innerText='+';ins.tabIndex=-1;ins.onclick=()=>addBlock(null, b);
+r.append(createTimeInput('h',99,h),div(':'),createTimeInput('m',59,m),div(':'),createTimeInput('s',59,s),div(',', true),createTimeInput('ms',999,ms));const a=document.createElement('div');a.className='arrow-divider';a.innerHTML='➝';r.appendChild(a);r.append(createTimeInput('eh',99,eh),div(':'),createTimeInput('em',59,em),div(':'),createTimeInput('es',59,es),div(',', true),createTimeInput('ems',999,ems));const t=document.createElement('input');t.type='text';t.className='l3 text-in universal-font';t.placeholder="CAPTION TEXT";t.value=txt;t.tabIndex=0;t.onkeydown=(e)=>{
+if(e.shiftKey && e.key==='Backspace'){e.preventDefault();const prev = b.previousElementSibling; b.remove(); if(prev){const inp = prev.querySelector('.l3'); inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length)} autoUpdate();}
+else if(e.key==='>'){e.preventDefault();rollTime(b,1)}
+else if(e.key==='<'){e.preventDefault();rollTime(b,-1)}
+else if(e.key==='Enter'){e.preventDefault();addBlock(null, b)}};
+b.append(d,ins,r,t);if(targetBlock && targetBlock.nextSibling){l.insertBefore(b, targetBlock.nextSibling)}else{l.appendChild(b)}
+autoUpdate();if(!dat)t.focus()}
+function div(c, isMs=false){const s=document.createElement('span');s.className='divider divider-font' + (isMs ? ' divider-ms' : '');s.innerText=c;return s}
+function buildData(){const d={title:document.getElementById('title').value||"video",description:document.getElementById('description').value,captions:[]};document.querySelectorAll('.block').forEach((b,i)=>{const g=(p)=>b.querySelector('.'+p).value;d.captions.push({lineOne:i+1,lineTwo:`${g('h')}:${g('m')}:${g('s')},001 --> ${g('eh')}:${g('em')}:${g('es')},000`,lineThree:b.querySelector('.l3').value})});return d}
+function saveJSON(){const d=buildData(),f=(d.title.replace(/[^a-z0-9]/gi,'_'))+".json",b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'}),l=document.createElement('a');l.href=URL.createObjectURL(b);l.download=f;l.click();URL.revokeObjectURL(l.href)}
+function resetPage(){if(confirm("Clear all?")){localStorage.removeItem('srt_backup');location.reload()}}
+document.getElementById('dragIcon').ondragstart=(e)=>{const d=buildData(),f=(d.title.replace(/[^a-z0-9]/gi,'_'))+".json",u=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));e.dataTransfer.setData('DownloadURL',`application/json:${f}:${u}`)};
+window.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName) && document.querySelectorAll('.block').length === 0) { e.preventDefault(); addBlock(); } });
+window.onload=()=>{const s=localStorage.getItem('srt_backup');if(s){const d=JSON.parse(s);document.getElementById('title').value=d.title;document.getElementById('description').value=d.description;if(d.captions && d.captions.length>0)d.captions.forEach(c=>{const p=c.lineTwo.split(' --> ');const sT=p[0].split(':'),sS=sT[2].split(','),eT=p[1].split(':'),eS=eT[2].split(',');addBlock({h:sT[0],m:sT[1],s:sS[0],ms:1,eh:eT[0],em:eT[1],es:eS[0],ems:0,txt:c.lineThree})});else addBlock()}else addBlock()};
+
+console.log(`
+
+This program is helpful for producing accurate manual transcription and/or feeding this into machine translation (libretranslate/argos).
+
+Instructions for use:
+
+This program is designed to keep your hands on the keyboard in the home row. Work to transcribe the video while you are watching it. Switch back and forth from this program using ALT + TAB. Spacebar pauses the video while you move to type. Set the ending time before making a new caption block.
+
+The ending time of the current caption becomes the start time of the next caption.
+
+Use < > to change the ending time before making a new caption.
+
+You make a new caption by pressing ENTER.
+
+Remove the current caption and return to the end of the previous one by pressing SHIFT + BACKSPACE.
+
+The outgoing format is JSON which is good for machine translation of the text.
+
+`);
+
+</script></body></html>

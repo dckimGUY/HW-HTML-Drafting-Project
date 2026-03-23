@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+Avui parlarem de fer els vostres propis botons personalitzats per aquest programa.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Aquest és el primer tutorial que faig i espero que ho entenguis amb facilitat i gaudir- lo.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Anem a veure aquí: 'Informació per a realitzar botons'.
+
+4
+00:00:21, 001 --> 00:00:24,000
+Això és bastant el que estem veient amb aquest tutorial.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Així que anem a entrar-hi.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Som aquí, al programa, i podem veure immediatament que he posat una cosa aquí dins.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Ens dóna una alçada i una escala de disseny, només una de ben senzilla.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Això ens dóna l'amplada i alçada més gran que podíem utilitzar, i es mostra dins d'aquest gran rectangle amb la gran lletra "B.".
+
+9
+00:00:50, 001 --> 00:01:07,000
+El primer pas que hem de fer per tal que puguem localitzar el nostre botó personalitzat és que necessitem arrossegar una imatge del sistema de fitxers directament en aquesta àrea on té la lletra gran "B.".
+
+10
+00:01:07, 001 --> 00:01:12,000
+Ara arrossegarem sobre la nostra imatge des del sistema de fitxers d'aquí, i cap a on veiem la lletra "B.".
+
+11
+00:01:12, 001 --> 00:01:20,000
+Ara arrossegarem sobre la nostra imatge des del sistema de fitxers d'aquí, i cap a on veiem la lletra "B.".
+
+12
+00:01:20, 001 --> 00:01:23,000
+I allà la tenim i mostra allà a la pantalla.
+
+13
+00:01:23, 001 --> 00:01:24,000
+El problema que podem veure és que sembla massa petit.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Què hauríem de fer?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Hem de moure el cursor del ratolí damunt d'aquesta regió amb la lletra "B" gran i aleshores podem desplaçar-nos amb el ratolí. Ara veiem que passa alguna cosa interessant.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Podem ajustar l'escala de la guia de la pantalla.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Quan ens desplacem a 4, 2, i 1, veiem que hi ha un factor especial d'elevació aplicat.
+
+18
+00:01:54, 001 --> 00:01:58,000
+Ho vaig construir al programa per a l'art dels píxels.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Per tant quan tornis els botons al programa s' escalaran en mida.
+
+20
+00:02:03, 001 --> 00:02:07,000
+No seran la mida que veieu mentre els dibuixeu.
+
+21
+00:02:07, 001 --> 00:02:16,000
+Per tant, es poden dibuixar en aquesta mida petita de píxel i llavors pots portar-los al programa i de sobte es faran més grans.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Per aquesta raó, tens una economia realment bona en la mida de la imatge i dels teus botons.
+
+23
+00:02:22, 001 --> 00:02:31,000
+Així doncs, el teu botó no és massa car en termes de quant costa viatjar-hi per Internet.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Aquí el tenim. Aquest d'aquí té 180 unitats d'alçada i 100 unitats d'amplada, però no és particularment útil per nosaltres en aquest moment.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Ara descriuré una de les primeres coses que veieu aquí: És aquest botó per salvar.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Si haguéssim de fer clic en aquest botó de desat, el que passarà és que estalviarem una tecla forma.
+
+27
+00:02:54, 001 --> 00:03:08,000
+I si haguéssim de fer clic en aquest altre, el full estrella marcat, una única plantilla que està representat per aquest dibuix serà desat.
+
+28
+00:03:08, 001 --> 00:03:12,000
+No et preocupis per això.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Ara anem a una cosa que he preparat abans.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Si preguem escapar, noteu que totes aquestes coses desapareixeran.
+
+31
+00:03:20, 001 --> 00:03:24,000
+D'acord, ara tot se n'ha anat.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Així que anem a veure si el puc tornar a posar.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Ara l'escalaré a una mida que es pugui veure fàcilment.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Em desfaré d'aquesta petita sintaxi allà, i després et mostraré una clau de forma que he fet abans.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Obrim-lo a MS Paint i vegem com és realment.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Aquesta és una clau de forma que tenia una definició donada amb la sintaxi 'h' i 'w'.
+
+37
+00:04:04, 001 --> 00:04:15,000
+La part important no és que aquesta tecla de forma sigui útil ara mateix. No ho és.
+
+38
+00:04:15, 001 --> 00:04:26,000
+Tot el propòsit de la tecla de forma és tenir una imatge agradable en el sistema de fitxers, permetent- vos identificar visualment la tecla de forma.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Aquesta és la raó per la qual és allà.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Ara els ensenyaré com utilitzar-la.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Una vegada hàgiu produït una clau de forma desant- ne una usant la sintaxi. (Les tecles de forma no són obligatòries.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Els pots ignorar.
+
+43
+00:04:41, 001 --> 00:04:52,000
+La tecla de forma té una sintaxi especial visible amb claredat en el nom del fitxer.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Ara descriuré la sintaxi. Utilitza la sintaxi 'h' i 'w'.
+
+45
+00:05:17, 001 --> 00:05:27,000
+Això descriu files de rectangles que comparteixen la mateixa alçada.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Assegureu- vos de no eliminar aquesta sintaxi del final del vostre nom de fitxer si voleu reanomenar el fitxer.
+
+47
+00:05:51, 001 --> 00:06:02,000
+El millor d'això és que simplement pots arrossegar aquesta cosa directament a una de les lletres, i estarà instal·lada en aquest lloc.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Estic triant la carta 'n'.
+
+49
+00:06:06, 001 --> 00:06:10,000
+La lletra 'n' conté la informació d' aquesta clau.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Després utilitzem la roda de desplaçament una mica i veiem que totes aquestes tecles definides s'han dibuixat per a nosaltres.
+
+51
+00:06:23, 001 --> 00:06:32,000
+He fet aquest per avançat, i així podré mostrar-vos fàcilment que aquestes línies estan perfectament al dibuix.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Però, breument, passaré pel procés per demostrar-ho.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Entrarem manualment la sintaxi. Faré servir el període i guió en el teclat numèric, però també podeu utilitzar les lletres 'h' i 'w'.
+
+54
+00:07:01, 001 --> 00:07:04,000
+Per començar, triarem els dos primers nombres: "h10w10.".
+
+55
+00:07:04, 001 --> 00:07:08,000
+Això és perquè tinguem alguna cosa a veure com un punt d'inici.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Ara podem ajustar i afegir 'w' per obtenir més amples.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Tenim les definicions i hem seguit amb èxit les primeres quatre lletres.
+
+58
+00:07:45, 001 --> 00:07:51,000
+Ja ho he seguit endavant, així que seguim endavant.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Aquí està acabada.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Si heu tingut èxit i completat aquest procés per a la vostra pròpia imatge, el següent pas és desar- lo.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Usareu aquest botó aquí mateix que diu el full estrella.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Quan feu clic, es desarà un fitxer especial.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Heu d' arrossegar aquest fitxer de nou a la pantalla del programa.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Us ensenyaré això aviat, però primer us explicaré la sintaxi del fitxer que ara s' ha desat.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Podem veure que tenim la mateixa sintaxi que es va emmagatzemar en la clau de forma. (el prefix del nom del fitxer 'TEM')
+
+67
+00:09:11, 001 --> 00:09:13,000
+A veure què podem fer.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Fem servir escapar per tal que tinguem una pantalla en blanc agradable.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Arrossegaré la següent plantilla al programa.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Pot semblar complicat, però no ho és.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Si volem botons, hem de triar entre 6, 4, o 2.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Aquest no és el nombre de botons sinó, més aviat, és el nombre d' estats dels botons que s' usaran.
+
+73
+00:09:52, 001 --> 00:10:12,000
+En passar pel botó, aquesta és l' estat en passar per sobre.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Quan clicem cap avall, aquest és l'estat actiu.
+
+75
+00:10:15, 001 --> 00:10:17,000
+I quan el botó clica, s' obté l'estat centrat.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Tenim l'elecció de fer tots els 6, que dóna només 5 estats útils.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Preferim fer servir el 4, ideal per als ordinadors d'escriptori o 2 que és suficient per a telèfons mòbils.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Ara donaré una breu descripció assumint que s'utilitzen 4 estats de botons.
+
+79
+00:10:35, 001 --> 00:11:01,000
+base
+
+80
+00:11:01, 001 --> 00:11:02,000
+focus
+
+81
+00:11:02, 001 --> 00:11:03,000
+en passar per sobre
+
+82
+00:11:03, 001 --> 00:11:05,000
+actiu
+
+83
+00:11:05, 001 --> 00:11:27,000
+Això és molt important saber si no esteu familiaritzats amb HTML.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Continuem ara amb el nostre procés.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Escolliré els 4 estats dels botons clicant això.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Ara hem tornat a desar un arxiu.
+
+87
+00:11:45, 001 --> 00:11:55,000
+A veure si podem obrir aquest fitxer en el nostre programa d'art preferit.
+
+88
+00:11:55, 001 --> 00:12:00,000
+On és? Libre-Pixel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Veurem com és aquest fitxer.
+
+90
+00:12:04, 001 --> 00:12:06,000
+Ho he preparat abans canviant les coloracions.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Aquí també es pot veure que és possible escapçar la mida de la imatge en l'alçada.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Encara funcionarà més tard.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Podem veure que salvar el fitxer l'ha quatre vegades més, i ara tenim quatre representacions.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Ara portaré la nostra imatge guia per mostrar quin estat de botó representa cada imatge.
+
+95
+00:12:53, 001 --> 00:12:59,000
+Així sabem quin estat estem treballant quan canviem els colors o dibuixem les imatges.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Això no resulta només un sol botó, però en lloc d' això seran exactament els botons que hem seguit utilitzant els rectangles.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Aquest treball gràfic ja ha estat completat per avançat, i així, seguiré amb el nostre procés.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Així que ara que tenim una imatge acabada, tornaré a mostrar la sintaxi, que té el prefix 'mans'.
+
+99
+00:13:49, 001 --> 00:14:03,000
+Aquest botó s' ha acabat i es pot arrossegar immediatament.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Ara veurem què passa quan arrosseguem aquest fitxer de botó acabat al programa.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Sembla que passa alguna cosa aquí dalt a la cantonada esquerra de la nostra pantalla, i després surt dels botons acabats.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Aquí estan, i mirem si podem provar-ho utilitzant la barra espacial, i retenint-la.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Ara podem veure que els nostres botons funcionen correctament, i semblen exactament els gràfics que hem dibuixat.
+
+104
+00:14:38, 001 --> 00:14:45,000
+Aquest fitxer que hem produït es pot utilitzar i tornar a utilitzar en qualsevol moment.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Tenim un sistema temporal molt agradable, persistent, temporal.
+
+106
+00:14:51, 001 --> 00:14:53,000
+El sistema està format per: Una clau de forma (fitxer prefix 'SHAPE');
+
+107
+00:14:53, 001 --> 00:14:59,000
+Una primera plantilla, que conté una única imatge (el prefix del nom del fitxer 'PEM');
+
+108
+00:14:59, 001 --> 00:15:08,000
+i el botó finalitzat establert (el prefix del nom del fitxer 'now').
+
+109
+00:15:08, 001 --> 00:15:15,000
+Fins i tot podem copiar aquest botó acabat en el nostre sistema de fitxers i fer imatges alternatives, i encara funcionaria.
+
+110
+00:15:15, 001 --> 00:15:26,000
+No sé si funciona. Provem-ho.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Així que podries agafar aquell d'allà, i canviar-lo, fer-lo diferents colors o moure coses petites.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Teniu un bon botó fent capacitat disponible aquí, i podeu fer tants com vulgueu.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Aquí podeu veure que ni tan sols hem omplert aquesta àrea amb botons, però, és clar, si us n'heu quedat sense espai, simplement en fareu una altra.
+
+114
+00:15:59, 001 --> 00:16:19,000
+Una cosa que vull assenyalar és que podria ser difícil trobar una sintaxi que encaixi quan els botons estan molt units al vostre dibuix.
+
+115
+00:16:19, 001 --> 00:16:54,000
+Per a fer més fàcil la traça, deixeu més espai entre les imatges.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Ara usaré la clau 'z' que us permetrà no redimensionar els botons.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Faré que un més alt sigui que els altres triïn aquest menú. Faig servir la drecera de teclat (mode: 'h').
+
+118
+00:17:33, 001 --> 00:17:39,000
+Així que vaig posar això a la part superior de l'ordre z-índex utilitzant 'h'.
+
+119
+00:17:39, 001 --> 00:18:01,000
+Perquè he establert l' increment del ratolí per a coincidir amb l' increment del píxel del dibuix a escala meva, és fàcil alinear-ho tot.
+
+120
+00:18:01, 001 --> 00:18:06,00
+Hi ha tots els diferents arranjaments disponibles al programa, però no els cobriré aquí.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Potser una mica més d'aquesta manera.
+
+122
+00:18:14, 001 --> 00:18:19,000
+És molt a prop.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Ara usaré la roda de desplaçament del ratolí per a seleccionar el tipus de desat de la pestanya IV- 2.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Estic estalviant un factor d'amplada de 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Això es convertirà automàticament.
+
+126
+00:18:55, 001 --> 00:19:43,000
+Per a desar el fitxer des del teclat: useu 'shift + s'. En comptes d' això, per obrir només el fitxer per a visualitzar: Useu 'shift + introduir'.
+
+127
+00:19:43, 001 --> 00:19:48,000
+Això està molt bé.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Ben fet.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Tutorial acabat.
+

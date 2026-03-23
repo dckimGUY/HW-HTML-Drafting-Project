@@ -1,5 +1,0 @@
-Ici, nous apprenons une méthode pour dessiner nos propres boutons HTML personnalisés en les traçant à partir d'une seule image. D'abord, vous devez dessiner votre image, puis suivre avec moi, comme nous le programme de rédaction HTML pour obtenir des boutons entièrement personnalisables. Ces boutons peuvent être réutilisés n'importe où, et sortiront avec tous les modèles assortis que vous définissez le long du chemin vers la construction.
-
-C'est plus facile que ça ne sonne ! Vous n'êtes qu'à quelques clics, et la plus grande partie de votre travail sera de dessiner l'œuvre personnalisée, ne fonctionnant pas ce programme. Suivez-le et faites une première tentative.
-
-Rappelez-vous, ce que vous produisez est réutilisable et universel. C'est l'avantage de produire vos propres modèles avec cette véritable usine de templating.

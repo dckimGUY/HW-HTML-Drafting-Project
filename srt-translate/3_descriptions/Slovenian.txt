@@ -1,5 +1,0 @@
-Tu se učimo, kako iz ene slike izrisati lastne gumbe HTML. Najprej morate narisati svojo sliko, nato pa sledite skupaj z mano, kot smo nam HTML Program za oblikovanje, da bi dobili popolnoma prilagodljiv gumbe ven. Ti gumbi se lahko ponovno uporabijo kjerkoli, in bodo prišli ven skupaj z vsemi izbranimi predlogami, ki jih določite po poti do gradnje.
-
-Lažje je, kot se sliši! Vi ste le nekaj klikov stran, in večina vašega dela bo v risanju po meri umetnine, ne deluje ta program. Sledite mu in poskusite prvi.
-
-Zapomnite si, to, kar proizvajate, je ponovno uporabno in univerzalno. To je prednost izdelave lastnih predlog v tej pravi zapeljivi tovarni.

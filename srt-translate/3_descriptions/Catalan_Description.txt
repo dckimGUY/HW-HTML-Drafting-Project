@@ -1,5 +1,0 @@
-Aquí estem aprenent un mètode de dibuixar els nostres propis botons HTML personalitzats rastrejant-los d'una sola imatge. Primer heu de dibuixar la imatge, i després seguir-la amb mi, com nosaltres el programa HTML d'educació per obtenir botons totalment personalitzables. Aquests botons es poden tornar a utilitzar en qualsevol lloc i sortir junts amb totes les plantilles tan separades que definiu al llarg del camí a la construcció.
-
-És més fàcil del que sona! Només sou uns quants clics lluny, i la majoria de la vostra feina serà dibuixar l'art personalitzat, no funcionarà aquest programa. Segueix-te, i fes-ho un primer intent.
-
-Recordeu, el que esteu produïnt és recusible i universal. Aquest és el benefici de produir les vostres plantilles amb aquesta fàbrica temporal.

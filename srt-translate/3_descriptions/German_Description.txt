@@ -1,5 +1,0 @@
-Hier lernen wir eine Methode, unsere eigenen benutzerdefinierten HTML-Buttons zu zeichnen, indem wir sie aus einem einzigen Bild verfolgen. Zuerst müssen Sie Ihr Bild zeichnen, und dann folgen Sie mit mir, wie wir uns das HTML-Entwurfprogramm, um voll anpassbare Tasten heraus zu erhalten. Diese Tasten können überall wieder verwendet werden und kommen zusammen mit allen sortierten Vorlagen, die Sie entlang des Pfades zur Konstruktion definieren.
-
-Es ist einfacher als es klingt! Sie sind nur ein paar Klicks entfernt, und das meiste Ihrer Arbeit wird in der Zeichnung der benutzerdefinierten Kunstwerke, nicht funktionieren dieses Programm. Folgt, und gibt es einen ersten Versuch.
-
-Denken Sie daran, was Sie produzieren ist wiederverwendbar und universell. Das ist der Vorteil der Herstellung Ihrer eigenen Vorlagen mit dieser veritablen Templating Fabrik.

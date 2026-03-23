@@ -1,5 +1,0 @@
-Šeit mēs mācāmies metodi zīmēt mūsu pašu pielāgotās HTML pogas, izsekojot tās no viena attēla. Vispirms jums ir izdarīt savu attēlu, un pēc tam sekot kopā ar mani, jo mēs HTML izstrādes programmu, lai iegūtu pilnībā pielāgojamu pogas out. Šīs pogas var izmantot atkārtoti jebkur, un iznāks kopā ar visiem asorti veidnes, ko jūs definēt pa ceļu uz būvniecību.
-
-Tas ir vieglāk nekā izklausās! Jums ir tikai daži klikšķi prom, un lielākā daļa no jūsu darbu būs zīmējot pielāgotu mākslas darbu, ne darbojas šo programmu. Sekojiet līdzi, un dodiet tai pirmo mēģinājumu.
-
-Atcerieties, ka tas, ko jūs ražo, ir atkalizmantojams un universāls. Tas ir ieguvums, ražojot savas veidnes ar šo īstu templating rūpnīcā.

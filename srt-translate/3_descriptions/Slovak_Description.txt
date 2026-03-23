@@ -1,5 +1,0 @@
-Tu sa učíme metódu kreslenia našich vlastných HTML tlačidiel vystopovaním z jedného obrázku. Najprv musíte nakresliť svoj obrázok, a potom nasledovať so mnou, ako my HTML Kreslenie Program získať plne prispôsobiteľné tlačidlá von. Tieto tlačidlá môžu byť použité kdekoľvek a budú vychádzať spolu so všetkými najrôznejšími šablónami, ktoré definujete pozdĺž cesty k konštrukcii.
-
-Je to ľahšie ako to znie! Ste len pár kliknutí preč, a väčšina z vašej práce bude vo kreslení vlastné umelecké diela, nefunkčné tento program. Nasledujte ho a dajte mu prvý pokus.
-
-Pamätajte, že to, čo produkujete, je opakovane použiteľné a univerzálne. To je výhoda výroby vlastných šablón s týmto naozajstným tempoplating továrne.

@@ -1,5 +1,0 @@
-Di sini kita belajar metode menggambar tombol HTML kita sendiri dengan melacaknya dari gambar tunggal. Pertama Anda harus menggambar gambar Anda, dan kemudian ikuti saya, karena kita kita Program Drawing HTML untuk mendapatkan sepenuhnya sesuai tombol keluar. Tombol-tombol ini dapat digunakan kembali di mana saja, dan akan keluar bersama-sama dengan semua templat assorted yang Anda definisikan sepanjang jalan ke konstruksi.
-
-Ini lebih mudah daripada kedengarannya! Anda hanya beberapa klik jauhnya, dan sebagian besar pekerjaan Anda akan dalam menggambar karya seni gubahan, tidak berfungsi program ini. Ikutilah, dan lakukan upaya pertama.
-
-Ingat, apa yang Anda produksi adalah reusable dan universal. Itu adalah keuntungan dari memproduksi template Anda sendiri dengan pabrik templating veritable ini.

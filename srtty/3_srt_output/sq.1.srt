@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+Sot do të flasim për bërjen e butonave tuaj për këtë program.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Ky është mësuesi i parë që po bëj dhe shpresoj se do ta kuptosh lehtë dhe do ta shijosh.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Le të shohim këtu: 'Informacioni për punimin e butonave'.
+
+4
+00:00:21, 001 --> 00:00:24,000
+Pra, kjo është ajo që ne jemi duke kërkuar në me këtë tutorial.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Pra, le të futemi menjëherë në të.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Ne jemi këtu në program, dhe ne mund të shohim menjëherë se unë kam vënë diçka në këtë kuti këtu.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Ajo është duke na dhënë neve një lartësi dhe të përcaktuar gjerësi, vetëm një shumë të thjeshtë.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Kjo na jep gjerësinë dhe lartësinë më të madhe që mund të përdorim, dhe tregohet brenda asaj drejtkëndëshi të madh atje me shkronjën e madhe 'B'.
+
+9
+00:00:50, 001 --> 00:01:07,000
+Hapi i parë që duhet të bëjmë në mënyrë që të gjurmojmë butonin tonë të personalizuar është se na duhet të tërheqim një imazh nga sistemi i skedarëve direkt në këtë zonë ku ka shkronjën e madhe 'B'.
+
+10
+00:01:07, 001 --> 00:01:12,000
+Tani do të zvarritemi mbi imazhin tonë nga sistemi i skedarëve këtu, dhe ku do të shohim shkronjën 'B'.
+
+11
+00:01:12, 001 --> 00:01:20,000
+Tani do të zvarritemi mbi imazhin tonë nga sistemi i skedarëve këtu, dhe ku do të shohim shkronjën 'B'.
+
+12
+00:01:20, 001 --> 00:01:23,000
+Dhe ja ku e kemi dhe shfaqet atje në ekran.
+
+13
+00:01:23, 001 --> 00:01:24,000
+Problemi që mund të shohim është se duket shumë i vogël.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Çfarë duhet të bëjmë?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Ne duhet të lëvizim kursorin tonë të miut mbi majë të atij rajoni me shkronjën e madhe 'B' dhe pastaj mund të rrotullohemi me rrotën e miut. Tani shohim që po ndodh diçka interesante.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Ne jemi në gjendje të rregullojmë shkallën e udhëzuesit të ekranit.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Kur zbresim poshtë në 4, 3, 2 dhe 1, shohim se ka një faktor të veçantë që zbatohet.
+
+18
+00:01:54, 001 --> 00:01:58,000
+E ndërtova këtë në program me qëllim të artit të pixelve.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Kështu që kur t'i ktheni butonat në program ato do të numërohen në madhësi.
+
+20
+00:02:03, 001 --> 00:02:07,000
+Ato nuk do të jenë madhësia që ju shihni ndërsa ju jeni duke i vizatuar ato.
+
+21
+00:02:07, 001 --> 00:02:16,000
+Pra, mund t'i vizatosh ata në atë madhësi të vogël të pixels dhe pastaj mund t'i sjellësh në program dhe ata papritmas do të bëhen më të mëdhenj.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Për shkak të kësaj arsye, ju jeni duke marrë një ekonomi të vërtetë të mirë në madhësinë e imazhit tuaj dhe butonat tuaj.
+
+23
+00:02:22, 001 --> 00:02:31,000
+Pra, butoni juaj nuk është shumë i shtrenjtë në aspektin se sa kushton për t'i futur në internet.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Ja ku e kemi. Kjo këtu ka 180 njësi lartësie dhe 100 njësi gjerësie, por nuk është veçanërisht e dobishme për ne për momentin.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Tani unë do të përshkruaj një nga gjërat e para që ju mund të shihni këtu: Është ky butoni i ruajtjes.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Nëse ne do të klikojmë këtë buton të shpëtimit, ajo që do të ndodhë është se ne do të ruajmë një çelës të formës.
+
+27
+00:02:54, 001 --> 00:03:08,000
+Dhe në qoftë se ne do të klikojmë këtë tjetër këtu, fletë yjesh shënuar, një model i vetëm i përfaqësuar nga kjo vizatim do të jetë ruajtur.
+
+28
+00:03:08, 001 --> 00:03:12,000
+Mos u shqetëso shumë për këtë.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Tani le të shkojmë tek diçka që e kam përgatitur më parë.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Nëse e shtypim arratisjen, vër re se të gjitha këto gjëra do të zhduken.
+
+31
+00:03:20, 001 --> 00:03:24,000
+Mirë, pra tani gjithçka iku.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Pra, tani le të shohim nëse mund ta vendos përsëri.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Unë tani do të shkallë atë në një madhësi që mund të shihet lehtë.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Do ta heq qafe atë pjesë të vogël të sintaksës atje, dhe pastaj do t'ju tregoj një çelës formash që kam bërë më parë.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Le ta hapim në MS Paint dhe të shohim si duket.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Pra, ky është një çelës formash që kishte disa përkufizime të dhëna me sintaksën 'h' dhe 'w'.
+
+37
+00:04:04, 001 --> 00:04:15,000
+Pjesa më e rëndësishme nuk është se ky çelës i formës është imazhi grafik i dobishëm tani. Nuk është.
+
+38
+00:04:15, 001 --> 00:04:26,000
+I gjithë qëllimi i çelësit të formës është të kesh një figurë të bukur në sistemin e skedarëve, duke ju lejuar të identifikoni në mënyrë vizuale çelësin e formës.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Kjo është e gjithë arsyeja që është atje.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Tani do të tregoj si ta përdor.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Pasi të keni krijuar një çelës formash duke ruajtur një person duke përdorur sintaksën. (Celsat nuk janë të detyrueshme.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Mund t'i shpërfillësh.
+
+43
+00:04:41, 001 --> 00:04:52,000
+Forma ka një sintaksë speciale të dukshme në emrin e file.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Tani do ta përshkruaj sintaksën. Përdor sintaksën "h" dhe "w.".
+
+45
+00:05:17, 001 --> 00:05:27,000
+Kjo përshkruan rreshtat e drejtkëndëshave që ndajnë të njëjtën lartësi.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Vetëm mos hiq këtë sintaksë nga fundi i emrit të file nëse dëshiron të riemërtosh file.
+
+47
+00:05:51, 001 --> 00:06:02,000
+Gjëja e bukur për këtë është se ju thjesht mund ta tërhiqni këtë gjë direkt në një nga shkronjat, dhe do të instalohet në atë vend.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Po zgjedh letrën 'jo'.
+
+49
+00:06:06, 001 --> 00:06:10,000
+Letra tani përmban informacionin për atë çelës të formës.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Pastaj e përdorim rrotullën pak dhe shohim se për ne është tërhequr krejt ky çelës i përcaktuar.
+
+51
+00:06:23, 001 --> 00:06:32,000
+E kam bërë këtë paradhënie, kështu që mund t'ju tregoj lehtë se kjo është e përkryer me vizatimin.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Por, vetëm për pak kohë do të kaloj procesin për të treguar gjurmimin.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Do të hyjmë manualisht në sintaksë. Unë do të përdorin periudha dhe hipfen në boshtin numër, por, ju gjithashtu mund të përdorni shkronjat 'h' dhe 'w'.
+
+54
+00:07:01, 001 --> 00:07:04,000
+Si fillim, do të zgjedhim dy numrat e parë: 'h10w10'.
+
+55
+00:07:04, 001 --> 00:07:08,000
+Kjo është vetëm që ne kemi diçka për të parë si një pikë fillimi.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Tani mund të rregullojmë dhe të shtojmë 'w' për të marrë më shumë gjerësi.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Pra, ne kemi përkufizimet dhe kemi gjurmuar me sukses katër shkronjat e para.
+
+58
+00:07:45, 001 --> 00:07:51,000
+E kam gjurmuar paraprakisht, kështu që le të lëvizim.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Pra, këtu është përfunduar.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Nëse keni qenë të suksesshëm dhe keni përfunduar këtë proces për imazhin tuaj, hapi tjetër është ta ruani.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Ju do të përdorni atë buton drejtë atje që thotë fletë yll.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Kur klikoni tek ai, do të ruhet një file i veçantë.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Pastaj duhet ta zvarritni atë file përsëri në ekranin e programit.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Do t'ju tregoj këtë së shpejti, por së pari do t'ju tregoj për sintaksën e dosjes e cila sapo është ruajtur.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Mund të shohim se kemi të njëjtin sintaksë që është ruajtur në formë çelësi. (emri prefiks 'TEMPL')
+
+67
+00:09:11, 001 --> 00:09:13,000
+Pra, le të shohim se çfarë mund të bëjmë.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Ne përdorim ikjen në mënyrë që të kemi një ekran të mirë bosh.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Unë do ta tërheq këtë model përsëri në program.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Kjo mund të duket e ndërlikuar, por nuk është.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Nëse duam butona, tani duhet të zgjedhim midis 6, 4, ose 2.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Ky nuk është numri i butonëve, por përkundrazi është numri i shteteve të pulsantëve që do të përdoren.
+
+73
+00:09:52, 001 --> 00:10:12,000
+Kur qëndrojmë në këmbë me miun mbi butonin, ky është shteti pezull.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Kur ne klikojmë poshtë, kjo është gjendja aktive.
+
+75
+00:10:15, 001 --> 00:10:17,000
+Dhe kur butoni klikoi, pastaj merr gjendjen e fokusuar.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Ne kemi zgjedhjen për të bërë të gjitha 6, e cila jep vetëm 5 shtete të përdorshme.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Ne preferojmë të përdorim ose 4, që është ideale për kompjuterët e desktopit ose 2 që është e mjaftueshme për telefonat celularë.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Tani do të jap një përshkrim të shkurtër duke supozuar se janë përdorur 4 vende butonash.
+
+79
+00:10:35, 001 --> 00:11:01,000
+bazë
+
+80
+00:11:01, 001 --> 00:11:02,000
+fokusi
+
+81
+00:11:02, 001 --> 00:11:03,000
+në pritje
+
+82
+00:11:03, 001 --> 00:11:05,000
+aktiv
+
+83
+00:11:05, 001 --> 00:11:27,000
+Kjo është shumë e rëndësishme për të ditur nëse ju nuk jeni të njohur me HTML.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Le të vazhdojmë me procesin tonë.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Unë do të zgjedh 4 shtetet duke klikuar këtë.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Tani kemi ruajtur një dosje përsëri.
+
+87
+00:11:45, 001 --> 00:11:55,000
+Të shohim nëse mund ta hapim atë dosje në programin tonë të preferuar të artit.
+
+88
+00:11:55, 001 --> 00:12:00,000
+Ku është? Libre-Piksel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Ne do të shohim se si kjo dosje duket.
+
+90
+00:12:04, 001 --> 00:12:06,000
+E kam përgatitur më herët duke ndryshuar ngjyrat.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Këtu mund të shohim gjithashtu se është e mundur të mugullohet madhësia e imazhit në lartësinë e tij.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Do të punojë akoma më vonë.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Ne mund të shohim shpëtimin e dosjes e ka katërfishuar atë, dhe tani kemi katër paraqitje.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Tani do ta kthej imazhin tonë udhëzues për të treguar se cila gjendje butonash përfaqëson çdo figurë.
+
+95
+00:12:53, 001 --> 00:12:59,000
+Në këtë mënyrë ne e dimë se në cilën gjendje jemi duke punuar kur ne ndryshojmë ngjyrat ose vizatojmë imazhet tona.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Këto nuk do të rezultojnë vetëm në një buton të vetëm, por në vend të kësaj do të jenë saktësisht butonat që ne kemi gjurmuar duke përdorur drejtkëndëshet.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Kjo vepër grafike tashmë ka përfunduar paraprakisht, dhe kështu, unë do të vazhdoj me procesin tonë.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Pra, tani që kemi një imazh të përfunduar, do të tregoj përsëri sintaksën, e cila ka prefiksin 'RADY'.
+
+99
+00:13:49, 001 --> 00:14:03,000
+Ky buton ka përfunduar dhe mund të tërhiqet menjëherë.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Tani ne do të shohim se çfarë ndodh kur ne të tërheqë këtë skedar buton fund në program.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Duket sikur diçka po ndodh këtu në këndin e sipërm të majtë të ekranit tonë, dhe pastaj del butonat tuaj të përfunduar.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Ja ku janë, dhe le të provojmë nëse mund t'i testojmë duke përdorur shapësirën, dhe duke e mbajtur poshtë.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Tani mund të shohim se butonat funksionojnë siç duhet, dhe duken tamam si grafikët që kemi vizatuar.
+
+104
+00:14:38, 001 --> 00:14:45,000
+Ky file që kemi prodhuar mund të përdoret dhe përdoret në çdo kohë.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Kemi një sistem shumë të këndshëm, këmbëngulës dhe të përkohshëm.
+
+106
+00:14:51, 001 --> 00:14:53,000
+Sistemi është nga a emri;
+
+107
+00:14:53, 001 --> 00:14:59,000
+A i pari figurë emri;
+
+108
+00:14:59, 001 --> 00:15:08,000
+dhe fund emri.
+
+109
+00:15:08, 001 --> 00:15:15,000
+Ne mund të kopjojmë këtë buton të përfunduar në sistemin tonë të skedarëve dhe të bëjmë një lloj imazhi alternativ, dhe do të funksionojë.
+
+110
+00:15:15, 001 --> 00:15:26,000
+Nuk jam i sigurt nëse kjo funksionon. Ta provojmë.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Pra, ju mund të merrni atë atje, dhe të ndryshoni atë, duke e bërë atë ngjyra të ndryshme ose duke lëvizur gjëra të vogla rreth.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Ju keni një buton të mirë duke vënë në dispozicion kapacitetin këtu, dhe ju mund të bëni sa më shumë që të dëshironi.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Këtu mund të shihni se nuk e kemi mbushur këtë zonë me butona, por, sigurisht, nëse ju mbaron hapësira, ju thjesht do të bëni një tjetër.
+
+114
+00:15:59, 001 --> 00:16:19,000
+Një gjë që unë do të theksoj është se mund të jetë e vështirë të gjesh një sintaksë që përshtatet kur butonat tuaj janë shumë të afërt së bashku në vizatimin tuaj.
+
+115
+00:16:19, 001 --> 00:16:54,000
+Pra, për ta bërë më të lehtë për tu gjurmuar, le më shumë hapësirë në mes të imazheve.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Tani do të përdor çelësin 'z' i cili do të sigurojë që unë nuk i ripërmasoj butonat.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Do ta bëj këtë më të lartë se të tjerët duke zgjedhur nga ajo menu. Përdor shkurtoren e tastierës (z-mode: "h').
+
+118
+00:17:33, 001 --> 00:17:39,000
+Kështu që, këtë e vura në krye të rendit z-eksifik duke përdorur "h.".
+
+119
+00:17:39, 001 --> 00:18:01,000
+Duke qenë se kam vendosur rritjen e miut për të krahasuar rritjen e pixels të vizatimit tim të lartë, është e lehtë të rreshtosh çdo gjë.
+
+120
+00:18:01, 001 --> 00:18:06,00
+Në program ka vende të ndryshme, por nuk do t'i mbuloj këtu.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Ndoshta pak më shumë kështu.
+
+122
+00:18:14, 001 --> 00:18:19,000
+Shumë afër.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Tani do të përdor rrotën e mouse për të zgjedhur llojin e ruajtjes nga tab IV-2.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Po kursej në një faktor të gjerësisë së shikimit të 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Kjo do të kthehet automatikisht.
+
+126
+00:18:55, 001 --> 00:19:43,000
+Për të ruajtur file nga tastierës: Përdor 'prodhuar + s'. Në vend të kësaj, vetëm për të hapur file për të shikuar: përdorimi 'prodhuar + hyrje'.
+
+127
+00:19:43, 001 --> 00:19:48,000
+Shumë mirë.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Të lumtë.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Marrje.
+

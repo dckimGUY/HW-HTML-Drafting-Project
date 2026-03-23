@@ -982,19 +982,13 @@ let eventRoll = [];
 if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
 
 
-
-
-/*
-
-for (let i = 1; i < 21; i++) {
-for (level[i].body.children.length) {
-lvlRoll.push(level[i].body.children[j].id);
+const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ]
+const lvlRoll = {};
+for (i of levelName) {
+lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
+for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
+lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
 } }
-
-*/
-
-
-
 
 
 let scriptStarter = `
@@ -1005,8 +999,9 @@ const go           = {};
       go.elm       = {};
       go.dat       = {};
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
-      go.display   = {};
-
+      go.dspl      = {};
+      go.dspl.ids  =
+${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
 

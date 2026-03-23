@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+Astăzi vom vorbi despre a face propriile butoane personalizate pentru acest program.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Acesta este primul tutorial pe care îl fac și sperăm că îl va înțelege ușor și se bucură de ea.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Să vedem aici: "Informații pentru artizanatul butoanelor.".
+
+4
+00:00:21, 001 --> 00:00:24,000
+Cam la asta ne uităm cu acest tutorial.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Să începem.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Suntem aici în program şi putem vedea imediat că am pus ceva în cutia asta.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Ne dă un nume de înălţime şi lăţime, doar unul foarte simplu.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Acest lucru ne oferă cea mai mare lățime și înălțime pe care am putea-o folosi, și este arătat în interiorul dreptunghiului mare de acolo cu litera mare "B.".
+
+9
+00:00:50, 001 --> 00:01:07,000
+Primul pas pe care trebuie să-l facem pentru a putea urmări butonul nostru personalizat este că trebuie să tragem o imagine din sistemul de fișiere direct în această zonă unde are litera mare "B.".
+
+10
+00:01:07, 001 --> 00:01:12,000
+Acum vom trage peste imaginea noastră din sistemul de fișiere de aici, și unde vom vedea litera "B.".
+
+11
+00:01:12, 001 --> 00:01:20,000
+Acum vom trage peste imaginea noastră din sistemul de fișiere de aici, și unde vom vedea litera "B.".
+
+12
+00:01:20, 001 --> 00:01:23,000
+Și acolo avem și apare acolo pe ecran.
+
+13
+00:01:23, 001 --> 00:01:24,000
+Problema e că pare prea mică.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Ce ar trebui să facem?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Trebuie să mutăm cursorul nostru de mouse deasupra acelei regiuni cu litera "B" mare și apoi putem derula cu roata de mouse. Acum vedem că se întâmplă ceva interesant.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Suntem capabili de a ajusta scara de pe ghidul de ecran.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Când derulăm până la 4, 3, 2 şi 1, observăm că există un factor special de creştere.
+
+18
+00:01:54, 001 --> 00:01:58,000
+L-am construit în program cu scopul de pixel art.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Astfel încât atunci când aduceți butoanele înapoi în program acestea vor fi scalate în mărime.
+
+20
+00:02:03, 001 --> 00:02:07,000
+Nu vor fi mărimea pe care o vedeţi în timp ce le desenaţi.
+
+21
+00:02:07, 001 --> 00:02:16,000
+Deci, le puteți desena la acea dimensiune mic pixel și apoi le puteți aduce în program și vor deveni brusc mai mari.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Din acest motiv, veți obține o economie foarte bună pe dimensiunea imaginii și butoanele.
+
+23
+00:02:22, 001 --> 00:02:31,000
+Deci, butonul nu este prea scump în ceea ce privește cât de mult costă pentru trecerea acestuia prin internet.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Asta e. Acesta are 180 de unități de înălțime și 100 de unități de lățime, dar nu este deosebit de util pentru noi în acest moment.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Acum voi descrie unul dintre primele lucruri pe care le-ai putea vedea aici: Este acest buton de salvare.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Dacă ar fi să apăsați acest buton de salvare, ceea ce se va întâmpla este că vom salva o cheie formă.
+
+27
+00:02:54, 001 --> 00:03:08,000
+Şi dacă ar fi să apăsăm pe cealaltă de aici, o foaie de stea marcată, un singur şablon reprezentat de acest desen ar fi salvat.
+
+28
+00:03:08, 001 --> 00:03:12,000
+Nu-ţi face griji pentru asta.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Acum să trecem la ceva ce am pregătit mai devreme.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Dacă apăsăm să evadăm, observaţi că toate aceste lucruri vor dispărea.
+
+31
+00:03:20, 001 --> 00:03:24,000
+Bine, deci acum totul este plecat.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Să vedem dacă pot să-l pun din nou.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Acum îl voi mări la o mărime care poate fi uşor văzută.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Voi scăpa de acea mică bucată de sintaxă acolo, şi apoi vă voi arăta o cheie de formă pe care am făcut-o mai devreme.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Să-l deschidem în MS Paint şi să vedem cum arată cu adevărat.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Deci, aceasta este o cheie de formă care a avut o definiție dată cu sintaxa "h" și "w.".
+
+37
+00:04:04, 001 --> 00:04:15,000
+Partea importantă nu este că această cheie de formă este o imagine grafică utilă acum. Nu este.
+
+38
+00:04:15, 001 --> 00:04:26,000
+Întregul scop al cheii de formă este de a avea o imagine frumoasă în sistemul de fișiere, permițându-vă să identifice vizual tasta formă.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Acesta este motivul pentru care este acolo.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Acum voi arăta cum să-l folosească.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Odată ce ați produs o cheie formă de economisire unul folosind sintaxa. (Cheile de formă nu sunt obligatorii.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Îi poţi ignora.
+
+43
+00:04:41, 001 --> 00:04:52,000
+Cheia de formă are o sintaxă specială vizibilă în numele fișierului.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Acum voi descrie sintaxa. Foloseşte sintaxa 'h' şi 'w'.
+
+45
+00:05:17, 001 --> 00:05:27,000
+Aceasta descrie rânduri de dreptunghiuri care au aceeași înălțime.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Doar asigurați-vă că nu pentru a elimina această sintaxă de la sfârșitul numelui fișierului dacă doriți să redenumiți fișierul.
+
+47
+00:05:51, 001 --> 00:06:02,000
+Lucru frumos despre acest lucru este că puteți trage pur și simplu acest lucru direct pe una dintre litere, și va fi instalat în acea locație.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Eu aleg litera 'n'.
+
+49
+00:06:06, 001 --> 00:06:10,000
+Scrisoarea "n" conține acum informațiile pentru acea cheie de formă.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Apoi folosim roata de defilare un pic și vedem că toate aceste chei de formă definite au fost atrase pentru noi.
+
+51
+00:06:23, 001 --> 00:06:32,000
+Am făcut asta în avans, și așa vă pot arăta cu ușurință că acest lucru se aliniază perfect cu desenul.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Dar, doar pe scurt voi trece prin procesul pentru a demonstra urmărirea.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Vom introduce manual sintaxa. Voi folosi perioada și cratimă pe pad număr, dar, puteți folosi, de asemenea, literele "h" și "w.".
+
+54
+00:07:01, 001 --> 00:07:04,000
+Pentru început, vom alege primele două numere: "h10w10.".
+
+55
+00:07:04, 001 --> 00:07:08,000
+Acest lucru este doar pentru ca avem ceva să se uite la ca un punct de plecare.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Acum putem ajusta și adăuga "w" pentru a obține mai multe lățimi.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Deci, avem definiţiile şi am urmărit cu succes primele patru litere.
+
+58
+00:07:45, 001 --> 00:07:51,000
+Am urmărit deja asta în avans, aşa că hai să mergem mai departe.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Deci, aici este terminat.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Dacă ați reușit și ați finalizat acest proces pentru propria imagine, următorul pas este să-l salvați.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Vei folosi butonul de acolo pe care scrie foaie stelară.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Când îl faceți clic, un fișier special va fi salvat.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Apoi trebuie să trageți acel fișier înapoi pe ecranul programului.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Vă voi arăta acest lucru în curând, dar mai întâi voi spune despre sintaxa fișierului care tocmai a fost salvat.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Vedem că avem aceeaşi sintaxă care a fost stocată în cheia de formă. (prefixul denumirii fișierului "TEMPL")
+
+67
+00:09:11, 001 --> 00:09:13,000
+Să vedem ce putem face.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Folosim evadarea pentru a avea un ecran alb.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Voi trage acest șablon înapoi în program.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Ar putea părea complicat, dar nu este.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Dacă vrem butoane, trebuie să alegem între 6, 4 sau 2.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Acesta nu este numărul de butoane, ci, mai degrabă, este numărul de stări de buton care vor fi utilizate.
+
+73
+00:09:52, 001 --> 00:10:12,000
+Când plutim cu mouse-ul peste buton, aceasta este starea hover.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Când facem clic în jos, aceasta este starea activă.
+
+75
+00:10:15, 001 --> 00:10:17,000
+Și când butonul a făcut clic, apoi devine starea concentrată.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Avem posibilitatea de a face toate 6, care oferă doar 5 state utilizabile.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Preferăm să folosim fie 4, care este ideal pentru computerele de birou, fie 2 care este suficient pentru telefoanele mobile.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Voi da acum o scurtă descriere presupunând că sunt folosite 4 stări de buton.
+
+79
+00:10:35, 001 --> 00:11:01,000
+bază
+
+80
+00:11:01, 001 --> 00:11:02,000
+focalizare
+
+81
+00:11:02, 001 --> 00:11:03,000
+hover
+
+82
+00:11:03, 001 --> 00:11:05,000
+activă
+
+83
+00:11:05, 001 --> 00:11:27,000
+Acest lucru este foarte important de știut dacă nu sunteți familiarizați cu HTML.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Să continuăm procesul.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Voi alege cele 4 stări ale butonului făcând clic pe asta.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Acum am salvat din nou un dosar.
+
+87
+00:11:45, 001 --> 00:11:55,000
+Să vedem dacă putem deschide acel fişier în programul nostru de artă preferat.
+
+88
+00:11:55, 001 --> 00:12:00,000
+Unde este? Libre-Pixel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Vom vedea cum arată acest dosar.
+
+90
+00:12:04, 001 --> 00:12:06,000
+L-am pregătit mai devreme schimbând culorile.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Aici putem vedea, de asemenea, că este posibil să se recolteze dimensiunea imaginii în înălțimea sa.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Tot va merge mai târziu.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Putem vedea salvarea fişierului de patru ori, şi acum avem patru reprezentări.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Voi aduce acum înapoi imaginea noastră ghid pentru a arăta care buton stat fiecare imagine reprezintă.
+
+95
+00:12:53, 001 --> 00:12:59,000
+Astfel ştim la ce stat lucrăm când schimbăm culorile sau desenăm imaginile.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Acestea nu vor duce la un singur buton, ci vor fi exact butoanele pe care le-am urmărit folosind dreptunghiurile.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Această lucrare grafică a fost deja finalizată în avans, și astfel, voi continua procesul nostru.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Deci, acum că avem o imagine terminată, voi arăta din nou sintaxa, care are prefixul "READY.".
+
+99
+00:13:49, 001 --> 00:14:03,000
+Acest buton este terminat şi poate fi târât imediat.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Acum vom vedea ce se întâmplă când vom trage acest fișier de buton terminat în program.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Se pare că ceva se întâmplă aici în colţul din stânga sus al ecranului nostru, şi apoi iese butoanele tale terminate.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Uite-i şi hai să încercăm să-i testăm folosind bara spaţială şi ţinând-o jos.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Acum putem vedea că butoanele noastre funcţionează corect şi arată exact ca grafica pe care am desenat-o.
+
+104
+00:14:38, 001 --> 00:14:45,000
+Acest fișier pe care l-am produs poate fi utilizat și reutilizat în orice moment.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Avem un sistem de templating foarte frumos, persistent.
+
+106
+00:14:51, 001 --> 00:14:53,000
+Sistemul este format din: o cheie de formă (prefixul numelui fișierului "SHAPE");
+
+107
+00:14:53, 001 --> 00:14:59,000
+Un prim șablon, care primește o singură imagine (prefixul numelui fișierului "TEMPL");
+
+108
+00:14:59, 001 --> 00:15:08,000
+și setul de butoane terminat (prefixul numelui fișierului "READY").
+
+109
+00:15:08, 001 --> 00:15:15,000
+Putem chiar copia acest buton terminat în sistemul nostru de fișiere și de a face un fel de imagini alternative, și ar funcționa în continuare.
+
+110
+00:15:15, 001 --> 00:15:26,000
+Nu sunt sigur dacă funcţionează. Să încercăm.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Deci, ai putea lua că unul acolo, și să-l schimbe, făcându-l diferite culori sau în mișcare lucruri mici în jurul.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Aveți un buton bun care face disponibilă capacitatea aici, și puteți face cât de multe doriți.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Aici puteți vedea că nici măcar nu am umplut această zonă cu butoane, dar, desigur, dacă nu a alerga afară din spațiu, veți face pur și simplu un altul.
+
+114
+00:15:59, 001 --> 00:16:19,000
+Un lucru pe care îl voi sublinia este că ar putea fi dificil pentru a găsi o sintaxă care se potrivește atunci când butoanele sunt foarte aproape împreună în desen.
+
+115
+00:16:19, 001 --> 00:16:54,000
+Deci, pentru a face mai ușor de urmărit, lăsați mai mult spațiu între imagini.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Voi folosi acum tasta "z" care se va asigura că nu redimensionez butoanele.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Voi face ca unul mai mare că ceilalți prin selectarea din acel meniu. Folosesc scurtătură la tastatură (modul z: "h").
+
+118
+00:17:33, 001 --> 00:17:39,000
+Deci, am pus acest lucru în partea de sus a ordinului Z-index prin utilizarea "h.".
+
+119
+00:17:39, 001 --> 00:18:01,000
+Pentru că am setat creșterea mouse-ului pentru a se potrivi creșterea pixel de desenul meu upscaled, este ușor să se alinieze totul.
+
+120
+00:18:01, 001 --> 00:18:06,00
+Există toate setările diferite disponibile în program, dar, eu nu le va acoperi aici.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Poate un pic mai mult în acest fel.
+
+122
+00:18:14, 001 --> 00:18:19,000
+E destul de aproape.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Voi folosi acum roata defilare a mouse-ului pentru a selecta tipul de salvare din fila IV-2.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Sunt de economisire la un factor de lățime de vizualizare de 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Acest lucru va fi convertit automat.
+
+126
+00:18:55, 001 --> 00:19:43,000
+Pentru a salva fișierul de la tastatură: Utilizați "schimbare + s." În schimb, pentru a deschide doar fișierul pentru vizualizare: Utilizați "schimbare + intrare.".
+
+127
+00:19:43, 001 --> 00:19:48,000
+E destul de bine.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Bravo.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Tutorial terminat.
+

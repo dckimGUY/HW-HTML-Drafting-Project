@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+Hari ini kita akan berbicara tentang membuat Anda sendiri custom buttons untuk program ini.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Ini adalah tutorial pertama yang saya buat dan mudah-mudahan Anda akan memahaminya dengan mudah dan menikmatinya.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Mari kita lihat di sini: 'Informasi untuk pembuatan tombol'.
+
+4
+00:00:21, 001 --> 00:00:24,000
+Jadi, itulah yang kita lihat dengan tutorial ini.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Jadi, mari kita langsung ke dalamnya.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Kami di sini dalam program, dan kita dapat melihat segera bahwa saya telah menempatkan sesuatu ke dalam kotak ini di sini.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Hal ini memberi kita tinggi dan lebar nama, hanya yang sangat sederhana.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Yang memberi kita lebar dan tinggi terbesar yang mungkin dapat kita gunakan, dan ditunjukkan dalam persegi panjang yang besar di sana dengan huruf besar 'B'.
+
+9
+00:00:50, 001 --> 00:01:07,000
+Langkah pertama yang perlu kita lakukan sehingga kita dapat melacak tombol custom kita adalah bahwa kita perlu menyeret gambar dari sistem berkas langsung ke daerah ini di mana ia memiliki huruf besar 'B'.
+
+10
+00:01:07, 001 --> 00:01:12,000
+Kami sekarang akan menyeret lebih gambar kami dari sistem berkas di sini, dan ke mana kita melihat huruf 'B'.
+
+11
+00:01:12, 001 --> 00:01:20,000
+Kami sekarang akan menyeret lebih gambar kami dari sistem berkas di sini, dan ke mana kita melihat huruf 'B'.
+
+12
+00:01:20, 001 --> 00:01:23,000
+Dan di sana kita memilikinya dan muncul di sana di layar.
+
+13
+00:01:23, 001 --> 00:01:24,000
+Masalah yang dapat kita lihat adalah bahwa itu tampak terlalu kecil.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Apa yang harus kita lakukan?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Kita harus memindahkan kursor mouse kita di atas daerah itu dengan huruf besar 'B' dan kita kemudian dapat menggulung dengan roda tikus. Sekarang kita melihat bahwa sesuatu yang menarik sedang terjadi.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Kami mampu menyesuaikan skala di layar panduan.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Ketika kita menggulung ke 4, 3, 2, dan 1, kita melihat bahwa ada faktor peningkatan khusus diterapkan.
+
+18
+00:01:54, 001 --> 00:01:58,000
+Saya membuatnya untuk program ini untuk tujuan seni pixel.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Sehingga ketika Anda membawa kembali tombol ke dalam program mereka akan skala dalam ukuran.
+
+20
+00:02:03, 001 --> 00:02:07,000
+Mereka tidak akan menjadi ukuran yang Anda lihat saat Anda menggambar mereka.
+
+21
+00:02:07, 001 --> 00:02:16,000
+Jadi, Anda dapat menggambar mereka pada ukuran piksel kecil dan kemudian Anda dapat membawa mereka ke dalam program dan mereka tiba-tiba akan menjadi lebih besar.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Karena alasan itu, Anda mendapatkan ekonomi yang sangat baik pada ukuran gambar dan tombol Anda.
+
+23
+00:02:22, 001 --> 00:02:31,000
+Jadi, tombol Anda tidak terlalu mahal dalam hal berapa biaya untuk tranfering melalui internet.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Jadi ada kita memilikinya. Yang satu ini memiliki 180 unit tinggi dan 100 unit lebar, tetapi tidak terlalu berguna bagi kita saat ini.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Sekarang saya akan menggambarkan salah satu hal pertama yang mungkin Anda lihat di sini: Ini tombol simpan ini.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Jika kita klik tombol simpan ini, apa yang akan terjadi adalah kita akan menyimpan kunci bentuk.
+
+27
+00:02:54, 001 --> 00:03:08,000
+Dan jika kita adalah untuk klik ini lain di sini, bintang ditandai lembar, sebuah template tunggal yang diwakili oleh gambar ini akan disimpan.
+
+28
+00:03:08, 001 --> 00:03:12,000
+Jangan khawatir terlalu banyak tentang itu.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Sekarang mari kita pergi ke sesuatu yang saya siapkan sebelumnya.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Jika kita tekan escape, perhatikan bahwa semua hal ini akan memudar.
+
+31
+00:03:20, 001 --> 00:03:24,000
+Oke, jadi sekarang semuanya hilang.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Jadi, sekarang mari kita lihat apakah aku bisa memasukkannya kembali lagi.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Sekarang saya akan skala itu untuk ukuran yang dapat dengan mudah dilihat.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Aku akan menyingkirkan potongan kecil sintaks di sana, dan kemudian aku akan menunjukkan bentuk kunci yang telah saya buat sebelumnya.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Mari kita buka di MS Paint dan lihat seperti apa kelihatannya.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Jadi, ini adalah kunci bentuk yang memiliki beberapa definisi diberikan dengan 'h' dan 'w' sintaks.
+
+37
+00:04:04, 001 --> 00:04:15,000
+Bagian yang penting adalah bukan bahwa kunci bentuk ini adalah gambar grafis yang berguna saat ini. Tidak.
+
+38
+00:04:15, 001 --> 00:04:26,000
+Tujuan utama dari tombol bentuk adalah untuk memiliki gambar yang bagus dalam sistem berkas Anda, memungkinkan Anda untuk secara visual mengidentifikasi kunci bentuk.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Itulah alasannya mengapa ada di sana.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Sekarang aku akan menunjukkan bagaimana menggunakannya.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Setelah Anda telah menghasilkan kunci bentuk dengan menyimpan satu menggunakan sintaks. (Kunci bentuk tidak wajib.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Kau bisa mengabaikan mereka.
+
+43
+00:04:41, 001 --> 00:04:52,000
+Kunci bentuk memiliki sintaks khusus jelas terlihat dalam nama berkas.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Sekarang saya akan menggambarkan sintaks. Menggunakan sintaks 'h' dan 'w'.
+
+45
+00:05:17, 001 --> 00:05:27,000
+Ini menggambarkan baris persegi panjang yang berbagi tinggi yang sama.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Pastikan untuk tidak menghapus sintaks ini dari akhir nama berkas Anda jika Anda ingin mengubah nama berkas.
+
+47
+00:05:51, 001 --> 00:06:02,000
+Hal yang baik tentang hal ini adalah bahwa Anda dapat menyeret hal ini langsung ke salah satu surat, dan akan dipasang di lokasi itu.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Aku memilih huruf 'n'.
+
+49
+00:06:06, 001 --> 00:06:10,000
+Huruf 'n' sekarang berisi informasi untuk kunci bentuk tersebut.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Kemudian kita menggunakan roda gulungan sedikit dan kita melihat bahwa semua kunci bentuk didefinisikan telah ditarik untuk kita.
+
+51
+00:06:23, 001 --> 00:06:32,000
+Saya telah membuat yang satu ini di muka, dan jadi saya kemudian dapat dengan mudah menunjukkan bahwa garis ini dengan sempurna dengan gambar.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Tapi, hanya sebentar aku akan pergi melalui proses untuk menunjukkan penelusuran.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Kami akan secara manual memasukkan sintaks. Saya akan menggunakan periode dan tanda hubung pada nomor pad, tetapi, Anda juga dapat menggunakan huruf 'h' dan 'w'.
+
+54
+00:07:01, 001 --> 00:07:04,000
+Untuk memulai, kita akan memilih dua nomor pertama: 'h10w10'.
+
+55
+00:07:04, 001 --> 00:07:08,000
+Ini hanya agar kita memiliki sesuatu untuk dilihat sebagai titik awal.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Sekarang kita dapat menyesuaikan dan menambahkan 'w' untuk mendapatkan lebih banyak widget.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Jadi, kita memiliki definisi dan telah berhasil ditelusuri empat huruf pertama.
+
+58
+00:07:45, 001 --> 00:07:51,000
+Aku sudah menelusuri ini sebelumnya, jadi mari kita lanjutkan.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Jadi, ini sudah selesai.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Jika Anda telah berhasil dan menyelesaikan proses ini untuk gambar Anda sendiri, langkah selanjutnya adalah menyelamatkannya.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Anda akan menggunakan tombol yang di sana yang mengatakan bintang lembar.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Ketika Anda mengklik, file khusus akan disimpan.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Anda kemudian harus menyeret file yang kembali ke layar program.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Saya akan menunjukkan ini segera, tapi pertama saya akan memberitahu tentang sintaks file yang baru saja disimpan.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Kita dapat melihat bahwa kita memiliki sintaks yang sama yang disimpan dalam bentuk kunci. (awalan nama berkas 'TEMPL')
+
+67
+00:09:11, 001 --> 00:09:13,000
+Jadi, mari kita lihat apa yang bisa kita lakukan.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Kami menggunakan melarikan diri sehingga kita memiliki layar kosong yang bagus.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Aku selanjutnya akan menyeret template ini kembali ke program.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Ini mungkin tampak rumit, tapi tidak.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Jika kita ingin tombol, kita sekarang harus memilih antara 6, 4, atau 2.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Ini bukan jumlah tombol tapi, lebih tepatnya, ini adalah jumlah status tombol yang akan digunakan.
+
+73
+00:09:52, 001 --> 00:10:12,000
+Ketika kita hover dengan mouse di atas tombol, ini adalah negara hover.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Ketika kita klik ke bawah, ini adalah keadaan aktif.
+
+75
+00:10:15, 001 --> 00:10:17,000
+Dan ketika tombol diklik, kemudian mendapat keadaan fokus.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Kami memiliki pilihan untuk melakukan semua 6, yang memberikan hanya 5 negara yang dapat digunakan.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Kami lebih suka menggunakan 4, yang ideal untuk komputer desktop atau 2 yang cukup untuk ponsel.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Sekarang saya akan memberikan deskripsi singkat dengan asumsi 4 tombol negara digunakan.
+
+79
+00:10:35, 001 --> 00:11:01,000
+basis
+
+80
+00:11:01, 001 --> 00:11:02,000
+fokus
+
+81
+00:11:02, 001 --> 00:11:03,000
+hover
+
+82
+00:11:03, 001 --> 00:11:05,000
+aktif
+
+83
+00:11:05, 001 --> 00:11:27,000
+Itu sangat penting untuk mengetahui apakah kamu tidak akrab dengan HTML.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Mari kita lanjutkan proses kita.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Aku akan memilih 4 tombol negara dengan mengklik ini.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Sekarang kita telah menyimpan file lagi.
+
+87
+00:11:45, 001 --> 00:11:55,000
+Mari kita lihat apakah kita dapat membuka file yang dalam program seni favorit kami.
+
+88
+00:11:55, 001 --> 00:12:00,000
+Dimana itu? Libre- Pixel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Kita akan lihat seperti apa file ini.
+
+90
+00:12:04, 001 --> 00:12:06,000
+Aku telah menyiapkannya sebelumnya dengan mengubah warna.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Di sini kita juga dapat melihat bahwa adalah mungkin untuk tanaman ukuran gambar di tingginya.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Ini masih akan bekerja nanti.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Kita dapat melihat file tabungan telah empat kali lipat, dan sekarang kita memiliki empat perwakilan.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Sekarang saya akan membawa kembali gambar panduan kami untuk menunjukkan keadaan tombol yang masing-masing gambar mewakili.
+
+95
+00:12:53, 001 --> 00:12:59,000
+Dengan cara ini kita tahu negara mana yang kita kerjakan ketika kita mengubah warna atau menggambar gambar kita.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Ini tidak akan menghasilkan hanya dalam satu tombol tunggal, tetapi akan justru tombol yang telah kita lacak menggunakan persegi panjang.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Pekerjaan grafis ini sudah selesai terlebih dahulu, jadi, saya akan melanjutkan proses kami.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Jadi, sekarang kita memiliki gambar selesai, saya akan menunjukkan lagi sintaks, yang memiliki prefix 'READY'.
+
+99
+00:13:49, 001 --> 00:14:03,000
+Tombol ini sudah selesai dan bisa dimasukkan secepatnya.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Sekarang kita akan melihat apa yang terjadi ketika kita menyeret berkas tombol ini ke dalam program.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Sepertinya sesuatu terjadi di sini di sudut kiri atas layar kami, dan kemudian keluar tombol selesai Anda.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Itu mereka, dan mari kita coba jika kita dapat menguji mereka dengan menggunakan spasi, dan menahannya.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Sekarang kita bisa melihat bahwa tombol kita berfungsi dengan baik, dan terlihat persis seperti grafis yang kita gambar.
+
+104
+00:14:38, 001 --> 00:14:45,000
+File yang telah kita produksi dapat digunakan dan digunakan kembali setiap saat.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Kami memiliki sistem yang sangat bagus, gigih, templating di tempat.
+
+106
+00:14:51, 001 --> 00:14:53,000
+Sistem ini terdiri dari: Sebuah kunci bentuk (awalan nama berkas 'SHAPE');
+
+107
+00:14:53, 001 --> 00:14:59,000
+Templat pertama, yang mendapat gambar tunggal (awalan nama berkas 'TEMPL');
+
+108
+00:14:59, 001 --> 00:15:08,000
+dan tombol selesai ditata (awalan nama berkas 'READY').
+
+109
+00:15:08, 001 --> 00:15:15,000
+Kita bahkan dapat menyalin tombol ini selesai dalam sistem berkas kami dan membuat beberapa jenis gambaran alternatif, dan itu masih akan bekerja.
+
+110
+00:15:15, 001 --> 00:15:26,000
+Saya tidak yakin apakah ini bekerja. Mari kita coba.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Jadi, Anda bisa mengambil yang satu itu di sana, dan mengubahnya, membuat warna yang berbeda atau memindahkan hal-hal kecil di sekitar.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Anda memiliki baik tombol membuat kapasitas tersedia di sini, dan Anda dapat membuat sebanyak yang Anda inginkan.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Di sini Anda dapat melihat bahwa kita bahkan belum hampir diisi daerah ini dengan tombol, tetapi, tentu saja jika Anda kehabisan ruang, Anda hanya akan membuat satu sama lain.
+
+114
+00:15:59, 001 --> 00:16:19,000
+Satu hal yang akan saya tunjukkan adalah mungkin sulit untuk menemukan sintaks yang cocok ketika tombol Anda sangat dekat bersama-sama dalam gambar Anda.
+
+115
+00:16:19, 001 --> 00:16:54,000
+Jadi, untuk membuatnya lebih mudah untuk melacak, meninggalkan lebih banyak ruang antara gambar.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Saya sekarang akan menggunakan kunci 'z' yang akan memastikan bahwa saya tidak mengubah ukuran tombol.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Aku akan membuat satu yang lebih tinggi bahwa yang lain dengan memilih dari menu itu. Saya menggunakan pintasan papan tik (z-mode: 'h').
+
+118
+00:17:33, 001 --> 00:17:39,000
+Jadi, saya menempatkan ini ke atas urutan z-index dengan menggunakan 'h'.
+
+119
+00:17:39, 001 --> 00:18:01,000
+Karena saya telah mengatur peningkatan tetikus untuk mencocokkan peningkatan pixel gambar saya, mudah untuk menyelaraskan segalanya.
+
+120
+00:18:01, 001 --> 00:18:06,00
+Ada semua pengaturan yang berbeda tersedia dalam program, tapi, aku tidak akan menutupi mereka di sini.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Mungkin sedikit lebih seperti ini.
+
+122
+00:18:14, 001 --> 00:18:19,000
+Hampir saja.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Sekarang saya akan menggunakan roda gulung tetikus untuk memilih tipe save dari tab IV-2.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Aku menabung pada sebuah faktor lebar Viewing dari 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Ini akan dikonversi secara otomatis.
+
+126
+00:18:55, 001 --> 00:19:43,000
+Untuk menyimpan berkas dari papan tik: Gunakan 'shift + s'. Sebaliknya, hanya membuka berkas untuk melihat: Gunakan 'shift + enter'.
+
+127
+00:19:43, 001 --> 00:19:48,000
+Itu cukup bagus.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Bagus.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Tutorial berakhir.
+

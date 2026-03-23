@@ -1,5 +1,0 @@
-Anseo táimid ag foghlaim modh a tharraingt ar ár cnaipí HTML saincheaptha féin trí rianú iad amach ó íomhá amháin. An Chéad ní mór duit a tharraingt do íomhá, agus ansin a leanúint chomh maith le liom, mar táimid ag an HTML Dréachtchlár a fháil cnaipí customizable go hiomlán amach. Is féidir na cnaipí a athúsáid in áit ar bith, agus beidh teacht amach mar aon le gach ceann de na teimpléid assorted a shainiú tú feadh an cosán a thógáil.
-
-Tá sé níos éasca ná fuaimeanna sé! Tá tú ach cúpla cad a tharlaíonn ar shiúl, agus beidh an chuid is mó de do chuid oibre a bheith i líníocht an saothar ealaíne saincheaptha, ní ag feidhmiú an chláir seo. Lean chomh maith, agus a thabhairt dó an chéad iarracht.
-
-Cuimhnigh, cad tá tú ag táirgeadh ath-inúsáidte agus uilíoch. Is é sin an leas a bhaint as a tháirgeadh do teimpléid féin leis an mhonarcha templating veritable.

@@ -1,5 +1,0 @@
-Hier leren we een methode om onze eigen aangepaste HTML-knoppen te tekenen door ze uit één afbeelding te traceren. Eerst moet je je afbeelding tekenen, en volg dan met mij mee, als wij het HTML Drafting Programma om volledig aanpasbare knoppen uit te krijgen. Deze knoppen kunnen overal worden hergebruikt, en zullen samen met alle van de diverse sjablonen die u langs het pad naar de bouw definieert, naar buiten komen.
-
-Het is makkelijker dan het klinkt! U bent slechts een paar klikken verwijderd, en het grootste deel van uw werk zal zijn in het tekenen van het aangepaste kunstwerk, niet het functioneren van dit programma. Volgen, en geef het een eerste poging.
-
-Onthoud, wat jullie produceren is herbruikbaar en universeel. Dat is het voordeel van het produceren van uw eigen templates met deze ware templating fabriek.

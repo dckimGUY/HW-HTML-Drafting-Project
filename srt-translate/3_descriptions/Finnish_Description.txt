@@ -1,5 +1,0 @@
-Tässä olemme oppimassa menetelmä piirtää omia mukautettuja HTML-painikkeita jäljittämällä ne pois yhdestä kuvasta. Ensin sinun täytyy piirtää kuvasi, ja sitten seurata kanssani, kuten me HTML luonnosohjelma saada täysin muokattavissa painikkeet pois. Nämä painikkeet voidaan käyttää uudelleen missä tahansa, ja tulee ulos kaikki valikoituja malleja, jotka määrittelet pitkin polkua rakentamiseen.
-
-Se on helpompaa kuin miltä kuulostaa! Olet vain muutaman klikkauksen päässä, ja suurin osa työstäsi on piirustus mukautetun taiteen, ei toimi tämän ohjelman. Seuratkaa ja yrittäkää ensin.
-
-Muista, mitä olet tuottamassa on uudelleen ja universaali. Se on etu tuottaa omia malleja tämän todellisen templating tehdas.

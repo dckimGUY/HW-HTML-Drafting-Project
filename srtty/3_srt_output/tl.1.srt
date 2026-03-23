@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+Ngayon ay pag - uusapan natin ang paggawa ng iyong sariling mga buton ng kaugalian para sa programang ito.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Ito ang unang tutoryal na ginagawa ko at inaasahan na madali mo itong mauunawaan at masisiyahan ka rito.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Tingnan natin dito: 'Information for button crafting'.
+
+4
+00:00:21, 001 --> 00:00:24,000
+Kaya, iyan ang tinitingnan natin sa pagtuturong ito.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Kaya, pumasok tayo dito.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Nandito na kami sa programa, at agad naming nakita na may inilagay ako sa kahong ito.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Binibigyan kami nito ng taas at lapad na pangalan, simple lamang.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Iyan ang nagbibigay sa atin ng pinakamalawak na lapad at taas na magagamit natin, at ipinakikita ito sa loob ng malaking parihaba roon na may malaking titik na 'B'.
+
+9
+00:00:50, 001 --> 00:01:07,000
+Ang unang hakbang na kailangan nating gawin upang matalunton ang ating buton ng kaugalian ay na kailangan nating hilahin ang isang larawan mula sa sistema ng salansan nang tuwiran sa lugar na ito kung saan ito ay may malaking titik na 'B'.
+
+10
+00:01:07, 001 --> 00:01:12,000
+Ngayon ay hihilahin namin ang aming imahe mula sa sistema ng file sa paglipas dito, at sa kung saan namin makikita ang titik na 'B'.
+
+11
+00:01:12, 001 --> 00:01:20,000
+Ngayon ay hihilahin namin ang aming imahe mula sa sistema ng file sa paglipas dito, at sa kung saan namin makikita ang titik na 'B'.
+
+12
+00:01:20, 001 --> 00:01:23,000
+At doon namin ito nakuha at makikita ito sa iskrin.
+
+13
+00:01:23, 001 --> 00:01:24,000
+Ang nakikita nating problema ay na ito'y waring napakaliit.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Ano ang dapat nating gawin?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Dapat nating ilipat ang ating daga sa ibabaw ng rehiyong iyon sa pamamagitan ng malaking titik na 'B' at pagkatapos ay maaari tayong gumawa ng balumbon sa pamamagitan ng mousewheel. Ngayon ay nakikita namin na may nagaganap na kawili - wiling bagay.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Kaya naming baguhin ang sukat ng gabay sa screen.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Kapag tayo'y nakarolyo hanggang 4, 3, 2, at 1, makikita natin na may pantanging salik na tumutulong sa pag - akyat.
+
+18
+00:01:54, 001 --> 00:01:58,000
+Ginawa ko iyon sa programa para sa layunin ng sining ng pixel.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Upang kapag ibinalik mo ang mga buton sa programa ang mga ito ay maging maliit.
+
+20
+00:02:03, 001 --> 00:02:07,000
+Ang mga ito ay hindi magiging kasinlaki ng iyong nakikita habang ikaw ay gumuguhit ng mga ito.
+
+21
+00:02:07, 001 --> 00:02:16,000
+Kaya, maaari mo itong gumuhit sa maliit na sukat na iyan ng pixel at pagkatapos ay maaari mong dalhin ang mga ito sa programa at ito ay biglang magiging mas malaki.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Dahil sa dahilang iyan, nagkakaroon ka ng isang tunay na mabuting ekonomiya sa laki ng iyong larawan at sa iyong mga buton.
+
+23
+00:02:22, 001 --> 00:02:31,000
+Kaya, ang iyong buton ay hindi napakamahal kung tungkol sa kung magkano ang halaga nito sa paglilipat nito sa internet.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Kaya naroon kami. Ang isang ito rito ay may 180 yunit ng taas at 100 yunit ng lapad, ngunit hindi ito partikular na kapaki-pakinabang sa atin sa kasalukuyan.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Ngayon ay aking ilalarawan ang isa sa mga unang bagay na inyong makikita rito: Ito ay ang pagtitipid ng buton.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Kung pipindotin natin ito, ang mangyayari ay na mag - iipon tayo ng hugis.
+
+27
+00:02:54, 001 --> 00:03:08,000
+At kung pipindotin namin ang isa pa rito, may markang papel ng bituin, isang template na kinakatawan ng drowing na ito ang maliligtas.
+
+28
+00:03:08, 001 --> 00:03:12,000
+Huwag kang masyadong mag - alala tungkol diyan.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Ngayon, pumunta tayo sa isang bagay na inihanda ko na.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Kung tayo'y magpupumilit na tumakas, pansinin na lahat ng mga bagay na ito ay mapaparam.
+
+31
+00:03:20, 001 --> 00:03:24,000
+Okay, kaya wala na itong lahat ngayon.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Tingnan natin ngayon kung maibabalik ko pa ito.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Ngayon ay susukatin ko ito sa laki na madaling makita.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Itatanggal ko ang munting pirasong iyon ng pagdurugtong doon, at pagkatapos ay ipakikita ko sa iyo ang isang hugis na susi na ginawa ko kanina.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Buksan natin ito sa MS Paint at tingnan kung ano talaga ang hitsura nito.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Kaya, ito ay isang hugis na susi na may ilang pagpapakahulugan na ibinigay sa 'h' at 'w' scoup.
+
+37
+00:04:04, 001 --> 00:04:15,000
+Ang mahalagang bahagi ay hindi na ang hugis na susing ito ay kapaki - pakinabang at malinaw na larawan sa mismong sandaling ito. Hindi gayon.
+
+38
+00:04:15, 001 --> 00:04:26,000
+Ang buong layunin ng hugis na susi ay magkaroon ng isang magandang larawan sa iyong sistema ng talaksan, na nagpapangyari sa iyo na makilala ang hugis na susi.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Iyan ang buong dahilan kung bakit naroroon ito.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Ipakikita ko na ngayon kung paano ito gagamitin.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Minsang makagawa ka na ng isang hugis na susi sa pamamagitan ng pagliligtas sa isa na ginagamit ang tali. ( Ang hugis ng mga susi ay hindi sapilitan.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Maaari mong ipagwalang - bahala ang mga ito.
+
+43
+00:04:41, 001 --> 00:04:52,000
+Ang hugis na susi ay may pantanging hugis na kitang - kita sa pangalan ng talaksan.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Ngayon ay ilalarawan ko na ang pagsapi. Ginagamit nito ang 'h' at 'w' clux.
+
+45
+00:05:17, 001 --> 00:05:27,000
+Inilalarawan nito ang hanay ng mga parihaba na may iisang taas.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Basta tiyakin mong huwag alisin ang bahaging ito sa dulo ng pangalan ng iyong file kung nais mong baguhin ang pangalan ng file.
+
+47
+00:05:51, 001 --> 00:06:02,000
+Ang magandang bagay tungkol dito ay na maaari mo lamang hatakin ang bagay na ito nang tuwiran sa isa sa mga letra, at ito'y ilalagay sa lugar na iyon.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Pinipili ko ang titik na 'n'.
+
+49
+00:06:06, 001 --> 00:06:10,000
+Ang titik na 'n' ay naglalaman ngayon ng impormasyon para sa hugis na susing iyon.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Pagkatapos ay ginagamit namin nang kaunti ang gulong ng balumbon at nakita namin na lahat ng malinaw na hugis na ito ay naiguhit na para sa amin.
+
+51
+00:06:23, 001 --> 00:06:32,000
+Patiuna ko nang ginawa ang isang ito, kaya madali kong maipakikita sa iyo na ang mga guhit na ito ay tamang - tama sa guhit.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Subalit, sandali lamang ay gagawin ko ito upang ipakita ang pagtalunton.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Buong - manwal tayong papasok sa parti. Gagamitin ko ang period at hyphen sa number pad, ngunit, maaari mo ring gamitin ang mga titik na 'h' at 'w'.
+
+54
+00:07:01, 001 --> 00:07:04,000
+Bilang simula, pipiliin natin ang unang dalawang numero: 'h10w10'.
+
+55
+00:07:04, 001 --> 00:07:08,000
+Ito'y upang tayo'y magkaroon ng mapagmamasdang pasimula.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Ngayon ay maaari na naming baguhin at idagdag ang 'w' upang magkaroon ng higit na lapad.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Kaya, taglay namin ang mga kahulugan at matagumpay na natunton ang unang apat na titik.
+
+58
+00:07:45, 001 --> 00:07:51,000
+Natunton ko na ito nang patiuna, kaya tayo na lamang ang kumilos.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Kaya, dito ito ay tapos na.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Kung ikaw ay naging matagumpay at natapos ang prosesong ito para sa iyong sariling larawan, ang susunod na hakbang ay iligtas ito.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Gagamitin mo ang button na iyon doon mismo na nagsasabi ng star sheet.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Kapag pinindot mo ito, isang pantanging file ang maliligtas.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Pagkatapos ay dapat mong hilahin pabalik sa iskrin ng programa ang salansan na iyon.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Ito'y ipakikita ko sa inyo sa lalong madaling panahon, subalit sa una'y sasabihin ko muna ang tungkol sa pagkakasunud - sunod ng salansan na ngayo'y naligtas na.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Makikita natin na mayroon tayong katulad na mga kawing na nakaimbak sa hugis na susi. (file pangalang prefix 'TEMPL')
+
+67
+00:09:11, 001 --> 00:09:13,000
+Tingnan natin kung ano ang puwede nating gawin.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Ginagamit namin ang pagtakas upang magkaroon kami ng magandang blankong iskrin.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Pagkatapos ay ibabalik ko ang template na ito sa programa.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Maaaring ito'y magtinging mapandaya, subalit hindi gayon.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Kung gusto natin ng butones, kailangan nating pumili ngayon sa pagitan ng 6, 4, o 2.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Hindi ito ang bilang ng butones kundi, sa halip, ang bilang ng mga estadong button ang gagamitin.
+
+73
+00:09:52, 001 --> 00:10:12,000
+Kapag kami'y umaali - aligid na kasama ng daga sa ibabaw ng buton, ito ang kalagayang aali - aligid.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Kapag kami'y bumaba, ito ang aktibong kalagayan.
+
+75
+00:10:15, 001 --> 00:10:17,000
+At kapag nag - click na ang buton, nagkakaroon na ito ng pokus.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Nasa atin ang pagpili na gawin ang lahat ng 6, na nagbibigay lamang ng 5 magagamit na mga estado.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Mas gusto naming gamitin ang alinman sa 4, na angkop para sa mga desktop computer o 2 na sapat na para sa mga mobile phone.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Ngayon ay magbibigay ako ng maikling paglalarawan na may 4 na button state.
+
+79
+00:10:35, 001 --> 00:11:01,000
+himpilan
+
+80
+00:11:01, 001 --> 00:11:02,000
+pokus
+
+81
+00:11:02, 001 --> 00:11:03,000
+lumilipad
+
+82
+00:11:03, 001 --> 00:11:05,000
+aktibo
+
+83
+00:11:05, 001 --> 00:11:27,000
+Napakahalagang malaman iyan kung hindi ka pamilyar sa HTML.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Ipagpatuloy natin ngayon ang ating proseso.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Pipili ako ng 4 na button state.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Ngayon ay nailigtas na naman namin ang isang file.
+
+87
+00:11:45, 001 --> 00:11:55,000
+Tingnan natin kung maaari nating buksan ang talaksang iyan sa ating paboritong programa sa sining.
+
+88
+00:11:55, 001 --> 00:12:00,000
+Nasaan ito? Libre-Pixel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Makikita natin kung ano ang hitsura ng talaksang ito.
+
+90
+00:12:04, 001 --> 00:12:06,000
+Mas naunang inihanda ko ito sa pamamagitan ng pagbabago ng mga kulay.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Dito ay makikita rin natin na posibleng makatubo ng kasinlaki ng imahen sa taas nito.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Ito ay kikilos pa rin sa dakong huli.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Makikita natin ang saving file ay apat na beses na itong itinaas, at kami ngayon ay may apat na representasyon.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Ibabalik ko ngayon ang aming giyang larawan upang ipakita kung aling button state ang kinakatawan ng bawat larawan.
+
+95
+00:12:53, 001 --> 00:12:59,000
+Sa ganitong paraan ay nalalaman natin kung aling estado ang ating ginagawa kapag binabago natin ang mga kulay o iginuguhit ang ating mga larawan.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Ang mga ito'y hindi magbubunga ng isa lamang buton, kundi sa halip ay magiging eksaktong mga buton na aming natunton na gumagamit ng mga parihaba.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Patiuna nang natapos ang detalyadong gawaing ito, at sa gayon, magpapatuloy ako sa aming proseso.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Kaya, ngayon na mayroon na tayong isang tapos na imahe, ipakikita ko muli ang scarp, na may prefix na 'READY'.
+
+99
+00:13:49, 001 --> 00:14:03,000
+Ang buton na ito ay tapos na at maaaring hilahin agad.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Ngayon ay makikita natin kung ano ang nangyayari kapag hinatak natin ang tapos nang talaksang ito ng buton sa programa.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Para bang may nangyayari rito sa itaas sa itaas na kaliwang sulok ng aming iskrin, at pagkatapos ay lumalabas ang iyong mga buton.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Naroon sila, at subukan lang natin kung masusubok natin sila sa pamamagitan ng paggamit ng spacebar, at ibaba ito.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Nakikita na natin ngayon na ang ating mga buton ay gumagana nang wasto, at kahawig na kahawig ng mga graphic na iginuhit natin.
+
+104
+00:14:38, 001 --> 00:14:45,000
+Ang talaksang ito na aming nagawa ay maaaring gamitin at muling gamitin anumang oras.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Mayroon kaming napakahusay, walang lubay, matatag na sistema ng pagsasaayos.
+
+106
+00:14:51, 001 --> 00:14:53,000
+Binubuo ang sistema ng: Isang hugis na susi (file na pangalang prefix 'SHAPE');
+
+107
+00:14:53, 001 --> 00:14:59,000
+Isang unang template, na nakakakuha ng nag-iisang imahe (file na pangalang unlapi na 'TEMPL');
+
+108
+00:14:59, 001 --> 00:15:08,000
+at ang tapos nang button set (file name prefix 'READY').
+
+109
+00:15:08, 001 --> 00:15:15,000
+Maaari pa nga nating kopyahin ang tapos nang buton na ito sa ating sistema ng salansan at gumawa ng isang uri ng kahaliling larawan, at ito'y gagana pa rin.
+
+110
+00:15:15, 001 --> 00:15:26,000
+Hindi ko tiyak kung mabisa ito. Subukan natin.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Kaya, maaari mong dalhin ang isang iyon doon, at baguhin ito, ginagawa itong iba't ibang kulay o gumagalaw ng maliliit na bagay.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Mayroon kang mahusay na buton sa paggawa ng kapasidad na makukuha rito, at magagawa mo ang pinakamaraming nais mo.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Dito'y makikita mo na hindi namin halos pinuno ang lugar na ito ng mga butones, kundi, mangyari pa, kung ikaw ay maubusan ng lugar, basta gagawa ka ng isa pa.
+
+114
+00:15:59, 001 --> 00:16:19,000
+Ang isang bagay na sasabihin ko ay na baka mahirap makasumpong ng isang kartilahiyo na bagay kapag ang inyong mga buton ay napakalapit sa inyong pagguhit.
+
+115
+00:16:19, 001 --> 00:16:54,000
+Kaya, upang mas madaling matunton, mag - iwan ng higit na espasyo sa pagitan ng mga larawan.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Gagamitin ko na ngayon ang 'z' na susi na titiyak na hindi ko na muling gagamitin ang mga buton.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Gagawin kong mas mataas yaong isa sa pamamagitan ng pagpili mula sa menung iyon. Ginagamit ko ang keyboard shortcut (z-mode: 'h').
+
+118
+00:17:33, 001 --> 00:17:39,000
+Kaya, inilagay ko ito sa tuktok ng z-index order sa pamamagitan ng paggamit ng 'h'.
+
+119
+00:17:39, 001 --> 00:18:01,000
+Dahil sa inilagay ko ang inkremento ng daga upang itugma ang pixel increment ng aking upscaled na guhit, madaling mapagtugma ang lahat ng bagay.
+
+120
+00:18:01, 001 --> 00:18:06,00
+May iba't ibang tagpo sa programa, subalit, hindi ko ito sasaklawin dito.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Marahil ay higit pa sa ganitong paraan.
+
+122
+00:18:14, 001 --> 00:18:19,000
+Napakalapit niyan.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Gagamitin ko ngayon ang gulong ng balumbon ng daga upang piliin ang uri ng pagtitipid mula sa tab IV-2.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Ako'y nag - iipon sa isang tila lapad na salik ng 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Ito'y kusang gagawin.
+
+126
+00:18:55, 001 --> 00:19:43,000
+Para mailigtas ang file mula sa keyboard: Gamitin ang 'shift + s'. Sa halip, upang buksan lamang ang file para sa panonood: Gamitin ang 'shift + enter'.
+
+127
+00:19:43, 001 --> 00:19:48,000
+Maganda yan.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Napakahusay.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Tutorial over.
+

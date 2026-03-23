@@ -1,0 +1,516 @@
+1
+00:00:00, 001 --> 00:00:09,000
+I dag vil vi tale om at lave dine egne brugerdefinerede knapper til dette program.
+
+2
+00:00:09, 001 --> 00:00:16,000
+Dette er den første tutorial, jeg laver, og forhåbentlig vil du forstå det nemt og nyde det.
+
+3
+00:00:16, 001 --> 00:00:19,000
+Lad os se her: 'Information for knap crafting'.
+
+4
+00:00:21, 001 --> 00:00:24,000
+Så det er stort set, hvad vi ser på med denne tutorial.
+
+5
+00:00:24, 001 --> 00:00:26,000
+Så lad os komme lige ind i det.
+
+6
+00:00:26, 001 --> 00:00:32,000
+Vi er herovre i programmet, og vi kan med det samme se, at jeg har lagt noget i denne kasse her.
+
+7
+00:00:32, 001 --> 00:00:38,000
+Det giver os en højde og bredde betegnelse, bare en meget enkel.
+
+8
+00:00:38, 001 --> 00:00:50,000
+Det giver os den største bredde og højde, som vi muligvis kunne bruge, og det er vist inde i det store rektangel der med det store bogstav 'B'.
+
+9
+00:00:50, 001 --> 00:01:07,000
+Det første skridt, vi skal gøre, så vi kan spore vores brugerdefinerede knap, er, at vi er nødt til at trække et billede fra filsystemet direkte til dette område, hvor det har det store bogstav "B".
+
+10
+00:01:07, 001 --> 00:01:12,000
+Vi trækker nu vores billede over fra filsystemet herovre, og til hvor vi ser bogstavet "B".
+
+11
+00:01:12, 001 --> 00:01:20,000
+Vi trækker nu vores billede over fra filsystemet herovre, og til hvor vi ser bogstavet "B".
+
+12
+00:01:20, 001 --> 00:01:23,000
+Og der har vi det, og det viser sig på skærmen.
+
+13
+00:01:23, 001 --> 00:01:24,000
+Problemet er, at det virker for lille.
+
+14
+00:01:24, 001 --> 00:01:26,000
+Hvad skal vi gøre?
+
+15
+00:01:26, 001 --> 00:01:37,000
+Vi skal flytte musemarkøren over toppen af denne region med det store bogstav "B", og vi kan så rulle med mushjulet. Nu ser vi, at der sker noget interessant.
+
+16
+00:01:37, 001 --> 00:01:45,000
+Vi er i stand til at justere omfanget af på skærmen guide.
+
+17
+00:01:45, 001 --> 00:01:54,000
+Når vi ruller ned til 4, 3, 2 og 1, ser vi, at der anvendes en særlig opskaleringsfaktor.
+
+18
+00:01:54, 001 --> 00:01:58,000
+Jeg byggede det ind i programmet med det formål at pixel kunst.
+
+19
+00:01:58, 001 --> 00:02:03,000
+Så når du bringer knapperne tilbage i programmet vil de blive skaleret op i størrelse.
+
+20
+00:02:03, 001 --> 00:02:07,000
+De vil ikke være den størrelse, du ser, mens du tegner dem.
+
+21
+00:02:07, 001 --> 00:02:16,000
+Så du kan tegne dem på den lille pixel størrelse, og så kan du bringe dem ind i programmet, og de vil pludselig blive større.
+
+22
+00:02:16, 001 --> 00:02:22,000
+Af den grund får du en rigtig god økonomi på størrelsen af dit billede og dine knapper.
+
+23
+00:02:22, 001 --> 00:02:31,000
+Så din knap er ikke alt for dyrt i forhold til, hvor meget det koster at tranfere det gennem internettet.
+
+24
+00:02:31, 001 --> 00:02:41,000
+Så der har vi det. Den her har 180 enheder højde og 100 enheder bredde, men den er ikke særlig nyttig for os i øjeblikket.
+
+25
+00:02:41, 001 --> 00:02:45,000
+Nu vil jeg beskrive en af de første ting, du kan se her: Det er den her knap.
+
+26
+00:02:45, 001 --> 00:02:54,000
+Hvis vi skulle klikke på denne gemme knap, hvad der vil ske er, at vi kommer til at gemme en form nøgle.
+
+27
+00:02:54, 001 --> 00:03:08,000
+Og hvis vi skulle klikke på denne anden her, markerede stjerne ark, en enkelt skabelon, der er repræsenteret ved denne tegning ville blive gemt.
+
+28
+00:03:08, 001 --> 00:03:12,000
+Det skal du ikke bekymre dig om.
+
+29
+00:03:12, 001 --> 00:03:15,000
+Lad os gå over til noget, som jeg har forberedt tidligere.
+
+30
+00:03:15, 001 --> 00:03:20,000
+Hvis vi trykker på flugt, så bemærk, at alle disse ting vil forsvinde.
+
+31
+00:03:20, 001 --> 00:03:24,000
+Nu er det hele væk.
+
+32
+00:03:24, 001 --> 00:03:33,000
+Lad os se, om jeg kan sætte den i igen.
+
+33
+00:03:33, 001 --> 00:03:39,000
+Jeg vil nu skalere det til en størrelse, der nemt kan ses.
+
+34
+00:03:39, 001 --> 00:03:48,000
+Jeg skiller mig af med den lille syntaks, og så viser jeg dig en formnøgle, jeg har lavet tidligere.
+
+35
+00:03:48, 001 --> 00:03:55,000
+Lad os åbne den i MS Paint og se, hvordan den ser ud.
+
+36
+00:03:55, 001 --> 00:04:04,000
+Så dette er en form nøgle, som havde en definition givet med "h" og "w" syntaks.
+
+37
+00:04:04, 001 --> 00:04:15,000
+Den vigtige del er ikke, at denne form nøgle er nyttigt grafisk billede lige nu. Det er det ikke.
+
+38
+00:04:15, 001 --> 00:04:26,000
+Hele formålet med formen nøgle er at have et flot billede i dit filsystem, så du kan visuelt identificere formen nøgle.
+
+39
+00:04:26, 001 --> 00:04:28,000
+Det er hele grunden til, at det er der.
+
+40
+00:04:28, 001 --> 00:04:31,000
+Nu vil jeg vise, hvordan man bruger det.
+
+41
+00:04:31, 001 --> 00:04:36,000
+Når du har produceret en form nøgle ved at gemme en ved hjælp af syntaks. (Formtasterne er ikke obligatoriske.)
+
+42
+00:04:36, 001 --> 00:04:41,000
+Du kan ignorere dem.
+
+43
+00:04:41, 001 --> 00:04:52,000
+Formtasten har en speciel syntaks tydeligt synlig i filnavnet.
+
+44
+00:04:52, 001 --> 00:05:17,000
+Nu vil jeg beskrive syntaksen. Den bruger "h" og "w" syntaks.
+
+45
+00:05:17, 001 --> 00:05:27,000
+Dette beskriver rækker af rektangler, som har samme højde.
+
+46
+00:05:27, 001 --> 00:05:51,000
+Bare sørg for ikke at fjerne denne syntaks fra slutningen af dit filnavn, hvis du ønsker at omdøbe filen.
+
+47
+00:05:51, 001 --> 00:06:02,000
+Det gode ved dette er, at du blot kan trække denne ting direkte på et af bogstaverne, og det vil blive installeret i denne placering.
+
+48
+00:06:02, 001 --> 00:06:06,000
+Jeg vælger bogstavet "n".
+
+49
+00:06:06, 001 --> 00:06:10,000
+Bogstavet "n" indeholder nu oplysninger om denne formnøgle.
+
+50
+00:06:10, 001 --> 00:06:23,000
+Derefter bruger vi rullehjulet lidt, og vi ser, at alle de definerede formnøgler er trukket ind for os.
+
+51
+00:06:23, 001 --> 00:06:32,000
+Jeg har lavet den her på forhånd, så jeg kan nemt vise Dem, at den passer perfekt til tegningen.
+
+52
+00:06:32, 001 --> 00:06:45,000
+Men jeg vil kort gennemgå processen for at demonstrere sporingen.
+
+53
+00:06:45, 001 --> 00:07:01,000
+Vi indtaster syntaksen manuelt. Jeg vil bruge periode og bindestreg på talsiden, men du kan også bruge bogstaverne "h" og "w".
+
+54
+00:07:01, 001 --> 00:07:04,000
+Til at begynde med vælger vi de første to tal: "h10w10".
+
+55
+00:07:04, 001 --> 00:07:08,000
+Det er bare, så vi har noget at se på som et udgangspunkt.
+
+56
+00:07:08, 001 --> 00:07:37,000
+Nu kan vi justere og tilføje 'w' for at få flere bredder.
+
+57
+00:07:37, 001 --> 00:07:45,000
+Så vi har definitionerne og har med succes sporet de første fire bogstaver.
+
+58
+00:07:45, 001 --> 00:07:51,000
+Jeg har allerede sporet det på forhånd, så lad os komme videre.
+
+59
+00:07:51, 001 --> 00:07:55,000
+Så her er det afsluttet.
+
+60
+00:07:55, 001 --> 00:08:10,000
+Hvis du har haft succes og afsluttet denne proces for dit eget billede, det næste skridt er at gemme det.
+
+61
+00:08:10, 001 --> 00:08:15,000
+Du vil bruge den knap lige der, som siger stjerne ark.
+
+62
+00:08:15, 001 --> 00:08:18,000
+null
+
+63
+00:08:18, 001 --> 00:08:25,000
+Når du klikker på den, vil en særlig fil blive gemt.
+
+64
+00:08:25, 001 --> 00:08:30,000
+Du skal derefter trække filen tilbage på programmets skærm.
+
+65
+00:08:30, 001 --> 00:08:35,000
+Jeg vil vise dig dette snart, men først vil jeg fortælle om syntaksen af filen, som lige er blevet gemt.
+
+66
+00:08:35, 001 --> 00:09:11,000
+Vi kan se, at vi har den samme syntaks, der blev gemt i form nøgle. (filnavnets præfiks 'SCUL')
+
+67
+00:09:11, 001 --> 00:09:13,000
+Lad os se, hvad vi kan gøre.
+
+68
+00:09:13, 001 --> 00:09:19,000
+Vi bruger flugt, så vi har en fin blank skærm.
+
+69
+00:09:19, 001 --> 00:09:25,000
+Jeg vil næste trække denne skabelon tilbage i programmet.
+
+70
+00:09:25, 001 --> 00:09:37,000
+Det virker måske svært, men det er det ikke.
+
+71
+00:09:37, 001 --> 00:09:47,000
+Hvis vi vil have knapper, skal vi nu vælge mellem 6, 4 eller 2.
+
+72
+00:09:47, 001 --> 00:09:52,000
+Det er ikke antallet af knapper, men derimod antallet af knasttilstande, der vil blive brugt.
+
+73
+00:09:52, 001 --> 00:10:12,000
+Når vi svæver med musen over knappen, dette er svæver tilstand.
+
+74
+00:10:12, 001 --> 00:10:15,000
+Når vi klikker ned, dette er den aktive tilstand.
+
+75
+00:10:15, 001 --> 00:10:17,000
+Og når knappen klikkede, bliver den fokuseret.
+
+76
+00:10:17, 001 --> 00:10:24,000
+Vi har valget mellem at gøre alle 6, hvilket giver kun 5 brugbare stater.
+
+77
+00:10:24, 001 --> 00:10:31,000
+Vi foretrækker at bruge enten 4, som er ideel til desktopcomputere eller 2, som er nok til mobiltelefoner.
+
+78
+00:10:31, 001 --> 00:10:35,000
+Jeg vil nu give en kort beskrivelse under forudsætning af, at 4 knapper er brugt.
+
+79
+00:10:35, 001 --> 00:11:01,000
+base
+
+80
+00:11:01, 001 --> 00:11:02,000
+fokus
+
+81
+00:11:02, 001 --> 00:11:03,000
+svæver
+
+82
+00:11:03, 001 --> 00:11:05,000
+aktiv
+
+83
+00:11:05, 001 --> 00:11:27,000
+Det er meget vigtigt at vide om, hvis du ikke er bekendt med HTML.
+
+84
+00:11:27, 001 --> 00:11:32,000
+Lad os nu fortsætte vores proces.
+
+85
+00:11:32, 001 --> 00:11:41,000
+Jeg vil vælge 4 knappen stater ved at klikke på dette.
+
+86
+00:11:41, 001 --> 00:11:45,000
+Nu har vi gemt en fil igen.
+
+87
+00:11:45, 001 --> 00:11:55,000
+Lad os se, om vi kan åbne filen i vores yndlingskunstprogram.
+
+88
+00:11:55, 001 --> 00:12:00,000
+Hvor er den? Libre- Pixel.
+
+89
+00:12:00, 001 --> 00:12:04,000
+Vi vil se, hvordan denne fil ser ud.
+
+90
+00:12:04, 001 --> 00:12:06,000
+Jeg har forberedt det tidligere ved at ændre farverne.
+
+91
+00:12:06, 001 --> 00:12:18,000
+Her kan vi også se, at det er muligt at beskære størrelsen af billedet i dets højde.
+
+92
+00:12:18, 001 --> 00:12:27,000
+Det vil stadig virke senere.
+
+93
+00:12:27, 001 --> 00:12:37,000
+Vi kan se, at redningen af filen har firdoblet den, og vi har nu fire repræsentationer.
+
+94
+00:12:37, 001 --> 00:12:53,000
+Jeg vil nu bringe tilbage vores guide billede for at vise, hvilken knap tilstand hvert billede repræsenterer.
+
+95
+00:12:53, 001 --> 00:12:59,000
+På denne måde ved vi, hvilken tilstand vi arbejder på, når vi ændrer farverne eller tegner vores billeder.
+
+96
+00:12:59, 001 --> 00:13:13,000
+Disse vil ikke resultere i kun en enkelt knap, men vil i stedet være præcis de knapper, som vi har sporet ud ved hjælp af rektangler.
+
+97
+00:13:13, 001 --> 00:13:32,000
+Dette grafiske arbejde er allerede afsluttet på forhånd, og derfor vil jeg fortsætte vores proces.
+
+98
+00:13:32, 001 --> 00:13:49,000
+Så nu hvor vi har et færdigt billede, vil jeg igen vise syntaksen, som har præfikset "READY".
+
+99
+00:13:49, 001 --> 00:14:03,000
+Denne knap er færdig og kan trækkes ind straks.
+
+100
+00:14:03, 001 --> 00:14:08,000
+Nu vil vi se, hvad der sker, når vi trækker denne færdige knap fil ind i programmet.
+
+101
+00:14:08, 001 --> 00:14:13,000
+Det ser ud til, at der sker noget heroppe i øverste venstre hjørne af vores skærm, og så ud kommer dine færdige knapper.
+
+102
+00:14:13, 001 --> 00:14:25,000
+Der er de, og lad os prøve, hvis vi kan teste dem ved at bruge mellemrumstasten, og holde det ned.
+
+103
+00:14:25, 001 --> 00:14:38,000
+Vi kan nu se, at vores knapper fungerer korrekt, og ligner præcis den grafik, vi tegnede.
+
+104
+00:14:38, 001 --> 00:14:45,000
+Denne fil, som vi har produceret, kan bruges og genbruges til enhver tid.
+
+105
+00:14:45, 001 --> 00:14:51,000
+Vi har et meget fint, vedholdende, templating system på plads.
+
+106
+00:14:51, 001 --> 00:14:53,000
+Systemet består af: En formnøgle (filnavnspræfiks 'SHAPE');
+
+107
+00:14:53, 001 --> 00:14:59,000
+En første skabelon, som får et enkelt billede (filnavnspræfiks "SCUL");
+
+108
+00:14:59, 001 --> 00:15:08,000
+og det færdige knapsæt (filnavn præfiks 'READY').
+
+109
+00:15:08, 001 --> 00:15:15,000
+Vi kan endda kopiere denne færdige knap i vores filsystem og lave nogle alternative billeder, og det ville stadig virke.
+
+110
+00:15:15, 001 --> 00:15:26,000
+Jeg ved ikke, om det virker. Lad os prøve det.
+
+111
+00:15:26, 001 --> 00:15:43,000
+Så du kan tage den der og ændre den, så den får forskellige farver eller flytter lidt rundt.
+
+112
+00:15:43, 001 --> 00:15:54,000
+Du har en god knap gør kapacitet til rådighed her, og du kan gøre så mange som du ønsker.
+
+113
+00:15:54, 001 --> 00:15:59,000
+Her kan du se, at vi ikke engang næsten har fyldt dette område med knapper, men, selvfølgelig, hvis du løber tør for plads, vil du simpelthen gøre en anden.
+
+114
+00:15:59, 001 --> 00:16:19,000
+En ting, jeg vil påpege, er, at det kan være svært at finde en syntaks, der passer, når dine knapper er meget tæt sammen i din tegning.
+
+115
+00:16:19, 001 --> 00:16:54,000
+Så for at gøre det lettere at spore, efterlade mere plads mellem billederne.
+
+116
+00:16:54, 001 --> 00:17:24,000
+Jeg vil nu bruge "z" -tasten, som vil sikre, at jeg ikke ændrer størrelse på knapperne.
+
+117
+00:17:24, 001 --> 00:17:33,000
+Jeg vil gøre den ene højere, at de andre ved at vælge fra den menu. Jeg bruger tastaturgenvejen (z- mode: 'h').
+
+118
+00:17:33, 001 --> 00:17:39,000
+Vi sætter det øverst i z- index rækkefølgen ved at bruge h.
+
+119
+00:17:39, 001 --> 00:18:01,000
+Fordi jeg har sat musemåling til at matche pixel forøgelse af min opskaleret tegning, er det nemt at tilpasse alt.
+
+120
+00:18:01, 001 --> 00:18:06,00
+Der er alle forskellige indstillinger til rådighed i programmet, men jeg vil ikke dække dem her.
+
+121
+00:18:06, 001 --> 00:18:14,00
+Måske lidt mere denne vej.
+
+122
+00:18:14, 001 --> 00:18:19,000
+Det er ret tæt på.
+
+123
+00:18:19, 001 --> 00:18:36,000
+Jeg vil nu bruge rullehjulet af musen til at vælge den type gemme fra fanen IV-2.
+
+124
+00:18:36, 001 --> 00:18:47,000
+Jeg sparer på en Viewing bredde faktor på 1280.
+
+125
+00:18:47, 001 --> 00:18:55,000
+Dette vil blive konverteret automatisk.
+
+126
+00:18:55, 001 --> 00:19:43,000
+For at gemme filen fra tastaturet: Brug 'Shift + s'. I stedet for kun at åbne filen for visning: Brug 'shift + enter'.
+
+127
+00:19:43, 001 --> 00:19:48,000
+Det er ret godt.
+
+128
+00:19:48, 001 --> 00:19:56,000
+Godt gået.
+
+129
+00:19:56, 001 --> 00:20:20,000
+Tutorial slut.
+
