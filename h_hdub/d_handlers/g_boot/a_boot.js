@@ -1301,6 +1301,7 @@ function programManual(page) { window.open(`./program-user-manual-for-hdub/${pag
 
 
 if (!window.opener) {
+
 splashScreen.classList = "splashScreen";
 splashScreen.style.backgroundImage = "url(" + splashScreenBase64 + ")";
 splashScreen.style.backgroundSize = "100% 100%";

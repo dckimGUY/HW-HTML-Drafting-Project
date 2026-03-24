@@ -6806,7 +6806,8 @@ newCoin.dataset.state                 =      "";
 
 
 
-newCoin.style.filter                  = "brightness(1) contrast(1) saturate(1) grayscale(0) sepia(0) invert(0) blur(0px) opacity(1)";
+newCoin.style.filter                  = "none";
+newCoin.style.backdropFilter          = "none";
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
@@ -7206,7 +7207,9 @@ newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
 newCoin.style.position                = "absolute";
 
 
-newCoin.style.filter                  =    newCoin.style.filter;
+newCoin.style.filter                  =    coinFocus.style.filter           ;
+newCoin.style.backdropFilter          =    coinFocus.style.backdropFilter   ;
+
 newCoin.style.zIndex                  =    coinFocus.style.zIndex - 1       ;
 newCoin.style.fontFamily              =    coinFocus.style.fontFamily       ;
 newCoin.style.color                   =    coinFocus.style.color            ;
@@ -7539,7 +7542,8 @@ newCoin.dataset.notes                 = `{
 }`;
 
 
-newCoin.style.filter                  = "brightness(1) contrast(1) saturate(1) grayscale(0) sepia(0) invert(0) blur(0px) opacity(1)";
+newCoin.style.filter                  = "none";
+newCoin.style.backdropFilter          = "none";
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
@@ -13715,7 +13719,33 @@ copyToClipboard(`try { go; } catch { try { changeLayer('${layerInput}'); } catch
 }function updateFilter(value) {
 
 
+
+let newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value}) blur(${document.getElementById("filterBlur").value}px)`;
+
+if (document.getElementById("filterBlur").value == 0) {
+newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value})`;
+}
+
+
+if (value == "set") {
+if (coinFocus != null) {
+coinFocus.style.filter = newFilter;
+}
+return 0;
+}
+
+
+if (value == "drop") {
+insertNewCoin([null,78,78]);
+coinFocus.style.backdropFilter = newFilter;
+redraw();
+return 0;
+}
+
+
 if (value == "reset") {
+coinFocus.style.filter = "none";
+coinFocus.style.backdropFilter = "none";
 document.getElementById("filterBrightness").value = "1";
 document.getElementById("filterContrast").value   = "1";
 document.getElementById("filterIntensity").value  = "1";
@@ -13724,14 +13754,18 @@ document.getElementById("filterAntique").value    = "0";
 document.getElementById("filterInvert").value     = "0";
 document.getElementById("filterBlur").value       = "0";
 document.getElementById("filterOpacity").value    = "1";
-if (coinFocus != null) coinFocus.filter = "none";
+if (coinFocus != null) { coinFocus.filter = "none"; }
 return 0;
 }
 
 
 if (coinFocus == null) return 0;
-coinFocus.style.filter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) blur(${document.getElementById("filterBlur").value}px) opacity(${document.getElementById("filterOpacity").value}) `;
 
+if (coinFocus.style.backdropFilter != "none") {
+coinFocus.style.backdropFilter = newFilter;
+} else {
+coinFocus.style.filter = newFilter;
+}
 
 document.getElementById("filterBrightness").title = document.getElementById("filterBrightness").value;
 document.getElementById("filterContrast").title   = document.getElementById("filterContrast").value;
@@ -13742,6 +13776,7 @@ document.getElementById("filterInvert").title     = document.getElementById("fil
 document.getElementById("filterBlur").title       = document.getElementById("filterBlur").value;
 document.getElementById("filterOpacity").title    = document.getElementById("filterOpacity").value;
 
+return 0;
 }function setSingleState() {
 
 if (event.ctrlKey) {
@@ -18432,7 +18467,7 @@ buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
      button_folder52button" title=""></button>
 `;
 shelfMenuHTML.tab5.backgrounds.style = `
-.folder51image { background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/1_folderBackgrounds/folder-5-1.png?v=20260324105845"); }
+.folder51image { background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/1_folderBackgrounds/folder-5-1.png?v=20260324124134"); }
 .folder52image { background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/1_folderBackgrounds/folder-5-2.png?v=20260314230528"); }
 `;shelfMenuHTML.tab5.folder1.style = `
 <style>
@@ -18445,6 +18480,20 @@ shelfMenuHTML.tab5.backgrounds.style = `
 .filterInvert        { position: absolute; top:  370px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
 .filterOpacity       { position: absolute; top:  394px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
 .filterBlur          { position: absolute; top:  418px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+
+.filterReset         { position: absolute; top:  248px; left:  1px; height: 47px; width: 19px; background-color: transparent; }
+.backdropFilter      { position: absolute; top:  296px; left:  1px; height: 87px; width: 19px; background-color: transparent; }
+.setFilter           { position: absolute; top:  384px; left:  1px; height: 63px; width: 19px; background-color: transparent; }
+
+
+
+.filterReset:hover         { background-color: rgba(255,0,0,0.35); }
+.backdropFilter:hover      { background-color: rgba(255,255,0,0.35); }
+.setFilter:hover           { background-color: rgba(0,0,255,0.35); }
+
+.filterReset:active         { background-color: rgba(255,0,255,0.35); }
+.backdropFilter:active      { background-color: rgba(255,0,255,0.35); }
+.setFilter:active           { background-color: rgba(255,0,255,0.35); }
 
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
@@ -18615,11 +18664,8 @@ shelfMenuHTML.tab5.folder1.HTML = `
 
 <button id="stateTiming" class="button_ stateTiming dckimPixelMono" title="Set Speed">200</button>
 
-
 <button id="stateDel" class="button_ stateDel" onclick="deleteKey();" title="Use the DEL key.\nNumPad has everything going."></button>
 <button id="stateIns" class="button_ stateIns" onclick="insertKey();" title="Same as tapping INSERT key.\nAlso tap F9 while moving\nparts with SHIFT\nor use PGUP PGDN while\nActive Edit is on(numlock)"></button>
-
-
 
 <input id="filterBrightness" class="filterBrightness" type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
 <input id="filterContrast"   class="filterContrast"   type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
@@ -18631,27 +18677,10 @@ shelfMenuHTML.tab5.folder1.HTML = `
 <input id="filterBlur"       class="filterBlur"       type="range" min="0" max="20" step="0.5"  value="0" oninput="updateFilter();" />
 
 <button id="filterReset" class="button_ filterReset" onclick="updateFilter('reset');" title="reset the filter\nset the current part to 'filter: none;'"></button>
-<button id="filterReset" class="button_ filterReset" onclick="updateFilter('reset');" title="reset the filter\nset the current part to 'filter: none;'"></button>
+<button id="backdropFilter" class="button_ backdropFilter" onclick="updateFilter('drop');" title="put a new backdrop filter"></button>
+<button id="setFilter" class="button_ setFilter" onclick="updateFilter('set');" title="set this on the part"></button>
 
-
-
-
-
-
-
-
-
-
-
-
- 
 <textarea id="classListEntry" class="classListEntry dckimPixelMono" title="this is not animated yet" oninput="event.stopPropagation(); const target = coinFocus.lastElementChild.lastElementChild.previousElementSibling; try { target.classList = ''; const className = document.getElementById('classListEntry').value.trim().split(' '); for (t of className) { target.classList.add(t); } } catch {  };" title="NOTE: This is NOT working\n(yet)"></textarea>
-
-
-
-
-
-
 `;
 shelfMenuHTML.tab5.folder2.style = `
 <style>
@@ -26125,15 +26154,6 @@ useAllLayers = localStorage.getItem("useAllLayers");
 }
 
 
-
-
-
-
-
-
-
-
-
 const header1 = `<!DOCTYPE html>
 <html>
 <head>
@@ -26470,7 +26490,7 @@ function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRe
 
 
 const translateMove = [ "top", "left" ];
-const styleFirst    = [ "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
+const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
@@ -26823,6 +26843,8 @@ innerStylePosition += `
       }`;
 innerStyleEtc += `
       .${otherInner.id} {
+          filter:           ${otherInner.style.filter.toString().padStart(24, ' ')};
+          backdrop-filter:  ${otherInner.style.backdropFilter.toString().padStart(24, ' ')};
           user-select:      ${otherInner.style.userSelect.toString().padStart(24, ' ')};
           outline:          ${otherInner.style.outline.toString().padStart(24, ' ')};
           outline-offset:   ${otherInner.style.outlineOffset.toString().padStart(24, ' ')};
@@ -26927,6 +26949,8 @@ inner = document.createElement("div");
 
 
 inner.style.position        = "absolute";
+inner.style.filter          = doc.body.children[j].style.filter;
+inner.style.backdropFilter  = doc.body.children[j].style.backdropFilter;
 inner.style.left            = doc.body.children[j].style.left;
 inner.style.top             = doc.body.children[j].style.top;
 inner.style.width           = doc.body.children[j].style.width;
@@ -27057,6 +27081,8 @@ stylePosition += innerStylePosition;
 
 styleEtc += `
 .${inner.id} {
+    filter:           ${inner.style.filter.toString().padStart(24, ' ')};
+    backdrop-filter:  ${inner.style.backdropFilter.toString().padStart(24, ' ')};
     user-select:      ${inner.style.userSelect.toString().padStart(24, ' ')};
     outline:          ${inner.style.outline.toString().padStart(24, ' ')};
     outline-offset:   ${inner.style.outlineOffset.toString().padStart(24, ' ')};
@@ -28535,6 +28561,37 @@ event.stopPropagation(); }, true);
 menuWrapper.addEventListener("keypress",  function() { event.stopPropagation(); }, true);
 menuWrapper.addEventListener("keyup",     function() { event.stopPropagation(); }, true);
 function updateInfoShelf() {
+
+
+
+
+if (coinFocus != null && coinFocus.style.filter != "none") {
+
+
+let filt = coinFocus.style.filter.replace(/[^ 0-9.]/g, "").split(" ");
+document.getElementById("filterBrightness").value = filt[0];
+document.getElementById("filterContrast").value   = filt[1];
+document.getElementById("filterIntensity").value  = filt[2];
+document.getElementById("filterGrayscale").value  = filt[3];
+document.getElementById("filterAntique").value    = filt[4];
+document.getElementById("filterInvert").value     = filt[5];
+document.getElementById("filterOpacity").value    = filt[6];
+if (filt.length == 8) {
+document.getElementById("filterBlur").value       = filt[7];
+} else {
+document.getElementById("filterBlur").value       =       0;
+}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31405,7 +31462,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-24T15:26:53Z">
+<meta name="last-build" content="2026-03-24T17:00:24Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -31417,7 +31474,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260324112653'></script>
+<script src='./bundle.js?v=20260324130024'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>
@@ -36762,6 +36819,7 @@ function programManual(page) { window.open(`./program-user-manual-for-hdub/${pag
 
 
 if (!window.opener) {
+
 splashScreen.classList = "splashScreen";
 splashScreen.style.backgroundImage = "url(" + splashScreenBase64 + ")";
 splashScreen.style.backgroundSize = "100% 100%";

@@ -10,6 +10,20 @@ shelfMenuHTML.tab5.folder1.style = `
 .filterOpacity       { position: absolute; top:  394px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
 .filterBlur          { position: absolute; top:  418px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
 
+.filterReset         { position: absolute; top:  248px; left:  1px; height: 47px; width: 19px; background-color: transparent; }
+.backdropFilter      { position: absolute; top:  296px; left:  1px; height: 87px; width: 19px; background-color: transparent; }
+.setFilter           { position: absolute; top:  384px; left:  1px; height: 63px; width: 19px; background-color: transparent; }
+
+
+
+.filterReset:hover         { background-color: rgba(255,0,0,0.35); }
+.backdropFilter:hover      { background-color: rgba(255,255,0,0.35); }
+.setFilter:hover           { background-color: rgba(0,0,255,0.35); }
+
+.filterReset:active         { background-color: rgba(255,0,255,0.35); }
+.backdropFilter:active      { background-color: rgba(255,0,255,0.35); }
+.setFilter:active           { background-color: rgba(255,0,255,0.35); }
+
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
 .rStepState          { position: absolute; top: 145px; left: 6px; height: 21px; width: 86px; background-color: transparent; }

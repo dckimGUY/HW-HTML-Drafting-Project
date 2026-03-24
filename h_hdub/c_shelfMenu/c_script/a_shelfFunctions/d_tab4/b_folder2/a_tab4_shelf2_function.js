@@ -17,15 +17,6 @@ useAllLayers = localStorage.getItem("useAllLayers");
 }
 
 
-
-
-
-
-
-
-
-
-
 const header1 = `<!DOCTYPE html>
 <html>
 <head>
@@ -362,7 +353,7 @@ function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRe
 
 
 const translateMove = [ "top", "left" ];
-const styleFirst    = [ "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
+const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
@@ -715,6 +706,8 @@ innerStylePosition += `
       }`;
 innerStyleEtc += `
       .${otherInner.id} {
+          filter:           ${otherInner.style.filter.toString().padStart(24, ' ')};
+          backdrop-filter:  ${otherInner.style.backdropFilter.toString().padStart(24, ' ')};
           user-select:      ${otherInner.style.userSelect.toString().padStart(24, ' ')};
           outline:          ${otherInner.style.outline.toString().padStart(24, ' ')};
           outline-offset:   ${otherInner.style.outlineOffset.toString().padStart(24, ' ')};
@@ -819,6 +812,8 @@ inner = document.createElement("div");
 
 
 inner.style.position        = "absolute";
+inner.style.filter          = doc.body.children[j].style.filter;
+inner.style.backdropFilter  = doc.body.children[j].style.backdropFilter;
 inner.style.left            = doc.body.children[j].style.left;
 inner.style.top             = doc.body.children[j].style.top;
 inner.style.width           = doc.body.children[j].style.width;
@@ -949,6 +944,8 @@ stylePosition += innerStylePosition;
 
 styleEtc += `
 .${inner.id} {
+    filter:           ${inner.style.filter.toString().padStart(24, ' ')};
+    backdrop-filter:  ${inner.style.backdropFilter.toString().padStart(24, ' ')};
     user-select:      ${inner.style.userSelect.toString().padStart(24, ' ')};
     outline:          ${inner.style.outline.toString().padStart(24, ' ')};
     outline-offset:   ${inner.style.outlineOffset.toString().padStart(24, ' ')};

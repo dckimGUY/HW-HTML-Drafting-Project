@@ -15,11 +15,8 @@ shelfMenuHTML.tab5.folder1.HTML = `
 
 <button id="stateTiming" class="button_ stateTiming dckimPixelMono" title="Set Speed">200</button>
 
-
 <button id="stateDel" class="button_ stateDel" onclick="deleteKey();" title="Use the DEL key.\nNumPad has everything going."></button>
 <button id="stateIns" class="button_ stateIns" onclick="insertKey();" title="Same as tapping INSERT key.\nAlso tap F9 while moving\nparts with SHIFT\nor use PGUP PGDN while\nActive Edit is on(numlock)"></button>
-
-
 
 <input id="filterBrightness" class="filterBrightness" type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
 <input id="filterContrast"   class="filterContrast"   type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
@@ -31,25 +28,8 @@ shelfMenuHTML.tab5.folder1.HTML = `
 <input id="filterBlur"       class="filterBlur"       type="range" min="0" max="20" step="0.5"  value="0" oninput="updateFilter();" />
 
 <button id="filterReset" class="button_ filterReset" onclick="updateFilter('reset');" title="reset the filter\nset the current part to 'filter: none;'"></button>
-<button id="filterReset" class="button_ filterReset" onclick="updateFilter('reset');" title="reset the filter\nset the current part to 'filter: none;'"></button>
+<button id="backdropFilter" class="button_ backdropFilter" onclick="updateFilter('drop');" title="put a new backdrop filter"></button>
+<button id="setFilter" class="button_ setFilter" onclick="updateFilter('set');" title="set this on the part"></button>
 
-
-
-
-
-
-
-
-
-
-
-
- 
 <textarea id="classListEntry" class="classListEntry dckimPixelMono" title="this is not animated yet" oninput="event.stopPropagation(); const target = coinFocus.lastElementChild.lastElementChild.previousElementSibling; try { target.classList = ''; const className = document.getElementById('classListEntry').value.trim().split(' '); for (t of className) { target.classList.add(t); } } catch {  };" title="NOTE: This is NOT working\n(yet)"></textarea>
-
-
-
-
-
-
 `;

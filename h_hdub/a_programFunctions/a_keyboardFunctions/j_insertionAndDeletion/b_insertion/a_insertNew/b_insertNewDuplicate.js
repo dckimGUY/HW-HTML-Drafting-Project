@@ -62,7 +62,9 @@ newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
 newCoin.style.position                = "absolute";
 
 
-newCoin.style.filter                  =    newCoin.style.filter;
+newCoin.style.filter                  =    coinFocus.style.filter           ;
+newCoin.style.backdropFilter          =    coinFocus.style.backdropFilter   ;
+
 newCoin.style.zIndex                  =    coinFocus.style.zIndex - 1       ;
 newCoin.style.fontFamily              =    coinFocus.style.fontFamily       ;
 newCoin.style.color                   =    coinFocus.style.color            ;

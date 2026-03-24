@@ -4,6 +4,37 @@ function updateInfoShelf() {
 
 
 
+if (coinFocus != null && coinFocus.style.filter != "none") {
+
+
+let filt = coinFocus.style.filter.replace(/[^ 0-9.]/g, "").split(" ");
+document.getElementById("filterBrightness").value = filt[0];
+document.getElementById("filterContrast").value   = filt[1];
+document.getElementById("filterIntensity").value  = filt[2];
+document.getElementById("filterGrayscale").value  = filt[3];
+document.getElementById("filterAntique").value    = filt[4];
+document.getElementById("filterInvert").value     = filt[5];
+document.getElementById("filterOpacity").value    = filt[6];
+if (filt.length == 8) {
+document.getElementById("filterBlur").value       = filt[7];
+} else {
+document.getElementById("filterBlur").value       =       0;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
