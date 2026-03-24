@@ -70,6 +70,9 @@ newCoin.dataset.notes                 = `{
 "YAML"  : "Coded instructions",
 "data"  : "Additional JSON"
 }`;
+
+
+newCoin.style.filter                  = "brightness(1) contrast(1) saturate(1) grayscale(0) sepia(0) invert(0) blur(0px) opacity(1)";
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";

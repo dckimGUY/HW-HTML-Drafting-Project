@@ -19,8 +19,21 @@ for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
     programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style = {};
 
 programState.dat[topLayer[layerArray[j]].b_content.children[i].id].id = topLayer[layerArray[j]].b_content.children[i].id;
-const styleFirst    = [ "top", "left" ];
+
+
+
+
+const styleFirst    = [ "filter", "top", "left", "width", "height", "zIndex" ];
+const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
+const styleLastLast = [ "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+
 for (y of styleFirst   ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].style[y]; }
+for (y of styleLast    ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style[y]; }
+for (y of styleLastLast) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+
+
+
+
 }
 if (topLayer[layerArray[j]].b_content.children.length > 0) {
 ui["setLayer" + (j + 1)].ref.dataset.programState = JSON.stringify(programState);

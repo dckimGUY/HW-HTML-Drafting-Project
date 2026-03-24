@@ -1,7 +1,14 @@
 shelfMenuHTML.tab5.folder1.style = `
 <style>
 
-
+.filterBrightness    { position: absolute; top:  250px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterContrast      { position: absolute; top:  274px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterIntensity     { position: absolute; top:  298px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterAntique       { position: absolute; top:  322px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterGrayscale     { position: absolute; top:  346px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterInvert        { position: absolute; top:  370px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterOpacity       { position: absolute; top:  394px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterBlur          { position: absolute; top:  418px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
 
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
@@ -31,14 +38,14 @@ margin: 0px;
 border: 0px;
 outline: 0px;
 position: absolute;
-top:  289px;
+top:  459px;
 left: 14px;
-height: 58px;
+height: 26px;
 width: 172px;
 background-color: transparent;
 resize: none;
 
-font-size: 20px;
+font-size: 12px;
 color: rgb(24,117,189);
 
 }

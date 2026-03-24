@@ -6805,6 +6805,8 @@ newCoin.dataset.addScript             =      "";
 newCoin.dataset.state                 =      "";
 
 
+
+newCoin.style.filter                  = "brightness(1) contrast(1) saturate(1) grayscale(0) sepia(0) invert(0) blur(0px) opacity(1)";
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
@@ -7204,7 +7206,7 @@ newCoin.dataset.fileInclude           =      coinFocus.dataset.fileInclude;
 newCoin.style.position                = "absolute";
 
 
-
+newCoin.style.filter                  =    newCoin.style.filter;
 newCoin.style.zIndex                  =    coinFocus.style.zIndex - 1       ;
 newCoin.style.fontFamily              =    coinFocus.style.fontFamily       ;
 newCoin.style.color                   =    coinFocus.style.color            ;
@@ -7535,6 +7537,9 @@ newCoin.dataset.notes                 = `{
 "YAML"  : "Coded instructions",
 "data"  : "Additional JSON"
 }`;
+
+
+newCoin.style.filter                  = "brightness(1) contrast(1) saturate(1) grayscale(0) sepia(0) invert(0) blur(0px) opacity(1)";
 newCoin.style.outlineOffset           =     "-" + Ws2;
 newCoin.style.position                = "absolute";
 newCoin.style.transformOrigin         = "top left";
@@ -12992,40 +12997,40 @@ let currentStateNumber = 0;
 let activeStateEdit = false;
 /*** A FUNCTION TO SET THE STATE ***/
 function setState (quotedStateName,frameNumber) {
-
-
 try {
-const style = [ "top", "left" ];
+let style = [ "filter", "top", "left", "width", "height", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+const styleFirst    = [ "filter", "top", "left", "width", "height", "zIndex" ];
+const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
+const styleLastLast = [ "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+
 let index   =        0; if (frameNumber) { index = frameNumber; }
 let ids     =  stateHolder[index].ids;
 
 for (let d of ids) {
 try { if (d == mousedown.target.id) continue; } catch { }
 const target = document.getElementById(d);
-
-/*
-try {
-const value  = stateHolder[index].dat[d].classList;
-target.lastElementChild.lastElementChild.previousElementSibling.classList = value;
-} catch { }
-*/
-
 for (y of style) {
  try {
 const value  = stateHolder[index].dat[d].style[y];
-
-target.style[y]   = value;
-target.dataset[y] = value;
-
+for (r of styleFirst   ) { if (y == r ) { target.style[y] = value; } }
+for (r of styleLast    ) { if (y == r ) { target.lastElementChild.style[y] = value; } }
+for (r of styleLastLast) { if (y == r ) { target.lastElementChild.lastElementChild.previousElementSibling.style[y] = value; } }
+if (y == "transform") { target.firstElementChild.style[y] = value; }
 } catch {  }
-} }
+}
+}
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+utilityLayer0.children[j].dataset.left   = utilityLayer0.children[j].style.left  ;
+utilityLayer0.children[j].dataset.top    = utilityLayer0.children[j].style.top   ;
+utilityLayer0.children[j].dataset.width  = utilityLayer0.children[j].style.width ;
+utilityLayer0.children[j].dataset.height = utilityLayer0.children[j].style.height;
+}
 redraw();
 return 0;
 } catch {
 return 1;
 }
-}
-function toggleActiveStateEdit() {
+}function toggleActiveStateEdit() {
        if (activeStateEdit == false) {
            activeStateEdit  = true;
 if (stateHolder == null) { insertForArrows(); }
@@ -13314,8 +13319,21 @@ for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
     programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style = {};
 
 programState.dat[topLayer[layerArray[j]].b_content.children[i].id].id = topLayer[layerArray[j]].b_content.children[i].id;
-const styleFirst    = [ "top", "left" ];
+
+
+
+
+const styleFirst    = [ "filter", "top", "left", "width", "height", "zIndex" ];
+const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
+const styleLastLast = [ "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+
 for (y of styleFirst   ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].style[y]; }
+for (y of styleLast    ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style[y]; }
+for (y of styleLastLast) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+
+
+
+
 }
 if (topLayer[layerArray[j]].b_content.children.length > 0) {
 ui["setLayer" + (j + 1)].ref.dataset.programState = JSON.stringify(programState);
@@ -13694,6 +13712,9 @@ function copyStateCode(layerInput) {
 
 copyToClipboard(`try { go; } catch { try { changeLayer('${layerInput}'); } catch {}; };`);
 
+}function updateFilter() {
+if (coinFocus == null) return 0;
+coinFocus.style.filter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) blur(${document.getElementById("filterBlur").value}px) opacity(${document.getElementById("filterOpacity").value}) `;
 }function setSingleState() {
 
 if (event.ctrlKey) {
@@ -18389,7 +18410,14 @@ shelfMenuHTML.tab5.backgrounds.style = `
 `;shelfMenuHTML.tab5.folder1.style = `
 <style>
 
-
+.filterBrightness    { position: absolute; top:  250px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterContrast      { position: absolute; top:  274px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterIntensity     { position: absolute; top:  298px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterAntique       { position: absolute; top:  322px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterGrayscale     { position: absolute; top:  346px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterInvert        { position: absolute; top:  370px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterOpacity       { position: absolute; top:  394px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterBlur          { position: absolute; top:  418px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
 
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
@@ -18419,14 +18447,14 @@ margin: 0px;
 border: 0px;
 outline: 0px;
 position: absolute;
-top:  289px;
+top:  459px;
 left: 14px;
-height: 58px;
+height: 26px;
 width: 172px;
 background-color: transparent;
 resize: none;
 
-font-size: 20px;
+font-size: 12px;
 color: rgb(24,117,189);
 
 }
@@ -18564,8 +18592,33 @@ shelfMenuHTML.tab5.folder1.HTML = `
 <button id="stateDel" class="button_ stateDel" onclick="deleteKey();" title="Use the DEL key.\nNumPad has everything going."></button>
 <button id="stateIns" class="button_ stateIns" onclick="insertKey();" title="Same as tapping INSERT key.\nAlso tap F9 while moving\nparts with SHIFT\nor use PGUP PGDN while\nActive Edit is on(numlock)"></button>
 
+
+
+<input id="filterBrightness" class="filterBrightness" type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterContrast"   class="filterContrast"   type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterIntensity"  class="filterIntensity"  type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterAntique"    class="filterAntique"    type="range" min="0" max="1"  step="0.05" value="0" oninput="updateFilter();" />
+<input id="filterGrayscale"  class="filterGrayscale"  type="range" min="0" max="1"  step="0.05" value="0" oninput="updateFilter();" />
+<input id="filterInvert"     class="filterInvert"     type="range" min="0" max="1"  step="0.05" value="0" oninput="updateFilter();" />
+<input id="filterOpacity"    class="filterOpacity"    type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterBlur"       class="filterBlur"       type="range" min="0" max="25" step="1"    value="0" oninput="updateFilter();" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
-<textarea id="classListEntry" class="classListEntry dckimPixelMono" oninput="event.stopPropagation(); const target = coinFocus.lastElementChild.lastElementChild.previousElementSibling; try { target.classList = ''; const className = document.getElementById('classListEntry').value.trim().split(' '); for (t of className) { target.classList.add(t); } } catch {  };" title="NOTE: This is NOT working\n(yet)"></textarea>
+<textarea id="classListEntry" class="classListEntry dckimPixelMono" title="this is not animated yet" oninput="event.stopPropagation(); const target = coinFocus.lastElementChild.lastElementChild.previousElementSibling; try { target.classList = ''; const className = document.getElementById('classListEntry').value.trim().split(' '); for (t of className) { target.classList.add(t); } } catch {  };" title="NOTE: This is NOT working\n(yet)"></textarea>
 
 
 
@@ -26036,6 +26089,24 @@ ui.save1500.click                = function() { deMinimis(false, "(100/1536)"); 
 ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); updateInfoShelf(); };
 
 
+
+
+var useAllLayers = false;
+
+if (localStorage.getItem("useAllLayers")) {
+useAllLayers = localStorage.getItem("useAllLayers");
+}
+
+
+
+
+
+
+
+
+
+
+
 const header1 = `<!DOCTYPE html>
 <html>
 <head>
@@ -26379,7 +26450,7 @@ const rename = false;
 
 
 
-
+const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ];
 
 
 
@@ -26435,7 +26506,21 @@ removePointerEventsNone();
 
 let stylePosition = "";
 let string = "";
-    string = utilityLayer0.innerHTML;
+
+
+string = utilityLayer0.innerHTML;
+
+
+if (useAllLayers) {
+let tempString = "";
+
+for (h of levelName) { tempString += topLayer[h].b_content.innerHTML; }
+string = tempString;
+}
+
+
+
+
 
 if (coinFocus != null) {
 if (
@@ -26487,15 +26572,13 @@ if (layerRef) string = layerRef;
 
 
 
-
-
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: top, left;
+  transition-property: top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
-  transition-delay: ;
+  transition-delay: 0ms;
   transition-behavior: ;
 }
 .pixelArt {
@@ -27010,15 +27093,15 @@ let eventRoll = [];
 if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
 
 
-const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ]
+
 const lvlRoll = {};
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
 }
-
 }
+
 
 
 let scriptStarter = `
@@ -27029,16 +27112,35 @@ const go           = {};
       go.elm       = {};
       go.dat       = {};
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
-      go.level     = {};
-      go.level.ids =
-${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
-      go.level.show = {}; for (let i = 1; i < 21; i++) {
-      go.level.show["LVL" + i] = function() { for (g of go.level.ids["LVL" + i]) { document.getElementById(g).style.display = "block"; } return 0; }; }
-      go.level.hide = {}; for (let i = 1; i < 21; i++) {
-      go.level.hide["LVL" + i] = function() { for (g of go.level.ids["LVL" + i]) { document.getElementById(g).style.display = "none" ; } return 0; }; }
-
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+`;
+
+
+if (useAllLayers == true) {
+scriptStarter += `
+      go.disp      = {};
+      go.disp.ids  =
+${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+      go.disp.show = {}; for (let i = 1; i < 21; i++) {
+      go.disp.show["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display = "block"; } catch { }; } return 0; }; }
+      go.disp.hide = {}; for (let i = 1; i < 21; i++) {
+      go.disp.hide["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display =  "none"; } catch { }; } return 0; }; }
+      go.show      = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.show["LVL" + i](); }; return 0; }
+                     for (r of levelArray) { go.disp.show["LVL" + r](); }; return 0; };
+      go.hide      = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.hide["LVL" + i](); }; return 0; }
+                     for (r of levelArray) { go.disp.hide["LVL" + r](); }; return 0; };
+`;
+} else {
+scriptStarter += `
+      go.show    = function() { for (f of go.ids) { document.getElementById(f).style.display = "block"; } };
+      go.hide    = function() { for (f of go.ids) { document.getElementById(f).style.display =  "none"; } };
+      go.fadeIn  = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "1"; } };
+      go.fadeOut = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "0"; } };
+`;
+}
+
+scriptStarter += `
 
 const dat = [ "notes", "json" ];
 for (t of dat) { go.dat[t] = {}; go.dat[t].nom = []; }
@@ -27055,7 +27157,7 @@ go.xqn       = {};
 go.xqn.nom   = [];
 go.xqn.grp   = {};
 go.xqn.all   = [];
-go.xqn.style = [ "top", "left" ];
+go.xqn.style = [ "filter",  "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 go.ids.forEach((id) => {
 go.elm[id]      = {};
@@ -27075,14 +27177,17 @@ go.xqn.grp[id] = go.elm[id].xqn = from ; }
 go.xqn.nom[go.xqn.nom.length] = id; }
 
 /*** SET UP FOR DATA ***/
-for (t of dat) {  if (go.elm[id].ref.dataset[t])                  {
-          const from = go.elm[id].ref.dataset[t];                   
-    try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from);  }
-  catch { go.dat[t][id] = go.elm[id].dat[t] =            from ;  }
-          go.dat[t].nom[go.dat[t].nom.length] = id; }       }
+for (t of dat) {  if (go.elm[id].ref.dataset[t])                {
+          const from = go.elm[id].ref.dataset[t];                
+    try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from); }
+  catch { go.dat[t][id] = go.elm[id].dat[t] =            from ; }
+          go.dat[t].nom[go.dat[t].nom.length] = id; }           }
+
 if (go.elm[id].dat.notes.initialDisplay &&
     go.elm[id].dat.notes.initialDisplay == "none"
-) { go.elm[id].ref.style.display = "none"; }
+) { go.elm[id].ref.style.display = "none";
+    go.elm[id].ref.style.opacity =    "0";
+    go.elm[id].ref.style.zIndex  =    "0"; }
 
 /*** SET UP FOR AUDIO DATA ***/
 if (go.elm[id].ref.tagName == "AUDIO") {
@@ -27133,6 +27238,8 @@ num++; }
 /* SECTION 1: SET UP FOR A BROAD ANIMATION AND STATE CHANGE REGIMENT */
 go.setupState  = function(obj,arg,ext) {
 function setup(nom,arg,ext) {
+nom.delay      =  {};
+nom.delay.value=   0;
 nom.rate       =  {};
 nom.rate.value = ${document.getElementById("stateTiming").innerText};
 nom.rate.set   = function(val)  { nom.pause(); nom.rate.value = val; nom.resume(); return 0; }
@@ -27145,7 +27252,7 @@ nom.now.value  =   0;
 nom.now.set    = function(val)  { nom.now.value = val; return 0; }
 nom.now.incr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value < nom.length - 1) nom.now.value += val; return 0; }
 nom.now.decr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value > 0) nom.now.value -= val; return 0; }
-nom.set        = function(index) { go.setState(nom[index], nom.rate.value, arg); return 0; }
+nom.set        = function(index) { go.setState(nom[index], nom.rate.value, nom.delay.value, arg); return 0; }
 nom.reset      = function() { nom.pause(); nom.now.value = 0; nom.set(nom.now.value); return 0; }
 nom.next       = function() { nom.pause(); if (nom.now.value != nom.length - 1) { ++nom.now.value; nom.set(nom.now.value); }; return 0; }
 nom.prev       = function() { nom.pause(); if (nom.now.value !=              0) { --nom.now.value; nom.set(nom.now.value); }; return 0; }
@@ -27187,12 +27294,18 @@ nom.loop.rev   = function() { nom.pause(); nom.prev(); const intervalId = setInt
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
                  nom.resume = function() { nom.loop.rev();            return 0; };
                  return 0; }
-
-
-nom.loop.cycl  = function() { nom.pause(); const intervalId = setInterval(() => {
+nom.loop.cycl  = function() { nom.pause();
                  switch (nom.flow) {
-                 case 0: if (nom.next() == 1) { nom.flow = 1; nom.prev(); nom.prev(); }; break;
-                 case 1: if (nom.prev() == 1) { nom.flow = 0; nom.next(); nom.next(); }; break; }
+                 case 0: nom.next(); break;
+                 case 1: nom.prev(); break;
+                 }
+                 const intervalId = setInterval(() => {
+                 switch (nom.flow) {
+                 case 0: nom.now.value = (nom.now.value == nom.length - 1) ? 0 : (nom.now.value + 1);
+                 nom.set(nom.now.value); break;
+                 case 1: nom.now.value = (nom.now.value == 0) ? nom.length - 1 : (nom.now.value - 1);
+                 nom.set(nom.now.value); break;
+                 }
                  }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
                  nom.resume = function() { nom.loop.cycl(); }; return 0; }
@@ -27225,31 +27338,29 @@ go.xqn.nom.forEach((name) => {
 });
 
 
-
 /*** A FUNCTION TO SET THE STATE ***/
-go.setState = function(xqn,rate,arg) { if (!!arg) {
+go.setState = function(xqn,rate,delay,arg) { if (!!arg) {
 for (y of go.xqn.style) { const target = arg.ref;
 try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.style[y];
 target.style[y] = value;
-if (target.style.transitionDuration != rate + "ms") {
-target.style.transitionDuration = rate + "ms";
-}
+if (target.style.transitionDuration != rate  + "ms") {
+    target.style.transitionDuration  = rate  + "ms"; }
+if (target.style.transitionDelay    != delay + "ms") {
+    target.style.transitionDelay     = delay + "ms"; }
 } catch {  } } return 0; }
-
 for (d of go.ids) { for (y of go.xqn.style) {
 const target = document.getElementById(d);
 try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.dat[d].style[y];
 target.style[y] = value;
-if (target.style.transitionDuration != rate + "ms") {
-target.style.transitionDuration = rate + "ms";
-}
+if (target.style.transitionDuration != rate  + "ms") {
+    target.style.transitionDuration  = rate  + "ms"; }
+if (target.style.transitionDelay    != delay + "ms") {
+    target.style.transitionDelay     = delay + "ms"; }
 } catch { } } } return 0; }
-
-
 
 /* SECTION 2: ANIMATION AND STATE CHANGE FOR EACH INDIVIDUALLY */
 for (y of go.xqn.nom) { for (x of go.ids) {
@@ -27321,7 +27432,6 @@ go.anim.all.resume = function() { go.xqn.all.resume(); }
 go.anim.all.set    = function() { go.xqn.all.set()   ; }
 go.anim.all.stop   = function() { go.xqn.all.stop()  ; }
 
-
 `;
 
 
@@ -27337,10 +27447,17 @@ scriptStarter += `
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
 
-const extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+let extract = "";
+
+try {
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+} catch {
+extract = "";
+}
 
 scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
+
 }
 scriptStarter += `
 `;
@@ -27728,8 +27845,6 @@ drawSiteMap();
 
 
 function drawSiteMap() {
-
-if (!utilityLayer0) return;
 const downsize = 16;
 const canvas = document.getElementById("siteMapCanvas");
 const ctx = canvas.getContext("2d");
@@ -31263,7 +31378,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-23T22:07:47Z">
+<meta name="last-build" content="2026-03-23T22:15:08Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -31275,7 +31390,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260323180747'></script>
+<script src='./bundle.js?v=20260323181508'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>

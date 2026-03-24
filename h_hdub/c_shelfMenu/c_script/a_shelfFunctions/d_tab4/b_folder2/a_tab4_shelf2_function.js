@@ -8,6 +8,24 @@ ui.save1500.click                = function() { deMinimis(false, "(100/1536)"); 
 ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); updateInfoShelf(); };
 
 
+
+
+var useAllLayers = false;
+
+if (localStorage.getItem("useAllLayers")) {
+useAllLayers = localStorage.getItem("useAllLayers");
+}
+
+
+
+
+
+
+
+
+
+
+
 const header1 = `<!DOCTYPE html>
 <html>
 <head>
@@ -351,7 +369,7 @@ const rename = false;
 
 
 
-
+const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ];
 
 
 
@@ -407,7 +425,21 @@ removePointerEventsNone();
 
 let stylePosition = "";
 let string = "";
-    string = utilityLayer0.innerHTML;
+
+
+string = utilityLayer0.innerHTML;
+
+
+if (useAllLayers) {
+let tempString = "";
+
+for (h of levelName) { tempString += topLayer[h].b_content.innerHTML; }
+string = tempString;
+}
+
+
+
+
 
 if (coinFocus != null) {
 if (
@@ -459,15 +491,13 @@ if (layerRef) string = layerRef;
 
 
 
-
-
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: top, left;
+  transition-property: filter, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
-  transition-delay: ;
+  transition-delay: 0ms;
   transition-behavior: ;
 }
 .pixelArt {
@@ -982,15 +1012,15 @@ let eventRoll = [];
 if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
 
 
-const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ]
+
 const lvlRoll = {};
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
 }
-
 }
+
 
 
 let scriptStarter = `
@@ -1001,16 +1031,35 @@ const go           = {};
       go.elm       = {};
       go.dat       = {};
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
-      go.level     = {};
-      go.level.ids =
-${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
-      go.level.show = {}; for (let i = 1; i < 21; i++) {
-      go.level.show["LVL" + i] = function() { for (g of go.level.ids["LVL" + i]) { document.getElementById(g).style.display = "block"; } return 0; }; }
-      go.level.hide = {}; for (let i = 1; i < 21; i++) {
-      go.level.hide["LVL" + i] = function() { for (g of go.level.ids["LVL" + i]) { document.getElementById(g).style.display = "none" ; } return 0; }; }
-
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+`;
+
+
+if (useAllLayers == true) {
+scriptStarter += `
+      go.disp      = {};
+      go.disp.ids  =
+${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
+      go.disp.show = {}; for (let i = 1; i < 21; i++) {
+      go.disp.show["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display = "block"; } catch { }; } return 0; }; }
+      go.disp.hide = {}; for (let i = 1; i < 21; i++) {
+      go.disp.hide["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display =  "none"; } catch { }; } return 0; }; }
+      go.show      = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.show["LVL" + i](); }; return 0; }
+                     for (r of levelArray) { go.disp.show["LVL" + r](); }; return 0; };
+      go.hide      = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.hide["LVL" + i](); }; return 0; }
+                     for (r of levelArray) { go.disp.hide["LVL" + r](); }; return 0; };
+`;
+} else {
+scriptStarter += `
+      go.show    = function() { for (f of go.ids) { document.getElementById(f).style.display = "block"; } };
+      go.hide    = function() { for (f of go.ids) { document.getElementById(f).style.display =  "none"; } };
+      go.fadeIn  = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "1"; } };
+      go.fadeOut = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "0"; } };
+`;
+}
+
+scriptStarter += `
 
 const dat = [ "notes", "json" ];
 for (t of dat) { go.dat[t] = {}; go.dat[t].nom = []; }
@@ -1027,7 +1076,7 @@ go.xqn       = {};
 go.xqn.nom   = [];
 go.xqn.grp   = {};
 go.xqn.all   = [];
-go.xqn.style = [ "top", "left" ];
+go.xqn.style = [ "filter",  "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 go.ids.forEach((id) => {
 go.elm[id]      = {};
@@ -1047,14 +1096,17 @@ go.xqn.grp[id] = go.elm[id].xqn = from ; }
 go.xqn.nom[go.xqn.nom.length] = id; }
 
 /*** SET UP FOR DATA ***/
-for (t of dat) {  if (go.elm[id].ref.dataset[t])                  {
-          const from = go.elm[id].ref.dataset[t];                   
-    try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from);  }
-  catch { go.dat[t][id] = go.elm[id].dat[t] =            from ;  }
-          go.dat[t].nom[go.dat[t].nom.length] = id; }       }
+for (t of dat) {  if (go.elm[id].ref.dataset[t])                {
+          const from = go.elm[id].ref.dataset[t];                
+    try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from); }
+  catch { go.dat[t][id] = go.elm[id].dat[t] =            from ; }
+          go.dat[t].nom[go.dat[t].nom.length] = id; }           }
+
 if (go.elm[id].dat.notes.initialDisplay &&
     go.elm[id].dat.notes.initialDisplay == "none"
-) { go.elm[id].ref.style.display = "none"; }
+) { go.elm[id].ref.style.display = "none";
+    go.elm[id].ref.style.opacity =    "0";
+    go.elm[id].ref.style.zIndex  =    "0"; }
 
 /*** SET UP FOR AUDIO DATA ***/
 if (go.elm[id].ref.tagName == "AUDIO") {
@@ -1105,6 +1157,8 @@ num++; }
 /* SECTION 1: SET UP FOR A BROAD ANIMATION AND STATE CHANGE REGIMENT */
 go.setupState  = function(obj,arg,ext) {
 function setup(nom,arg,ext) {
+nom.delay      =  {};
+nom.delay.value=   0;
 nom.rate       =  {};
 nom.rate.value = ${document.getElementById("stateTiming").innerText};
 nom.rate.set   = function(val)  { nom.pause(); nom.rate.value = val; nom.resume(); return 0; }
@@ -1117,7 +1171,7 @@ nom.now.value  =   0;
 nom.now.set    = function(val)  { nom.now.value = val; return 0; }
 nom.now.incr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value < nom.length - 1) nom.now.value += val; return 0; }
 nom.now.decr   = function(step) { let val; val = step; if (!step) val = 1; if (nom.now.value > 0) nom.now.value -= val; return 0; }
-nom.set        = function(index) { go.setState(nom[index], nom.rate.value, arg); return 0; }
+nom.set        = function(index) { go.setState(nom[index], nom.rate.value, nom.delay.value, arg); return 0; }
 nom.reset      = function() { nom.pause(); nom.now.value = 0; nom.set(nom.now.value); return 0; }
 nom.next       = function() { nom.pause(); if (nom.now.value != nom.length - 1) { ++nom.now.value; nom.set(nom.now.value); }; return 0; }
 nom.prev       = function() { nom.pause(); if (nom.now.value !=              0) { --nom.now.value; nom.set(nom.now.value); }; return 0; }
@@ -1159,12 +1213,18 @@ nom.loop.rev   = function() { nom.pause(); nom.prev(); const intervalId = setInt
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
                  nom.resume = function() { nom.loop.rev();            return 0; };
                  return 0; }
-
-
-nom.loop.cycl  = function() { nom.pause(); const intervalId = setInterval(() => {
+nom.loop.cycl  = function() { nom.pause();
                  switch (nom.flow) {
-                 case 0: if (nom.next() == 1) { nom.flow = 1; nom.prev(); nom.prev(); }; break;
-                 case 1: if (nom.prev() == 1) { nom.flow = 0; nom.next(); nom.next(); }; break; }
+                 case 0: nom.next(); break;
+                 case 1: nom.prev(); break;
+                 }
+                 const intervalId = setInterval(() => {
+                 switch (nom.flow) {
+                 case 0: nom.now.value = (nom.now.value == nom.length - 1) ? 0 : (nom.now.value + 1);
+                 nom.set(nom.now.value); break;
+                 case 1: nom.now.value = (nom.now.value == 0) ? nom.length - 1 : (nom.now.value - 1);
+                 nom.set(nom.now.value); break;
+                 }
                  }, nom.rate.value);
                  nom.pause  = function() { clearInterval(intervalId); return 0; };
                  nom.resume = function() { nom.loop.cycl(); }; return 0; }
@@ -1197,31 +1257,29 @@ go.xqn.nom.forEach((name) => {
 });
 
 
-
 /*** A FUNCTION TO SET THE STATE ***/
-go.setState = function(xqn,rate,arg) { if (!!arg) {
+go.setState = function(xqn,rate,delay,arg) { if (!!arg) {
 for (y of go.xqn.style) { const target = arg.ref;
 try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.style[y];
 target.style[y] = value;
-if (target.style.transitionDuration != rate + "ms") {
-target.style.transitionDuration = rate + "ms";
-}
+if (target.style.transitionDuration != rate  + "ms") {
+    target.style.transitionDuration  = rate  + "ms"; }
+if (target.style.transitionDelay    != delay + "ms") {
+    target.style.transitionDelay     = delay + "ms"; }
 } catch {  } } return 0; }
-
 for (d of go.ids) { for (y of go.xqn.style) {
 const target = document.getElementById(d);
 try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
 if (go.vwFactor == 1) value = xqn.dat[d].style[y];
 target.style[y] = value;
-if (target.style.transitionDuration != rate + "ms") {
-target.style.transitionDuration = rate + "ms";
-}
+if (target.style.transitionDuration != rate  + "ms") {
+    target.style.transitionDuration  = rate  + "ms"; }
+if (target.style.transitionDelay    != delay + "ms") {
+    target.style.transitionDelay     = delay + "ms"; }
 } catch { } } } return 0; }
-
-
 
 /* SECTION 2: ANIMATION AND STATE CHANGE FOR EACH INDIVIDUALLY */
 for (y of go.xqn.nom) { for (x of go.ids) {
@@ -1293,7 +1351,6 @@ go.anim.all.resume = function() { go.xqn.all.resume(); }
 go.anim.all.set    = function() { go.xqn.all.set()   ; }
 go.anim.all.stop   = function() { go.xqn.all.stop()  ; }
 
-
 `;
 
 
@@ -1309,10 +1366,17 @@ scriptStarter += `
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
 
-const extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+let extract = "";
+
+try {
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+} catch {
+extract = "";
+}
 
 scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
+
 }
 scriptStarter += `
 `;
