@@ -86,6 +86,8 @@ drawSiteMap();
 
 
 function drawSiteMap() {
+
+try {
 const downsize = 16;
 const canvas = document.getElementById("siteMapCanvas");
 const ctx = canvas.getContext("2d");
@@ -136,10 +138,10 @@ ctx.textBaseline="top";
 ctx.fillText(`${buoyValues[j].name}`,Math.floor((buoyValues[j].location[0] - window.scrollX)/downsize),Math.floor((buoyValues[j].location[1] - window.scrollY)/downsize));
 ctx.stroke();
 }
-} catch {}
+} catch { }
 
 
-
+} catch { }
 }
 setTimeout(() => { drawSiteMap(); }, 500);
 
