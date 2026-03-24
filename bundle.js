@@ -12999,7 +12999,7 @@ let activeStateEdit = false;
 function setState (quotedStateName,frameNumber) {
 try {
 let style = [ "filter", "top", "left", "width", "height", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
-const styleFirst    = [ "filter", "top", "left", "width", "height", "zIndex" ];
+const styleFirst    = [ "backdrop-filter", "filter", "top", "left", "width", "height", "zIndex" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
 const styleLastLast = [ "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
@@ -13712,9 +13712,36 @@ function copyStateCode(layerInput) {
 
 copyToClipboard(`try { go; } catch { try { changeLayer('${layerInput}'); } catch {}; };`);
 
-}function updateFilter() {
+}function updateFilter(value) {
+
+
+if (value == "reset") {
+document.getElementById("filterBrightness").value = "1";
+document.getElementById("filterContrast").value   = "1";
+document.getElementById("filterIntensity").value  = "1";
+document.getElementById("filterGrayscale").value  = "0";
+document.getElementById("filterAntique").value    = "0";
+document.getElementById("filterInvert").value     = "0";
+document.getElementById("filterBlur").value       = "0";
+document.getElementById("filterOpacity").value    = "1";
+if (coinFocus != null) coinFocus.filter = "none";
+return 0;
+}
+
+
 if (coinFocus == null) return 0;
 coinFocus.style.filter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) blur(${document.getElementById("filterBlur").value}px) opacity(${document.getElementById("filterOpacity").value}) `;
+
+
+document.getElementById("filterBrightness").title = document.getElementById("filterBrightness").value;
+document.getElementById("filterContrast").title   = document.getElementById("filterContrast").value;
+document.getElementById("filterIntensity").title  = document.getElementById("filterIntensity").value;
+document.getElementById("filterGrayscale").title  = document.getElementById("filterGrayscale").value;
+document.getElementById("filterAntique").title    = document.getElementById("filterAntique").value;
+document.getElementById("filterInvert").title     = document.getElementById("filterInvert").value;
+document.getElementById("filterBlur").title       = document.getElementById("filterBlur").value;
+document.getElementById("filterOpacity").title    = document.getElementById("filterOpacity").value;
+
 }function setSingleState() {
 
 if (event.ctrlKey) {
@@ -18405,19 +18432,19 @@ buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
      button_folder52button" title=""></button>
 `;
 shelfMenuHTML.tab5.backgrounds.style = `
-.folder51image { background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/1_folderBackgrounds/folder-5-1.png?v=20260314230457"); }
+.folder51image { background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/1_folderBackgrounds/folder-5-1.png?v=20260324105845"); }
 .folder52image { background-image: url("h_hdub/c_shelfMenu/a_images/e_tab5/1_folderBackgrounds/folder-5-2.png?v=20260314230528"); }
 `;shelfMenuHTML.tab5.folder1.style = `
 <style>
 
-.filterBrightness    { position: absolute; top:  250px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterContrast      { position: absolute; top:  274px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterIntensity     { position: absolute; top:  298px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterAntique       { position: absolute; top:  322px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterGrayscale     { position: absolute; top:  346px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterInvert        { position: absolute; top:  370px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterOpacity       { position: absolute; top:  394px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
-.filterBlur          { position: absolute; top:  418px; left: 6px; height: 24px; width: 188px; background-color: transparent; }
+.filterBrightness    { position: absolute; top:  250px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterContrast      { position: absolute; top:  274px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterIntensity     { position: absolute; top:  298px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterAntique       { position: absolute; top:  322px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterGrayscale     { position: absolute; top:  346px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterInvert        { position: absolute; top:  370px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterOpacity       { position: absolute; top:  394px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
+.filterBlur          { position: absolute; top:  418px; left: 21px; height: 24px; width: 173px; background-color: transparent; }
 
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
@@ -18594,17 +18621,17 @@ shelfMenuHTML.tab5.folder1.HTML = `
 
 
 
-<input id="filterBrightness" class="filterBrightness" type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
-<input id="filterContrast"   class="filterContrast"   type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
-<input id="filterIntensity"  class="filterIntensity"  type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterBrightness" class="filterBrightness" type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterContrast"   class="filterContrast"   type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
+<input id="filterIntensity"  class="filterIntensity"  type="range" min="0" max="5"  step="0.05" value="1" oninput="updateFilter();" />
 <input id="filterAntique"    class="filterAntique"    type="range" min="0" max="1"  step="0.05" value="0" oninput="updateFilter();" />
 <input id="filterGrayscale"  class="filterGrayscale"  type="range" min="0" max="1"  step="0.05" value="0" oninput="updateFilter();" />
 <input id="filterInvert"     class="filterInvert"     type="range" min="0" max="1"  step="0.05" value="0" oninput="updateFilter();" />
 <input id="filterOpacity"    class="filterOpacity"    type="range" min="0" max="1"  step="0.05" value="1" oninput="updateFilter();" />
-<input id="filterBlur"       class="filterBlur"       type="range" min="0" max="25" step="1"    value="0" oninput="updateFilter();" />
+<input id="filterBlur"       class="filterBlur"       type="range" min="0" max="20" step="0.5"  value="0" oninput="updateFilter();" />
 
-
-
+<button id="filterReset" class="button_ filterReset" onclick="updateFilter('reset');" title="reset the filter\nset the current part to 'filter: none;'"></button>
+<button id="filterReset" class="button_ filterReset" onclick="updateFilter('reset');" title="reset the filter\nset the current part to 'filter: none;'"></button>
 
 
 
@@ -26575,7 +26602,7 @@ if (layerRef) string = layerRef;
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
+  transition-property: filter, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
   transition-delay: 0ms;
@@ -31378,7 +31405,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-23T22:15:08Z">
+<meta name="last-build" content="2026-03-24T15:26:53Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -31390,7 +31417,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260323181508'></script>
+<script src='./bundle.js?v=20260324112653'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>
