@@ -16,12 +16,12 @@ for (let j = 0; j < utilityLayer0.children.length; j++) {
 
 const nextZ = parseInt(utilityLayer0.children[j].style.zIndex);
 
-if (nextZ > highestGlobalZ)   { highestGlobalZ = nextZ;   }
+if (nextZ > highestGlobalZ)   { highestGlobalZ   = nextZ; }
 if (nextZ > highestSel0Z)     { highestSel0Z     = nextZ; }
 if (nextZ > highestSel1Z)     { highestSel1Z     = nextZ; }
 if (nextZ > highestSel2Z)     { highestSel2Z     = nextZ; }
 
-if (nextZ < lowestGlobalZ)    { lowestGlobalZ  = nextZ;   }
+if (nextZ < lowestGlobalZ)    { lowestGlobalZ    = nextZ; }
 if (nextZ < lowestSel0Z)      { lowestSel0Z      = nextZ; }
 if (nextZ < lowestSel1Z)      { lowestSel1Z      = nextZ; }
 if (nextZ < lowestSel2Z)      { lowestSel2Z      = nextZ; }

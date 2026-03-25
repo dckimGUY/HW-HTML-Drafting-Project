@@ -351,19 +351,13 @@ collection = "";
 
 function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef) {
 
-
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
 
-
-
 const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ];
-
-
-
 
 if (factor) {
 lastFactor = factor;
@@ -377,14 +371,6 @@ factor     = `(100/${window.innerWidth})`;
 lastFactor = `(100/${window.innerWidth})`;
 localStorage.setItem("lastFactor", "(100/320)");
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -407,27 +393,20 @@ return;
 }
 
 
+
+
 /* BE SURE THAT THE DOCUMENT ORDERING IS REFLECTED IN THE TRIPARTITE COLOUR SETS */
 readCoins();
-
-
 spaceViewOn();
 removePointerEventsNone();
-
 let stylePosition = "";
 let string = "";
-
-
 string = utilityLayer0.innerHTML;
-
-
 if (useAllLayers) {
 let tempString = "";
-
 for (h of levelName) { tempString += topLayer[h].b_content.innerHTML; }
 string = tempString;
 }
-
 
 
 
@@ -444,43 +423,27 @@ event.target.id == "save1000" ||
 event.target.id == "save1200" ||
 event.target.id == "save1500"
 ) {
-if ( event.shiftKey) {
-                   string = "";
-       if (coinFocus.dataset.coinTrip == "0") {
-                   string = "";
-         for (let j = 0; j < coinTrip.sel0.length; j++) {
-                   string += coinTrip.sel0[j].outerHTML;
+
+if ( event.shiftKey) {                          string = "";
+       if (coinFocus.dataset.coinTrip == "0") { string = "";
+         for (let j = 0; j < coinTrip.sel0.length; j++)    {
+                   string += coinTrip.sel0[j].outerHTML;   }
+} else if (coinFocus.dataset.coinTrip == "1") { string = "";
+         for (let j = 0; j < coinTrip.sel1.length; j++)    {
+                   string += coinTrip.sel1[j].outerHTML;   }
+} else if (coinFocus.dataset.coinTrip == "2") { string = "";
+         for (let j = 0; j < coinTrip.sel2.length; j++)    {
+                   string += coinTrip.sel2[j].outerHTML;   }
 }
-} else if (coinFocus.dataset.coinTrip == "1") {
-                   string = "";
-         for (let j = 0; j < coinTrip.sel1.length; j++) {
-                   string += coinTrip.sel1[j].outerHTML;
-}
-} else if (coinFocus.dataset.coinTrip == "2") {
-                   string = "";
-         for (let j = 0; j < coinTrip.sel2.length; j++) {
-                   string += coinTrip.sel2[j].outerHTML;
+
 }
 }
 }
-}
-}
-
-
-
-
-
-
-
-
 
 
 
 
 if (layerRef) string = layerRef;
-
-
-
 
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
@@ -624,6 +587,7 @@ otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibli
 idRoll.push(otherDoc.body.children[j].id);
 let otherInner;
        if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
+
 otherInner = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.firstElementChild;
 for (y of styleFirst   ) { otherInner.style[y] = otherDoc.body.children[j].style[y]; }
 for (y of styleLast    ) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.style[y]; }
@@ -639,21 +603,20 @@ otherInner.style.top             = otherDoc.body.children[j].style.top;
 otherInner.style.width           = otherDoc.body.children[j].style.width;
 otherInner.style.height          = otherDoc.body.children[j].style.height;
 otherInner.style.zIndex          = otherDoc.body.children[j].style.zIndex;
+
+} else if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length  > 1) {
+
+otherInner = document.createElement("div");
+otherInner.innerHTML = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
+
+for (y of styleFirst   ) { otherInner.style[y] = otherDoc.body.children[j].style[y]; }
+for (y of styleLast    ) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.style[y]; }
+for (y of styleLastLast) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+if (otherInner.style.backgroundSize == "") { otherInner.style.backgroundSize  = "100% 100%"; }
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -670,6 +633,13 @@ for (let c of classes) { if (c != "") { otherInner.classList.add(c); } }
 
 otherInner.classList.add(`trs`);
 otherInner.classList.add(`${otherInner.id}`);
+
+
+
+
+
+
+
 
 
 
@@ -825,6 +795,8 @@ inner = document.createElement("div");
 
 inner.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 inner.style.position        = "absolute";
+inner.style.filter          = doc.body.children[j].style.filter;
+inner.style.backdropFilter  = doc.body.children[j].style.backdropFilter;
 inner.style.left            = doc.body.children[j].style.left;
 inner.style.top             = doc.body.children[j].style.top;
 inner.style.width           = doc.body.children[j].style.width;

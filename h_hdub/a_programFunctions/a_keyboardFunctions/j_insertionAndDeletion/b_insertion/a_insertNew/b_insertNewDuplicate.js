@@ -202,7 +202,11 @@ const coinCentre = [
 parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
 parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
 ];
+
+if (!event.ctrlKey) {
 buzzWord(1,"D",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+}
+
 }
 }
        if (mode!=5) {

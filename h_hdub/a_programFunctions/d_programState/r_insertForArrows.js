@@ -1,4 +1,5 @@
 function insertForArrows() {
+
 if (activeStateEdit) {
 
 if (document.getElementById("statename").innerText == "none") {

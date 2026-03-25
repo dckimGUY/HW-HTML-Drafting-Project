@@ -29,6 +29,21 @@ shift  = keyInfo[3],
 ctrl   = keyInfo[4],
 alt    = keyInfo[5];
 
+function zBuzz(text) {
+if (coinFocus != null) {
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,text,fontWidth,textColour,120,120,100,"center",coinCentre[0],coinCentre[1]);
+}
+}
+
        if (mode==0) {
 if (!window.opener) { modeRouter(e,1); return; }
 /*    h    */ if (kC ==  72 && cC == 104) { windowEdge(keyInfo); }/*    H    */ if (kC ==  72 && cC ==  72) { windowEdge(keyInfo); }
@@ -64,14 +79,13 @@ if (!window.opener) { modeRouter(e,1); return; }
 /*    K    */ if (kC ==  75 && cC ==  75) { setCoinTrip(e,1);                                            }
 /*    L    */ if (kC ==  76 && cC ==  76) {if(rev==1){focusPrevious()}else{focusNext()}; if (lastFlow == "global") { setCoinTrip(e,0); } }
 } else if (mode==9) {
-/*    h    */ if (kC ==  72 && cC == 104) { ceilingGlobalZ();         }/*    H    */ if (kC ==  72 && cC ==  72) { ceilingTripartiteZ();    }
-/*    j    */ if (kC ==  74 && cC == 106) { lowerGlobalZ();           }/*    J    */ if (kC ==  74 && cC ==  74) { lowerTripartiteZ();      }
-/*    k    */ if (kC ==  75 && cC == 107) { raiseGlobalZ();           }/*    K    */ if (kC ==  75 && cC ==  75) { raiseTripartiteZ();      }
-/*    l    */ if (kC ==  76 && cC == 108) { floorGlobalZ();           }/*    L    */ if (kC ==  76 && cC ==  76) { floorTripartiteZ();      }
+/*    h    */ if (kC ==  72 && cC == 104) { ceilingGlobalZ(); zBuzz("h"); }/*    H    */ if (kC ==  72 && cC ==  72) { ceilingTripartiteZ(); zBuzz("H"); }
+/*    j    */ if (kC ==  74 && cC == 106) { lowerGlobalZ();   zBuzz("j"); }/*    J    */ if (kC ==  74 && cC ==  74) { lowerTripartiteZ();   zBuzz("J"); }
+/*    k    */ if (kC ==  75 && cC == 107) { raiseGlobalZ();   zBuzz("k"); }/*    K    */ if (kC ==  75 && cC ==  75) { raiseTripartiteZ();   zBuzz("K"); }
+/*    l    */ if (kC ==  76 && cC == 108) { floorGlobalZ();   zBuzz("l"); }/*    L    */ if (kC ==  76 && cC ==  76) { floorTripartiteZ();   zBuzz("L"); }
 }
 
-}
-function aioNRouter(keyInfo) {
+}function aioNRouter(keyInfo) {
 
 const
 e      = keyInfo[0],
@@ -149,25 +163,27 @@ alt    = keyInfo[5];
 /*right arr*/ if (kC ==  39) {window.scrollTo({left: window.pageXOffset + visualGridSize2, behavior:'auto'});}
 } else if (!ctrl&& shift) {
 
-/*   up arr*/ if (kC ==  38) { insertForArrows(); setTimeout(() => { moveAllUp()   ; }, 10); }
-/* down arr*/ if (kC ==  40) { insertForArrows(); setTimeout(() => { moveAllDown() ; }, 10); }
-/* left arr*/ if (kC ==  37) { insertForArrows(); setTimeout(() => { moveAllLeft() ; }, 10); }
-/*right arr*/ if (kC ==  39) { insertForArrows(); setTimeout(() => { moveAllRight(); }, 10); }
+if (kC ==  38) { moveAllUp()   ; }
+if (kC ==  40) { moveAllDown() ; }
+if (kC ==  37) { moveAllLeft() ; }
+if (kC ==  39) { moveAllRight(); }
+} else if (!ctrl&&!shift) {
+if (kC ==  38) { moveUp(keyInfo)   ; }
+if (kC ==  40) { moveDown(keyInfo) ; }
+if (kC ==  37) { moveLeft(keyInfo) ; }
+if (kC ==  39) { moveRight(keyInfo); }
 
+
+/*
+if (kC ==  38) { insertForArrows(); setTimeout(() => { moveAllUp()   ; }, 10); }
+if (kC ==  40) { insertForArrows(); setTimeout(() => { moveAllDown() ; }, 10); }
+if (kC ==  37) { insertForArrows(); setTimeout(() => { moveAllLeft() ; }, 10); }
+if (kC ==  39) { insertForArrows(); setTimeout(() => { moveAllRight(); }, 10); }
 } else if (!ctrl&&!shift) {
 if (kC ==  38) { insertForArrows(); setTimeout(() => { moveUp(keyInfo)   ; }, 10); }
 if (kC ==  40) { insertForArrows(); setTimeout(() => { moveDown(keyInfo) ; }, 10); }
 if (kC ==  37) { insertForArrows(); setTimeout(() => { moveLeft(keyInfo) ; }, 10); }
 if (kC ==  39) { insertForArrows(); setTimeout(() => { moveRight(keyInfo); }, 10); }
-
-
-/*
-
-if (kC ==  38) { insertForArrows(); setTimeout(() => { moveUp(keyInfo)   ; }, 10); }
-if (kC ==  40) { insertForArrows(); setTimeout(() => { moveDown(keyInfo) ; }, 10); }
-if (kC ==  37) { insertForArrows(); setTimeout(() => { moveLeft(keyInfo) ; }, 10); }
-if (kC ==  39) { insertForArrows(); setTimeout(() => { moveRight(keyInfo); }, 10); }
-
 */
 
 
@@ -1691,15 +1707,15 @@ if (coinFocus!=null) {
 /*    *    */ if (kC == 106 && cC ==  42) { focusNext(true);     }
 
 /*    7    */ if (kC == 103 && cC ==  55) { if (activeStateEdit) { firstState(); } }
-/*    8    */ if (kC == 104 && cC ==  56) { moveUp(['','','',false,false,false]); insertForArrows(); }
+/*    8    */ if (kC == 104 && cC ==  56) { moveUp(['','','',false,false,false]); /*insertForArrows();*/ }
 /*    9    */ if (kC == 105 && cC ==  57) { if (activeStateEdit) { nextState(); } }
 
-/*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); insertForArrows(); }
+/*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); /*insertForArrows();*/ }
 /*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); }
-/*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); insertForArrows(); }
+/*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); /*insertForArrows();*/ }
 
 /*    1    */ if (kC ==  97 && cC ==  49) { if (activeStateEdit) { lastState(); } }
-/*    2    */ if (kC ==  98 && cC ==  50) { moveDown(['','','',false,false,false]); insertForArrows(); }
+/*    2    */ if (kC ==  98 && cC ==  50) { moveDown(['','','',false,false,false]); /*insertForArrows();*/ }
 /*    3    */ if (kC ==  99 && cC ==  51) { if (activeStateEdit) { previousState(); } }
 
 /*    0    */ if (kC ==  96 && cC ==  48) { insertKey(); }
@@ -2005,15 +2021,15 @@ if (coinFocus!=null) {
 /*    *    */ if (kC == 106 && cC ==  42) { focusNext(true);     }
 
 /*    7    */ if (kC == 103 && cC ==  55) { if (activeStateEdit) { firstState(); } }
-/*    8    */ if (kC == 104 && cC ==  56) { moveUp(['','','',false,false,false]); insertForArrows(); }
+/*    8    */ if (kC == 104 && cC ==  56) { moveUp(['','','',false,false,false]); /*insertForArrows();*/ }
 /*    9    */ if (kC == 105 && cC ==  57) { if (activeStateEdit) { nextState(); } }
 
-/*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); insertForArrows(); }
+/*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); /*insertForArrows();*/ }
 /*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); }
-/*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); insertForArrows(); }
+/*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); /*insertForArrows();*/ }
 
 /*    1    */ if (kC ==  97 && cC ==  49) { if (activeStateEdit) { lastState(); } }
-/*    2    */ if (kC ==  98 && cC ==  50) { moveDown(['','','',false,false,false]); insertForArrows(); }
+/*    2    */ if (kC ==  98 && cC ==  50) { moveDown(['','','',false,false,false]); /*insertForArrows();*/ }
 /*    3    */ if (kC ==  99 && cC ==  51) { if (activeStateEdit) { previousState(); } }
 
 /*    0    */ if (kC ==  96 && cC ==  48) { insertKey(); }
@@ -5145,6 +5161,30 @@ reflow(coinTrip.sel0,rev,0);
 reflow(coinTrip.sel1,rev,0);
 reflow(coinTrip.sel2,rev,0);
 }
+function flowVis() {
+if (utilityLayer0.children.length != 0) {
+setTimeout(() => {
+let text = "V";
+if (lastFlow == "global") { text = "v"; }
+let delay = 0;
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+setTimeout(() => {
+const textColour = window["coinColour" + utilityLayer0.children[j].dataset.coinTrip];
+let fontWidth;
+if (parseInt(utilityLayer0.children[j].style.width) < parseInt(utilityLayer0.children[j].style.height)) {
+fontWidth = parseInt(utilityLayer0.children[j].style.width );} else {
+fontWidth = parseInt(utilityLayer0.children[j].style.height);}
+const coinCentre = [
+parseInt(utilityLayer0.children[j].style.left) + parseInt(utilityLayer0.children[j].style.width ) / 2,
+parseInt(utilityLayer0.children[j].style.top ) + parseInt(utilityLayer0.children[j].style.height) / 2
+];
+buzzWord(1,text,fontWidth,textColour,20,20,10,"center",coinCentre[0],coinCentre[1],null,true);
+}, delay * 60);
+delay++;
+}
+}, 20);
+}
+}
 /* Arrange Z-Order Globally: Z Order, Original Document Order, Top Order, Left Order. */
 /* The second press of the key performs a reversal of the same function. */
 
@@ -5405,12 +5445,12 @@ for (let j = 0; j < utilityLayer0.children.length; j++) {
 
 const nextZ = parseInt(utilityLayer0.children[j].style.zIndex);
 
-if (nextZ > highestGlobalZ)   { highestGlobalZ = nextZ;   }
+if (nextZ > highestGlobalZ)   { highestGlobalZ   = nextZ; }
 if (nextZ > highestSel0Z)     { highestSel0Z     = nextZ; }
 if (nextZ > highestSel1Z)     { highestSel1Z     = nextZ; }
 if (nextZ > highestSel2Z)     { highestSel2Z     = nextZ; }
 
-if (nextZ < lowestGlobalZ)    { lowestGlobalZ  = nextZ;   }
+if (nextZ < lowestGlobalZ)    { lowestGlobalZ    = nextZ; }
 if (nextZ < lowestSel0Z)      { lowestSel0Z      = nextZ; }
 if (nextZ < lowestSel1Z)      { lowestSel1Z      = nextZ; }
 if (nextZ < lowestSel2Z)      { lowestSel2Z      = nextZ; }
@@ -7347,7 +7387,11 @@ const coinCentre = [
 parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
 parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
 ];
+
+if (!event.ctrlKey) {
 buzzWord(1,"D",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+}
+
 }
 }
        if (mode!=5) {
@@ -13266,6 +13310,7 @@ if (utilityLayer0.children.length > 0) {
 popAccumulator(JSON.stringify([JSON.parse(document.getElementById(topLayer.a_currentLayer.replace(/._l/g, 'setL')).dataset.programState)]));
 }
 }function insertForArrows() {
+
 if (activeStateEdit) {
 
 if (document.getElementById("statename").innerText == "none") {
@@ -26722,19 +26767,13 @@ collection = "";
 
 function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef) {
 
-
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
 
-
-
 const levelName = [ "b_layer1" , "c_layer2" , "d_layer3" , "e_layer4" , "f_layer5" , "g_layer6" , "h_layer7" , "i_layer8" , "j_layer9" , "k_layer10", "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20" ];
-
-
-
 
 if (factor) {
 lastFactor = factor;
@@ -26748,14 +26787,6 @@ factor     = `(100/${window.innerWidth})`;
 lastFactor = `(100/${window.innerWidth})`;
 localStorage.setItem("lastFactor", "(100/320)");
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -26778,27 +26809,20 @@ return;
 }
 
 
+
+
 /* BE SURE THAT THE DOCUMENT ORDERING IS REFLECTED IN THE TRIPARTITE COLOUR SETS */
 readCoins();
-
-
 spaceViewOn();
 removePointerEventsNone();
-
 let stylePosition = "";
 let string = "";
-
-
 string = utilityLayer0.innerHTML;
-
-
 if (useAllLayers) {
 let tempString = "";
-
 for (h of levelName) { tempString += topLayer[h].b_content.innerHTML; }
 string = tempString;
 }
-
 
 
 
@@ -26815,43 +26839,27 @@ event.target.id == "save1000" ||
 event.target.id == "save1200" ||
 event.target.id == "save1500"
 ) {
-if ( event.shiftKey) {
-                   string = "";
-       if (coinFocus.dataset.coinTrip == "0") {
-                   string = "";
-         for (let j = 0; j < coinTrip.sel0.length; j++) {
-                   string += coinTrip.sel0[j].outerHTML;
+
+if ( event.shiftKey) {                          string = "";
+       if (coinFocus.dataset.coinTrip == "0") { string = "";
+         for (let j = 0; j < coinTrip.sel0.length; j++)    {
+                   string += coinTrip.sel0[j].outerHTML;   }
+} else if (coinFocus.dataset.coinTrip == "1") { string = "";
+         for (let j = 0; j < coinTrip.sel1.length; j++)    {
+                   string += coinTrip.sel1[j].outerHTML;   }
+} else if (coinFocus.dataset.coinTrip == "2") { string = "";
+         for (let j = 0; j < coinTrip.sel2.length; j++)    {
+                   string += coinTrip.sel2[j].outerHTML;   }
 }
-} else if (coinFocus.dataset.coinTrip == "1") {
-                   string = "";
-         for (let j = 0; j < coinTrip.sel1.length; j++) {
-                   string += coinTrip.sel1[j].outerHTML;
-}
-} else if (coinFocus.dataset.coinTrip == "2") {
-                   string = "";
-         for (let j = 0; j < coinTrip.sel2.length; j++) {
-                   string += coinTrip.sel2[j].outerHTML;
+
 }
 }
 }
-}
-}
-
-
-
-
-
-
-
-
 
 
 
 
 if (layerRef) string = layerRef;
-
-
-
 
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
@@ -26995,6 +27003,7 @@ otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibli
 idRoll.push(otherDoc.body.children[j].id);
 let otherInner;
        if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
+
 otherInner = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.firstElementChild;
 for (y of styleFirst   ) { otherInner.style[y] = otherDoc.body.children[j].style[y]; }
 for (y of styleLast    ) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.style[y]; }
@@ -27010,21 +27019,20 @@ otherInner.style.top             = otherDoc.body.children[j].style.top;
 otherInner.style.width           = otherDoc.body.children[j].style.width;
 otherInner.style.height          = otherDoc.body.children[j].style.height;
 otherInner.style.zIndex          = otherDoc.body.children[j].style.zIndex;
+
+} else if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length  > 1) {
+
+otherInner = document.createElement("div");
+otherInner.innerHTML = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
+
+for (y of styleFirst   ) { otherInner.style[y] = otherDoc.body.children[j].style[y]; }
+for (y of styleLast    ) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.style[y]; }
+for (y of styleLastLast) { otherInner.style[y] = otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+if (otherInner.style.backgroundSize == "") { otherInner.style.backgroundSize  = "100% 100%"; }
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -27041,6 +27049,13 @@ for (let c of classes) { if (c != "") { otherInner.classList.add(c); } }
 
 otherInner.classList.add(`trs`);
 otherInner.classList.add(`${otherInner.id}`);
+
+
+
+
+
+
+
 
 
 
@@ -27196,6 +27211,8 @@ inner = document.createElement("div");
 
 inner.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 inner.style.position        = "absolute";
+inner.style.filter          = doc.body.children[j].style.filter;
+inner.style.backdropFilter  = doc.body.children[j].style.backdropFilter;
 inner.style.left            = doc.body.children[j].style.left;
 inner.style.top             = doc.body.children[j].style.top;
 inner.style.width           = doc.body.children[j].style.width;
@@ -31709,7 +31726,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-25T07:46:42Z">
+<meta name="last-build" content="2026-03-25T20:39:38Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -31721,7 +31738,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260325034642'></script>
+<script src='./bundle.js?v=20260325163938'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>
@@ -32683,9 +32700,12 @@ chop,
 sweepTo,
 left,
 top,
-event
+event,
+force
 ) {
+if (force == false) {
 if (buzzRunning == true) return;
+}
 const repeats = 10;
 for (let j = 0; j < repeats; j++) {
 setTimeout(() => {
@@ -32880,16 +32900,12 @@ case "o": message = `add below`     ; redraw(); buzzWord(2,message,64,textColour
 case "O": message = `add above`     ; redraw(); buzzWord(2,message,64,textColour,1000,400,100,"top",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 
 case "w": message = `W window mode`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "z": message = `Z-index global`;     redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "Z": message = `Z-index per colour`; redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "e": message = `E edge mode`;        redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "d": message = `D duplication mode`; redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "g": message = `G move mode`;        redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "G": message = `G move mode`;        redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "t": message = `T colour mode`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "T": message = `T colour mode`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "v": message = `V flow global`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "V": message = `V flow per colour`;  redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 }
 
 
@@ -37117,6 +37133,29 @@ console.log(
 
 function fMan(keyInfo) {
 
+
+
+function zBuzz(text) {
+if (coinFocus != null) {
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,text,fontWidth,textColour,120,120,100,"center",coinCentre[0],coinCentre[1]);
+}
+}
+
+
+
+
+
+
+
 const
 e      = keyInfo[0],
 kC     = keyInfo[1],
@@ -37156,10 +37195,10 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    J    */ if (kC ==  74 && cC ==  74) { hjklRouter(keyInfo);                                                                                               }
 /*    K    */ if (kC ==  75 && cC ==  75) { hjklRouter(keyInfo);                                                                                               }
 /*    L    */ if (kC ==  76 && cC ==  76) { hjklRouter(keyInfo);                                                                                               }
-/*    Z    */ if (kC ==  90 && cC ==  90) { manageTripartiteZ(0); modeRouter(e,9);                                                                             }
+/*    Z    */ if (kC ==  90 && cC ==  90) { manageTripartiteZ(0); modeRouter(e,9); zBuzz("Z");                                                                 }
 /*    X    */ if (kC ==  88 && cC ==  88) { groupToPhantomLair();                                                                                              }
 /*    C    */ if (kC ==  67 && cC ==  67) { coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip();                                                                                }
+/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); flowVis();                                                                     }
 /*    B    */ if (kC ==  66 && cC ==  66) { combineStates();                                                                                                   }
 /*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                               }
 /*    M    */ if (kC ==  77 && cC ==  77) {                                                                                                                    }
@@ -37185,10 +37224,10 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    j    */ if (kC ==  74 && cC == 106) { hjklRouter(keyInfo);                                                                                               }
 /*    k    */ if (kC ==  75 && cC == 107) { hjklRouter(keyInfo);                                                                                               }
 /*    l    */ if (kC ==  76 && cC == 108) { hjklRouter(keyInfo);                                                                                               }
-/*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9);                                                                                 }
+/*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9); zBuzz("z");                                                                     }
 /*    x    */ if (kC ==  88 && cC == 120) {                          deleteCoin(keyInfo);                                                                      }
 /*    c    */ if (kC ==  67 && cC ==  99) { cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0);                                                                          }
+/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); flowVis();                                                               }
 /*    b    */ if (kC ==  66 && cC ==  98) { severState();                                                                                                      }
 /*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partNom").focus();                                    }
 /*    m    */ if (kC ==  77 && cC == 109) { charQ1=0;charM=1;charF=0;                                                                                          }

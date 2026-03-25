@@ -12,9 +12,12 @@ chop,
 sweepTo,
 left,
 top,
-event
+event,
+force
 ) {
+if (force == false) {
 if (buzzRunning == true) return;
+}
 const repeats = 10;
 for (let j = 0; j < repeats; j++) {
 setTimeout(() => {
@@ -209,16 +212,12 @@ case "o": message = `add below`     ; redraw(); buzzWord(2,message,64,textColour
 case "O": message = `add above`     ; redraw(); buzzWord(2,message,64,textColour,1000,400,100,"top",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 
 case "w": message = `W window mode`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "z": message = `Z-index global`;     redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "Z": message = `Z-index per colour`; redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "e": message = `E edge mode`;        redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "d": message = `D duplication mode`; redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "g": message = `G move mode`;        redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "G": message = `G move mode`;        redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "t": message = `T colour mode`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 case "T": message = `T colour mode`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "v": message = `V flow global`;      redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
-case "V": message = `V flow per colour`;  redraw(); buzzWord(2,message,64,textColour,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32); break;
 }
 
 

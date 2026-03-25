@@ -2,6 +2,29 @@
 
 function fMan(keyInfo) {
 
+
+
+function zBuzz(text) {
+if (coinFocus != null) {
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,text,fontWidth,textColour,120,120,100,"center",coinCentre[0],coinCentre[1]);
+}
+}
+
+
+
+
+
+
+
 const
 e      = keyInfo[0],
 kC     = keyInfo[1],
@@ -41,10 +64,10 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    J    */ if (kC ==  74 && cC ==  74) { hjklRouter(keyInfo);                                                                                               }
 /*    K    */ if (kC ==  75 && cC ==  75) { hjklRouter(keyInfo);                                                                                               }
 /*    L    */ if (kC ==  76 && cC ==  76) { hjklRouter(keyInfo);                                                                                               }
-/*    Z    */ if (kC ==  90 && cC ==  90) { manageTripartiteZ(0); modeRouter(e,9);                                                                             }
+/*    Z    */ if (kC ==  90 && cC ==  90) { manageTripartiteZ(0); modeRouter(e,9); zBuzz("Z");                                                                 }
 /*    X    */ if (kC ==  88 && cC ==  88) { groupToPhantomLair();                                                                                              }
 /*    C    */ if (kC ==  67 && cC ==  67) { coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip();                                                                                }
+/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); flowVis();                                                                     }
 /*    B    */ if (kC ==  66 && cC ==  66) { combineStates();                                                                                                   }
 /*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                               }
 /*    M    */ if (kC ==  77 && cC ==  77) {                                                                                                                    }
@@ -70,10 +93,10 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    j    */ if (kC ==  74 && cC == 106) { hjklRouter(keyInfo);                                                                                               }
 /*    k    */ if (kC ==  75 && cC == 107) { hjklRouter(keyInfo);                                                                                               }
 /*    l    */ if (kC ==  76 && cC == 108) { hjklRouter(keyInfo);                                                                                               }
-/*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9);                                                                                 }
+/*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9); zBuzz("z");                                                                     }
 /*    x    */ if (kC ==  88 && cC == 120) {                          deleteCoin(keyInfo);                                                                      }
 /*    c    */ if (kC ==  67 && cC ==  99) { cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0);                                                                          }
+/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); flowVis();                                                               }
 /*    b    */ if (kC ==  66 && cC ==  98) { severState();                                                                                                      }
 /*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partNom").focus();                                    }
 /*    m    */ if (kC ==  77 && cC == 109) { charQ1=0;charM=1;charF=0;                                                                                          }

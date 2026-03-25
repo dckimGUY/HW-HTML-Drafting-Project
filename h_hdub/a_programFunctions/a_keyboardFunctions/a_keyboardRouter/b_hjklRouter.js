@@ -8,6 +8,21 @@ shift  = keyInfo[3],
 ctrl   = keyInfo[4],
 alt    = keyInfo[5];
 
+function zBuzz(text) {
+if (coinFocus != null) {
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(1,text,fontWidth,textColour,120,120,100,"center",coinCentre[0],coinCentre[1]);
+}
+}
+
        if (mode==0) {
 if (!window.opener) { modeRouter(e,1); return; }
 /*    h    */ if (kC ==  72 && cC == 104) { windowEdge(keyInfo); }/*    H    */ if (kC ==  72 && cC ==  72) { windowEdge(keyInfo); }
@@ -43,10 +58,10 @@ if (!window.opener) { modeRouter(e,1); return; }
 /*    K    */ if (kC ==  75 && cC ==  75) { setCoinTrip(e,1);                                            }
 /*    L    */ if (kC ==  76 && cC ==  76) {if(rev==1){focusPrevious()}else{focusNext()}; if (lastFlow == "global") { setCoinTrip(e,0); } }
 } else if (mode==9) {
-/*    h    */ if (kC ==  72 && cC == 104) { ceilingGlobalZ();         }/*    H    */ if (kC ==  72 && cC ==  72) { ceilingTripartiteZ();    }
-/*    j    */ if (kC ==  74 && cC == 106) { lowerGlobalZ();           }/*    J    */ if (kC ==  74 && cC ==  74) { lowerTripartiteZ();      }
-/*    k    */ if (kC ==  75 && cC == 107) { raiseGlobalZ();           }/*    K    */ if (kC ==  75 && cC ==  75) { raiseTripartiteZ();      }
-/*    l    */ if (kC ==  76 && cC == 108) { floorGlobalZ();           }/*    L    */ if (kC ==  76 && cC ==  76) { floorTripartiteZ();      }
+/*    h    */ if (kC ==  72 && cC == 104) { ceilingGlobalZ(); zBuzz("h"); }/*    H    */ if (kC ==  72 && cC ==  72) { ceilingTripartiteZ(); zBuzz("H"); }
+/*    j    */ if (kC ==  74 && cC == 106) { lowerGlobalZ();   zBuzz("j"); }/*    J    */ if (kC ==  74 && cC ==  74) { lowerTripartiteZ();   zBuzz("J"); }
+/*    k    */ if (kC ==  75 && cC == 107) { raiseGlobalZ();   zBuzz("k"); }/*    K    */ if (kC ==  75 && cC ==  75) { raiseTripartiteZ();   zBuzz("K"); }
+/*    l    */ if (kC ==  76 && cC == 108) { floorGlobalZ();   zBuzz("l"); }/*    L    */ if (kC ==  76 && cC ==  76) { floorTripartiteZ();   zBuzz("L"); }
 }
 
 }
