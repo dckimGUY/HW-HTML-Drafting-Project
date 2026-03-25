@@ -89,6 +89,7 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 }
 
 
+/*
 if (
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
@@ -97,7 +98,15 @@ ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElem
 } else {
 ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
 }
+*/
 
+
+if (
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "IMG"
+) {
+ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.src;
+}
 
 }
 

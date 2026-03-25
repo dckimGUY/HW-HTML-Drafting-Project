@@ -23,16 +23,16 @@ shelfMenuHTML.tab2.folder1.HTML = `
 
 
 
-<button id="saveTheme_a0" class="button_ button_saveTheme_a0" title=""></button>
-<button id="saveTheme_b1" class="button_ button_saveTheme_b1" title=""></button>
-<button id="saveTheme_c2" class="button_ button_saveTheme_c2" title=""></button>
-<button id="saveTheme_d3" class="button_ button_saveTheme_d3" title=""></button>
-<button id="saveTheme_e4" class="button_ button_saveTheme_e4" title=""></button>
-<button id="saveTheme_f5" class="button_ button_saveTheme_f5" title=""></button>
-<button id="saveTheme_g6" class="button_ button_saveTheme_g6" title=""></button>
-<button id="saveTheme_h7" class="button_ button_saveTheme_h7" title=""></button>
-<button id="saveTheme_i8" class="button_ button_saveTheme_i8" title=""></button>
-<button id="saveTheme_j9" class="button_ button_saveTheme_j9" title=""></button>
+<button id="saveTheme_a0" class="button_ button_saveTheme_a0 button_saveTheme" title=""></button>
+<button id="saveTheme_b1" class="button_ button_saveTheme_b1 button_saveTheme" title=""></button>
+<button id="saveTheme_c2" class="button_ button_saveTheme_c2 button_saveTheme" title=""></button>
+<button id="saveTheme_d3" class="button_ button_saveTheme_d3 button_saveTheme" title=""></button>
+<button id="saveTheme_e4" class="button_ button_saveTheme_e4 button_saveTheme" title=""></button>
+<button id="saveTheme_f5" class="button_ button_saveTheme_f5 button_saveTheme" title=""></button>
+<button id="saveTheme_g6" class="button_ button_saveTheme_g6 button_saveTheme" title=""></button>
+<button id="saveTheme_h7" class="button_ button_saveTheme_h7 button_saveTheme" title=""></button>
+<button id="saveTheme_i8" class="button_ button_saveTheme_i8 button_saveTheme" title=""></button>
+<button id="saveTheme_j9" class="button_ button_saveTheme_j9 button_saveTheme" title=""></button>
 
 <button id="loadTheme_a0" class="button_ button_loadTheme_a0" title=""></button>
 <button id="loadTheme_b1" class="button_ button_loadTheme_b1" title=""></button>

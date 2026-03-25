@@ -36,10 +36,10 @@ height: 16px;
 z-index: 9999999999;
 transform-origin: top right;
 transform: scale(2);
-                                background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open.png?v=20251102205812");        }
-.button_open:focus            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open_focus.png?v=20251102205812");  }
-.button_open:hover            { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open_hover.png?v=20251102205812");  }
-.button_open:active           { background-image: url("h_hdub/c_shelfMenu/a_images/0_tabSelectors/open_active.png?v=20251102205812"); }
+                                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAEpJREFUGJV9j0sKACAIBV0J4sL73zb/ZUG5aR6jIgCNB8qMVWLJxRoMFjdkM7pB0sxu2C85DesNLoOK2yj+Ge+MY8tZGowkzh3nL9ZcCQUfmQhoAAAAAElFTkSuQmCC");        }
+.button_open:focus            { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAEpJREFUGJV9j0sKACAIBV0J4sL73zb/ZUG5aR6jIgCNB8qMVWLJxRoMFjdkM7pB0sxu2C85DesNLoOK2yj+Ge+MY8tZGowkzh3nL9ZcCQUfmQhoAAAAAElFTkSuQmCC");  }
+.button_open:hover            { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAEhJREFUGJV9j1kKACAIBTX0/lfOPS0of5rHqAiA44HwoizW5GIJBrMZfJjMQC5eZugvOAztdU4Dk8tI/hnvjLallwQj8XPH+Rs3XwI8ZpkEbwAAAABJRU5ErkJggg==");  }
+.button_open:active           { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAEpJREFUGJV9j0sKACAIBXXhQvD+581/WVBumseoCIDjgTJLFVlysQaDyQ3aLG4gNbMb9ktOw3qDy8DiNop/xjvj2HKWBiOJc8f5C/3+BZ+J5472AAAAAElFTkSuQmCC"); }
 
 ` +
 shelfMenuHTML.tab1.backgrounds.style +
