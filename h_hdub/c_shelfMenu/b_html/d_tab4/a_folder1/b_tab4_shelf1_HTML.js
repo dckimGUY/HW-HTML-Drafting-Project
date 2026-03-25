@@ -35,28 +35,28 @@ spellcheck="false">h20w20w20w20w20w20h50w50w50h40w20w30w40w10</textarea>
 <input id="hdubSheetTemplate4x" class="button_ button_hdubSheetTemplate4x" type="range" min="1" max="20" step="1" value="10" title="hdubEntryFactor">
 
 
-<button id="hwSel_a" class="button_ button_hwSel_a" title=""><img class="hwSel" ></button>
-<button id="hwSel_b" class="button_ button_hwSel_b" title=""><img class="hwSel" ></button>
-<button id="hwSel_c" class="button_ button_hwSel_c" title=""><img class="hwSel" ></button>
-<button id="hwSel_d" class="button_ button_hwSel_d" title=""><img class="hwSel" ></button>
-<button id="hwSel_e" class="button_ button_hwSel_e" title=""><img class="hwSel" ></button>
-<button id="hwSel_f" class="button_ button_hwSel_f" title=""><img class="hwSel" ></button>
-<button id="hwSel_g" class="button_ button_hwSel_g" title=""><img class="hwSel" ></button>
-<button id="hwSel_i" class="button_ button_hwSel_i" title=""><img class="hwSel" ></button>
-<button id="hwSel_j" class="button_ button_hwSel_j" title=""><img class="hwSel" ></button>
-<button id="hwSel_k" class="button_ button_hwSel_k" title=""><img class="hwSel" ></button>
-<button id="hwSel_l" class="button_ button_hwSel_l" title=""><img class="hwSel" ></button>
-<button id="hwSel_m" class="button_ button_hwSel_m" title=""><img class="hwSel" ></button>
-<button id="hwSel_n" class="button_ button_hwSel_n" title=""><img class="hwSel" ></button>
-<button id="hwSel_o" class="button_ button_hwSel_o" title=""><img class="hwSel" ></button>
-<button id="hwSel_p" class="button_ button_hwSel_p" title=""><img class="hwSel" ></button>
-<button id="hwSel_q" class="button_ button_hwSel_q" title=""><img class="hwSel" ></button>
-<button id="hwSel_r" class="button_ button_hwSel_r" title=""><img class="hwSel" ></button>
-<button id="hwSel_s" class="button_ button_hwSel_s" title=""><img class="hwSel" ></button>
-<button id="hwSel_t" class="button_ button_hwSel_t" title=""><img class="hwSel" ></button>
-<button id="hwSel_u" class="button_ button_hwSel_u" title=""><img class="hwSel" ></button>
-<button id="hwSel_v" class="button_ button_hwSel_v" title=""><img class="hwSel" ></button>
-<button id="hwSel_x" class="button_ button_hwSel_x" title=""><img class="hwSel" ></button>
-<button id="hwSel_y" class="button_ button_hwSel_y" title=""><img class="hwSel" ></button>
-<button id="hwSel_z" class="button_ button_hwSel_z" title=""><img class="hwSel" ></button>
+<button id="hwSel_a" class="button_ button_hwSel_a button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_b" class="button_ button_hwSel_b button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_c" class="button_ button_hwSel_c button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_d" class="button_ button_hwSel_d button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_e" class="button_ button_hwSel_e button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_f" class="button_ button_hwSel_f button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_g" class="button_ button_hwSel_g button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_i" class="button_ button_hwSel_i button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_j" class="button_ button_hwSel_j button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_k" class="button_ button_hwSel_k button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_l" class="button_ button_hwSel_l button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_m" class="button_ button_hwSel_m button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_n" class="button_ button_hwSel_n button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_o" class="button_ button_hwSel_o button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_p" class="button_ button_hwSel_p button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_q" class="button_ button_hwSel_q button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_r" class="button_ button_hwSel_r button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_s" class="button_ button_hwSel_s button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_t" class="button_ button_hwSel_t button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_u" class="button_ button_hwSel_u button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_v" class="button_ button_hwSel_v button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_x" class="button_ button_hwSel_x button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_y" class="button_ button_hwSel_y button_hwSel" title=""><img class="hwSel" ></button>
+<button id="hwSel_z" class="button_ button_hwSel_z button_hwSel" title=""><img class="hwSel" ></button>
 `;
