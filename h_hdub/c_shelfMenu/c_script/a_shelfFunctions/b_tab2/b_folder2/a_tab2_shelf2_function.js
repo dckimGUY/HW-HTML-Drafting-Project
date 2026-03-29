@@ -253,6 +253,7 @@ spaceViewOff();
 Z(); 
 };
 ui.coin44038.input              = function() { 
+topLayer[topLayer.a_currentLayer].backgroundColour = ui.coin44038.ref.value;
 finishedBackgroundColour = ui.coin44038.ref.value;
 ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
 localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);

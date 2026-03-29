@@ -10930,6 +10930,12 @@ interfaceLayer.style.display = "none";
 
 updateInfoShelf();
 
+
+ui.coin44038.ref.value = topLayer[topLayer.a_currentLayer].backgroundColour;
+finishedBackgroundColour = ui.coin44038.ref.value;
+ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
+localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
+
 }function recoverCoinFocus() {
 if (utilityLayer0.children.length > 0) {
 coinFocus  = utilityLayer0.firstElementChild;
@@ -16277,7 +16283,7 @@ F.focus();">
 
 
 
-<button id="dumpAccumulator" class="button_ dumpAccumulator" onclick="dumpAccumulator();" title="Program State Accumulator:\nUse INS to add.\nCTRL click levels to add.\nUse this button to bundle the\ndata and clear the accumulator."></button>
+<button id="dumpAccumulator" class="button_ dumpAccumulator" onclick="dumpAccumulator();" title="Program State Accumulator:\nUse INS to add.\n+SHIFT click levels to add.\nUse this button to bundle the data and clear\nthe accumulator (or use SHIFT + ins)."></button>
 
 
 <button id="accumulatorCount" class="button_ accumulatorCount">0</button>
@@ -16293,7 +16299,7 @@ F.focus();">
 <button id="coin49592" class="button_ button_coin49592" title="To Open a Project:\nDrag the File to the Screen"></button>
 <button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
-<button id="coin77155" class="button_ button_coin77155" title="SEQUENTIAL SAVING\nSave Using SHIFT Below\nCTRL Add to the State Accumulator"></button>
+<button id="coin77155" class="button_ drag-button button_coin77155" title="DRAG From Here TO SAVE (best option)\nClick for SEQUENTIAL SAVING OR\nclick below with +SHIFT to add to the State Accumulator" draggable="true"></button>
 
 <button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="CLIPBOARD: Minimal Without id/style/class;\n+SHIFT for Colour Group\n+CTRL to Save '.txt'.\nWorks for textual HTML stuff only,\nno images or buttons yet."></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>
@@ -16323,6 +16329,9 @@ F.focus();">
 <button id="setLayer18" class="button_ button_setLevel button_setLayer18" title=""></button>
 <button id="setLayer19" class="button_ button_setLevel button_setLayer19" title=""></button>
 <button id="setLayer20" class="button_ button_setLevel button_setLayer20" title=""></button>
+
+
+
 <button id="setLayer21" class="button_ button_setLevel button_setLayer21" title=""></button>
 <button id="setLayer22" class="button_ button_setLevel button_setLayer22" title=""></button>
 <button id="setLayer23" class="button_ button_setLevel button_setLayer23" title=""></button>
@@ -23224,6 +23233,7 @@ spaceViewOff();
 Z(); 
 };
 ui.coin44038.input              = function() { 
+topLayer[topLayer.a_currentLayer].backgroundColour = ui.coin44038.ref.value;
 finishedBackgroundColour = ui.coin44038.ref.value;
 ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
 localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
@@ -27847,6 +27857,10 @@ string = string.replace(/\[object HTMLDivElement\]/g, "");
 
 
 
+
+
+
+
        if (typeAlone == "parts" ) {
 restorePointerEventsNone();
 spaceViewOff();
@@ -27881,6 +27895,8 @@ stylesIncluded = stylePosition;
 
 
 
+
+
 if (dragging == true) {
 let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter;
 restorePointerEventsNone();
@@ -27888,6 +27904,15 @@ spaceViewOff();
 Z();
 return content;
 }
+
+
+
+
+
+
+
+
+
 
 
 if (openInNewWindow) {
@@ -31663,7 +31688,6 @@ readCoins();
 
 
 });
-
 var dragging = false;
 
 document.body.addEventListener('dragstart', (e) => {
@@ -31683,10 +31707,11 @@ case "save1000" : content = deMinimis(false, "(100/1000)", null, null, null, nul
 case "save1200" : content = deMinimis(false, "(100/1280)", null, null, null, null, true); name = filename; break;
 case "save1500" : content = deMinimis(false, "(100/1536)", null, null, null, null, true); name = filename; break;
 case "save1800" : content = deMinimis(false, "(100/2000)", null, null, null, null, true); name = filename; break;
+
+case "coin77155" : content = deMinimis(false, lastFactor, null, null, null, null, true); name = filename; break;
 }
 
 name = name + ".html";
-
 
   const data = `text/plain:${name}:data:text/plain;base64,${btoa(content)}`;
   e.dataTransfer.setData('DownloadURL', data);
@@ -31694,7 +31719,8 @@ name = name + ".html";
 
 document.body.addEventListener('dragend', (e) => {
 dragging = false;
-});const namedColourArray =
+});
+const namedColourArray =
 [["aliceblue","rgba(240,248,255,"],["antiquewhite","rgba(250,235,215,"],["aqua","rgba(0,255,255,"],["aquamarine","rgba(127,255,212,"],["azure","rgba(240,255,255,"],["beige","rgba(245,245,220,"],["bisque","rgba(255,228,196,"],["black","rgba(0,0,0,"],["blanchedalmond","rgba(255,235,205,"],["blue","rgba(0,0,255,"],["blueviolet","rgba(138,43,226,"],["brown","rgba(165,42,42,"],["burlywood","rgba(222,184,135,"],["cadetblue","rgba(95,158,160,"],["chartreuse","rgba(127,255,0,"],["chocolate","rgba(210,105,30,"],["coral","rgba(255,127,80,"],["cornflowerblue","rgba(100,149,237,"],["cornsilk","rgba(255,248,220,"],["crimson","rgba(220,20,60,"],["cyan","rgba(0,255,255,"],["darkblue","rgba(0,0,139,"],["darkcyan","rgba(0,139,139,"],["darkgoldenrod","rgba(184,134,11,"],["darkgray","rgba(169,169,169,"],["darkgreen","rgba(0,100,0,"],["darkgrey","rgba(169,169,169,"],["darkkhaki","rgba(189,183,107,"],["darkmagenta","rgba(139,0,139,"],["darkolivegreen","rgba(85,107,47,"],["darkorange","rgba(255,140,0,"],["darkorchid","rgba(153,50,204,"],["darkred","rgba(139,0,0,"],["darksalmon","rgba(233,150,122,"],["darkseagreen","rgba(143,188,143,"],["darkslateblue","rgba(72,61,139,"],["darkslategray","rgba(47,79,79,"],["darkslategrey","rgba(47,79,79,"],["darkturquoise","rgba(0,206,209,"],["darkviolet","rgba(148,0,211,"],["deeppink","rgba(255,20,147,"],["deepskyblue","rgba(0,191,255,"],["dimgray","rgba(105,105,105,"],["dimgrey","rgba(105,105,105,"],["dodgerblue","rgba(30,144,255,"],["firebrick","rgba(178,34,34,"],["floralwhite","rgba(255,250,240,"],["forestgreen","rgba(34,139,34,"],["fuchsia","rgba(255,0,255,"],["gainsboro","rgba(220,220,220,"],["ghostwhite","rgba(248,248,255,"],["gold","rgba(255,215,0,"],["goldenrod","rgba(218,165,32,"],["gray","rgba(128,128,128,"],["green","rgba(0,128,0,"],["greenyellow","rgba(173,255,47,"],["grey","rgba(128,128,128,"],["honeydew","rgba(240,255,240,"],["hotpink","rgba(255,105,180,"],["indianred","rgba(205,92,92,"],["indigo","rgba(75,0,130,"],["ivory","rgba(255,255,240,"],["khaki","rgba(240,230,140,"],["lavender","rgba(230,230,250,"],["lavenderblush","rgba(255,240,245,"],["lawngreen","rgba(124,252,0,"],["lemonchiffon","rgba(255,250,205,"],["lightblue","rgba(173,216,230,"],["lightcoral","rgba(240,128,128,"],["lightcyan","rgba(224,255,255,"],["lightgoldenrodyellow","rgba(250,250,210,"],["lightgray","rgba(211,211,211,"],["lightgreen","rgba(144,238,144,"],["lightgrey","rgba(211,211,211,"],["lightpink","rgba(255,182,193,"],["lightsalmon","rgba(255,160,122,"],["lightseagreen","rgba(32,178,170,"],["lightskyblue","rgba(135,206,250,"],["lightslategray","rgba(119,136,153,"],["lightslategrey","rgba(119,136,153,"],["lightsteelblue","rgba(176,196,222,"],["lightyellow","rgba(255,255,224,"],["lime","rgba(0,255,0,"],["limegreen","rgba(50,205,50,"],["linen","rgba(250,240,230,"],["magenta","rgba(255,0,255,"],["maroon","rgba(128,0,0,"],["mediumaquamarine","rgba(102,205,170,"],["mediumblue","rgba(0,0,205,"],["mediumorchid","rgba(186,85,211,"],["mediumpurple","rgba(147,112,219,"],["mediumseagreen","rgba(60,179,113,"],["mediumslateblue","rgba(123,104,238,"],["mediumspringgreen","rgba(0,250,154,"],["mediumturquoise","rgba(72,209,204,"],["mediumvioletred","rgba(199,21,133,"],["midnightblue","rgba(25,25,112,"],["mintcream","rgba(245,255,250,"],["mistyrose","rgba(255,228,225,"],["moccasin","rgba(255,228,181,"],["navajowhite","rgba(255,222,173,"],["navy","rgba(0,0,128,"],["oldlace","rgba(253,245,230,"],["olive","rgba(128,128,0,"],["olivedrab","rgba(107,142,35,"],["orange","rgba(255,165,0,"],["orangered","rgba(255,69,0,"],["orchid","rgba(218,112,214,"],["palegoldenrod","rgba(238,232,170,"],["palegreen","rgba(152,251,152,"],["paleturquoise","rgba(175,238,238,"],["palevioletred","rgba(219,112,147,"],["papayawhip","rgba(255,239,213,"],["peachpuff","rgba(255,218,185,"],["peru","rgba(205,133,63,"],["pink","rgba(255,192,203,"],["plum","rgba(221,160,221,"],["powderblue","rgba(176,224,230,"],["purple","rgba(128,0,128,"],["rebeccapurple","rgba(102,51,153,"],["red","rgba(255,0,0,"],["rosybrown","rgba(188,143,143,"],["royalblue","rgba(65,105,225,"],["saddlebrown","rgba(139,69,19,"],["salmon","rgba(250,128,114,"],["sandybrown","rgba(244,164,96,"],["seagreen","rgba(46,139,87,"],["seashell","rgba(255,245,238,"],["sienna","rgba(160,82,45,"],["silver","rgba(192,192,192,"],["skyblue","rgba(135,206,235,"],["slateblue","rgba(106,90,205,"],["slategray","rgba(112,128,144,"],["slategrey","rgba(112,128,144,"],["snow","rgba(255,250,250,"],["springgreen","rgba(0,255,127,"],["steelblue","rgba(70,130,180,"],["tan","rgba(210,180,140,"],["teal","rgba(0,128,128,"],["thistle","rgba(216,191,216,"],["tomato","rgba(255,99,71,"],["turquoise","rgba(64,224,208,"],["violet","rgba(238,130,238,"],["wheat","rgba(245,222,179,"],["white","rgba(255,255,255,"],["whitesmoke","rgba(245,245,245,"],["yellow","rgba(255,255,0,"],["yellowgreen","rgba(154,205,50,"]];
 var   utilityLayer0     ; utilityLayer0      = document.getElementById("utilityLayer0");
 var   utilityLayer1     ; utilityLayer1      = document.getElementById("utilityLayer1");
@@ -31835,7 +31861,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-29T15:50:32Z">
+<meta name="last-build" content="2026-03-29T16:34:34Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -31847,7 +31873,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260329115032'></script>
+<script src='./bundle.js?v=20260329123434'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>
@@ -36093,34 +36119,34 @@ var topLayer =
 {
 "aa_project_name" : "pixel-art-project",
 "a_currentLayer" : "b_layer1",
-"b_layer1" :  { "a_name" : "b_layer1",  "b_content" : b_layer1,  "c_title" : "", "d_description" : "Page 1 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "1",  "filename" : "pixel-level-1", "echelon" : 1, "header" : "", "footer" : "" },
-"c_layer2" :  { "a_name" : "c_layer2",  "b_content" : c_layer2,  "c_title" : "", "d_description" : "Page 2 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "2",  "filename" : "pixel-level-2", "echelon" : 1, "header" : "", "footer" : "" },
-"d_layer3" :  { "a_name" : "d_layer3",  "b_content" : d_layer3,  "c_title" : "", "d_description" : "Page 3 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "3",  "filename" : "pixel-level-3", "echelon" : 1, "header" : "", "footer" : "" },
-"e_layer4" :  { "a_name" : "e_layer4",  "b_content" : e_layer4,  "c_title" : "", "d_description" : "Page 4 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "4",  "filename" : "pixel-level-4", "echelon" : 1, "header" : "", "footer" : "" },
-"f_layer5" :  { "a_name" : "f_layer5",  "b_content" : f_layer5,  "c_title" : "", "d_description" : "Page 5 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "5",  "filename" : "pixel-level-5", "echelon" : 1, "header" : "", "footer" : "" },
-"g_layer6" :  { "a_name" : "g_layer6",  "b_content" : g_layer6,  "c_title" : "", "d_description" : "Page 6 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "6",  "filename" : "pixel-level-6", "echelon" : 1, "header" : "", "footer" : "" },
-"h_layer7" :  { "a_name" : "h_layer7",  "b_content" : h_layer7,  "c_title" : "", "d_description" : "Page 7 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "7",  "filename" : "pixel-level-7", "echelon" : 1, "header" : "", "footer" : "" },
-"i_layer8" :  { "a_name" : "i_layer8",  "b_content" : i_layer8,  "c_title" : "", "d_description" : "Page 8 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "8",  "filename" : "pixel-level-8", "echelon" : 1, "header" : "", "footer" : "" },
-"j_layer9" :  { "a_name" : "j_layer9",  "b_content" : j_layer9,  "c_title" : "", "d_description" : "Page 9 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "9",  "filename" : "pixel-level-9", "echelon" : 1, "header" : "", "footer" : "" },
-"k_layer10" : { "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "Page 10 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "10", "filename" : "pixel-level-10", "echelon" : 1, "header" : "", "footer" : "" },
-"l_layer11" : { "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "Page 11 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "11", "filename" : "pixel-level-11", "echelon" : 1, "header" : "", "footer" : "" },
-"m_layer12" : { "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "Page 12 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "12", "filename" : "pixel-level-12", "echelon" : 1, "header" : "", "footer" : "" },
-"n_layer13" : { "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "Page 13 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "13", "filename" : "pixel-level-13", "echelon" : 1, "header" : "", "footer" : "" },
-"o_layer14" : { "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "Page 14 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "14", "filename" : "pixel-level-14", "echelon" : 1, "header" : "", "footer" : "" },
-"p_layer15" : { "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "Page 15 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "15", "filename" : "pixel-level-15", "echelon" : 1, "header" : "", "footer" : "" },
-"q_layer16" : { "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "Page 16 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "16", "filename" : "pixel-level-16", "echelon" : 1, "header" : "", "footer" : "" },
-"r_layer17" : { "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "Page 17 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "17", "filename" : "pixel-level-17", "echelon" : 1, "header" : "", "footer" : "" },
-"s_layer18" : { "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "Page 18 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "18", "filename" : "pixel-level-18", "echelon" : 1, "header" : "", "footer" : "" },
-"t_layer19" : { "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "Page 19 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "19", "filename" : "pixel-level-19", "echelon" : 1, "header" : "", "footer" : "" },
-"u_layer20" : { "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "Page 20 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "20", "filename" : "pixel-level-20", "echelon" : 1, "header" : "", "footer" : "" },
-"v_layer21" : { "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"w_layer22" : { "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"x_layer23" : { "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"y_layer24" : { "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"z_layer25" : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"importer"  : { "a_name" : "importer" , "b_content" :  importer, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "importer", "filename": "importer"     , "echelon" : 1 },
-"thePhantomLair" : { "a_name" : "thePhantomLair", "b_content" : thePhantomLair, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "thePhantomLair", "filename" : "thePhantomLair", "echelon" : 1 },
-"localView" : { "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
+"b_layer1" :  { "backgroundColour" : "#FFFFFF", "a_name" : "b_layer1",  "b_content" : b_layer1,  "c_title" : "", "d_description" : "Page 1 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "1",  "filename" : "pixel-level-1", "echelon" : 1, "header" : "", "footer" : "" },
+"c_layer2" :  { "backgroundColour" : "#FFFFFF", "a_name" : "c_layer2",  "b_content" : c_layer2,  "c_title" : "", "d_description" : "Page 2 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "2",  "filename" : "pixel-level-2", "echelon" : 1, "header" : "", "footer" : "" },
+"d_layer3" :  { "backgroundColour" : "#FFFFFF", "a_name" : "d_layer3",  "b_content" : d_layer3,  "c_title" : "", "d_description" : "Page 3 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "3",  "filename" : "pixel-level-3", "echelon" : 1, "header" : "", "footer" : "" },
+"e_layer4" :  { "backgroundColour" : "#FFFFFF", "a_name" : "e_layer4",  "b_content" : e_layer4,  "c_title" : "", "d_description" : "Page 4 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "4",  "filename" : "pixel-level-4", "echelon" : 1, "header" : "", "footer" : "" },
+"f_layer5" :  { "backgroundColour" : "#FFFFFF", "a_name" : "f_layer5",  "b_content" : f_layer5,  "c_title" : "", "d_description" : "Page 5 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "5",  "filename" : "pixel-level-5", "echelon" : 1, "header" : "", "footer" : "" },
+"g_layer6" :  { "backgroundColour" : "#FFFFFF", "a_name" : "g_layer6",  "b_content" : g_layer6,  "c_title" : "", "d_description" : "Page 6 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "6",  "filename" : "pixel-level-6", "echelon" : 1, "header" : "", "footer" : "" },
+"h_layer7" :  { "backgroundColour" : "#FFFFFF", "a_name" : "h_layer7",  "b_content" : h_layer7,  "c_title" : "", "d_description" : "Page 7 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "7",  "filename" : "pixel-level-7", "echelon" : 1, "header" : "", "footer" : "" },
+"i_layer8" :  { "backgroundColour" : "#FFFFFF", "a_name" : "i_layer8",  "b_content" : i_layer8,  "c_title" : "", "d_description" : "Page 8 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "8",  "filename" : "pixel-level-8", "echelon" : 1, "header" : "", "footer" : "" },
+"j_layer9" :  { "backgroundColour" : "#FFFFFF", "a_name" : "j_layer9",  "b_content" : j_layer9,  "c_title" : "", "d_description" : "Page 9 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "9",  "filename" : "pixel-level-9", "echelon" : 1, "header" : "", "footer" : "" },
+"k_layer10" : { "backgroundColour" : "#FFFFFF", "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "Page 10 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "10", "filename" : "pixel-level-10", "echelon" : 1, "header" : "", "footer" : "" },
+"l_layer11" : { "backgroundColour" : "#FFFFFF", "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "Page 11 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "11", "filename" : "pixel-level-11", "echelon" : 1, "header" : "", "footer" : "" },
+"m_layer12" : { "backgroundColour" : "#FFFFFF", "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "Page 12 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "12", "filename" : "pixel-level-12", "echelon" : 1, "header" : "", "footer" : "" },
+"n_layer13" : { "backgroundColour" : "#FFFFFF", "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "Page 13 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "13", "filename" : "pixel-level-13", "echelon" : 1, "header" : "", "footer" : "" },
+"o_layer14" : { "backgroundColour" : "#FFFFFF", "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "Page 14 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "14", "filename" : "pixel-level-14", "echelon" : 1, "header" : "", "footer" : "" },
+"p_layer15" : { "backgroundColour" : "#FFFFFF", "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "Page 15 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "15", "filename" : "pixel-level-15", "echelon" : 1, "header" : "", "footer" : "" },
+"q_layer16" : { "backgroundColour" : "#FFFFFF", "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "Page 16 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "16", "filename" : "pixel-level-16", "echelon" : 1, "header" : "", "footer" : "" },
+"r_layer17" : { "backgroundColour" : "#FFFFFF", "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "Page 17 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "17", "filename" : "pixel-level-17", "echelon" : 1, "header" : "", "footer" : "" },
+"s_layer18" : { "backgroundColour" : "#FFFFFF", "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "Page 18 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "18", "filename" : "pixel-level-18", "echelon" : 1, "header" : "", "footer" : "" },
+"t_layer19" : { "backgroundColour" : "#FFFFFF", "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "Page 19 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "19", "filename" : "pixel-level-19", "echelon" : 1, "header" : "", "footer" : "" },
+"u_layer20" : { "backgroundColour" : "#FFFFFF", "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "Page 20 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "20", "filename" : "pixel-level-20", "echelon" : 1, "header" : "", "footer" : "" },
+"v_layer21" : { "backgroundColour" : "#FFFFFF", "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"w_layer22" : { "backgroundColour" : "#FFFFFF", "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"x_layer23" : { "backgroundColour" : "#FFFFFF", "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"y_layer24" : { "backgroundColour" : "#FFFFFF", "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"z_layer25" : { "backgroundColour" : "#FFFFFF", "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"importer"  : { "backgroundColour" : "#FFFFFF", "a_name" : "importer" , "b_content" :  importer, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "importer", "filename": "importer"     , "echelon" : 1 },
+"thePhantomLair" : { "backgroundColour" : "#FFFFFF", "a_name" : "thePhantomLair", "b_content" : thePhantomLair, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "thePhantomLair", "filename" : "thePhantomLair", "echelon" : 1 },
+"localView" : { "backgroundColour" : "#FFFFFF", "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
 };
 
 

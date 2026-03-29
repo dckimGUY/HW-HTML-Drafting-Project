@@ -1,4 +1,3 @@
-
 var dragging = false;
 
 document.body.addEventListener('dragstart', (e) => {
@@ -18,10 +17,11 @@ case "save1000" : content = deMinimis(false, "(100/1000)", null, null, null, nul
 case "save1200" : content = deMinimis(false, "(100/1280)", null, null, null, null, true); name = filename; break;
 case "save1500" : content = deMinimis(false, "(100/1536)", null, null, null, null, true); name = filename; break;
 case "save1800" : content = deMinimis(false, "(100/2000)", null, null, null, null, true); name = filename; break;
+
+case "coin77155" : content = deMinimis(false, lastFactor, null, null, null, null, true); name = filename; break;
 }
 
 name = name + ".html";
-
 
   const data = `text/plain:${name}:data:text/plain;base64,${btoa(content)}`;
   e.dataTransfer.setData('DownloadURL', data);

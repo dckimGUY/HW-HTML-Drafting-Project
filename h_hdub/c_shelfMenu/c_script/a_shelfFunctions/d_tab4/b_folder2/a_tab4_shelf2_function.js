@@ -1431,6 +1431,10 @@ string = string.replace(/\[object HTMLDivElement\]/g, "");
 
 
 
+
+
+
+
        if (typeAlone == "parts" ) {
 restorePointerEventsNone();
 spaceViewOff();
@@ -1465,6 +1469,8 @@ stylesIncluded = stylePosition;
 
 
 
+
+
 if (dragging == true) {
 let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter;
 restorePointerEventsNone();
@@ -1472,6 +1478,15 @@ spaceViewOff();
 Z();
 return content;
 }
+
+
+
+
+
+
+
+
+
 
 
 if (openInNewWindow) {

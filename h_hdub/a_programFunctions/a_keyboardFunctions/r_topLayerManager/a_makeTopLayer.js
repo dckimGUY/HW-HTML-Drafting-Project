@@ -75,4 +75,10 @@ interfaceLayer.style.display = "none";
 
 updateInfoShelf();
 
+
+ui.coin44038.ref.value = topLayer[topLayer.a_currentLayer].backgroundColour;
+finishedBackgroundColour = ui.coin44038.ref.value;
+ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
+localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
+
 }
