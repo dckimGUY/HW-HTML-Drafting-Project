@@ -1,4 +1,7 @@
 
+/* FIND THIS STRING TO CONTINUE */
+
+//if (file.name.toLowerCase().endsWith('.css')) {
 
 
 
@@ -705,6 +708,82 @@ const numberOfParts = utilityLayer0.children.length;
 
 const file = e.dataTransfer.files[0];
 if (!file) return;
+
+
+
+
+
+
+
+
+
+
+if (e.dataTransfer.types.includes('text/x-friend-link')) {
+  const data = e.dataTransfer.getData('text/x-friend-link');
+
+
+console.log("BIRDS");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (file.name.toLowerCase().endsWith('.css')) {
+hauptModeOriginalState = hauptMode;
+hauptMode = 0;
+const reader = new FileReader();
+reader.onload = evt => {
+popStyle();
+hauptMode = hauptModeOriginalState;
+/*
+if (useBase64forAudio==true) {
+audio.src = evt.target.result;
+} else {
+audio.src ="./b_audio/" + file.name;
+}
+*/
+
+
+
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.lastElementChild.value = evt.target.result;
+
+
+};
+reader.readAsDataURL(file);
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if (!file.type.startsWith("image/")&&!file.type.startsWith("audio/")&&!file.type.startsWith("video/")) {
 
@@ -1610,14 +1689,6 @@ utilityLayer0.lastElementChild.lastElementChild.firstElementChild.nextElementSib
 }
 };
 reader.readAsDataURL(file);
-
-
-
-
-
-
-
-
 
 
 

@@ -1,516 +1,128 @@
 1
-00:00:00, 001 --> 00:00:09,000
-Täna räägime oma kohandatud nuppude tegemisest selle programmi jaoks.
+00:00:00,001 --> 00:00:14,000
+Alustame sellest, et näitame, kuidas juhendaja pealkirjad YouTube'i üles laaditakse.
 
 2
-00:00:09, 001 --> 00:00:16,000
-See on esimene õpetus, mida ma teen, ja loodetavasti mõistate seda kergesti ja naudite seda.
+00:00:14,001 --> 00:00:24,000
+Pealdiste tekst, pealkiri ja kirjeldus tõlgitakse kõik enne üleslaadimist.
 
 3
-00:00:16, 001 --> 00:00:19,000
-Vaatame siin: "Informatsioon nööpide meisterdamiseks".
+00:00:24,001 --> 00:00:34,000
+Vasakult on mul keele nimi.
 
 4
-00:00:21, 001 --> 00:00:24,000
-Nii et see on päris palju, mida me vaatame selle õpetusega.
+00:00:34,001 --> 00:00:37,000
+Näidatakse YouTube'i stuudiot.
 
 5
-00:00:24, 001 --> 00:00:26,000
-Asume kohe asja kallale.
+00:00:37,001 --> 00:00:42,000
+Ma täidan ühe näite üleslaadimiseks pealkirja, pealkirja ja kirjelduse.
 
 6
-00:00:26, 001 --> 00:00:32,000
-Me oleme siin programmis ja me näeme kohe, et ma panin midagi siia kasti.
+00:00:42,001 --> 00:00:53,000
+Alustage keele lisamisega loendisse.
 
 7
-00:00:32, 001 --> 00:00:38,000
-See annab meile kõrguse ja laiuse tähistuse, vaid väga lihtsa.
+00:00:53,001 --> 00:01:23,000
+Seejärel laadin üles pealkirjafaili, mis on juba tõlgitud.
 
 8
-00:00:38, 001 --> 00:00:50,000
-See annab meile suurima laiuse ja kõrguse, mida me saaksime kasutada, ja see on näidatud selle suure ristküliku sees suure B-tähega.
+00:01:23,001 --> 00:01:54,000
+Seejärel kopeerin ja kleepin pealkirja ja kirjelduse.
 
 9
-00:00:50, 001 --> 00:01:07,000
-Esimene samm, mida me peame tegema, et saaksime oma kohandatud nuppu jälgida, on see, et meil on vaja lohistada pilt failisüsteemist otse sellele alale, kus on suur täht "B".
+00:01:54,001 --> 00:01:58,000
+Näete, et mul on veel palju üles laadida.
 
 10
-00:01:07, 001 --> 00:01:12,000
-Me lohistame nüüd oma pildi failisüsteemist siia ja sinna, kus näeme tähte B.
+00:01:58,001 --> 00:02:08,000
+Vaatame, milline tõlketöö taustal käib.
 
 11
-00:01:12, 001 --> 00:01:20,000
-Me lohistame nüüd oma pildi failisüsteemist siia ja sinna, kus näeme tähte B.
+00:02:08,001 --> 00:02:34,000
+Me näeme, et ma kasutan "GitBash" ja "LibreTranslate".
 
 12
-00:01:20, 001 --> 00:01:23,000
-Ja seal see on ja see ilmub seal ekraanil.
+00:02:34,001 --> 00:02:49,000
+'LibreTranslate' saab alla laadida ja installida ilma kuludeta otse käsklusest kasutades 'GitBash'.
 
 13
-00:01:23, 001 --> 00:01:24,000
-Probleem on selles, et see tundub liiga väike.
+00:02:49,001 --> 00:03:25,000
+See täpne seadistus on saadaval HTML-i koostamise hoidlas "GitHub".
 
 14
-00:01:24, 001 --> 00:01:26,000
-Mida me peaksime tegema?
+00:03:25,001 --> 00:03:37,000
+Tõlke alustamiseks peame kasutama skripti nimega 'srt.sh'.
 
 15
-00:01:26, 001 --> 00:01:37,000
-Me peame liigutama oma hiirekursori üle selle piirkonna üle suure tähega "B" ja siis saame hiirerattaga kerida. Nüüd näeme, et toimub midagi huvitavat.
+00:03:37,001 --> 00:04:08,000
+Meil peab olema "LibreTranslate" kohapeal, et see skript toimiks.
 
 16
-00:01:37, 001 --> 00:01:45,000
-Me saame kohandada ekraani juhendi skaalat.
+00:04:08,001 --> 00:04:24,000
+Selle süsteemi teine oluline komponent, mida siin ei näidata, on "JQuery". See tuleb kõigepealt paigaldada.
 
 17
-00:01:45, 001 --> 00:01:54,000
-Kui me kerime alla 4, 3, 2 ja 1, näeme, et kohaldatakse spetsiaalset tõusutegurit.
+00:04:24,001 --> 00:04:43,000
+Kui kõik sama tarkvara on paigas, on võimalik, et võite selle täpse seadistuse dubleerida.
 
 18
-00:01:54, 001 --> 00:01:58,000
-Ma ehitasin selle programmi pikslikunsti eesmärgil.
+00:04:43,001 --> 00:04:57,000
+Nüüd näitan veel ühte väikest tarkvara, mis muudab video käsitsi transkriptsiooni tegemise lihtsaks.
 
 19
-00:01:58, 001 --> 00:02:03,000
-Nii et kui te tuua nupud tagasi programmi nad on suurendatud suurus.
+00:04:57,001 --> 00:05:21,000
+Google kirjutas selle programmi, kuid ma ütlesin talle, mida teha.
 
 20
-00:02:03, 001 --> 00:02:07,000
-Nad ei ole suurus, mida näete, kui te neid joonistate.
+00:05:21,001 --> 00:05:35,000
+Klahv "enter" annab järgmise pealdisekasti ja "shift + ," või "shift + ." muudab lõpuaega.
 
 21
-00:02:07, 001 --> 00:02:16,000
-Niisiis, saate neid joonistada selle väikese piksli suurusega ja siis saate need programmi tuua ja nad muutuvad äkki suuremaks.
+00:05:35,001 --> 00:05:56,000
+Ma saan videost edasi-tagasi sõita, kasutades 'alt + tab', peatades video "tühikuriba" abil.
 
 22
-00:02:16, 001 --> 00:02:22,000
-Sel põhjusel saate oma pildi ja nuppude suurusest tõeliselt hea majanduse.
+00:05:56,001 --> 00:06:35,000
+See annab käsitsi transkriptsiooni tööks väga tiheda töövoo.
 
 23
-00:02:22, 001 --> 00:02:31,000
-Niisiis, teie nupp ei ole liiga kallis, kui palju see maksab Interneti kaudu.
+00:06:35,001 --> 00:07:26,000
+See väike programm on tegelikult väga oluline. See koondab JSON-faili, mida kasutatakse tõlgete tegemiseks.
 
 24
-00:02:31, 001 --> 00:02:41,000
-Nii et siin see on. Sellel siin on 180 ühikut kõrgust ja 100 ühikut laiust, kuid see ei ole meile praegu eriti kasulik.
+00:07:26,001 --> 00:07:44,000
+Nii et meil on täielik pakett, mis on valmis meie tõlketarkvarale üle andma.
 
 25
-00:02:41, 001 --> 00:02:45,000
-Nüüd kirjeldan ühte esimest asja, mida näete siin: See on see salvestamisnupp.
+00:07:44,001 --> 00:08:05,000
+Võttes pealkirjad nii palju keeli on hea asi, et avastada.
 
 26
-00:02:45, 001 --> 00:02:54,000
-Kui me klõpsame sellele salvestamisnupule, siis juhtub see, et salvestame kujuvõtme.
+00:08:05,001 --> 00:08:15,000
+Nüüd näitan teile, kuhu tuleb JSON-fail paigutada, enne kui saame kasutada spetsiaalset skripti.
 
 27
-00:02:54, 001 --> 00:03:08,000
-Ja kui me klikime sellel teisel siin, tähistatud tähelehel, salvestatakse üks mall, mida see joonis esindab.
+00:08:15,001 --> 00:08:23,000
+Kataloogi nimi on '1 caption inputs'.
 
 28
-00:03:08, 001 --> 00:03:12,000
-Ära selle pärast muretse.
+00:08:23,001 --> 00:09:01,000
+Nüüd näitan, kui lihtne on seda üle kanda. Faili saab lohistada kohale.
 
 29
-00:03:12, 001 --> 00:03:15,000
-Lähme nüüd selle juurde, mille ma varem ette valmistasin.
+00:09:01,001 --> 00:10:34,000
+Kui teie kohalikus masinas töötab 'LibreTranslate', peate avama teise 'GitBash' ja seejärel käivitama ekraanil näidatud täpse käsu: ./srt.sh
 
 30
-00:03:15, 001 --> 00:03:20,000
-Kui me vajutame põgenemist, pange tähele, et kõik need asjad kaovad.
+00:10:34,001 --> 00:06:56,000
+Näete, et mul on palju rohkem üleslaadimisi teha. See on suur töö!
 
 31
-00:03:20, 001 --> 00:03:24,000
-Nüüd on see kõik läinud.
+00:10:56,001 --> 00:11:08,000
+Soovin teile parimat, et saaksite ise sama protsessi proovida.
 
 32
-00:03:24, 001 --> 00:03:33,000
-Vaatame, kas saan selle uuesti sisse panna.
-
-33
-00:03:33, 001 --> 00:03:39,000
-Nüüd ma tõstan selle suurusele, mis on kergesti nähtav.
-
-34
-00:03:39, 001 --> 00:03:48,000
-Ma vabanen sellest väikesest süntaksist seal ja siis näitan sulle kujuvõtit, mille olen varem teinud.
-
-35
-00:03:48, 001 --> 00:03:55,000
-Avame selle MS Paintis ja vaatame, mis see tegelikult välja näeb.
-
-36
-00:03:55, 001 --> 00:04:04,000
-Niisiis, see on kujuvõti, millel oli mingi määratlus, mis oli antud "h" ja "w" süntaksiga.
-
-37
-00:04:04, 001 --> 00:04:15,000
-Oluline ei ole see, et see kuju võti on praegu kasulik graafiline pilt. Ei ole.
-
-38
-00:04:15, 001 --> 00:04:26,000
-Kujundusvõtme kogu eesmärk on oma failisüsteemis kena pilt, mis võimaldab kujundvõtit visuaalselt tuvastada.
-
-39
-00:04:26, 001 --> 00:04:28,000
-See on kogu põhjus, miks see on olemas.
-
-40
-00:04:28, 001 --> 00:04:31,000
-Nüüd ma näitan, kuidas seda kasutada.
-
-41
-00:04:31, 001 --> 00:04:36,000
-Kui oled loonud kujuvõtme, salvestades selle süntaksi abil. (Seadmed ei ole kohustuslikud.)
-
-42
-00:04:36, 001 --> 00:04:41,000
-Sa võid neid ignoreerida.
-
-43
-00:04:41, 001 --> 00:04:52,000
-Kujuklahvil on spetsiaalne süntaks, mis on failinimes selgelt nähtav.
-
-44
-00:04:52, 001 --> 00:05:17,000
-Nüüd kirjeldan süntaksit. See kasutab 'h' ja 'w' süntaksit.
-
-45
-00:05:17, 001 --> 00:05:27,000
-See kirjeldab sama kõrgusega ristkülikute ridu.
-
-46
-00:05:27, 001 --> 00:05:51,000
-Lihtsalt veenduge, et seda süntaksit ei eemaldata failinime lõpust, kui soovite faili ümber nimetada.
-
-47
-00:05:51, 001 --> 00:06:02,000
-Hea asi on see, et saate lihtsalt lohistada selle asja otse ühele tähtedest ja see paigaldatakse sellesse asukohta.
-
-48
-00:06:02, 001 --> 00:06:06,000
-Ma valin n-tähe.
-
-49
-00:06:06, 001 --> 00:06:10,000
-Täht "n" sisaldab nüüd selle kujuvõtme teavet.
-
-50
-00:06:10, 001 --> 00:06:23,000
-Siis kasutame natuke kerimisratast ja näeme, et kogu see määratletud kujuvõti on meie jaoks sisse joonistatud.
-
-51
-00:06:23, 001 --> 00:06:32,000
-Olen selle eelnevalt teinud ja saan siis teile hõlpsasti näidata, et see joondub suurepäraselt joonistusega.
-
-52
-00:06:32, 001 --> 00:06:45,000
-Aga lühidalt ma lähen läbi protsessi, et näidata jälitamist.
-
-53
-00:06:45, 001 --> 00:07:01,000
-Sisestame süntaksi käsitsi. Ma kasutan numbripadjal perioodi ja sidekriipsu, kuid võite kasutada ka tähti "h" ja "w".
-
-54
-00:07:01, 001 --> 00:07:04,000
-Kõigepealt valime kaks esimest numbrit: "h10w10".
-
-55
-00:07:04, 001 --> 00:07:08,000
-See on lihtsalt selleks, et meil oleks midagi lähtepunktina vaadata.
-
-56
-00:07:08, 001 --> 00:07:37,000
-Nüüd saame kohandada ja lisada "w", et saada rohkem laiusi.
-
-57
-00:07:37, 001 --> 00:07:45,000
-Niisiis, meil on definitsioonid ja oleme edukalt jälginud nelja esimest tähte.
-
-58
-00:07:45, 001 --> 00:07:51,000
-Ma olen selle juba eelnevalt kindlaks teinud, nii et liigume lihtsalt edasi.
-
-59
-00:07:51, 001 --> 00:07:55,000
-Siin see siis on.
-
-60
-00:07:55, 001 --> 00:08:10,000
-Kui olete olnud edukas ja lõpetanud selle protsessi oma pildi jaoks, on järgmine samm selle salvestamine.
-
-61
-00:08:10, 001 --> 00:08:15,000
-Sa kasutad seda nuppu seal, kus on kirjas täheleht.
-
-62
-00:08:15, 001 --> 00:08:18,000
-null
-
-63
-00:08:18, 001 --> 00:08:25,000
-Sellele klõpsates salvestatakse spetsiaalne fail.
-
-64
-00:08:25, 001 --> 00:08:30,000
-Seejärel tuleb see fail programmi ekraanile tagasi lohistada.
-
-65
-00:08:30, 001 --> 00:08:35,000
-Ma näitan teile seda varsti, kuid kõigepealt räägin just nüüd salvestatud faili süntaksist.
-
-66
-00:08:35, 001 --> 00:09:11,000
-Näeme, et meil on sama süntaks, mis salvestati kujuvõtmesse. (failinime eesliide "TEMPL")
-
-67
-00:09:11, 001 --> 00:09:13,000
-Vaatame, mida me teha saame.
-
-68
-00:09:13, 001 --> 00:09:19,000
-Me kasutame põgenemist, et meil oleks kena tühi ekraan.
-
-69
-00:09:19, 001 --> 00:09:25,000
-Järgmisena tõmban selle malli programmi tagasi.
-
-70
-00:09:25, 001 --> 00:09:37,000
-See võib tunduda keeruline, kuid see pole nii.
-
-71
-00:09:37, 001 --> 00:09:47,000
-Kui me tahame nuppe, peame nüüd valima 6, 4 või 2.
-
-72
-00:09:47, 001 --> 00:09:52,000
-See ei ole nuppude arv, vaid pigem kasutatakse nupu olekute arvu.
-
-73
-00:09:52, 001 --> 00:10:12,000
-Kui me hõljume hiirega üle nupu, on see hõljumise olek.
-
-74
-00:10:12, 001 --> 00:10:15,000
-Kui me klõpsame alla, on see aktiivne olek.
-
-75
-00:10:15, 001 --> 00:10:17,000
-Ja kui nupp klõpsas, saab see fokuseeritud oleku.
-
-76
-00:10:17, 001 --> 00:10:24,000
-Meil on valik teha kõik 6, mis annab ainult 5 kasutatavat olekut.
-
-77
-00:10:24, 001 --> 00:10:31,000
-Eelistame kasutada kas 4, mis sobib ideaalselt lauaarvutitele või 2, mis on piisav mobiiltelefonidele.
-
-78
-00:10:31, 001 --> 00:10:35,000
-Nüüd annan lühikese kirjelduse, eeldades, et kasutatakse 4 nupu olekut.
-
-79
-00:10:35, 001 --> 00:11:01,000
-baasi
-
-80
-00:11:01, 001 --> 00:11:02,000
-keskendu
-
-81
-00:11:02, 001 --> 00:11:03,000
-hõljuma
-
-82
-00:11:03, 001 --> 00:11:05,000
-aktiivne
-
-83
-00:11:05, 001 --> 00:11:27,000
-See on väga oluline teada, kui te ei ole tuttav HTML.
-
-84
-00:11:27, 001 --> 00:11:32,000
-Jätkame nüüd oma protsessiga.
-
-85
-00:11:32, 001 --> 00:11:41,000
-Valin 4 nuppu, klõpsates seda.
-
-86
-00:11:41, 001 --> 00:11:45,000
-Nüüd oleme jälle faili salvestanud.
-
-87
-00:11:45, 001 --> 00:11:55,000
-Vaatame, kas saame selle faili avada oma lemmikkunstiprogrammis.
-
-88
-00:11:55, 001 --> 00:12:00,000
-Kus see on? Libre-Pixel.
-
-89
-00:12:00, 001 --> 00:12:04,000
-Vaatame, kuidas see toimik välja näeb.
-
-90
-00:12:04, 001 --> 00:12:06,000
-Olen seda varem valmistanud, muutes värve.
-
-91
-00:12:06, 001 --> 00:12:18,000
-Siin näeme ka, et pildi suurust on võimalik selle kõrgusel kärpida.
-
-92
-00:12:18, 001 --> 00:12:27,000
-See töötab ka hiljem.
-
-93
-00:12:27, 001 --> 00:12:37,000
-Me näeme, et faili salvestamine on neljakordistunud ja meil on nüüd neli esindust.
-
-94
-00:12:37, 001 --> 00:12:53,000
-Nüüd toon tagasi meie juhendi pildi, et näidata, millist nuppu seisundit iga pilt esindab.
-
-95
-00:12:53, 001 --> 00:12:59,000
-Nii saame teada, millise olekuga me töötame, kui muudame värve või joonistame oma pilte.
-
-96
-00:12:59, 001 --> 00:13:13,000
-Nende tulemuseks ei ole ainult üks nupp, vaid need on täpselt need nupud, mida oleme ristkülikute abil jälginud.
-
-97
-00:13:13, 001 --> 00:13:32,000
-See graafiline töö on juba eelnevalt valmis ja nii jätkan meie protsessiga.
-
-98
-00:13:32, 001 --> 00:13:49,000
-Niisiis, nüüd, kui meil on valmis pilt, näitan ma uuesti süntaksit, millel on eesliide "VALMIS".
-
-99
-00:13:49, 001 --> 00:14:03,000
-See nupp on valmis ja seda saab kohe sisse lohistada.
-
-100
-00:14:03, 001 --> 00:14:08,000
-Nüüd näeme, mis juhtub, kui lohistame selle lõpetatud nupufaili programmi.
-
-101
-00:14:08, 001 --> 00:14:13,000
-Tundub, et midagi toimub siin meie ekraani ülemises vasakus nurgas ja siis tulevad välja teie lõpetatud nupud.
-
-102
-00:14:13, 001 --> 00:14:25,000
-Seal nad on ja proovime, kas saame neid testida, kasutades tühikuriba ja hoides seda all.
-
-103
-00:14:25, 001 --> 00:14:38,000
-Nüüd näeme, et meie nupud töötavad korralikult ja näevad välja täpselt nagu meie joonistatud graafika.
-
-104
-00:14:38, 001 --> 00:14:45,000
-Meie loodud faili saab igal ajal kasutada ja taaskasutada.
-
-105
-00:14:45, 001 --> 00:14:51,000
-Meil on väga tore, püsiv ja ahvatlev süsteem paigas.
-
-106
-00:14:51, 001 --> 00:14:53,000
-Süsteem koosneb järgmistest osadest: kujuvõti (failinime eesliide "SHAPE");
-
-107
-00:14:53, 001 --> 00:14:59,000
-Esimene mall, mis saab ühe pildi (failinime eesliide "TEMPL");
-
-108
-00:14:59, 001 --> 00:15:08,000
-ja lõpetatud nupukomplekt (faili nime eesliide "READY").
-
-109
-00:15:08, 001 --> 00:15:15,000
-Me võime isegi kopeerida seda lõpetatud nuppu meie failisüsteemis ja teha mingisuguseid alternatiivseid pilte ja see töötaks ikkagi.
-
-110
-00:15:15, 001 --> 00:15:26,000
-Ma pole kindel, kas see töötab. Proovime seda.
-
-111
-00:15:26, 001 --> 00:15:43,000
-Niisiis, võite võtta selle seal ja muuta seda välja, muutes selle erinevad värvid või liigutades vähe asju ümber.
-
-112
-00:15:43, 001 --> 00:15:54,000
-Teil on siin hea nupp, mis teeb võimsuse kättesaadavaks, ja saate teha nii palju kui soovite.
-
-113
-00:15:54, 001 --> 00:15:59,000
-Siin näete, et me pole isegi seda ala nuppudega peaaegu täitnud, kuid muidugi, kui teil ruum otsa saab, teete lihtsalt teise.
-
-114
-00:15:59, 001 --> 00:16:19,000
-Üks asi, mida ma rõhutan, on see, et võib olla raske leida süntaksit, mis sobib, kui teie nupud on teie joonistuses väga lähedal.
-
-115
-00:16:19, 001 --> 00:16:54,000
-Seega, et oleks lihtsam jälgida, jätke piltide vahele rohkem ruumi.
-
-116
-00:16:54, 001 --> 00:17:24,000
-Nüüd kasutan klahvi "z", mis tagab, et ma ei muuda nuppude suurust.
-
-117
-00:17:24, 001 --> 00:17:33,000
-Ma teen selle ühe kõrgemaks kui teised, valides sellest menüüst. Kasutan kiirklahvi (z-režiim: 'h').
-
-118
-00:17:33, 001 --> 00:17:39,000
-Niisiis, ma panin selle z-indeksi järjestuse tippu, kasutades "h".
-
-119
-00:17:39, 001 --> 00:18:01,000
-Kuna ma olen seadnud hiire juurdekasvu, et see vastaks minu täiustatud joonise piksli juurdekasvule, on kõike lihtne joondada.
-
-120
-00:18:01, 001 --> 00:18:06,00
-Programmis on kõik erinevad seadistused, kuid ma ei käsitle neid siin.
-
-121
-00:18:06, 001 --> 00:18:14,00
-Võib-olla natuke rohkem nii.
-
-122
-00:18:14, 001 --> 00:18:19,000
-See on päris lähedal.
-
-123
-00:18:19, 001 --> 00:18:36,000
-Nüüd kasutan hiire kerimisratast, et valida salvestamise tüüp vahekaardilt IV-2.
-
-124
-00:18:36, 001 --> 00:18:47,000
-Ma säästan vaate laiuse teguriga 1280.
-
-125
-00:18:47, 001 --> 00:18:55,000
-See konverteeritakse automaatselt.
-
-126
-00:18:55, 001 --> 00:19:43,000
-Faili salvestamiseks klaviatuurilt kasuta 'shift + s'. Selle asemel, et avada fail ainult vaatamiseks: Kasutage 'shift + enter'.
-
-127
-00:19:43, 001 --> 00:19:48,000
-See on päris hea.
-
-128
-00:19:48, 001 --> 00:19:56,000
-Hästi tehtud.
-
-129
-00:19:56, 001 --> 00:20:20,000
-Õpetus on läbi.
+00:11:08,001 --> 00:11:12,000
+Hästi tehtud! Õpetus üle...
 

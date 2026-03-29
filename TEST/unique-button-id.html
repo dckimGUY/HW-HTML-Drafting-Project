@@ -1,0 +1,10 @@
+<button id="unique-button-id" draggable="true" onclick="window.location.href='https://SPECIFIC-LINK.com'" ondragstart="((e) =&gt; {
+    const el = e.currentTarget;
+    const h = el.outerHTML;
+    const filename = (el.id || 'button') + '.html';
+    const b = btoa(unescape(encodeURIComponent(h)));
+    e.dataTransfer.setData('text/html', h);
+    e.dataTransfer.setData('DownloadURL', 'text/html:' + filename + ':data:text/html;base64,' + b);
+  })(event)">
+  Representative Link
+</button>

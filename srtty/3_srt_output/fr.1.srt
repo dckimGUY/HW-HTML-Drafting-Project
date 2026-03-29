@@ -1,516 +1,128 @@
 1
-00:00:00, 001 --> 00:00:09,000
-Aujourd'hui, nous allons parler de faire vos propres boutons personnalisés pour ce programme.
+00:00:00,001 --> 00:00:14,000
+Nous commençons par montrer comment les légendes du tutoriel seront téléchargées sur YouTube.
 
 2
-00:00:09, 001 --> 00:00:16,000
-C'est le premier tutoriel que je fais et espérons que vous le comprendrez facilement et l'apprécierez.
+00:00:14,001 --> 00:00:24,000
+Le texte des légendes, du titre et de la description sera traduit avant le téléchargement.
 
 3
-00:00:16, 001 --> 00:00:19,000
-Voyons ici: 'Informations pour la fabrication de boutons'.
+00:00:24,001 --> 00:00:34,000
+Sur la gauche j'ai une référence de nom de langue.
 
 4
-00:00:21, 001 --> 00:00:24,000
-C'est ce qu'on regarde avec ce tutoriel.
+00:00:34,001 --> 00:00:37,000
+YouTube Studio est montré.
 
 5
-00:00:24, 001 --> 00:00:26,000
-Alors, allons-y.
+00:00:37,001 --> 00:00:42,000
+Je vais compléter un exemple de téléchargement d'une légende, du titre et de la description.
 
 6
-00:00:26, 001 --> 00:00:32,000
-Nous sommes ici dans le programme, et nous pouvons voir tout de suite que j'ai mis quelque chose dans cette boîte ici.
+00:00:42,001 --> 00:00:53,000
+Commencez par ajouter une langue à la liste.
 
 7
-00:00:32, 001 --> 00:00:38,000
-Il nous donne une désignation de hauteur et de largeur, juste une désignation très simple.
+00:00:53,001 --> 00:01:23,000
+Ensuite, je vais télécharger le fichier de légende qui a déjà été traduit.
 
 8
-00:00:38, 001 --> 00:00:50,000
-Cela nous donne la plus grande largeur et la plus grande hauteur que nous pourrions utiliser, et il est montré à l'intérieur de ce grand rectangle là avec la grande lettre 'B'.
+00:01:23,001 --> 00:01:54,000
+Je copie et colle le titre et la description.
 
 9
-00:00:50, 001 --> 00:01:07,000
-La première étape que nous devons faire pour pouvoir tracer notre bouton personnalisé est que nous avons besoin de glisser une image du système de fichiers directement sur cette zone où il a la grande lettre 'B'.
+00:01:54,001 --> 00:01:58,000
+Vous pouvez voir que j'ai beaucoup plus à télécharger.
 
 10
-00:01:07, 001 --> 00:01:12,000
-Nous allons maintenant glisser sur notre image du système de fichiers ici, et vers où nous voyons la lettre 'B'.
+00:01:58,001 --> 00:02:08,000
+Examinons les travaux de traduction en cours en arrière-plan.
 
 11
-00:01:12, 001 --> 00:01:20,000
-Nous allons maintenant glisser sur notre image du système de fichiers ici, et vers où nous voyons la lettre 'B'.
+00:02:08,001 --> 00:02:34,000
+Nous voyons que j'utilise 'GitBash' et 'LibreTrail'.
 
 12
-00:01:20, 001 --> 00:01:23,000
-Et là, on l'a et ça apparaît sur l'écran.
+00:02:34,001 --> 00:02:49,000
+'LibreTrail' peut être téléchargé et installé sans frais, directement depuis l'invite en utilisant 'GitBash'.
 
 13
-00:01:23, 001 --> 00:01:24,000
-Le problème que nous pouvons voir est qu'il semble trop petit.
+00:02:49,001 --> 00:03:25,000
+Cette configuration exacte est disponible dans le dépôt de rédaction HTML à 'GitHub'.
 
 14
-00:01:24, 001 --> 00:01:26,000
-Que devrions-nous faire ?
+00:03:25,001 --> 00:03:37,000
+Pour commencer la traduction, nous devons utiliser le script nommé 'srt.sh'.
 
 15
-00:01:26, 001 --> 00:01:37,000
-Nous devons déplacer notre curseur de souris au-dessus de cette région avec la grande lettre 'B' et nous pouvons ensuite faire défiler avec la roue de souris. Maintenant nous voyons que quelque chose d'intéressant se passe.
+00:03:37,001 --> 00:04:08,000
+Nous devons avoir 'LibreTrail' servi localement pour que ce script fonctionne.
 
 16
-00:01:37, 001 --> 00:01:45,000
-Nous sommes en mesure d'ajuster l'échelle du guide à l'écran.
+00:04:08,001 --> 00:04:24,000
+Un autre élément important de ce système, qui n'est pas montré ici, est appelé 'JQuery'. Ceci doit d'abord être installé.
 
 17
-00:01:45, 001 --> 00:01:54,000
-Lorsque nous descendons à 4, 3, 2 et 1, nous voyons qu'il y a un facteur d'augmentation spécial appliqué.
+00:04:24,001 --> 00:04:43,000
+Avec tous les mêmes logiciels en place, il est possible que vous dupliez cette configuration exacte.
 
 18
-00:01:54, 001 --> 00:01:58,000
-Je l'ai construit dans le programme dans le but de pixel art.
+00:04:43,001 --> 00:04:57,000
+Maintenant, je vais montrer un autre petit morceau de logiciel qui rend facile d'effectuer une transcription manuelle de la vidéo.
 
 19
-00:01:58, 001 --> 00:02:03,000
-De sorte que lorsque vous ramenez les boutons dans le programme, ils seront augmentés en taille.
+00:04:57,001 --> 00:05:21,000
+Google a écrit ce programme mais, je lui ai dit quoi faire...
 
 20
-00:02:03, 001 --> 00:02:07,000
-Ils ne seront pas la taille que vous voyez pendant que vous les dessinez.
+00:05:21,001 --> 00:05:35,000
+La touche 'enter' donne la boîte de légende suivante, et 'shift + ,' ou 'shift + .' changent l'heure de fin.
 
 21
-00:02:07, 001 --> 00:02:16,000
-Donc, vous pouvez les dessiner à cette petite taille de pixel et puis vous pouvez les amener dans le programme et ils deviendront soudainement plus grands.
+00:05:35,001 --> 00:05:56,000
+Je peux faire des allers-retours depuis la vidéo en utilisant 'alt + tab', en arrêtant la vidéo en utilisant la 'barre d'espace'.
 
 22
-00:02:16, 001 --> 00:02:22,000
-Pour cette raison, vous obtenez une très bonne économie sur la taille de votre image et vos boutons.
+00:05:56,001 --> 00:06:35,000
+Cela donne un flux de travail très serré pour le travail de transcription manuelle.
 
 23
-00:02:22, 001 --> 00:02:31,000
-Donc, votre bouton n'est pas trop cher en termes de combien il coûte pour le transferer par l'Internet.
+00:06:35,001 --> 00:07:26,000
+Ce petit programme est en fait très important. Il assemble un fichier JSON utilisé pour les traductions.
 
 24
-00:02:31, 001 --> 00:02:41,000
-Voilà. Celui-ci a 180 unités de hauteur et 100 unités de largeur, mais il n'est pas particulièrement utile pour nous en ce moment.
+00:07:26,001 --> 00:07:44,000
+Alors nous avons le paquet complet, prêt à être remis à notre logiciel de traduction.
 
 25
-00:02:41, 001 --> 00:02:45,000
-Maintenant, je vais décrire une des premières choses que vous pourriez voir ici: C'est ce bouton de sauvegarde.
+00:07:44,001 --> 00:08:05,000
+Avoir des légendes pour tant de langues est une bonne chose pour la découverte.
 
 26
-00:02:45, 001 --> 00:02:54,000
-Si nous devions cliquer sur ce bouton de sauvegarde, ce qui va se passer est que nous allons enregistrer une touche de forme.
+00:08:05,001 --> 00:08:15,000
+Maintenant, je vais vous montrer où le fichier JSON doit être placé avant que nous puissions utiliser le script spécial.
 
 27
-00:02:54, 001 --> 00:03:08,000
-Et si nous devions cliquer sur l'autre ici, feuille d'étoile marquée, un seul modèle représenté par ce dessin serait sauvegardé.
+00:08:15,001 --> 00:08:23,000
+Le nom du dossier est '1 caption inputs'.
 
 28
-00:03:08, 001 --> 00:03:12,000
-Ne t'inquiète pas trop.
+00:08:23,001 --> 00:09:01,000
+Je vais maintenant montrer à quel point il peut être transféré facilement. Le dossier peut être traîné à la place.
 
 29
-00:03:12, 001 --> 00:03:15,000
-Passons à quelque chose que j'ai préparé plus tôt.
+00:09:01,001 --> 00:10:34,000
+Avec 'LibreTrail' en cours d'exécution sur votre machine locale, vous devez ouvrir un autre 'GitBash' et ensuite exécuter la commande exacte affichée à l'écran : ./srt.sh
 
 30
-00:03:15, 001 --> 00:03:20,000
-Si nous échappons, remarquez que toutes ces choses disparaîtront.
+00:10:34,001 --> 00:06:56,000
+Vous pouvez voir que j'ai beaucoup plus de téléchargements à faire. C'est beaucoup de travail !
 
 31
-00:03:20, 001 --> 00:03:24,000
-Ok, donc maintenant tout est parti.
+00:10:56,001 --> 00:11:08,000
+Je vous souhaite le meilleur pour essayer ce même processus vous-même.
 
 32
-00:03:24, 001 --> 00:03:33,000
-Voyons si je peux le remettre.
-
-33
-00:03:33, 001 --> 00:03:39,000
-Je vais maintenant l'écheller à une taille que l'on peut facilement voir.
-
-34
-00:03:39, 001 --> 00:03:48,000
-Je vais me débarrasser de ce petit morceau de syntaxe là-bas, et ensuite je vais vous montrer une touche de forme que j'ai faite plus tôt.
-
-35
-00:03:48, 001 --> 00:03:55,000
-Ouvrons-le dans MS Paint et voyons à quoi ça ressemble vraiment.
-
-36
-00:03:55, 001 --> 00:04:04,000
-Donc, c'est une touche de forme qui avait une définition donnée avec la syntaxe 'h' et 'w'.
-
-37
-00:04:04, 001 --> 00:04:15,000
-La partie importante n'est pas que cette touche de forme est une image graphique utile en ce moment. Ça ne l'est pas.
-
-38
-00:04:15, 001 --> 00:04:26,000
-Le but de la touche de forme est d'avoir une belle image dans votre système de fichiers, vous permettant d'identifier visuellement la touche de forme.
-
-39
-00:04:26, 001 --> 00:04:28,000
-C'est toute la raison pour laquelle il est là.
-
-40
-00:04:28, 001 --> 00:04:31,000
-Maintenant je vais montrer comment l'utiliser.
-
-41
-00:04:31, 001 --> 00:04:36,000
-Une fois que vous avez produit une touche de forme en en sauvant une en utilisant la syntaxe. (Les touches de forme ne sont pas obligatoires.)
-
-42
-00:04:36, 001 --> 00:04:41,000
-Vous pouvez les ignorer.
-
-43
-00:04:41, 001 --> 00:04:52,000
-La touche de forme a une syntaxe spéciale clairement visible dans le nom du fichier.
-
-44
-00:04:52, 001 --> 00:05:17,000
-Maintenant je vais décrire la syntaxe. Il utilise la syntaxe « h » et « w ».
-
-45
-00:05:17, 001 --> 00:05:27,000
-Cela décrit des rangées de rectangles qui partagent la même hauteur.
-
-46
-00:05:27, 001 --> 00:05:51,000
-Assurez-vous de ne pas supprimer cette syntaxe de la fin de votre nom de fichier si vous souhaitez renommer le fichier.
-
-47
-00:05:51, 001 --> 00:06:02,000
-La chose agréable à ce sujet est que vous pouvez simplement glisser cette chose directement sur une des lettres, et il sera installé à cet endroit.
-
-48
-00:06:02, 001 --> 00:06:06,000
-Je choisis la lettre 'n'.
-
-49
-00:06:06, 001 --> 00:06:10,000
-La lettre 'n' contient maintenant les informations pour cette touche de forme.
-
-50
-00:06:10, 001 --> 00:06:23,000
-Ensuite, nous utilisons un peu la roue de défilement et nous voyons que toute cette touche de forme définie a été dessinée pour nous.
-
-51
-00:06:23, 001 --> 00:06:32,000
-J'ai fait celui-ci à l'avance, et je peux donc facilement vous montrer que cela correspond parfaitement au dessin.
-
-52
-00:06:32, 001 --> 00:06:45,000
-Mais, juste brièvement, je vais passer par le processus pour démontrer le traçage.
-
-53
-00:06:45, 001 --> 00:07:01,000
-Nous entrerons manuellement la syntaxe. Je vais utiliser la période et le trait d'union sur le bloc numérique, mais, vous pouvez également utiliser les lettres 'h' et 'w'.
-
-54
-00:07:01, 001 --> 00:07:04,000
-Pour commencer, nous allons choisir les deux premiers numéros: 'h10w10'.
-
-55
-00:07:04, 001 --> 00:07:08,000
-C'est juste pour que nous ayons quelque chose à considérer comme un point de départ.
-
-56
-00:07:08, 001 --> 00:07:37,000
-Maintenant nous pouvons ajuster et ajouter 'w' pour obtenir plus de largeurs.
-
-57
-00:07:37, 001 --> 00:07:45,000
-Donc, nous avons les définitions et avons réussi à tracer les quatre premières lettres.
-
-58
-00:07:45, 001 --> 00:07:51,000
-J'ai déjà tracé ça à l'avance, alors allons-y.
-
-59
-00:07:51, 001 --> 00:07:55,000
-Donc, le voilà terminé.
-
-60
-00:07:55, 001 --> 00:08:10,000
-Si vous avez réussi et avez terminé ce processus pour votre propre image, la prochaine étape est de l'enregistrer.
-
-61
-00:08:10, 001 --> 00:08:15,000
-Vous allez utiliser ce bouton qui dit feuille d'étoile.
-
-62
-00:08:15, 001 --> 00:08:18,000
-null
-
-63
-00:08:18, 001 --> 00:08:25,000
-Lorsque vous cliquez dessus, un fichier spécial sera enregistré.
-
-64
-00:08:25, 001 --> 00:08:30,000
-Vous devez ensuite glisser ce fichier sur l'écran du programme.
-
-65
-00:08:30, 001 --> 00:08:35,000
-Je vais vous le montrer bientôt, mais je vais d'abord vous parler de la syntaxe du fichier qui vient d'être sauvegardé.
-
-66
-00:08:35, 001 --> 00:09:11,000
-Nous pouvons voir que nous avons la même syntaxe qui a été stockée dans la touche de forme. (préfixe du nom de fichier 'TEMPL')
-
-67
-00:09:11, 001 --> 00:09:13,000
-Voyons ce qu'on peut faire.
-
-68
-00:09:13, 001 --> 00:09:19,000
-Nous utilisons l'évasion pour avoir un bon écran blanc.
-
-69
-00:09:19, 001 --> 00:09:25,000
-Je ramènerai ensuite ce modèle dans le programme.
-
-70
-00:09:25, 001 --> 00:09:37,000
-Ça peut sembler délicat, mais ça ne l'est pas.
-
-71
-00:09:37, 001 --> 00:09:47,000
-Si nous voulons des boutons, nous devons maintenant choisir entre 6, 4 ou 2.
-
-72
-00:09:47, 001 --> 00:09:52,000
-Ce n'est pas le nombre de boutons, mais plutôt le nombre d'états de boutons qui seront utilisés.
-
-73
-00:09:52, 001 --> 00:10:12,000
-Quand on vole avec la souris sur le bouton, c'est l'état du vol stationnaire.
-
-74
-00:10:12, 001 --> 00:10:15,000
-Lorsque nous cliquetons vers le bas, c'est l'état actif.
-
-75
-00:10:15, 001 --> 00:10:17,000
-Et quand le bouton a cliqué, il obtient l'état concentré.
-
-76
-00:10:17, 001 --> 00:10:24,000
-Nous avons le choix de faire les 6, ce qui donne seulement 5 états utilisables.
-
-77
-00:10:24, 001 --> 00:10:31,000
-Nous préférons utiliser soit 4, ce qui est idéal pour les ordinateurs de bureau, soit 2 ce qui est suffisant pour les téléphones mobiles.
-
-78
-00:10:31, 001 --> 00:10:35,000
-Je vais maintenant donner une brève description en supposant que 4 états de bouton sont utilisés.
-
-79
-00:10:35, 001 --> 00:11:01,000
-base
-
-80
-00:11:01, 001 --> 00:11:02,000
-focalisation
-
-81
-00:11:02, 001 --> 00:11:03,000
-hover
-
-82
-00:11:03, 001 --> 00:11:05,000
-actif
-
-83
-00:11:05, 001 --> 00:11:27,000
-C'est très important de savoir si vous n'êtes pas familier avec HTML.
-
-84
-00:11:27, 001 --> 00:11:32,000
-Continuons notre processus.
-
-85
-00:11:32, 001 --> 00:11:41,000
-Je vais choisir les 4 états de bouton en cliquant sur ceci.
-
-86
-00:11:41, 001 --> 00:11:45,000
-Maintenant nous avons encore enregistré un fichier.
-
-87
-00:11:45, 001 --> 00:11:55,000
-Voyons si nous pouvons ouvrir ce fichier dans notre programme d'art préféré.
-
-88
-00:11:55, 001 --> 00:12:00,000
-Où est-il ? Libre-Pixel.
-
-89
-00:12:00, 001 --> 00:12:04,000
-Nous verrons à quoi ressemble ce fichier.
-
-90
-00:12:04, 001 --> 00:12:06,000
-Je l'ai préparé plus tôt en changeant les couleurs.
-
-91
-00:12:06, 001 --> 00:12:18,000
-Ici, nous pouvons également voir qu'il est possible de recadrer la taille de l'image dans sa hauteur.
-
-92
-00:12:18, 001 --> 00:12:27,000
-Ça marchera encore plus tard.
-
-93
-00:12:27, 001 --> 00:12:37,000
-Nous pouvons voir que la sauvegarde du fichier l'a quadruplé, et nous avons maintenant quatre représentations.
-
-94
-00:12:37, 001 --> 00:12:53,000
-Je vais maintenant ramener notre image guide pour montrer quel bouton indique chaque image représente.
-
-95
-00:12:53, 001 --> 00:12:59,000
-De cette façon nous savons sur quel état nous travaillons lorsque nous changeons les couleurs ou dessinons nos images.
-
-96
-00:12:59, 001 --> 00:13:13,000
-Ceux-ci ne se traduiront pas en un seul bouton, mais seront plutôt exactement les boutons que nous avons tracés en utilisant les rectangles.
-
-97
-00:13:13, 001 --> 00:13:32,000
-Ce travail graphique a déjà été achevé à l'avance, et je vais donc poursuivre notre processus.
-
-98
-00:13:32, 001 --> 00:13:49,000
-Donc, maintenant que nous avons une image terminée, je vais montrer à nouveau la syntaxe, qui a le préfixe « READY ».
-
-99
-00:13:49, 001 --> 00:14:03,000
-Ce bouton est terminé et peut être traîné immédiatement.
-
-100
-00:14:03, 001 --> 00:14:08,000
-Maintenant, nous allons voir ce qui se passe quand nous faisons glisser ce fichier bouton fini dans le programme.
-
-101
-00:14:08, 001 --> 00:14:13,000
-Il semble qu'il se passe quelque chose ici dans le coin supérieur gauche de notre écran, et puis sort vos boutons finis.
-
-102
-00:14:13, 001 --> 00:14:25,000
-Les voilà, et essayons de les tester en utilisant la barre d'espace, et en la maintenant.
-
-103
-00:14:25, 001 --> 00:14:38,000
-Nous pouvons maintenant voir que nos boutons fonctionnent correctement, et ressemblent exactement aux graphiques que nous avons dessinés.
-
-104
-00:14:38, 001 --> 00:14:45,000
-Ce fichier que nous avons produit peut être utilisé et réutilisé à tout moment.
-
-105
-00:14:45, 001 --> 00:14:51,000
-Nous avons un système très agréable, persistant et tentant en place.
-
-106
-00:14:51, 001 --> 00:14:53,000
-Le système est composé de: Une touche de forme (préfixe du nom de fichier 'SHAPE');
-
-107
-00:14:53, 001 --> 00:14:59,000
-Un premier modèle, qui obtient une image unique (préfixe du nom de fichier 'TEMPL');
-
-108
-00:14:59, 001 --> 00:15:08,000
-et le bouton fini (préfixe du nom de fichier 'READY').
-
-109
-00:15:08, 001 --> 00:15:15,000
-Nous pouvons même copier ce bouton fini dans notre système de fichiers et faire une sorte d'imagerie alternative, et cela fonctionnerait encore.
-
-110
-00:15:15, 001 --> 00:15:26,000
-Je ne sais pas si ça marche. Essayons.
-
-111
-00:15:26, 001 --> 00:15:43,000
-Donc, tu pourrais prendre celui-là, et le changer, en faisant des couleurs différentes ou en déplaçant des petites choses autour.
-
-112
-00:15:43, 001 --> 00:15:54,000
-Vous avez un bon bouton rendant la capacité disponible ici, et vous pouvez faire autant que vous le souhaitez.
-
-113
-00:15:54, 001 --> 00:15:59,000
-Ici vous pouvez voir que nous n'avons même pas presque rempli cette zone avec des boutons, mais, bien sûr, si vous manquez d'espace, vous en ferez simplement un autre.
-
-114
-00:15:59, 001 --> 00:16:19,000
-Une chose que je vais souligner est qu'il pourrait être difficile de trouver une syntaxe qui correspond lorsque vos boutons sont très proches dans votre dessin.
-
-115
-00:16:19, 001 --> 00:16:54,000
-Donc, pour faciliter la trace, laissez plus d'espace entre les images.
-
-116
-00:16:54, 001 --> 00:17:24,000
-Je vais maintenant utiliser la touche «z» qui permettra de ne pas redimensionner les boutons.
-
-117
-00:17:24, 001 --> 00:17:33,000
-Je vais le faire plus haut que les autres en sélectionnant dans ce menu. J'utilise le raccourci clavier (z-mode: 'h').
-
-118
-00:17:33, 001 --> 00:17:39,000
-Donc, j'ai mis ceci en haut de l'ordre de z-index en utilisant 'h'.
-
-119
-00:17:39, 001 --> 00:18:01,000
-Parce que j'ai défini l'accroissement de la souris pour correspondre à l'accroissement de pixel de mon dessin haut de gamme, il est facile de tout aligner.
-
-120
-00:18:01, 001 --> 00:18:06,00
-Il y a tous différents réglages disponibles dans le programme, mais, je ne les couvrirai pas ici.
-
-121
-00:18:06, 001 --> 00:18:14,00
-Peut-être un peu plus comme ça.
-
-122
-00:18:14, 001 --> 00:18:19,000
-C'est assez proche.
-
-123
-00:18:19, 001 --> 00:18:36,000
-Je vais maintenant utiliser la roue de défilement de la souris pour sélectionner le type de sauvegarde de l'onglet IV-2.
-
-124
-00:18:36, 001 --> 00:18:47,000
-Je économise à un facteur de largeur Viewing de 1280.
-
-125
-00:18:47, 001 --> 00:18:55,000
-Cela sera automatiquement converti.
-
-126
-00:18:55, 001 --> 00:19:43,000
-Pour enregistrer le fichier depuis le clavier : Utilisez 'shift + s'. Au lieu de cela, pour ouvrir seulement le fichier à afficher : Utilisez 'shift + enter'.
-
-127
-00:19:43, 001 --> 00:19:48,000
-C'est plutôt bien.
-
-128
-00:19:48, 001 --> 00:19:56,000
-Bien joué.
-
-129
-00:19:56, 001 --> 00:20:20,000
-Tutoriel terminé.
+00:11:08,001 --> 00:11:12,000
+Bien joué ! Tutoriel terminé...
 

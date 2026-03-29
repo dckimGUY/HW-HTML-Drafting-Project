@@ -1,0 +1,286 @@
+{
+  "title": "How to start making a website",
+  "description": "This tutorial covers several important subjects including keyboard shortcuts. The use of available modes is explained in detail. Duplication of parts is demonstrated. The use of the 'tab' key is shown. An explanation of the use of different level of the program is shown in detail. Many many keyboard shortcuts are introduced and examined in this video.",
+  "captions": [
+    {
+      "lineOne": 1,
+      "lineTwo": "00:00:00,001 --> 00:00:07,000",
+      "lineThree": "How do we begin? This is a good question."
+    },
+    {
+      "lineOne": 2,
+      "lineTwo": "00:00:07,001 --> 00:00:50,000",
+      "lineThree": "To answer this question indirectly, we will see some of the keys that we might use for working in this program."
+    },
+    {
+      "lineOne": 3,
+      "lineTwo": "00:00:50,001 --> 00:01:00,000",
+      "lineThree": "Completing graphical designs and textual articles is the most important part of making a website."
+    },
+    {
+      "lineOne": 4,
+      "lineTwo": "00:01:00,001 --> 00:01:03,000",
+      "lineThree": "I think I should just delete this box! I will use 'shift + del'."
+    },
+    {
+      "lineOne": 5,
+      "lineTwo": "00:01:03,001 --> 00:01:19,000",
+      "lineThree": "Oh no! It is gone forever because I have used 'shift + del'. It is deleted permanently."
+    },
+    {
+      "lineOne": 6,
+      "lineTwo": "00:01:19,001 --> 00:01:28,000",
+      "lineThree": "Now I will input a new empty part by using 'shift + n'."
+    },
+    {
+      "lineOne": 7,
+      "lineTwo": "00:01:28,001 --> 00:01:35,000",
+      "lineThree": "The part can be moved using H J K, and L. The grid increment determines the movement."
+    },
+    {
+      "lineOne": 8,
+      "lineTwo": "00:01:35,001 --> 00:02:11,000",
+      "lineThree": "The size of the grid increment can be changed using '[' and ']'."
+    },
+    {
+      "lineOne": 9,
+      "lineTwo": "00:02:11,001 --> 00:02:40,000",
+      "lineThree": "I will show again the use of the 'e' key, which enables edge mode."
+    },
+    {
+      "lineOne": 10,
+      "lineTwo": "00:02:40,001 --> 00:02:53,000",
+      "lineThree": "To return to move mode, we must use the 'g' key."
+    },
+    {
+      "lineOne": 11,
+      "lineTwo": "00:02:53,001 --> 00:03:10,000",
+      "lineThree": "The border on the part changes, and so we can clearly identify the mode."
+    },
+    {
+      "lineOne": 12,
+      "lineTwo": "00:03:10,001 --> 00:03:36,000",
+      "lineThree": "Now we will introduce the 'd' key, for duplication mode."
+    },
+    {
+      "lineOne": 13,
+      "lineTwo": "00:03:36,001 --> 00:03:52,000",
+      "lineThree": "The mouse can now only access the corners."
+    },
+    {
+      "lineOne": 14,
+      "lineTwo": "00:03:52,001 --> 00:04:22,000",
+      "lineThree": "There is a difference in both keyboard and mouse action when 'd' is used."
+    },
+    {
+      "lineOne": 15,
+      "lineTwo": "00:04:22,001 --> 00:04:34,000",
+      "lineThree": "Duplication is now default when using the keyboard."
+    },
+    {
+      "lineOne": 16,
+      "lineTwo": "00:04:34,001 --> 00:05:58,000",
+      "lineThree": "The 'a', 'i', and 'o' keys will now duplicate this part."
+    },
+    {
+      "lineOne": 17,
+      "lineTwo": "00:05:58,001 --> 00:06:10,000",
+      "lineThree": "Something is different when 'd' is not used."
+    },
+    {
+      "lineOne": 18,
+      "lineTwo": "00:06:10,001 --> 00:06:35,000",
+      "lineThree": "When in 'g', the part is added. It is empty, and will have a size according with the grid increment."
+    },
+    {
+      "lineOne": 19,
+      "lineTwo": "00:06:35,001 --> 00:07:11,000",
+      "lineThree": "I will now change the grid increment to show this dependency."
+    },
+    {
+      "lineOne": 20,
+      "lineTwo": "00:07:11,001 --> 00:07:41,000",
+      "lineThree": "Now let's use the 'i' key instead of the 'a' key."
+    },
+    {
+      "lineOne": 21,
+      "lineTwo": "00:07:41,001 --> 00:09:07,000",
+      "lineThree": "When we input a new part, we are automatically switched into the best edge mode for the situation."
+    },
+    {
+      "lineOne": 22,
+      "lineTwo": "00:09:07,001 --> 00:10:53,000",
+      "lineThree": "Now let's see what happens when we use those same keys with the 'shift' key."
+    },
+    {
+      "lineOne": 23,
+      "lineTwo": "00:10:53,001 --> 00:11:07,000",
+      "lineThree": "It is clear that work can be done very quickly using this system."
+    },
+    {
+      "lineOne": 24,
+      "lineTwo": "00:11:07,001 --> 00:11:17,000",
+      "lineThree": "Now we will again try using the 'd' key."
+    },
+    {
+      "lineOne": 25,
+      "lineTwo": "00:11:17,001 --> 00:11:24,000",
+      "lineThree": "While in duplication mode, we can still move around the same as before."
+    },
+    {
+      "lineOne": 26,
+      "lineTwo": "00:11:24,001 --> 00:11:40,000",
+      "lineThree": "The difference is seen when we are using 'a', 'i', or 'o'."
+    },
+    {
+      "lineOne": 27,
+      "lineTwo": "00:11:40,001 --> 00:11:49,000",
+      "lineThree": "The mode is not automatically changed. Instead it remains in move mode."
+    },
+    {
+      "lineOne": 28,
+      "lineTwo": "00:11:49,001 --> 00:12:29,000",
+      "lineThree": "The internal contents of the part are duplicated."
+    },
+    {
+      "lineOne": 29,
+      "lineTwo": "00:12:29,001 --> 00:13:14,000",
+      "lineThree": "While in 'g' mode, we see a similar effect and we can add new parts quickly."
+    },
+    {
+      "lineOne": 30,
+      "lineTwo": "00:13:14,001 --> 00:13:21,000",
+      "lineThree": "What are the parts representing? That is for you to decide."
+    },
+    {
+      "lineOne": 31,
+      "lineTwo": "00:13:21,001 --> 00:14:17,000",
+      "lineThree": "We move the entire group by holding 'shift' while using H, J, K, and L."
+    },
+    {
+      "lineOne": 32,
+      "lineTwo": "00:14:17,001 --> 00:14:41,000",
+      "lineThree": "When using 'shift + n' you will have a duplicate made."
+    },
+    {
+      "lineOne": 33,
+      "lineTwo": "00:14:41,001 --> 00:15:07,000",
+      "lineThree": "So we can see another difference between the actions per mode."
+    },
+    {
+      "lineOne": 34,
+      "lineTwo": "00:15:07,001 --> 00:15:30,000",
+      "lineThree": "To make only a single duplicate, exactly in place, we used 'shift + d'."
+    },
+    {
+      "lineOne": 35,
+      "lineTwo": "00:15:30,001 --> 00:15:51,000",
+      "lineThree": "I have now removed those parts to the 'XP' buffer."
+    },
+    {
+      "lineOne": 36,
+      "lineTwo": "00:15:51,001 --> 00:16:29,000",
+      "lineThree": "The 'XP' buffer is a good place to store parts temporarily while we are not using them."
+    },
+    {
+      "lineOne": 37,
+      "lineTwo": "00:16:29,001 --> 00:16:45,000",
+      "lineThree": "Now I will discuss the use of the different level, of which there are 20 in total."
+    },
+    {
+      "lineOne": 38,
+      "lineTwo": "00:16:45,001 --> 00:17:11,000",
+      "lineThree": "The 'backspace' key will flip the two layers."
+    },
+    {
+      "lineOne": 39,
+      "lineTwo": "00:17:11,001 --> 00:17:38,000",
+      "lineThree": "Now we will look in the menu and find where we can choose the levels."
+    },
+    {
+      "lineOne": 40,
+      "lineTwo": "00:17:38,001 --> 00:17:46,000",
+      "lineThree": "The contents of the phantom layer ('XP' buffer) are visible in any layer."
+    },
+    {
+      "lineOne": 41,
+      "lineTwo": "00:17:46,001 --> 00:17:57,000",
+      "lineThree": "Using the 'backspace' key will transfer the content of the phantom layer into the chosen level."
+    },
+    {
+      "lineOne": 42,
+      "lineTwo": "00:17:57,001 --> 00:18:11,000",
+      "lineThree": "Holding down the middle mouse button will allow us to traverse the document."
+    },
+    {
+      "lineOne": 43,
+      "lineTwo": "00:18:11,001 --> 00:18:41,000",
+      "lineThree": "The document is panned in the exact mouse increment."
+    },
+    {
+      "lineOne": 44,
+      "lineTwo": "00:18:41,001 --> 00:19:08,000",
+      "lineThree": "To change from one level to another, we can also use the top row of number keys which are on the keyboard."
+    },
+    {
+      "lineOne": 45,
+      "lineTwo": "00:19:08,001 --> 00:19:19,000",
+      "lineThree": "We can access the first ten levels, and to access the next ten levels we must hold 'shift'."
+    },
+    {
+      "lineOne": 46,
+      "lineTwo": "00:19:19,001 --> 00:19:22,000",
+      "lineThree": "I will now close the menu using the little button."
+    },
+    {
+      "lineOne": 47,
+      "lineTwo": "00:19:22,001 --> 00:19:45,000",
+      "lineThree": "The menu can be toggled from the keyboard using the 'backtick' or '`' key."
+    },
+    {
+      "lineOne": 48,
+      "lineTwo": "00:19:45,001 --> 00:20:21,000",
+      "lineThree": "When we use the 'backspace' key, we can then easily move parts to another level."
+    },
+    {
+      "lineOne": 49,
+      "lineTwo": "00:20:21,001 --> 00:20:46,000",
+      "lineThree": "I will now demonstrate the use of the 'q' and 'shift + q' keys."
+    },
+    {
+      "lineOne": 50,
+      "lineTwo": "00:20:46,001 --> 00:21:03,000",
+      "lineThree": "'shift + q' will wrap all of the parts."
+    },
+    {
+      "lineOne": 51,
+      "lineTwo": "00:21:03,001 --> 00:21:15,000",
+      "lineThree": "Pressing the 'q' key will reverse the action and unwrap the parts."
+    },
+    {
+      "lineOne": 52,
+      "lineTwo": "00:21:15,001 --> 00:21:59,000",
+      "lineThree": "The parts are now considered as one part."
+    },
+    {
+      "lineOne": 53,
+      "lineTwo": "00:21:59,001 --> 00:22:41,000",
+      "lineThree": "Even parts which are very far away will be wrapped, so be careful."
+    },
+    {
+      "lineOne": 54,
+      "lineTwo": "00:22:41,001 --> 00:23:56,000",
+      "lineThree": "The 'tab' key allows us to look inside of a part without unwrapping it."
+    },
+    {
+      "lineOne": 55,
+      "lineTwo": "00:23:56,001 --> 00:24:00,000",
+      "lineThree": "Again 'shift + q' will wrap the parts, and 'q' will unwrap them. 'tab' allows us to work inside without unwrapping."
+    },
+    {
+      "lineOne": 56,
+      "lineTwo": "00:24:00,001 --> 00:24:16,000",
+      "lineThree": "Well done! Tutorial Over..."
+    }
+  ]
+}

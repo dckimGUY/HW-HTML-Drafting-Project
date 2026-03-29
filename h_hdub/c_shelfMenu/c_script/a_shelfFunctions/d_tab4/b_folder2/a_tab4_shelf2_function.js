@@ -349,7 +349,7 @@ collection = "";
 
 
 
-function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef) {
+function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag) {
 
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
@@ -371,8 +371,6 @@ factor     = `(100/${window.innerWidth})`;
 lastFactor = `(100/${window.innerWidth})`;
 localStorage.setItem("lastFactor", "(100/320)");
 }
-
-
 
 
 if (utilityLayer0.children.length == 0) {
@@ -524,15 +522,11 @@ let idRoll = [];
 for (let j = 0; j < doc.body.children.length; j++) {
 
 
-
-
-
 if (doc.body.children[j].dataset.addScript) {
 addToScript += "\n" + doc.body.children[j].dataset.addScript;
 doc.body.children[j].remove();
 continue;
 }
-
 
 if (doc.body.children[j].dataset.json) {
 doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
@@ -553,6 +547,9 @@ if (
 ) {
 continue;
 }
+
+
+
 if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length >= 1) {
 const wrapping = document.createElement("div");
 wrapping.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
@@ -1464,6 +1461,16 @@ let stylesIncluded = "";
 stylesIncluded = stylePosition + styleEtc;
 } else if ( event.altKey) {
 stylesIncluded = stylePosition;
+}
+
+
+
+if (dragging == true) {
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter;
+restorePointerEventsNone();
+spaceViewOff();
+Z();
+return content;
 }
 
 

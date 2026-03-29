@@ -1,0 +1,8 @@
+<button draggable="true" style="padding:10px; cursor:move;" onclick="window.location.href='https://SPECIFIC-LINK.com'" ondragstart="((e) =&gt; {
+    const h = e.currentTarget.outerHTML;
+    const b = btoa(unescape(encodeURIComponent(h)));
+    e.dataTransfer.setData('text/html', h);
+    e.dataTransfer.setData('DownloadURL', 'text/html:button.html:data:text/html;base64,' + b);
+  })(event)">
+  Representative Link
+</button>

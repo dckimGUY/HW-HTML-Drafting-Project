@@ -1,516 +1,128 @@
 1
-00:00:00, 001 --> 00:00:09,000
-Hari ini kita akan berbicara tentang membuat tombol tersendiri untuk program ini.
+00:00:00,001 --> 00:00:14,000
+Kita mulai dengan menunjukkan bagaimana kapsi tutorial akan diunggah ke YouTube.
 
 2
-00:00:09, 001 --> 00:00:16,000
-Ini adalah tutorial pertama yang saya buat dan berharap Anda akan memahaminya dengan mudah dan menikmatinya.
+00:00:14,001 --> 00:00:24,000
+Teks kapsi, judul, dan deskripsi, semua akan diterjemahkan sebelum upload.
 
 3
-00:00:16, 001 --> 00:00:19,000
-Mari kita lihat di sini: 'Informasi untuk kerajinan tombol'.
+00:00:24,001 --> 00:00:34,000
+Di sebelah kiri aku punya referensi nama bahasa.
 
 4
-00:00:21, 001 --> 00:00:24,000
-Jadi, itulah yang kita lihat dengan tutorial ini.
+00:00:34,001 --> 00:00:37,000
+Studio YouTube ditampilkan.
 
 5
-00:00:24, 001 --> 00:00:26,000
-Jadi, mari kita langsung ke dalamnya.
+00:00:37,001 --> 00:00:42,000
+Aku akan menyelesaikan satu contoh upload dari judul, judul, dan deskripsi.
 
 6
-00:00:26, 001 --> 00:00:32,000
-Kita di sini dalam program, dan kita bisa melihat segera bahwa saya telah menempatkan sesuatu ke dalam kotak ini di sini.
+00:00:42,001 --> 00:00:53,000
+Mulailah dengan menambahkan bahasa ke dalam daftar.
 
 7
-00:00:32, 001 --> 00:00:38,000
-Ini memberi kita tinggi dan lebar, hanya yang sangat sederhana.
+00:00:53,001 --> 00:01:23,000
+Selanjutnya aku akan mengunggah file kapsi yang sudah diterjemahkan.
 
 8
-00:00:38, 001 --> 00:00:50,000
-Yang memberi kita lebar dan tinggi terbesar yang mungkin bisa kita gunakan, dan ditunjukkan di dalam persegi panjang besar di sana dengan huruf besar 'B'.
+00:01:23,001 --> 00:01:54,000
+Lalu saya salin dan tampal judul dan deskripsinya.
 
 9
-00:00:50, 001 --> 00:01:07,000
-Langkah pertama yang perlu kita lakukan agar kita dapat melacak tombol langganan kita adalah kita perlu menyeret gambar dari sistem berkas langsung ke area ini di mana memiliki huruf besar 'B'.
+00:01:54,001 --> 00:01:58,000
+Kau bisa lihat aku punya banyak lagi untuk di-upload.
 
 10
-00:01:07, 001 --> 00:01:12,000
-Kita sekarang akan menyeret gambar kita dari sistem file di sini, dan ke mana kita melihat huruf B.
+00:01:58,001 --> 00:02:08,000
+Mari kita lihat hasil terjemahan yang sedang berlangsung di latar belakang.
 
 11
-00:01:12, 001 --> 00:01:20,000
-Kita sekarang akan menyeret gambar kita dari sistem file di sini, dan ke mana kita melihat huruf B.
+00:02:08,001 --> 00:02:34,000
+Kami melihat bahwa saya menggunakan 'GitBash' dan 'LibreTranslate'.
 
 12
-00:01:20, 001 --> 00:01:23,000
-Dan di sana kita memilikinya dan muncul di layar.
+00:02:34,001 --> 00:02:49,000
+'LibreTranslate' dapat diunduh dan diinstal tanpa biaya, langsung dari prompt saat menggunakan 'GitBash'.
 
 13
-00:01:23, 001 --> 00:01:24,000
-Masalah yang dapat kita lihat adalah tampaknya terlalu kecil.
+00:02:49,001 --> 00:03:25,000
+Persiapan yang tepat ini tersedia dalam repositori HTML Drafting di 'GitHub'.
 
 14
-00:01:24, 001 --> 00:01:26,000
-Apa yang harus kita lakukan?
+00:03:25,001 --> 00:03:37,000
+Untuk memulai terjemahan kita harus menggunakan naskah bernama 'srt.sh'.
 
 15
-00:01:26, 001 --> 00:01:37,000
-Kita harus memindahkan kursor tikus kita di atas wilayah itu dengan huruf besar 'B' dan kita kemudian dapat menggulung dengan mousewheel. Sekarang kita melihat sesuatu yang menarik sedang terjadi.
+00:03:37,001 --> 00:04:08,000
+Kita harus memiliki 'LibreTranslate' yang disajikan secara lokal agar skrip ini berfungsi.
 
 16
-00:01:37, 001 --> 00:01:45,000
-Kami mampu menyesuaikan skala pemandu layar.
+00:04:08,001 --> 00:04:24,000
+Komponen penting lain dari sistem ini, yang tidak ditunjukkan di sini disebut 'JQuery'. Ini harus dipasang terlebih dahulu.
 
 17
-00:01:45, 001 --> 00:01:54,000
-Bila kita menggulung ke bawah ke 4, 3, 2, dan 1, kita melihat bahwa ada faktor penting yang diterapkan.
+00:04:24,001 --> 00:04:43,000
+Dengan semua perangkat lunak yang sama di tempat, adalah mungkin bahwa Anda mungkin menduplikasi setup ini persis.
 
 18
-00:01:54, 001 --> 00:01:58,000
-Aku membangunnya untuk program untuk tujuan seni pixel.
+00:04:43,001 --> 00:04:57,000
+Sekarang saya akan menunjukkan perangkat lunak kecil lain yang membuatnya mudah untuk melakukan transkripsi manual video.
 
 19
-00:01:58, 001 --> 00:02:03,000
-Jadi ketika Anda membawa tombol kembali ke dalam program mereka akan diskalakan dalam ukuran.
+00:04:57,001 --> 00:05:21,000
+Google menulis program ini tapi, aku mengatakan apa yang harus dilakukan...
 
 20
-00:02:03, 001 --> 00:02:07,000
-Mereka tidak akan ukuran yang Anda lihat sementara Anda menggambar mereka.
+00:05:21,001 --> 00:05:35,000
+Kunci 'enter' memberikan kotak kapsi berikutnya, dan 'shift + ,' atau 'shift + .' mengubah waktu akhir.
 
 21
-00:02:07, 001 --> 00:02:16,000
-Jadi, Anda dapat menggambar mereka pada ukuran piksel kecil dan kemudian Anda dapat membawa mereka ke dalam program dan mereka akan tiba-tiba menjadi lebih besar.
+00:05:35,001 --> 00:05:56,000
+Aku bisa berputar bolak-balik dari video menggunakan 'alt + tab', mematikan video menggunakan 'bar ruang'.
 
 22
-00:02:16, 001 --> 00:02:22,000
-Karena alasan itu, Anda mendapatkan ekonomi yang benar-benar baik pada ukuran gambar dan tombol Anda.
+00:05:56,001 --> 00:06:35,000
+Ini memberikan aliran kerja yang sangat ketat untuk pekerjaan transkripsi manual.
 
 23
-00:02:22, 001 --> 00:02:31,000
-Jadi, tombol Anda tidak terlalu mahal dalam hal berapa biaya untuk tranfering melalui internet.
+00:06:35,001 --> 00:07:26,000
+Program kecil ini sebenarnya sangat penting. Ia merakit file JSON yang digunakan untuk terjemahan.
 
 24
-00:02:31, 001 --> 00:02:41,000
-Jadi ini dia. Yang satu ini di sini memiliki 180 unit tinggi dan 100 unit lebar, tapi itu tidak berguna bagi kita saat ini.
+00:07:26,001 --> 00:07:44,000
+Jadi kemudian kita memiliki paket penuh, siap untuk diserahkan kepada perangkat lunak terjemahan kami.
 
 25
-00:02:41, 001 --> 00:02:45,000
-Sekarang saya akan menggambarkan salah satu hal pertama yang mungkin Anda lihat di sini: Ini tombol simpan.
+00:07:44,001 --> 00:08:05,000
+Memiliki kapsi untuk begitu banyak bahasa adalah hal yang baik untuk tujuan penemuan.
 
 26
-00:02:45, 001 --> 00:02:54,000
-Jika kita menekan tombol simpan ini, apa yang akan terjadi adalah kita akan menyimpan kunci bentuk.
+00:08:05,001 --> 00:08:15,000
+Sekarang saya akan menunjukkan di mana file JSON harus ditempatkan sebelum kita akan dapat menggunakan skrip khusus.
 
 27
-00:02:54, 001 --> 00:03:08,000
-Dan jika kita klik satu lagi di sini, lembar bintang ditandai, satu templat yang diwakili oleh gambar ini akan disimpan.
+00:08:15,001 --> 00:08:23,000
+Nama folder '1 caption inputs'.
 
 28
-00:03:08, 001 --> 00:03:12,000
-Jangan terlalu khawatir tentang itu.
+00:08:23,001 --> 00:09:01,000
+Sekarang aku akan menunjukkan betapa mudahnya dipindahkan. Berkasnya bisa dipindahkan ke tempatnya.
 
 29
-00:03:12, 001 --> 00:03:15,000
-Sekarang mari kita pergi ke sesuatu yang telah saya persiapkan sebelumnya.
+00:09:01,001 --> 00:10:34,000
+Dengan 'LibreTranslate' berjalan di mesin lokal Anda Anda harus membuka lain 'GitBash' dan kemudian menjalankan perintah yang tepat ditampilkan di layar: . . ./srt.sh
 
 30
-00:03:15, 001 --> 00:03:20,000
-Jika kita melarikan diri, menyadari bahwa semua hal ini akan hilang.
+00:10:34,001 --> 00:06:56,000
+Anda dapat melihat bahwa saya memiliki lebih banyak upload yang harus dilakukan. Ini adalah banyak pekerjaan!
 
 31
-00:03:20, 001 --> 00:03:24,000
-Oke, jadi sekarang semuanya hilang.
+00:10:56,001 --> 00:11:08,000
+Kuharap kau yang terbaik dalam mencoba hal ini sendiri.
 
 32
-00:03:24, 001 --> 00:03:33,000
-Jadi, sekarang mari kita lihat apa aku bisa mengembalikannya lagi.
-
-33
-00:03:33, 001 --> 00:03:39,000
-Sekarang aku akan mengukurnya dengan ukuran yang mudah terlihat.
-
-34
-00:03:39, 001 --> 00:03:48,000
-Aku akan menyingkirkan potongan kecil sintaks di sana, dan kemudian saya akan menunjukkan kunci bentuk yang telah saya buat sebelumnya.
-
-35
-00:03:48, 001 --> 00:03:55,000
-Mari kita buka di MS Paint dan lihat seperti apa sebenarnya.
-
-36
-00:03:55, 001 --> 00:04:04,000
-Jadi, ini adalah kunci bentuk yang memiliki beberapa definisi yang diberikan dengan sintaks 'h' dan 'w'.
-
-37
-00:04:04, 001 --> 00:04:15,000
-Bagian pentingnya adalah bukan kunci bentuk ini adalah gambar grafis yang berguna sekarang. Tidak.
-
-38
-00:04:15, 001 --> 00:04:26,000
-Tujuan keseluruhan kunci bentuk adalah memiliki gambar yang bagus dalam sistem berkas Anda, memungkinkan Anda untuk secara visual mengidentifikasi kunci bentuk.
-
-39
-00:04:26, 001 --> 00:04:28,000
-Itulah alasan mengapa ada di sana.
-
-40
-00:04:28, 001 --> 00:04:31,000
-Sekarang aku akan menunjukkan bagaimana menggunakannya.
-
-41
-00:04:31, 001 --> 00:04:36,000
-Setelah Anda telah menghasilkan kunci bentuk dengan menyimpan satu menggunakan sintaks. (Kunci bentuk tidak wajib.)
-
-42
-00:04:36, 001 --> 00:04:41,000
-Kau bisa mengabaikan mereka.
-
-43
-00:04:41, 001 --> 00:04:52,000
-Kunci bentuk memiliki sintaks khusus tampak jelas dalam nama berkas.
-
-44
-00:04:52, 001 --> 00:05:17,000
-Sekarang saya akan menggambarkan sintaks. Ia menggunakan sintaks 'h' dan 'w'.
-
-45
-00:05:17, 001 --> 00:05:27,000
-Ini menggambarkan deretan persegi panjang yang memiliki tinggi yang sama.
-
-46
-00:05:27, 001 --> 00:05:51,000
-Hanya pastikan untuk tidak menghapus sintaks ini dari akhir nama berkas Anda jika Anda ingin mengubah nama file.
-
-47
-00:05:51, 001 --> 00:06:02,000
-Hal yang bagus tentang hal ini adalah bahwa Anda hanya dapat menyeret hal ini langsung ke salah satu huruf, dan akan dipasang di lokasi itu.
-
-48
-00:06:02, 001 --> 00:06:06,000
-Aku memilih huruf 'n'.
-
-49
-00:06:06, 001 --> 00:06:10,000
-Huruf 'n' sekarang berisi informasi untuk kunci bentuk itu.
-
-50
-00:06:10, 001 --> 00:06:23,000
-Kemudian kita menggunakan roda gulungan sedikit dan kita melihat bahwa semua kunci bentuk yang didefinisikan ini telah ditarik untuk kita.
-
-51
-00:06:23, 001 --> 00:06:32,000
-Saya telah membuat satu ini di muka, dan jadi saya kemudian dapat dengan mudah menunjukkan bahwa garis ini sempurna dengan gambar.
-
-52
-00:06:32, 001 --> 00:06:45,000
-Tapi, hanya sebentar saja aku akan pergi melalui proses untuk menunjukkan pelacakan.
-
-53
-00:06:45, 001 --> 00:07:01,000
-Kami akan secara manual memasukkan sintaks. Saya akan menggunakan periode dan tanda hubung pada pad nomor, tetapi, Anda juga dapat menggunakan huruf 'h' dan 'w'.
-
-54
-00:07:01, 001 --> 00:07:04,000
-Sebagai permulaan, kita akan memilih dua angka pertama: 'h10w10'.
-
-55
-00:07:04, 001 --> 00:07:08,000
-Ini hanya agar kita punya sesuatu untuk dilihat sebagai titik awal.
-
-56
-00:07:08, 001 --> 00:07:37,000
-Sekarang kita dapat menyesuaikan dan menambahkan 'w' untuk mendapatkan lebih lebar.
-
-57
-00:07:37, 001 --> 00:07:45,000
-Jadi, kita memiliki definisi dan berhasil menelusuri empat huruf pertama.
-
-58
-00:07:45, 001 --> 00:07:51,000
-Aku sudah melacak ini sebelumnya, jadi mari kita lanjutkan.
-
-59
-00:07:51, 001 --> 00:07:55,000
-Jadi, ini selesai.
-
-60
-00:07:55, 001 --> 00:08:10,000
-Jika Anda telah berhasil dan menyelesaikan proses ini untuk gambar Anda sendiri, langkah berikutnya adalah untuk menyimpannya.
-
-61
-00:08:10, 001 --> 00:08:15,000
-Anda akan menggunakan tombol yang di sana yang mengatakan lembaran bintang.
-
-62
-00:08:15, 001 --> 00:08:18,000
-null
-
-63
-00:08:18, 001 --> 00:08:25,000
-Bila Anda klik, file khusus akan disimpan.
-
-64
-00:08:25, 001 --> 00:08:30,000
-Kau harus menyeret file itu kembali ke layar program.
-
-65
-00:08:30, 001 --> 00:08:35,000
-Aku akan menunjukkan ini segera, tapi pertama saya akan memberitahu tentang sintaks file yang baru saja disimpan.
-
-66
-00:08:35, 001 --> 00:09:11,000
-Kita dapat melihat bahwa kita memiliki sintaks yang sama yang disimpan dalam bentuk kunci. Nama finado (nama berkas awalan 'TEMPL')
-
-67
-00:09:11, 001 --> 00:09:13,000
-Jadi, mari kita lihat apa yang bisa kita lakukan.
-
-68
-00:09:13, 001 --> 00:09:19,000
-Kami menggunakan melarikan diri sehingga kita memiliki layar kosong yang bagus.
-
-69
-00:09:19, 001 --> 00:09:25,000
-Selanjutnya aku akan menyeret templat ini kembali ke dalam program.
-
-70
-00:09:25, 001 --> 00:09:37,000
-Ini mungkin tampak sulit, tapi tidak.
-
-71
-00:09:37, 001 --> 00:09:47,000
-Jika kita ingin tombol, kita harus memilih antara 6, 4, atau 2.
-
-72
-00:09:47, 001 --> 00:09:52,000
-Ini bukan jumlah tombol tetapi, sebaliknya, itu adalah jumlah dari keadaan tombol yang akan digunakan.
-
-73
-00:09:52, 001 --> 00:10:12,000
-Ketika kita melayang dengan mouse di atas tombol, ini adalah keadaan melayang.
-
-74
-00:10:12, 001 --> 00:10:15,000
-Bila kita klik ke bawah, ini adalah keadaan aktif.
-
-75
-00:10:15, 001 --> 00:10:17,000
-Dan ketika tombol diklik, itu kemudian mendapat keadaan fokus.
-
-76
-00:10:17, 001 --> 00:10:24,000
-Kita punya pilihan untuk melakukan semua 6, yang hanya memberikan 5 negara yang berguna.
-
-77
-00:10:24, 001 --> 00:10:31,000
-Kami lebih suka menggunakan baik 4, yang ideal untuk komputer desktop atau 2 yang cukup untuk telepon seluler.
-
-78
-00:10:31, 001 --> 00:10:35,000
-Sekarang saya akan memberikan deskripsi singkat dengan asumsi 4 keadaan tombol digunakan.
-
-79
-00:10:35, 001 --> 00:11:01,000
-basis
-
-80
-00:11:01, 001 --> 00:11:02,000
-fokus
-
-81
-00:11:02, 001 --> 00:11:03,000
-♪ hover ♪
-
-82
-00:11:03, 001 --> 00:11:05,000
-aktif
-
-83
-00:11:05, 001 --> 00:11:27,000
-Hal itu sangat penting untuk diketahui jika Anda tidak mengenal HTML.
-
-84
-00:11:27, 001 --> 00:11:32,000
-Mari kita lanjutkan proses kita.
-
-85
-00:11:32, 001 --> 00:11:41,000
-Aku akan memilih 4 tombol menyatakan dengan mengklik ini.
-
-86
-00:11:41, 001 --> 00:11:45,000
-Sekarang kita telah menyimpan file lagi.
-
-87
-00:11:45, 001 --> 00:11:55,000
-Mari kita lihat apakah kita bisa membuka file itu dalam program seni favorit kita.
-
-88
-00:11:55, 001 --> 00:12:00,000
-Dimana itu? Libre-Pixel.
-
-89
-00:12:00, 001 --> 00:12:04,000
-Kita akan melihat seperti apa file ini.
-
-90
-00:12:04, 001 --> 00:12:06,000
-Saya telah mempersiapkannya sebelumnya dengan mengubah warna.
-
-91
-00:12:06, 001 --> 00:12:18,000
-Di sini kita juga dapat melihat bahwa kemungkinan untuk memotong ukuran gambar di dalamnya adalah tinggi.
-
-92
-00:12:18, 001 --> 00:12:27,000
-Ini masih akan bekerja nanti.
-
-93
-00:12:27, 001 --> 00:12:37,000
-Kita dapat melihat penyimpanan file telah empat kali lipat itu, dan kita sekarang memiliki empat perwakilan.
-
-94
-00:12:37, 001 --> 00:12:53,000
-Sekarang saya akan membawa kembali gambar panduan kami untuk menunjukkan tombol mana yang mewakili setiap gambar.
-
-95
-00:12:53, 001 --> 00:12:59,000
-Cara ini kita tahu di negara bagian mana kita bekerja ketika kita mengubah warna atau menggambar gambar kita.
-
-96
-00:12:59, 001 --> 00:13:13,000
-Ini tidak akan menghasilkan hanya satu tombol tunggal, tetapi sebaliknya akan menjadi tepat tombol yang kita telah ditelusuri keluar menggunakan persegi panjang.
-
-97
-00:13:13, 001 --> 00:13:32,000
-Karya grafis ini sudah selesai di muka, dan saya akan melanjutkan proses kami.
-
-98
-00:13:32, 001 --> 00:13:49,000
-Jadi, sekarang kita memiliki gambar selesai, saya akan menunjukkan lagi sintaks, yang memiliki awalan 'READY'.
-
-99
-00:13:49, 001 --> 00:14:03,000
-Tombol ini selesai dan bisa segera diseret.
-
-100
-00:14:03, 001 --> 00:14:08,000
-Sekarang kita akan melihat apa yang terjadi ketika kita menyeret file tombol selesai ini ke dalam program.
-
-101
-00:14:08, 001 --> 00:14:13,000
-Sepertinya ada sesuatu yang terjadi di sini di sudut kiri atas layar kita, dan kemudian keluar tombol selesai Anda.
-
-102
-00:14:13, 001 --> 00:14:25,000
-Ada mereka, dan mari kita coba jika kita bisa menguji mereka dengan menggunakan spacebar, dan menahannya.
-
-103
-00:14:25, 001 --> 00:14:38,000
-Sekarang kita dapat melihat bahwa tombol kita berfungsi dengan baik, dan terlihat persis seperti grafik yang kita gambar.
-
-104
-00:14:38, 001 --> 00:14:45,000
-Berkas yang kita hasilkan ini dapat digunakan dan digunakan kembali kapan saja.
-
-105
-00:14:45, 001 --> 00:14:51,000
-Kami memiliki sistem yang sangat bagus, gigih, sementara di tempat.
-
-106
-00:14:51, 001 --> 00:14:53,000
-Sistem ini terdiri atas: Kunci bentuk (nama berkas awalan 'SHAPE');
-
-107
-00:14:53, 001 --> 00:14:59,000
-Sebuah templat pertama, yang mendapat gambar tunggal (nama berkas awalan 'TEMPL');
-
-108
-00:14:59, 001 --> 00:15:08,000
-dan set tombol selesai (nama berkas awalan 'READY').
-
-109
-00:15:08, 001 --> 00:15:15,000
-Kita bahkan bisa menyalin tombol selesai ini di file system kita dan membuat semacam citra alternatif, dan masih akan bekerja.
-
-110
-00:15:15, 001 --> 00:15:26,000
-Saya tidak yakin apakah ini bekerja. Ayo kita coba.
-
-111
-00:15:26, 001 --> 00:15:43,000
-Jadi, Anda dapat mengambil yang satu di sana, dan mengubahnya keluar, membuatnya berbeda warna atau bergerak hal-hal kecil sekitar.
-
-112
-00:15:43, 001 --> 00:15:54,000
-Anda memiliki tombol yang baik membuat kapasitas tersedia di sini, dan Anda dapat membuat sebanyak yang Anda inginkan.
-
-113
-00:15:54, 001 --> 00:15:59,000
-Di sini Anda dapat melihat bahwa kita bahkan belum hampir memenuhi daerah ini dengan tombol, tapi, tentu saja jika Anda kehabisan ruang, Anda hanya akan membuat satu sama lain.
-
-114
-00:15:59, 001 --> 00:16:19,000
-Satu hal yang akan saya tunjukkan adalah bahwa mungkin sulit untuk menemukan sintaks yang cocok ketika tombol Anda sangat dekat bersama dalam gambar Anda.
-
-115
-00:16:19, 001 --> 00:16:54,000
-Jadi, untuk memudahkan pelacakan, tinggalkan lebih banyak ruang di antara gambar.
-
-116
-00:16:54, 001 --> 00:17:24,000
-Sekarang saya akan menggunakan kunci 'z' yang akan memastikan bahwa saya tidak mengubah ukuran tombol.
-
-117
-00:17:24, 001 --> 00:17:33,000
-Aku akan membuat yang satu lebih tinggi bahwa yang lain dengan memilih dari menu itu. Saya menggunakan pintasan papan tombol (z-mode: 'h').
-
-118
-00:17:33, 001 --> 00:17:39,000
-Jadi, saya menempatkan ini ke bagian atas urutan indeks z dengan menggunakan 'h'.
-
-119
-00:17:39, 001 --> 00:18:01,000
-Karena saya telah mengatur tokokan tetikus untuk mencocokkan dengan piksel peningkatan gambar skala atas saya, mudah untuk menyelaraskan semuanya.
-
-120
-00:18:01, 001 --> 00:18:06,00
-Ada semua pengaturan yang berbeda tersedia dalam program, tapi, aku tidak akan menutupi mereka di sini.
-
-121
-00:18:06, 001 --> 00:18:14,00
-Mungkin sedikit lebih seperti ini.
-
-122
-00:18:14, 001 --> 00:18:19,000
-Itu cukup dekat.
-
-123
-00:18:19, 001 --> 00:18:36,000
-Sekarang saya akan menggunakan roda gulungan tetikus untuk memilih jenis simpan dari tab IV-2.
-
-124
-00:18:36, 001 --> 00:18:47,000
-Saya menabung pada faktor pandang lebar 1280.
-
-125
-00:18:47, 001 --> 00:18:55,000
-Ini akan diubah secara otomatis.
-
-126
-00:18:55, 001 --> 00:19:43,000
-Untuk menyimpan file dari papan ketik: Gunakan 'shift + s'. Sebaliknya, untuk hanya membuka file untuk melihat: Gunakan 'shift + enter'.
-
-127
-00:19:43, 001 --> 00:19:48,000
-Itu cukup bagus.
-
-128
-00:19:48, 001 --> 00:19:56,000
-Bagus sekali.
-
-129
-00:19:56, 001 --> 00:20:20,000
-Tutorial atas.
+00:11:08,001 --> 00:11:12,000
+Bagus sekali! Tutorial Atas...
 

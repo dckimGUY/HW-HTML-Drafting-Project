@@ -1,0 +1,166 @@
+{
+  "title": "Translating the captions for this tutorial",
+  "description": "This tutorial gives a method for manually transcribing a video for the purpose of lining up caption translation pipeline using LibreTranslate(argos translate). Uploading the translated '.srt' files to 'YouTube' is also covered. This is a tutorial about the making of my other tutorials. The software used is available at the GitHub repository for the HTML Drafting Project. Now I know that I have come full circle. I have now made a tutorial about making tutorials. ",
+  "captions": [
+    {
+      "lineOne": 1,
+      "lineTwo": "00:00:00,001 --> 00:00:14,000",
+      "lineThree": "We begin by showing how the tutorial captions will be uploaded to YouTube."
+    },
+    {
+      "lineOne": 2,
+      "lineTwo": "00:00:14,001 --> 00:00:24,000",
+      "lineThree": "The text of the captions, title, and description, will all be translated preceding upload."
+    },
+    {
+      "lineOne": 3,
+      "lineTwo": "00:00:24,001 --> 00:00:34,000",
+      "lineThree": "On the left I have a language name reference."
+    },
+    {
+      "lineOne": 4,
+      "lineTwo": "00:00:34,001 --> 00:00:37,000",
+      "lineThree": "YouTube Studio is shown."
+    },
+    {
+      "lineOne": 5,
+      "lineTwo": "00:00:37,001 --> 00:00:42,000",
+      "lineThree": "I will complete one example upload of a caption, title, and description."
+    },
+    {
+      "lineOne": 6,
+      "lineTwo": "00:00:42,001 --> 00:00:53,000",
+      "lineThree": "Begin by adding a language to the list."
+    },
+    {
+      "lineOne": 7,
+      "lineTwo": "00:00:53,001 --> 00:01:23,000",
+      "lineThree": "Next I will upload the caption file which has already been translated."
+    },
+    {
+      "lineOne": 8,
+      "lineTwo": "00:01:23,001 --> 00:01:54,000",
+      "lineThree": "I then copy and paste the title and description."
+    },
+    {
+      "lineOne": 9,
+      "lineTwo": "00:01:54,001 --> 00:01:58,000",
+      "lineThree": "You can see that I have many more to upload."
+    },
+    {
+      "lineOne": 10,
+      "lineTwo": "00:01:58,001 --> 00:02:08,000",
+      "lineThree": "Let's look at what translation work is ongoing in the background."
+    },
+    {
+      "lineOne": 11,
+      "lineTwo": "00:02:08,001 --> 00:02:34,000",
+      "lineThree": "We see that I am using 'GitBash' and 'LibreTranslate'."
+    },
+    {
+      "lineOne": 12,
+      "lineTwo": "00:02:34,001 --> 00:02:49,000",
+      "lineThree": "'LibreTranslate' can be downloaded and installed without cost, directly from the prompt while using 'GitBash'."
+    },
+    {
+      "lineOne": 13,
+      "lineTwo": "00:02:49,001 --> 00:03:25,000",
+      "lineThree": "This exact setup is available in the HTML Drafting repository at 'GitHub'."
+    },
+    {
+      "lineOne": 14,
+      "lineTwo": "00:03:25,001 --> 00:03:37,000",
+      "lineThree": "To begin the translation we must use the script named 'srt.sh'."
+    },
+    {
+      "lineOne": 15,
+      "lineTwo": "00:03:37,001 --> 00:04:08,000",
+      "lineThree": "We must have 'LibreTranslate' served locally for this script to function."
+    },
+    {
+      "lineOne": 16,
+      "lineTwo": "00:04:08,001 --> 00:04:24,000",
+      "lineThree": "Another important component of this system, which is not shown here is called 'JQuery'. This must be installed first."
+    },
+    {
+      "lineOne": 17,
+      "lineTwo": "00:04:24,001 --> 00:04:43,000",
+      "lineThree": "With all of the same software in place, it is possible that you might duplicate this exact setup."
+    },
+    {
+      "lineOne": 18,
+      "lineTwo": "00:04:43,001 --> 00:04:57,000",
+      "lineThree": "Now I will show another little piece of software which makes it easy to perform a manual transcription of the video."
+    },
+    {
+      "lineOne": 19,
+      "lineTwo": "00:04:57,001 --> 00:05:21,000",
+      "lineThree": "Google wrote this program but, I told it what to do..."
+    },
+    {
+      "lineOne": 20,
+      "lineTwo": "00:05:21,001 --> 00:05:35,000",
+      "lineThree": "The 'enter' key gives the next caption box, and 'shift + ,' or 'shift + .' change the ending time."
+    },
+    {
+      "lineOne": 21,
+      "lineTwo": "00:05:35,001 --> 00:05:56,000",
+      "lineThree": "I can cycle back and forth from the video using 'alt + tab', pausing the video using the 'spacebar'."
+    },
+    {
+      "lineOne": 22,
+      "lineTwo": "00:05:56,001 --> 00:06:35,000",
+      "lineThree": "This gives a very tight workflow for manual transcription work."
+    },
+    {
+      "lineOne": 23,
+      "lineTwo": "00:06:35,001 --> 00:07:26,000",
+      "lineThree": "This little program is actually very important. It assembles a JSON file which is used for the translations."
+    },
+    {
+      "lineOne": 24,
+      "lineTwo": "00:07:26,001 --> 00:07:44,000",
+      "lineThree": "So then we have the full package, ready to be handed over to our translation software."
+    },
+    {
+      "lineOne": 25,
+      "lineTwo": "00:07:44,001 --> 00:08:05,000",
+      "lineThree": "Having captions for so many languages is a good thing for the purpose of discoverability."
+    },
+    {
+      "lineOne": 26,
+      "lineTwo": "00:08:05,001 --> 00:08:15,000",
+      "lineThree": "Now I will show you where the JSON file must be placed before we will be able to use the special script."
+    },
+    {
+      "lineOne": 27,
+      "lineTwo": "00:08:15,001 --> 00:08:23,000",
+      "lineThree": "The folder name is '1_caption_inputs'."
+    },
+    {
+      "lineOne": 28,
+      "lineTwo": "00:08:23,001 --> 00:09:01,000",
+      "lineThree": "I will now show how easily it can be transferred. The file can be dragged into place."
+    },
+    {
+      "lineOne": 29,
+      "lineTwo": "00:09:01,001 --> 00:10:34,000",
+      "lineThree": "With 'LibreTranslate' running on your local machine you must open another 'GitBash' and then run the exact command shown on the screen:  . ./srt.sh"
+    },
+    {
+      "lineOne": 30,
+      "lineTwo": "00:10:34,001 --> 00:06:56,000",
+      "lineThree": "You can see that I have many more uploads to do. This is a lot of work!"
+    },
+    {
+      "lineOne": 31,
+      "lineTwo": "00:10:56,001 --> 00:11:08,000",
+      "lineThree": "I wish you the best in attempting this same process yourself."
+    },
+    {
+      "lineOne": 32,
+      "lineTwo": "00:11:08,001 --> 00:11:12,000",
+      "lineThree": "Well done! Tutorial Over..."
+    }
+  ]
+}

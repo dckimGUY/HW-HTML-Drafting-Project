@@ -1,516 +1,128 @@
 1
-00:00:00, 001 --> 00:00:09,000
-Idag ska vi prata om att göra egna anpassade knappar för detta program.
+00:00:00,001 --> 00:00:14,000
+Vi börjar med att visa hur handledningen kommer att laddas upp till YouTube.
 
 2
-00:00:09, 001 --> 00:00:16,000
-Detta är den första handledning som jag gör och förhoppningsvis kommer du att förstå det enkelt och njuta av det.
+00:00:14,001 --> 00:00:24,000
+Texten till bildtexter, titel och beskrivning kommer alla att översättas före uppladdning.
 
 3
-00:00:16, 001 --> 00:00:19,000
-Låt oss se här: "Information för knapphantverk".
+00:00:24,001 --> 00:00:34,000
+Till vänster har jag en språknamnsreferens.
 
 4
-00:00:21, 001 --> 00:00:24,000
-Så det är ganska mycket vad vi tittar på med denna handledning.
+00:00:34,001 --> 00:00:37,000
+YouTube Studio visas.
 
 5
-00:00:24, 001 --> 00:00:26,000
-Så låt oss komma rätt in i det.
+00:00:37,001 --> 00:00:42,000
+Jag kommer att slutföra ett exempel uppladdning av en bildtext, titel och beskrivning.
 
 6
-00:00:26, 001 --> 00:00:32,000
-Vi är här i programmet, och vi kan se direkt att jag har lagt något i den här rutan här.
+00:00:42,001 --> 00:00:53,000
+Börja med att lägga till ett språk i listan.
 
 7
-00:00:32, 001 --> 00:00:38,000
-Det ger oss en höjd och bredd beteckning, bara en mycket enkel.
+00:00:53,001 --> 00:01:23,000
+Därefter laddar jag upp bildtextfilen som redan har översatts.
 
 8
-00:00:38, 001 --> 00:00:50,000
-Det ger oss den största bredden och höjden som vi kan använda, och den visas inuti den stora rektangeln där med det stora brevet B.
+00:01:23,001 --> 00:01:54,000
+Sedan kopierar jag och klistrar in titeln och beskrivningen.
 
 9
-00:00:50, 001 --> 00:01:07,000
-Det första steget som vi behöver göra så att vi kan spåra vår egen knapp är att vi behöver dra en bild från filsystemet direkt på detta område där det har det stora bokstaven B.
+00:01:54,001 --> 00:01:58,000
+Du kan se att jag har många fler att ladda upp.
 
 10
-00:01:07, 001 --> 00:01:12,000
-Vi kommer nu att dra över vår bild från filsystemet här, och där vi ser brevet "B".
+00:01:58,001 --> 00:02:08,000
+Låt oss titta på vad översättningsarbete pågår i bakgrunden.
 
 11
-00:01:12, 001 --> 00:01:20,000
-Vi kommer nu att dra över vår bild från filsystemet här, och där vi ser brevet "B".
+00:02:08,001 --> 00:02:34,000
+Vi ser att jag använder "GitBash" och "LibreTranslate".
 
 12
-00:01:20, 001 --> 00:01:23,000
-Och där har vi det och det dyker upp där på skärmen.
+00:02:34,001 --> 00:02:49,000
+"LibreTranslate" kan laddas ner och installeras utan kostnad, direkt från snabben när du använder "GitBash".
 
 13
-00:01:23, 001 --> 00:01:24,000
-Problemet vi kan se är att det verkar för litet.
+00:02:49,001 --> 00:03:25,000
+Denna exakta inställning finns i HTML Drafting repository på "GitHub".
 
 14
-00:01:24, 001 --> 00:01:26,000
-Vad ska vi göra?
+00:03:25,001 --> 00:03:37,000
+För att börja översättningen måste vi använda skriptet "srt.sh".
 
 15
-00:01:26, 001 --> 00:01:37,000
-Vi måste flytta vår muspekare över toppen av den regionen med det stora brevet "B" och vi kan sedan bläddra med mousewheel. Nu ser vi att något intressant händer.
+00:03:37,001 --> 00:04:08,000
+Vi måste ha "LibreTranslate" serveras lokalt för att detta manus ska fungera.
 
 16
-00:01:37, 001 --> 00:01:45,000
-Vi kan justera omfattningen av på skärmen guide.
+00:04:08,001 --> 00:04:24,000
+En annan viktig del av detta system, som inte visas här kallas "JQuery". Detta måste installeras först.
 
 17
-00:01:45, 001 --> 00:01:54,000
-När vi rullar ner till 4, 3, 2 och 1, ser vi att det finns en speciell uppskalningsfaktor som tillämpas.
+00:04:24,001 --> 00:04:43,000
+Med samma programvara på plats är det möjligt att du kan kopiera denna exakta inställning.
 
 18
-00:01:54, 001 --> 00:01:58,000
-Jag byggde det i programmet för pixelkonst.
+00:04:43,001 --> 00:04:57,000
+Nu ska jag visa en annan liten mjukvara som gör det enkelt att utföra en manuell transkription av videon.
 
 19
-00:01:58, 001 --> 00:02:03,000
-Så när du tar knapparna tillbaka till programmet kommer de att skalas upp i storlek.
+00:04:57,001 --> 00:05:21,000
+Google skrev detta program men jag berättade vad jag ska göra.
 
 20
-00:02:03, 001 --> 00:02:07,000
-De kommer inte att vara den storlek som du ser när du ritar dem.
+00:05:21,001 --> 00:05:35,000
+Nyckeln "inträde" ger nästa bildtextlåda och "skift +" eller "skift + ." ändra sluttiden.
 
 21
-00:02:07, 001 --> 00:02:16,000
-Så du kan dra dem på den lilla pixelstorleken och sedan kan du ta dem in i programmet och de blir plötsligt större.
+00:05:35,001 --> 00:05:56,000
+Jag kan cykla fram och tillbaka från videon med 'alt + flik', pausa videon med 'spacebar'.
 
 22
-00:02:16, 001 --> 00:02:22,000
-På grund av detta får du en riktigt bra ekonomi på storleken på din bild och dina knappar.
+00:05:56,001 --> 00:06:35,000
+Detta ger ett mycket tätt arbetsflöde för manuellt transkriptionsarbete.
 
 23
-00:02:22, 001 --> 00:02:31,000
-Så din knapp är inte för dyr när det gäller hur mycket det kostar för att spåra den via internet.
+00:06:35,001 --> 00:07:26,000
+Detta lilla program är faktiskt mycket viktigt. Den monterar en JSON-fil som används för översättningar.
 
 24
-00:02:31, 001 --> 00:02:41,000
-Där har vi det. Den här har 180 enheter höjd och 100 enheter bredd, men det är inte särskilt användbart för oss just nu.
+00:07:26,001 --> 00:07:44,000
+Så då har vi hela paketet, redo att överlämnas till vår översättningsprogramvara.
 
 25
-00:02:41, 001 --> 00:02:45,000
-Nu ska jag beskriva en av de första sakerna du kan se här: Det är denna spara knapp.
+00:07:44,001 --> 00:08:05,000
+Att ha kapacitet för så många språk är bra för att upptäcka.
 
 26
-00:02:45, 001 --> 00:02:54,000
-Om vi skulle klicka på denna spara knapp, vad som kommer att hända är att vi kommer att spara en formnyckel.
+00:08:05,001 --> 00:08:15,000
+Nu ska jag visa var JSON-filen måste placeras innan vi kan använda det speciella skriptet.
 
 27
-00:02:54, 001 --> 00:03:08,000
-Och om vi skulle klicka på den här andra här, markerade stjärnark, skulle en enda mall som representeras av denna ritning sparas.
+00:08:15,001 --> 00:08:23,000
+Mapparnamnet är "1 caption inputs".
 
 28
-00:03:08, 001 --> 00:03:12,000
-Oroa dig inte för mycket om det.
+00:08:23,001 --> 00:09:01,000
+Nu visar jag hur lätt det kan överföras. Filen kan dras på plats.
 
 29
-00:03:12, 001 --> 00:03:15,000
-Låt oss nu gå över till något som jag har förberett tidigare.
+00:09:01,001 --> 00:10:34,000
+Med "LibreTranslate" som körs på din lokala maskin måste du öppna en annan "GitBash" och sedan köra det exakta kommandot som visas på skärmen:
 
 30
-00:03:15, 001 --> 00:03:20,000
-Om vi trycker på flykt, notera att alla dessa saker kommer att blekna bort.
+00:10:34,001 --> 00:06:56,000
+Du kan se att jag har många fler uppladdningar att göra. Detta är mycket arbete!
 
 31
-00:03:20, 001 --> 00:03:24,000
-Okej, så nu är allt borta.
+00:10:56,001 --> 00:11:08,000
+Jag önskar dig det bästa i att försöka samma process själv.
 
 32
-00:03:24, 001 --> 00:03:33,000
-Låt oss nu se om jag kan sätta tillbaka det igen.
-
-33
-00:03:33, 001 --> 00:03:39,000
-Jag ska nu skala den till en storlek som lätt kan ses.
-
-34
-00:03:39, 001 --> 00:03:48,000
-Jag kommer att bli av med den lilla syntaxen där, och sedan ska jag visa dig en formnyckel som jag har gjort tidigare.
-
-35
-00:03:48, 001 --> 00:03:55,000
-Låt oss öppna det i MS Paint och se hur det verkligen ser ut.
-
-36
-00:03:55, 001 --> 00:04:04,000
-Så detta är en formnyckel som hade någon definition med "h" och "w" syntax.
-
-37
-00:04:04, 001 --> 00:04:15,000
-Det viktiga är inte att denna form nyckel är användbar grafisk bild just nu. Det är inte.
-
-38
-00:04:15, 001 --> 00:04:26,000
-Hela syftet med formnyckeln är att ha en fin bild i filsystemet, så att du visuellt kan identifiera formnyckeln.
-
-39
-00:04:26, 001 --> 00:04:28,000
-Det är hela anledningen till att det finns där.
-
-40
-00:04:28, 001 --> 00:04:31,000
-Nu ska jag visa hur man använder den.
-
-41
-00:04:31, 001 --> 00:04:36,000
-När du har producerat en form nyckel genom att spara en med syntaxen. (De formnycklar är inte obligatoriska.)
-
-42
-00:04:36, 001 --> 00:04:41,000
-Du kan ignorera dem.
-
-43
-00:04:41, 001 --> 00:04:52,000
-Formnyckeln har en speciell syntax tydligt synlig i filnamnet.
-
-44
-00:04:52, 001 --> 00:05:17,000
-Nu ska jag beskriva syntaxen. Den använder "h" och "w" syntax.
-
-45
-00:05:17, 001 --> 00:05:27,000
-Detta beskriver rader av rektanglar som delar samma höjd.
-
-46
-00:05:27, 001 --> 00:05:51,000
-Var noga med att inte ta bort denna syntax från slutet av filnamnet om du vill byta namn på filen.
-
-47
-00:05:51, 001 --> 00:06:02,000
-Det fina med detta är att du helt enkelt kan dra det här direkt på en av bokstäverna, och det kommer att installeras på den platsen.
-
-48
-00:06:02, 001 --> 00:06:06,000
-Jag väljer bokstaven 'n'.
-
-49
-00:06:06, 001 --> 00:06:10,000
-Brevet "n" innehåller nu informationen för den formnyckeln.
-
-50
-00:06:10, 001 --> 00:06:23,000
-Sedan använder vi rullhjulet lite och vi ser att all denna definierade formnyckel har dragits in för oss.
-
-51
-00:06:23, 001 --> 00:06:32,000
-Jag har gjort den här i förväg, så jag kan då enkelt visa dig att det här linjer upp perfekt med ritningen.
-
-52
-00:06:32, 001 --> 00:06:45,000
-Men bara kort kommer jag att gå igenom processen för att visa spårning.
-
-53
-00:06:45, 001 --> 00:07:01,000
-Vi kommer manuellt in i syntaxen. Jag kommer att använda period och hyfen på nummerplattan, men du kan också använda bokstäverna "h" och "w".
-
-54
-00:07:01, 001 --> 00:07:04,000
-Till att börja med kommer vi att välja de två första siffrorna: "h10w10".
-
-55
-00:07:04, 001 --> 00:07:08,000
-Detta är bara så att vi har något att se på som utgångspunkt.
-
-56
-00:07:08, 001 --> 00:07:37,000
-Nu kan vi justera och lägga till "w" för att få fler bredder.
-
-57
-00:07:37, 001 --> 00:07:45,000
-Så vi har definitionerna och har framgångsrikt spårat de fyra första bokstäverna.
-
-58
-00:07:45, 001 --> 00:07:51,000
-Jag har redan spårat detta i förväg, så låt oss bara gå vidare.
-
-59
-00:07:51, 001 --> 00:07:55,000
-Här är den färdig.
-
-60
-00:07:55, 001 --> 00:08:10,000
-Om du har lyckats och slutfört den här processen för din egen bild är nästa steg att spara den.
-
-61
-00:08:10, 001 --> 00:08:15,000
-Du kommer att använda den knappen där som säger stjärnark.
-
-62
-00:08:15, 001 --> 00:08:18,000
-null
-
-63
-00:08:18, 001 --> 00:08:25,000
-När du klickar på den sparas en speciell fil.
-
-64
-00:08:25, 001 --> 00:08:30,000
-Du måste sedan dra den filen tillbaka till programskärmen.
-
-65
-00:08:30, 001 --> 00:08:35,000
-Jag kommer att visa dig detta snart, men först kommer jag att berätta om syntaxen på filen som just nu har sparats.
-
-66
-00:08:35, 001 --> 00:09:11,000
-Vi kan se att vi har samma syntax som lagrades i formnyckeln. (filnamn prefix TEMPL)
-
-67
-00:09:11, 001 --> 00:09:13,000
-Låt oss se vad vi kan göra.
-
-68
-00:09:13, 001 --> 00:09:19,000
-Vi använder flykt så att vi har en fin tom skärm.
-
-69
-00:09:19, 001 --> 00:09:25,000
-Jag kommer nästa dra denna mall tillbaka till programmet.
-
-70
-00:09:25, 001 --> 00:09:37,000
-Detta kan verka knepigt, men det är inte.
-
-71
-00:09:37, 001 --> 00:09:47,000
-Om vi vill ha knappar måste vi nu välja mellan 6, 4 eller 2.
-
-72
-00:09:47, 001 --> 00:09:52,000
-Detta är inte antalet knappar, utan snarare är det antalet knapptillstånd som kommer att användas.
-
-73
-00:09:52, 001 --> 00:10:12,000
-När vi svävar med musen över knappen, är detta svävarstatus.
-
-74
-00:10:12, 001 --> 00:10:15,000
-När vi klickar ner är detta det aktiva tillståndet.
-
-75
-00:10:15, 001 --> 00:10:17,000
-Och när knappen klickade får den då det fokuserade tillståndet.
-
-76
-00:10:17, 001 --> 00:10:24,000
-Vi har valet att göra alla 6, vilket ger endast 5 användbara stater.
-
-77
-00:10:24, 001 --> 00:10:31,000
-Vi föredrar att använda antingen 4, vilket är idealiskt för stationära datorer eller 2 som är tillräckligt för mobiltelefoner.
-
-78
-00:10:31, 001 --> 00:10:35,000
-Jag kommer nu att ge en kort beskrivning förutsatt att 4 knapptillstånd används.
-
-79
-00:10:35, 001 --> 00:11:01,000
-bas
-
-80
-00:11:01, 001 --> 00:11:02,000
-fokus
-
-81
-00:11:02, 001 --> 00:11:03,000
-hover
-
-82
-00:11:03, 001 --> 00:11:05,000
-aktiv
-
-83
-00:11:05, 001 --> 00:11:27,000
-Det är mycket viktigt att veta om du inte är bekant med HTML.
-
-84
-00:11:27, 001 --> 00:11:32,000
-Låt oss nu fortsätta med vår process.
-
-85
-00:11:32, 001 --> 00:11:41,000
-Jag väljer 4-knappstatus genom att klicka på detta.
-
-86
-00:11:41, 001 --> 00:11:45,000
-Nu har vi sparat en fil igen.
-
-87
-00:11:45, 001 --> 00:11:55,000
-Låt oss se om vi kan öppna den filen i vårt favoritkonstprogram.
-
-88
-00:11:55, 001 --> 00:12:00,000
-Var är det? Libre-Pixel.
-
-89
-00:12:00, 001 --> 00:12:04,000
-Vi kommer att se hur denna fil ser ut.
-
-90
-00:12:04, 001 --> 00:12:06,000
-Jag har förberett det tidigare genom att ändra färgerna.
-
-91
-00:12:06, 001 --> 00:12:18,000
-Här kan vi också se att det är möjligt att beskära storleken på bilden i dess höjd.
-
-92
-00:12:18, 001 --> 00:12:27,000
-Det kommer fortfarande att fungera senare.
-
-93
-00:12:27, 001 --> 00:12:37,000
-Vi kan se att spara filen har fyrdubblat den, och vi har nu fyra representationer.
-
-94
-00:12:37, 001 --> 00:12:53,000
-Jag kommer nu att ta tillbaka vår guidebild för att visa vilken knapp som varje bild representerar.
-
-95
-00:12:53, 001 --> 00:12:59,000
-På så sätt vet vi vilket tillstånd vi arbetar med när vi ändrar färgerna eller drar våra bilder.
-
-96
-00:12:59, 001 --> 00:13:13,000
-Dessa kommer inte att resultera i bara en enda knapp, men kommer istället att vara exakt de knappar som vi har spårat ut med rektanglarna.
-
-97
-00:13:13, 001 --> 00:13:32,000
-Detta grafiska arbete har redan avslutats i förväg, så jag kommer att fortsätta med vår process.
-
-98
-00:13:32, 001 --> 00:13:49,000
-Så nu när vi har en färdig bild, kommer jag att visa igen syntaxen, som har prefixet "READY".
-
-99
-00:13:49, 001 --> 00:14:03,000
-Denna knapp är klar och kan dras in omedelbart.
-
-100
-00:14:03, 001 --> 00:14:08,000
-Nu kommer vi att se vad som händer när vi drar den här färdiga knappfilen i programmet.
-
-101
-00:14:08, 001 --> 00:14:13,000
-Det ser ut som att något händer här uppe i det övre vänstra hörnet av vår skärm, och sedan kommer ut dina färdiga knappar.
-
-102
-00:14:13, 001 --> 00:14:25,000
-Där är de, och låt oss bara försöka om vi kan testa dem genom att använda rymdfältet och hålla ner det.
-
-103
-00:14:25, 001 --> 00:14:38,000
-Vi kan nu se att våra knappar fungerar korrekt och ser exakt ut som den grafik vi ritade.
-
-104
-00:14:38, 001 --> 00:14:45,000
-Denna fil som vi har producerat kan användas och återanvändas när som helst.
-
-105
-00:14:45, 001 --> 00:14:51,000
-Vi har ett mycket trevligt, ihållande mallsystem på plats.
-
-106
-00:14:51, 001 --> 00:14:53,000
-Systemet består av: En formnyckel (filnamn prefix "SHAPE");
-
-107
-00:14:53, 001 --> 00:14:59,000
-En första mall, som får en enda bild (filnamn prefix "TEMPL");
-
-108
-00:14:59, 001 --> 00:15:08,000
-och den färdiga knappen (filnamn prefix "READY").
-
-109
-00:15:08, 001 --> 00:15:15,000
-Vi kan även kopiera denna färdiga knapp i vårt filsystem och göra någon form av alternativa bilder, och det skulle fortfarande fungera.
-
-110
-00:15:15, 001 --> 00:15:26,000
-Jag är inte säker på om detta fungerar. Låt oss prova det.
-
-111
-00:15:26, 001 --> 00:15:43,000
-Så du kan ta den där och ändra den, vilket gör den olika färger eller flytta små saker runt.
-
-112
-00:15:43, 001 --> 00:15:54,000
-Du har en bra knapp gör kapacitet tillgänglig här, och du kan göra så många som du vill.
-
-113
-00:15:54, 001 --> 00:15:59,000
-Här kan du se att vi inte ens nästan har fyllt detta område med knappar, men naturligtvis om du går ut ur rymden kommer du helt enkelt att göra en annan.
-
-114
-00:15:59, 001 --> 00:16:19,000
-En sak som jag kommer att påpeka är att det kan vara svårt att hitta en syntax som passar när dina knappar är mycket nära varandra i din ritning.
-
-115
-00:16:19, 001 --> 00:16:54,000
-För att göra det lättare att spåra, lämna mer utrymme mellan bilderna.
-
-116
-00:16:54, 001 --> 00:17:24,000
-Jag kommer nu att använda "z"-nyckeln som kommer att se till att jag inte ändrar storleken på knapparna.
-
-117
-00:17:24, 001 --> 00:17:33,000
-Jag kommer att göra det högre att de andra genom att välja från den menyn. Jag använder tangentbordsgenvägen (z-mode: 'h').
-
-118
-00:17:33, 001 --> 00:17:39,000
-Så jag satte detta till toppen av z-index-ordern genom att använda "h".
-
-119
-00:17:39, 001 --> 00:18:01,000
-Eftersom jag har satt musen steg för att matcha pixel inkrementet av min uppskalade ritning, är det lätt att anpassa allt.
-
-120
-00:18:01, 001 --> 00:18:06,00
-Det finns alla olika inställningar tillgängliga i programmet, men jag kommer inte att täcka dem här.
-
-121
-00:18:06, 001 --> 00:18:14,00
-Kanske lite mer på det här sättet.
-
-122
-00:18:14, 001 --> 00:18:19,000
-Det är ganska nära.
-
-123
-00:18:19, 001 --> 00:18:36,000
-Jag kommer nu att använda musens rullhjul för att välja typ av spara från flik IV-2.
-
-124
-00:18:36, 001 --> 00:18:47,000
-Jag sparar på en visningsbreddsfaktor på 1280.
-
-125
-00:18:47, 001 --> 00:18:55,000
-Detta konverteras automatiskt.
-
-126
-00:18:55, 001 --> 00:19:43,000
-För att spara filen från tangentbordet: Använd "shift + s". Istället för att bara öppna filen för visning: Använd "skift + enter".
-
-127
-00:19:43, 001 --> 00:19:48,000
-Det är ganska bra.
-
-128
-00:19:48, 001 --> 00:19:56,000
-Bra gjort.
-
-129
-00:19:56, 001 --> 00:20:20,000
-Tutorial över.
+00:11:08,001 --> 00:11:12,000
+Bra gjort! Tutorial över...
 
