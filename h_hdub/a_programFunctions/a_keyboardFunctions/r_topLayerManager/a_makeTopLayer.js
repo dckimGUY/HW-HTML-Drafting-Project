@@ -77,8 +77,18 @@ updateInfoShelf();
 
 
 ui.coin44038.ref.value = topLayer[topLayer.a_currentLayer].backgroundColour;
-finishedBackgroundColour = ui.coin44038.ref.value;
+finishedBackgroundColour = topLayer[topLayer.a_currentLayer].backgroundColour;
 ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
 localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
+
+if (mouseIsDogged) {
+redraw();
+spaceViewOff();
+restorePointerEventsNone();
+spaceViewOn();
+removePointerEventsNone();
+interfaceLayer.style.display = "none";
+}
+
 
 }
