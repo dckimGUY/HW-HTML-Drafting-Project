@@ -163,10 +163,12 @@ alt    = keyInfo[5];
 /*right arr*/ if (kC ==  39) {window.scrollTo({left: window.pageXOffset + visualGridSize2, behavior:'auto'});}
 } else if (!ctrl&& shift) {
 
-if (kC ==  38) { moveAllUp()   ; }
-if (kC ==  40) { moveAllDown() ; }
-if (kC ==  37) { moveAllLeft() ; }
-if (kC ==  39) { moveAllRight(); }
+if (kC ==  38) { rotateOver()  ; }
+if (kC ==  40) { rotateUnder() ; }
+if (kC ==  37) { rotateZleft() ; }
+if (kC ==  39) { rotateZright(); }
+
+
 } else if (!ctrl&&!shift) {
 if (kC ==  38) { moveUp(keyInfo)   ; }
 if (kC ==  40) { moveDown(keyInfo) ; }
@@ -1700,8 +1702,8 @@ evaluateTextShadowGroup();
 function normalTuner() {
 
 if (coinFocus!=null) {
-/*    -    */ if (kC == 109 && cC ==  45) {  }
-/*    +    */ if (kC == 107 && cC ==  43) {  }
+/*    -    */ if (kC == 109 && cC ==  45) { outerScaleDown(); }
+/*    +    */ if (kC == 107 && cC ==  43) { outerScaleUp();   }
 
 /*    /    */ if (kC == 111 && cC ==  47) { focusPrevious(true); }
 /*    *    */ if (kC == 106 && cC ==  42) { focusNext(true);     }
@@ -1711,7 +1713,7 @@ if (coinFocus!=null) {
 /*    9    */ if (kC == 105 && cC ==  57) { if (activeStateEdit) { nextState(); } }
 
 /*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); /*insertForArrows();*/ }
-/*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); }
+/*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); resetScale(); }
 /*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); /*insertForArrows();*/ }
 
 /*    1    */ if (kC ==  97 && cC ==  49) { if (activeStateEdit) { lastState(); } }
@@ -1722,8 +1724,7 @@ if (coinFocus!=null) {
 /*    .    */ if (kC == 110 && cC ==  46) { deleteKey(); }
 }
 
-}
-function constructionTuner(keyInfo) {
+}function constructionTuner(keyInfo) {
 
 generalTuner();
 
@@ -2014,8 +2015,8 @@ cursorToWindowCentre();
 }function generalTuner() {
 
 if (coinFocus!=null) {
-/*    -    */ if (kC == 109 && cC ==  45) {  }
-/*    +    */ if (kC == 107 && cC ==  43) {  }
+/*    -    */ if (kC == 109 && cC ==  45) { outerScaleDown(); }
+/*    +    */ if (kC == 107 && cC ==  43) { outerScaleUp();   }
 
 /*    /    */ if (kC == 111 && cC ==  47) { focusPrevious(true); }
 /*    *    */ if (kC == 106 && cC ==  42) { focusNext(true);     }
@@ -2025,7 +2026,7 @@ if (coinFocus!=null) {
 /*    9    */ if (kC == 105 && cC ==  57) { if (activeStateEdit) { nextState(); } }
 
 /*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); /*insertForArrows();*/ }
-/*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); }
+/*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); resetScale(); }
 /*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); /*insertForArrows();*/ }
 
 /*    1    */ if (kC ==  97 && cC ==  49) { if (activeStateEdit) { lastState(); } }
@@ -6819,6 +6820,8 @@ main.dataset.rotateX               =        "0";
 main.dataset.rotateY               =        "0";
 main.dataset.rotateZ               =        "0";
 main.dataset.translateZ            =        "0";
+main.dataset.scale                 =        "1";
+main.style.scale                   =        "1";
 main.style.transformOrigin         =   "center";
 main.style.transform               =      "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
 
@@ -7459,6 +7462,8 @@ newCoin.lastElementChild.dataset.rotateX           =    coinFocus.lastElementChi
 newCoin.lastElementChild.dataset.rotateY           =    coinFocus.lastElementChild.dataset.rotateY    ;
 newCoin.lastElementChild.dataset.rotateZ           =    coinFocus.lastElementChild.dataset.rotateZ    ;
 newCoin.lastElementChild.dataset.translateZ        =    coinFocus.lastElementChild.dataset.translateZ ;
+newCoin.lastElementChild.dataset.scale             =    coinFocus.lastElementChild.dataset.scale      ;
+newCoin.lastElementChild.style.scale               =    coinFocus.lastElementChild.style.scale        ;
 newCoin.lastElementChild.style.transformOrigin     =    coinFocus.lastElementChild.style.transformOrigin  ;
 newCoin.lastElementChild.style.transform           =    coinFocus.lastElementChild.style.transform    ;
 
@@ -7564,6 +7569,8 @@ main.dataset.rotateX               =        "0";
 main.dataset.rotateY               =        "0";
 main.dataset.rotateZ               =        "0";
 main.dataset.translateZ            =        "0";
+main.dataset.scale                 =        "1";
+main.style.scale                   =        "1";
 main.style.transformOrigin         =   "center";
 main.style.transform               =      "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
 
@@ -10672,8 +10679,9 @@ coinFocus.firstElementChild.style.transform = "perspective(" + perspective + "px
 
 }
 }
-function outerScaleUp(keyInfo) {
+function outerScaleUp() {
 
+/*
 const
 e      = keyInfo[0],
 kC     = keyInfo[1],
@@ -10681,13 +10689,14 @@ cC     = keyInfo[2],
 shift  = keyInfo[3],
 ctrl   = keyInfo[4],
 alt    = keyInfo[5];
+*/
 
 if (coinFocus!=null) {
 let newScale = 1;
 let scaleFactor = T / 512;
-let currentScale = parseFloat(coinFocus.dataset.scale);
+let currentScale = parseFloat(coinFocus.lastElementChild.dataset.scale);
 
-newScale = Math.round((parseFloat(coinFocus.dataset.scale) + scaleFactor) * 10000) / 10000;
+newScale = Math.round((parseFloat(coinFocus.lastElementChild.dataset.scale) + scaleFactor) * 10000) / 10000;
 
 if ((currentScale*10000)%(scaleFactor*10000)==0) {
 newScale = Math.round((currentScale + scaleFactor) * 10000) / 10000;
@@ -10695,15 +10704,15 @@ newScale = Math.round((currentScale + scaleFactor) * 10000) / 10000;
 newScale = Math.round(((currentScale + scaleFactor) * 10000) + (scaleFactor*10000 - (currentScale*10000)%(scaleFactor*10000) )) / 10000;
 }
 
-coinFocus.style.transform = `scale(${newScale})`;
-coinFocus.dataset.scale = newScale;
-coinFocus.dataset.lockE = "true";
+coinFocus.lastElementChild.style.scale   = newScale;
+coinFocus.lastElementChild.dataset.scale = newScale;
 
 }
 
 }
-function outerScaleDown(keyInfo) {
+function outerScaleDown() {
 
+/*
 const
 e      = keyInfo[0],
 kC     = keyInfo[1],
@@ -10711,13 +10720,14 @@ cC     = keyInfo[2],
 shift  = keyInfo[3],
 ctrl   = keyInfo[4],
 alt    = keyInfo[5];
+*/
 
 if (coinFocus!=null) {
 
 let newScale = 1;
 let scaleFactor = T / 512;
 
-let currentScale = parseFloat(coinFocus.dataset.scale);
+let currentScale = parseFloat(coinFocus.lastElementChild.dataset.scale);
 
 if ((currentScale*10000)%(scaleFactor*10000)==0) {
 newScale = Math.round((currentScale - scaleFactor) * 10000) / 10000;
@@ -10728,9 +10738,8 @@ newScale = Math.round(((currentScale - scaleFactor) * 10000) - (currentScale*100
 
 
 if (newScale > 0) {
-coinFocus.style.transform = `scale(${newScale})`;
-coinFocus.dataset.scale = newScale;
-coinFocus.dataset.lockE = "true";
+coinFocus.lastElementChild.style.scale   = newScale;
+coinFocus.lastElementChild.dataset.scale = newScale;
 
 
 }
@@ -10739,20 +10748,21 @@ coinFocus.dataset.lockE = "true";
 }
 function resetScale() {
 
-if (lastKey!="e") {
+//if (lastKey!="e") {
 if (coinFocus!=null) {
 const newScale = 1;
-coinFocus.style.transform = `scale(${newScale})`;
-coinFocus.dataset.scale = newScale;
+coinFocus.lastElementChild.style.scale   = newScale;
+coinFocus.lastElementChild.dataset.scale = newScale;
+/*
 if (coinFocus.lastElementChild.lastElementChild.src!=""&&coinFocus.lastElementChild.lastElementChild.naturalWidth&&coinFocus.lastElementChild.lastElementChild.naturalHeight) {
 coinFocus.style.width  = parseInt(coinFocus.lastElementChild.lastElementChild.naturalWidth) + "px";
 coinFocus.style.height = parseInt(coinFocus.lastElementChild.lastElementChild.naturalHeight) + "px";
 }
-coinFocus.dataset.lockE = "false";
+*/
 }
-} else if (lastKey=="e") {
-coinFocus.dataset.lockE = "true";
-}
+
+//} else if (lastKey=="e") {
+//}
 
 }
 function helpMenu(event) {
@@ -13062,9 +13072,9 @@ let activeStateEdit = false;
 /*** A FUNCTION TO SET THE STATE ***/
 function setState (quotedStateName,frameNumber) {
 try {
-let style = [ "filter", "top", "left", "width", "height", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+let style = [ "filter", "scale", "top", "left", "width", "height", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const styleFirst    = [ "backdrop-filter", "filter", "top", "left", "width", "height", "zIndex" ];
-const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
+const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
 const styleLastLast = [ "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 let index   =        0; if (frameNumber) { index = frameNumber; }
@@ -13088,6 +13098,7 @@ utilityLayer0.children[j].dataset.left   = utilityLayer0.children[j].style.left 
 utilityLayer0.children[j].dataset.top    = utilityLayer0.children[j].style.top   ;
 utilityLayer0.children[j].dataset.width  = utilityLayer0.children[j].style.width ;
 utilityLayer0.children[j].dataset.height = utilityLayer0.children[j].style.height;
+utilityLayer0.children[j].dataset.scale  = utilityLayer0.children[j].style.scale;
 }
 redraw();
 return 0;
@@ -13389,7 +13400,7 @@ programState.dat[topLayer[layerArray[j]].b_content.children[i].id].id = topLayer
 
 
 const styleFirst    = [ "filter", "top", "left", "width", "height", "zIndex" ];
-const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
+const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
 const styleLastLast = [ "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 for (y of styleFirst   ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].style[y]; }
@@ -26985,7 +26996,7 @@ function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRe
 
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
-const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
+const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
 
@@ -27078,7 +27089,7 @@ if (layerRef) string = layerRef;
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: filter, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
+  transition-property: filter, scale, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
   transition-delay: 0ms;
@@ -27650,10 +27661,10 @@ ${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replac
 `;
 } else {
 scriptStarter += `
-      go.show    = function() { for (f of go.ids) { document.getElementById(f).style.display = "block"; } };
-      go.hide    = function() { for (f of go.ids) { document.getElementById(f).style.display =  "none"; } };
-      go.fadeIn  = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "1"; } };
-      go.fadeOut = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "0"; } };
+      go.show    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } };
+      go.hide    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } };
+      go.fadeIn  = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } };
+      go.fadeOut = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } };
 `;
 }
 
@@ -27674,7 +27685,7 @@ go.xqn       = {};
 go.xqn.nom   = [];
 go.xqn.grp   = {};
 go.xqn.all   = [];
-go.xqn.style = [ "filter",  "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+go.xqn.style = [ "filter",  "scale", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 go.ids.forEach((id) => {
 go.elm[id]      = {};
@@ -27860,7 +27871,7 @@ go.setState = function(xqn,rate,delay,arg) { if (!!arg) {
 for (y of go.xqn.style) { const target = arg.ref;
 try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1) value = xqn.style[y];
+if (go.vwFactor == 1 || !xqn.style[y].includes("px") || y == "filter") value = xqn.style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -27871,7 +27882,7 @@ for (d of go.ids) { for (y of go.xqn.style) {
 const target = document.getElementById(d);
 try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1) value = xqn.dat[d].style[y];
+if (go.vwFactor == 1 || !xqn.dat[d].style[y].includes("px") || y == "filter") value = xqn.dat[d].style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -27893,12 +27904,10 @@ y.reset      = function() { for (x of source) { go.elm[x].xqn.all.reset()       
 y.next       = function() { for (x of source) { go.elm[x].xqn.all.next()          ; } }
 y.prev       = function() { for (x of source) { go.elm[x].xqn.all.prev()          ; } }
 y.rate       = {};
-y.rate.value = go.elm[x].xqn.all.rate.value;
 y.rate.set   = function(val) { for (x of source) { go.elm[x].xqn.all.rate.set(val)  ; } }
 y.rate.incr  = function(val) { for (x of source) { go.elm[x].xqn.all.rate.incr(val) ; } }
 y.rate.decr  = function(val) { for (x of source) { go.elm[x].xqn.all.rate.decr(val) ; } }
 y.now        = {};
-y.now.value  = go.elm[x].xqn.all.now.value;
 y.now.set    = function(val) { for (x of source) { go.elm[x].xqn.all.now.set(val)   ; } }
 y.now.incr   = function(val) { for (x of source) { go.elm[x].xqn.all.now.incr(val)  ; } }
 y.now.decr   = function(val) { for (x of source) { go.elm[x].xqn.all.now.decr(val)  ; } }
@@ -32079,7 +32088,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-29T22:43:14Z">
+<meta name="last-build" content="2026-03-30T04:52:56Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -32091,7 +32100,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260329184314'></script>
+<script src='./bundle.js?v=20260330005256'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>
@@ -32918,22 +32927,22 @@ if (zStack[k].id == coinFocus) {
 if (curFocus==0) {
 l = parseInt(zStack[k].id.style.left) + xrayWidth/2 + thinOutline - window.scrollX;
 t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scrollY;
-w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
-h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
+w = parseInt(zStack[k].id.style.width) - xrayWidth - thinOutline * 2;
+h = parseInt(zStack[k].id.style.height) - xrayWidth - thinOutline * 2;
 Y.strokeStyle = selectedColour;
 Y.strokeRect(l,t,w,h);
 Y.fillStyle   = selectedColour;
 l = parseInt(zStack[k].id.style.left) - window.scrollX;
 t = parseInt(zStack[k].id.style.top)  - window.scrollY;
-w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
-h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
+w = parseInt(zStack[k].id.style.width);
+h = parseInt(zStack[k].id.style.height);
 }
 } else {
 if (curFocus==0) {
 l = parseInt(zStack[k].id.style.left) + xrayWidth/2 + thinOutline - window.scrollX;
 t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scrollY;
-w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
-h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
+w = parseInt(zStack[k].id.style.width) - xrayWidth - thinOutline * 2;
+h = parseInt(zStack[k].id.style.height) - xrayWidth - thinOutline * 2;
        if (zStack[k].id.dataset.coinTrip==Ts0) {
 Y.strokeStyle = coinColour0;
 } else if (zStack[k].id.dataset.coinTrip==Ts1) {
@@ -32952,8 +32961,8 @@ Y.setLineDash([0]);
 let Y=Vis.getContext("2d");
 l = parseInt(zStack[j].id.style.left) - window.scrollX;
 t = parseInt(zStack[j].id.style.top)  - window.scrollY;
-w = parseInt(zStack[j].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
-h = parseInt(zStack[j].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
+w = parseInt(zStack[j].id.style.width);
+h = parseInt(zStack[j].id.style.height);
 Y.fillStyle   = lineColour;
 Y.clearRect(l,t,w,h);
 Y.fillRect(l,t,w,h);

@@ -50,6 +50,8 @@ main.dataset.rotateX               =        "0";
 main.dataset.rotateY               =        "0";
 main.dataset.rotateZ               =        "0";
 main.dataset.translateZ            =        "0";
+main.dataset.scale                 =        "1";
+main.style.scale                   =        "1";
 main.style.transformOrigin         =   "center";
 main.style.transform               =      "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
 

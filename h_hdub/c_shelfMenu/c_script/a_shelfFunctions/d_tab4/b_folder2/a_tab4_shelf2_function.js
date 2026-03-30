@@ -554,7 +554,7 @@ function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRe
 
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
-const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
+const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
 
@@ -647,7 +647,7 @@ if (layerRef) string = layerRef;
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: filter, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
+  transition-property: filter, scale, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
   transition-delay: 0ms;
@@ -1219,10 +1219,10 @@ ${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replac
 `;
 } else {
 scriptStarter += `
-      go.show    = function() { for (f of go.ids) { document.getElementById(f).style.display = "block"; } };
-      go.hide    = function() { for (f of go.ids) { document.getElementById(f).style.display =  "none"; } };
-      go.fadeIn  = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "1"; } };
-      go.fadeOut = function() { for (f of go.ids) { document.getElementById(f).style.opacity =     "0"; } };
+      go.show    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } };
+      go.hide    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } };
+      go.fadeIn  = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } };
+      go.fadeOut = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } };
 `;
 }
 
@@ -1243,7 +1243,7 @@ go.xqn       = {};
 go.xqn.nom   = [];
 go.xqn.grp   = {};
 go.xqn.all   = [];
-go.xqn.style = [ "filter",  "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+go.xqn.style = [ "filter",  "scale", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 go.ids.forEach((id) => {
 go.elm[id]      = {};
@@ -1429,7 +1429,7 @@ go.setState = function(xqn,rate,delay,arg) { if (!!arg) {
 for (y of go.xqn.style) { const target = arg.ref;
 try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1) value = xqn.style[y];
+if (go.vwFactor == 1 || !xqn.style[y].includes("px") || y == "filter") value = xqn.style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -1440,7 +1440,7 @@ for (d of go.ids) { for (y of go.xqn.style) {
 const target = document.getElementById(d);
 try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1) value = xqn.dat[d].style[y];
+if (go.vwFactor == 1 || !xqn.dat[d].style[y].includes("px") || y == "filter") value = xqn.dat[d].style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -1462,12 +1462,10 @@ y.reset      = function() { for (x of source) { go.elm[x].xqn.all.reset()       
 y.next       = function() { for (x of source) { go.elm[x].xqn.all.next()          ; } }
 y.prev       = function() { for (x of source) { go.elm[x].xqn.all.prev()          ; } }
 y.rate       = {};
-y.rate.value = go.elm[x].xqn.all.rate.value;
 y.rate.set   = function(val) { for (x of source) { go.elm[x].xqn.all.rate.set(val)  ; } }
 y.rate.incr  = function(val) { for (x of source) { go.elm[x].xqn.all.rate.incr(val) ; } }
 y.rate.decr  = function(val) { for (x of source) { go.elm[x].xqn.all.rate.decr(val) ; } }
 y.now        = {};
-y.now.value  = go.elm[x].xqn.all.now.value;
 y.now.set    = function(val) { for (x of source) { go.elm[x].xqn.all.now.set(val)   ; } }
 y.now.incr   = function(val) { for (x of source) { go.elm[x].xqn.all.now.incr(val)  ; } }
 y.now.decr   = function(val) { for (x of source) { go.elm[x].xqn.all.now.decr(val)  ; } }

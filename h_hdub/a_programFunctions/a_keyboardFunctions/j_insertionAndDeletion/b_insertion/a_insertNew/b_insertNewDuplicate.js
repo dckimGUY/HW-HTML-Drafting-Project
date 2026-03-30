@@ -274,6 +274,8 @@ newCoin.lastElementChild.dataset.rotateX           =    coinFocus.lastElementChi
 newCoin.lastElementChild.dataset.rotateY           =    coinFocus.lastElementChild.dataset.rotateY    ;
 newCoin.lastElementChild.dataset.rotateZ           =    coinFocus.lastElementChild.dataset.rotateZ    ;
 newCoin.lastElementChild.dataset.translateZ        =    coinFocus.lastElementChild.dataset.translateZ ;
+newCoin.lastElementChild.dataset.scale             =    coinFocus.lastElementChild.dataset.scale      ;
+newCoin.lastElementChild.style.scale               =    coinFocus.lastElementChild.style.scale        ;
 newCoin.lastElementChild.style.transformOrigin     =    coinFocus.lastElementChild.style.transformOrigin  ;
 newCoin.lastElementChild.style.transform           =    coinFocus.lastElementChild.style.transform    ;
 

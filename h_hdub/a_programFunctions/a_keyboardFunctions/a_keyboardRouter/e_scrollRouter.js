@@ -20,10 +20,12 @@ alt    = keyInfo[5];
 /*right arr*/ if (kC ==  39) {window.scrollTo({left: window.pageXOffset + visualGridSize2, behavior:'auto'});}
 } else if (!ctrl&& shift) {
 
-if (kC ==  38) { moveAllUp()   ; }
-if (kC ==  40) { moveAllDown() ; }
-if (kC ==  37) { moveAllLeft() ; }
-if (kC ==  39) { moveAllRight(); }
+if (kC ==  38) { rotateOver()  ; }
+if (kC ==  40) { rotateUnder() ; }
+if (kC ==  37) { rotateZleft() ; }
+if (kC ==  39) { rotateZright(); }
+
+
 } else if (!ctrl&&!shift) {
 if (kC ==  38) { moveUp(keyInfo)   ; }
 if (kC ==  40) { moveDown(keyInfo) ; }

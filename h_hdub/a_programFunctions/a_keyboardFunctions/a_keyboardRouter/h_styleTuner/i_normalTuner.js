@@ -1,8 +1,8 @@
 function normalTuner() {
 
 if (coinFocus!=null) {
-/*    -    */ if (kC == 109 && cC ==  45) {  }
-/*    +    */ if (kC == 107 && cC ==  43) {  }
+/*    -    */ if (kC == 109 && cC ==  45) { outerScaleDown(); }
+/*    +    */ if (kC == 107 && cC ==  43) { outerScaleUp();   }
 
 /*    /    */ if (kC == 111 && cC ==  47) { focusPrevious(true); }
 /*    *    */ if (kC == 106 && cC ==  42) { focusNext(true);     }
@@ -12,7 +12,7 @@ if (coinFocus!=null) {
 /*    9    */ if (kC == 105 && cC ==  57) { if (activeStateEdit) { nextState(); } }
 
 /*    4    */ if (kC == 100 && cC ==  52) { moveLeft(['','','',false,false,false]); /*insertForArrows();*/ }
-/*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); }
+/*    5    */ if (kC == 101 && cC ==  53) { clearRotation(); resetScale(); }
 /*    6    */ if (kC == 102 && cC ==  54) { moveRight(['','','',false,false,false]); /*insertForArrows();*/ }
 
 /*    1    */ if (kC ==  97 && cC ==  49) { if (activeStateEdit) { lastState(); } }

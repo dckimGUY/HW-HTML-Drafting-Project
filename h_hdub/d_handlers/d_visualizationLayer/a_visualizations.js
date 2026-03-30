@@ -73,22 +73,22 @@ if (zStack[k].id == coinFocus) {
 if (curFocus==0) {
 l = parseInt(zStack[k].id.style.left) + xrayWidth/2 + thinOutline - window.scrollX;
 t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scrollY;
-w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
-h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
+w = parseInt(zStack[k].id.style.width) - xrayWidth - thinOutline * 2;
+h = parseInt(zStack[k].id.style.height) - xrayWidth - thinOutline * 2;
 Y.strokeStyle = selectedColour;
 Y.strokeRect(l,t,w,h);
 Y.fillStyle   = selectedColour;
 l = parseInt(zStack[k].id.style.left) - window.scrollX;
 t = parseInt(zStack[k].id.style.top)  - window.scrollY;
-w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
-h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
+w = parseInt(zStack[k].id.style.width);
+h = parseInt(zStack[k].id.style.height);
 }
 } else {
 if (curFocus==0) {
 l = parseInt(zStack[k].id.style.left) + xrayWidth/2 + thinOutline - window.scrollX;
 t = parseInt(zStack[k].id.style.top) + xrayWidth/2 + thinOutline - window.scrollY;
-w = parseInt(zStack[k].id.style.width) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
-h = parseInt(zStack[k].id.style.height) * parseFloat(zStack[k].id.dataset.scale) - xrayWidth - thinOutline * 2;
+w = parseInt(zStack[k].id.style.width) - xrayWidth - thinOutline * 2;
+h = parseInt(zStack[k].id.style.height) - xrayWidth - thinOutline * 2;
        if (zStack[k].id.dataset.coinTrip==Ts0) {
 Y.strokeStyle = coinColour0;
 } else if (zStack[k].id.dataset.coinTrip==Ts1) {
@@ -107,8 +107,8 @@ Y.setLineDash([0]);
 let Y=Vis.getContext("2d");
 l = parseInt(zStack[j].id.style.left) - window.scrollX;
 t = parseInt(zStack[j].id.style.top)  - window.scrollY;
-w = parseInt(zStack[j].id.style.width) * parseFloat(zStack[j].id.dataset.scale);
-h = parseInt(zStack[j].id.style.height) * parseFloat(zStack[j].id.dataset.scale);
+w = parseInt(zStack[j].id.style.width);
+h = parseInt(zStack[j].id.style.height);
 Y.fillStyle   = lineColour;
 Y.clearRect(l,t,w,h);
 Y.fillRect(l,t,w,h);

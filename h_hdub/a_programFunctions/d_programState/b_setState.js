@@ -1,9 +1,9 @@
 /*** A FUNCTION TO SET THE STATE ***/
 function setState (quotedStateName,frameNumber) {
 try {
-let style = [ "filter", "top", "left", "width", "height", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+let style = [ "filter", "scale", "top", "left", "width", "height", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const styleFirst    = [ "backdrop-filter", "filter", "top", "left", "width", "height", "zIndex" ];
-const styleLast     = [ "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
+const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow" ];
 const styleLastLast = [ "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 let index   =        0; if (frameNumber) { index = frameNumber; }
@@ -27,6 +27,7 @@ utilityLayer0.children[j].dataset.left   = utilityLayer0.children[j].style.left 
 utilityLayer0.children[j].dataset.top    = utilityLayer0.children[j].style.top   ;
 utilityLayer0.children[j].dataset.width  = utilityLayer0.children[j].style.width ;
 utilityLayer0.children[j].dataset.height = utilityLayer0.children[j].style.height;
+utilityLayer0.children[j].dataset.scale  = utilityLayer0.children[j].style.scale;
 }
 redraw();
 return 0;
