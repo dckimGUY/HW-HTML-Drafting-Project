@@ -106,7 +106,7 @@ const updateReadout = () => {
         } else {
             finalAction = "go.setState(go.xqn.grp['" + groupName + "'][" + val + "])";
         }
-        cmdDisplay.innerText = "try { go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + "; } catch { }";
+        cmdDisplay.innerText = "if (typeof go !== 'undefined') { go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + "; }";
     }
 };
 setInterval(updateReadout, 15);
@@ -211,7 +211,7 @@ document.body.appendChild(animToggle);
 
 
 
-var useAllLayers = false;
+var useAllLayers = true;
 
 if (localStorage.getItem("useAllLayers")) {
 useAllLayers = localStorage.getItem("useAllLayers");
@@ -1203,6 +1203,28 @@ ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace
 `;
 
 
+
+
+
+
+/**************************************/
+/**************************************/
+/**************************************/
+/* THIS IS ONE OF THE LAST WORK AREAS */
+/**************************************/
+/**************************************/
+/**************************************/
+
+
+
+
+
+
+
+
+
+
+
 if (useAllLayers == true) {
 scriptStarter += `
       go.disp      = {};
@@ -1221,10 +1243,23 @@ ${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replac
 scriptStarter += `
       go.show    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } };
       go.hide    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } };
+
       go.fadeIn  = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } };
       go.fadeOut = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } };
 `;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 scriptStarter += `
 
@@ -1429,7 +1464,7 @@ go.setState = function(xqn,rate,delay,arg) { if (!!arg) {
 for (y of go.xqn.style) { const target = arg.ref;
 try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1 || !xqn.style[y].includes("px") || y == "filter") value = xqn.style[y];
+if (go.vwFactor == 1 || !xqn.style[y].includes("px") || y == "filter" || y == "transform") value = xqn.style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -1440,7 +1475,7 @@ for (d of go.ids) { for (y of go.xqn.style) {
 const target = document.getElementById(d);
 try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1 || !xqn.dat[d].style[y].includes("px") || y == "filter") value = xqn.dat[d].style[y];
+if (go.vwFactor == 1 || !xqn.dat[d].style[y].includes("px") || y == "filter" || y == "transform") value = xqn.dat[d].style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -1530,24 +1565,88 @@ scriptStarter += `
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
 
 `;
+
+
+
+
+
+
+
+
+
+
+if (useAllLayers) {
+
+let num = 0;
+for (h of levelName) {
+num++;
+if (topLayer[h].b_content.children.length == 0) continue;
+
+scriptStarter += `
+/*** LVL${num} ***/
+
+`;
+
+
+
 for (let k = 0; k < eventRoll.length; k++) {
-for (let j = 0; j < idRoll.length; j++) {
+
+for (c of topLayer[h].b_content.children) {
+
 
 let extract = "";
-
-try {
-extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
-} catch {
-extract = "";
-}
-
-scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
+extract = c.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
+
+
+
 
 }
 scriptStarter += `
 `;
 }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+} else if (!useAllLayers) {
+
+
+
+
+for (let k = 0; k < eventRoll.length; k++) {
+for (let j = 0; j < idRoll.length; j++) {
+let extract = "";
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
+`;
+}
+scriptStarter += `
+`;
+}
+
+
+
+
+}
+
+
+
 
 
 

@@ -1,5 +1,23 @@
 function makeTopLayer(chosenLayer) {
 
+const originalFocus = coinFocus;
+groupPaste("0");
+groupPaste("1");
+groupPaste("2");
+if (multiplePasteBuffer.value != '' && coinFocus != null) {
+deleteCoin(['',88,120]);
+pasteMultiple();
+pasteSingle();
+}
+coinFocus = originalFocus;
+
+
+
+
+
+
+
+
 
 edgeDetect.style.display= "none";
 

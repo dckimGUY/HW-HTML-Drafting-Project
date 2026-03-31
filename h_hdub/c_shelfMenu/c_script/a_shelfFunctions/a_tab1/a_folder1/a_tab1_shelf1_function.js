@@ -484,20 +484,9 @@ ui.showNames.click               = function() { if (drawPartNames=="false") { dr
 
 ui.partNext.click                = function() { focusNext(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); };     updateInfoShelf(); redraw(); };
 
-ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value;  }; updateInfoShelf(); };
+ui.partText.input                = function() { };
 ui.partStyle.input               = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.style = ui.partStyle.ref.value; } };
-ui.partCode.input                = function() { if (curFocus==0&&coinFocus!=null) {
-
-if (
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
-) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute("onclick", ui.partCode.ref.value);
-} else {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute("onclick", ui.partCode.ref.value);
-}
-
-} };
+ui.partCode.input                = function() { };
 
 
 

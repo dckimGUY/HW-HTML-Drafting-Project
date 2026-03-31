@@ -94,10 +94,17 @@ if (
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
 ) {
-ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("onclick");
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("onclick");
 } else {
-ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
 }
+
+
+ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseover");
+ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseout");
+
+
+
 
 /*
 if (
@@ -132,10 +139,19 @@ topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
 ui.snapGridIncrement.ref.value = T;
 
 if (coinFocus!=null&&coinFocus.dataset.notes) {
-ui.partText.ref.value  = coinFocus.dataset.notes;
+ui.partText.ref.firstElementChild.value  = coinFocus.dataset.notes;
 } else {
-ui.partText.ref.value  = "";
+ui.partText.ref.firstElementChild.value  = "";
 }
+
+
+ui.partText.ref.firstElementChild.nextElementSibling.value  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("oninput");
+ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
+
+
+
+
+
 
 ui.partText.ref.style.outline = "";
 try {

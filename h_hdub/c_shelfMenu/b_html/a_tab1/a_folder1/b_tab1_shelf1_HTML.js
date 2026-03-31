@@ -11,18 +11,30 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <input id="partH" name="partH" class="input_ input_partH dckimPixelMono" type="value" placeholder="empty" title="/ * Cycle Parts\n- + Cycle Fields">
 
 <button id="cursorAuto" class="button_ button_cursorAuto" tabindex="-1" title=""></button>
-<button id="cursorXS" class="button_ button_cursorXS" tabindex="-1" title=""></button>
-<button id="cursorS" class="button_ button_cursorS" tabindex="-1" title=""></button>
-<button id="cursorM" class="button_ button_cursorM" tabindex="-1" title=""></button>
-<button id="cursorL" class="button_ button_cursorL" tabindex="-1" title=""></button>
-<button id="cursorXL" class="button_ button_cursorXL" tabindex="-1" title=""></button>
-<button id="cursorNum" class="button_ button_cursorNum" tabindex="-1" title=""></button>
+<button id="cursorXS"   class="button_ button_cursorXS"   tabindex="-1" title=""></button>
+<button id="cursorS"    class="button_ button_cursorS"    tabindex="-1" title=""></button>
+<button id="cursorM"    class="button_ button_cursorM"    tabindex="-1" title=""></button>
+<button id="cursorL"    class="button_ button_cursorL"    tabindex="-1" title=""></button>
+<button id="cursorXL"   class="button_ button_cursorXL"   tabindex="-1" title=""></button>
+<button id="cursorNum"  class="button_ button_cursorNum"  tabindex="-1" title=""></button>
 
 <input id="partNom" name="partNom" class="input_ input_partNom dckimPixelMono" type="value" placeholder="emptyFile" spellcheck="false" tabindex="-1" title=", . Cycle Parts\n< > Cycle Levels\nSPACE Show Names\nESC Return to Drafting">
 <button id="partPrev" class="button_ button_partPrev" tabindex="-1" title=""></button>
 <button id="showNames" class="button_ button_showNames" tabindex="-1" title=""></button>
 <button id="partNext" class="button_ button_partNext" tabindex="-1" title=""></button>
-<textarea id="partText"  class="textarea_ input_partText  dckimPixelMono"        placeholder="empty" spellcheck="false"></textarea>
+
+
+<div      id="partText"                           class="textarea_ input_partText  dckimPixelMono" placeholder="empty" spellcheck="false">
+<textarea id="partNotes"     name="partNotes"     class="codeInputs" spellcheck="false" title="notes(JSON)" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.firstElementChild.value;  }; updateInfoShelf();"></textarea>
+<textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="oninput"     oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('oninput', ui.partText.ref.firstElementChild.nextElementSibling.value); }"></textarea>
+<textarea id="partInnerHTML" name="partInnerHTML" class="codeInputs" spellcheck="false" title="innerHTML"   oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.partText.ref.lastElementChild.value; }"></textarea>
+</div>
+
+
+
+
+
+
 <div id="partStyle" class="textarea_ input_partStyle dckimPixelMono hidden">
 
 
@@ -602,7 +614,14 @@ margin              :         0px;
 
 
 
-<textarea id="partCode"  class="textarea_ input_partCode  dckimPixelMono hidden" placeholder="empty" spellcheck="false"></textarea>
+<div      id="partCode"                       class="textarea_ input_partCode  dckimPixelMono hidden" placeholder="empty" spellcheck="false">
+<textarea id="onclick"     name="onclick"     class="codeInputs" spellcheck="false" title="onclick"     oninput="if (curFocus==0&&coinFocus!=null) { if ( coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == 'BUTTON') { coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } else { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } }"></textarea>
+<textarea id="onmouseover" name="onmouseover" class="codeInputs" spellcheck="false" title="onmouseover" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onmouseover', ui.partCode.ref.firstElementChild.nextElementSibling.value); }"></textarea>
+<textarea id="onmouseout"  name="onmouseout"  class="codeInputs" spellcheck="false" title="onmouseout"  oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onmouseout', ui.partCode.ref.lastElementChild.value); }"></textarea>
+</div>
+
+
+
 <input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" title="I was using this for developing this menu, together with 'shift+Y' and 'b', which makes up some code for buttons. It only works if you are importing the images and base64 is turned off." placeholder="imagePath/" spellcheck="false">
 
 

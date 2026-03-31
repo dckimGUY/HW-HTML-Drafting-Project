@@ -6392,14 +6392,44 @@ return (0);
 }
 function isolateSingle() {
 
-if (coinFocus == null || utilityLayer0.children.length == 0) {
+if (coinFocus == null) {
 groupPaste("0");
 groupPaste("1");
 groupPaste("2");
+pasteMultiple();
+return;
+
+}
+
+const originalFocus = coinFocus;
+if (utilityLayer0.children.length == 0 || utilityLayer0.children.length == 1) {
+
+const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
+let fontWidth;
+if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
+fontWidth = parseInt(coinFocus.style.width );} else {
+fontWidth = parseInt(coinFocus.style.height);}
+const coinCentre = [
+parseInt(coinFocus.style.left) + parseInt(coinFocus.style.width ) / 2,
+parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
+];
+buzzWord(2,"y",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
+groupPaste("0");
+groupPaste("1");
+groupPaste("2");
+pasteMultiple();
+coinFocus = originalFocus;
 return;
 }
 
-if (multiplePasteBuffer.value != '' && coinFocus != null) {
+
+
+
+if (multiplePasteBuffer.value != '') {
+
+
+
+
 const textColour = window["coinColour" + coinFocus.dataset.coinTrip];
 let fontWidth;
 if (parseInt(coinFocus.style.width) < parseInt(coinFocus.style.height)) {
@@ -6413,6 +6443,7 @@ buzzWord(2,"y",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1
 deleteCoin(['',88,120]);
 pasteMultiple();
 pasteSingle();
+coinFocus = originalFocus;
 return;
 }
 
@@ -6429,7 +6460,7 @@ buzzWord(2,"y",fontWidth,textColour,80,80,25,"center",coinCentre[0],coinCentre[1
 deleteCoin(['',88,120]);
 deleteCoin(['',88,88]);
 pasteSingle();
-if(rev==1){focusLast()}else{focusFirst()};
+coinFocus = originalFocus;
 }function isolateGroup() {
 
 if (coinFocus == null || utilityLayer0.children.length == 0) {
@@ -10865,6 +10896,24 @@ utilityLayer0.children[j].lastElementChild.firstElementChild.innerHTML = "";
 }
 function makeTopLayer(chosenLayer) {
 
+const originalFocus = coinFocus;
+groupPaste("0");
+groupPaste("1");
+groupPaste("2");
+if (multiplePasteBuffer.value != '' && coinFocus != null) {
+deleteCoin(['',88,120]);
+pasteMultiple();
+pasteSingle();
+}
+coinFocus = originalFocus;
+
+
+
+
+
+
+
+
 
 edgeDetect.style.display= "none";
 
@@ -11987,10 +12036,21 @@ const coinIdArray = [];
 
 function toggleLocalView() {
 
+
+const originalFocus = coinFocus;
+groupPaste("0");
+groupPaste("1");
+groupPaste("2");
+if (multiplePasteBuffer.value != '' && coinFocus != null) {
+deleteCoin(['',88,120]);
+pasteMultiple();
+pasteSingle();
+}
+coinFocus = originalFocus;
+
+
+
 if (topLayer.a_currentLayer != "localView") {
-
-
-
 
 if (coinFocus!=null) {
 
@@ -15336,7 +15396,7 @@ text-shadow: 0px .5px 0px rgb(24, 117, 189);
 
 
 .input_partText                  { position: absolute; border: none; margin: none; padding: 4px; left:      8px; top:    240px; width:    184px; height:    225px; font-size: 8px;
-background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADhCAMAAABMbI/KAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAA69JREFUeJztmIuuqyAQRb1tDyQm0///3AsMj0FttdrshmSvk6OAtS7HYdRO8+y9O4n/GfM8BW85Ky6/IphPF7x/RzCfRvSO5tPpBP8tFEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR0NxNBRHQ3E0FEdDcTQUR1PEnwNhxZ/zQDyb+HP++zfOXzJP4mN5q3kWj70L/J3dP3p8fiwjHo57ZYqf3j+Yf7rjvIj4m/293yuZaf97JHR0fS/UkW6LsUiNh2IadbSudTkfj/gB8bi/BB8JHV1L9m4jdovYM46IBCmRJCeh059N2piX34+4K4E04e1GzJbujF2x1KXYttTrUD7y/YinUKqXpFWI3K54i5hxC/GX0paV+Pcj3nvldhG+d6v+jFfiq5HrEffe9Go77y957slx8Y2IP9pAHXkb8SjRrKqUb7SO3WKOn8VL00T/aMSlFRVNd80Vk+nriBs/t+Had/QzIRdTuxzfTMiVeKuD7yJuymGJfauELyIuyaQKlqboeCS7ShV3eR6V40utgEfFlxGP39dVkrX4OsfVMy6joDaboWstXz/pF8dvNdregFpnP+Iq3/K6iku+EhtVpWl2govEb7mi1ySlSj2+KXzpInU1/UXE++rxMLLd5CziLyK+Iy6FNFrSqV3xl7ccyf8bETfi8kZcLkXcVcws3o54L24qzjri9XZji6KYe6k5q72IlxJiFG2OxxSXkjtHIh7SX8zDgG4sEXe2amtbuuR5f+dsmlJTWUxmOzNuE14ORdzJ4ikmdvTpLJfAHHdbDx/2HN5XFdfV61QhZC0rfbtG3Mw/u+5Ow85UPePmamXrCbmdiKucLnXWidR0LoXEt3HTrhHfFt/o2YhnQ/1S09Zxkb3ncS0WutQbQZlCpZCUph1uc8wO9euNXv7GfMbb39ok7Nd88HS4z+n9T7zzLSP+6Tvr1Xfe+ub76Vv26i1/oL8qPph5+0Fo3J/gxv3RczyC+JDm3k83PyS3ab4Nyfwfgr3dMvtphVkAAAAASUVORK5CYII="); z-index: 100;
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADhCAMAAABMbI/KAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAArRJREFUeJzt28uOozAUAFHkhZGw+/9/dyC8HMhoQkZq7pFS3ThANsVNwY5uGPo+f0h/G8PQjd4/n4r/3MVo3v2H932M5p3oPZl3U+CllGlRtnHJD/Fy9/yuUqKIb7/4PNJ8VirHozmV+ym57Ev5l3gOJp5X+/0ob123v0mOkspsXE7i26k1n/2KAok3vZQ5mL2eWXy6kPViQqTS5L0u5fl8e8M2qdzOHu/TU6Xk5iKaJ/lElFSuEajxa0Rp/BNscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdT+Yr/FtvNqb4jIYKL11qnRdnqKl7vHt9VKihelyW4+NnsSTwcj5SX3fl4PlGnvfmLkOKrYvMx7S2fMyFT2T3r0/4mHrXxt8XD0eSx95JrzdsaVPzIiyRCpnLiKBi18RN/ExexxcOncoRp/Mi38RuwU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HF2XckRHDxlNK0KFtaxdPd47tKElKZZvyYcnocrEMONfGXHmn7T3nR3yYeRTxvWnnJObfiy1+Ol0panxKpLaQ5PKYShbT65cX3MPHAjad2OaXSng8r/qrxPaZgqVzBFo+SyttEa/xtvo3fgJ0KKy5ii7OpsOIitjibCisuYouzqbDiIrY4mworLmKLs6mw4iK2OJsKKy5ii7OpsOIitjibCisuYouzqbDiIrY4mworLmKLs6mw4iK2OJsKKy5ii7OpsOIitjibylf8t9huTvXNK5FRnDTv+y71JKkbEsnwBzj/1zGiX44EAAAAAElFTkSuQmCC"); z-index: 100;
 caret-color: white;
 color: rgb(115,121,115);
 text-shadow: 0px .5px 0px rgb(  0, 161, 238);
@@ -15356,12 +15416,28 @@ transform: scale(0.125);
 
 
 
+.codeInputs {
+width: 174px;
+height: 58px;
+resize: none;
+padding: 0px;
+margin-Top: 10px;
+border: 0px;
+outline: 0px;
+background-color: transparent;
+color: inherit;
+text-shadow: inherit;
+font-family: dckimPixelMono;
+font-size: 8px;
+}
+
+
+
 .input_partCode                  { position: absolute; border: none; margin: none; padding: 4px; left:      8px; top:    240px; width:    184px; height:    225px; font-size: 8px;
-background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADhCAMAAABMbI/KAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAdNJREFUeJzt1euKwjAUAOHQgz+2kPr+b7tp08tWtpEtOm5hRmmjVPgIh5j6Pj7W18ki+j4V9/1TnYXfizwV99nff64iT1d0j/I0DdrzUczNxiduzV4tr/DompVHcvuJIr+1n3i1/AAeu8UEz8Wex1uu15G7rSp82tvp1s3X+gUJj0d4t7zzdpvMux1frvVVP97eCo9Y9nldzYvYwbfL/Pl3+PZ+86hU4EbtYlss8DoVP/QteIfC1xmJdREPo/J3+DzxBPxgxw/hub3jyIyvq3ic8flUqcfI7lTJ+cmp8s4db/Z/z/HL/nNeMOF0wumE0wmnE04nnE44nXA64XTC6YTTCacTTiecTjidcDrhdMLphNMJpxNOJ5xOOJ1wOuF0wumE0wmnE04nnE44nXA64XTC6YTTCacTTiecTjidcDrhdMLphNMJpxNOJ5xOOJ1wOuF0wumE0wmnE04nnE44nXA64XTC6YTTCacTTiecTjidcDrhdMLphNMJpxNOJ5xOOJ1wOuF0wumE0wmnE04nnE44nXA64XTC6YTTCacTTiecTjidcDrhdMLphNMJpxNOJ5xOOJ1wOuF0wumE0wmnE04nnE44XYFfUh6RhrhkQ+qHS9Z/A0KokMOaJTelAAAAAElFTkSuQmCC"); z-index: 100; color: white;
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADhCAMAAABMbI/KAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAApJJREFUeJzt29tq4zAARVELowcbkf7/39YXybEamhIXIi3IGeKxMxlYNdt9yzDPY7NNFzeO8zws7q9Wuwr/WuTD4r76/9ttkQ+ie5UPa2ghhPWgvJbDtMFD6/v36gIDD/VJgfe/UOjHT9AtfKu5Pssn+7u9prIBw0Hd/5S/em48K0sj4TjJl92mUsEf7vjUL/wUdDj8QuPP13Hjz9dx43/OhrOpsHBxNpxNhYWLs+FsKixcnA1nU2Hh4mw4mwoLF2fD2VRYuDgbzqbCwsXZcDYVFi7OhrOpsHBxNpxNhYWLs+FsKixcnA1nU2Hh4mw4mwoLF2fD2VQ+8HfteDjV70iIw+EppfWgvFKBp9a379WlD/zNS40fzq3YDKneORV9fCidPj+1hW+MVJ63w1wOD1f3z09tU6lgPy72HyXV8HzdvPFn8MKt/2maanir1XWUiuu890P2dtL4v2b/OmTh4mw4mwoLF2fD2VRYuDgbzqbCwsXZcDYVFi7OhrOpsHBxNpxNhYWLs+FsKixcnA1nU2Hh4mw4mwoLF2fD2VRYuDgbzqbCwsXZcDYVFi7OhrOpsHBxNpxNhYWz35EQh8NjjOtBecUCj61v36uLYCrlJnN3POZDe/iW7UE6vXPK+v5WjPm0eSqFsz90d2A+1FfxRyot9wg7HWK+xb/BW6byDF7u+gO8p8ZPsHvV5eR0mHpp/OpsuPR7fFsXjV/Zp/EGs1Nh4eJsOJsKCxdnw9lUWLg4G86mwsLF2XA2FRYuzoazqbBwcTacTYWFi7PhbCosXJwNZ1Nh4eJsOJsKCxdnw9lUWLg4G86mwsLF2XA2FRYuzoazqbBwcTacTeUDf9eOh1P95pW4BU7Kx3G4jeRuw3wjN38DW1uZdlfGo68AAAAASUVORK5CYII="); z-index: 100; color: white;
 caret-color: magenta;
 color: rgb(180,133,205);
 text-shadow: 0px .5px 0px rgb(139, 56, 0);
-padding-top: 20px;
 }
 .input_partCode::selection      { background: rgb(180,133,205); color: rgb(139, 56, 0); }
 
@@ -15488,18 +15564,30 @@ image-rendering: pixelated;
 <input id="partH" name="partH" class="input_ input_partH dckimPixelMono" type="value" placeholder="empty" title="/ * Cycle Parts\n- + Cycle Fields">
 
 <button id="cursorAuto" class="button_ button_cursorAuto" tabindex="-1" title=""></button>
-<button id="cursorXS" class="button_ button_cursorXS" tabindex="-1" title=""></button>
-<button id="cursorS" class="button_ button_cursorS" tabindex="-1" title=""></button>
-<button id="cursorM" class="button_ button_cursorM" tabindex="-1" title=""></button>
-<button id="cursorL" class="button_ button_cursorL" tabindex="-1" title=""></button>
-<button id="cursorXL" class="button_ button_cursorXL" tabindex="-1" title=""></button>
-<button id="cursorNum" class="button_ button_cursorNum" tabindex="-1" title=""></button>
+<button id="cursorXS"   class="button_ button_cursorXS"   tabindex="-1" title=""></button>
+<button id="cursorS"    class="button_ button_cursorS"    tabindex="-1" title=""></button>
+<button id="cursorM"    class="button_ button_cursorM"    tabindex="-1" title=""></button>
+<button id="cursorL"    class="button_ button_cursorL"    tabindex="-1" title=""></button>
+<button id="cursorXL"   class="button_ button_cursorXL"   tabindex="-1" title=""></button>
+<button id="cursorNum"  class="button_ button_cursorNum"  tabindex="-1" title=""></button>
 
 <input id="partNom" name="partNom" class="input_ input_partNom dckimPixelMono" type="value" placeholder="emptyFile" spellcheck="false" tabindex="-1" title=", . Cycle Parts\n< > Cycle Levels\nSPACE Show Names\nESC Return to Drafting">
 <button id="partPrev" class="button_ button_partPrev" tabindex="-1" title=""></button>
 <button id="showNames" class="button_ button_showNames" tabindex="-1" title=""></button>
 <button id="partNext" class="button_ button_partNext" tabindex="-1" title=""></button>
-<textarea id="partText"  class="textarea_ input_partText  dckimPixelMono"        placeholder="empty" spellcheck="false"></textarea>
+
+
+<div      id="partText"                           class="textarea_ input_partText  dckimPixelMono" placeholder="empty" spellcheck="false">
+<textarea id="partNotes"     name="partNotes"     class="codeInputs" spellcheck="false" title="notes(JSON)" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.firstElementChild.value;  }; updateInfoShelf();"></textarea>
+<textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="oninput"     oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('oninput', ui.partText.ref.firstElementChild.nextElementSibling.value); }"></textarea>
+<textarea id="partInnerHTML" name="partInnerHTML" class="codeInputs" spellcheck="false" title="innerHTML"   oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.partText.ref.lastElementChild.value; }"></textarea>
+</div>
+
+
+
+
+
+
 <div id="partStyle" class="textarea_ input_partStyle dckimPixelMono hidden">
 
 
@@ -16079,7 +16167,14 @@ margin              :         0px;
 
 
 
-<textarea id="partCode"  class="textarea_ input_partCode  dckimPixelMono hidden" placeholder="empty" spellcheck="false"></textarea>
+<div      id="partCode"                       class="textarea_ input_partCode  dckimPixelMono hidden" placeholder="empty" spellcheck="false">
+<textarea id="onclick"     name="onclick"     class="codeInputs" spellcheck="false" title="onclick"     oninput="if (curFocus==0&&coinFocus!=null) { if ( coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == 'BUTTON') { coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } else { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } }"></textarea>
+<textarea id="onmouseover" name="onmouseover" class="codeInputs" spellcheck="false" title="onmouseover" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onmouseover', ui.partCode.ref.firstElementChild.nextElementSibling.value); }"></textarea>
+<textarea id="onmouseout"  name="onmouseout"  class="codeInputs" spellcheck="false" title="onmouseout"  oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onmouseout', ui.partCode.ref.lastElementChild.value); }"></textarea>
+</div>
+
+
+
 <input id="pathEntry" name="pathEntry" class="input_ input_pathEntry dckimPixelMono" type="value" title="I was using this for developing this menu, together with 'shift+Y' and 'b', which makes up some code for buttons. It only works if you are importing the images and base64 is turned off." placeholder="imagePath/" spellcheck="false">
 
 
@@ -21735,20 +21830,9 @@ ui.showNames.click               = function() { if (drawPartNames=="false") { dr
 
 ui.partNext.click                = function() { focusNext(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); };     updateInfoShelf(); redraw(); };
 
-ui.partText.input                = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.value;  }; updateInfoShelf(); };
+ui.partText.input                = function() { };
 ui.partStyle.input               = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.style = ui.partStyle.ref.value; } };
-ui.partCode.input                = function() { if (curFocus==0&&coinFocus!=null) {
-
-if (
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
-) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute("onclick", ui.partCode.ref.value);
-} else {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute("onclick", ui.partCode.ref.value);
-}
-
-} };
+ui.partCode.input                = function() { };
 
 
 
@@ -26548,7 +26632,7 @@ const updateReadout = () => {
         } else {
             finalAction = "go.setState(go.xqn.grp['" + groupName + "'][" + val + "])";
         }
-        cmdDisplay.innerText = "try { go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + "; } catch { }";
+        cmdDisplay.innerText = "if (typeof go !== 'undefined') { go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + "; }";
     }
 };
 setInterval(updateReadout, 15);
@@ -26653,7 +26737,7 @@ document.body.appendChild(animToggle);
 
 
 
-var useAllLayers = false;
+var useAllLayers = true;
 
 if (localStorage.getItem("useAllLayers")) {
 useAllLayers = localStorage.getItem("useAllLayers");
@@ -27645,6 +27729,28 @@ ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace
 `;
 
 
+
+
+
+
+/**************************************/
+/**************************************/
+/**************************************/
+/* THIS IS ONE OF THE LAST WORK AREAS */
+/**************************************/
+/**************************************/
+/**************************************/
+
+
+
+
+
+
+
+
+
+
+
 if (useAllLayers == true) {
 scriptStarter += `
       go.disp      = {};
@@ -27663,10 +27769,23 @@ ${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replac
 scriptStarter += `
       go.show    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } };
       go.hide    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } };
+
       go.fadeIn  = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } };
       go.fadeOut = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } };
 `;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 scriptStarter += `
 
@@ -27871,7 +27990,7 @@ go.setState = function(xqn,rate,delay,arg) { if (!!arg) {
 for (y of go.xqn.style) { const target = arg.ref;
 try {
 let value = parseInt(xqn.style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1 || !xqn.style[y].includes("px") || y == "filter") value = xqn.style[y];
+if (go.vwFactor == 1 || !xqn.style[y].includes("px") || y == "filter" || y == "transform") value = xqn.style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -27882,7 +28001,7 @@ for (d of go.ids) { for (y of go.xqn.style) {
 const target = document.getElementById(d);
 try {
 let value = parseInt(xqn.dat[d].style[y]) * go.vwFactor + "vw";
-if (go.vwFactor == 1 || !xqn.dat[d].style[y].includes("px") || y == "filter") value = xqn.dat[d].style[y];
+if (go.vwFactor == 1 || !xqn.dat[d].style[y].includes("px") || y == "filter" || y == "transform") value = xqn.dat[d].style[y];
 target.style[y] = value;
 if (target.style.transitionDuration != rate  + "ms") {
     target.style.transitionDuration  = rate  + "ms"; }
@@ -27972,24 +28091,88 @@ scriptStarter += `
 /*** THIS SETS UP THE FUNCTION BLOCKS: READY FOR CODE ***/
 
 `;
+
+
+
+
+
+
+
+
+
+
+if (useAllLayers) {
+
+let num = 0;
+for (h of levelName) {
+num++;
+if (topLayer[h].b_content.children.length == 0) continue;
+
+scriptStarter += `
+/*** LVL${num} ***/
+
+`;
+
+
+
 for (let k = 0; k < eventRoll.length; k++) {
-for (let j = 0; j < idRoll.length; j++) {
+
+for (c of topLayer[h].b_content.children) {
+
 
 let extract = "";
-
-try {
-extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
-} catch {
-extract = "";
-}
-
-scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
+extract = c.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
+
+
+
 
 }
 scriptStarter += `
 `;
 }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+} else if (!useAllLayers) {
+
+
+
+
+for (let k = 0; k < eventRoll.length; k++) {
+for (let j = 0; j < idRoll.length; j++) {
+let extract = "";
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
+`;
+}
+scriptStarter += `
+`;
+}
+
+
+
+
+}
+
+
+
 
 
 
@@ -29165,10 +29348,17 @@ if (
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
 ) {
-ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("onclick");
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("onclick");
 } else {
-ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
 }
+
+
+ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseover");
+ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseout");
+
+
+
 
 /*
 if (
@@ -29203,10 +29393,19 @@ topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
 ui.snapGridIncrement.ref.value = T;
 
 if (coinFocus!=null&&coinFocus.dataset.notes) {
-ui.partText.ref.value  = coinFocus.dataset.notes;
+ui.partText.ref.firstElementChild.value  = coinFocus.dataset.notes;
 } else {
-ui.partText.ref.value  = "";
+ui.partText.ref.firstElementChild.value  = "";
 }
+
+
+ui.partText.ref.firstElementChild.nextElementSibling.value  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("oninput");
+ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
+
+
+
+
+
 
 ui.partText.ref.style.outline = "";
 try {
@@ -32088,7 +32287,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-30T04:52:56Z">
+<meta name="last-build" content="2026-03-30T16:44:28Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -32100,7 +32299,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260330005256'></script>
+<script src='./bundle.js?v=20260330124428'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>
@@ -37488,11 +37687,6 @@ ctrl   = keyInfo[4],
 alt    = keyInfo[5];
 
 if (charM==0&&charQ1==0&&yank==0&&charF==0) {
-/**************************************************************************************************************************************************************/
-/*                                                                                                                                                            */
-/*    $    */ if (kC ==  52 && cC ==  36) { if(rev==1){focusFirst()}else{focusLast()}                                                                          }
-/*    ^    */ if (kC ==  54 && cC ==  94) { if(rev==1){focusLast()}else{focusFirst()}                                                                          }
-/*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/
 /*                                                                                                                                                            */
 /*    '    */ if (kC == 222 && cC ==  39) { charQ1=1;charM=0;charF=0;                                                                                          }
