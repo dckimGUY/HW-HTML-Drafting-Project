@@ -29342,7 +29342,7 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 
 }
 
-
+if (coinFocus!=null) {
 
 if (
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
@@ -29357,7 +29357,7 @@ ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElement
 ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseover");
 ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseout");
 
-
+}
 
 
 /*
@@ -29398,10 +29398,10 @@ ui.partText.ref.firstElementChild.value  = coinFocus.dataset.notes;
 ui.partText.ref.firstElementChild.value  = "";
 }
 
-
+if (coinFocus!=null) {
 ui.partText.ref.firstElementChild.nextElementSibling.value  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("oninput");
 ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
-
+}
 
 
 
@@ -32287,7 +32287,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-03-30T16:44:28Z">
+<meta name="last-build" content="2026-04-01T01:31:32Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -32299,7 +32299,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260330124428'></script>
+<script src='./bundle.js?v=20260331213132'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>

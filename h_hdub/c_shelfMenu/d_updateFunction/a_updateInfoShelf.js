@@ -88,7 +88,7 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 
 }
 
-
+if (coinFocus!=null) {
 
 if (
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
@@ -103,7 +103,7 @@ ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElement
 ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseover");
 ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseout");
 
-
+}
 
 
 /*
@@ -144,10 +144,10 @@ ui.partText.ref.firstElementChild.value  = coinFocus.dataset.notes;
 ui.partText.ref.firstElementChild.value  = "";
 }
 
-
+if (coinFocus!=null) {
 ui.partText.ref.firstElementChild.nextElementSibling.value  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("oninput");
 ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
-
+}
 
 
 
