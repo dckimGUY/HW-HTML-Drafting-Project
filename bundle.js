@@ -15396,7 +15396,7 @@ text-shadow: 0px .5px 0px rgb(24, 117, 189);
 
 
 .input_partText                  { position: absolute; border: none; margin: none; padding: 4px; left:      8px; top:    240px; width:    184px; height:    225px; font-size: 8px;
-background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADhCAMAAABMbI/KAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAArRJREFUeJzt28uOozAUAFHkhZGw+/9/dyC8HMhoQkZq7pFS3ThANsVNwY5uGPo+f0h/G8PQjd4/n4r/3MVo3v2H932M5p3oPZl3U+CllGlRtnHJD/Fy9/yuUqKIb7/4PNJ8VirHozmV+ym57Ev5l3gOJp5X+/0ob123v0mOkspsXE7i26k1n/2KAok3vZQ5mL2eWXy6kPViQqTS5L0u5fl8e8M2qdzOHu/TU6Xk5iKaJ/lElFSuEajxa0Rp/BNscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdT+Yr/FtvNqb4jIYKL11qnRdnqKl7vHt9VKihelyW4+NnsSTwcj5SX3fl4PlGnvfmLkOKrYvMx7S2fMyFT2T3r0/4mHrXxt8XD0eSx95JrzdsaVPzIiyRCpnLiKBi18RN/ExexxcOncoRp/Mi38RuwU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HFRWxxNhVWXMQWZ1NhxUVscTYVVlzEFmdTYcVFbHE2FVZcxBZnU2HF2XckRHDxlNK0KFtaxdPd47tKElKZZvyYcnocrEMONfGXHmn7T3nR3yYeRTxvWnnJObfiy1+Ol0panxKpLaQ5PKYShbT65cX3MPHAjad2OaXSng8r/qrxPaZgqVzBFo+SyttEa/xtvo3fgJ0KKy5ii7OpsOIitjibCisuYouzqbDiIrY4mworLmKLs6mw4iK2OJsKKy5ii7OpsOIitjibCisuYouzqbDiIrY4mworLmKLs6mw4iK2OJsKKy5ii7OpsOIitjibylf8t9huTvXNK5FRnDTv+y71JKkbEsnwBzj/1zGiX44EAAAAAElFTkSuQmCC"); z-index: 100;
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAADhCAMAAABMbI/KAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAArZJREFUeJzt291q6kAYhtEwAxPI0Pu/3Z2YTDL+gI0bmm+BbzVUe7KcPnrmME3jWD7ceNmmaZjdP5/Cf67aLB/+w33dZvkguhf5sARea10uyn2+lBu8Xn1+Z1ejwPf/+Hqk5ZlUHx+tqVy/Wupxqe/gJRi8NP3xqOxd9/+TEiWVVVyf4PtTLZ/jFQWCd73UNZijnhW+vJD2YkKk0uXdLvX++f4N26Vy+Y547z5VauleRPdJvixKKucWqPFzi9L4J7PhbCosXJwNZ1Nh4eJsOJsKCxdnw9lUWLg4G86mwsLF2XA2FRYuzoazqbBwcTacTYWFi7PhbCosXJwNZ1Nh4eJsOJsKCxdnw9lUWLg4G86mwsLF2XA2lS/8r7a/OdXvSIjD4Tnn5aLcc4Pnq4/v7HJY+CvR7aBzuznwfH8L+uZ8DS9NXYLD1zjae3L7S+7gAVPJ7YD3sPPxXOzGF+rqXc3bK4jfeG495917/BIWfp93u+yplLCpvFncxt8sbuPvZ8PZVFi4OBvOpsLCxdlwNhUWLs6Gs6mwcHE2nE2FhYuz4WwqLFycDWdTYeHibDibCgsXZ8PZVFi4OBvOpsLCxdlwNhUWLs6Gs6mwcHE2nE2FhYuz4WwqLJz9joQ4HJ5SWi7KPTV4uvr4zi4JqSxnfDvldHvQDjnUib90pP2WysbfTzwKvOyssuVcevj2U+KlktqnROoL6R4+phJlqfnK5n048cCNp/7ylEr/fFj4q8aPmIKlcmY2PEoqv160xn+9b+MXzE6FhYuz4WwqLFycDWdTYeHibDibCgsXZ8PZVFi4OBvOpsLCxdlwNhUWLs6Gs6mwcHE2nE2FhYuz4WwqLFycDWdTYeHibDibCgsXZ8PZVFi4OBvOpsLCxdlwNpUv/K+2vznVb16Jm+GkfByHNJJLw5TITf8AK0XL4v+YxmEAAAAASUVORK5CYII="); z-index: 100;
 caret-color: white;
 color: rgb(115,121,115);
 text-shadow: 0px .5px 0px rgb(  0, 161, 238);
@@ -15579,7 +15579,7 @@ image-rendering: pixelated;
 
 <div      id="partText"                           class="textarea_ input_partText  dckimPixelMono" placeholder="empty" spellcheck="false">
 <textarea id="partNotes"     name="partNotes"     class="codeInputs" spellcheck="false" title="notes(JSON)" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.firstElementChild.value;  }; updateInfoShelf();"></textarea>
-<textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="oninput"     oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('oninput', ui.partText.ref.firstElementChild.nextElementSibling.value); }"></textarea>
+<textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="oninput"     readonly></textarea>
 <textarea id="partInnerHTML" name="partInnerHTML" class="codeInputs" spellcheck="false" title="innerHTML"   oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.partText.ref.lastElementChild.value; }"></textarea>
 </div>
 
@@ -29360,15 +29360,7 @@ ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementC
 }
 
 
-/*
-if (
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "IMG"
-) {
-ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.src;
-}
 
-*/
 
 
 }
@@ -29399,11 +29391,18 @@ ui.partText.ref.firstElementChild.value  = "";
 }
 
 if (coinFocus!=null) {
-ui.partText.ref.firstElementChild.nextElementSibling.value  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("oninput");
+
+if (
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "IMG"
+) {
+ui.partText.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.src;
+}
+
 ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 }
 
-
+ui.partText.ref.firstElementChild.nextElementSibling.setAttribute("onfocus", "this.select()");
 
 
 
@@ -32287,7 +32286,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-04-01T01:31:32Z">
+<meta name="last-build" content="2026-04-01T03:01:35Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -32299,7 +32298,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260331213132'></script>
+<script src='./bundle.js?v=20260331230135'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>

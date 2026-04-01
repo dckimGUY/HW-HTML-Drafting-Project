@@ -106,15 +106,7 @@ ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementC
 }
 
 
-/*
-if (
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "IMG"
-) {
-ui.partCode.ref.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.src;
-}
 
-*/
 
 
 }
@@ -145,11 +137,18 @@ ui.partText.ref.firstElementChild.value  = "";
 }
 
 if (coinFocus!=null) {
-ui.partText.ref.firstElementChild.nextElementSibling.value  = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("oninput");
+
+if (
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
+coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "IMG"
+) {
+ui.partText.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.src;
+}
+
 ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 }
 
-
+ui.partText.ref.firstElementChild.nextElementSibling.setAttribute("onfocus", "this.select()");
 
 
 
