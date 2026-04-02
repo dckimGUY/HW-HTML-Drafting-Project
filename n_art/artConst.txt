@@ -1,0 +1,540 @@
+const artConst = `<!DOCTYPE html>
+<html>
+<head>
+<title>ASCII-Art</title>
+<meta charset="UTF-8">
+<meta name="last-build" content="2025-12-21T22:20:24Z">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAG5JREFUGJVFjwsKACEIRIdIERK8/213/LQNVNNLU4GSmBlGW1UJRECzCXilTHA9V0QC7mgQ4QmcpKIR3sDjJZ91VlUTghTvx0roIyPqxTKIyohu8H5KN59O2QRTthsj+BvTl1y+h+N0d7gSK0u7D2MOBH2NDs/xAAAAAElFTkSuQmCC">
+<style>
+html, body              { overflow: scroll; scrollbar-width: none;                    }
+body                    { margin: none; padding: none; border: none; outline: none;   }
+body::-webkit-scrollbar { display: none;                                              }
+canvas                  { image-rendering: crisp-edges; image-rendering: pixelated;   
+                          border: none; padding: none; margin: none; outline: none;
+                          position: absolute; top: 0; left: 0;                        }
+canvas                  { cursor: cell; }
+</style>
+</head>
+<body>
+<script>
+console.log(\`
+
+Welcome to FONT-goblin ASCII-Art:
+    A micro program for drawing textual art.
+
+    By using the "ENTER" key, we can copy the entire artwork to the computer clipboard.
+
+    Use the "TAB" key to change the colour scheme and use the "SPACE" key to enter the desired characters for the middle mouse input and right click input. Also notice that the "SHIFT" key will change the input character. Just test it out and you will see that the alphabet characters will become capitalized when using the left mouse button, and become lowercase without.
+
+
+
+
+\`);
+
+
+const monoWidth = 32;
+
+var   key       = "A";
+var   key2      = "=";
+var   key2shift = "_";
+var   key1      = " ";
+var   key1shift = "X";
+
+
+
+if (localStorage.getItem("keys")) {
+const keys = localStorage.getItem("keys").split("");
+key       = keys[0];
+key1      = keys[1];
+key1shift = keys[2];
+key2      = keys[3];
+key2shift = keys[4];
+}
+
+
+
+const firstPoint   = [0,0];
+const mousePoint   = [0,0];
+const mouseCursor  = [0,0];
+
+var artArray     = [];
+
+/* draw the initial array */
+var arrayHeight      = 42;
+var arrayWidth     = 47;
+
+function writeArray() {
+const arrayWide    = [];
+for (j = 0; j < arrayHeight; j++) {
+arrayWide[j] = " "; }
+for (j = 0; j < arrayWidth; j++) {
+artArray[j] = Array.from(arrayWide); }
+}
+
+writeArray();
+
+getArray();
+
+function getArray() {
+if (localStorage.getItem("artArray"))    {    artArray = JSON.parse(localStorage.getItem("artArray")); }
+/*
+if (localStorage.getItem("arrayHeight"))  {  arrayHeight = parseInt(localStorage.getItem("arrayHeight")); }
+if (localStorage.getItem("arrayWidth")) { arrayWidth = parseInt(localStorage.getItem("arrayWidth")); }
+*/
+}
+
+
+function saveArray() {
+localStorage.setItem("artArray", JSON.stringify(artArray));
+/*
+localStorage.setItem("arrayHeight", arrayHeight);
+localStorage.setItem("arrayWidth", arrayWidth);
+*/
+}
+
+
+
+const canvas = document.createElement("canvas");
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+document.body.append(canvas);
+
+
+
+var colourSet = {
+"names" : 
+	[
+	"grey",
+	"lightgray",
+	"blue",
+	"yellow"
+	],
+"rgb" : 
+	[
+	"rgb(128, 128, 128)",
+	"rgb(211, 211, 211)",
+	"rgb(  0,   0, 255)",
+	"rgb(255, 255,   0)"
+	],
+"inverted" : 
+	[
+	"rgb(127, 127, 127)",
+	"rgb( 44,  44,  44)",
+	"rgb(255, 255,   0)",
+	"rgb(  0,   0, 255)"
+	]
+};
+
+
+
+if (localStorage.getItem("colourSet")) {
+colourSet = JSON.parse(localStorage.getItem("colourSet"));
+}
+
+
+
+var colour1 = colourSet.names[1];
+var colour2 = colourSet.names[0];
+var colourFlip = 0;
+
+if (localStorage.getItem("colourFlip")) {
+colourFlip = parseInt(localStorage.getItem("colourFlip"));
+switch (colourFlip) {
+case 1: colour1 = colourSet.names[0]; colour2 = colourSet.names[1]; break;
+case 2: colour1 = colourSet.names[2]; colour2 = colourSet.names[3]; break;
+case 3: colour1 = colourSet.names[3]; colour2 = colourSet.names[2]; break;
+case 0: colour1 = colourSet.names[1]; colour2 = colourSet.names[0]; break;
+}
+}
+
+function flipColour() {
+switch (colourFlip) {
+case 0: colourFlip = 1; colour1 = colourSet.names[0]; colour2 = colourSet.names[1]; break;
+case 1: colourFlip = 2; colour1 = colourSet.names[2]; colour2 = colourSet.names[3]; break;
+case 2: colourFlip = 3; colour1 = colourSet.names[3]; colour2 = colourSet.names[2]; break;
+case 3: colourFlip = 0; colour1 = colourSet.names[1]; colour2 = colourSet.names[0]; break;
+}
+localStorage.setItem("colourFlip", colourFlip);
+redraw();
+}
+
+
+
+function redraw() {
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = colour1;
+ctx.fillRect(0,0,window.innerWidth, window.innerHeight);
+ctx.fillStyle = colour2;
+ctx.strokeStyle = colour2;
+ctx.fillRect(0,0, arrayWidth * monoWidth,arrayHeight * monoWidth * 2);
+ctx.lineWidth = 2;
+ctx.fillStyle = colour1;
+ctx.fillStyle = colour2;
+ctx.fillStyle = colour2;
+ctx.font = \`normal \${monoWidth * 2}px dckimPixelMono\`;
+ctx.textAlign = "start";
+ctx.textBaseline = "top";
+ctx.fillStyle = colour1;
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
+if (artArray[k][j]) {
+ctx.fillText(artArray[k][j],k * monoWidth - 1.5,j * monoWidth * 2); } } }
+ctx.strokeRect(0,0, arrayWidth * monoWidth,arrayHeight * monoWidth * 2);
+}
+
+
+redraw();
+
+
+
+
+
+
+
+
+window.addEventListener("resize", function() {
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+redraw();
+});
+
+
+function resize(direction) {
+/*
+switch (direction) {
+case    "up": --arrayHeight; break;
+case  "down": ++arrayHeight; break;
+case  "left":  --arrayWidth; break;
+case "right":  ++arrayWidth; break;
+}
+saveArray();
+writeArray();
+redraw();
+*/
+}
+
+
+var mouseIsDown = false;
+var mouseDownButton = 0;
+window.addEventListener("mousedown", function() {
+if (event.buttons == 4) { event.preventDefault(); }
+mouseIsDown = true;
+mouseDownButton = event.button;
+});
+
+
+window.addEventListener("mouseup", function() {
+mouseIsDown = false;
+});
+
+
+window.addEventListener("mousemove", function() {
+mousePoint[0] = Math.floor(event.clientX / monoWidth) * monoWidth;
+mousePoint[1] = Math.floor(event.clientY / (monoWidth * 2)) * monoWidth * 2;
+mouseCursor[0] = event.clientX;
+mouseCursor[1] = event.clientY;
+if (mouseIsDown) {
+try {
+if (event.shiftKey) {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toUpperCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1shift        ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2shift        ; break;
+}
+} else {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toLowerCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1             ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2             ; break;
+}
+}
+saveArray();
+redraw();
+} catch {}
+}
+});
+
+
+window.addEventListener("contextmenu", function() {
+event.preventDefault();
+});
+
+
+
+window.addEventListener("click", function() {
+firstPoint[0] = mousePoint[0];
+firstPoint[1] = mousePoint[1];
+try {
+if (event.shiftKey) {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toUpperCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1shift        ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2shift        ; break;
+}
+} else {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toLowerCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1             ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2             ; break;
+}
+}
+saveArray();
+} catch {}
+redraw();
+});
+
+
+
+
+function clear() {
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
+artArray[k][j] = " ";
+saveArray(); } } }
+
+
+function copy() {
+let string = "";
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
+if (artArray[k][j]) {
+string += artArray[k][j];
+} else {
+string += " ";
+}
+}
+if (j != arrayHeight - 1) {
+string += "\\n"; } }
+copyToClipboard(\`<pre style="position: absolute; top: 0px; left: 0px; font-family: inherit; color: inherit;">\` + string + '</pre>');
+}
+
+
+function copyToClipboard(string) {
+const d = document;
+const x = d.body.appendChild(d.createElement("textarea"));
+x.value = string;
+x.select();
+d.execCommand("copy");
+x.remove();
+}
+
+
+
+function promptForKeys() {
+let result = null;
+result = prompt(
+\`enter 4 characters,
+2 for middle mouse,
+2 for right click: \`, (key1 + key1shift + key2 + key2shift).toString());
+if (result!=null) {
+resultArray = result.split("");
+key2      = resultArray[2];
+key2shift = resultArray[3];
+key1      = resultArray[0];
+key1shift = resultArray[1];
+localStorage.setItem("keys", (key + key1 + key1shift + key2 + key2shift).toString());
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var kC = 0, cC = 0;
+document.addEventListener("keydown", (event) => {
+kC = event.keyCode;
+let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*   esc   */ if (kC ==  27) { event.preventDefault(); clear(); redraw();  }
+/*   tab   */ if (kC ==   9) {
+if (!event.ctrlKey) {
+event.preventDefault(); flipColour();
+}
+}
+/*backspace*/ if (kC ==   8) { event.preventDefault(); clear(); redraw();  }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F1    */ if (kC == 112) {                                             }
+/*   F2    */ if (kC == 113) {                                             }
+/*   F3    */ if (kC == 114) {                                             }
+/*   F4    */ if (kC == 115) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F5    */ if (kC == 116) {                                             }
+/*   F6    */ if (kC == 117) {                                             }
+/*   F7    */ if (kC == 118) {                                             }
+/*   F8    */ if (kC == 119) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F9    */ if (kC == 120) {                                             }
+/*   F10   */ if (kC == 121) {                                             }
+/*   F11   */ if (kC == 122) {                                             }
+/*   F12   */ if (kC == 123) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* pauseBR */ if (kC ==  19) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   ins   */ if (kC ==  45) {                                             }
+/*   home  */ if (kC ==  36) {                                             }
+/* page up */ if (kC ==  33) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  delete */ if (kC ==  46) {                                             }
+/*   end   */ if (kC ==  35) {                                             }
+/*page down*/ if (kC ==  34) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* scr lck */ if (kC == 145) {                                             }
+/* num lock*/ if (kC == 144) {                                             }
+/*  caps   */ if (kC ==  20) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   up arr*/ if (kC ==  38) { event.preventDefault(); resize("up");       }
+/* down arr*/ if (kC ==  40) { event.preventDefault(); resize("down");     }
+/* left arr*/ if (kC ==  37) { event.preventDefault(); resize("left");     }
+/*right arr*/ if (kC ==  39) { event.preventDefault(); resize("right");    }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  space  */ if (kC ==  32) { promptForKeys();                            }
+/*                                                                        */
+/***********************************************************************/});
+
+
+document.addEventListener("keypress", (event) =>  { 
+cC = event.charCode;
+let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*    /    */ if (kC == 111 && cC ==  47) { key = ";";                     }
+/*    *    */ if (kC == 106 && cC ==  42) { key = ":";                     }
+/*                                                                        */
+/*    -    */ if (kC == 109 && cC ==  45) { key = "-"; if (es) key = "_";  }
+/*    +    */ if (kC == 107 && cC ==  43) { key = "+"; if (es) key = "=";  }
+/*                                                                        */
+/*    7    */ if (kC == 103 && cC ==  55) { key = "7";                     }
+/*    8    */ if (kC == 104 && cC ==  56) { key = "8";                     }
+/*    9    */ if (kC == 105 && cC ==  57) { key = "9";                     }
+/*                                                                        */
+/*    4    */ if (kC == 100 && cC ==  52) { key = "4";                     }
+/*    5    */ if (kC == 101 && cC ==  53) { key = "5";                     }
+/*    6    */ if (kC == 102 && cC ==  54) { key = "6";                     }
+/*                                                                        */
+/*    1    */ if (kC ==  97 && cC ==  49) { key = "1";                     }
+/*    2    */ if (kC ==  98 && cC ==  50) { key = "2";                     }
+/*    3    */ if (kC ==  99 && cC ==  51) { key = "3";                     }
+/*                                                                        */
+/*    0    */ if (kC ==  96 && cC ==  48) { key = "0";                     }
+/*    .    */ if (kC == 110 && cC ==  46) { key = ".";                     }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  enter  */ if (kC ==  13 && cC ==  13) { event.preventDefault(); copy();}
+/*                                                                        */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    \`    */ if (kC == 192 && cC ==  96) { key = "\`";                     }/*    ~    */ if (kC == 192 && cC == 126) { key = "~";                     }
+/*    1    */ if (kC ==  49 && cC ==  49) { key = "1";                     }/*    !    */ if (kC ==  49 && cC ==  33) { key = "!";                     }
+/*    2    */ if (kC ==  50 && cC ==  50) { key = "2";                     }/*    @    */ if (kC ==  50 && cC ==  64) { key = "@";                     }
+/*    3    */ if (kC ==  51 && cC ==  51) { key = "3";                     }/*    #    */ if (kC ==  51 && cC ==  35) { key = "#";                     }
+/*    4    */ if (kC ==  52 && cC ==  52) { key = "4";                     }/*    \$    */ if (kC ==  52 && cC ==  36) { key = "\$";                     }
+/*    5    */ if (kC ==  53 && cC ==  53) { key = "5";                     }/*    %    */ if (kC ==  53 && cC ==  37) { key = "%";                     }
+/*    6    */ if (kC ==  54 && cC ==  54) { key = "6";                     }/*    ^    */ if (kC ==  54 && cC ==  94) { key = "^";                     }
+/*    7    */ if (kC ==  55 && cC ==  55) { key = "7";                     }/*    &    */ if (kC ==  55 && cC ==  38) { key = "&";                     }
+/*    8    */ if (kC ==  56 && cC ==  56) { key = "8";                     }/*    *    */ if (kC ==  56 && cC ==  42) { key = "*";                     }
+/*    9    */ if (kC ==  57 && cC ==  57) { key = "9";                     }/*    (    */ if (kC ==  57 && cC ==  40) { key = "(";                     }
+/*    0    */ if (kC ==  48 && cC ==  48) { key = "0";                     }/*    )    */ if (kC ==  48 && cC ==  41) { key = ")";                     }
+/*    -    */ if (kC == 173 && cC ==  45) { key = "-";                     }/*    _    */ if (kC == 173 && cC ==  95) { key = "_";                     }
+/*    =    */ if (kC ==  61 && cC ==  61) { key = "=";                     }/*    +    */ if (kC ==  61 && cC ==  43) { key = "+";                     }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    q    */ if (kC ==  81 && cC == 113) { key = "q";                     }/*    Q    */ if (kC ==  81 && cC ==  81) { key = "Q";                     }
+/*    w    */ if (kC ==  87 && cC == 119) { key = "w";                     }/*    W    */ if (kC ==  87 && cC ==  87) { key = "W";                     }
+/*    e    */ if (kC ==  69 && cC == 101) { key = "e";                     }/*    E    */ if (kC ==  69 && cC ==  69) { key = "E";                     }
+/*    r    */ if (kC ==  82 && cC == 114) { key = "r";                     }/*    R    */ if (kC ==  82 && cC ==  82) { key = "R";                     }
+/*    t    */ if (kC ==  84 && cC == 116) { key = "t";                     }/*    T    */ if (kC ==  84 && cC ==  84) { key = "T";                     }
+/*    y    */ if (kC ==  89 && cC == 121) { key = "y";                     }/*    Y    */ if (kC ==  89 && cC ==  89) { key = "Y";                     }
+/*    u    */ if (kC ==  85 && cC == 117) { key = "u";                     }/*    U    */ if (kC ==  85 && cC ==  85) { key = "U";                     }
+/*    i    */ if (kC ==  73 && cC == 105) { key = "i";                     }/*    I    */ if (kC ==  73 && cC ==  73) { key = "I";                     }
+/*    o    */ if (kC ==  79 && cC == 111) { key = "o";                     }/*    O    */ if (kC ==  79 && cC ==  79) { key = "O";                     }
+/*    p    */ if (kC ==  80 && cC == 112) { key = "p";                     }/*    P    */ if (kC ==  80 && cC ==  80) { key = "P";                     }
+/*    [    */ if (kC == 219 && cC ==  91) { key = "[";                     }/*    {    */ if (kC == 219 && cC == 123) { key = "{";                     }
+/*    ]    */ if (kC == 221 && cC ==  93) { key = "]";                     }/*    }    */ if (kC == 221 && cC == 125) { key = "}";                     }
+/*    \\    */ if (kC == 220 && cC ==  92) { key = "\\\\";                    }/*    |    */ if (kC == 220 && cC == 124) { key = "|";                     }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    a    */ if (kC ==  65 && cC ==  97) { key = "a";                     }/*    A    */ if (kC ==  65 && cC ==  65) { key = "A";                     }
+/*    s    */ if (kC ==  83 && cC == 115) { key = "s";                     }/*    S    */ if (kC ==  83 && cC ==  83) { key = "S";                     }
+/*    d    */ if (kC ==  68 && cC == 100) { key = "d";                     }/*    D    */ if (kC ==  68 && cC ==  68) { key = "D";                     }
+/*    f    */ if (kC ==  70 && cC == 102) { key = "f";                     }/*    F    */ if (kC ==  70 && cC ==  70) { key = "F";                     }
+/*    g    */ if (kC ==  71 && cC == 103) { key = "g";                     }/*    G    */ if (kC ==  71 && cC ==  71) { key = "G";                     }
+/*    h    */ if (kC ==  72 && cC == 104) { key = "h";                     }/*    H    */ if (kC ==  72 && cC ==  72) { key = "H";                     }
+/*    j    */ if (kC ==  74 && cC == 106) { key = "j";                     }/*    J    */ if (kC ==  74 && cC ==  74) { key = "J";                     }
+/*    k    */ if (kC ==  75 && cC == 107) { key = "k";                     }/*    K    */ if (kC ==  75 && cC ==  75) { key = "K";                     }
+/*    l    */ if (kC ==  76 && cC == 108) { key = "l";                     }/*    L    */ if (kC ==  76 && cC ==  76) { key = "L";                     }
+/*    ;    */ if (kC ==  59 && cC ==  59) { key = ";";                     }/*    :    */ if (kC ==  59 && cC ==  58) { key = ":";                     }
+/*    '    */ if (kC == 222 && cC ==  39) { key = "'";                     }/*    "    */ if (kC == 222 && cC ==  34) { key = '"';                     }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    z    */ if (kC ==  90 && cC == 122) { key = "z";                     }/*    Z    */ if (kC ==  90 && cC ==  90) { key = "Z";                     }
+/*    x    */ if (kC ==  88 && cC == 120) { key = "x";                     }/*    X    */ if (kC ==  88 && cC ==  88) { key = "X";                     }
+/*    c    */ if (kC ==  67 && cC ==  99) { key = "c";                     }/*    C    */ if (kC ==  67 && cC ==  67) { key = "C";                     }
+/*    v    */ if (kC ==  86 && cC == 118) { key = "v";                     }/*    V    */ if (kC ==  86 && cC ==  86) { key = "V";                     }
+/*    b    */ if (kC ==  66 && cC ==  98) { key = "b";                     }/*    B    */ if (kC ==  66 && cC ==  66) { key = "B";                     }
+/*    n    */ if (kC ==  78 && cC == 110) { key = "n";                     }/*    N    */ if (kC ==  78 && cC ==  78) { key = "N";                     }
+/*    m    */ if (kC ==  77 && cC == 109) { key = "m";                     }/*    M    */ if (kC ==  77 && cC ==  77) { key = "M";                     }
+/*    ,    */ if (kC == 188 && cC ==  44) { key = ",";                     }/*    <    */ if (kC == 188 && cC ==  60) { key = "<";                     }
+/*    .    */ if (kC == 190 && cC ==  46) { key = ".";                     }/*    >    */ if (kC == 190 && cC ==  62) { key = ">";                     }
+/*    /    */ if (kC == 191 && cC ==  47) { key = "/";                     }/*    ?    */ if (kC == 191 && cC ==  63) { key = "?";                     }
+/*                                                                                                                                                    */
+localStorage.setItem("keys", (key + key1 + key1shift + key2 + key2shift).toString());
+redraw();
+/******************************************************************************************************************************************************/
+/******************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/});
+
+
+document.addEventListener("paste", event => {
+event.preventDefault();
+const pasteData = JSON.parse(event.clipboardData.getData('text/plain'));
+if (pasteData.names && pasteData.names.length >= 4) {
+colourSet.names[0] = pasteData.names[0];
+colourSet.names[1] = pasteData.names[1];
+colourSet.names[2] = pasteData.names[2];
+colourSet.names[3] = pasteData.names[3];
+localStorage.setItem("colourSet", JSON.stringify(colourSet));
+redraw();
+}
+});
+
+
+</script>
+</body>
+</html>`;

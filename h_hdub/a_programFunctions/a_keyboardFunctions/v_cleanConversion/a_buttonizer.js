@@ -135,7 +135,7 @@ switch (event.target) {
 ${changeHandlerPrep}
 }
 });
-</script>`;
+</` + `script>`;
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = newInternals;
 }
 }

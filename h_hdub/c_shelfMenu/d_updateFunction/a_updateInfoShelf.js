@@ -1,5 +1,42 @@
 
+
+
+if (localStorage.getItem("useAllLayers")) {
+if (localStorage.getItem("useAllLayers") == "false") {
+useAllLayers = false;
+} else if (localStorage.getItem("useAllLayers") == "true") {
+useAllLayers = true;
+}
+}
+
+
+
+
+
+
+
 function updateInfoShelf() {
+
+
+
+
+
+
+
+if (useAllLayers) {
+document.getElementById("useAllLayers").style.outline = "2px dashed lime";
+document.getElementById("useAllLayers").style.backgroundColor = "rgba(255,0,0,0.35)";
+} else {
+document.getElementById("useAllLayers").style.outline = "";
+document.getElementById("useAllLayers").style.backgroundColor = "transparent";
+}
+
+
+
+
+
+
+
 
 
 

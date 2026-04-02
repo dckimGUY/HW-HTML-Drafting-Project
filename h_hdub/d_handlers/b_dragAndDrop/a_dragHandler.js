@@ -746,32 +746,47 @@ const reader = new FileReader();
 reader.onload = evt => {
 popStyle();
 hauptMode = hauptModeOriginalState;
-/*
-if (useBase64forAudio==true) {
-audio.src = evt.target.result;
-} else {
-audio.src ="./b_audio/" + file.name;
-}
-*/
-
-
-
 utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.lastElementChild.value = evt.target.result;
-
-
 };
-reader.readAsDataURL(file);
+reader.readAsText(file);
 return 0;
 }
 
 
 
+if (file.name.toLowerCase().endsWith('.json')) {
+hauptModeOriginalState = hauptMode;
+hauptMode = 0;
+const reader = new FileReader();
+reader.onload = evt => {
+popJSON();
+hauptMode = hauptModeOriginalState;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
+utilityLayer0.lastElementChild.dataset.json = JSON.stringify(JSON.parse(evt.target.result));
+};
+reader.readAsText(file);
+return 0;
+}
 
 
 
-
+if (file.name.toLowerCase().endsWith('.js')) {
+hauptModeOriginalState = hauptMode;
+hauptMode = 0;
+const reader = new FileReader();
+reader.onload = evt => {
+popScript();
+hauptMode = hauptModeOriginalState;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
+utilityLayer0.lastElementChild.dataset.addScript = evt.target.result;
+};
+reader.readAsText(file);
+return 0;
+}
 
 
 

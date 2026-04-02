@@ -24,6 +24,8 @@ shelfMenuHTML.tab5.folder1.style = `
 .backdropFilter:active      { background-color: rgba(255,0,255,0.35); }
 .setFilter:active           { background-color: rgba(255,0,255,0.35); }
 
+.useAllLayers        { position: absolute; top:   0px; left: 26px; height: 35px; width: 66px; background-color: transparent; border-radius: 12px; }
+
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
 .rStepState          { position: absolute; top: 145px; left: 6px; height: 21px; width: 86px; background-color: transparent; }

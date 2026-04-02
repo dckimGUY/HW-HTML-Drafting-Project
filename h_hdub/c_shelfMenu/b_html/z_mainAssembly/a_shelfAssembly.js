@@ -1001,6 +1001,9 @@ shelfMenuHTML.tab5.folderSelectors.HTML  +
 <button id="sidebarOpener5" class="sidebarOpener5" onclick="toggleSidebar5();"></button>
 
 
+<button id="useAllLayers" class="useAllLayers stateHover" onclick="if (useAllLayers == false) { useAllLayers = true; localStorage.setItem('useAllLayers','true'); } else { useAllLayers = false; localStorage.setItem('useAllLayers','false'); }"      title="this is a special feature\ngo.fadeIn and\ngo.fadeOut will become\navailable in the saved file"></button>
+
+
 <button id="newStateBlock" class="newStateBlock stateHover" onclick="insertNewStateBlock();" title="Enter A New\nState Block\nThen Use Active Edit with +INS\nDEL removes frames.\nThis only holds\nthe data, keep it"></button>
 <button id="singleState"   class="singleState   stateHover" onclick="setSingleState();"      title="This one will put a\nbutton which sets the current\nstate. It only works on\nthe saved page."></button>
 <button id="rStepState"    class="rStepState    stateHover" onclick="stepStateForward();"    title="go.anim.all.next()"></button>

@@ -4207,7 +4207,7 @@ const autoHeader = `
 
 const autoFooter = `
 <script>
-</script>
+</` + `script>
 </body>
 </html>
 `;
@@ -12361,7 +12361,7 @@ switch (event.target) {
 ${changeHandlerPrep}
 }
 });
-</script>`;
+</` + `script>`;
 coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = newInternals;
 }
 }
@@ -12561,7 +12561,2647 @@ input.remove();
 
 
 
-}function enterNewPartFromMouseInput(mouseInfo) {
+}function saveProgram() {
+    const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const link = document.createElement('a');
+    link.download = 'HTML-Drafting-Project.html';
+    link.href = URL.createObjectURL(blob);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
+}
+
+
+
+function saveFile(content, filename) {
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  URL.revokeObjectURL(url);
+  document.body.removeChild(link);
+}
+
+
+const shadowConst = `<!DOCTYPE html>
+<html>
+<head>
+<title>shadowTree</title>
+<meta charset="UTF-8">
+<meta name="last-build" content="2025-12-16T12:48:15Z">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAADxJREFUGJV1i0kOACAMAof/f9qkm7UqBxqGAhK4YcYmCpAk8q+OfVVqbkcuatZCEhiE8+uxmYsbaOZCGloyeABiJ4rFHAAAAABJRU5ErkJggg==">
+<style>
+
+html, body              { overflow: scroll; scrollbar-width: none;               }
+body                    {                  
+margin: none; padding: none; border: none; outline: none; }
+p                       { margin: 0;                                             }
+body::-webkit-scrollbar { display: none;                                         }
+body          {
+background-color: rgb(127,127,127);
+font-family: monospace;
+font-style: italic;
+border: none;
+padding: none;
+margin: none;
+outline: none;
+}
+
+button        {
+background-color: transparent;
+border:  none;
+margin:  none;
+padding: none;
+outline: none;
+font-family: inherit;
+font-style:  inherit;
+font-size:   inherit;
+}
+
+button:focus  {
+outline: none;
+border-radius: 4px;
+outline-offset: -2px;
+outline: 2px solid black;
+background-color: blue;
+font-weight: bold;
+}
+button:active {
+color: white;
+}
+
+.directory       { color: darkmagenta; }
+.directory:focus { color: magenta;     }
+
+.baseDir         { color: black;       }
+.baseDir:focus   { color: black;       }
+
+.file            { color: darkgreen;   }
+.file:focus      { color: lime;        }
+
+.js              { color: darkgreen;   }
+.js:focus        { color: lime;        }
+
+.css             { color: darkgreen;   }
+.css:focus       { color: lime;        }
+
+.sh              { color: darkgreen;   }
+.sh:focus        { color: lime;        }
+
+.html            { color: darkgreen;   }
+.html:focus      { color: lime;        }
+
+
+
+
+.treeMain {
+position: absolute;
+border:  none;
+margin:  none;
+padding: none;
+outline: none;
+}
+
+
+
+
+
+
+
+
+
+.path {
+text-align: left;
+border-left:  1px solid white;
+border-right: 1px solid white;
+padding: 0.1vw;
+}
+
+.brushTop {
+border-top-left-radius:  0.75vw;
+border-top-right-radius: 0.75vw;
+border-top: 0.1vw solid white;
+}
+
+.brushBottom {
+border-bottom-left-radius:  0.75vw;
+border-bottom-right-radius: 0.75vw;
+border-bottom: 0.1vw solid white;
+margin-bottom: 0.4vw;
+}
+
+.highlight   {
+position: relative;
+left: -1vw;
+width: calc(100% + 0.75vw);
+padding-left: 1vw;
+border-radius: 2vw;
+outline-offset: 0.05vw;
+outline: 0.1vw solid black;
+border:  0.1vw solid white;
+box-shadow: 0 0 1.5vw black;
+z-index: 500;
+opacity: 0.9;
+}
+
+.copied {
+outline-offset: 0px;
+outline: 2px solid red;
+box-shadow: 0 0 1.5vw white;
+}
+
+
+
+
+
+/* this is the indication of the colour associated letter */
+.letter          {
+border-radius: 10px;
+border: 1px solid rgb( 63, 63, 63);
+color: rgb( 63, 63, 63);
+background-color: rgba(255,255,255,0.2);
+font-style: normal;
+font-weight: bold;
+}
+
+/* the notifications which follow the line and appear temporarily */
+.notification {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.GUI {
+position: fixed;
+left:      0;
+bottom:    0;
+width:  100%;
+height: calc(5/15 * 100vw);
+transform-origin: bottom left;
+z-index: 500;
+margin: none;
+padding: none;
+border-radius: 0.5vw;
+background-color: black;
+}
+
+.indicator      {
+position: absolute;
+z-index: 100;
+width:  calc(1/15 * 100vw);
+height: calc(1/15 * 100vw);
+background-color: rgb(191,191,191);
+color: rgb( 63, 63, 63);
+font-size: 2.5vw;
+font-family: monospace;
+font-style: normal;
+font-weight: bold;
+border: 0.1vw solid black;
+/*outline-offset: -0.06vw;*/
+border-radius: 0.5vw;
+border: 0.4vw double;
+}
+
+.character {
+position: relative;
+}
+
+.numberRow {
+position: relative;
+outline: 0.1vw solid black;
+border-radius: 4vw;
+}
+
+.numeral {
+position: absolute;
+top: 0.25vw;
+left: 0.5vw;
+font-size: 1.5vw;
+}
+
+.hideIndicator {
+position: absolute;
+bottom: 0vw;
+right:  0vw;
+width: 100%;
+background-color: rgba(255,255,255, 0.5);
+border-top: 0.1vw solid grey;
+text-align: center;
+font-size: 1.5vw;
+}
+
+.extraText {
+position: absolute;
+bottom: 0vw;
+right:  0vw;
+width: 100%;
+text-align: center;
+font-size: 1.5vw;
+}
+
+
+
+.hiddenKey {
+outline-offset: -0.4vw;
+outline: 0.4vw dashed rgba(  0,  0,  0, 0.5);
+}
+
+.tilde        { left: calc(  0.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n1           { left: calc(  1.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n2           { left: calc(  2.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n3           { left: calc(  3.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n4           { left: calc(  4.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n5           { left: calc(  5.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n6           { left: calc(  6.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n7           { left: calc(  7.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n8           { left: calc(  8.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n9           { left: calc(  9.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.n0           { left: calc( 10.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.minus        { left: calc( 11.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.plus         { left: calc( 12.00/15 * 100vw); bottom: calc(4/15 * 100vw); }
+.backspace    { left: calc( 13.00/15 * 100vw); bottom: calc(4/15 * 100vw); width: calc(2.00/15 * 100vw); }
+
+.tab          { left: calc(  0.00/15 * 100vw); bottom: calc(3/15 * 100vw); width: calc(1.50/15 * 100vw); }
+.Q            { left: calc(  1.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.W            { left: calc(  2.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.E            { left: calc(  3.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.R            { left: calc(  4.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.T            { left: calc(  5.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.Y            { left: calc(  6.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.U            { left: calc(  7.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.I            { left: calc(  8.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.O            { left: calc(  9.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.P            { left: calc( 10.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.leftbracket  { left: calc( 11.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.rightbracket { left: calc( 12.50/15 * 100vw); bottom: calc(3/15 * 100vw); }
+.backslash    { left: calc( 13.50/15 * 100vw); bottom: calc(3/15 * 100vw); width: calc(1.50/15 * 100vw); }
+
+.caps         { left: calc(  0.00/15 * 100vw); bottom: calc(2/15 * 100vw); width: calc(1.75/15 * 100vw); }
+.A            { left: calc(  1.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.S            { left: calc(  2.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.D            { left: calc(  3.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.F            { left: calc(  4.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.G            { left: calc(  5.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.H            { left: calc(  6.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.J            { left: calc(  7.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.K            { left: calc(  8.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.L            { left: calc(  9.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+
+.tilde, .n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8, .n9, .n0, .minus, .plus, .backspace, .tab, .leftbracket, .rightbracket, .backslash, .caps, .semicolon, .apostrophe, .enter, .leftshift, .lt, .gt, .forwardslash, .rightshift, .leftctrl, .windowskey, .leftalt, .spacebar, .rightalt, .fn, .menu, .rightctrl, .A, .G, .H, .J, .K, .L {
+outline-offset: -1vw;
+outline: 0.4vw outset white;
+}
+
+.forwardslash { 
+outline-offset: -1.65vw;
+outline: 1vw outset cyan;
+background-color: magenta;
+font-size: 4vw;
+color: cyan;
+}
+
+.semicolon    { left: calc( 10.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.apostrophe   { left: calc( 11.75/15 * 100vw); bottom: calc(2/15 * 100vw); }
+.enter        { left: calc( 12.75/15 * 100vw); bottom: calc(2/15 * 100vw); width: calc(2.25/15 * 100vw); }
+
+.leftshift    { left: calc(  0.00/15 * 100vw); bottom: calc(1/15 * 100vw); width: calc(2.25/15 * 100vw); }
+.Z            { left: calc(  2.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.X            { left: calc(  3.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.C            { left: calc(  4.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.V            { left: calc(  5.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.B            { left: calc(  6.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.N            { left: calc(  7.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.M            { left: calc(  8.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.lt           { left: calc(  9.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.gt           { left: calc( 10.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.forwardslash { left: calc( 11.25/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.rightshift   { left: calc( 12.25/15 * 100vw); bottom: calc(1/15 * 100vw); width: calc(2.75/15 * 100vw); }
+
+.leftctrl     { left: calc(  0.00/15 * 100vw); bottom:               0vw; width: calc(1.50/15 * 100vw); }
+.windowskey   { left: calc(  1.50/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.leftalt      { left: calc(  2.75/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.spacebar     { left: calc(  4.00/15 * 100vw); bottom:               0vw; width: calc(5.75/15 * 100vw); }
+.rightalt     { left: calc(  9.75/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.fn           { left: calc( 11.00/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.menu         { left: calc( 12.25/15 * 100vw); bottom:               0vw; width: calc(1.25/15 * 100vw); }
+.rightctrl    { left: calc( 13.50/15 * 100vw); bottom:               0vw; width: calc(1.50/15 * 100vw); }
+
+
+/* an alternate layout that is minimal */
+
+.n1alt        { left: calc(  0/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n2alt        { left: calc(  1/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n3alt        { left: calc(  2/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n4alt        { left: calc(  3/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n5alt        { left: calc(  4/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n6alt        { left: calc(  5/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n7alt        { left: calc(  6/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n8alt        { left: calc(  7/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n9alt        { left: calc(  8/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.n0alt        { left: calc(  9/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Calt         { left: calc( 10/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Valt         { left: calc( 11/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Balt         { left: calc( 12/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Nalt         { left: calc( 13/15 * 100vw); bottom: calc(0/15 * 100vw); }
+.Malt         { left: calc( 14/15 * 100vw); bottom: calc(0/15 * 100vw); }
+
+.Qalt         { left: calc(  0/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Walt         { left: calc(  1/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ealt         { left: calc(  2/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ralt         { left: calc(  3/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Talt         { left: calc(  4/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Yalt         { left: calc(  5/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ualt         { left: calc(  6/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Ialt         { left: calc(  7/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Oalt         { left: calc(  8/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Palt         { left: calc(  9/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Salt         { left: calc( 10/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Dalt         { left: calc( 11/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Falt         { left: calc( 12/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Zalt         { left: calc( 13/15 * 100vw); bottom: calc(1/15 * 100vw); }
+.Xalt         { left: calc( 14/15 * 100vw); bottom: calc(1/15 * 100vw); }
+
+
+
+
+
+.hideThisLetter { display: none; }
+.GUIsmall       { height: calc(2/15 * 100vw); }
+
+.press          {
+z-index: 600;
+outline: 1.0vw solid lime;
+}
+
+.isolation {
+text-shadow:
+ 0.1vw    0   0 red,     0.1vw  0.1vw 0 red,
+ 0      0.1vw 0 red,   -0.1vw    0    0 red,
+-0.1vw -0.1vw 0 red,   0   -0.1vw     0 red;
+border-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.command {
+background-color: white;
+color: black;
+left: calc(11/15 * 100vw);
+width: calc(2.5/15 * 100vw);
+bottom: 0vw;
+}
+
+.currentView {
+outline-offset: -1.25vw;
+outline: 0.7vw double black;
+background-color: rgb(91,91,91);
+color: lightgrey;
+font-size: 3.5vw;
+}
+
+
+
+.searchBar {
+position: absolute;
+top: calc(-1/15 * 100vw - 0.75vw);
+text-align: center;
+left: 0.2vw;
+width: 98.4vw;
+height: calc(1/15 * 100vw);
+outline: 0.4vw solid white;
+border-radius: 1vw;
+border: none;
+padding-left: 1vw;
+font-family: monospace;
+font-size: 5vw;
+font-style: italic;
+background-color: rgba(153,153,153,0.85);
+color: white;
+}
+
+
+.grepBar {
+position: absolute;
+top: calc(-1/15 * 100vw - 0.75vw);
+text-align: center;
+left: 0.2vw;
+width: 98.4vw;
+height: calc(1/15 * 100vw);
+outline: 0.4vw solid white;
+border-radius: 1vw;
+border: none;
+padding-left: 1vw;
+font-family: monospace;
+font-size: 5vw;
+font-style: italic;
+background-color: rgba(153,153,153,0.85);
+color: white;
+}
+.window {
+position: fixed;
+border:  none;
+margin:  none;
+padding: none;
+outline: 0.1vh solid white;
+border-radius: 1vw;
+border-width: 0.25vw;
+border-style: dotted;
+border-color:  white;
+border-right-width: 1vw;
+border-left-width:  1vw;
+}
+
+.filter {
+position: fixed;
+pointer-events: none;
+border:  none;
+margin:  none;
+padding: none;
+text-align: right;
+outline: 0.1vh solid white;
+border-radius: 1vw;
+border-width: 0.25vw;
+border-style:  solid;
+border-color:  green;
+border-right-width: 1vw;
+border-left-width:  1vw;
+color: black;
+overflow: hidden;
+}
+
+.viewerLayoutLeft0  { width:  calc(             0vw); left: calc(             0.1vw); }
+.viewerLayoutLeft1  { width:  calc(1/2 * 100% - 1vw); left: calc(0/1 * 100% + 1.1vw); }
+.viewerLayoutLeft2  { width:  calc(1/3 * 100% - 1vw); left: calc(0/1 * 100% + 1.1vw); }
+
+.viewerLayoutRight0 { width:  calc(             0vw); left: calc(1/1 * 100% - 2.1vw); }
+.viewerLayoutRight1 { width:  calc(             0vw); left: calc(1/1 * 100% - 2.1vw); }
+.viewerLayoutRight2 { width:  calc(1/3 * 100% - 1vw); left: calc(2/3 * 100% - 2.1vw); }
+
+.oct0               { top: calc(0/4 * 100% + 0.125%); }
+.oct1               { top: calc(2/4 * 100% + 0.125%); }
+.oct2               { top: calc(0/4 * 100% + 0.125%); }
+.oct3               { top: calc(2/4 * 100% + 0.125%); }
+
+.viewerQuad         { height: calc(2/4 * 100% - 1%); z-index: 400; }
+.viewerSemi         { height: calc(4/4 * 100% - 1%); z-index: 500; }
+
+</style>
+</head>
+<body>
+
+<script>
+
+function saveFile(content, filename) {
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  URL.revokeObjectURL(url);
+  document.body.removeChild(link);
+}
+const goScript = \`#!/bin/bash
+
+#
+# Make a directory in the target base directory
+# Put go.sh and shadowTree.html into there
+# Run go.sh to make the file list
+# shadowTree now reads that file list.
+#
+
+echo "findFileList =" > "./find -type f.js";
+echo "\\\\\\\`" >> "./find -type f.js";
+find ../ -type f | sed '/\\.swp/d' | \\
+                   sed '/\\.git/d' | \\
+                   sed '/^\\.\\.\\/\$/d' | \\
+                   sed '/^\\.\\.\\/\\./d' | \\
+                   sed '/'\$(echo "\$(pwd | sed 's/^.*\\///g')")'/d' | \\
+                   sed 's/\\.\\.\\///g' | \\
+                   sed 's/^/..\\//g' >> "./find -type f.js";
+echo "\\\\\\\`;" >> "./find -type f.js";
+echo >> "./find -type f.js";
+echo "workingDirectory = \\"\$(pwd | sed 's/\\/[^\\/]*\$//')\\";" > pwd.js\`;
+const go = document.createElement("button");
+go.style.position = "fixed";
+go.style.left     = "0px";
+go.style.top      = "0px";
+go.style.width    = "3vw";
+go.style.height   = "1.5vw";
+go.style.fontSize = "0.75vw";
+go.style.backgroundColor = "lime";
+go.style.zIndex = 10000000;
+go.innerText = "go.sh";
+go.setAttribute("onclick", 'saveFile(goScript, "go.sh")');
+document.body.append(go);
+
+
+
+
+
+
+
+var findFileList       = "";
+var workingDirectory   = "";
+var pathArray          = [];
+var listArray          = [];
+var directoryListArray = [];
+var tree               = {};
+var treeValues         = [];
+var filesystem         = [];
+var multiMove          =  8;
+var GUIflip            = "true";
+var isolation          =  0;
+
+var mouseMoveTarget    = null;
+
+var editorName         = "vi";
+var newSearch          = false;
+
+var   fitSelection    =  {};
+      fitSelection.choice  =   0;
+      fitSelection.option0 =  {};
+      fitSelection.option1 =  {};
+      fitSelection.option2 =  {};
+
+      fitSelection.option0.fontSize = 18;
+      fitSelection.option1.fontSize = 18;
+      fitSelection.option2.fontSize = 18;
+
+var abbr = 0;
+
+
+const treeMain = document.createElement("div");
+const key      = {};
+const GUI      = document.createElement("div");
+
+var allVisible = true;
+var treeFocus = null;
+const view = { "n0":"n0", "n1":"n1", "n2":"n2", "n3":"n3", "n4":"n4", "n5":"n5", "n6":"n6", "n7":"n7", "n8":"n8", "n9":"n9" };
+
+window.activeView = "";
+if (localStorage.getItem("activeView")) {
+activeView = localStorage.getItem("activeView");
+} else {
+activeView = view.n0;
+localStorage.setItem("activeView", view.n0);
+}
+
+</` + `script>
+
+<script src="./pwd.js"></` + `script>
+<script src="./find -type f.js"></` + `script>
+
+<script>
+
+if (localStorage.getItem("GUI")) {
+GUI.style.display = localStorage.getItem("GUI");
+} else {
+localStorage.setItem("GUI", "block");
+}
+/* GHJKL are excluded here and then included in the next file */
+
+key.names  = 
+      [ "Q","W","E","R","T","Y","U","I","O","P",
+         "S","D","F",
+          "Z","X","C","V","B","N","M" ];
+key.initialColours = 
+[ "aquamarine", "skyblue", "cyan", "grey", "gold", "cornsilk", "coral", "magenta", "lavender", "olivedrab",
+  "lime", "rosybrown", "peachpuff", "teal",
+  "thistle", "violet", "lightpink", "plum", "yellow",
+  "cadetblue" ];
+      GUI.classList = "GUI";
+ document.body.prepend(GUI);
+key.names.forEach((char,index) => {
+key[char] = {};
+key[char].view = {};
+key[char].name = char;
+key[char].colour = key.initialColours[index];
+if (localStorage.getItem(activeView + "-" + char)) {
+key[char].display = localStorage.getItem(activeView + "-" + char);
+} else {
+key[char].display = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+}
+key[char].GUI = document.createElement("button");
+key[char].GUI.classList = \`indicator \${char}\`;
+GUI.append(key[char].GUI);
+});
+const viewArray = Object.values(view);
+for (let j = 0; j < viewArray.length; j++) {
+key.names.forEach((char,index) => {
+if (localStorage.getItem(viewArray[j] + "-" + char)) {
+key[char].view[viewArray[j]] = localStorage.getItem(viewArray[j] + "-" + char);
+} else {
+key[char].view[viewArray[j]] = "block";
+localStorage.setItem(viewArray[j] + "-" + char, "block");
+}
+});
+}
+const grepBar  = document.createElement("textarea");
+grepBar.type   = "value";
+grepBar.name   = "grepBar";
+grepBar.placeholder  = "- - -GREP search- - -";
+grepBar.classList = "grepBar";
+grepBar.style.display = "none";
+grepBar.setAttribute("spellcheck", "false");
+grepBar.oninput = function() {
+if (grepBar.value.endsWith("\\n")) {
+grepBar.value = grepBar.value.replace(/\\n/g, "");
+grepSearch(grepBar.value);
+grepBar.style.display = "none";
+}
+return;
+};
+
+GUI.append(grepBar);
+/* This will cover some more keyboard keys */
+
+key.additionalKeys  = 
+[ "tilde", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n0", "minus", "plus", "backspace", "tab", "leftbracket", "rightbracket", "backslash", "caps", "semicolon", "apostrophe", "enter", "leftshift", "lt", "gt", "forwardslash", "rightshift", "leftctrl", "windowskey", "leftalt", "spacebar", "rightalt", "fn", "menu", "rightctrl", "A", "G", "H", "J", "K", "L" ];
+
+key.topRowNumbers =
+[ "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n0" ];
+
+key.topRowNumbersAlternate =
+[ "!", "@", "#", "\$", "%", "^", "&", "*", "(", ")" ];
+
+key.topRowNumbersSmallText =
+[ "PAD", "PADx2", "PASTE", "GREP", "ABC", "ABC+", "CAT", "CPquad", "FONT-", "FONT+" ];
+
+key.additionalKeysText  = 
+[ "~", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "+", "bksp", "tab", "[", "]", "\\\\", "caps", ";", "'", "enter", "shift", "<", ">", "?", "shift", "ctrl", "win", "alt", "space", "alt", "fn", "mn", "ctrl", "A", "G", "H", "J", "K", "L" ];
+
+key.additionalKeysHTML  = 
+[ "invert", "", "", "", "", "", "", "", "", "", "", "", "", "new tab", "search", "src-L", "src-R", "*view", "", "", "*GUI", "copy group", "", "quad-L", "quad-R", "", "", "", "", "", "copy single item for editor", "", "", "", "", "*abbr.", "&uarr;&darr;", "&larr;", "&darr;", "&uarr;", "&rarr;" ];
+
+key.additionalKeys.forEach((keyname,index) => {
+key[keyname] = {};
+key[keyname].name = keyname;
+key[keyname].colour = "lightgrey";
+key[keyname].GUI = document.createElement("button");
+key[keyname].GUI.innerHTML = \`\${key.additionalKeysText[index]}<div class="extraText">\${key.additionalKeysHTML[index]}</div>\`;
+key[keyname].GUI.classList = \`indicator \${keyname}\`;
+GUI.append(key[keyname].GUI);
+});
+
+key.command           = document.createElement("button");
+key.command.innerText = "Vi";
+key.command.classList = "indicator command";
+GUI.append(key.command);
+GUI.addEventListener("keydown",   function(event) {
+/*   esc OR tab   */
+if (event.keyCode == 27 ||
+    event.keyCode == 9) {
+event.preventDefault();
+searchBar.style.display = "none";
+grepBar.style.display   = "none";
+searchBar.value         =     "";
+grepBar.value           =     "";
+
+if (treeFocus.style.display == "none") {
+setTimeout(() => { move("top"); newSearch = false; }, 50);
+}
+
+}
+event.stopPropagation(); }, true);
+
+GUI.addEventListener("keypress",  function(event) { event.stopPropagation(); }, true);
+GUI.addEventListener("keyup",     function(event) { event.stopPropagation(); }, true);
+
+const searchBar  = document.createElement("input");
+searchBar.type   = "value";
+searchBar.name   = "searchBar";
+searchBar.placeholder  = "- - -search- - -";
+searchBar.classList = "searchBar";
+searchBar.style.display = "none";
+searchBar.setAttribute("spellcheck", "false");
+searchBar.oninput = function() {search();};
+
+GUI.append(searchBar);
+               const fileViewerLayer = document.createElement("div");
+                     fileViewerLayer.classList = "fileViewerLayer";
+document.body.append(fileViewerLayer);
+
+                 const viewer                       = {};
+                       viewer.layout                = "";
+
+   for (let j = 0; j < 4;  j++)          {
+                       viewer["file" + j]           = {};
+                       viewer["file" + j].reference =  "";
+                       viewer["file" + j].window    = document.createElement("iframe");
+                       viewer["file" + j].window.classList.add(\`window\`);
+                       viewer["file" + j].window.classList.add(\`viewerQuad\`);
+                       viewer["file" + j].window.classList.add(\`oct\${j}\`);
+fileViewerLayer.append(viewer["file" + j].window);
+                       viewer["file" + j].filter    = document.createElement("div");
+                       viewer["file" + j].filter.classList.add(\`filter\`);
+                       viewer["file" + j].filter.classList.add(\`viewerQuad\`);
+                       viewer["file" + j].filter.classList.add(\`oct\${j}\` );
+fileViewerLayer.append(viewer["file" + j].filter);
+                                         }
+
+viewer.file0.window.classList.add("viewerLayoutLeft1");
+viewer.file1.window.classList.add("viewerLayoutLeft1");
+viewer.file2.window.classList.add("viewerLayoutRight1");
+viewer.file3.window.classList.add("viewerLayoutRight1");
+
+viewer.file0.window.src = "";
+viewer.file1.window.src = "";
+viewer.file2.window.src = "";
+viewer.file3.window.src = "";
+const colour =
+{
+"aliceblue":            { "name": "aliceblue",           "rgb": "rgb(240, 248, 255)" },
+"antiquewhite":         { "name": "antiquewhite",        "rgb": "rgb(250, 235, 215)" },
+"aqua":                 { "name": "aqua",                "rgb": "rgb(0, 255, 255)"   },
+"aquamarine":           { "name": "aquamarine",          "rgb": "rgb(127, 255, 212)" },
+"azure":                { "name": "azure",               "rgb": "rgb(240, 255, 255)" },
+"beige":                { "name": "beige",               "rgb": "rgb(245, 245, 220)" },
+"bisque":               { "name": "bisque",              "rgb": "rgb(255, 228, 196)" },
+"black":                { "name": "black",               "rgb": "rgb(0, 0, 0)"       },
+"blanchedalmond":       { "name": "blanchedalmond",      "rgb": "rgb(255, 235, 205)" },
+"blue":                 { "name": "blue",                "rgb": "rgb(0, 0, 255)"     },
+"blueviolet":           { "name": "blueviolet",          "rgb": "rgb(138, 43, 226)"  },
+"brown":                { "name": "brown",               "rgb": "rgb(165, 42, 42)"   },
+"burlywood":            { "name": "burlywood",           "rgb": "rgb(222, 184, 135)" },
+"cadetblue":            { "name": "cadetblue",           "rgb": "rgb(95, 158, 160)"  },
+"chartreuse":           { "name": "chartreuse",          "rgb": "rgb(127, 255, 0)"   },
+"chocolate":            { "name": "chocolate",           "rgb": "rgb(210, 105, 30)"  },
+"coral":                { "name": "coral",               "rgb": "rgb(255, 127, 80)"  },
+"cornflowerblue":       { "name": "cornflowerblue",      "rgb": "rgb(100, 149, 237)" },
+"cornsilk":             { "name": "cornsilk",            "rgb": "rgb(255, 248, 220)" },
+"crimson":              { "name": "crimson",             "rgb": "rgb(220, 20, 60)"   },
+"cyan":                 { "name": "cyan",                "rgb": "rgb(0, 255, 255)"   },
+"darkblue":             { "name": "darkblue",            "rgb": "rgb(0, 0, 139)"     },
+"darkcyan":             { "name": "darkcyan",            "rgb": "rgb(0, 139, 139)"   },
+"darkgoldenrod":        { "name": "darkgoldenrod",       "rgb": "rgb(184, 134, 11)"  },
+"darkgray":             { "name": "darkgray",            "rgb": "rgb(169, 169, 169)" },
+"darkgreen":            { "name": "darkgreen",           "rgb": "rgb(0, 100, 0)"     },
+"darkgrey":             { "name": "darkgrey",            "rgb": "rgb(169, 169, 169)" },
+"darkkhaki":            { "name": "darkkhaki",           "rgb": "rgb(189, 183, 107)" },
+"darkmagenta":          { "name": "darkmagenta",         "rgb": "rgb(139, 0, 139)"   },
+"darkolivegreen":       { "name": "darkolivegreen",      "rgb": "rgb(85, 107, 47)"   },
+"darkorange":           { "name": "darkorange",          "rgb": "rgb(255, 140, 0)"   },
+"darkorchid":           { "name": "darkorchid",          "rgb": "rgb(153, 50, 204)"  },
+"darkred":              { "name": "darkred",             "rgb": "rgb(139, 0, 0)"     },
+"darksalmon":           { "name": "darksalmon",          "rgb": "rgb(233, 150, 122)" },
+"darkseagreen":         { "name": "darkseagreen",        "rgb": "rgb(143, 188, 143)" },
+"darkslateblue":        { "name": "darkslateblue",       "rgb": "rgb(72, 61, 139)"   },
+"darkslategray":        { "name": "darkslategray",       "rgb": "rgb(47, 79, 79)"    },
+"darkslategrey":        { "name": "darkslategrey",       "rgb": "rgb(47, 79, 79)"    },
+"darkturquoise":        { "name": "darkturquoise",       "rgb": "rgb(0, 206, 209)"   },
+"darkviolet":           { "name": "darkviolet",          "rgb": "rgb(148, 0, 211)"   },
+"deeppink":             { "name": "deeppink",            "rgb": "rgb(255, 20, 147)"  },
+"deepskyblue":          { "name": "deepskyblue",         "rgb": "rgb(0, 191, 255)"   },
+"dimgray":              { "name": "dimgray",             "rgb": "rgb(105, 105, 105)" },
+"dimgrey":              { "name": "dimgrey",             "rgb": "rgb(105, 105, 105)" },
+"dodgerblue":           { "name": "dodgerblue",          "rgb": "rgb(30, 144, 255)"  },
+"firebrick":            { "name": "firebrick",           "rgb": "rgb(178, 34, 34)"   },
+"floralwhite":          { "name": "floralwhite",         "rgb": "rgb(255, 250, 240)" },
+"forestgreen":          { "name": "forestgreen",         "rgb": "rgb(34, 139, 34)"   },
+"fuchsia":              { "name": "fuchsia",             "rgb": "rgb(255, 0, 255)"   },
+"gainsboro":            { "name": "gainsboro",           "rgb": "rgb(220, 220, 220)" },
+"ghostwhite":           { "name": "ghostwhite",          "rgb": "rgb(248, 248, 255)" },
+"gold":                 { "name": "gold",                "rgb": "rgb(255, 215, 0)"   },
+"goldenrod":            { "name": "goldenrod",           "rgb": "rgb(218, 165, 32)"  },
+"gray":                 { "name": "gray",                "rgb": "rgb(128, 128, 128)" },
+"green":                { "name": "green",               "rgb": "rgb(0, 128, 0)"     },
+"greenyellow":          { "name": "greenyellow",         "rgb": "rgb(173, 255, 47)"  },
+"grey":                 { "name": "grey",                "rgb": "rgb(128, 128, 128)" },
+"honeydew":             { "name": "honeydew",            "rgb": "rgb(240, 255, 240)" },
+"hotpink":              { "name": "hotpink",             "rgb": "rgb(255, 105, 180)" },
+"indianred":            { "name": "indianred",           "rgb": "rgb(205, 92, 92)"   },
+"indigo":               { "name": "indigo",              "rgb": "rgb(75, 0, 130)"    },
+"ivory":                { "name": "ivory",               "rgb": "rgb(255, 255, 240)" },
+"khaki":                { "name": "khaki",               "rgb": "rgb(240, 230, 140)" },
+"lavender":             { "name": "lavender",            "rgb": "rgb(230, 230, 250)" },
+"lavenderblush":        { "name": "lavenderblush",       "rgb": "rgb(255, 240, 245)" },
+"lawngreen":            { "name": "lawngreen",           "rgb": "rgb(124, 252, 0)"   },
+"lemonchiffon":         { "name": "lemonchiffon",        "rgb": "rgb(255, 250, 205)" },
+"lightblue":            { "name": "lightblue",           "rgb": "rgb(173, 216, 230)" },
+"lightcoral":           { "name": "lightcoral",          "rgb": "rgb(240, 128, 128)" },
+"lightcyan":            { "name": "lightcyan",           "rgb": "rgb(224, 255, 255)" },
+"lightgoldenrodyellow": { "name": "lightgoldenrodyellow","rgb": "rgb(250, 250, 210)" },
+"lightgray":            { "name": "lightgray",           "rgb": "rgb(211, 211, 211)" },
+"lightgreen":           { "name": "lightgreen",          "rgb": "rgb(144, 238, 144)" },
+"lightgrey":            { "name": "lightgrey",           "rgb": "rgb(211, 211, 211)" },
+"lightpink":            { "name": "lightpink",           "rgb": "rgb(255, 182, 193)" },
+"lightsalmon":          { "name": "lightsalmon",         "rgb": "rgb(255, 160, 122)" },
+"lightseagreen":        { "name": "lightseagreen",       "rgb": "rgb(32, 178, 170)"  },
+"lightskyblue":         { "name": "lightskyblue",        "rgb": "rgb(135, 206, 250)" },
+"lightslategray":       { "name": "lightslategray",      "rgb": "rgb(119, 136, 153)" },
+"lightslategrey":       { "name": "lightslategrey",      "rgb": "rgb(119, 136, 153)" },
+"lightsteelblue":       { "name": "lightsteelblue",      "rgb": "rgb(176, 196, 222)" },
+"lightyellow":          { "name": "lightyellow",         "rgb": "rgb(255, 255, 224)" },
+"lime":                 { "name": "lime",                "rgb": "rgb(0, 255, 0)"     },
+"limegreen":            { "name": "limegreen",           "rgb": "rgb(50, 205, 50)"   },
+"linen":                { "name": "linen",               "rgb": "rgb(250, 240, 230)" },
+"magenta":              { "name": "magenta",             "rgb": "rgb(255, 0, 255)"   },
+"maroon":               { "name": "maroon",              "rgb": "rgb(128, 0, 0)"     },
+"mediumaquamarine":     { "name": "mediumaquamarine",    "rgb": "rgb(102, 205, 170)" },
+"mediumblue":           { "name": "mediumblue",          "rgb": "rgb(0, 0, 205)"     },
+"mediumorchid":         { "name": "mediumorchid",        "rgb": "rgb(186, 85, 211)"  },
+"mediumpurple":         { "name": "mediumpurple",        "rgb": "rgb(147, 112, 219)" },
+"mediumseagreen":       { "name": "mediumseagreen",      "rgb": "rgb(60, 179, 113)"  },
+"mediumslateblue":      { "name": "mediumslateblue",     "rgb": "rgb(123, 104, 238)" },
+"mediumspringgreen":    { "name": "mediumspringgreen",   "rgb": "rgb(0, 250, 154)"   },
+"mediumturquoise":      { "name": "mediumturquoise",     "rgb": "rgb(72, 209, 204)"  },
+"mediumvioletred":      { "name": "mediumvioletred",     "rgb": "rgb(199, 21, 133)"  },
+"midnightblue":         { "name": "midnightblue",        "rgb": "rgb(25, 25, 112)"   },
+"mintcream":            { "name": "mintcream",           "rgb": "rgb(245, 255, 250)" },
+"mistyrose":            { "name": "mistyrose",           "rgb": "rgb(255, 228, 225)" },
+"moccasin":             { "name": "moccasin",            "rgb": "rgb(255, 228, 181)" },
+"navajowhite":          { "name": "navajowhite",         "rgb": "rgb(255, 222, 173)" },
+"navy":                 { "name": "navy",                "rgb": "rgb(0, 0, 128)"     },
+"oldlace":              { "name": "oldlace",             "rgb": "rgb(253, 245, 230)" },
+"olive":                { "name": "olive",               "rgb": "rgb(128, 128, 0)"   },
+"olivedrab":            { "name": "olivedrab",           "rgb": "rgb(107, 142, 35)"  },
+"orange":               { "name": "orange",              "rgb": "rgb(255, 165, 0)"   },
+"orangered":            { "name": "orangered",           "rgb": "rgb(255, 69, 0)"    },
+"orchid":               { "name": "orchid",              "rgb": "rgb(218, 112, 214)" },
+"palegoldenrod":        { "name": "palegoldenrod",       "rgb": "rgb(238, 232, 170)" },
+"palegreen":            { "name": "palegreen",           "rgb": "rgb(152, 251, 152)" },
+"paleturquoise":        { "name": "paleturquoise",       "rgb": "rgb(175, 238, 238)" },
+"palevioletred":        { "name": "palevioletred",       "rgb": "rgb(219, 112, 147)" },
+"papayawhip":           { "name": "papayawhip",          "rgb": "rgb(255, 239, 213)" },
+"peachpuff":            { "name": "peachpuff",           "rgb": "rgb(255, 218, 185)" },
+"peru":                 { "name": "peru",                "rgb": "rgb(205, 133, 63)"  },
+"pink":                 { "name": "pink",                "rgb": "rgb(255, 192, 203)" },
+"plum":                 { "name": "plum",                "rgb": "rgb(221, 160, 221)" },
+"powderblue":           { "name": "powderblue",          "rgb": "rgb(176, 224, 230)" },
+"purple":               { "name": "purple",              "rgb": "rgb(128, 0, 128)"   },
+"rebeccapurple":        { "name": "rebeccapurple",       "rgb": "rgb(102, 51, 153)"  },
+"red":                  { "name": "red",                 "rgb": "rgb(255, 0, 0)"     },
+"rosybrown":            { "name": "rosybrown",           "rgb": "rgb(188, 143, 143)" },
+"royalblue":            { "name": "royalblue",           "rgb": "rgb(65, 105, 225)"  },
+"saddlebrown":          { "name": "saddlebrown",         "rgb": "rgb(139, 69, 19)"   },
+"salmon":               { "name": "salmon",              "rgb": "rgb(250, 128, 114)" },
+"sandybrown":           { "name": "sandybrown",          "rgb": "rgb(244, 164, 96)"  },
+"seagreen":             { "name": "seagreen",            "rgb": "rgb(46, 139, 87)"   },
+"seashell":             { "name": "seashell",            "rgb": "rgb(255, 245, 238)" },
+"sienna":               { "name": "sienna",              "rgb": "rgb(160, 82, 45)"   },
+"silver":               { "name": "silver",              "rgb": "rgb(192, 192, 192)" },
+"skyblue":              { "name": "skyblue",             "rgb": "rgb(135, 206, 235)" },
+"slateblue":            { "name": "slateblue",           "rgb": "rgb(106, 90, 205)"  },
+"slategray":            { "name": "slategray",           "rgb": "rgb(112, 128, 144)" },
+"slategrey":            { "name": "slategrey",           "rgb": "rgb(112, 128, 144)" },
+"snow":                 { "name": "snow",                "rgb": "rgb(255, 250, 250)" },
+"springgreen":          { "name": "springgreen",         "rgb": "rgb(0, 255, 127)"   },
+"steelblue":            { "name": "steelblue",           "rgb": "rgb(70, 130, 180)"  },
+"tan":                  { "name": "tan",                 "rgb": "rgb(210, 180, 140)" },
+"teal":                 { "name": "teal",                "rgb": "rgb(0, 128, 128)"   },
+"thistle":              { "name": "thistle",             "rgb": "rgb(216, 191, 216)" },
+"tomato":               { "name": "tomato",              "rgb": "rgb(255, 99, 71)"   },
+"turquoise":            { "name": "turquoise",           "rgb": "rgb(64, 224, 208)"  },
+"violet":               { "name": "violet",              "rgb": "rgb(238, 130, 238)" },
+"wheat":                { "name": "wheat",               "rgb": "rgb(245, 222, 179)" },
+"white":                { "name": "white",               "rgb": "rgb(255, 255, 255)" },
+"whitesmoke":           { "name": "whitesmoke",          "rgb": "rgb(245, 245, 245)" },
+"yellow":               { "name": "yellow",              "rgb": "rgb(255, 255, 0)"   },
+"yellowgreen":          { "name": "yellowgreen",         "rgb": "rgb(154, 205, 50)"  }
+};
+document.body.prepend(treeMain);
+treeMain.style.paddingTop    = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.width         = parseInt(window.innerWidth) + "px";
+treeMain.classList           = "treeMain";
+
+
+function buildTree(start,end) {
+
+for (i=0;i<100;i++) {for (let j = 0; j < treeMain.children.length; j++) {
+treeMain.removeChild(treeMain.children[j]);
+}} treeMain.innerHTML = "";
+
+pathArray = findFileList.trim().split("\\n");
+
+for (let j = 0; j < pathArray.length; j++) {
+listArray[j]            = {};
+const filePathSeparator     = pathArray[j].split("/");
+listArray[j].filename   = filePathSeparator.pop();
+listArray[j].directory  = filePathSeparator.join("/");
+}
+
+for (let j = 0; j < listArray.length; j++) {
+const nameInput = listArray[j].directory.replace(/\\//g, "_") +
+                   "_" + listArray[j].filename.replace(/\\./g, "_");
+tree[nameInput]           = {};
+tree[nameInput].name      = nameInput;
+tree[nameInput].path      = [];
+tree[nameInput].path.text = listArray[j].directory.split("/");
+if (tree[nameInput].path.text[0] == "") {
+tree[nameInput].path.text.shift(); }
+tree[nameInput].path.text.push(listArray[j].filename);
+}
+
+treeValues  = Object.values(tree);
+
+let treeIndex  = 0;
+let childIndex = 0;
+if (localStorage.getItem("treePosition")) {
+treeIndex  = parseInt(localStorage.getItem("treePosition").split(",")[0]);
+childIndex = parseInt(localStorage.getItem("treePosition").split(",")[1]);
+}
+
+for (let j = 0; j < treeMain.children.length; j++) {
+treeMain.children[j].remove();
+}
+
+/* DRAW THE TREE DIAGRAM */
+for (let j = 0; j < treeValues.length; j++) {
+const newLine               = document.createElement("div");
+ newLine.dataset.name       = treeValues[j].name;
+ newLine.dataset.treeIndex  = j;
+      newLine.classList     = "path";
+      newLine.style.display = "block";
+
+const letter       = document.createElement("button");
+const notification = document.createElement("button");
+
+letter.dataset.childIndex = treeValues[j].path.text.length;
+letter.classList               = "letter";
+notification.classList         = "notification";
+treeValues[j].end              = {};
+treeValues[j].end.letter       = letter;
+treeValues[j].end.notification = notification;
+treeValues[j].key = {};
+if (localStorage.getItem(treeValues[j].name)) {
+newLine.style.backgroundColor = key[localStorage.getItem(treeValues[j].name)].colour;
+newLine.dataset.keyName   = key[localStorage.getItem(treeValues[j].name)].name;
+try {
+newLine.style.display     = key[newLine.dataset.keyName].display;
+} catch {}
+treeValues[j].key.name    = localStorage.getItem(treeValues[j].name);
+treeValues[j].key.display = localStorage.getItem(treeValues[j].key.name);
+letter.innerText          = localStorage.getItem(treeValues[j].name);
+} else {
+newLine.style.backgroundColor = key.D.colour;
+newLine.dataset.keyName   = key.D.name;
+treeValues[j].key.name    = key.D.name;
+treeValues[j].key.display = key.D.display;
+letter.innerText          = key.D.name;
+localStorage.setItem(treeValues[j].name, key.D.name);
+}
+treeValues[j].path.DOM = [];
+for (let k = 0; k < treeValues[j].path.text.length; k++) {
+let clicker = document.createElement("button");
+clicker.dataset.childIndex = k;
+clicker.dataset.treeIndex  = j;
+clicker.dataset.fullName   = treeValues[j].path.text[k];
+clicker.dataset.abbreviation = treeValues[j].path.text[k].slice(start,end);
+if (treeValues[j].path.text[k].includes(".")) {
+if (treeValues[j].path.text[k].split(".")[1]=="/") {
+clicker.classList = "baseDir";
+clicker.innerText = treeValues[j].path.text[k].slice(0,1);
+} else {
+clicker.classList = "file " + treeValues[j].path.text[k].split(".")[1];
+clicker.innerText = treeValues[j].path.text[k];
+}
+if (treeValues[j].path.text[k].split(".")[1]=="/") {
+treeValues[j].type = "baseDir";
+} else {
+treeValues[j].type = treeValues[j].path.text[k].split(".")[1];
+}
+} else {
+clicker.classList = "directory";
+clicker.innerText = treeValues[j].path.text[k];
+treeValues[j].type = "directory";
+}
+treeValues[j].path.DOM.push(clicker);
+newLine.appendChild(clicker);
+if (j == treeIndex && k == childIndex) {
+treeFocus = clicker;
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+}
+newLine.appendChild(letter);
+newLine.appendChild(notification);
+treeValues[j].DOM = newLine;
+treeMain.appendChild(newLine);
+}
+if (treeFocus == null) { treeFocus = treeValues[treeIndex].path.DOM[childIndex]; }
+treeFocus.focus();
+}
+/* Here are the tooltips for the keyboard GUI.
+ * This way I can't forget the buttons on this. */
+
+key.tilde.GUI.title = "invert";
+key.n1.GUI.title = "visibility layer";
+key.n2.GUI.title = "visibility layer";
+key.n3.GUI.title = "visibility layer";
+key.n4.GUI.title = "visibility layer";
+key.n5.GUI.title = "visibility layer";
+key.n6.GUI.title = "visibility layer";
+key.n7.GUI.title = "visibility layer";
+key.n8.GUI.title = "visibility layer";
+key.n9.GUI.title = "- change font size";
+key.n0.GUI.title = "+ change font size";
+key.minus.GUI.title = "CTRL, browser scale";
+key.plus.GUI.title = "CTRL, browser scale";
+key.backspace.GUI.title = "open file in new tab; 'SHIFT' to open again shadowTree";
+key.tab.GUI.title = "search, *broken?* use shift for GREP search (use query in bash, paste file list back to a key)";
+key.leftbracket.GUI.title = "set source top left, shift for bottom";
+key.rightbracket.GUI.title = "set source top right, shift for bottom";
+key.backslash.GUI.title = "alternate GUI, shift for wide";
+key.caps.GUI.title = "";
+key.semicolon.GUI.title = "";
+key.apostrophe.GUI.title = "toggle alternate GUI, or hide";
+key.enter.GUI.title = "copy group to clipboard, shift for alternate";
+key.leftshift.GUI.title = "use with letters to toggle visibility";
+key.lt.GUI.title = "move within group, shift to toggle semi/quad viewer left";
+key.gt.GUI.title = "move within group, shift to toggle semi/quad viewer right";
+key.forwardslash.GUI.title = "isolate single letters temporarily, esc to revert";
+key.rightshift.GUI.title = "use with letters to toggle visibility";
+key.leftctrl.GUI.title = "use with + - to change browser scale";
+key.windowskey.GUI.title = "";
+key.leftalt.GUI.title = "use with tab to cycle operating system windows";
+key.spacebar.GUI.title = "copy single file to clipboard, shift for alternate";
+key.rightalt.GUI.title = "use with tab to cycle operating system windows";
+key.fn.GUI.title = "";
+key.menu.GUI.title = "";
+key.rightctrl.GUI.title = "use with + - to change browser scale";
+key.A.GUI.title = "ALL/NONE, shift to set abbreviation";
+key.G.GUI.title = "go to top, shift for bottom";
+key.H.GUI.title = "go left, shift for first";
+key.J.GUI.title = "go down, shift to skip 10";
+key.K.GUI.title = "go up, shift to skip 10";
+key.L.GUI.title = "go to right, shift for last";
+function setColour(char) {
+
+/* When isolation mode is set, colour groups are isolated */
+if (isolation == 1) {
+treeFocus.parentNode.classList.remove("highlight");
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.style.display = "none";
+}
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display = "block";
+}
+if (treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name != char) {
+treeFocus = key[char].array[0].lastElementChild.previousElementSibling.previousElementSibling;
+}
+treeFocus.focus();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+return 0;
+}
+
+let comparisonArray  = [];
+for (let k = 0; k <= parseInt(treeFocus.dataset.childIndex); k++) {
+comparisonArray.push(treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[k]);
+}
+for (let j = 0; j < treeValues.length; j++) {
+let matchArray = [];
+for (let k = 0; k <= parseInt(treeFocus.dataset.childIndex); k++) {
+matchArray.push(treeValues[j].path.text[k]);
+}
+/* check if the strings match */
+if (matchArray.toString() == comparisonArray.toString()) {
+/* check that the row is not hidden */
+if (treeValues[j].DOM.style.display != "none") {
+treeValues[j].key.name = key[char].name;
+treeValues[j].DOM.style.backgroundColor      = key[char].colour;
+treeValues[j].DOM.style.display              = key[char].display;
+treeValues[j].end.letter.innerText = key[char].name;
+localStorage.setItem(treeValues[j].name, key[char].name);
+}
+}
+}
+if (key[char].display == "none") {
+move("up"); move("down");
+}
+brush();
+treeKey();
+updateGUI();
+}
+function showColour(char) {
+let allHidden  = true;
+key.names.forEach((char, index) => {
+if (key[char].display == "block") {
+allHidden = false;
+}
+});
+for (let j = 0; j < key[char].array.length; j++) {
+treeValues[parseInt(key[char].array[j].dataset.keyIndex)].key.display = "block";
+key[char].array[j].style.display = "block";
+}
+key[char].display          = "block";
+key[char].view[activeView] = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+if (allHidden == true) move("top");
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function hideColour(char) {
+for (let j = 0; j < key[char].array.length; j++) {
+treeValues[parseInt(key[char].array[j].dataset.keyIndex)].key.display = "none";
+key[char].array[j].style.display = "none";
+}
+key[char].display          = "none";
+key[char].view[activeView] = "none";
+localStorage.setItem(activeView + "-" + char, "none");
+if (treeFocus.parentNode.style.display == "none") {
+if (treeFocus == seek(treeFocus, "forward") && treeFocus == seek(treeFocus, "backward")) {
+return;
+} else if (treeFocus != seek(treeFocus, "forward")) {
+treeFocus = seek(treeFocus, "forward");
+} else if (treeFocus != seek(treeFocus, "backward")) {
+treeFocus = seek(treeFocus, "backward");
+}
+treeFocus.focus();
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+}
+function toggleColour(char) {
+treeFocus.parentNode.classList.remove("highlight");
+              if (key[char].display == "none") {
+           showColour(char);
+       } else if (key[char].display == "block") {
+           hideColour(char);
+       }
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+updateGUI();
+}
+function showAll() {
+key.names.forEach((char) => {
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display = "block"; }
+key[char].display = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+});
+treeFocus.focus();
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+treeKey();
+updateGUI();
+}
+function hideAll() {
+key.names.forEach((char) => {
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display = "none"; }
+key[char].display = "none";
+localStorage.setItem(activeView + "-" + char, "none");
+});
+treeKey();
+updateGUI();
+}
+function invertRGB(input) {
+const numberArray =
+[ parseInt(input.split(",")[0].replace(/rgb\\(/g, '')),
+  parseInt(input.split(",")[1]),
+  parseInt(input.split(",")[2].replace(/\\)/g, '')) ]
+return \`rgb(\${255 - numberArray[0]},\${255 - numberArray[1]},\${255 - numberArray[2]})\`;
+}
+function invertColourScheme() {
+key.names.forEach((value, index) => {
+try {
+key[value].colour = colour[key[value].colour].inverted;
+} catch {
+key[value].colour = invertRGB(key[value].colour);
+}
+key[value].GUI.style.backgroundColour = key[value].colour;
+});
+}
+function toggleAll() {
+let allVisible = true;
+let allHidden  = true;
+key.names.forEach((char, index) => {
+       if (key[char].display == "block") {
+allHidden  = false;
+} else if (key[char].display == "none") {
+allVisible = false;
+}
+});
+       if (allVisible == true) { hideAll();
+} else if (allHidden  == true) { showAll();
+} else {                         showAll(); }
+
+}
+function toggleIsolation() {
+if (isolation == 0) {
+    isolation = 1;
+key.names.forEach((char, index) => {
+key[char].GUI.classList.add("isolation");
+});
+} else {
+    isolation = 0;
+key.names.forEach((char, index) => {
+key[char].GUI.classList.remove("isolation");
+});
+restoreAll();
+}
+}
+function restoreAll() {
+key.names.forEach((char) => {
+for (let j = 0; j < key[char].array.length; j++) {
+key[char].array[j].style.display =  key[char].display;
+}
+});
+
+    isolation = 0;
+key.names.forEach((char, index) => {
+key[char].GUI.classList.remove("isolation");
+});
+
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function invertSelection() {
+treeFocus.parentNode.classList.remove("highlight");
+for (let j = 0; j < treeValues.length; j ++) {
+if (treeValues[j].DOM.style.display == "none") {
+    treeValues[j].DOM.style.display =  "block";
+} else {
+    treeValues[j].DOM.style.display =  "none";
+}
+}
+key.names.forEach((char,index) => {
+if (key[char].display == "none") {
+    key[char].display =  "block";
+key[char].view[activeView] = "block";
+localStorage.setItem(activeView + "-" + char, "block");
+} else {
+    key[char].display =  "none";
+key[char].view[activeView] = "none";
+localStorage.setItem(activeView + "-" + char, "none");
+}
+});
+move("up"); move("down");
+treeFocus.focus();
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function toggleGUI() {
+if (GUI.style.display=="none") {
+GUI.style.display="block";
+localStorage.setItem("GUI", "block");
+} else {
+GUI.style.display="none";
+localStorage.setItem("GUI", "none");
+}
+}
+function updateGUI() {
+key.names.forEach((char,index) => {
+key[char].GUI.style.backgroundColor = key[char].colour;
+key[char].GUI.innerHTML = \`\${key[char].name}<div class="numeral">\${key[char].array.length}</div>\`;
+if (key[char].display == "none") {
+key[char].GUI.classList.add("hiddenKey"); 
+key[char].GUI.innerHTML = 
+\`\${key[char].name}
+<div class="numeral">\${key[char].array.length}</div>
+<div class="hideIndicator">HIDDEN</div>
+\`;
+} else {
+\`\${key[char].name}
+<div class="numeral">\${key[char].array.length}</div>
+\`;
+key[char].GUI.classList.remove("hiddenKey"); 
+}
+});
+for (let j = 0; j < 4;  j++) { updateViewerColour(j); }
+}
+function shiftKeyLabels() {
+key.topRowNumbers.forEach((char,index) => {
+key[char].GUI.innerHTML = \`\${key.topRowNumbersAlternate[index]}<div class="hideIndicator">\${key.topRowNumbersSmallText[index]}</div>\`
+});
+}
+function unshiftKeyLabels() {
+key.additionalKeys.forEach((keyname,index) => {
+key[keyname].GUI.innerHTML = \`\${key.additionalKeysText[index]}<div class="extraText">\${key.additionalKeysHTML[index]}</div>\`;
+});
+}
+function brush() {
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.classList.remove("brushTop");
+treeValues[j].DOM.classList.remove("brushBottom");
+       if (j==0) {
+treeValues[j].DOM.classList.add("brushTop");
+       if (treeValues[j].key.name != treeValues[j + 1].key.name) {
+treeValues[j].DOM.classList.add("brushBottom"); }
+} else if (j == treeValues.length - 1) {
+treeValues[j].DOM.classList.add("brushBottom");
+       if (treeValues[j].key.name != treeValues[j - 1].key.name) {
+treeValues[j].DOM.classList.add("brushTop"); }
+} else if (treeValues[j].key.name != treeValues[j + 1].key.name) {
+treeValues[j].DOM.classList.add("brushBottom");
+       if (treeValues[j].key.name != treeValues[j - 1].key.name) {
+treeValues[j].DOM.classList.add("brushTop"); }
+} else if (treeValues[j].key.name != treeValues[j - 1].key.name) {
+treeValues[j].DOM.classList.add("brushTop");
+       if (treeValues[j].key.name != treeValues[j + 1].key.name) {
+treeValues[j].DOM.classList.add("brushBottom"); }
+}
+}
+}
+function flipGUI() {
+
+if (GUI.style.display == "none") {
+GUI.style.display = "block";
+localStorage.setItem("GUI", "block");
+}
+
+if (GUIflip == "true") {
+GUIflip = "false";
+localStorage.setItem("GUIflip", "true");
+key.names.forEach((value, index) => {
+key[value].GUI.classList.add(\`\${value}alt\`); });
+key.additionalKeys.forEach((value, index) => {
+key[value].GUI.classList.add(\`hideThisLetter\`); });
+key.topRowNumbers.forEach((value, index) => {
+key[value].GUI.classList.add(\`\${value}alt\`);
+key[value].GUI.classList.remove(\`hideThisLetter\`);
+});
+GUI.classList.add("GUIsmall");
+key.command.classList.add("hideThisLetter");
+
+} else if (GUIflip == "false") {
+GUIflip = "true";
+localStorage.setItem("GUIflip", "false");
+key.names.forEach((value, index) => {
+key[value].GUI.classList.remove(\`\${value}alt\`); });
+key.additionalKeys.forEach((value, index) => {
+key[value].GUI.classList.remove(\`hideThisLetter\`); });
+key.topRowNumbers.forEach((value, index) => {
+key[value].GUI.classList.remove(\`\${value}alt\`);
+});
+GUI.classList.remove("GUIsmall");
+key.command.classList.remove("hideThisLetter");
+}
+
+}
+function abbreviate() {
+if (abbr == 0) { abbr = 2; } else { abbr = 0; }
+for (let j = 0; j < treeValues.length; j++) {
+for (let k = 0; k < treeValues[j].path.DOM.length; k++) {
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\\//g, "");
+} }
+if (abbr == 0) { return; }
+for (let j = 0; j < treeValues.length; j++) {
+for (let k = 0; k < treeValues[j].path.DOM.length - abbr; k++) {
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].slice(0,1);
+} }
+localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
+}
+function unabbreviate() {
+
+
+for (let j = 0; j < treeValues.length; j++) {
+for (let k = 0; k < treeValues[j].path.DOM.length; k++) {
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\\//g, "");
+} }
+
+
+}
+function press(theKey) {
+key[theKey].GUI.classList.add("press");
+setTimeout(() => {
+key[theKey].GUI.classList.remove("press");
+}, 600);
+}
+function fontSizeUp() {
+       if ( fitSelection.choice == 0 ) { fitSelection.option0.fontSize += 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`;
+} else if ( fitSelection.choice == 2 ) { fitSelection.option2.fontSize += 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`;
+} else if ( fitSelection.choice == 1 ) { fitSelection.option1.fontSize += 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`;
+}
+localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
+}
+function fontSizeDown() {
+       if ( fitSelection.choice == 0 ) { if (fitSelection.option0.fontSize > 4) { fitSelection.option0.fontSize -= 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`; }
+} else if ( fitSelection.choice == 2 ) { if (fitSelection.option2.fontSize > 4) { fitSelection.option2.fontSize -= 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`; }
+} else if ( fitSelection.choice == 1 ) { if (fitSelection.option1.fontSize > 4) { fitSelection.option1.fontSize -= 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`; }
+}
+localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
+}
+function move(arg1,arg2) {
+treeFocus.parentNode.classList.remove("highlight");
+let input = treeFocus;
+const treeIndex  = parseInt(input.dataset.treeIndex);
+const childIndex = parseInt(input.dataset.childIndex);
+
+function getRef() {
+switch (arg1) {
+case   "left":
+	if (childIndex != 0) {
+	return treeValues[treeIndex].path.DOM[childIndex - 1];
+	} else {
+	return input;
+        }
+	break;
+case  "right":
+	if (childIndex != treeValues[treeIndex].path.DOM.length - 1) {
+	return treeValues[treeIndex].path.DOM[childIndex + 1];
+	} else {
+	return input;
+        }
+	break;
+case  "first":
+	return treeValues[treeIndex].path.DOM[0];
+	break;
+case   "last":
+	return treeValues[treeIndex].path.DOM[treeValues[treeIndex].path.DOM.length - 1];
+	; break;
+case    "top":
+	if (treeValues[0].DOM.style.display != "none") {
+	return treeValues[0].path.DOM[treeValues[0].path.DOM.length - 1];
+	} else {
+	return seek(treeValues[0].path.DOM[treeValues[0].path.DOM.length - 1],"forward");
+	}
+	break;
+case "bottom":
+	if (treeValues[treeValues.length - 1].DOM.style.display != "none") {
+	return treeValues[treeValues.length - 1].path.DOM[treeValues[treeValues.length - 1].path.DOM.length - 1];
+	} else {
+	return seek(treeValues[treeValues.length - 1].path.DOM[treeValues[treeValues.length - 1].path.DOM.length - 1],"backward");
+	}
+	break;
+case     "up":
+	return seek(input, "backward");
+	break;
+case   "down":
+	return seek(input, "forward");
+	break;
+default:
+	return input;
+}
+}
+
+if (arg2 == "skip") {
+for (let j = 0; j < multiMove; j++) {
+treeFocus = getRef();
+input     = treeFocus;
+}
+} else {
+treeFocus = getRef();
+}
+
+treeFocus.focus();
+
+
+setStoragePosition();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function nextInGroup() {
+treeFocus.parentNode.classList.remove("highlight");
+const keyName     = treeFocus.parentNode.dataset.keyName;
+const arrayLength = key[keyName].array.length;
+const arrayIndex  = parseInt(treeFocus.parentNode.dataset.keyIndex);
+
+if (arrayIndex < arrayLength - 1) {
+treeFocus = key[keyName].array[arrayIndex + 1].lastElementChild.previousElementSibling.previousElementSibling;
+}
+
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+treeFocus.parentNode.classList.add("highlight");
+setStoragePosition();
+}
+function previousInGroup() {
+treeFocus.parentNode.classList.remove("highlight");
+const keyName     = treeFocus.parentNode.dataset.keyName;
+const arrayLength = key[keyName].array.length;
+const arrayIndex  = parseInt(treeFocus.parentNode.dataset.keyIndex);
+if (arrayIndex > 0) {
+treeFocus = key[keyName].array[arrayIndex - 1].lastElementChild.previousElementSibling.previousElementSibling;
+}
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+treeFocus.parentNode.classList.add("highlight");
+setStoragePosition();
+}
+function seek(input, direction) {
+const treeIndex  = parseInt(input.dataset.treeIndex);
+const childIndex = parseInt(input.dataset.childIndex);
+function findRef() {
+if (direction == "forward") {
+for (let j = treeIndex + 1; j < treeValues.length; j++) {
+if (treeValues[j].DOM.style.display != "none") {
+return treeValues[j];
+} }
+} else if (direction == "backward") {
+for (let j = treeIndex - 1; j >= 0; j--) {
+if (treeValues[j].DOM.style.display != "none") {
+return treeValues[j];
+} }
+}
+return treeValues[treeIndex];
+}
+const newLocation = findRef();
+const inputArray  = [];
+const matchArray  = [];
+for (let k = 0; k <= childIndex; k++) {
+inputArray.push(treeValues[treeIndex].path.text[k]);
+matchArray.push(          newLocation.path.text[k]);
+}
+     if (input == treeValues[treeIndex].path.DOM[treeValues[treeIndex].path.DOM.length - 1])
+{ return newLocation.path.DOM[newLocation.path.DOM.length - 1]; }
+else if (input == treeValues[treeIndex].path.DOM[treeValues[treeIndex].path.DOM.length - 2])
+{ return newLocation.path.DOM[newLocation.path.DOM.length - 2]; }
+else if (matchArray.toString() == inputArray.toString())
+{ return newLocation.path.DOM[childIndex]; }
+else
+{ return newLocation.path.DOM[newLocation.path.DOM.length - 1]; }
+}
+/* USE THE OLD WAY WHICH ALWAYS WORKS */
+function copyToClipboard(string) {
+const d = document;
+const x = d.body.appendChild(d.createElement("textarea"));
+x.value = string;
+x.select();
+d.execCommand("copy");
+x.remove();
+}
+
+
+function retrieve(scope,method,cmd1,cmd2) {
+let clips     = [];
+       if (scope  == "single") {
+   const dataIndex = treeFocus.dataset.treeIndex;
+   const dataTree  = treeValues[dataIndex];
+for (let j = 1; j < parseInt(treeFocus.dataset.childIndex) + 1; j++) { clips.push(dataTree.path.text[j]); }
+       if (method == "direct") {
+       copyToClipboard(" " + workingDirectory + "/" + clips.join("/"));
+       treeValues[dataIndex].end.notification.innerText = "copied";
+} else if (method == "command") {
+       copyToClipboard(cmd1 + " " + workingDirectory + "/" + clips.join("/") + " " + cmd2);
+       treeValues[dataIndex].end.notification.innerText = "CMD";
+} else if (method == "neat") {
+       if (clips.join("/").includes(".")) {
+       const filename = clips.pop(); 
+       copyToClipboard("\\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\\nclear;\\nls;\\n" + cmd1 + " " + filename + ";");
+       treeValues[dataIndex].end.notification.innerText = cmd1 + " cmd";
+       } else {
+       if (cmd1 == "notepad") {
+       copyToClipboard(workingDirectory.replace(/\\/c\\//g, "C:\\\\").replace(/\\//g, "\\\\") + "\\\\" + clips.join("\\\\"));
+       treeValues[dataIndex].end.notification.innerText = "win dir";
+       } else {
+       copyToClipboard("\\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\\nclear;\\nls;");
+       treeValues[dataIndex].end.notification.innerText = "copy";
+       }
+       }
+}
+let takeAway = 500 + Math.floor(Math.random() * 1000 + 10);
+setTimeout(() => { dataTree.end.notification.style.color = "magenta"; }, takeAway * 0.125);
+setTimeout(() => { dataTree.end.notification.style.color = "red"    ; }, takeAway * 0.250);
+setTimeout(() => { dataTree.end.notification.style.color = "green"  ; }, takeAway * 0.375);
+setTimeout(() => { dataTree.end.notification.style.color = "cyan"   ; }, takeAway * 0.500);
+setTimeout(() => { dataTree.end.notification.style.color = "purple" ; }, takeAway * 0.625);
+setTimeout(() => { dataTree.end.notification.style.color = "gold"   ; }, takeAway * 0.750);
+setTimeout(() => { dataTree.end.notification.style.color = "azure"  ; }, takeAway * 0.875);
+setTimeout(() => { dataTree.end.notification.innerText = ""; dataTree.end.notification.style.color = "white"; }, takeAway);
+} else if (scope == "multiple") {
+let dataGroup = [];
+const lineArray = key[tree[treeFocus.parentNode.dataset.name].key.name].array;
+for (let k = 0; k < lineArray.length; k++) {
+const dataName  = lineArray[k].dataset.name;
+const dataTree  = tree[dataName];
+clips = [];
+for (let j = 1; j < parseInt(dataTree.path.text.length) + 1; j++) { clips.push(dataTree.path.text[j]); }
+dataGroup.push(" " + workingDirectory + "/" + clips.join("/").slice(0,-1));
+let takeAway = 500 + Math.floor(Math.random() * 1000 + 10);
+if (method == "direct") {
+dataTree.end.notification.innerText = "copied";
+} else if (method == "neat") {
+dataTree.end.notification.innerText = cmd1 + " cmd";
+} else if (method == "command") {
+dataTree.end.notification.innerText = "CMD";
+}
+setTimeout(() => { dataTree.end.notification.style.color = "magenta"; }, takeAway * 0.125);
+setTimeout(() => { dataTree.end.notification.style.color = "red"    ; }, takeAway * 0.250);
+setTimeout(() => { dataTree.end.notification.style.color = "green"  ; }, takeAway * 0.375);
+setTimeout(() => { dataTree.end.notification.style.color = "cyan"   ; }, takeAway * 0.500);
+setTimeout(() => { dataTree.end.notification.style.color = "purple" ; }, takeAway * 0.625);
+setTimeout(() => { dataTree.end.notification.style.color = "gold"   ; }, takeAway * 0.750);
+setTimeout(() => { dataTree.end.notification.style.color = "azure"  ; }, takeAway * 0.875);
+setTimeout(() => { dataTree.end.notification.innerText = ""; dataTree.end.notification.style.color = "white"; }, takeAway);
+}
+       if (method == "direct") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += dataGroup[j];}
+copyToClipboard(output);
+
+} else if (method == "command") {
+
+
+if (cmd1 != "pad128" &&
+    cmd1 != "mv128" &&
+    cmd1 != "paste" &&
+    cmd1 != "grepTop" &&
+    cmd1 != "abc" &&
+    cmd1 != "abcPlus" &&
+    cmd1 != "catCAT") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += dataGroup[j]; }
+copyToClipboard("\\n" + cmd1 + " " + output + " " + cmd2);
+
+} else if (cmd1 == "pad128") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += "     " + dataGroup[j].padEnd(123, " ") + "\\n"; }
+copyToClipboard("\\n" + output);
+
+} else if (cmd1 == "mv128") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += "mv" + "     " + dataGroup[j].padEnd(123, " ") + "     " + dataGroup[j].padEnd(123, " ") + ";" + "\\n"; }
+copyToClipboard("\\n" + output);
+
+} else if (cmd1 == "pasteUp") {
+let output = "";
+output += dataGroup[0] + " \\\\ \\n";
+for (let j = 1; j < dataGroup.length - 1; j++) {
+output += "      " + dataGroup[j] + " \\\\ \\n"; }
+output += "      " + dataGroup[dataGroup.length - 1];
+copyToClipboard("\\n" + "paste" + " " + output + " " + ";");
+
+} else if (cmd1 == "grepTop") {
+
+/* more prep work for this one necessary */
+
+} else if (cmd1 == "abc") {
+
+
+
+
+
+
+
+
+
+let output = "";
+const alphabet =
+[ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+for (let j = 0; j < dataGroup.length; j++) {
+output += "mv " + dataGroup[j].padEnd(128, " ") + " " + dataGroup[j].replace(/(\\/._)([^\\/]*)\$/g, "/" + "\$2").replace(/\\/([^\\/]*)\$/g, "/" + alphabet[j] + "_" + "\$1") + ";\\n"; }
+copyToClipboard("\\n" + output);
+
+
+
+
+
+
+
+} else if (cmd1 == "abcPlus") {
+let output = "";
+const alphabet =
+[ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+output += "mkdir z_newDirectory; cd z_newDirectory; touch"
+for (let j = 0; j < 25; j++) {
+output += \` \${alphabet[j]}_.js\`;
+}
+output += \` z_.js; clear; ls;\`;
+copyToClipboard("\\n" + output);
+
+} else if (cmd1 == "catCAT") {
+let output = "echo > temp;";
+for (let j = 0; j < dataGroup.length; j++) {
+output += 
+\`
+echo >> temp;
+echo "/*** \${dataGroup[j]} ***/" >> temp; 
+echo >> temp;
+cat \${dataGroup[j]} >> temp;\`;
+}
+output +=
+\`
+\${editorName} temp;
+rm temp;
+clear;
+\`;
+copyToClipboard(output);
+
+}
+
+
+
+
+
+} else if (method == "neat") {
+let output = "";
+for (let j = 0; j < dataGroup.length; j++) {
+output += dataGroup[j]; }
+copyToClipboard("\\n" + cmd1 + " " + output);
+}
+}
+}
+function setStoragePosition() {
+localStorage.setItem("treePosition", treeFocus.dataset.treeIndex + "," + treeFocus.dataset.childIndex);
+}
+function treeKey() {
+for (let k = 0; k < key.names.length; k++) {
+key[key.names[k]].array = [];
+let keyCounter = 0;
+for (let j = 0; j < treeValues.length; j++) {
+if (treeValues[j].key.name == key.names[k]) {
+key[key.names[k]].array.push(treeValues[j].DOM);
+treeValues[j].key.index = keyCounter;
+treeValues[j].DOM.dataset.keyName  = key.names[k];
+treeValues[j].DOM.dataset.keyIndex = keyCounter;
+keyCounter++;
+}
+}
+}
+}
+function changeView(argument) {
+key.names.forEach((char, index) => {
+key[char].display = key[char].view[argument];
+});
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.style.display              = key[treeValues[j].key.name].display;
+}
+for (let j = 0; j < 10; j++) {
+key["n" + j].GUI.classList.remove("currentView");
+}
+key[argument].GUI.classList.add("currentView");
+updateGUI();
+treeKey();
+activeView = view[argument];
+localStorage.setItem("activeView", view[argument]);
+move("up");
+move("down");
+}
+function search() {
+for (let j = 0; j < treeValues.length; j++) {
+       if (!treeValues[j].name.toLowerCase().includes(searchBar.value.toLowerCase())) {
+treeValues[j].DOM.style.display = "none";
+} else {
+treeValues[j].DOM.style.display = "block";
+}
+}
+}
+function grepSearch(value) {
+
+
+let query = [];
+
+if (treeFocus.classList.contains("directory")) {
+
+for (let j = 0; j < parseInt(treeFocus.dataset.childIndex); j++) {
+query.push(treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[j]);
+}
+
+}
+
+
+
+
+copyToClipboard(\`
+cd \${workingDirectory};
+grep "\${value}" \$(find \${query.join("/")} -type f) | \\
+sed '/\\.swp/d' | sed '/\\.git/d' | \\
+sed 's/:.*//g' | uniq > "copy & paste this list back to a key";
+vi "copy & paste this list back to a key" \$(cat "copy & paste this list back to a key");
+rm "copy & paste this list back to a key";
+clear;
+ls;\`);
+
+/*
+
+let takeAway = 500 + Math.floor(Math.random() * 1000 + 10);
+setTimeout(() => { grepBar.style.color = "magenta"; }, takeAway * 0.125);
+setTimeout(() => { grepBar.style.color = "red"    ; }, takeAway * 0.250);
+setTimeout(() => { grepBar.style.color = "green"  ; }, takeAway * 0.375);
+setTimeout(() => { grepBar.style.color = "cyan"   ; }, takeAway * 0.500);
+setTimeout(() => { grepBar.style.color = "purple" ; }, takeAway * 0.625);
+setTimeout(() => { grepBar.style.color = "gold"   ; }, takeAway * 0.750);
+setTimeout(() => { grepBar.style.color = "azure"  ; }, takeAway * 0.875);
+setTimeout(() => { grepBar.innerText = ""; grepBar.style.color = "white"; }, takeAway);
+grepBar.style.display = "none";
+
+*/
+
+
+
+}
+function setSource(input) {
+if (!treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/").includes(".html")) {
+if (viewer["file" + input].window.src != treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/")) {
+viewer["file" + input].window.src = treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/");
+}
+} else {
+viewer["file" + input].window.src = null;
+}
+viewer["file" + input].reference = treeValues[parseInt(treeFocus.dataset.treeIndex)].name;
+localStorage.setItem("file" + input, viewer["file" + input].reference);
+viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
+viewer["file" + input].filter.innerHTML = \`<button>\${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.length - 1]} <button class="letter">\${treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name}</button></button>\`;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+}
+function updateViewerColour(input) {
+try {
+viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
+viewer["file" + input].filter.innerHTML = \`<button>\${tree[viewer["file" + input].reference].path.text[tree[viewer["file" + input].reference].path.text.length - 1]} <button class="letter">\${tree[viewer["file" + input].reference].key.name}</button></button>\`;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+} catch {}
+}
+function setFromStorage(input) {
+let value = tree[viewer["file" + input].reference].DOM;
+if (!treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/").includes(".html")) {
+if (viewer["file" + input].window.src != treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/")) {
+viewer["file" + input].window.src = treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/");
+}
+} else {
+viewer["file" + input].window.src = null;
+}
+viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
+viewer["file" + input].filter.innerHTML = \`<button>\${treeValues[parseInt(value.dataset.treeIndex)].path.text[treeValues[parseInt(value.dataset.treeIndex)].path.text.length - 1]} <button class="letter">\${treeValues[parseInt(value.dataset.treeIndex)].key.name}</button></button>\`;
+viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
+}
+function setLeftSemi() {
+if (viewer.file0.window.classList.contains("viewerQuad")) {
+viewer.file0.window.classList.remove("viewerQuad");
+viewer.file0.filter.classList.remove("viewerQuad");
+viewer.file0.window.classList.add("viewerSemi");
+viewer.file0.filter.classList.add("viewerSemi");
+localStorage.setItem("leftSemi","true");
+} else {
+viewer.file0.window.classList.add("viewerQuad");
+viewer.file0.filter.classList.add("viewerQuad");
+viewer.file0.window.classList.remove("viewerSemi");
+viewer.file0.filter.classList.remove("viewerSemi");
+localStorage.setItem("leftSemi","false");
+}
+}
+function setRightSemi() {
+if (viewer.file2.window.classList.contains("viewerQuad")) {
+viewer.file2.window.classList.remove("viewerQuad");
+viewer.file2.filter.classList.remove("viewerQuad");
+viewer.file2.window.classList.add("viewerSemi");
+viewer.file2.filter.classList.add("viewerSemi");
+localStorage.setItem("rightSemi","true");
+} else {
+viewer.file2.window.classList.add("viewerQuad");
+viewer.file2.filter.classList.add("viewerQuad");
+viewer.file2.window.classList.remove("viewerSemi");
+viewer.file2.filter.classList.remove("viewerSemi");
+localStorage.setItem("rightSemi","false");
+}
+}
+
+function copyToEditor() {
+if (fitSelection.choice == 1 || fitSelection.choice == 2) {
+       if (viewer.file0.window.classList.contains("viewerSemi") && viewer.file2.window.classList.contains("viewerSemi")) {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
+} else if (viewer.file0.window.classList.contains("viewerSemi")) {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file3.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
+} else if (viewer.file2.window.classList.contains("viewerSemi")) {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file1.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
+} else {
+let value = editorName;
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file1.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+if (fitSelection.choice == 2) {
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file3.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
+}
+for (let j = 0; j < 4; j++) {
+let takeAway = 250 + Math.floor(Math.random() * 500 + 10);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,  0,255,0.50)"; }, takeAway * 0.125);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,255,255,0.50)"    ; }, takeAway * 0.250);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(  0,255,  0,0.50)"  ; }, takeAway * 0.375);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(  0,255,255,0.50)"   ; }, takeAway * 0.500);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,  0,127,0.50)" ; }, takeAway * 0.625);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,255,  0,0.50)"   ; }, takeAway * 0.750);
+setTimeout(() => { viewer["file" + j].filter.style.backgroundColor = "rgba(255,127,127,0.50)"  ; }, takeAway * 0.875);
+setTimeout(() => { updateGUI(); }, takeAway);
+}
+}
+}
+window.addEventListener("resize", function() {
+refit();
+});
+function refit() {
+treeMain.style.paddingTop    = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
+
+function removeLayouts() {
+for (let j = 0; j < 2;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(\`viewerLayoutLeft\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutLeft\${k}\`);
+}}
+for (let j = 2; j < 4;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(\`viewerLayoutRight\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutRight\${k}\`);
+}}
+}
+
+function addLayouts(input) {
+for (let j = 0; j < 2;  j++) {
+viewer["file" + j].window.classList.add(\`viewerLayoutLeft\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutLeft\${input}\`);
+}
+for (let j = 2; j < 4;  j++) {
+viewer["file" + j].window.classList.add(\`viewerLayoutRight\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutRight\${input}\`);
+}
+}
+
+       if ( (window.innerWidth / window.innerHeight) - (3 / 3) <= 0) {
+
+fitSelection.choice = 0;
+abbr = 2;
+abbreviate();
+document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`;
+removeLayouts();
+addLayouts(0);
+GUI.style.transform  = "scale(0.94)";
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth)}px - 6vw)\`;
+GUI.style.left       = \`3vw\`;
+treeMain.style.left  = \`calc(0px + 3vw)\`;
+} else if ( (window.innerWidth / window.innerHeight) - (14 / 9) >  0 && (fitSelection.choice == 2 || fitSelection.choice == null) ) {
+
+fitSelection.choice = 2;
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`;
+removeLayouts();
+addLayouts(2);
+GUI.style.transform  = "scale(0.274)";
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.33333)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
+} else if ( (window.innerWidth / window.innerHeight) - (3 / 3) >  0) {
+
+fitSelection.choice = 1;
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`;
+removeLayouts();
+addLayouts(1);
+GUI.style.transform  = "scale(0.439)";
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.5)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
+}
+treeFocus.focus();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function selectFit(selection) {
+
+fitSelection.choice = selection;
+
+treeMain.style.paddingTop    = parseInt(window.innerHeight / 2) - 18 + "px";
+treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
+
+function removeLayouts() {
+for (let j = 0; j < 2;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(\`viewerLayoutLeft\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutLeft\${k}\`);
+}}
+for (let j = 2; j < 4;  j++) { for (let k = 0; k < 3;  k++) {
+viewer["file" + j].window.classList.remove(\`viewerLayoutRight\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutRight\${k}\`);
+}}
+}
+
+function addLayouts(input) {
+for (let j = 0; j < 2;  j++) {
+viewer["file" + j].window.classList.add(\`viewerLayoutLeft\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutLeft\${input}\`);
+}
+for (let j = 2; j < 4;  j++) {
+viewer["file" + j].window.classList.add(\`viewerLayoutRight\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutRight\${input}\`);
+}
+}
+
+       if (fitSelection.choice == 0) {
+
+abbr = 2;
+abbreviate();
+document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`;
+removeLayouts();
+addLayouts(0);
+GUI.style.transform  = "scale(0.94)";
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth)}px - 6vw)\`;
+GUI.style.left       = \`3vw\`;
+treeMain.style.left  = \`calc(0px + 3vw)\`;
+
+} else if (fitSelection.choice == 2) {
+
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`;
+removeLayouts();
+addLayouts(2);
+GUI.style.transform  = "scale(0.274)";
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.33333)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
+
+} else if (fitSelection.choice == 1) {
+
+abbr = 0;
+abbreviate();
+document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`;
+removeLayouts();
+addLayouts(1);
+GUI.style.transform  = "scale(0.439)";
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.5)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
+
+}
+
+
+
+
+treeFocus.focus();
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+function switchFit() {
+       if (fitSelection.choice == 0) { fitSelection.choice =  1;
+} else if (fitSelection.choice == 1) { fitSelection.choice =  2;
+} else if (fitSelection.choice == 2) { fitSelection.choice =  1; }
+ selectFit(fitSelection.choice);
+}
+document.addEventListener("focus", () => {
+event.preventDefault();
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+});
+document.addEventListener("input", function() {
+
+
+});
+document.addEventListener("copy", event => {
+/*
+key.names.forEach((value, index) => {
+if (event.target == key[char].GUI) {
+
+event.preventDefault();
+let pastedText = event.clipboardData.getData('text/plain');
+
+
+treeValues[j].key.name = key[char].name;
+treeValues[j].DOM.style.backgroundColor      = key[char].colour;
+treeValues[j].DOM.style.display              = key[char].display;
+treeValues[j].end.letter.innerText = key[char].name;
+localStorage.setItem(treeValues[j].name, key[char].name);
+
+
+treeValues[tree["._e_script_a_declaration_e_keyEtc_js"].DOM.dataset.treeIndex]
+
+
+
+*** COPY ***
+event.clipboardData.setData('text/plain', mousemoveTarget.lastElementChild.firstElementChild.nextElementSibling.innerHTML);
+
+
+}
+});
+*/
+});document.addEventListener("paste", event => {
+
+event.preventDefault();
+const fileList = event.clipboardData.getData('text/plain').trim().split("\\n");
+
+let targetKey = null;
+key.names.forEach((char, index) => {
+
+if (mouseMoveTarget != null) {
+if (mouseMoveTarget == key[char].GUI) {
+targetKey = char;
+showColour(targetKey);
+}
+} else {
+if (treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name == key[char].name) {
+targetKey = char;
+showColour(targetKey);
+}
+
+}
+});
+
+for (let j = 0; j < fileList.length; j++) {
+try {
+
+var reference = treeValues[parseInt(tree["." + fileList[j].replace(/\\//g, "_").replace(/\\./g, "_").slice(1)].DOM.dataset.treeIndex)]
+
+reference.key.name = key[targetKey].name;
+reference.DOM.style.backgroundColor      = key[targetKey].colour;
+reference.DOM.style.display              = key[targetKey].display;
+reference.end.letter.innerText = key[targetKey].name;
+localStorage.setItem(reference.name, key[targetKey].name);
+} catch {}
+}
+
+brush();
+treeKey();
+updateGUI();
+});
+
+
+
+
+document.addEventListener("click", function() {
+
+      if (event.target == key.command) {
+        if (editorName == "nano") {
+            editorName =  "vi";
+ key.command.innerText =  "vi";
+localStorage.setItem("editorName","vi");
+ } else if (editorName == "vi") {
+            editorName =  "nano";
+ key.command.innerText =  "nano";
+localStorage.setItem("editorName","nano");
+} else {    editorName =  "vi";
+ key.command.innerText =  "Vi";
+localStorage.setItem("editorName","vi");
+}
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+return;
+}
+
+if (event.target.dataset&&event.target.dataset.treeIndex&&event.target.dataset.childIndex) {
+treeFocus.parentNode.classList.remove("highlight");
+treeFocus = event.target;
+setStoragePosition();
+if (event.shiftKey) {
+retrieve("multiple","direct");
+} else {
+retrieve("single","neat","notepad");
+}
+treeFocus.parentNode.classList.add("highlight");
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+} else {
+treeFocus.focus();
+treeFocus.scrollIntoView({"behavior" : "auto", "block" : "center"});
+}
+});
+
+
+
+
+
+document.addEventListener("mousemove", (event) => {
+
+mouseMoveTarget = event.target;
+
+
+});
+
+
+
+
+
+document.addEventListener("mouseover", (event) => {
+document.documentElement.style.cursor = "auto";
+event.target.style.cursor = "auto";
+});
+document.addEventListener("wheel", function() {
+if (!event.ctrlKey&&!event.altKey) {
+event.preventDefault();
+if (event.wheelDelta >= 0) {
+if (!event.shiftKey) {
+move("up");
+} else {
+move("up","skip");
+}
+} else if (event.wheelDelta < 0) {
+if (!event.shiftKey) {
+move("down");
+} else {
+move("down","skip");
+}
+}
+}
+}, { passive: false });
+var kC = 0, cC = 0;
+
+document.addEventListener("keydown", (event) => {
+
+if (!event.ctrlKey) { mouseMoveTarget = null; }
+
+if (event.shiftKey) { shiftKeyLabels(); }
+treeFocus.focus();
+kC = event.keyCode;
+let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*   esc   */ if (kC ==  27) { event.preventDefault();
+if (document.activeElement != searchBar && newSearch == false) {
+restoreAll();
+} else {
+newSearch = false;
+}
+}
+/*   tab   */ if (kC ==   9) {
+if (!event.ctrlKey) {
+event.preventDefault();
+
+       if (!event.shiftKey) {
+if (GUI.style.display == "none") {
+GUI.style.display = "block";
+localStorage.setItem("GUI", "block"); }
+GUIflip = "true";
+flipGUI();
+if (grepBar.style.display == "block") {
+    grepBar.style.display  = "none";
+}
+searchBar.style.display = "block";
+searchBar.focus();
+
+} else if ( event.shiftKey) {
+if (GUI.style.display == "none") {
+GUI.style.display = "block";
+localStorage.setItem("GUI", "block"); }
+GUIflip = "true";
+flipGUI();
+if (searchBar.style.display == "block") {
+    searchBar.style.display  = "none";
+}
+grepBar.style.display = "block";
+grepBar.focus();
+}
+
+}
+}
+/*backspace*/ if (kC ==   8) {
+event.preventDefault();
+if (event.shiftKey) {
+window.open("shadowTree.html","_blank");
+} else if (!event.shiftKey) {
+window.open(\`\${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/")}\`,"_blank");
+}
+}
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F1    */ if (kC == 112)              { event.preventDefault();
+alert(\`Open the console, CTRL + SHIFT + J or K.
+Within the console: Read minimal instructions for usage.\`)
+}
+/*   F2    */ if (kC == 113)              {                                }
+/*   F3    */ if (kC == 114)              {                                }
+/*   F4    */ if (kC == 115)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F5    */ if (kC == 116)              {                                }
+/*   F6    */ if (kC == 117)              {                                }
+/*   F7    */ if (kC == 118)              {                                }
+/*   F8    */ if (kC == 119)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F9    */ if (kC == 120)              {                                }
+/*   F10   */ if (kC == 121)              {                                }
+/*   F11   */ if (kC == 122)              {                                }
+/*   F12   */ if (kC == 123)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* pauseBR */ if (kC ==  19)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   ins   */ if (kC ==  45) { event.preventDefault();                     }
+/*   home  */ if (kC ==  36) { event.preventDefault(); move("top");        }
+/* page up */ if (kC ==  33) { event.preventDefault(); move("up","skip");  }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  delete */ if (kC ==  46) {
+if (!event.shiftKey) {
+retrieve("single","neat","rm");
+} else if (event.shiftKey) {
+retrieve("multiple","neat","rm");
+}
+}
+/*   end   */ if (kC ==  35) { event.preventDefault(); move("bottom");     }
+/*page down*/ if (kC ==  34) { event.preventDefault(); move("down","skip");}
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* scr lck */ if (kC == 145)              {                                }
+/* num lock*/ if (kC == 144)              {                                }
+/*  caps   */ if (kC ==  20)              {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   up arr*/ if (kC ==  38) { event.preventDefault();
+if (event.shiftKey) {
+let keyHold = treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name;
+move("up"); setColour(keyHold);
+} else { move("up"); }
+}
+/* down arr*/ if (kC ==  40) { event.preventDefault();
+if (event.shiftKey) {
+let keyHold = treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name;
+move("down"); setColour(keyHold);
+} else { move("down"); }
+}
+
+/* left arr*/ if (kC ==  37) { event.preventDefault();
+if (event.shiftKey) {
+} else {
+move("left");
+}
+}
+/*right arr*/ if (kC ==  39) { event.preventDefault();
+if (event.shiftKey) {
+} else {
+move("right");
+}
+}
+
+/*                                                                        */
+/*  space  */ if (kC ==  32)              { event.preventDefault();
+     if (!event.shiftKey) { retrieve("single","neat",editorName);   }
+else if ( event.shiftKey) { retrieve("single","direct",editorName); }
+treeFocus.focus();
+treeFocus.parentNode.classList.add("copied");
+}
+/***********************************************************************/});
+document.addEventListener("keypress", (event) =>  { 
+cC = event.charCode;
+let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*    /    */ if (kC == 111 && cC ==  47) {                                }
+/*    *    */ if (kC == 106 && cC ==  42) {                                }
+/*                                                                        */
+/*    -    */ if (kC == 109 && cC ==  45) {                                }
+/*    +    */ if (kC == 107 && cC ==  43) {                                }
+/*                                                                        */
+/*    7    */ if (kC == 103 && cC ==  55) {                                }
+/*    8    */ if (kC == 104 && cC ==  56) {                                }
+/*    9    */ if (kC == 105 && cC ==  57) {                                }
+/*                                                                        */
+/*    4    */ if (kC == 100 && cC ==  52) {                                }
+/*    5    */ if (kC == 101 && cC ==  53) {                                }
+/*    6    */ if (kC == 102 && cC ==  54) {                                }
+/*                                                                        */
+/*    1    */ if (kC ==  97 && cC ==  49) {                                }
+/*    2    */ if (kC ==  98 && cC ==  50) {                                }
+/*    3    */ if (kC ==  99 && cC ==  51) {                                }
+/*                                                                        */
+/*    0    */ if (kC ==  96 && cC ==  48) {                                }
+/*    .    */ if (kC == 110 && cC ==  46) {                                }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  enter  */ if (kC ==  13 && cC ==  13) { event.preventDefault();
+if (event.shiftKey) {
+retrieve("multiple","direct",editorName);
+} else if (!event.shiftKey) {
+retrieve("multiple","neat",editorName);
+}
+treeFocus.focus();
+treeFocus.parentNode.classList.add("copied");
+}
+/*                                                                        */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    \`    */ if (kC == 192 && cC ==  96) { invertSelection();             }/*    ~    */ if (kC == 192 && cC == 126) { invertSelection();             }
+/*    1    */ if (kC ==  49 && cC ==  49) { changeView("n1");              }/*    !    */ if (kC ==  49 && cC ==  33) {retrieve("multiple","command","pad128");}
+/*    2    */ if (kC ==  50 && cC ==  50) { changeView("n2");              }/*    @    */ if (kC ==  50 && cC ==  64) {retrieve("multiple","command","mv128");}
+/*    3    */ if (kC ==  51 && cC ==  51) { changeView("n3");              }/*    #    */ if (kC ==  51 && cC ==  35) {retrieve("multiple","command","pasteUp");}
+/*    4    */ if (kC ==  52 && cC ==  52) { changeView("n4");              }/*    \$    */ if (kC ==  52 && cC ==  36) {retrieve("multiple","command","grepTop");}
+/*    5    */ if (kC ==  53 && cC ==  53) { changeView("n5");              }/*    %    */ if (kC ==  53 && cC ==  37) {retrieve("multiple","command","abc");}
+/*    6    */ if (kC ==  54 && cC ==  54) { changeView("n6");              }/*    ^    */ if (kC ==  54 && cC ==  94) {retrieve("multiple","command","abcPlus");}
+/*    7    */ if (kC ==  55 && cC ==  55) { changeView("n7");              }/*    &    */ if (kC ==  55 && cC ==  38) {retrieve("multiple","command","catCAT");}
+/*    8    */ if (kC ==  56 && cC ==  56) { changeView("n8");              }/*    *    */ if (kC ==  56 && cC ==  42) { copyToEditor();                }
+/*    9    */ if (kC ==  57 && cC ==  57) { changeView("n9");              }/*    (    */ if (kC ==  57 && cC ==  40) { fontSizeDown();                }
+/*    0    */ if (kC ==  48 && cC ==  48) { changeView("n0");              }/*    )    */ if (kC ==  48 && cC ==  41) { fontSizeUp();                  }
+/*    -    */ if (kC == 173 && cC ==  45) {                                }/*    _    */ if (kC == 173 && cC ==  95) {                                }
+/*    =    */ if (kC ==  61 && cC ==  61) {                                }/*    +    */ if (kC ==  61 && cC ==  43) {                                }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    q    */ if (kC ==  81 && cC == 113) { setColour("Q");    press("Q"); }/*    Q    */ if (kC ==  81 && cC ==  81) { toggleColour("Q"); press("Q"); }
+/*    w    */ if (kC ==  87 && cC == 119) { setColour("W");    press("W"); }/*    W    */ if (kC ==  87 && cC ==  87) { toggleColour("W"); press("W"); }
+/*    e    */ if (kC ==  69 && cC == 101) { setColour("E");    press("E"); }/*    E    */ if (kC ==  69 && cC ==  69) { toggleColour("E"); press("E"); }
+/*    r    */ if (kC ==  82 && cC == 114) { setColour("R");    press("R"); }/*    R    */ if (kC ==  82 && cC ==  82) { toggleColour("R"); press("R"); }
+/*    t    */ if (kC ==  84 && cC == 116) { setColour("T");    press("T"); }/*    T    */ if (kC ==  84 && cC ==  84) { toggleColour("T"); press("T"); }
+/*    y    */ if (kC ==  89 && cC == 121) { setColour("Y");    press("Y"); }/*    Y    */ if (kC ==  89 && cC ==  89) { toggleColour("Y"); press("Y"); }
+/*    u    */ if (kC ==  85 && cC == 117) { setColour("U");    press("U"); }/*    U    */ if (kC ==  85 && cC ==  85) { toggleColour("U"); press("U"); }
+/*    i    */ if (kC ==  73 && cC == 105) { setColour("I");    press("I"); }/*    I    */ if (kC ==  73 && cC ==  73) { toggleColour("I"); press("I"); }
+/*    o    */ if (kC ==  79 && cC == 111) { setColour("O");    press("O"); }/*    O    */ if (kC ==  79 && cC ==  79) { toggleColour("O"); press("O"); }
+/*    p    */ if (kC ==  80 && cC == 112) { setColour("P");    press("P"); }/*    P    */ if (kC ==  80 && cC ==  80) { toggleColour("P"); press("P"); }
+/*    [    */ if (kC == 219 && cC ==  91) { setSource(0);                  }/*    {    */ if (kC == 219 && cC == 123) { setSource(1);                  }
+/*    ]    */ if (kC == 221 && cC ==  93) { setSource(2);                  }/*    }    */ if (kC == 221 && cC == 125) { setSource(3);                  }
+/*    \\    */ if (kC == 220 && cC ==  92) { switchFit();                   }/*    |    */ if (kC == 220 && cC == 124) { selectFit(0);                  }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    a    */ if (kC ==  65 && cC ==  97) { toggleAll();                   }/*    A    */ if (kC ==  65 && cC ==  65) { abbreviate();                  }
+/*    s    */ if (kC ==  83 && cC == 115) { setColour("S");    press("S"); }/*    S    */ if (kC ==  83 && cC ==  83) { toggleColour("S"); press("S"); }
+/*    d    */ if (kC ==  68 && cC == 100) { setColour("D");    press("D"); }/*    D    */ if (kC ==  68 && cC ==  68) { toggleColour("D"); press("D"); }
+/*    f    */ if (kC ==  70 && cC == 102) { setColour("F");    press("F"); }/*    F    */ if (kC ==  70 && cC ==  70) { toggleColour("F"); press("F"); }
+/*    g    */ if (kC ==  71 && cC == 103) { move("top");                   }/*    G    */ if (kC ==  71 && cC ==  71) { move("bottom");                }
+/*    h    */ if (kC ==  72 && cC == 104) { move("left");                  }/*    H    */ if (kC ==  72 && cC ==  72) { move("first");                 }
+/*    j    */ if (kC ==  74 && cC == 106) { move("down");                  }/*    J    */ if (kC ==  74 && cC ==  74) { move("down","skip");           }
+/*    k    */ if (kC ==  75 && cC == 107) { move("up");                    }/*    K    */ if (kC ==  75 && cC ==  75) { move("up",  "skip");           }
+/*    l    */ if (kC ==  76 && cC == 108) { move("right");                 }/*    L    */ if (kC ==  76 && cC ==  76) { move("last");                  }
+/*    ;    */ if (kC ==  59 && cC ==  59) {                                }/*    :    */ if (kC ==  59 && cC ==  58) {                                }
+/* ' */ if (kC == 222 && cC ==  39)   { event.preventDefault(); toggleGUI(); }/* " */ if (kC == 222 && cC ==  34) { event.preventDefault(); flipGUI(); }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    z    */ if (kC ==  90 && cC == 122) { setColour("Z");    press("Z"); }/*    Z    */ if (kC ==  90 && cC ==  90) { toggleColour("Z"); press("Z"); }
+/*    x    */ if (kC ==  88 && cC == 120) { setColour("X");    press("X"); }/*    X    */ if (kC ==  88 && cC ==  88) { toggleColour("X"); press("X"); }
+/*    c    */ if (kC ==  67 && cC ==  99) { setColour("C");    press("C"); }/*    C    */ if (kC ==  67 && cC ==  67) { toggleColour("C"); press("C"); }
+/*    v    */ if (kC ==  86 && cC == 118) { setColour("V");    press("V"); }/*    V    */ if (kC ==  86 && cC ==  86) { toggleColour("V"); press("V"); }
+/*    b    */ if (kC ==  66 && cC ==  98) { setColour("B");    press("B"); }/*    B    */ if (kC ==  66 && cC ==  66) { toggleColour("B"); press("B"); }
+/*    n    */ if (kC ==  78 && cC == 110) { setColour("N");    press("N"); }/*    N    */ if (kC ==  78 && cC ==  78) { toggleColour("N"); press("N"); }
+/*    m    */ if (kC ==  77 && cC == 109) { setColour("M");    press("M"); }/*    M    */ if (kC ==  77 && cC ==  77) { toggleColour("M"); press("M"); }
+/*    ,    */ if (kC == 188 && cC ==  44) { previousInGroup();             }/*    <    */ if (kC == 188 && cC ==  60) { setLeftSemi();                 }
+/*    .    */ if (kC == 190 && cC ==  46) { nextInGroup();                 }/*    >    */ if (kC == 190 && cC ==  62) { setRightSemi();                }
+/* / */ if (kC==191&&cC==47)  { event.preventDefault(); toggleIsolation(); }/* ? */ if (kC==191&&cC==63)  { event.preventDefault(); toggleIsolation(); }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/******************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/});
+document.addEventListener("keyup", (event) => {
+unshiftKeyLabels();
+/*  space  */ if (kC ==  32)         { event.preventDefault(); }
+for (let j = 0; j < treeValues.length; j++) {
+treeValues[j].DOM.classList.remove("copied");
+}
+});
+buildTree(0,1);
+treeKey();
+updateGUI();
+key[activeView].GUI.classList.add("currentView");
+{
+const coloursInArray = Object.values(colour);
+for (let j = 0; j < coloursInArray.length; j++) {
+coloursInArray[j].inverted = invertRGB(coloursInArray[j].rgb); }
+}
+
+if (localStorage.getItem("fitSelection")) {
+fitSelection = JSON.parse(localStorage.getItem("fitSelection"));
+}
+
+refit();
+brush();
+
+if (localStorage.getItem("GUI")) {
+GUI.style.display=localStorage.getItem("GUI");
+}
+
+
+if (localStorage.getItem("GUIflip")) {
+GUIflip = localStorage.getItem("GUIflip")
+flipGUI(); }
+
+for (let j = 0; j < 4; j++) {
+if (localStorage.getItem("file" + j)) {
+viewer["file" + j].reference = localStorage.getItem("file" + j);
+setFromStorage(j); } }
+
+if (localStorage.getItem("editorName")) {
+editorName = localStorage.getItem("editorName") }
+       if (editorName == "nano") {
+key.command.innerText =  "nano";
+} else if (editorName == "vi") {
+key.command.innerText =  "Vi";
+}
+
+if (localStorage.getItem("leftSemi") &&
+    localStorage.getItem("leftSemi") == "true") {
+viewer.file0.window.classList.remove("viewerQuad");
+viewer.file0.filter.classList.remove("viewerQuad");
+viewer.file0.window.classList.add("viewerSemi");
+viewer.file0.filter.classList.add("viewerSemi");
+}
+
+if (localStorage.getItem("rightSemi") &&
+    localStorage.getItem("rightSemi") == "true") {
+viewer.file2.window.classList.remove("viewerQuad");
+viewer.file2.filter.classList.remove("viewerQuad");
+viewer.file2.window.classList.add("viewerSemi");
+viewer.file2.filter.classList.add("viewerSemi");
+}
+
+console.log(\`
+Sometimes you might need to use "localStorage.clear(); location.reload();"
+
+Welcome to shadowTree:
+    A file visualization tool which doesn't actually itself "DO" anything.
+
+    Oh good! I was worried nobody would find the notes for this program. Most of the notes are on the little keymap. It's a little bit more than a keymap though. It actually allows you to use "CTRL + V" to paste the file list back after using the "grep search" found on "SHIFT + TAB". That way it's easy to get the list in to the program on it's own colour. Paste over top of the alphabet key that you want, and the file list will be appended to it. That saves a lot of time.
+
+    Just for a basic start-up: Notice that most alphabet keys will set the colour of a file. Using the "SHIFT" key will toggle the visibility of the colour group. There are plenty of "tool-tips" on the keymap. The "ENTER" key gets the whole colour group into either an editor or a list format. The spacebar does just one at a time. Here is the script that you need to load the whole thing up!
+
+    Just put this program into it's own directory with this script, then run the script.
+I assume you will know how to do that: "chmod 755 filename; . ./filename;".
+
+
+************************
+    IMPORTANT SCRIPT    
+************************
+
+
+#!/bin/bash
+
+echo "findFileList =" > "./find -type f.js";
+echo "\\\`" >> "./find -type f.js";
+find ../ -type f | sed '/\\.swp/d' | \\
+                   sed '/\\.git/d' | \\
+                   sed '/^\\.\\.\\/\$/d' | \\
+                   sed '/^\\.\\.\\/\\./d' | \\
+                   sed '/'\$(echo "\$(pwd | sed 's/^.*\\///g')")'/d' | \\
+                   sed 's/\\.\\.\\///g' | \\
+                   sed 's/^/..\\//g' >> "./find -type f.js";
+echo "\\\`;" >> "./find -type f.js";
+echo >> "./find -type f.js";
+
+echo "workingDirectory = \\"\$(pwd | sed 's/\\/[^\\/]*\$//')\\";" > pwd.js
+
+
+
+You will end up with something like this:
+
+/shadowTree/
+             find -type f.js
+             go.sh
+             pwd.js
+             shadowTree.html
+
+    Running the script will keep the shadowTree program up to date with any changes you made in the file-system.
+
+
+    It doesn't matter what you call the directory that you put this program into, and the one that you will be seeing in the visualizer will be the one that you have placed the program directory into. Just give it a try. If you have a script that builds your program, try to make it run this little script too. Hopefully this is obvious for you. Best wishes.
+
+    Remember, shadowTree doesn't really "DO" anything. It just copies commands to the clipboard and whatnot. It's not like one of those expensive utility programs or anything, and it's definitely not a file utility. It's basically just a file visualization tool, and a very poor viewer. The only thing it might be good for is making lists of files by colouring them. Anything else is just an "I guess it's there so I might use it sometimes". Basically, anything you already have or know about is probably better than this at absolutely everything that this might do.
+
+Sometimes you might need to use "localStorage.clear(); location.reload();"
+\`);
+</` + `script>
+</body>
+</html>`;function enterNewPartFromMouseInput(mouseInfo) {
 
 const newXvalue = parseInt(P.style.left) > parseInt(S.style.left) ? parseInt(S.style.left) + O/2 : parseInt(P.style.left) + O/2;
 const newYvalue = parseInt(P.style.top)  > parseInt(S.style.top)  ? parseInt(S.style.top)  + O/2 : parseInt(P.style.top)  + O/2;
@@ -18907,6 +21547,8 @@ shelfMenuHTML.tab5.backgrounds.style = `
 .backdropFilter:active      { background-color: rgba(255,0,255,0.35); }
 .setFilter:active           { background-color: rgba(255,0,255,0.35); }
 
+.useAllLayers        { position: absolute; top:   0px; left: 26px; height: 35px; width: 66px; background-color: transparent; border-radius: 12px; }
+
 .newStateBlock       { position: absolute; top:  87px; left: 6px; height: 25px; width: 86px; background-color: transparent; }
 .singleState         { position: absolute; top: 118px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
 .rStepState          { position: absolute; top: 145px; left: 6px; height: 21px; width: 86px; background-color: transparent; }
@@ -19287,8 +21929,8 @@ transform: scale(0.125);
 </style>
 `;
 shelfMenuHTML.tab6.folder1.HTML = `
-<iframe src="n_art/ascii_art.html" class="artProgram"></iframe>
-<iframe src="n_art/colourB.html" class="colourB"></iframe>
+<iframe id="artConst" class="artProgram"></iframe>
+<iframe id="colourB" class="colourB"></iframe>
 `;
 shelfMenuHTML.tab6.folder2.style = `
 <style>
@@ -19352,14 +21994,8 @@ background-color: transparent; z-index: 500;
 `;
 
 shelfMenuHTML.tab6.folder2.HTML = `
-
-
-
-
 <div id="coordinates" class="coordinates dckimPixelMono"></div>
-
-
-<button class="shadowTree" title="open to shadowTree file visualizer with HW HTML Drafting Project as the demonstration filesystem... bad messy! Many files! How can we fix this project?" onclick="window.open('h_hdub/a_programFunctions/shadowTree/shadowTree.html','_blank');"></button>
+<button class="shadowTree" title="This saves shadowTree.\nIt's a file visualizer.\nUse the lime green 'go.sh'\nbutton to save the shell script.\nInstructions inside. Read." onclick="saveFile(shadowConst,'shadowTree.html');"></button>
 `;
 
 
@@ -20364,6 +23000,9 @@ shelfMenuHTML.tab5.folderSelectors.HTML  +
 
 <div id="sidebar5" class="sidebar5" title="">
 <button id="sidebarOpener5" class="sidebarOpener5" onclick="toggleSidebar5();"></button>
+
+
+<button id="useAllLayers" class="useAllLayers stateHover" onclick="if (useAllLayers == false) { useAllLayers = true; localStorage.setItem('useAllLayers','true'); } else { useAllLayers = false; localStorage.setItem('useAllLayers','false'); }"      title="this is a special feature\ngo.fadeIn and\ngo.fadeOut will become\navailable in the saved file"></button>
 
 
 <button id="newStateBlock" class="newStateBlock stateHover" onclick="insertNewStateBlock();" title="Enter A New\nState Block\nThen Use Active Edit with +INS\nDEL removes frames.\nThis only holds\nthe data, keep it"></button>
@@ -26733,6 +29372,21 @@ animToggle.onclick = () => {
     animToggle.innerText = barVisible ? '▼' : '▲';
     animToggle.style.bottom = barVisible ? '70px' : '0px';
 };
+
+
+animBar.onwheel = (e) => {
+    e.preventDefault();
+    const targetGroup = go.xqn.grp[groupSelect.value];
+    if (targetGroup) {
+        if (e.deltaY < 0) {
+            targetGroup.rate.decr(10);
+        } else {
+            targetGroup.rate.incr(10);
+        }
+    }
+};
+
+
 document.body.appendChild(animBar);
 document.body.appendChild(animToggle);
 
@@ -26755,7 +29409,7 @@ document.body.appendChild(animToggle);
 
 
 
-var useAllLayers = true;
+var useAllLayers = false;
 
 if (localStorage.getItem("useAllLayers")) {
 useAllLayers = localStorage.getItem("useAllLayers");
@@ -26860,7 +29514,7 @@ const header4 = `
 },
 "url": "URL"
 }
-</script>
+</` + `script>
 
 <script type="application/ld+json">
 {
@@ -26879,7 +29533,7 @@ const header4 = `
 "longitude": -79.347015
 }
 }
-</script>
+</` + `script>
 
 <script type="application/ld+json">
 {
@@ -26913,7 +29567,7 @@ const header4 = `
 }
 }
 }
-</script>
+</` + `script>
 `;
 
 
@@ -26932,7 +29586,7 @@ const footer2 = `
 </html>
 `;
 const footer3 = `
-<script src="enter script URL"></script>
+<script src="enter script URL"></` + `script>
 </body>
 </html>
 `;
@@ -27121,14 +29775,14 @@ localStorage.setItem("lastFactor", "(100/320)");
 if (utilityLayer0.children.length == 0) {
 if (openInNewWindow) {
 const newWindow = window.open();
-newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</script>" + fileFooter);
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
 }
 
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</script>" + fileFooter, false, false, false);
+saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -28328,7 +30982,7 @@ stylesIncluded = stylePosition;
 
 
 if (dragging == true) {
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter;
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -28340,7 +30994,7 @@ return content;
 
 if (openInNewWindow) {
 const newWindow = window.open();
-newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter);
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -28350,7 +31004,7 @@ return;
 
 
 
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter, false, false, false);
+saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -28514,7 +31168,1736 @@ topLayer.buoyHide = "false";
     document.getElementById("sidebar6").style.left = 
        localStorage.getItem("sidebar6");} else {
     document.getElementById("sidebar6").style.left = "-24px";
-}function prepareSiteMap() {
+}
+
+
+
+
+const artConst = `<!DOCTYPE html>
+<html>
+<head>
+<title>ASCII-Art</title>
+<meta charset="UTF-8">
+<meta name="last-build" content="2025-12-21T22:20:24Z">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAG5JREFUGJVFjwsKACEIRIdIERK8/213/LQNVNNLU4GSmBlGW1UJRECzCXilTHA9V0QC7mgQ4QmcpKIR3sDjJZ91VlUTghTvx0roIyPqxTKIyohu8H5KN59O2QRTthsj+BvTl1y+h+N0d7gSK0u7D2MOBH2NDs/xAAAAAElFTkSuQmCC">
+<style>
+html, body              { overflow: scroll; scrollbar-width: none;                    }
+body                    { margin: none; padding: none; border: none; outline: none;   }
+body::-webkit-scrollbar { display: none;                                              }
+canvas                  { image-rendering: crisp-edges; image-rendering: pixelated;   
+                          border: none; padding: none; margin: none; outline: none;
+                          position: absolute; top: 0; left: 0;                        }
+canvas                  { cursor: cell; }
+</style>
+</head>
+<body>
+<script>
+console.log(\`
+
+Welcome to FONT-goblin ASCII-Art:
+    A micro program for drawing textual art.
+
+    By using the "ENTER" key, we can copy the entire artwork to the computer clipboard.
+
+    Use the "TAB" key to change the colour scheme and use the "SPACE" key to enter the desired characters for the middle mouse input and right click input. Also notice that the "SHIFT" key will change the input character. Just test it out and you will see that the alphabet characters will become capitalized when using the left mouse button, and become lowercase without.
+
+
+
+
+\`);
+
+
+const monoWidth = 32;
+
+var   key       = "A";
+var   key2      = "=";
+var   key2shift = "_";
+var   key1      = " ";
+var   key1shift = "X";
+
+
+
+if (localStorage.getItem("keys")) {
+const keys = localStorage.getItem("keys").split("");
+key       = keys[0];
+key1      = keys[1];
+key1shift = keys[2];
+key2      = keys[3];
+key2shift = keys[4];
+}
+
+
+
+const firstPoint   = [0,0];
+const mousePoint   = [0,0];
+const mouseCursor  = [0,0];
+
+var artArray     = [];
+
+/* draw the initial array */
+var arrayHeight      = 42;
+var arrayWidth     = 47;
+
+function writeArray() {
+const arrayWide    = [];
+for (j = 0; j < arrayHeight; j++) {
+arrayWide[j] = " "; }
+for (j = 0; j < arrayWidth; j++) {
+artArray[j] = Array.from(arrayWide); }
+}
+
+writeArray();
+
+getArray();
+
+function getArray() {
+if (localStorage.getItem("artArray"))    {    artArray = JSON.parse(localStorage.getItem("artArray")); }
+/*
+if (localStorage.getItem("arrayHeight"))  {  arrayHeight = parseInt(localStorage.getItem("arrayHeight")); }
+if (localStorage.getItem("arrayWidth")) { arrayWidth = parseInt(localStorage.getItem("arrayWidth")); }
+*/
+}
+
+
+function saveArray() {
+localStorage.setItem("artArray", JSON.stringify(artArray));
+/*
+localStorage.setItem("arrayHeight", arrayHeight);
+localStorage.setItem("arrayWidth", arrayWidth);
+*/
+}
+
+
+
+const canvas = document.createElement("canvas");
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+document.body.append(canvas);
+
+
+
+var colourSet = {
+"names" : 
+	[
+	"grey",
+	"lightgray",
+	"blue",
+	"yellow"
+	],
+"rgb" : 
+	[
+	"rgb(128, 128, 128)",
+	"rgb(211, 211, 211)",
+	"rgb(  0,   0, 255)",
+	"rgb(255, 255,   0)"
+	],
+"inverted" : 
+	[
+	"rgb(127, 127, 127)",
+	"rgb( 44,  44,  44)",
+	"rgb(255, 255,   0)",
+	"rgb(  0,   0, 255)"
+	]
+};
+
+
+
+if (localStorage.getItem("colourSet")) {
+colourSet = JSON.parse(localStorage.getItem("colourSet"));
+}
+
+
+
+var colour1 = colourSet.names[1];
+var colour2 = colourSet.names[0];
+var colourFlip = 0;
+
+if (localStorage.getItem("colourFlip")) {
+colourFlip = parseInt(localStorage.getItem("colourFlip"));
+switch (colourFlip) {
+case 1: colour1 = colourSet.names[0]; colour2 = colourSet.names[1]; break;
+case 2: colour1 = colourSet.names[2]; colour2 = colourSet.names[3]; break;
+case 3: colour1 = colourSet.names[3]; colour2 = colourSet.names[2]; break;
+case 0: colour1 = colourSet.names[1]; colour2 = colourSet.names[0]; break;
+}
+}
+
+function flipColour() {
+switch (colourFlip) {
+case 0: colourFlip = 1; colour1 = colourSet.names[0]; colour2 = colourSet.names[1]; break;
+case 1: colourFlip = 2; colour1 = colourSet.names[2]; colour2 = colourSet.names[3]; break;
+case 2: colourFlip = 3; colour1 = colourSet.names[3]; colour2 = colourSet.names[2]; break;
+case 3: colourFlip = 0; colour1 = colourSet.names[1]; colour2 = colourSet.names[0]; break;
+}
+localStorage.setItem("colourFlip", colourFlip);
+redraw();
+}
+
+
+
+function redraw() {
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = colour1;
+ctx.fillRect(0,0,window.innerWidth, window.innerHeight);
+ctx.fillStyle = colour2;
+ctx.strokeStyle = colour2;
+ctx.fillRect(0,0, arrayWidth * monoWidth,arrayHeight * monoWidth * 2);
+ctx.lineWidth = 2;
+ctx.fillStyle = colour1;
+ctx.fillStyle = colour2;
+ctx.fillStyle = colour2;
+ctx.font = \`normal \${monoWidth * 2}px dckimPixelMono\`;
+ctx.textAlign = "start";
+ctx.textBaseline = "top";
+ctx.fillStyle = colour1;
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
+if (artArray[k][j]) {
+ctx.fillText(artArray[k][j],k * monoWidth - 1.5,j * monoWidth * 2); } } }
+ctx.strokeRect(0,0, arrayWidth * monoWidth,arrayHeight * monoWidth * 2);
+}
+
+
+redraw();
+
+
+
+
+
+
+
+
+window.addEventListener("resize", function() {
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+redraw();
+});
+
+
+function resize(direction) {
+/*
+switch (direction) {
+case    "up": --arrayHeight; break;
+case  "down": ++arrayHeight; break;
+case  "left":  --arrayWidth; break;
+case "right":  ++arrayWidth; break;
+}
+saveArray();
+writeArray();
+redraw();
+*/
+}
+
+
+var mouseIsDown = false;
+var mouseDownButton = 0;
+window.addEventListener("mousedown", function() {
+if (event.buttons == 4) { event.preventDefault(); }
+mouseIsDown = true;
+mouseDownButton = event.button;
+});
+
+
+window.addEventListener("mouseup", function() {
+mouseIsDown = false;
+});
+
+
+window.addEventListener("mousemove", function() {
+mousePoint[0] = Math.floor(event.clientX / monoWidth) * monoWidth;
+mousePoint[1] = Math.floor(event.clientY / (monoWidth * 2)) * monoWidth * 2;
+mouseCursor[0] = event.clientX;
+mouseCursor[1] = event.clientY;
+if (mouseIsDown) {
+try {
+if (event.shiftKey) {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toUpperCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1shift        ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2shift        ; break;
+}
+} else {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toLowerCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1             ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2             ; break;
+}
+}
+saveArray();
+redraw();
+} catch {}
+}
+});
+
+
+window.addEventListener("contextmenu", function() {
+event.preventDefault();
+});
+
+
+
+window.addEventListener("click", function() {
+firstPoint[0] = mousePoint[0];
+firstPoint[1] = mousePoint[1];
+try {
+if (event.shiftKey) {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toUpperCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1shift        ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2shift        ; break;
+}
+} else {
+switch (mouseDownButton) {
+case 0: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key.toLowerCase(); break;
+case 1: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key1             ; break;
+case 2: artArray[mousePoint[0] / monoWidth][mousePoint[1] / (monoWidth * 2)] = key2             ; break;
+}
+}
+saveArray();
+} catch {}
+redraw();
+});
+
+
+
+
+function clear() {
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
+artArray[k][j] = " ";
+saveArray(); } } }
+
+
+function copy() {
+let string = "";
+for (j = 0; j < arrayHeight; j++) {
+for (k = 0; k < arrayWidth; k++) {
+if (artArray[k][j]) {
+string += artArray[k][j];
+} else {
+string += " ";
+}
+}
+if (j != arrayHeight - 1) {
+string += "\\n"; } }
+copyToClipboard(\`<pre style="position: absolute; top: 0px; left: 0px; font-family: inherit; color: inherit;">\` + string + '</pre>');
+}
+
+
+function copyToClipboard(string) {
+const d = document;
+const x = d.body.appendChild(d.createElement("textarea"));
+x.value = string;
+x.select();
+d.execCommand("copy");
+x.remove();
+}
+
+
+
+function promptForKeys() {
+let result = null;
+result = prompt(
+\`enter 4 characters,
+2 for middle mouse,
+2 for right click: \`, (key1 + key1shift + key2 + key2shift).toString());
+if (result!=null) {
+resultArray = result.split("");
+key2      = resultArray[2];
+key2shift = resultArray[3];
+key1      = resultArray[0];
+key1shift = resultArray[1];
+localStorage.setItem("keys", (key + key1 + key1shift + key2 + key2shift).toString());
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var kC = 0, cC = 0;
+document.addEventListener("keydown", (event) => {
+kC = event.keyCode;
+let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*   esc   */ if (kC ==  27) { event.preventDefault(); clear(); redraw();  }
+/*   tab   */ if (kC ==   9) {
+if (!event.ctrlKey) {
+event.preventDefault(); flipColour();
+}
+}
+/*backspace*/ if (kC ==   8) { event.preventDefault(); clear(); redraw();  }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F1    */ if (kC == 112) {                                             }
+/*   F2    */ if (kC == 113) {                                             }
+/*   F3    */ if (kC == 114) {                                             }
+/*   F4    */ if (kC == 115) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F5    */ if (kC == 116) {                                             }
+/*   F6    */ if (kC == 117) {                                             }
+/*   F7    */ if (kC == 118) {                                             }
+/*   F8    */ if (kC == 119) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   F9    */ if (kC == 120) {                                             }
+/*   F10   */ if (kC == 121) {                                             }
+/*   F11   */ if (kC == 122) {                                             }
+/*   F12   */ if (kC == 123) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* pauseBR */ if (kC ==  19) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   ins   */ if (kC ==  45) {                                             }
+/*   home  */ if (kC ==  36) {                                             }
+/* page up */ if (kC ==  33) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  delete */ if (kC ==  46) {                                             }
+/*   end   */ if (kC ==  35) {                                             }
+/*page down*/ if (kC ==  34) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/* scr lck */ if (kC == 145) {                                             }
+/* num lock*/ if (kC == 144) {                                             }
+/*  caps   */ if (kC ==  20) {                                             }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*   up arr*/ if (kC ==  38) { event.preventDefault(); resize("up");       }
+/* down arr*/ if (kC ==  40) { event.preventDefault(); resize("down");     }
+/* left arr*/ if (kC ==  37) { event.preventDefault(); resize("left");     }
+/*right arr*/ if (kC ==  39) { event.preventDefault(); resize("right");    }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  space  */ if (kC ==  32) { promptForKeys();                            }
+/*                                                                        */
+/***********************************************************************/});
+
+
+document.addEventListener("keypress", (event) =>  { 
+cC = event.charCode;
+let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
+let keyInfo = [e,kC,cC,es,ec,ea];
+/**************************************************************************/
+/**************************************************************************/
+/**************************************************************************/
+/*                                                                        */
+/*    /    */ if (kC == 111 && cC ==  47) { key = ";";                     }
+/*    *    */ if (kC == 106 && cC ==  42) { key = ":";                     }
+/*                                                                        */
+/*    -    */ if (kC == 109 && cC ==  45) { key = "-"; if (es) key = "_";  }
+/*    +    */ if (kC == 107 && cC ==  43) { key = "+"; if (es) key = "=";  }
+/*                                                                        */
+/*    7    */ if (kC == 103 && cC ==  55) { key = "7";                     }
+/*    8    */ if (kC == 104 && cC ==  56) { key = "8";                     }
+/*    9    */ if (kC == 105 && cC ==  57) { key = "9";                     }
+/*                                                                        */
+/*    4    */ if (kC == 100 && cC ==  52) { key = "4";                     }
+/*    5    */ if (kC == 101 && cC ==  53) { key = "5";                     }
+/*    6    */ if (kC == 102 && cC ==  54) { key = "6";                     }
+/*                                                                        */
+/*    1    */ if (kC ==  97 && cC ==  49) { key = "1";                     }
+/*    2    */ if (kC ==  98 && cC ==  50) { key = "2";                     }
+/*    3    */ if (kC ==  99 && cC ==  51) { key = "3";                     }
+/*                                                                        */
+/*    0    */ if (kC ==  96 && cC ==  48) { key = "0";                     }
+/*    .    */ if (kC == 110 && cC ==  46) { key = ".";                     }
+/*                                                                        */
+/**************************************************************************/
+/*                                                                        */
+/*  enter  */ if (kC ==  13 && cC ==  13) { event.preventDefault(); copy();}
+/*                                                                        */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    \`    */ if (kC == 192 && cC ==  96) { key = "\`";                     }/*    ~    */ if (kC == 192 && cC == 126) { key = "~";                     }
+/*    1    */ if (kC ==  49 && cC ==  49) { key = "1";                     }/*    !    */ if (kC ==  49 && cC ==  33) { key = "!";                     }
+/*    2    */ if (kC ==  50 && cC ==  50) { key = "2";                     }/*    @    */ if (kC ==  50 && cC ==  64) { key = "@";                     }
+/*    3    */ if (kC ==  51 && cC ==  51) { key = "3";                     }/*    #    */ if (kC ==  51 && cC ==  35) { key = "#";                     }
+/*    4    */ if (kC ==  52 && cC ==  52) { key = "4";                     }/*    \$    */ if (kC ==  52 && cC ==  36) { key = "\$";                     }
+/*    5    */ if (kC ==  53 && cC ==  53) { key = "5";                     }/*    %    */ if (kC ==  53 && cC ==  37) { key = "%";                     }
+/*    6    */ if (kC ==  54 && cC ==  54) { key = "6";                     }/*    ^    */ if (kC ==  54 && cC ==  94) { key = "^";                     }
+/*    7    */ if (kC ==  55 && cC ==  55) { key = "7";                     }/*    &    */ if (kC ==  55 && cC ==  38) { key = "&";                     }
+/*    8    */ if (kC ==  56 && cC ==  56) { key = "8";                     }/*    *    */ if (kC ==  56 && cC ==  42) { key = "*";                     }
+/*    9    */ if (kC ==  57 && cC ==  57) { key = "9";                     }/*    (    */ if (kC ==  57 && cC ==  40) { key = "(";                     }
+/*    0    */ if (kC ==  48 && cC ==  48) { key = "0";                     }/*    )    */ if (kC ==  48 && cC ==  41) { key = ")";                     }
+/*    -    */ if (kC == 173 && cC ==  45) { key = "-";                     }/*    _    */ if (kC == 173 && cC ==  95) { key = "_";                     }
+/*    =    */ if (kC ==  61 && cC ==  61) { key = "=";                     }/*    +    */ if (kC ==  61 && cC ==  43) { key = "+";                     }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    q    */ if (kC ==  81 && cC == 113) { key = "q";                     }/*    Q    */ if (kC ==  81 && cC ==  81) { key = "Q";                     }
+/*    w    */ if (kC ==  87 && cC == 119) { key = "w";                     }/*    W    */ if (kC ==  87 && cC ==  87) { key = "W";                     }
+/*    e    */ if (kC ==  69 && cC == 101) { key = "e";                     }/*    E    */ if (kC ==  69 && cC ==  69) { key = "E";                     }
+/*    r    */ if (kC ==  82 && cC == 114) { key = "r";                     }/*    R    */ if (kC ==  82 && cC ==  82) { key = "R";                     }
+/*    t    */ if (kC ==  84 && cC == 116) { key = "t";                     }/*    T    */ if (kC ==  84 && cC ==  84) { key = "T";                     }
+/*    y    */ if (kC ==  89 && cC == 121) { key = "y";                     }/*    Y    */ if (kC ==  89 && cC ==  89) { key = "Y";                     }
+/*    u    */ if (kC ==  85 && cC == 117) { key = "u";                     }/*    U    */ if (kC ==  85 && cC ==  85) { key = "U";                     }
+/*    i    */ if (kC ==  73 && cC == 105) { key = "i";                     }/*    I    */ if (kC ==  73 && cC ==  73) { key = "I";                     }
+/*    o    */ if (kC ==  79 && cC == 111) { key = "o";                     }/*    O    */ if (kC ==  79 && cC ==  79) { key = "O";                     }
+/*    p    */ if (kC ==  80 && cC == 112) { key = "p";                     }/*    P    */ if (kC ==  80 && cC ==  80) { key = "P";                     }
+/*    [    */ if (kC == 219 && cC ==  91) { key = "[";                     }/*    {    */ if (kC == 219 && cC == 123) { key = "{";                     }
+/*    ]    */ if (kC == 221 && cC ==  93) { key = "]";                     }/*    }    */ if (kC == 221 && cC == 125) { key = "}";                     }
+/*    \\    */ if (kC == 220 && cC ==  92) { key = "\\\\";                    }/*    |    */ if (kC == 220 && cC == 124) { key = "|";                     }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    a    */ if (kC ==  65 && cC ==  97) { key = "a";                     }/*    A    */ if (kC ==  65 && cC ==  65) { key = "A";                     }
+/*    s    */ if (kC ==  83 && cC == 115) { key = "s";                     }/*    S    */ if (kC ==  83 && cC ==  83) { key = "S";                     }
+/*    d    */ if (kC ==  68 && cC == 100) { key = "d";                     }/*    D    */ if (kC ==  68 && cC ==  68) { key = "D";                     }
+/*    f    */ if (kC ==  70 && cC == 102) { key = "f";                     }/*    F    */ if (kC ==  70 && cC ==  70) { key = "F";                     }
+/*    g    */ if (kC ==  71 && cC == 103) { key = "g";                     }/*    G    */ if (kC ==  71 && cC ==  71) { key = "G";                     }
+/*    h    */ if (kC ==  72 && cC == 104) { key = "h";                     }/*    H    */ if (kC ==  72 && cC ==  72) { key = "H";                     }
+/*    j    */ if (kC ==  74 && cC == 106) { key = "j";                     }/*    J    */ if (kC ==  74 && cC ==  74) { key = "J";                     }
+/*    k    */ if (kC ==  75 && cC == 107) { key = "k";                     }/*    K    */ if (kC ==  75 && cC ==  75) { key = "K";                     }
+/*    l    */ if (kC ==  76 && cC == 108) { key = "l";                     }/*    L    */ if (kC ==  76 && cC ==  76) { key = "L";                     }
+/*    ;    */ if (kC ==  59 && cC ==  59) { key = ";";                     }/*    :    */ if (kC ==  59 && cC ==  58) { key = ":";                     }
+/*    '    */ if (kC == 222 && cC ==  39) { key = "'";                     }/*    "    */ if (kC == 222 && cC ==  34) { key = '"';                     }
+/*                                                                                                                                                    */
+/******************************************************************************************************************************************************/
+/*                                                                                                                                                    */
+/*    z    */ if (kC ==  90 && cC == 122) { key = "z";                     }/*    Z    */ if (kC ==  90 && cC ==  90) { key = "Z";                     }
+/*    x    */ if (kC ==  88 && cC == 120) { key = "x";                     }/*    X    */ if (kC ==  88 && cC ==  88) { key = "X";                     }
+/*    c    */ if (kC ==  67 && cC ==  99) { key = "c";                     }/*    C    */ if (kC ==  67 && cC ==  67) { key = "C";                     }
+/*    v    */ if (kC ==  86 && cC == 118) { key = "v";                     }/*    V    */ if (kC ==  86 && cC ==  86) { key = "V";                     }
+/*    b    */ if (kC ==  66 && cC ==  98) { key = "b";                     }/*    B    */ if (kC ==  66 && cC ==  66) { key = "B";                     }
+/*    n    */ if (kC ==  78 && cC == 110) { key = "n";                     }/*    N    */ if (kC ==  78 && cC ==  78) { key = "N";                     }
+/*    m    */ if (kC ==  77 && cC == 109) { key = "m";                     }/*    M    */ if (kC ==  77 && cC ==  77) { key = "M";                     }
+/*    ,    */ if (kC == 188 && cC ==  44) { key = ",";                     }/*    <    */ if (kC == 188 && cC ==  60) { key = "<";                     }
+/*    .    */ if (kC == 190 && cC ==  46) { key = ".";                     }/*    >    */ if (kC == 190 && cC ==  62) { key = ">";                     }
+/*    /    */ if (kC == 191 && cC ==  47) { key = "/";                     }/*    ?    */ if (kC == 191 && cC ==  63) { key = "?";                     }
+/*                                                                                                                                                    */
+localStorage.setItem("keys", (key + key1 + key1shift + key2 + key2shift).toString());
+redraw();
+/******************************************************************************************************************************************************/
+/******************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/});
+
+
+document.addEventListener("paste", event => {
+event.preventDefault();
+const pasteData = JSON.parse(event.clipboardData.getData('text/plain'));
+if (pasteData.names && pasteData.names.length >= 4) {
+colourSet.names[0] = pasteData.names[0];
+colourSet.names[1] = pasteData.names[1];
+colourSet.names[2] = pasteData.names[2];
+colourSet.names[3] = pasteData.names[3];
+localStorage.setItem("colourSet", JSON.stringify(colourSet));
+redraw();
+}
+});
+
+
+</` + `script>
+</body>
+</html>`;
+
+
+const colourB = `<!DOCTYPE html>
+<html>
+<head>
+<title>colourBee</title>
+<meta charset="UTF-8">
+<meta name="last-build" content="2025-12-21T22:20:24Z">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u
+6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAACdJREFUGJVjYMABWFnRuCCAwoWRDEgMGAtZN10F0NyB4VIsfkHxLQC+UgF9tPtwMgAAAABJRU5ErkJggg==">
+<style>
+html, body              { overflow: scroll; scrollbar-width: none;                    }
+body                    { margin: none; padding: none; border: none; outline: none;   }
+body::-webkit-scrollbar { display: none;                                              }
+canvas                  { image-rendering : crisp-edges; image-rendering : pixelated;
+                          border: none; padding: none; margin: none; outline: none;
+                          position: absolute; top: 0; left: 0;                        }
+button                  { border: none; padding: none; margin: none; outline: none;
+                          position: absolute; top: 0; left: 0;
+                          width: 100vw; height: 37.5vw; background-color: transparent;
+                          font-family: monospace; font-size: 7.5vw;
+                          font-weight: bold; font-style: italic;                      }
+.colourBacker           {
+background-color: rgba(0,0,0,0.75);
+border-radius: 1vw;
+border:  0.3vw solid black;
+outline: 0.2vw solid white;
+text-shadow:
+-0.1vw  0.0vw 0 white,
+ 0.1vw  0.0vw 0 white,
+ 0.0vw -0.1vw 0 white,
+ 0.0vw  0.1vw 0 white,
+-0.1vw -0.1vw 0 white,
+ 0.1vw  0.1vw 0 white,
+ 0.1vw -0.1vw 0 white,
+-0.1vw  0.1vw 0 white;
+}
+</style>
+</head>
+<body>
+<script>
+console.log(\`
+
+    Welcome to colourB,
+
+    It's a micro-program that helps to select colours. Did you know that HTML has "named colours"? It is a very nice feature that helps you to remember what the colours are called. It's much better to just call something "white" instead of calling it "rgb(255,255,255)" for example.
+
+    While you select colours using the mouse, they will be copied to the clipboard. This way you can use them while you are working on computer programming! This is good news. Then you can just use "CTRL + V" to paste the colour information back out into your computer code!
+
+    Keep in mind that while you are using the "SHIFT" key and coping many colours, the completed "ARRAY" of colours (names, rgb, inverted) will be copied to the clipboard. This way you can select a complete set of colours and then decide which format you will use later on. This should be very useful.
+
+    Also notice that within the code of this little program is a very simple method of turning our mouse location information into a "hexagonal coordinate" which you might find useful for other programs. The hexagons are not "perfect hexagons", I simply chose the points, and then made them all the same. You can control the density of hexagons by changing one number (the number 38).
+
+    I have seen a lot of computer games where the hexagonal coordinate system seems to be prefered. This might be because it has more visual appeal. If you were to consider using it for the purpose of a turn-based strategy style game, then you can see the clear advantage, because you can move to six possible locations in a single move. That, instead of only four with a square based game. Of course, if you count the diagonals, then you could have eight options.
+
+   Still, six just sort of looks nice, doesn't it?
+
+   Choose an array of four colours and then try "CTRL + V" to paste it out in the ASCII-art program... Then try the tab key to flip the colours... Neat right?
+\`);
+
+
+
+
+
+
+
+
+/* this will hold the last clicked coomb location */
+var lastCoomb = [0,0];
+
+const colour =
+{
+    "aliceblue": {
+        "name": "aliceblue",
+        "rgb": "rgb(240, 248, 255)",
+        "inverted": "rgb( 15,   7,   0)"
+    },
+    "antiquewhite": {
+        "name": "antiquewhite",
+        "rgb": "rgb(250, 235, 215)",
+        "inverted": "rgb(  5,  20,  40)"
+    },
+    "aqua": {
+        "name": "aqua",
+        "rgb": "rgb(  0, 255, 255)",
+        "inverted": "rgb(255,   0,   0)"
+    },
+    "aquamarine": {
+        "name": "aquamarine",
+        "rgb": "rgb(127, 255, 212)",
+        "inverted": "rgb(128,   0,  43)"
+    },
+    "azure": {
+        "name": "azure",
+        "rgb": "rgb(240, 255, 255)",
+        "inverted": "rgb( 15,   0,   0)"
+    },
+    "beige": {
+        "name": "beige",
+        "rgb": "rgb(245, 245, 220)",
+        "inverted": "rgb( 10,  10,  35)"
+    },
+    "bisque": {
+        "name": "bisque",
+        "rgb": "rgb(255, 228, 196)",
+        "inverted": "rgb(  0,  27,  59)"
+    },
+    "black": {
+        "name": "black",
+        "rgb": "rgb(  0,   0,   0)",
+        "inverted": "rgb(255, 255, 255)"
+    },
+    "blanchedalmond": {
+        "name": "blanchedalmond",
+        "rgb": "rgb(255, 235, 205)",
+        "inverted": "rgb(  0,  20,  50)"
+    },
+    "blue": {
+        "name": "blue",
+        "rgb": "rgb(  0,   0, 255)",
+        "inverted": "rgb(255, 255,   0)"
+    },
+    "blueviolet": {
+        "name": "blueviolet",
+        "rgb": "rgb(138,  43, 226)",
+        "inverted": "rgb(117, 212,  29)"
+    },
+    "brown": {
+        "name": "brown",
+        "rgb": "rgb(165,  42,  42)",
+        "inverted": "rgb( 90, 213, 213)"
+    },
+    "burlywood": {
+        "name": "burlywood",
+        "rgb": "rgb(222, 184, 135)",
+        "inverted": "rgb( 33,  71, 120)"
+    },
+    "cadetblue": {
+        "name": "cadetblue",
+        "rgb": "rgb( 95, 158, 160)",
+        "inverted": "rgb(160,  97,  95)"
+    },
+    "chartreuse": {
+        "name": "chartreuse",
+        "rgb": "rgb(127, 255,   0)",
+        "inverted": "rgb(128,   0, 255)"
+    },
+    "chocolate": {
+        "name": "chocolate",
+        "rgb": "rgb(210, 105,  30)",
+        "inverted": "rgb( 45, 150, 225)"
+    },
+    "coral": {
+        "name": "coral",
+        "rgb": "rgb(255, 127,  80)",
+        "inverted": "rgb(  0, 128, 175)"
+    },
+    "cornflowerblue": {
+        "name": "cornflowerblue",
+        "rgb": "rgb(100, 149, 237)",
+        "inverted": "rgb(155, 106,  18)"
+    },
+    "cornsilk": {
+        "name": "cornsilk",
+        "rgb": "rgb(255, 248, 220)",
+        "inverted": "rgb(  0,   7,  35)"
+    },
+    "crimson": {
+        "name": "crimson",
+        "rgb": "rgb(220,  20,  60)",
+        "inverted": "rgb( 35, 235, 195)"
+    },
+    "cyan": {
+        "name": "cyan",
+        "rgb": "rgb(  0, 255, 255)",
+        "inverted": "rgb(255,   0,   0)"
+    },
+    "darkblue": {
+        "name": "darkblue",
+        "rgb": "rgb(  0,   0, 139)",
+        "inverted": "rgb(255, 255, 116)"
+    },
+    "darkcyan": {
+        "name": "darkcyan",
+        "rgb": "rgb(  0, 139, 139)",
+        "inverted": "rgb(255, 116, 116)"
+    },
+    "darkgoldenrod": {
+        "name": "darkgoldenrod",
+        "rgb": "rgb(184, 134,  11)",
+        "inverted": "rgb( 71, 121, 244)"
+    },
+    "darkgray": {
+        "name": "darkgray",
+        "rgb": "rgb(169, 169, 169)",
+        "inverted": "rgb( 86,  86,  86)"
+    },
+    "darkgreen": {
+        "name": "darkgreen",
+        "rgb": "rgb(  0, 100,   0)",
+        "inverted": "rgb(255, 155, 255)"
+    },
+    "darkgrey": {
+        "name": "darkgrey",
+        "rgb": "rgb(169, 169, 169)",
+        "inverted": "rgb( 86,  86,  86)"
+    },
+    "darkkhaki": {
+        "name": "darkkhaki",
+        "rgb": "rgb(189, 183, 107)",
+        "inverted": "rgb( 66,  72, 148)"
+    },
+    "darkmagenta": {
+        "name": "darkmagenta",
+        "rgb": "rgb(139,   0, 139)",
+        "inverted": "rgb(116, 255, 116)"
+    },
+    "darkolivegreen": {
+        "name": "darkolivegreen",
+        "rgb": "rgb( 85, 107,  47)",
+        "inverted": "rgb(170, 148, 208)"
+    },
+    "darkorange": {
+        "name": "darkorange",
+        "rgb": "rgb(255, 140,   0)",
+        "inverted": "rgb(  0, 115, 255)"
+    },
+    "darkorchid": {
+        "name": "darkorchid",
+        "rgb": "rgb(153,  50, 204)",
+        "inverted": "rgb(102, 205,  51)"
+    },
+    "darkred": {
+        "name": "darkred",
+        "rgb": "rgb(139,   0,   0)",
+        "inverted": "rgb(116, 255, 255)"
+    },
+    "darksalmon": {
+        "name": "darksalmon",
+        "rgb": "rgb(233, 150, 122)",
+        "inverted": "rgb( 22, 105, 133)"
+    },
+    "darkseagreen": {
+        "name": "darkseagreen",
+        "rgb": "rgb(143, 188, 143)",
+        "inverted": "rgb(112,  67, 112)"
+    },
+    "darkslateblue": {
+        "name": "darkslateblue",
+        "rgb": "rgb( 72,  61, 139)",
+        "inverted": "rgb(183, 194, 116)"
+    },
+    "darkslategray": {
+        "name": "darkslategray",
+        "rgb": "rgb( 47,  79,  79)",
+        "inverted": "rgb(208, 176, 176)"
+    },
+    "darkslategrey": {
+        "name": "darkslategrey",
+        "rgb": "rgb( 47,  79,  79)",
+        "inverted": "rgb(208, 176, 176)"
+    },
+    "darkturquoise": {
+        "name": "darkturquoise",
+        "rgb": "rgb(  0, 206, 209)",
+        "inverted": "rgb(255,  49,  46)"
+    },
+    "darkviolet": {
+        "name": "darkviolet",
+        "rgb": "rgb(148,   0, 211)",
+        "inverted": "rgb(107, 255,  44)"
+    },
+    "deeppink": {
+        "name": "deeppink",
+        "rgb": "rgb(255,  20, 147)",
+        "inverted": "rgb(  0, 235, 108)"
+    },
+    "deepskyblue": {
+        "name": "deepskyblue",
+        "rgb": "rgb(  0, 191, 255)",
+        "inverted": "rgb(255,  64,   0)"
+    },
+    "dimgray": {
+        "name": "dimgray",
+        "rgb": "rgb(105, 105, 105)",
+        "inverted": "rgb(150, 150, 150)"
+    },
+    "dimgrey": {
+        "name": "dimgrey",
+        "rgb": "rgb(105, 105, 105)",
+        "inverted": "rgb(150, 150, 150)"
+    },
+    "dodgerblue": {
+        "name": "dodgerblue",
+        "rgb": "rgb( 30, 144, 255)",
+        "inverted": "rgb(225, 111,   0)"
+    },
+    "firebrick": {
+        "name": "firebrick",
+        "rgb": "rgb(178,  34,  34)",
+        "inverted": "rgb( 77, 221, 221)"
+    },
+    "floralwhite": {
+        "name": "floralwhite",
+        "rgb": "rgb(255, 250, 240)",
+        "inverted": "rgb(  0,   5,  15)"
+    },
+    "forestgreen": {
+        "name": "forestgreen",
+        "rgb": "rgb( 34, 139,  34)",
+        "inverted": "rgb(221, 116, 221)"
+    },
+    "fuchsia": {
+        "name": "fuchsia",
+        "rgb": "rgb(255,   0, 255)",
+        "inverted": "rgb(  0, 255,   0)"
+    },
+    "gainsboro": {
+        "name": "gainsboro",
+        "rgb": "rgb(220, 220, 220)",
+        "inverted": "rgb( 35,  35,  35)"
+    },
+    "ghostwhite": {
+        "name": "ghostwhite",
+        "rgb": "rgb(248, 248, 255)",
+        "inverted": "rgb(  7,   7,   0)"
+    },
+    "gold": {
+        "name": "gold",
+        "rgb": "rgb(255, 215,   0)",
+        "inverted": "rgb(  0,  40, 255)"
+    },
+    "goldenrod": {
+        "name": "goldenrod",
+        "rgb": "rgb(218, 165,  32)",
+        "inverted": "rgb( 37,  90, 223)"
+    },
+    "gray": {
+        "name": "gray",
+        "rgb": "rgb(128, 128, 128)",
+        "inverted": "rgb(127, 127, 127)"
+    },
+    "green": {
+        "name": "green",
+        "rgb": "rgb(  0, 128,   0)",
+        "inverted": "rgb(255, 127, 255)"
+    },
+    "greenyellow": {
+        "name": "greenyellow",
+        "rgb": "rgb(173, 255,  47)",
+        "inverted": "rgb( 82,   0, 208)"
+    },
+    "grey": {
+        "name": "grey",
+        "rgb": "rgb(128, 128, 128)",
+        "inverted": "rgb(127, 127, 127)"
+    },
+    "honeydew": {
+        "name": "honeydew",
+        "rgb": "rgb(240, 255, 240)",
+        "inverted": "rgb( 15,   0,  15)"
+    },
+    "hotpink": {
+        "name": "hotpink",
+        "rgb": "rgb(255, 105, 180)",
+        "inverted": "rgb(  0, 150,  75)"
+    },
+    "indianred": {
+        "name": "indianred",
+        "rgb": "rgb(205,  92,  92)",
+        "inverted": "rgb( 50, 163, 163)"
+    },
+    "indigo": {
+        "name": "indigo",
+        "rgb": "rgb( 75,   0, 130)",
+        "inverted": "rgb(180, 255, 125)"
+    },
+    "ivory": {
+        "name": "ivory",
+        "rgb": "rgb(255, 255, 240)",
+        "inverted": "rgb(  0,   0,  15)"
+    },
+    "khaki": {
+        "name": "khaki",
+        "rgb": "rgb(240, 230, 140)",
+        "inverted": "rgb( 15,  25, 115)"
+    },
+    "lavender": {
+        "name": "lavender",
+        "rgb": "rgb(230, 230, 250)",
+        "inverted": "rgb( 25,  25,   5)"
+    },
+    "lavenderblush": {
+        "name": "lavenderblush",
+        "rgb": "rgb(255, 240, 245)",
+        "inverted": "rgb(  0,  15,  10)"
+    },
+    "lawngreen": {
+        "name": "lawngreen",
+        "rgb": "rgb(124, 252,   0)",
+        "inverted": "rgb(131,   3, 255)"
+    },
+    "lemonchiffon": {
+        "name": "lemonchiffon",
+        "rgb": "rgb(255, 250, 205)",
+        "inverted": "rgb(  0,   5,  50)"
+    },
+    "lightblue": {
+        "name": "lightblue",
+        "rgb": "rgb(173, 216, 230)",
+        "inverted": "rgb( 82,  39,  25)"
+    },
+    "lightcoral": {
+        "name": "lightcoral",
+        "rgb": "rgb(240, 128, 128)",
+        "inverted": "rgb( 15, 127, 127)"
+    },
+    "lightcyan": {
+        "name": "lightcyan",
+        "rgb": "rgb(224, 255, 255)",
+        "inverted": "rgb( 31,   0,   0)"
+    },
+    "lightgoldenrodyellow": {
+        "name": "lightgoldenrodyellow",
+        "rgb": "rgb(250, 250, 210)",
+        "inverted": "rgb(  5,   5,  45)"
+    },
+    "lightgray": {
+        "name": "lightgray",
+        "rgb": "rgb(211, 211, 211)",
+        "inverted": "rgb( 44,  44,  44)"
+    },
+    "lightgreen": {
+        "name": "lightgreen",
+        "rgb": "rgb(144, 238, 144)",
+        "inverted": "rgb(111,  17, 111)"
+    },
+    "lightgrey": {
+        "name": "lightgrey",
+        "rgb": "rgb(211, 211, 211)",
+        "inverted": "rgb( 44,  44,  44)"
+    },
+    "lightpink": {
+        "name": "lightpink",
+        "rgb": "rgb(255, 182, 193)",
+        "inverted": "rgb(  0,  73,  62)"
+    },
+    "lightsalmon": {
+        "name": "lightsalmon",
+        "rgb": "rgb(255, 160, 122)",
+        "inverted": "rgb(  0,  95, 133)"
+    },
+    "lightseagreen": {
+        "name": "lightseagreen",
+        "rgb": "rgb( 32, 178, 170)",
+        "inverted": "rgb(223,  77,  85)"
+    },
+    "lightskyblue": {
+        "name": "lightskyblue",
+        "rgb": "rgb(135, 206, 250)",
+        "inverted": "rgb(120,  49,   5)"
+    },
+    "lightslategray": {
+        "name": "lightslategray",
+        "rgb": "rgb(119, 136, 153)",
+        "inverted": "rgb(136, 119, 102)"
+    },
+    "lightslategrey": {
+        "name": "lightslategrey",
+        "rgb": "rgb(119, 136, 153)",
+        "inverted": "rgb(136, 119, 102)"
+    },
+    "lightsteelblue": {
+        "name": "lightsteelblue",
+        "rgb": "rgb(176, 196, 222)",
+        "inverted": "rgb( 79,  59,  33)"
+    },
+    "lightyellow": {
+        "name": "lightyellow",
+        "rgb": "rgb(255, 255, 224)",
+        "inverted": "rgb(  0,   0,  31)"
+    },
+    "lime": {
+        "name": "lime",
+        "rgb": "rgb(  0, 255,   0)",
+        "inverted": "rgb(255,   0, 255)"
+    },
+    "limegreen": {
+        "name": "limegreen",
+        "rgb": "rgb( 50, 205,  50)",
+        "inverted": "rgb(205,  50, 205)"
+    },
+    "linen": {
+        "name": "linen",
+        "rgb": "rgb(250, 240, 230)",
+        "inverted": "rgb(  5,  15,  25)"
+    },
+    "magenta": {
+        "name": "magenta",
+        "rgb": "rgb(255,   0, 255)",
+        "inverted": "rgb(  0, 255,   0)"
+    },
+    "maroon": {
+        "name": "maroon",
+        "rgb": "rgb(128,   0,   0)",
+        "inverted": "rgb(127, 255, 255)"
+    },
+    "mediumaquamarine": {
+        "name": "mediumaquamarine",
+        "rgb": "rgb(102, 205, 170)",
+        "inverted": "rgb(153,  50,  85)"
+    },
+    "mediumblue": {
+        "name": "mediumblue",
+        "rgb": "rgb(  0,   0, 205)",
+        "inverted": "rgb(255, 255,  50)"
+    },
+    "mediumorchid": {
+        "name": "mediumorchid",
+        "rgb": "rgb(186,  85, 211)",
+        "inverted": "rgb( 69, 170,  44)"
+    },
+    "mediumpurple": {
+        "name": "mediumpurple",
+        "rgb": "rgb(147, 112, 219)",
+        "inverted": "rgb(108, 143,  36)"
+    },
+    "mediumseagreen": {
+        "name": "mediumseagreen",
+        "rgb": "rgb( 60, 179, 113)",
+        "inverted": "rgb(195,  76, 142)"
+    },
+    "mediumslateblue": {
+        "name": "mediumslateblue",
+        "rgb": "rgb(123, 104, 238)",
+        "inverted": "rgb(132, 151,  17)"
+    },
+    "mediumspringgreen": {
+        "name": "mediumspringgreen",
+        "rgb": "rgb(  0, 250, 154)",
+        "inverted": "rgb(255,   5, 101)"
+    },
+    "mediumturquoise": {
+        "name": "mediumturquoise",
+        "rgb": "rgb( 72, 209, 204)",
+        "inverted": "rgb(183,  46,  51)"
+    },
+    "mediumvioletred": {
+        "name": "mediumvioletred",
+        "rgb": "rgb(199,  21, 133)",
+        "inverted": "rgb( 56, 234, 122)"
+    },
+    "midnightblue": {
+        "name": "midnightblue",
+        "rgb": "rgb( 25,  25, 112)",
+        "inverted": "rgb(230, 230, 143)"
+    },
+    "mintcream": {
+        "name": "mintcream",
+        "rgb": "rgb(245, 255, 250)",
+        "inverted": "rgb( 10,   0,   5)"
+    },
+    "mistyrose": {
+        "name": "mistyrose",
+        "rgb": "rgb(255, 228, 225)",
+        "inverted": "rgb(  0,  27,  30)"
+    },
+    "moccasin": {
+        "name": "moccasin",
+        "rgb": "rgb(255, 228, 181)",
+        "inverted": "rgb(  0,  27,  74)"
+    },
+    "navajowhite": {
+        "name": "navajowhite",
+        "rgb": "rgb(255, 222, 173)",
+        "inverted": "rgb(  0,  33,  82)"
+    },
+    "navy": {
+        "name": "navy",
+        "rgb": "rgb(  0,   0, 128)",
+        "inverted": "rgb(255, 255, 127)"
+    },
+    "oldlace": {
+        "name": "oldlace",
+        "rgb": "rgb(253, 245, 230)",
+        "inverted": "rgb(  2,  10,  25)"
+    },
+    "olive": {
+        "name": "olive",
+        "rgb": "rgb(128, 128,   0)",
+        "inverted": "rgb(127, 127, 255)"
+    },
+    "olivedrab": {
+        "name": "olivedrab",
+        "rgb": "rgb(107, 142,  35)",
+        "inverted": "rgb(148, 113, 220)"
+    },
+    "orange": {
+        "name": "orange",
+        "rgb": "rgb(255, 165,   0)",
+        "inverted": "rgb(  0,  90, 255)"
+    },
+    "orangered": {
+        "name": "orangered",
+        "rgb": "rgb(255,  69,   0)",
+        "inverted": "rgb(  0, 186, 255)"
+    },
+    "orchid": {
+        "name": "orchid",
+        "rgb": "rgb(218, 112, 214)",
+        "inverted": "rgb( 37, 143,  41)"
+    },
+    "palegoldenrod": {
+        "name": "palegoldenrod",
+        "rgb": "rgb(238, 232, 170)",
+        "inverted": "rgb( 17,  23,  85)"
+    },
+    "palegreen": {
+        "name": "palegreen",
+        "rgb": "rgb(152, 251, 152)",
+        "inverted": "rgb(103,   4, 103)"
+    },
+    "paleturquoise": {
+        "name": "paleturquoise",
+        "rgb": "rgb(175, 238, 238)",
+        "inverted": "rgb( 80,  17,  17)"
+    },
+    "palevioletred": {
+        "name": "palevioletred",
+        "rgb": "rgb(219, 112, 147)",
+        "inverted": "rgb( 36, 143, 108)"
+    },
+    "papayawhip": {
+        "name": "papayawhip",
+        "rgb": "rgb(255, 239, 213)",
+        "inverted": "rgb(  0,  16,  42)"
+    },
+    "peachpuff": {
+        "name": "peachpuff",
+        "rgb": "rgb(255, 218, 185)",
+        "inverted": "rgb(  0,  37,  70)"
+    },
+    "peru": {
+        "name": "peru",
+        "rgb": "rgb(205, 133,  63)",
+        "inverted": "rgb( 50, 122, 192)"
+    },
+    "pink": {
+        "name": "pink",
+        "rgb": "rgb(255, 192, 203)",
+        "inverted": "rgb(  0,  63,  52)"
+    },
+    "plum": {
+        "name": "plum",
+        "rgb": "rgb(221, 160, 221)",
+        "inverted": "rgb( 34,  95,  34)"
+    },
+    "powderblue": {
+        "name": "powderblue",
+        "rgb": "rgb(176, 224, 230)",
+        "inverted": "rgb( 79,  31,  25)"
+    },
+    "purple": {
+        "name": "purple",
+        "rgb": "rgb(128,   0, 128)",
+        "inverted": "rgb(127, 255, 127)"
+    },
+    "rebeccapurple": {
+        "name": "rebeccapurple",
+        "rgb": "rgb(102,  51, 153)",
+        "inverted": "rgb(153, 204, 102)"
+    },
+    "red": {
+        "name": "red",
+        "rgb": "rgb(255,   0,   0)",
+        "inverted": "rgb(  0, 255, 255)"
+    },
+    "rosybrown": {
+        "name": "rosybrown",
+        "rgb": "rgb(188, 143, 143)",
+        "inverted": "rgb( 67, 112, 112)"
+    },
+    "royalblue": {
+        "name": "royalblue",
+        "rgb": "rgb( 65, 105, 225)",
+        "inverted": "rgb(190, 150,  30)"
+    },
+    "saddlebrown": {
+        "name": "saddlebrown",
+        "rgb": "rgb(139,  69,  19)",
+        "inverted": "rgb(116, 186, 236)"
+    },
+    "salmon": {
+        "name": "salmon",
+        "rgb": "rgb(250, 128, 114)",
+        "inverted": "rgb(  5, 127, 141)"
+    },
+    "sandybrown": {
+        "name": "sandybrown",
+        "rgb": "rgb(244, 164,  96)",
+        "inverted": "rgb( 11,  91, 159)"
+    },
+    "seagreen": {
+        "name": "seagreen",
+        "rgb": "rgb( 46, 139,  87)",
+        "inverted": "rgb(209, 116, 168)"
+    },
+    "seashell": {
+        "name": "seashell",
+        "rgb": "rgb(255, 245, 238)",
+        "inverted": "rgb(  0,  10,  17)"
+    },
+    "sienna": {
+        "name": "sienna",
+        "rgb": "rgb(160,  82,  45)",
+        "inverted": "rgb( 95, 173, 210)"
+    },
+    "silver": {
+        "name": "silver",
+        "rgb": "rgb(192, 192, 192)",
+        "inverted": "rgb( 63,  63,  63)"
+    },
+    "skyblue": {
+        "name": "skyblue",
+        "rgb": "rgb(135, 206, 235)",
+        "inverted": "rgb(120,  49,  20)"
+    },
+    "slateblue": {
+        "name": "slateblue",
+        "rgb": "rgb(106,  90, 205)",
+        "inverted": "rgb(149, 165,  50)"
+    },
+    "slategray": {
+        "name": "slategray",
+        "rgb": "rgb(112, 128, 144)",
+        "inverted": "rgb(143, 127, 111)"
+    },
+    "slategrey": {
+        "name": "slategrey",
+        "rgb": "rgb(112, 128, 144)",
+        "inverted": "rgb(143, 127, 111)"
+    },
+    "snow": {
+        "name": "snow",
+        "rgb": "rgb(255, 250, 250)",
+        "inverted": "rgb(  0,   5,   5)"
+    },
+    "springgreen": {
+        "name": "springgreen",
+        "rgb": "rgb(  0, 255, 127)",
+        "inverted": "rgb(255,   0, 128)"
+    },
+    "steelblue": {
+        "name": "steelblue",
+        "rgb": "rgb( 70, 130, 180)",
+        "inverted": "rgb(185, 125,  75)"
+    },
+    "tan": {
+        "name": "tan",
+        "rgb": "rgb(210, 180, 140)",
+        "inverted": "rgb( 45,  75, 115)"
+    },
+    "teal": {
+        "name": "teal",
+        "rgb": "rgb(  0, 128, 128)",
+        "inverted": "rgb(255, 127, 127)"
+    },
+    "thistle": {
+        "name": "thistle",
+        "rgb": "rgb(216, 191, 216)",
+        "inverted": "rgb( 39,  64,  39)"
+    },
+    "tomato": {
+        "name": "tomato",
+        "rgb": "rgb(255,  99,  71)",
+        "inverted": "rgb(  0, 156, 184)"
+    },
+    "turquoise": {
+        "name": "turquoise",
+        "rgb": "rgb( 64, 224, 208)",
+        "inverted": "rgb(191,  31,  47)"
+    },
+    "violet": {
+        "name": "violet",
+        "rgb": "rgb(238, 130, 238)",
+        "inverted": "rgb( 17, 125,  17)"
+    },
+    "wheat": {
+        "name": "wheat",
+        "rgb": "rgb(245, 222, 179)",
+        "inverted": "rgb( 10,  33,  76)"
+    },
+    "white": {
+        "name": "white",
+        "rgb": "rgb(255, 255, 255)",
+        "inverted": "rgb(  0,   0,   0)"
+    },
+    "whitesmoke": {
+        "name": "whitesmoke",
+        "rgb": "rgb(245, 245, 245)",
+        "inverted": "rgb( 10,  10,  10)"
+    },
+    "yellow": {
+        "name": "yellow",
+        "rgb": "rgb(255, 255,   0)",
+        "inverted": "rgb(  0,   0, 255)"
+    },
+    "yellowgreen": {
+        "name": "yellowgreen",
+        "rgb": "rgb(154, 205,  50)",
+        "inverted": "rgb(101,  50, 205)"
+    }
+};
+
+const colourValues = Object.values(colour);
+
+const canvas = document.createElement("canvas");
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+document.body.append(canvas);
+
+const button = document.createElement("button");
+document.body.append(button);
+button.style.opacity = 0;
+
+
+var scaleFactor = 1;
+var shiftList = {};
+    shiftList.names = [];
+    shiftList.rgb = [];
+    shiftList.inverted = [];
+
+
+function redraw() {
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+scaleFactor = window.innerWidth / 38;
+let xStep = 0;
+let yStep = 0;
+let colourIndex = 0;
+for (k = 0; k < 8; k++) {
+h = 0.5; i = 18;
+if (k % 2 == 0) {
+h = 0.0; i = 19; }
+for (j = 0; j < i; j++) {
+plotHexagon(j  + h, k, colourValues[colourIndex++].name);
+} }
+}
+
+
+function rowColumn(x,y) {
+const step0 = [ Math.floor(x * 10 / scaleFactor), Math.floor(y * 10 / scaleFactor) ];
+const step1 = [ step0[0] / 10, step0[1] / 10 ];
+const step2 = [ Math.floor(step1[0]), step1[1] / 1.7 ];
+const step3 = [ step2[0], Math.floor(step2[1]) ];
+const step4 = [ step3[0] % 2, step3[1] % 2 ];
+const step5 = (step4[0] + step4[1]) % 2;
+const leftRight = (step0[0] % 10) / 10;
+const topBottom =  Math.floor((step1[1] - (step3[1]) * 1.7) * 10) / 10;
+let add = 0;
+       if (step5 == 0) {
+       if (topBottom >= 0.6) { add = 1;
+} else if (topBottom == 0.0) { if (leftRight == 1.0) add = 1;
+} else if (topBottom == 0.1) { if (leftRight >= 0.9) add = 1;
+} else if (topBottom == 0.2) { if (leftRight >= 0.7) add = 1;
+} else if (topBottom == 0.3) { if (leftRight >= 0.5) add = 1;
+} else if (topBottom == 0.4) { if (leftRight >= 0.4) add = 1;
+} else if (topBottom == 0.5) { if (leftRight >= 0.2) add = 1;
+}
+} else if (step5 == 1) {
+       if (topBottom >= 0.6) { add = 1;
+} else if (topBottom == 0.0) { if (leftRight == 1.0) add = 1;
+} else if (topBottom == 0.1) { if (leftRight <= 0.2) add = 1;
+} else if (topBottom == 0.2) { if (leftRight <= 0.4) add = 1;
+} else if (topBottom == 0.3) { if (leftRight <= 0.5) add = 1;
+} else if (topBottom == 0.4) { if (leftRight <= 0.7) add = 1;
+} else if (topBottom == 0.5) { if (leftRight <= 0.9) add = 1;
+}
+}
+const  rowID = step3[1] + add;
+let columnID = 0;
+       if (rowID % 2 == 1) {
+columnID = ( step3[0] - step3[0] % 2 ) / 2;
+} else if (rowID % 2 == 0) {
+columnID = ( (step3[0] + 1) - (step3[0] + 1) % 2 ) / 2;
+}
+return [ columnID, rowID ];
+}
+
+
+function plotHexagon(x,y,colour, outline) {
+S = scaleFactor;
+let ctx;
+ctx = canvas.getContext("2d");
+ctx.fillStyle   = colour;
+ctx.beginPath();
+ctx.moveTo(x * 2 * S + S * 0, y * 1.7 * S + S * 0.9);
+ctx.lineTo(x * 2 * S + S * 0, y * 1.7 * S + S * 0.6);
+ctx.lineTo(x * 2 * S + S * 1, y * 1.7 * S + S * 0.0);
+ctx.lineTo(x * 2 * S + S * 2, y * 1.7 * S + S * 0.6);
+ctx.lineTo(x * 2 * S + S * 2, y * 1.7 * S + S * 0.6);
+ctx.lineTo(x * 2 * S + S * 2, y * 1.7 * S + S * 1.7);
+ctx.lineTo(x * 2 * S + S * 1, y * 1.7 * S + S * 2.3);
+ctx.lineTo(x * 2 * S + S * 0, y * 1.7 * S + S * 1.7);
+ctx.lineTo(x * 2 * S + S * 0, y * 1.7 * S + S * 0.9);
+if (outline) {
+ctx.lineWidth = 6;
+ctx.strokeStyle = "rgba(255,255,255,1)";
+ctx.stroke();
+ctx.lineWidth = 2;
+ctx.strokeStyle = "rgba(0,0,0,1)";
+ctx.stroke();
+} else {
+ctx.fill();
+}
+}
+
+
+function drawMouse(row,column,colour,outline) {
+if ( column % 2 == 1) {
+plotHexagon(row      ,column - 1,colour,outline);
+} else {
+plotHexagon(row - 0.5,column - 1,colour,outline);
+}
+}
+
+
+
+document.addEventListener("mousemove", (event) => {
+const x = event.clientX;
+const y = event.clientY;
+redraw();
+const location = rowColumn(x,y);
+coombOver = location;
+drawMouse(location[0], location[1], "black", true);
+if (!(lastCoomb[0] == coombOver[0] && lastCoomb[1] == coombOver[1])) {
+if (button.style.opacity == 1.00) {
+var fade = 0;
+for (let j = 100; j >= 0; j--) {
+setTimeout(() => { button.style.opacity = j / 100; }, 5 * fade++);
+}
+}
+}
+});
+
+
+
+document.addEventListener("click", (event) => {
+const x = event.clientX;
+const y = event.clientY;
+const location = rowColumn(x,y);
+lastCoomb = location;
+button.style.opacity = 1.00;
+if (event.shiftKey) {
+shiftList.names.push(giveName(location[0],location[1]));
+shiftList.rgb.push(colour[giveName(location[0],location[1])].rgb);
+shiftList.inverted.push(colour[giveName(location[0],location[1])].inverted);
+copyToClipboard("{\\n" + '"names" : \\n' + "\\t[\\n" + '\\t"' + shiftList.names.join('",\\n\\t"') + '"\\n' + '\\t],\\n"rgb" : \\n' + "\\t[\\n" + '\\t"' + shiftList.rgb.join('",\\n\\t"') + '"\\n' + '\\t],\\n"inverted" : \\n' + "\\t[\\n" + '\\t"' + shiftList.inverted.join('",\\n\\t"') + '"\\n' + "\\t]\\n" + "}");
+} else {
+try {
+copyToClipboard(giveName(location[0],location[1]));
+shiftList.names = [];
+shiftList.rgb = [];
+shiftList.inverted = [];
+} catch {}
+}
+});
+
+
+
+function copyToClipboard(string) {
+const d = document;
+const x = d.body.appendChild(d.createElement("textarea"));
+x.value = string;
+x.select();
+d.execCommand("copy");
+x.remove();
+}
+
+
+
+function giveName(columnInput, rowInput) {
+       if (rowInput == 1) {
+switch (columnInput) {
+case  0: colourName = "aliceblue";             break;
+case  1: colourName = "antiquewhite";          break;
+case  2: colourName = "aqua";                  break;
+case  3: colourName = "aquamarine";            break;
+case  4: colourName = "azure";                 break;
+case  5: colourName = "beige";                 break;
+case  6: colourName = "bisque";                break;
+case  7: colourName = "black";                 break;
+case  8: colourName = "blanchedalmond";        break;
+case  9: colourName = "blue";                  break;
+case 10: colourName = "blueviolet";            break;
+case 11: colourName = "brown";                 break;
+case 12: colourName = "burlywood";             break;
+case 13: colourName = "cadetblue";             break;
+case 14: colourName = "chartreuse";            break;
+case 15: colourName = "chocolate";             break;
+case 16: colourName = "coral";                 break;
+case 17: colourName = "cornflowerblue";        break;
+case 18: colourName = "cornsilk";              break;
+default: colourName = "";
+}
+} else if (rowInput == 2) {
+switch (columnInput) {
+case  1: colourName = "crimson";               break;
+case  2: colourName = "cyan";                  break;
+case  3: colourName = "darkblue";              break;
+case  4: colourName = "darkcyan";              break;
+case  5: colourName = "darkgoldenrod";         break;
+case  6: colourName = "darkgray";              break;
+case  7: colourName = "darkgreen";             break;
+case  8: colourName = "darkgrey";              break;
+case  9: colourName = "darkkhaki";             break;
+case 10: colourName = "darkmagenta";           break;
+case 11: colourName = "darkolivegreen";        break;
+case 12: colourName = "darkorange";            break;
+case 13: colourName = "darkorchid";            break;
+case 14: colourName = "darkred";               break;
+case 15: colourName = "darksalmon";            break;
+case 16: colourName = "darkseagreen";          break;
+case 17: colourName = "darkslateblue";         break;
+case 18: colourName = "darkslategray";         break;
+default: colourName = "";
+}
+} else if (rowInput == 3) {
+switch (columnInput) {
+case  0: colourName = "darkslategrey";         break;
+case  1: colourName = "darkturquoise";         break;
+case  2: colourName = "darkviolet";            break;
+case  3: colourName = "deeppink";              break;
+case  4: colourName = "deepskyblue";           break;
+case  5: colourName = "dimgray";               break;
+case  6: colourName = "dimgrey";               break;
+case  7: colourName = "dodgerblue";            break;
+case  8: colourName = "firebrick";             break;
+case  9: colourName = "floralwhite";           break;
+case 10: colourName = "forestgreen";           break;
+case 11: colourName = "fuchsia";               break;
+case 12: colourName = "gainsboro";             break;
+case 13: colourName = "ghostwhite";            break;
+case 14: colourName = "gold";                  break;
+case 15: colourName = "goldenrod";             break;
+case 16: colourName = "gray";                  break;
+case 17: colourName = "green";                 break;
+case 18: colourName = "greenyellow";           break;
+default: colourName = "";
+}
+} else if (rowInput == 4) {
+switch (columnInput) {
+case  1: colourName = "grey";                  break;
+case  2: colourName = "honeydew";              break;
+case  3: colourName = "hotpink";               break;
+case  4: colourName = "indianred";             break;
+case  5: colourName = "indigo";                break;
+case  6: colourName = "ivory";                 break;
+case  7: colourName = "khaki";                 break;
+case  8: colourName = "lavender";              break;
+case  9: colourName = "lavenderblush";         break;
+case 10: colourName = "lawngreen";             break;
+case 11: colourName = "lemonchiffon";          break;
+case 12: colourName = "lightblue";             break;
+case 13: colourName = "lightcoral";            break;
+case 14: colourName = "lightcyan";             break;
+case 15: colourName = "lightgoldenrodyellow";  break;
+case 16: colourName = "lightgray";             break;
+case 17: colourName = "lightgreen";            break;
+case 18: colourName = "lightgrey";             break;
+default: colourName = "";
+}
+} else if (rowInput == 5) {
+switch (columnInput) {
+case  0: colourName = "lightpink";             break;
+case  1: colourName = "lightsalmon";           break;
+case  2: colourName = "lightseagreen";         break;
+case  3: colourName = "lightskyblue";          break;
+case  4: colourName = "lightslategray";        break;
+case  5: colourName = "lightslategrey";        break;
+case  6: colourName = "lightsteelblue";        break;
+case  7: colourName = "lightyellow";           break;
+case  8: colourName = "lime";                  break;
+case  9: colourName = "limegreen";             break;
+case 10: colourName = "linen";                 break;
+case 11: colourName = "magenta";               break;
+case 12: colourName = "maroon";                break;
+case 13: colourName = "mediumaquamarine";      break;
+case 14: colourName = "mediumblue";            break;
+case 15: colourName = "mediumorchid";          break;
+case 16: colourName = "mediumpurple";          break;
+case 17: colourName = "mediumseagreen";        break;
+case 18: colourName = "mediumslateblue";       break;
+default: colourName = "";
+}
+} else if (rowInput == 6) {
+switch (columnInput) {
+case  1: colourName = "mediumspringgreen";     break;
+case  2: colourName = "mediumturquoise";       break;
+case  3: colourName = "mediumvioletred";       break;
+case  4: colourName = "midnightblue";          break;
+case  5: colourName = "mintcream";             break;
+case  6: colourName = "mistyrose";             break;
+case  7: colourName = "moccasin";              break;
+case  8: colourName = "navajowhite";           break;
+case  9: colourName = "navy";                  break;
+case 10: colourName = "oldlace";               break;
+case 11: colourName = "olive";                 break;
+case 12: colourName = "olivedrab";             break;
+case 13: colourName = "orange";                break;
+case 14: colourName = "orangered";             break;
+case 15: colourName = "orchid";                break;
+case 16: colourName = "palegoldenrod";         break;
+case 17: colourName = "palegreen";             break;
+case 18: colourName = "paleturquoise";         break;
+default: colourName = "";
+}
+} else if (rowInput == 7) {
+switch (columnInput) {
+case  0: colourName = "palevioletred";         break;
+case  1: colourName = "papayawhip";            break;
+case  2: colourName = "peachpuff";             break;
+case  3: colourName = "peru";                  break;
+case  4: colourName = "pink";                  break;
+case  5: colourName = "plum";                  break;
+case  6: colourName = "powderblue";            break;
+case  7: colourName = "purple";                break;
+case  8: colourName = "rebeccapurple";         break;
+case  9: colourName = "red";                   break;
+case 10: colourName = "rosybrown";             break;
+case 11: colourName = "royalblue";             break;
+case 12: colourName = "saddlebrown";           break;
+case 13: colourName = "salmon";                break;
+case 14: colourName = "sandybrown";            break;
+case 15: colourName = "seagreen";              break;
+case 16: colourName = "seashell";              break;
+case 17: colourName = "sienna";                break;
+case 18: colourName = "silver";                break;
+default: colourName = "";
+}
+} else if (rowInput == 8) {
+switch (columnInput) {
+case  1: colourName = "skyblue";               break;
+case  2: colourName = "slateblue";             break;
+case  3: colourName = "slategray";             break;
+case  4: colourName = "slategrey";             break;
+case  5: colourName = "snow";                  break;
+case  6: colourName = "springgreen";           break;
+case  7: colourName = "steelblue";             break;
+case  8: colourName = "tan";                   break;
+case  9: colourName = "teal";                  break;
+case 10: colourName = "thistle";               break;
+case 11: colourName = "tomato";                break;
+case 12: colourName = "turquoise";             break;
+case 13: colourName = "violet";                break;
+case 14: colourName = "wheat";                 break;
+case 15: colourName = "white";                 break;
+case 16: colourName = "whitesmoke";            break;
+case 17: colourName = "yellow";                break;
+case 18: colourName = "yellowgreen";           break;
+default: colourName = "";
+}
+}
+button.style.color = colourName;
+button.innerHTML = \`<span class="colourBacker">&nbsp;\${colourName.toUpperCase()}&nbsp;</span>\`;
+return colourName;
+}
+
+
+window.addEventListener("resize", function() {
+canvas.width  = window.innerWidth ;
+canvas.height = window.innerHeight;
+redraw();
+});
+
+
+redraw();
+
+</` + `script>
+</div>
+</body>
+</html>`;
+
+document.getElementById("artConst").srcdoc = artConst;
+document.getElementById("colourB").srcdoc  = colourB;function prepareSiteMap() {
 const wrapper = document.createElement("div");
       wrapper.id = "siteMapWrapper";
 const canvas  = document.createElement("canvas");
@@ -29266,7 +33649,44 @@ menuWrapper.addEventListener("keydown",   function(event) { /*   esc   */ if (ev
 event.stopPropagation(); }, true);
 menuWrapper.addEventListener("keypress",  function() { event.stopPropagation(); }, true);
 menuWrapper.addEventListener("keyup",     function() { event.stopPropagation(); }, true);
+
+
+if (localStorage.getItem("useAllLayers")) {
+if (localStorage.getItem("useAllLayers") == "false") {
+useAllLayers = false;
+} else if (localStorage.getItem("useAllLayers") == "true") {
+useAllLayers = true;
+}
+}
+
+
+
+
+
+
+
 function updateInfoShelf() {
+
+
+
+
+
+
+
+if (useAllLayers) {
+document.getElementById("useAllLayers").style.outline = "2px dashed lime";
+document.getElementById("useAllLayers").style.backgroundColor = "rgba(255,0,0,0.35)";
+} else {
+document.getElementById("useAllLayers").style.outline = "";
+document.getElementById("useAllLayers").style.backgroundColor = "transparent";
+}
+
+
+
+
+
+
+
 
 
 
@@ -31101,32 +35521,47 @@ const reader = new FileReader();
 reader.onload = evt => {
 popStyle();
 hauptMode = hauptModeOriginalState;
-/*
-if (useBase64forAudio==true) {
-audio.src = evt.target.result;
-} else {
-audio.src ="./b_audio/" + file.name;
-}
-*/
-
-
-
 utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.lastElementChild.value = evt.target.result;
-
-
 };
-reader.readAsDataURL(file);
+reader.readAsText(file);
 return 0;
 }
 
 
 
+if (file.name.toLowerCase().endsWith('.json')) {
+hauptModeOriginalState = hauptMode;
+hauptMode = 0;
+const reader = new FileReader();
+reader.onload = evt => {
+popJSON();
+hauptMode = hauptModeOriginalState;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
+utilityLayer0.lastElementChild.dataset.json = JSON.stringify(JSON.parse(evt.target.result));
+};
+reader.readAsText(file);
+return 0;
+}
 
 
 
-
+if (file.name.toLowerCase().endsWith('.js')) {
+hauptModeOriginalState = hauptMode;
+hauptMode = 0;
+const reader = new FileReader();
+reader.onload = evt => {
+popScript();
+hauptMode = hauptModeOriginalState;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.value = evt.target.result;
+utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.innerText = evt.target.result;
+utilityLayer0.lastElementChild.dataset.addScript = evt.target.result;
+};
+reader.readAsText(file);
+return 0;
+}
 
 
 
@@ -32208,115 +36643,8 @@ ctrl   = keyInfo[4],
 alt    = keyInfo[5];
 const wH = window.innerHeight;
 const wW = window.innerwidth;
-const fileContentsReference =
-`<!DOCTYPE html>
-<html lang="en" itemscope="" itemtype="https://schema.org/WebApplication" style="cursor: crosshair; background-color: rgb(63, 63, 95);">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="mobile-web-app-capable" content="yes">					
-  <meta name="handheldfriendly" content="true">					
-  <meta name="author" content="dckimGUY Mohammed David">		
-  <link rel="canonical" href="https://dckim.com/hdub/index.html">
-  <meta name="description" content="DCKIM HTML DRAFTING PROJECT is Top-Notch, Open-Source, and Canadian. Hands-on, in-action: It's the best way to learn about HTML. Writing your own website is easy now! So, focus on the artistic and written aspects. Those are more important anyhow!">
-
-  <!-- Open Graph -->
-  <meta property="og:type"         content="website">
-  <meta property="og:title"        content="DCKIM HTML Drafting">
-  <meta property="og:description"  content="DCKIM HTML DRAFTING PROJECT is Top-Notch, Open-Source, and Canadian. Hands-on, in-action: It's the best way to learn about HTML. Writing your own website is easy now! So, focus on the artistic and written aspects. Those are more important anyhow!">
-  <meta property="og:url"          content="https://dckim.com/hdub/index.html">
-  <meta property="og:image"        content="https://dckim.com/images/logo.png">
-  <meta property="og:site_name"    content="DCKIM">
-
-  <!-- Twitter -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="DCKIM HTML Drafting">
-  <meta name="twitter:description" content="DCKIM HTML DRAFTING PROJECT is Top-Notch, Open-Source, and Canadian. Hands-on, in-action: It's the best way to learn about HTML. Writing your own website is easy now! So, focus on the artistic and written aspects. Those are more important anyhow!">
-  <meta name="twitter:image"       content="https://dckim.com/images/logo.png">
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "DCKIM HTML Drafting",
-    "operatingSystem": "All (offline-capable, browser-based)",
-    "applicationCategory": "DeveloperApplication",
-    "applicationSubCategory": "HTML Drafting Tool",
-    "browserRequirements": "Works fully offline in any modern browser",
-    "softwareVersion": "0.v5.1",
-    "license": "https://opensource.org/licenses/MIT",
-    "description": "HTML Drafting is a free, open-source HTML drafting app built entirely with HTML, CSS, and JavaScript. It requires no external dependencies and works fully offline.",
-    "url": "https://dckim.com/HW_project_online.html",
-    "screenshot": "https://dckim.com/images/logo.png",
-    "publisher": {
-      "@type": "Organization",
-      "name": "dckimGUY Mohammed David",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dckim.com/images/logo.png"
-      }
-    }
-  }
-  </script>
-
-  <!-- Schema.org SoftwareSourceCode JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "DCKIM HTML Drafting",
-    "codeRepository": "https://github.com/dckimGUY/HW-HTML-Drafting-Project",
-    "programmingLanguage": ["HTML", "CSS", "JavaScript"],
-    "license": "https://opensource.org/licenses/MIT",
-    "description": "The complete source code for HTML Drafting, a free, offline-capable HTML drafting app.",
-    "author": {
-      "@type": "Organization",
-      "name": "dckimGUY Mohammed David"
-    }
-  }
-  </script>
-
-<link rel="icon" type="image/png" sizes="512x512" href="k_favicons/favicon-512x512.png">
-<link rel="icon" type="image/png" sizes="192x192" href="k_favicons/favicon-192x192.png">
-<link rel="icon" type="image/png" sizes="180x180" href="k_favicons/favicon-180x180.png">
-<link rel="icon" type="image/png" sizes="32x32"   href="k_favicons/favicon-32x32.png"  >
-<link rel="icon" type="image/png" sizes="16x16"   href="k_favicons/favicon-16x16.png"  >
-<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAC5SURBVDhP3ZI9DsIwDIUdUi7ABZBAQgwwcP9jsLAwcAGEWCkN9ktrua0TIUY+ybLl2C/OT0gMFQghwFdKaNH7GUOzYOMproDuvN7DhJLITMA2P98tPdjS5oCcJzIS0ObdCb5l6yQQkT43FdFL9NR1/NsF3jJcrE4gCWugw/7AXWeKrwBMYYm6wBf8g4A8n2cgxuwZrwbGayltj/xrXrnScOcPJKxiAz+iWVK4nutHkEa32YAJcvgLRB8+A0j7DIEaSwAAAABJRU5ErkJggg==">
-
-<style>
-html, body              { overflow: scroll; scrollbar-width: none;               }
-body                    {                         width: 98%; height: 98%;       }
-p                       { margin: 0;                                             }
-body::-webkit-scrollbar { display: none;                                         }
-</style>
-
-<title id="documentTitle">DCKIM HTML Drafting Project</title>
-
-<link rel="stylesheet" href="e_stylesheets/a_style.css?v=20260324140710"/>
-<link rel="stylesheet" href="e_stylesheets/b_style.css?v=20251228104423"/>
-<link rel="stylesheet" href="e_stylesheets/c_style.css?v=20251119100122"/>
-<link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
-<link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
-
-<meta name="last-build" content="2026-04-01T19:40:41Z">
-
-<body>
-<div id="utilityLayer0"           ></div>
-<div id="utilityLayer1"           ></div>
-<div id="interfaceLayer"          ></div>
-<div id="gridLayer"               ></div>
-<div id="visualizationsLayer"     ></div>
-<div id="mouseIconLayer"          ></div>
-<div id="interfaceShelf"          ></div>
-<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
-<div id="scripts">
-<script src='./bundle.js?v=20260401154041'></script>
-<script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
-</div>
-</body>
-</html>
-`;let iS = 192;
+const fileContentsReference = document.documentElement.outerHTML;
+let iS = 192;
 /*    i    */ if (kC ==  73 && cC == 105) { window.children[window.children.length] = window.open("","_blank",`height=${window.innerHeight + 1},width=${iS + 1},top=${window.screenTop},left=${window.screenLeft - iS},resizable=yes,noopener=no`); }
 /*    o    */ if (kC ==  79 && cC == 111) { window.children[window.children.length] = window.open("","_blank",`height=${iS + 1},width=${window.innerWidth + 1},top=${window.screenTop + window.innerHeight},left=${window.screenLeft},resizable=yes,noopener=no`); }
 /*    a    */ if (kC ==  65 && cC ==  97) { window.children[window.children.length] = window.open("","_blank",`height=${window.innerHeight + 1},width=${iS + 1},top=${window.screenTop},left=${window.screenLeft + window.innerWidth},resizable=yes,noopener=no`); }
@@ -37727,7 +42055,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    Z    */ if (kC ==  90 && cC ==  90) { manageTripartiteZ(0); modeRouter(e,9); zBuzz("Z");                                                                 }
 /*    X    */ if (kC ==  88 && cC ==  88) { groupToPhantomLair();                                                                                              }
 /*    C    */ if (kC ==  67 && cC ==  67) { coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); flowVis();                                                                     }
+/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); zBuzz("V");                                                                    }
 /*    B    */ if (kC ==  66 && cC ==  66) { combineStates();                                                                                                   }
 /*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                               }
 /*    M    */ if (kC ==  77 && cC ==  77) {                                                                                                                    }
@@ -37756,7 +42084,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9); zBuzz("z");                                                                     }
 /*    x    */ if (kC ==  88 && cC == 120) {                          deleteCoin(keyInfo);                                                                      }
 /*    c    */ if (kC ==  67 && cC ==  99) { cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); flowVis();                                                               }
+/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); zBuzz("v");                                                              }
 /*    b    */ if (kC ==  66 && cC ==  98) { severState();                                                                                                      }
 /*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partNom").focus();                                    }
 /*    m    */ if (kC ==  77 && cC == 109) { charQ1=0;charM=1;charF=0;                                                                                          }

@@ -62,7 +62,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    Z    */ if (kC ==  90 && cC ==  90) { manageTripartiteZ(0); modeRouter(e,9); zBuzz("Z");                                                                 }
 /*    X    */ if (kC ==  88 && cC ==  88) { groupToPhantomLair();                                                                                              }
 /*    C    */ if (kC ==  67 && cC ==  67) { coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); flowVis();                                                                     }
+/*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); zBuzz("V");                                                                    }
 /*    B    */ if (kC ==  66 && cC ==  66) { combineStates();                                                                                                   }
 /*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                               }
 /*    M    */ if (kC ==  77 && cC ==  77) {                                                                                                                    }
@@ -91,7 +91,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9); zBuzz("z");                                                                     }
 /*    x    */ if (kC ==  88 && cC == 120) {                          deleteCoin(keyInfo);                                                                      }
 /*    c    */ if (kC ==  67 && cC ==  99) { cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
-/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); flowVis();                                                               }
+/*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); zBuzz("v");                                                              }
 /*    b    */ if (kC ==  66 && cC ==  98) { severState();                                                                                                      }
 /*    n    */ if (kC ==  78 && cC == 110) { tabSelector(1); folder1Selector(1); document.getElementById("partNom").focus();                                    }
 /*    m    */ if (kC ==  77 && cC == 109) { charQ1=0;charM=1;charF=0;                                                                                          }

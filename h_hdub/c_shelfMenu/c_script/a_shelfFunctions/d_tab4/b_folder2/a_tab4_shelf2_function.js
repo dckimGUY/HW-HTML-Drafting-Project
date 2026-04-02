@@ -189,6 +189,21 @@ animToggle.onclick = () => {
     animToggle.innerText = barVisible ? '▼' : '▲';
     animToggle.style.bottom = barVisible ? '70px' : '0px';
 };
+
+
+animBar.onwheel = (e) => {
+    e.preventDefault();
+    const targetGroup = go.xqn.grp[groupSelect.value];
+    if (targetGroup) {
+        if (e.deltaY < 0) {
+            targetGroup.rate.decr(10);
+        } else {
+            targetGroup.rate.incr(10);
+        }
+    }
+};
+
+
 document.body.appendChild(animBar);
 document.body.appendChild(animToggle);
 
@@ -211,7 +226,7 @@ document.body.appendChild(animToggle);
 
 
 
-var useAllLayers = true;
+var useAllLayers = false;
 
 if (localStorage.getItem("useAllLayers")) {
 useAllLayers = localStorage.getItem("useAllLayers");
@@ -316,7 +331,7 @@ const header4 = `
 },
 "url": "URL"
 }
-</script>
+</` + `script>
 
 <script type="application/ld+json">
 {
@@ -335,7 +350,7 @@ const header4 = `
 "longitude": -79.347015
 }
 }
-</script>
+</` + `script>
 
 <script type="application/ld+json">
 {
@@ -369,7 +384,7 @@ const header4 = `
 }
 }
 }
-</script>
+</` + `script>
 `;
 
 
@@ -388,7 +403,7 @@ const footer2 = `
 </html>
 `;
 const footer3 = `
-<script src="enter script URL"></script>
+<script src="enter script URL"></` + `script>
 </body>
 </html>
 `;
@@ -577,14 +592,14 @@ localStorage.setItem("lastFactor", "(100/320)");
 if (utilityLayer0.children.length == 0) {
 if (openInNewWindow) {
 const newWindow = window.open();
-newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</script>" + fileFooter);
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
 }
 
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</script>" + fileFooter, false, false, false);
+saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -1784,7 +1799,7 @@ stylesIncluded = stylePosition;
 
 
 if (dragging == true) {
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter;
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -1796,7 +1811,7 @@ return content;
 
 if (openInNewWindow) {
 const newWindow = window.open();
-newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter);
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -1806,7 +1821,7 @@ return;
 
 
 
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter, false, false, false);
+saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();

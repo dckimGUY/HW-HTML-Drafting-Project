@@ -491,58 +491,6 @@ overflow: hidden;
 <body>
 
 <script>
-
-function saveFile(content, filename) {
-  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  URL.revokeObjectURL(url);
-  document.body.removeChild(link);
-}
-const goScript = `#!/bin/bash
-
-#
-# Make a directory in the target base directory
-# Put go.sh and shadowTree.html into there
-# Run go.sh to make the file list
-# shadowTree now reads that file list.
-#
-
-echo "findFileList =" > "./find -type f.js";
-echo "\\\`" >> "./find -type f.js";
-find ../ -type f | sed '/\.swp/d' | \
-                   sed '/\.git/d' | \
-                   sed '/^\.\.\/$/d' | \
-                   sed '/^\.\.\/\./d' | \
-                   sed '/'$(echo "$(pwd | sed 's/^.*\///g')")'/d' | \
-                   sed 's/\.\.\///g' | \
-                   sed 's/^/..\//g' >> "./find -type f.js";
-echo "\\\`;" >> "./find -type f.js";
-echo >> "./find -type f.js";
-echo "workingDirectory = \"$(pwd | sed 's/\/[^\/]*$//')\";" > pwd.js`;
-const go = document.createElement("button");
-go.style.position = "fixed";
-go.style.left     = "0px";
-go.style.top      = "0px";
-go.style.width    = "3vw";
-go.style.height   = "1.5vw";
-go.style.fontSize = "0.75vw";
-go.style.backgroundColor = "lime";
-go.style.zIndex = 10000000;
-go.innerText = "go.sh";
-go.setAttribute("onclick", 'saveFile(goScript, "go.sh")');
-document.body.append(go);
-
-
-
-
-
-
-
 var findFileList       = "";
 var workingDirectory   = "";
 var pathArray          = [];
@@ -626,7 +574,7 @@ key[char].display = "block";
 localStorage.setItem(activeView + "-" + char, "block");
 }
 key[char].GUI = document.createElement("button");
-key[char].GUI.classList = `indicator ${char}`;
+key[char].GUI.classList = \`indicator \${char}\`;
 GUI.append(key[char].GUI);
 });
 const viewArray = Object.values(view);
@@ -648,8 +596,8 @@ grepBar.classList = "grepBar";
 grepBar.style.display = "none";
 grepBar.setAttribute("spellcheck", "false");
 grepBar.oninput = function() {
-if (grepBar.value.endsWith("\n")) {
-grepBar.value = grepBar.value.replace(/\n/g, "");
+if (grepBar.value.endsWith("\\n")) {
+grepBar.value = grepBar.value.replace(/\\n/g, "");
 grepSearch(grepBar.value);
 grepBar.style.display = "none";
 }
@@ -666,13 +614,13 @@ key.topRowNumbers =
 [ "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9", "n0" ];
 
 key.topRowNumbersAlternate =
-[ "!", "@", "#", "$", "%", "^", "&", "*", "(", ")" ];
+[ "!", "@", "#", "\$", "%", "^", "&", "*", "(", ")" ];
 
 key.topRowNumbersSmallText =
 [ "PAD", "PADx2", "PASTE", "GREP", "ABC", "ABC+", "CAT", "CPquad", "FONT-", "FONT+" ];
 
 key.additionalKeysText  = 
-[ "~", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "+", "bksp", "tab", "[", "]", "\\", "caps", ";", "'", "enter", "shift", "<", ">", "?", "shift", "ctrl", "win", "alt", "space", "alt", "fn", "mn", "ctrl", "A", "G", "H", "J", "K", "L" ];
+[ "~", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "+", "bksp", "tab", "[", "]", "\\\\", "caps", ";", "'", "enter", "shift", "<", ">", "?", "shift", "ctrl", "win", "alt", "space", "alt", "fn", "mn", "ctrl", "A", "G", "H", "J", "K", "L" ];
 
 key.additionalKeysHTML  = 
 [ "invert", "", "", "", "", "", "", "", "", "", "", "", "", "new tab", "search", "src-L", "src-R", "*view", "", "", "*GUI", "copy group", "", "quad-L", "quad-R", "", "", "", "", "", "copy single item for editor", "", "", "", "", "*abbr.", "&uarr;&darr;", "&larr;", "&darr;", "&uarr;", "&rarr;" ];
@@ -682,8 +630,8 @@ key[keyname] = {};
 key[keyname].name = keyname;
 key[keyname].colour = "lightgrey";
 key[keyname].GUI = document.createElement("button");
-key[keyname].GUI.innerHTML = `${key.additionalKeysText[index]}<div class="extraText">${key.additionalKeysHTML[index]}</div>`;
-key[keyname].GUI.classList = `indicator ${keyname}`;
+key[keyname].GUI.innerHTML = \`\${key.additionalKeysText[index]}<div class="extraText">\${key.additionalKeysHTML[index]}</div>\`;
+key[keyname].GUI.classList = \`indicator \${keyname}\`;
 GUI.append(key[keyname].GUI);
 });
 
@@ -732,14 +680,14 @@ document.body.append(fileViewerLayer);
                        viewer["file" + j]           = {};
                        viewer["file" + j].reference =  "";
                        viewer["file" + j].window    = document.createElement("iframe");
-                       viewer["file" + j].window.classList.add(`window`);
-                       viewer["file" + j].window.classList.add(`viewerQuad`);
-                       viewer["file" + j].window.classList.add(`oct${j}`);
+                       viewer["file" + j].window.classList.add(\`window\`);
+                       viewer["file" + j].window.classList.add(\`viewerQuad\`);
+                       viewer["file" + j].window.classList.add(\`oct\${j}\`);
 fileViewerLayer.append(viewer["file" + j].window);
                        viewer["file" + j].filter    = document.createElement("div");
-                       viewer["file" + j].filter.classList.add(`filter`);
-                       viewer["file" + j].filter.classList.add(`viewerQuad`);
-                       viewer["file" + j].filter.classList.add(`oct${j}` );
+                       viewer["file" + j].filter.classList.add(\`filter\`);
+                       viewer["file" + j].filter.classList.add(\`viewerQuad\`);
+                       viewer["file" + j].filter.classList.add(\`oct\${j}\` );
 fileViewerLayer.append(viewer["file" + j].filter);
                                          }
 
@@ -916,7 +864,7 @@ for (i=0;i<100;i++) {for (let j = 0; j < treeMain.children.length; j++) {
 treeMain.removeChild(treeMain.children[j]);
 }} treeMain.innerHTML = "";
 
-pathArray = findFileList.trim().split("\n");
+pathArray = findFileList.trim().split("\\n");
 
 for (let j = 0; j < pathArray.length; j++) {
 listArray[j]            = {};
@@ -926,8 +874,8 @@ listArray[j].directory  = filePathSeparator.join("/");
 }
 
 for (let j = 0; j < listArray.length; j++) {
-const nameInput = listArray[j].directory.replace(/\//g, "_") +
-                   "_" + listArray[j].filename.replace(/\./g, "_");
+const nameInput = listArray[j].directory.replace(/\\//g, "_") +
+                   "_" + listArray[j].filename.replace(/\\./g, "_");
 tree[nameInput]           = {};
 tree[nameInput].name      = nameInput;
 tree[nameInput].path      = [];
@@ -1195,10 +1143,10 @@ updateGUI();
 }
 function invertRGB(input) {
 const numberArray =
-[ parseInt(input.split(",")[0].replace(/rgb\(/g, '')),
+[ parseInt(input.split(",")[0].replace(/rgb\\(/g, '')),
   parseInt(input.split(",")[1]),
-  parseInt(input.split(",")[2].replace(/\)/g, '')) ]
-return `rgb(${255 - numberArray[0]},${255 - numberArray[1]},${255 - numberArray[2]})`;
+  parseInt(input.split(",")[2].replace(/\\)/g, '')) ]
+return \`rgb(\${255 - numberArray[0]},\${255 - numberArray[1]},\${255 - numberArray[2]})\`;
 }
 function invertColourScheme() {
 key.names.forEach((value, index) => {
@@ -1292,18 +1240,18 @@ localStorage.setItem("GUI", "none");
 function updateGUI() {
 key.names.forEach((char,index) => {
 key[char].GUI.style.backgroundColor = key[char].colour;
-key[char].GUI.innerHTML = `${key[char].name}<div class="numeral">${key[char].array.length}</div>`;
+key[char].GUI.innerHTML = \`\${key[char].name}<div class="numeral">\${key[char].array.length}</div>\`;
 if (key[char].display == "none") {
 key[char].GUI.classList.add("hiddenKey"); 
 key[char].GUI.innerHTML = 
-`${key[char].name}
-<div class="numeral">${key[char].array.length}</div>
+\`\${key[char].name}
+<div class="numeral">\${key[char].array.length}</div>
 <div class="hideIndicator">HIDDEN</div>
-`;
+\`;
 } else {
-`${key[char].name}
-<div class="numeral">${key[char].array.length}</div>
-`;
+\`\${key[char].name}
+<div class="numeral">\${key[char].array.length}</div>
+\`;
 key[char].GUI.classList.remove("hiddenKey"); 
 }
 });
@@ -1311,12 +1259,12 @@ for (let j = 0; j < 4;  j++) { updateViewerColour(j); }
 }
 function shiftKeyLabels() {
 key.topRowNumbers.forEach((char,index) => {
-key[char].GUI.innerHTML = `${key.topRowNumbersAlternate[index]}<div class="hideIndicator">${key.topRowNumbersSmallText[index]}</div>`
+key[char].GUI.innerHTML = \`\${key.topRowNumbersAlternate[index]}<div class="hideIndicator">\${key.topRowNumbersSmallText[index]}</div>\`
 });
 }
 function unshiftKeyLabels() {
 key.additionalKeys.forEach((keyname,index) => {
-key[keyname].GUI.innerHTML = `${key.additionalKeysText[index]}<div class="extraText">${key.additionalKeysHTML[index]}</div>`;
+key[keyname].GUI.innerHTML = \`\${key.additionalKeysText[index]}<div class="extraText">\${key.additionalKeysHTML[index]}</div>\`;
 });
 }
 function brush() {
@@ -1353,12 +1301,12 @@ if (GUIflip == "true") {
 GUIflip = "false";
 localStorage.setItem("GUIflip", "true");
 key.names.forEach((value, index) => {
-key[value].GUI.classList.add(`${value}alt`); });
+key[value].GUI.classList.add(\`\${value}alt\`); });
 key.additionalKeys.forEach((value, index) => {
-key[value].GUI.classList.add(`hideThisLetter`); });
+key[value].GUI.classList.add(\`hideThisLetter\`); });
 key.topRowNumbers.forEach((value, index) => {
-key[value].GUI.classList.add(`${value}alt`);
-key[value].GUI.classList.remove(`hideThisLetter`);
+key[value].GUI.classList.add(\`\${value}alt\`);
+key[value].GUI.classList.remove(\`hideThisLetter\`);
 });
 GUI.classList.add("GUIsmall");
 key.command.classList.add("hideThisLetter");
@@ -1367,11 +1315,11 @@ key.command.classList.add("hideThisLetter");
 GUIflip = "true";
 localStorage.setItem("GUIflip", "false");
 key.names.forEach((value, index) => {
-key[value].GUI.classList.remove(`${value}alt`); });
+key[value].GUI.classList.remove(\`\${value}alt\`); });
 key.additionalKeys.forEach((value, index) => {
-key[value].GUI.classList.remove(`hideThisLetter`); });
+key[value].GUI.classList.remove(\`hideThisLetter\`); });
 key.topRowNumbers.forEach((value, index) => {
-key[value].GUI.classList.remove(`${value}alt`);
+key[value].GUI.classList.remove(\`\${value}alt\`);
 });
 GUI.classList.remove("GUIsmall");
 key.command.classList.remove("hideThisLetter");
@@ -1382,7 +1330,7 @@ function abbreviate() {
 if (abbr == 0) { abbr = 2; } else { abbr = 0; }
 for (let j = 0; j < treeValues.length; j++) {
 for (let k = 0; k < treeValues[j].path.DOM.length; k++) {
-treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\//g, "");
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\\//g, "");
 } }
 if (abbr == 0) { return; }
 for (let j = 0; j < treeValues.length; j++) {
@@ -1396,7 +1344,7 @@ function unabbreviate() {
 
 for (let j = 0; j < treeValues.length; j++) {
 for (let k = 0; k < treeValues[j].path.DOM.length; k++) {
-treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\//g, "");
+treeValues[j].path.DOM[k].innerText = treeValues[j].path.text[k].replace(/\\//g, "");
 } }
 
 
@@ -1408,16 +1356,16 @@ key[theKey].GUI.classList.remove("press");
 }, 600);
 }
 function fontSizeUp() {
-       if ( fitSelection.choice == 0 ) { fitSelection.option0.fontSize += 0.5; document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`;
-} else if ( fitSelection.choice == 2 ) { fitSelection.option2.fontSize += 0.5; document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`;
-} else if ( fitSelection.choice == 1 ) { fitSelection.option1.fontSize += 0.5; document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`;
+       if ( fitSelection.choice == 0 ) { fitSelection.option0.fontSize += 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`;
+} else if ( fitSelection.choice == 2 ) { fitSelection.option2.fontSize += 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`;
+} else if ( fitSelection.choice == 1 ) { fitSelection.option1.fontSize += 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`;
 }
 localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
 }
 function fontSizeDown() {
-       if ( fitSelection.choice == 0 ) { if (fitSelection.option0.fontSize > 4) { fitSelection.option0.fontSize -= 0.5; document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`; }
-} else if ( fitSelection.choice == 2 ) { if (fitSelection.option2.fontSize > 4) { fitSelection.option2.fontSize -= 0.5; document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`; }
-} else if ( fitSelection.choice == 1 ) { if (fitSelection.option1.fontSize > 4) { fitSelection.option1.fontSize -= 0.5; document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`; }
+       if ( fitSelection.choice == 0 ) { if (fitSelection.option0.fontSize > 4) { fitSelection.option0.fontSize -= 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`; }
+} else if ( fitSelection.choice == 2 ) { if (fitSelection.option2.fontSize > 4) { fitSelection.option2.fontSize -= 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`; }
+} else if ( fitSelection.choice == 1 ) { if (fitSelection.option1.fontSize > 4) { fitSelection.option1.fontSize -= 0.5; document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`; }
 }
 localStorage.setItem("fitSelection", JSON.stringify(fitSelection));
 }
@@ -1577,14 +1525,14 @@ for (let j = 1; j < parseInt(treeFocus.dataset.childIndex) + 1; j++) { clips.pus
 } else if (method == "neat") {
        if (clips.join("/").includes(".")) {
        const filename = clips.pop(); 
-       copyToClipboard("\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\nclear;\nls;\n" + cmd1 + " " + filename + ";");
+       copyToClipboard("\\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\\nclear;\\nls;\\n" + cmd1 + " " + filename + ";");
        treeValues[dataIndex].end.notification.innerText = cmd1 + " cmd";
        } else {
        if (cmd1 == "notepad") {
-       copyToClipboard(workingDirectory.replace(/\/c\//g, "C:\\").replace(/\//g, "\\") + "\\" + clips.join("\\"));
+       copyToClipboard(workingDirectory.replace(/\\/c\\//g, "C:\\\\").replace(/\\//g, "\\\\") + "\\\\" + clips.join("\\\\"));
        treeValues[dataIndex].end.notification.innerText = "win dir";
        } else {
-       copyToClipboard("\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\nclear;\nls;");
+       copyToClipboard("\\npushd" + " " + workingDirectory + "/" + clips.join("/") + ";\\nclear;\\nls;");
        treeValues[dataIndex].end.notification.innerText = "copy";
        }
        }
@@ -1643,27 +1591,27 @@ if (cmd1 != "pad128" &&
 let output = "";
 for (let j = 0; j < dataGroup.length; j++) {
 output += dataGroup[j]; }
-copyToClipboard("\n" + cmd1 + " " + output + " " + cmd2);
+copyToClipboard("\\n" + cmd1 + " " + output + " " + cmd2);
 
 } else if (cmd1 == "pad128") {
 let output = "";
 for (let j = 0; j < dataGroup.length; j++) {
-output += "     " + dataGroup[j].padEnd(123, " ") + "\n"; }
-copyToClipboard("\n" + output);
+output += "     " + dataGroup[j].padEnd(123, " ") + "\\n"; }
+copyToClipboard("\\n" + output);
 
 } else if (cmd1 == "mv128") {
 let output = "";
 for (let j = 0; j < dataGroup.length; j++) {
-output += "mv" + "     " + dataGroup[j].padEnd(123, " ") + "     " + dataGroup[j].padEnd(123, " ") + ";" + "\n"; }
-copyToClipboard("\n" + output);
+output += "mv" + "     " + dataGroup[j].padEnd(123, " ") + "     " + dataGroup[j].padEnd(123, " ") + ";" + "\\n"; }
+copyToClipboard("\\n" + output);
 
 } else if (cmd1 == "pasteUp") {
 let output = "";
-output += dataGroup[0] + " \\ \n";
+output += dataGroup[0] + " \\\\ \\n";
 for (let j = 1; j < dataGroup.length - 1; j++) {
-output += "      " + dataGroup[j] + " \\ \n"; }
+output += "      " + dataGroup[j] + " \\\\ \\n"; }
 output += "      " + dataGroup[dataGroup.length - 1];
-copyToClipboard("\n" + "paste" + " " + output + " " + ";");
+copyToClipboard("\\n" + "paste" + " " + output + " " + ";");
 
 } else if (cmd1 == "grepTop") {
 
@@ -1683,8 +1631,8 @@ let output = "";
 const alphabet =
 [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 for (let j = 0; j < dataGroup.length; j++) {
-output += "mv " + dataGroup[j].padEnd(128, " ") + " " + dataGroup[j].replace(/(\/._)([^\/]*)$/g, "/" + "$2").replace(/\/([^\/]*)$/g, "/" + alphabet[j] + "_" + "$1") + ";\n"; }
-copyToClipboard("\n" + output);
+output += "mv " + dataGroup[j].padEnd(128, " ") + " " + dataGroup[j].replace(/(\\/._)([^\\/]*)\$/g, "/" + "\$2").replace(/\\/([^\\/]*)\$/g, "/" + alphabet[j] + "_" + "\$1") + ";\\n"; }
+copyToClipboard("\\n" + output);
 
 
 
@@ -1698,27 +1646,27 @@ const alphabet =
 [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 output += "mkdir z_newDirectory; cd z_newDirectory; touch"
 for (let j = 0; j < 25; j++) {
-output += ` ${alphabet[j]}_.js`;
+output += \` \${alphabet[j]}_.js\`;
 }
-output += ` z_.js; clear; ls;`;
-copyToClipboard("\n" + output);
+output += \` z_.js; clear; ls;\`;
+copyToClipboard("\\n" + output);
 
 } else if (cmd1 == "catCAT") {
 let output = "echo > temp;";
 for (let j = 0; j < dataGroup.length; j++) {
 output += 
-`
+\`
 echo >> temp;
-echo "/*** ${dataGroup[j]} ***/" >> temp; 
+echo "/*** \${dataGroup[j]} ***/" >> temp; 
 echo >> temp;
-cat ${dataGroup[j]} >> temp;`;
+cat \${dataGroup[j]} >> temp;\`;
 }
 output +=
-`
-${editorName} temp;
+\`
+\${editorName} temp;
 rm temp;
 clear;
-`;
+\`;
 copyToClipboard(output);
 
 }
@@ -1731,7 +1679,7 @@ copyToClipboard(output);
 let output = "";
 for (let j = 0; j < dataGroup.length; j++) {
 output += dataGroup[j]; }
-copyToClipboard("\n" + cmd1 + " " + output);
+copyToClipboard("\\n" + cmd1 + " " + output);
 }
 }
 }
@@ -1796,15 +1744,15 @@ query.push(treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[j]);
 
 
 
-copyToClipboard(`
-cd ${workingDirectory};
-grep "${value}" $(find ${query.join("/")} -type f) | \
-sed '/\.swp/d' | sed '/\.git/d' | \
+copyToClipboard(\`
+cd \${workingDirectory};
+grep "\${value}" \$(find \${query.join("/")} -type f) | \\
+sed '/\\.swp/d' | sed '/\\.git/d' | \\
 sed 's/:.*//g' | uniq > "copy & paste this list back to a key";
-vi "copy & paste this list back to a key" $(cat "copy & paste this list back to a key");
+vi "copy & paste this list back to a key" \$(cat "copy & paste this list back to a key");
 rm "copy & paste this list back to a key";
 clear;
-ls;`);
+ls;\`);
 
 /*
 
@@ -1825,9 +1773,9 @@ grepBar.style.display = "none";
 
 }
 function setSource(input) {
-if (!treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/").includes(".html")) {
-if (viewer["file" + input].window.src != treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/")) {
-viewer["file" + input].window.src = treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/");
+if (!treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/").includes(".html")) {
+if (viewer["file" + input].window.src != treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/")) {
+viewer["file" + input].window.src = treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/");
 }
 } else {
 viewer["file" + input].window.src = null;
@@ -1836,30 +1784,30 @@ viewer["file" + input].reference = treeValues[parseInt(treeFocus.dataset.treeInd
 localStorage.setItem("file" + input, viewer["file" + input].reference);
 viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
-viewer["file" + input].filter.innerHTML = `<button>${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.length - 1]} <button class="letter">${treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name}</button></button>`;
+viewer["file" + input].filter.innerHTML = \`<button>\${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text[treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.length - 1]} <button class="letter">\${treeValues[parseInt(treeFocus.dataset.treeIndex)].key.name}</button></button>\`;
 viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 }
 function updateViewerColour(input) {
 try {
 viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
-viewer["file" + input].filter.innerHTML = `<button>${tree[viewer["file" + input].reference].path.text[tree[viewer["file" + input].reference].path.text.length - 1]} <button class="letter">${tree[viewer["file" + input].reference].key.name}</button></button>`;
+viewer["file" + input].filter.innerHTML = \`<button>\${tree[viewer["file" + input].reference].path.text[tree[viewer["file" + input].reference].path.text.length - 1]} <button class="letter">\${tree[viewer["file" + input].reference].key.name}</button></button>\`;
 viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 } catch {}
 }
 function setFromStorage(input) {
 let value = tree[viewer["file" + input].reference].DOM;
-if (!treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/").includes(".html")) {
-if (viewer["file" + input].window.src != treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/")) {
-viewer["file" + input].window.src = treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\/\//g, "/");
+if (!treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/").includes(".html")) {
+if (viewer["file" + input].window.src != treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/")) {
+viewer["file" + input].window.src = treeValues[parseInt(value.dataset.treeIndex)].path.text.join("/").replace(/\\/\\//g, "/");
 }
 } else {
 viewer["file" + input].window.src = null;
 }
 viewer["file" + input].filter.style.borderColor     = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 viewer["file" + input].filter.style.backgroundColor = "rgba" + colour[key[tree[viewer["file" + input].reference].key.name].colour].rgb.slice(3,-1) + ",0.25)";
-viewer["file" + input].filter.innerHTML = `<button>${treeValues[parseInt(value.dataset.treeIndex)].path.text[treeValues[parseInt(value.dataset.treeIndex)].path.text.length - 1]} <button class="letter">${treeValues[parseInt(value.dataset.treeIndex)].key.name}</button></button>`;
+viewer["file" + input].filter.innerHTML = \`<button>\${treeValues[parseInt(value.dataset.treeIndex)].path.text[treeValues[parseInt(value.dataset.treeIndex)].path.text.length - 1]} <button class="letter">\${treeValues[parseInt(value.dataset.treeIndex)].key.name}</button></button>\`;
 viewer["file" + input].filter.firstElementChild.style.backgroundColor = colour[key[tree[viewer["file" + input].reference].key.name].colour].name;
 }
 function setLeftSemi() {
@@ -1897,32 +1845,32 @@ function copyToEditor() {
 if (fitSelection.choice == 1 || fitSelection.choice == 2) {
        if (viewer.file0.window.classList.contains("viewerSemi") && viewer.file2.window.classList.contains("viewerSemi")) {
 let value = editorName;
-value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
 if (fitSelection.choice == 2) {
-value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
-copyToClipboard(value.replace(/\. /g, " "));
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
 } else if (viewer.file0.window.classList.contains("viewerSemi")) {
 let value = editorName;
-value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
 if (fitSelection.choice == 2) {
-value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
-value += tree[viewer.file3.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
-copyToClipboard(value.replace(/\. /g, " "));
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file3.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
 } else if (viewer.file2.window.classList.contains("viewerSemi")) {
 let value = editorName;
-value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
-value += tree[viewer.file1.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file1.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
 if (fitSelection.choice == 2) {
-value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
-copyToClipboard(value.replace(/\. /g, " "));
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
 } else {
 let value = editorName;
-value += tree[viewer.file0.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
-value += tree[viewer.file1.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
+value += tree[viewer.file0.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file1.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
 if (fitSelection.choice == 2) {
-value += tree[viewer.file2.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/");
-value += tree[viewer.file3.reference].path.text.join("/").replace(/\.\//g, " " + workingDirectory + "/"); }
-copyToClipboard(value.replace(/\. /g, " "));
+value += tree[viewer.file2.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/");
+value += tree[viewer.file3.reference].path.text.join("/").replace(/\\.\\//g, " " + workingDirectory + "/"); }
+copyToClipboard(value.replace(/\\. /g, " "));
 }
 for (let j = 0; j < 4; j++) {
 let takeAway = 250 + Math.floor(Math.random() * 500 + 10);
@@ -1946,23 +1894,23 @@ treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
 
 function removeLayouts() {
 for (let j = 0; j < 2;  j++) { for (let k = 0; k < 3;  k++) {
-viewer["file" + j].window.classList.remove(`viewerLayoutLeft${k}`);
-viewer["file" + j].filter.classList.remove(`viewerLayoutLeft${k}`);
+viewer["file" + j].window.classList.remove(\`viewerLayoutLeft\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutLeft\${k}\`);
 }}
 for (let j = 2; j < 4;  j++) { for (let k = 0; k < 3;  k++) {
-viewer["file" + j].window.classList.remove(`viewerLayoutRight${k}`);
-viewer["file" + j].filter.classList.remove(`viewerLayoutRight${k}`);
+viewer["file" + j].window.classList.remove(\`viewerLayoutRight\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutRight\${k}\`);
 }}
 }
 
 function addLayouts(input) {
 for (let j = 0; j < 2;  j++) {
-viewer["file" + j].window.classList.add(`viewerLayoutLeft${input}`);
-viewer["file" + j].filter.classList.add(`viewerLayoutLeft${input}`);
+viewer["file" + j].window.classList.add(\`viewerLayoutLeft\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutLeft\${input}\`);
 }
 for (let j = 2; j < 4;  j++) {
-viewer["file" + j].window.classList.add(`viewerLayoutRight${input}`);
-viewer["file" + j].filter.classList.add(`viewerLayoutRight${input}`);
+viewer["file" + j].window.classList.add(\`viewerLayoutRight\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutRight\${input}\`);
 }
 }
 
@@ -1971,37 +1919,37 @@ viewer["file" + j].filter.classList.add(`viewerLayoutRight${input}`);
 fitSelection.choice = 0;
 abbr = 2;
 abbreviate();
-document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`;
+document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`;
 removeLayouts();
 addLayouts(0);
 GUI.style.transform  = "scale(0.94)";
-treeMain.style.width = `calc(${parseInt(window.innerWidth)}px - 6vw)`;
-GUI.style.left       = `3vw`;
-treeMain.style.left  = `calc(0px + 3vw)`;
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth)}px - 6vw)\`;
+GUI.style.left       = \`3vw\`;
+treeMain.style.left  = \`calc(0px + 3vw)\`;
 } else if ( (window.innerWidth / window.innerHeight) - (14 / 9) >  0 && (fitSelection.choice == 2 || fitSelection.choice == null) ) {
 
 fitSelection.choice = 2;
 abbr = 0;
 abbreviate();
-document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`;
+document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`;
 removeLayouts();
 addLayouts(2);
 GUI.style.transform  = "scale(0.274)";
-treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.33333)}px - 6vw)`;
-GUI.style.left       = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
-treeMain.style.left  = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.33333)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
 } else if ( (window.innerWidth / window.innerHeight) - (3 / 3) >  0) {
 
 fitSelection.choice = 1;
 abbr = 0;
 abbreviate();
-document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`;
+document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`;
 removeLayouts();
 addLayouts(1);
 GUI.style.transform  = "scale(0.439)";
-treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.5)}px - 6vw)`;
-GUI.style.left       = `calc(${window.innerWidth * 0.5}px + 3vw)`;
-treeMain.style.left  = `calc(${window.innerWidth * 0.5}px + 3vw)`;
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.5)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
 }
 treeFocus.focus();
 treeFocus.parentNode.classList.add("highlight");
@@ -2016,23 +1964,23 @@ treeMain.style.paddingBottom = parseInt(window.innerHeight / 2) - 18 + "px";
 
 function removeLayouts() {
 for (let j = 0; j < 2;  j++) { for (let k = 0; k < 3;  k++) {
-viewer["file" + j].window.classList.remove(`viewerLayoutLeft${k}`);
-viewer["file" + j].filter.classList.remove(`viewerLayoutLeft${k}`);
+viewer["file" + j].window.classList.remove(\`viewerLayoutLeft\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutLeft\${k}\`);
 }}
 for (let j = 2; j < 4;  j++) { for (let k = 0; k < 3;  k++) {
-viewer["file" + j].window.classList.remove(`viewerLayoutRight${k}`);
-viewer["file" + j].filter.classList.remove(`viewerLayoutRight${k}`);
+viewer["file" + j].window.classList.remove(\`viewerLayoutRight\${k}\`);
+viewer["file" + j].filter.classList.remove(\`viewerLayoutRight\${k}\`);
 }}
 }
 
 function addLayouts(input) {
 for (let j = 0; j < 2;  j++) {
-viewer["file" + j].window.classList.add(`viewerLayoutLeft${input}`);
-viewer["file" + j].filter.classList.add(`viewerLayoutLeft${input}`);
+viewer["file" + j].window.classList.add(\`viewerLayoutLeft\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutLeft\${input}\`);
 }
 for (let j = 2; j < 4;  j++) {
-viewer["file" + j].window.classList.add(`viewerLayoutRight${input}`);
-viewer["file" + j].filter.classList.add(`viewerLayoutRight${input}`);
+viewer["file" + j].window.classList.add(\`viewerLayoutRight\${input}\`);
+viewer["file" + j].filter.classList.add(\`viewerLayoutRight\${input}\`);
 }
 }
 
@@ -2040,37 +1988,37 @@ viewer["file" + j].filter.classList.add(`viewerLayoutRight${input}`);
 
 abbr = 2;
 abbreviate();
-document.documentElement.style.fontSize = `${fitSelection.option0.fontSize}px`;
+document.documentElement.style.fontSize = \`\${fitSelection.option0.fontSize}px\`;
 removeLayouts();
 addLayouts(0);
 GUI.style.transform  = "scale(0.94)";
-treeMain.style.width = `calc(${parseInt(window.innerWidth)}px - 6vw)`;
-GUI.style.left       = `3vw`;
-treeMain.style.left  = `calc(0px + 3vw)`;
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth)}px - 6vw)\`;
+GUI.style.left       = \`3vw\`;
+treeMain.style.left  = \`calc(0px + 3vw)\`;
 
 } else if (fitSelection.choice == 2) {
 
 abbr = 0;
 abbreviate();
-document.documentElement.style.fontSize = `${fitSelection.option2.fontSize}px`;
+document.documentElement.style.fontSize = \`\${fitSelection.option2.fontSize}px\`;
 removeLayouts();
 addLayouts(2);
 GUI.style.transform  = "scale(0.274)";
-treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.33333)}px - 6vw)`;
-GUI.style.left       = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
-treeMain.style.left  = `calc(${window.innerWidth * 0.33333}px + 3vw)`;
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.33333)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.33333}px + 3vw)\`;
 
 } else if (fitSelection.choice == 1) {
 
 abbr = 0;
 abbreviate();
-document.documentElement.style.fontSize = `${fitSelection.option1.fontSize}px`;
+document.documentElement.style.fontSize = \`\${fitSelection.option1.fontSize}px\`;
 removeLayouts();
 addLayouts(1);
 GUI.style.transform  = "scale(0.439)";
-treeMain.style.width = `calc(${parseInt(window.innerWidth * 0.5)}px - 6vw)`;
-GUI.style.left       = `calc(${window.innerWidth * 0.5}px + 3vw)`;
-treeMain.style.left  = `calc(${window.innerWidth * 0.5}px + 3vw)`;
+treeMain.style.width = \`calc(\${parseInt(window.innerWidth * 0.5)}px - 6vw)\`;
+GUI.style.left       = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
+treeMain.style.left  = \`calc(\${window.innerWidth * 0.5}px + 3vw)\`;
 
 }
 
@@ -2126,7 +2074,7 @@ event.clipboardData.setData('text/plain', mousemoveTarget.lastElementChild.first
 });document.addEventListener("paste", event => {
 
 event.preventDefault();
-const fileList = event.clipboardData.getData('text/plain').trim().split("\n");
+const fileList = event.clipboardData.getData('text/plain').trim().split("\\n");
 
 let targetKey = null;
 key.names.forEach((char, index) => {
@@ -2148,7 +2096,7 @@ showColour(targetKey);
 for (let j = 0; j < fileList.length; j++) {
 try {
 
-var reference = treeValues[parseInt(tree["." + fileList[j].replace(/\//g, "_").replace(/\./g, "_").slice(1)].DOM.dataset.treeIndex)]
+var reference = treeValues[parseInt(tree["." + fileList[j].replace(/\\//g, "_").replace(/\\./g, "_").slice(1)].DOM.dataset.treeIndex)]
 
 reference.key.name = key[targetKey].name;
 reference.DOM.style.backgroundColor      = key[targetKey].colour;
@@ -2298,15 +2246,15 @@ event.preventDefault();
 if (event.shiftKey) {
 window.open("shadowTree.html","_blank");
 } else if (!event.shiftKey) {
-window.open(`${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/")}`,"_blank");
+window.open(\`\${treeValues[parseInt(treeFocus.dataset.treeIndex)].path.text.join("/")}\`,"_blank");
 }
 }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
 /*   F1    */ if (kC == 112)              { event.preventDefault();
-alert(`Open the console, CTRL + SHIFT + J or K.
-Within the console: Read minimal instructions for usage.`)
+alert(\`Open the console, CTRL + SHIFT + J or K.
+Within the console: Read minimal instructions for usage.\`)
 }
 /*   F2    */ if (kC == 113)              {                                }
 /*   F3    */ if (kC == 114)              {                                }
@@ -2433,11 +2381,11 @@ treeFocus.parentNode.classList.add("copied");
 /*                                                                        */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    `    */ if (kC == 192 && cC ==  96) { invertSelection();             }/*    ~    */ if (kC == 192 && cC == 126) { invertSelection();             }
+/*    \`    */ if (kC == 192 && cC ==  96) { invertSelection();             }/*    ~    */ if (kC == 192 && cC == 126) { invertSelection();             }
 /*    1    */ if (kC ==  49 && cC ==  49) { changeView("n1");              }/*    !    */ if (kC ==  49 && cC ==  33) {retrieve("multiple","command","pad128");}
 /*    2    */ if (kC ==  50 && cC ==  50) { changeView("n2");              }/*    @    */ if (kC ==  50 && cC ==  64) {retrieve("multiple","command","mv128");}
 /*    3    */ if (kC ==  51 && cC ==  51) { changeView("n3");              }/*    #    */ if (kC ==  51 && cC ==  35) {retrieve("multiple","command","pasteUp");}
-/*    4    */ if (kC ==  52 && cC ==  52) { changeView("n4");              }/*    $    */ if (kC ==  52 && cC ==  36) {retrieve("multiple","command","grepTop");}
+/*    4    */ if (kC ==  52 && cC ==  52) { changeView("n4");              }/*    \$    */ if (kC ==  52 && cC ==  36) {retrieve("multiple","command","grepTop");}
 /*    5    */ if (kC ==  53 && cC ==  53) { changeView("n5");              }/*    %    */ if (kC ==  53 && cC ==  37) {retrieve("multiple","command","abc");}
 /*    6    */ if (kC ==  54 && cC ==  54) { changeView("n6");              }/*    ^    */ if (kC ==  54 && cC ==  94) {retrieve("multiple","command","abcPlus");}
 /*    7    */ if (kC ==  55 && cC ==  55) { changeView("n7");              }/*    &    */ if (kC ==  55 && cC ==  38) {retrieve("multiple","command","catCAT");}
@@ -2461,7 +2409,7 @@ treeFocus.parentNode.classList.add("copied");
 /*    p    */ if (kC ==  80 && cC == 112) { setColour("P");    press("P"); }/*    P    */ if (kC ==  80 && cC ==  80) { toggleColour("P"); press("P"); }
 /*    [    */ if (kC == 219 && cC ==  91) { setSource(0);                  }/*    {    */ if (kC == 219 && cC == 123) { setSource(1);                  }
 /*    ]    */ if (kC == 221 && cC ==  93) { setSource(2);                  }/*    }    */ if (kC == 221 && cC == 125) { setSource(3);                  }
-/*    \    */ if (kC == 220 && cC ==  92) { switchFit();                   }/*    |    */ if (kC == 220 && cC == 124) { selectFit(0);                  }
+/*    \\    */ if (kC == 220 && cC ==  92) { switchFit();                   }/*    |    */ if (kC == 220 && cC == 124) { selectFit(0);                  }
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
@@ -2555,7 +2503,7 @@ viewer.file2.window.classList.add("viewerSemi");
 viewer.file2.filter.classList.add("viewerSemi");
 }
 
-console.log(`
+console.log(\`
 Sometimes you might need to use "localStorage.clear(); location.reload();"
 
 Welcome to shadowTree:
@@ -2577,18 +2525,18 @@ I assume you will know how to do that: "chmod 755 filename; . ./filename;".
 #!/bin/bash
 
 echo "findFileList =" > "./find -type f.js";
-echo "\`" >> "./find -type f.js";
-find ../ -type f | sed '/\.swp/d' | \
-                   sed '/\.git/d' | \
-                   sed '/^\.\.\/$/d' | \
-                   sed '/^\.\.\/\./d' | \
-                   sed '/'$(echo "$(pwd | sed 's/^.*\///g')")'/d' | \
-                   sed 's/\.\.\///g' | \
-                   sed 's/^/..\//g' >> "./find -type f.js";
-echo "\`;" >> "./find -type f.js";
+echo "\\\`" >> "./find -type f.js";
+find ../ -type f | sed '/\\.swp/d' | \\
+                   sed '/\\.git/d' | \\
+                   sed '/^\\.\\.\\/\$/d' | \\
+                   sed '/^\\.\\.\\/\\./d' | \\
+                   sed '/'\$(echo "\$(pwd | sed 's/^.*\\///g')")'/d' | \\
+                   sed 's/\\.\\.\\///g' | \\
+                   sed 's/^/..\\//g' >> "./find -type f.js";
+echo "\\\`;" >> "./find -type f.js";
 echo >> "./find -type f.js";
 
-echo "workingDirectory = \"$(pwd | sed 's/\/[^\/]*$//')\";" > pwd.js
+echo "workingDirectory = \\"\$(pwd | sed 's/\\/[^\\/]*\$//')\\";" > pwd.js
 
 
 
@@ -2608,7 +2556,7 @@ You will end up with something like this:
     Remember, shadowTree doesn't really "DO" anything. It just copies commands to the clipboard and whatnot. It's not like one of those expensive utility programs or anything, and it's definitely not a file utility. It's basically just a file visualization tool, and a very poor viewer. The only thing it might be good for is making lists of files by colouring them. Anything else is just an "I guess it's there so I might use it sometimes". Basically, anything you already have or know about is probably better than this at absolutely everything that this might do.
 
 Sometimes you might need to use "localStorage.clear(); location.reload();"
-`);
+\`);
 </script>
 </body>
 </html>

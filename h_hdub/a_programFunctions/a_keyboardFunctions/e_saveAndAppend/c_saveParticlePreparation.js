@@ -27,7 +27,7 @@ const autoHeader = `
 
 const autoFooter = `
 <script>
-</script>
+</` + `script>
 </body>
 </html>
 `;
