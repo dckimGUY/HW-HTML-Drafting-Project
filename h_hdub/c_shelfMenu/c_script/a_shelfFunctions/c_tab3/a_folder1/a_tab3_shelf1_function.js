@@ -527,7 +527,7 @@ const constructedButtonWidth  = ui.canvasOutput2.ref.width ;
 const constructedButtonHeight = ui.canvasOutput2.ref.height;
 
 buttonHTML1 = `
-<button id="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="position: absolute; top: 0px; right: -152px; border: 0px; margin: 0px; padding: 0px; width: ${constructedButtonWidth}px; height: ${constructedButtonHeight}px; background-color: transparent;" data-button-data="${buttonData}" class="pixelArt" onclick="`;
+<button id="${uniqueIdentifier}" style="position: absolute; top: 0px; right: -152px; border: 0px; margin: 0px; padding: 0px; width: ${constructedButtonWidth}px; height: ${constructedButtonHeight}px; background-color: transparent;" data-button-data="${buttonData}" class="pixelArt" onclick="`;
 
 buttonHTML2 = `">
 <style>

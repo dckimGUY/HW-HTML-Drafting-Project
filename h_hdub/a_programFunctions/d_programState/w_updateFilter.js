@@ -1,7 +1,6 @@
 function updateFilter(value) {
 
 
-
 let newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value}) blur(${document.getElementById("filterBlur").value}px)`;
 
 if (document.getElementById("filterBlur").value == 0) {
@@ -46,7 +45,26 @@ if (coinFocus == null) return 0;
 if (coinFocus.style.backdropFilter != "none") {
 coinFocus.style.backdropFilter = newFilter;
 } else {
+
+
+if (shiftHold) {
+
+
+
+switch (coinFocus.dataset.coinTrip) {
+case "0": for (h of coinTrip.sel0) { h.style.filter = newFilter; }; break;
+case "1": for (h of coinTrip.sel1) { h.style.filter = newFilter; }; break;
+case "2": for (h of coinTrip.sel2) { h.style.filter = newFilter; }; break;
+}
+
+
+
+
+} else {
+
+
 coinFocus.style.filter = newFilter;
+}
 }
 
 document.getElementById("filterBrightness").title = document.getElementById("filterBrightness").value;

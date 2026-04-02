@@ -13851,7 +13851,6 @@ copyToClipboard(`try { go; } catch { try { changeLayer('${layerInput}'); } catch
 }function updateFilter(value) {
 
 
-
 let newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value}) blur(${document.getElementById("filterBlur").value}px)`;
 
 if (document.getElementById("filterBlur").value == 0) {
@@ -13896,7 +13895,26 @@ if (coinFocus == null) return 0;
 if (coinFocus.style.backdropFilter != "none") {
 coinFocus.style.backdropFilter = newFilter;
 } else {
+
+
+if (shiftHold) {
+
+
+
+switch (coinFocus.dataset.coinTrip) {
+case "0": for (h of coinTrip.sel0) { h.style.filter = newFilter; }; break;
+case "1": for (h of coinTrip.sel1) { h.style.filter = newFilter; }; break;
+case "2": for (h of coinTrip.sel2) { h.style.filter = newFilter; }; break;
+}
+
+
+
+
+} else {
+
+
 coinFocus.style.filter = newFilter;
+}
 }
 
 document.getElementById("filterBrightness").title = document.getElementById("filterBrightness").value;
@@ -24116,7 +24134,7 @@ const constructedButtonWidth  = ui.canvasOutput2.ref.width ;
 const constructedButtonHeight = ui.canvasOutput2.ref.height;
 
 buttonHTML1 = `
-<button id="${uniqueIdentifier}" title="${ui.buttonTooltip.ref.value}" style="position: absolute; top: 0px; right: -152px; border: 0px; margin: 0px; padding: 0px; width: ${constructedButtonWidth}px; height: ${constructedButtonHeight}px; background-color: transparent;" data-button-data="${buttonData}" class="pixelArt" onclick="`;
+<button id="${uniqueIdentifier}" style="position: absolute; top: 0px; right: -152px; border: 0px; margin: 0px; padding: 0px; width: ${constructedButtonWidth}px; height: ${constructedButtonHeight}px; background-color: transparent;" data-button-data="${buttonData}" class="pixelArt" onclick="`;
 
 buttonHTML2 = `">
 <style>
@@ -26632,7 +26650,7 @@ const updateReadout = () => {
         } else {
             finalAction = "go.setState(go.xqn.grp['" + groupName + "'][" + val + "])";
         }
-        cmdDisplay.innerText = "if (typeof go !== 'undefined') { go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + "; }";
+        cmdDisplay.innerText = "go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + ";";
     }
 };
 setInterval(updateReadout, 15);
@@ -27127,6 +27145,10 @@ removePointerEventsNone();
 let stylePosition = "";
 let string = "";
 string = utilityLayer0.innerHTML;
+
+
+
+
 if (useAllLayers) {
 let tempString = "";
 for (h of levelName) { tempString += topLayer[h].b_content.innerHTML; }
@@ -27248,14 +27270,7 @@ let idRoll = [];
 
 for (let j = 0; j < doc.body.children.length; j++) {
 
-
-if (doc.body.children[j].dataset.addScript) {
-addToScript += "\n" + doc.body.children[j].dataset.addScript;
-doc.body.children[j].remove();
-continue;
-}
-
-if (doc.body.children[j].dataset.json) {
+if (doc.body.children[j].dataset.json || doc.body.children[j].dataset.addScript) {
 doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
 }
 
@@ -27287,14 +27302,7 @@ let otherCleanDOM = document.createElement("div");
 for (let j = 0; j < otherDoc.body.children.length; j++) {
 
 
-
-if (otherDoc.body.children[j].dataset.addScript) {
-addToScript += "\n" + otherDoc.body.children[j].dataset.addScript;
-otherDoc.body.children[j].remove();
-continue;
-}
-
-if (otherDoc.body.children[j].dataset.json) {
+if (otherDoc.body.children[j].dataset.json || otherDoc.body.children[j].dataset.addScript) {
 try {
 otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
 } catch {};
@@ -27687,6 +27695,10 @@ string = string.replace(/data-width="[^"]*"/g, "");
 string = string.replace(/style="[^"]*"/g, "");
 string = string.replace(/contenteditable="[^"]*"/g, "");
 
+string = string.replace(/onclick="[^"]*"/g, "");
+string = string.replace(/onmouseover="[^"]*"/g, "");
+string = string.replace(/onmouseout="[^"]*"/g, "");
+
 string = string.replace(/<button style=.position: absolute; z-index: 300;[^>]*><\/button>/g, "");
 string = string.replace(/<img alt=""[^>]*>/g, "");
 
@@ -27702,7 +27714,7 @@ styleEtc      = vwConversion(styleEtc,factor);
 doc = parser.parseFromString(string, 'text/html');
 
 let eventRoll = [];
-if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
+if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "mouseover", "mouseout", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
 
 
 
@@ -27710,6 +27722,17 @@ const lvlRoll = {};
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
+
+
+
+if (topLayer[i].b_content.children[j].dataset.addScript) {
+addToScript += "\n" + topLayer[i].b_content.children[j].dataset.addScript;
+topLayer[i].b_content.children[j].remove();
+continue;
+}
+
+
+
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
 }
 }
@@ -28121,13 +28144,12 @@ for (c of topLayer[h].b_content.children) {
 
 
 let extract = "";
+extract = c.lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+if (eventRoll[k] == "click") {
 extract = c.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+}
 scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
-
-
-
-
 }
 scriptStarter += `
 `;
@@ -28294,13 +28316,13 @@ return string;
 
 
 
+
 let stylesIncluded = "";
        if (!event.altKey) {
 stylesIncluded = stylePosition + styleEtc;
 } else if ( event.altKey) {
 stylesIncluded = stylePosition;
 }
-
 
 
 
@@ -28316,13 +28338,6 @@ return content;
 
 
 
-
-
-
-
-
-
-
 if (openInNewWindow) {
 const newWindow = window.open();
 newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter);
@@ -28333,16 +28348,14 @@ return;
 }
 
 
+
+
 saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
-}
-
-
-
-/* ARE YOU SURE YOU WANT TO TAKE ADVANTAGE OF THE WHITESPACE LIKE THAT? YES... */
+}/* ARE YOU SURE YOU WANT TO TAKE ADVANTAGE OF THE WHITESPACE LIKE THAT? YES... */
                        ui.folder51button.click =
              function() { folder5Selector(1); };
                        ui.folder52button.click =
@@ -32286,7 +32299,7 @@ body::-webkit-scrollbar { display: none;                                        
 <link rel="stylesheet" href="e_stylesheets/d_style.css?v=20251119100122"/>
 <link rel="stylesheet" href="e_stylesheets/e_style.css?v=20251119100122"/>
 
-<meta name="last-build" content="2026-04-01T03:01:35Z">
+<meta name="last-build" content="2026-04-01T19:40:41Z">
 
 <body>
 <div id="utilityLayer0"           ></div>
@@ -32298,7 +32311,7 @@ body::-webkit-scrollbar { display: none;                                        
 <div id="interfaceShelf"          ></div>
 <div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>
 <div id="scripts">
-<script src='./bundle.js?v=20260331230135'></script>
+<script src='./bundle.js?v=20260401154041'></script>
 <script src="./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js"></script>
 </div>
 </body>

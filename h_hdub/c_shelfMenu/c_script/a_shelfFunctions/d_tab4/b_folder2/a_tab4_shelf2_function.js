@@ -106,7 +106,7 @@ const updateReadout = () => {
         } else {
             finalAction = "go.setState(go.xqn.grp['" + groupName + "'][" + val + "])";
         }
-        cmdDisplay.innerText = "if (typeof go !== 'undefined') { go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + "; }";
+        cmdDisplay.innerText = "go.xqn.grp['" + groupName + "'].rate.set(" + targetGroup.rate.value + "); " + finalAction + ";";
     }
 };
 setInterval(updateReadout, 15);
@@ -601,6 +601,10 @@ removePointerEventsNone();
 let stylePosition = "";
 let string = "";
 string = utilityLayer0.innerHTML;
+
+
+
+
 if (useAllLayers) {
 let tempString = "";
 for (h of levelName) { tempString += topLayer[h].b_content.innerHTML; }
@@ -722,14 +726,7 @@ let idRoll = [];
 
 for (let j = 0; j < doc.body.children.length; j++) {
 
-
-if (doc.body.children[j].dataset.addScript) {
-addToScript += "\n" + doc.body.children[j].dataset.addScript;
-doc.body.children[j].remove();
-continue;
-}
-
-if (doc.body.children[j].dataset.json) {
+if (doc.body.children[j].dataset.json || doc.body.children[j].dataset.addScript) {
 doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
 }
 
@@ -761,14 +758,7 @@ let otherCleanDOM = document.createElement("div");
 for (let j = 0; j < otherDoc.body.children.length; j++) {
 
 
-
-if (otherDoc.body.children[j].dataset.addScript) {
-addToScript += "\n" + otherDoc.body.children[j].dataset.addScript;
-otherDoc.body.children[j].remove();
-continue;
-}
-
-if (otherDoc.body.children[j].dataset.json) {
+if (otherDoc.body.children[j].dataset.json || otherDoc.body.children[j].dataset.addScript) {
 try {
 otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
 } catch {};
@@ -1161,6 +1151,10 @@ string = string.replace(/data-width="[^"]*"/g, "");
 string = string.replace(/style="[^"]*"/g, "");
 string = string.replace(/contenteditable="[^"]*"/g, "");
 
+string = string.replace(/onclick="[^"]*"/g, "");
+string = string.replace(/onmouseover="[^"]*"/g, "");
+string = string.replace(/onmouseout="[^"]*"/g, "");
+
 string = string.replace(/<button style=.position: absolute; z-index: 300;[^>]*><\/button>/g, "");
 string = string.replace(/<img alt=""[^>]*>/g, "");
 
@@ -1176,7 +1170,7 @@ styleEtc      = vwConversion(styleEtc,factor);
 doc = parser.parseFromString(string, 'text/html');
 
 let eventRoll = [];
-if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
+if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "mouseover", "mouseout", "dblclick", "mousedown", "mouseup", "mousemove", "mousewheel", "input", "change", "load"]; }
 
 
 
@@ -1184,6 +1178,17 @@ const lvlRoll = {};
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
+
+
+
+if (topLayer[i].b_content.children[j].dataset.addScript) {
+addToScript += "\n" + topLayer[i].b_content.children[j].dataset.addScript;
+topLayer[i].b_content.children[j].remove();
+continue;
+}
+
+
+
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
 }
 }
@@ -1595,13 +1600,12 @@ for (c of topLayer[h].b_content.children) {
 
 
 let extract = "";
+extract = c.lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+if (eventRoll[k] == "click") {
 extract = c.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+}
 scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
-
-
-
-
 }
 scriptStarter += `
 `;
@@ -1768,13 +1772,13 @@ return string;
 
 
 
+
 let stylesIncluded = "";
        if (!event.altKey) {
 stylesIncluded = stylePosition + styleEtc;
 } else if ( event.altKey) {
 stylesIncluded = stylePosition;
 }
-
 
 
 
@@ -1790,13 +1794,6 @@ return content;
 
 
 
-
-
-
-
-
-
-
 if (openInNewWindow) {
 const newWindow = window.open();
 newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter);
@@ -1807,12 +1804,11 @@ return;
 }
 
 
+
+
 saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</script>" + fileFooter, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
 }
-
-
-
