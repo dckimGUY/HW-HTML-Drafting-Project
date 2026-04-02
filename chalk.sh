@@ -80,10 +80,10 @@ if [ -s asset_list.txt ]; then
 fi
 
 # Final Terser pass to clear experimental vestiges and whitespace
-# Using -c (compress) without -m (mangle) to keep HTML string literals working
 terser bundle.js -o bundle.js -c
 
-# Clean up build artifacts
+# Clean up build artifacts and include init script in the bundle
+cat ./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js >> bundle.js; 
 rm -rf "$IMG_DIR" asset_list.txt replace.sed
 # --- END OF OPTIMIZATION ---
 
@@ -111,16 +111,40 @@ echo '<div id="mouseIconLayer"          ></div>' >> index.html;
 echo '<div id="interfaceShelf"          ></div>' >> index.html;
 echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> index.html;
 echo '<div id="scripts">' >> index.html;
-echo '<script>' >> index.html;
-cat ./bundle.js >> index.html;
-echo >> index.html;
-cat ./h_hdub/d_handlers/c_initialization/c_insertNewWindow.js >> index.html;
-echo '</script>' >> index.html;
+# New Split-File model for index.html
+echo '<script src="bundle.js"></script>' >> index.html;
 echo '</div>' >> index.html;
 echo '</body>' >> index.html;
 echo '</html>' >> index.html;
 
-rm bundle.js 2>/dev/null;
+## Here is the 'CHALKING-UP' of the single file model 'hdubPixelArtEdition.html'
+cat y_header.txt > hdubPixelArtEdition.html;
+echo '<style>' >> hdubPixelArtEdition.html;
+cleancss ./e_stylesheets/a_style.css >> hdubPixelArtEdition.html;
+echo '</style>' >> hdubPixelArtEdition.html;
+echo >> hdubPixelArtEdition.html;
+echo -n '<meta name="last-build" content="' >> hdubPixelArtEdition.html;
+echo -n $(date -u +%Y-%m-%dT%H:%M:%SZ) >> hdubPixelArtEdition.html;
+echo '">' >> hdubPixelArtEdition.html;
+echo >> hdubPixelArtEdition.html;
+echo '<body>' >> hdubPixelArtEdition.html;
+echo '<div id="utilityLayer0"           ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="utilityLayer1"           ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="interfaceLayer"          ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="gridLayer"               ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="visualizationsLayer"     ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="mouseIconLayer"          ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="interfaceShelf"          ></div>' >> hdubPixelArtEdition.html;
+echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> hdubPixelArtEdition.html;
+echo '<div id="scripts">' >> hdubPixelArtEdition.html;
+echo '<script>' >> hdubPixelArtEdition.html;
+cat ./bundle.js >> hdubPixelArtEdition.html;
+echo '</script>' >> hdubPixelArtEdition.html;
+echo '</div>' >> hdubPixelArtEdition.html;
+echo '</body>' >> hdubPixelArtEdition.html;
+echo '</html>' >> hdubPixelArtEdition.html;
+
+# rm bundle.js 2>/dev/null; # Retained so index.html can load it
 
 ## THIS IS FOR NEOCITIES, DIRECT TO PROGRAM
 
@@ -130,4 +154,4 @@ cp index.html not_found.html;
 
 find . -type f -exec chmod 644 {} +;
 find . -type d -exec chmod 755 {} +;
-echo "... all done! index.html (Optimized), workingVersion.html (Dev), and permissions are set ...";
+echo "... all done! index.html (Optimized Bundle Link), hdubPixelArtEdition.html (Single File), workingVersion.html (Dev), and permissions are set ...";
