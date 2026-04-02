@@ -123,14 +123,6 @@ if (!event.ctrlKey) {
 event.preventDefault();
 toggleLocalView();
 }
-/*
-if (!es) {
-toggleInterfaceLayer();
-} else {
-enterWizardMaster();
-}
-*/
-
 }
 /*backspace*/ if (kC ==   8)              {
 
@@ -348,7 +340,7 @@ buzzWord(0,'ENTER',256,'magenta',400,200,25);
 /*                                                                        */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    `    */ if (kC == 192 && cC ==  96) { toggleMenu();             lastKey = "`"; }/*    ~    */ if (kC == 192 && cC == 126) { toggleInterfaceLayer();        lastKey = "~";}
+/*    `    */ if (kC == 192 && cC ==  96) { toggleMenu();             lastKey = "`"; }/*    ~    */ if (kC == 192 && cC == 126) { toggleMenu();                  lastKey = "~";}
 /*    1    */ if (kC ==  49 && cC ==  49) { changeLayer("b_layer1");  lastKey = "1"; }/*    !    */ if (kC ==  49 && cC ==  33) { changeLayer("l_layer11");      lastKey = "!";}
 /*    2    */ if (kC ==  50 && cC ==  50) { changeLayer("c_layer2");  lastKey = "2"; }/*    @    */ if (kC ==  50 && cC ==  64) { changeLayer("m_layer12");      lastKey = "@";}
 /*    3    */ if (kC ==  51 && cC ==  51) { changeLayer("d_layer3");  lastKey = "3"; }/*    #    */ if (kC ==  51 && cC ==  35) { changeLayer("n_layer13");      lastKey = "#";}

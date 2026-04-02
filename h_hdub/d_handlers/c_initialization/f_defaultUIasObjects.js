@@ -1,2 +1,1 @@
-const defaultUIasObjects = `
-`;
+const defaultUIasObjects = ``;

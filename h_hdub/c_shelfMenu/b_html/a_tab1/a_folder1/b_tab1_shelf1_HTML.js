@@ -26,7 +26,7 @@ shelfMenuHTML.tab1.folder1.HTML = `
 
 <div      id="partText"                           class="textarea_ input_partText  dckimPixelMono" placeholder="empty" spellcheck="false">
 <textarea id="partNotes"     name="partNotes"     class="codeInputs" spellcheck="false" title="notes(JSON)" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.firstElementChild.value;  }; updateInfoShelf();"></textarea>
-<textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="oninput"     readonly></textarea>
+<textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="base64 maybe" readonly></textarea>
 <textarea id="partInnerHTML" name="partInnerHTML" class="codeInputs" spellcheck="false" title="innerHTML"   oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.partText.ref.lastElementChild.value; }"></textarea>
 </div>
 

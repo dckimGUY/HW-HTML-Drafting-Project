@@ -1,0 +1,2 @@
+<script src="./pwd.js"></script>
+<script src="./find -type f.js"></script>
