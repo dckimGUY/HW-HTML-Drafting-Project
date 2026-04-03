@@ -4,8 +4,8 @@ if (coinFocus!=null) {
 /*    -    */ if (kC == 109 && cC ==  45) { outerScaleDown(); }
 /*    +    */ if (kC == 107 && cC ==  43) { outerScaleUp();   }
 
-/*    /    */ if (kC == 111 && cC ==  47) { focusPrevious(true); }
-/*    *    */ if (kC == 106 && cC ==  42) { focusNext(true);     }
+/*    /    */ if (kC == 111 && cC ==  47) { rotateZleft();  }
+/*    *    */ if (kC == 106 && cC ==  42) { rotateZright(); }
 
 /*    7    */ if (kC == 103 && cC ==  55) { if (activeStateEdit) { firstState(); } }
 /*    8    */ if (kC == 104 && cC ==  56) { moveUp(['','','',false,false,false]); /*insertForArrows();*/ }

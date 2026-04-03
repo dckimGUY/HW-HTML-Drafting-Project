@@ -1,4 +1,7 @@
 function gridArray() {
+
+/*
+
 if (coinFocus!=null) {
 
 let tripRef;
@@ -7,11 +10,13 @@ let tripRef;
 } else if (coinFocus.dataset.coinTrip==Ts2) { tripRef = coinTrip.sel2;
 }
 
+*/
+
 /*
 for (let j = 0; j < tripRef.length; j++) {
 tripRef[j].firstChild.innerText = "\n" + tripRef[j].dataset.jsName;
 }
-*/
+
 
 for (let j = 0; j < tripRef.length; j++) {
 if (tripRef[j]) {
@@ -51,4 +56,6 @@ return (1);
 } else {
 return (0);
 }
+
+*/
 }

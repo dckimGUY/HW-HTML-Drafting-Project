@@ -1,8 +1,23 @@
 /* ARE YOU SURE YOU WANT TO TAKE ADVANTAGE OF THE WHITESPACE LIKE THAT? YES... */
                        ui.folder61button.click =
              function() { folder6Selector(1);
-if (event.shiftKey) {
-window.open("n_art/ASCII_art_fullVersion.html","_blank",`height=600,width=800,top=0,left=0,resizable=yes,noopener=no`);
+let newWin;
+if ( event.shiftKey && !event.ctrlKey) {
+newWin = window.open("about:blank","_blank",`height=1920,width=768,top=0,left=0,resizable=yes,noopener=no`);
+    if (newWin) {
+        const html = artConst;
+        newWin.document.open();
+        newWin.document.write(html);
+        newWin.document.close();
+    }
+} else if (!event.shiftKey &&  event.ctrlKey) {
+newWin = window.open("about:blank","_blank");
+    if (newWin) {
+        const html = colourB;
+        newWin.document.open();
+        newWin.document.write(html);
+        newWin.document.close();
+    }
 }
 };
                        ui.folder62button.click =

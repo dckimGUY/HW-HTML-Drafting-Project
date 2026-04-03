@@ -68,9 +68,8 @@ newCoin.dataset.finishedOutline       =     "none";
 newCoin.dataset.outlineColour         =     "grey";
 newCoin.dataset.notes                 = `{
 "initialDisplay" : "block",
-"notes" : "Written notes.",
-"YAML"  : "Coded instructions",
-"data"  : "Additional JSON"
+"pointerEvents" : "auto",
+"notes" : "Written notes."
 }`;
 
 

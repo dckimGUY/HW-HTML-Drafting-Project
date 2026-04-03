@@ -22,8 +22,8 @@ alt    = keyInfo[5];
 
 if (kC ==  38) { rotateOver()  ; }
 if (kC ==  40) { rotateUnder() ; }
-if (kC ==  37) { rotateZleft() ; }
-if (kC ==  39) { rotateZright(); }
+if (kC ==  37) { rotateLeft() ; }
+if (kC ==  39) { rotateRight(); }
 
 
 } else if (!ctrl&&!shift) {

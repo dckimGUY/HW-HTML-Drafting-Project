@@ -53,7 +53,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    A    */ if (kC ==  65 && cC ==  65) {                                 aioNRouter(keyInfo);                                                               }
 /*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false, lastFactor);                                                      }
 /*    D    */ if (kC ==  68 && cC ==  68) { insertNewDuplicate(keyInfo);                                                                                       }
-/*    F    */ if (kC ==  70 && cC ==  70) {                                 gridArray();                                                                       }
+/*    F    */ if (kC ==  70 && cC ==  70) { styleKey = "f"; gridToFontSize(keyInfo); lastKey = "f";                                                            }
 /*    G    */ if (kC ==  71 && cC ==  71) { curFocus=0; modeRouter(e,1);                                                                                       }
 /*    H    */ if (kC ==  72 && cC ==  72) { hjklRouter(keyInfo);                                                                                               }
 /*    J    */ if (kC ==  74 && cC ==  74) { hjklRouter(keyInfo);                                                                                               }
@@ -65,7 +65,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); zBuzz("V");                                                                    }
 /*    B    */ if (kC ==  66 && cC ==  66) { combineStates();                                                                                                   }
 /*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                               }
-/*    M    */ if (kC ==  77 && cC ==  77) {                                                                                                                    }
+/*    M    */ if (kC ==  77 && cC ==  77) { gridArray();                                                                                                       }
 /*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/
 /*                                                                                                                                                            */
