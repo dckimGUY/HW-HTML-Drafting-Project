@@ -45,26 +45,7 @@ if (coinFocus == null) return 0;
 if (coinFocus.style.backdropFilter != "none") {
 coinFocus.style.backdropFilter = newFilter;
 } else {
-
-
-if (shiftHold) {
-
-
-
-switch (coinFocus.dataset.coinTrip) {
-case "0": for (h of coinTrip.sel0) { h.style.filter = newFilter; }; break;
-case "1": for (h of coinTrip.sel1) { h.style.filter = newFilter; }; break;
-case "2": for (h of coinTrip.sel2) { h.style.filter = newFilter; }; break;
-}
-
-
-
-
-} else {
-
-
 coinFocus.style.filter = newFilter;
-}
 }
 
 document.getElementById("filterBrightness").title = document.getElementById("filterBrightness").value;

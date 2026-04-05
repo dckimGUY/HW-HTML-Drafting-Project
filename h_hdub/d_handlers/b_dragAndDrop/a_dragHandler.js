@@ -5,11 +5,129 @@
 
 
 
-document.addEventListener('dragover', e => { e.preventDefault();});
+// 1. ALLOW THE DRAG: This prevents the browser from opening the file as a new tab
+document.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+});
+
+// 2. HANDLE THE DROP: This decompresses and restores your project
+document.addEventListener('drop', async (e) => {
+    e.preventDefault();
+
+    // Get the first file dropped
+    const file = e.dataTransfer.files[0];
+    if (!file) return;
+
+    // Only process your specific project files
+    if (file.name.startsWith("HDUB_")) {
+        try {
+            // DECOMPRESS: Setup the native Gzip stream
+            const ds = new DecompressionStream('gzip');
+            const decompressedStream = file.stream().pipeThrough(ds);
+            
+            // CONVERT: Wait for the stream to turn back into your original JSON string
+            const response = new Response(decompressedStream);
+            const jsonText = await response.text(); 
+
+            // REASSEMBLE: Run your custom JSON parser to restore HTML elements
+            const restoredObject = JSON.parse(jsonText, (key, value) => {
+                if (typeof value === "string" && value.startsWith("<div")) {
+                    const temp = document.createElement("div");
+                    temp.innerHTML = value;
+                    return temp.firstElementChild;
+                }
+                return value;
+            });
+
+            // RESTORE DATA: Map the restored object back to your global variables
+            topLayer = restoredObject;
+            
+            // Re-link DOM elements
+            coinFocus = document.getElementById(topLayer[topLayer.a_currentLayer].e_coinFocus);
+            coinFocus1 = document.getElementById(topLayer[topLayer.a_currentLayer].f_coinFocus);
+            utilityLayer0.innerHTML = topLayer[topLayer.a_currentLayer].b_content.innerHTML;
+            
+            // Restore project metadata
+            filename = topLayer[topLayer.a_currentLayer].filename;
+            pageEchelon = topLayer[topLayer.a_currentLayer].echelon * 100000000;
+            document.getElementById("documentTitle").innerText = filename;
+            
+            // Run your UI refresh functions
+            restorePointerEventsNone();
+            recoverColouration();
+
+            for (let j = 0; j < utilityLayer0.children.length; j++) {
+                utilityLayer0.children[j].style.outline = fA;
+                utilityLayer0.children[j].style.outlineOffset = fAO;
+            }
+
+            if (utilityLayer0.firstElementChild) {
+                coinFocus = utilityLayer0.firstElementChild;
+                pageEchelon = Math.floor(utilityLayer0.firstElementChild.style.zIndex / 100000000) * 100000000;
+            }
+
+            if (coinFocus != null) {
+                coinFocus.style.outline = fB;
+                coinFocus.style.outlineOffset = fBO;
+            }
+
+            curFocus = (coinFocus == null) ? 1 : 0;
+            makeTopLayer(topLayer.a_currentLayer);
+
+            // Restore Buffers
+            singlePasteBuffer = topLayer.singlePasteBuffer;
+            singleRestoreBuffer = topLayer.singleRestoreBuffer;
+            multiplePasteBuffer = topLayer.multiplePasteBuffer;
+            sel0PasteBuffer = topLayer.sel0PasteBuffer;
+            sel1PasteBuffer = topLayer.sel1PasteBuffer;
+            sel2PasteBuffer = topLayer.sel2PasteBuffer;
+            hold = topLayer.hold;
+
+            if (!topLayer.programStateAccumulator) {
+                topLayer.programStateAccumulator = [];
+            }
+
+            ui.hwString = topLayer.hwString;
+
+            // Restore UI Inputs
+            ui.idNames.forEach((name) => {
+                ui[name].value = topLayer.capitals[name].value.outerHTML;
+                if (!topLayer.capitals[name].value.outerHTML) {
+                    ui[name].value = topLayer.capitals[name].value.toString();
+                }
+                ui[name].title = topLayer.capitals[name].title.toString();
+                ui[name].colour = topLayer.capitals[name].colour.toString();
+            });
+
+            // Final UI Redraw
+            updateInfoShelf();
+            redraw();
+            readCoins();
+            Z();
+            drawAllCells();
+            
+            ui.projectName.ref.value = topLayer.aa_project_name;
+            userCustomTheme = topLayer.projectThemes;
+            loadTheme("currentTheme");
+
+            if (topLayer.lastScroll) {
+                window.scrollTo(topLayer.lastScroll);
+            }
+
+            console.log("Compressed project loaded successfully.");
+
+        } catch (err) {
+            console.error("This file is not a compressed HDUB file or is corrupted.", err);
+            alert("Error: Could not decompress file. Make sure it was saved with the new compression method.");
+        }
+    }
+});
+
 
 /* Single Image Drag Handling OR Textual Input Handling. */
 
-document.addEventListener('drop', e => { e.preventDefault();
+document.addEventListener('drop', async (e) => { e.preventDefault();
 
 /* This bit is some setup for accepting the HW syntax as dragged in text... */
 const dropText = e.dataTransfer.getData("text").trim();
@@ -807,123 +925,6 @@ reader.onload = evt => {
 
 
 
-
-
-
-
-
-
-
-if (file.name.startsWith("HDUB_")) {
-
-
-
-const restoredObject = JSON.parse(reader.result.toString(), (key, value) => {
-if (typeof value === "string" && value.startsWith("<div")) {
-const temp = document.createElement("div");
-temp.innerHTML = value;
-return temp.firstElementChild;
-} return value; });
-topLayer = restoredObject;
-coinFocus = document.getElementById(topLayer[topLayer.a_currentLayer].e_coinFocus);
-coinFocus1 = document.getElementById(topLayer[topLayer.a_currentLayer].f_coinFocus);
-utilityLayer0.innerHTML = topLayer[topLayer.a_currentLayer].b_content.innerHTML;
-filename = topLayer[topLayer.a_currentLayer].filename;
-pageEchelon = topLayer[topLayer.a_currentLayer].echelon * 100000000;
-document.getElementById("documentTitle").innerText = filename;
-restorePointerEventsNone();
-recoverColouration();
-for (j=0; j<utilityLayer0.children.length; j++) { 
-utilityLayer0.children[j].style.outline = fA;
-utilityLayer0.children[j].style.outlineOffset = fAO;
- }
-if (utilityLayer0.firstElementChild) {
-coinFocus = utilityLayer0.firstElementChild;
-pageEchelon = Math.floor(utilityLayer0.firstElementChild.style.zIndex/100000000)*100000000;
-}
-if (coinFocus!=null) {
-coinFocus.style.outline = fB;
-coinFocus.style.outlineOffset = fBO;
-}
-if (coinFocus==null) { curFocus = 1; } else { curFocus = 0; }
-makeTopLayer(topLayer.a_currentLayer);
-
-
-
-
-singlePasteBuffer = topLayer.singlePasteBuffer;
-singleRestoreBuffer = topLayer.singleRestoreBuffer;
-multiplePasteBuffer = topLayer.multiplePasteBuffer;
-sel0PasteBuffer = topLayer.sel0PasteBuffer;
-sel1PasteBuffer = topLayer.sel1PasteBuffer;
-sel2PasteBuffer = topLayer.sel2PasteBuffer;
-hold = topLayer.hold;
-
-
-if (!topLayer.programStateAccumulator) {
-topLayer.programStateAccumulator = [];
-}
-
-
-
-
-
-ui.hwString = topLayer.hwString;
-
-
-ui.idNames.forEach((name) => {
-ui[name].value   = topLayer.capitals[name].value.outerHTML;
-if (!topLayer.capitals[name].value.outerHTML) ui[name].value = topLayer.capitals[name].value.toString();
-ui[name].title   = topLayer.capitals[name].title.toString();
-ui[name].colour  = topLayer.capitals[name].colour.toString();
-});
-
-
-
-updateInfoShelf();
-redraw();
-readCoins();
-Z();
-drawAllCells();
-ui.projectName.ref.value = topLayer.aa_project_name;
-userCustomTheme = topLayer.projectThemes;
-
-loadTheme("currentTheme");
-
-
-
-if (topLayer.lastScroll) {
-window.scrollTo(topLayer.lastScroll);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-return 0;
-
-
-
-
-
-
-
-
-
-
-
-}
 
 
 

@@ -853,12 +853,11 @@ recoverColouration();
 
 
 function saveSyntaxImage() {
-const datePrefix = Date.now().toString().slice(-6);
 const syntax = reString(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
 const dataURL = hdubCanvas.toDataURL('image/png');
 const link = document.createElement('a');
 link.href = dataURL;
-link.download = "SHAPE_" + datePrefix + '_HDUB_' + syntax + '.png';
+link.download = 'SHAPE_HDUB_' + syntax + '.png';
 link.click();
 }
 

@@ -11,7 +11,19 @@ ui.save1800.click                = function() { deMinimis(false, "(100/2000)"); 
 
 
 
+/* USE await shrink(str) */
+async function shrink(str) {
+const s = new Blob([str]).stream().pipeThrough(new CompressionStream('gzip'));
+const b = await new Response(s).arrayBuffer();
+return btoa(String.fromCharCode(...new Uint8Array(b)));
+}
 
+/* USE await expand(str) */
+async function expand(str) {
+const bytes  = Uint8Array.from(atob(str), c => c.charCodeAt(0));
+const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+return await new Response(stream).text();
+}
 
 
 
@@ -203,7 +215,8 @@ animBar.onwheel = (e) => {
     }
 };
 
-
+animBar.style.zIndex  = "9999999999";
+animBar.style.opacity = "0.75";
 document.body.appendChild(animBar);
 document.body.appendChild(animToggle);
 
