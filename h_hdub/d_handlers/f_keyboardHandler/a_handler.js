@@ -9,15 +9,14 @@ var mouseIsDogged = false;
 var spaceView = false;
 
 /* This stops the screen from being refreshed from the keys... which leaves a blank screen anyhow. */
-document.addEventListener("keydown", (event) => {
+
 
 /*
-
+document.addEventListener("keydown", (event) => {
 if (hotDog) {
 if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') { event.preventDefault(); }
 if (event.key==='F5'){ event.preventDefault(); }
 return; }
-
 if ((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='r') {
 event.preventDefault();
 utilityLayer0.innerHTML = "";
@@ -28,12 +27,9 @@ Picture.style.display="none";
 readCoins();
 curFocus = 1;
 }
-
 if (event.key==='F5'){ event.preventDefault(); }
-
-*/
-
 });
+*/
 
 /* The mode indicator. */
 var kC = 0, cC = 0;
@@ -217,7 +213,7 @@ toggleActiveStateEdit();
 
 
  }
-/*  caps   */ if (kC ==  20)              { flipHauptMode(keyInfo);        }
+/*  caps   */ if (kC ==  20)              {                                }
 /*                                                                        */
 /**************************************************************************/
 /*                                                                        */
@@ -233,7 +229,6 @@ spacebar.hold = true;
 event.preventDefault();
 spaceViewOn([e,32,32,es,ec,ea]);
 removePointerEventsNone();
-interfaceLayer.style.display = "none";
 
 } else if (kC==32&&es) {
 
@@ -356,64 +351,60 @@ buzzWord(0,'ENTER',256,'magenta',400,200,25);
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    q    */ if (kC ==  81 && cC == 113) { shiftRouter(keyInfo);lastKey="q";}/*    Q    */ if (kC ==  81 && cC ==  81) { shiftRouter(keyInfo);lastKey="Q";}
-/*    w    */ if (kC ==  87 && cC == 119) { shiftRouter(keyInfo);lastKey="w";}/*    W    */ if (kC ==  87 && cC ==  87) { shiftRouter(keyInfo);lastKey="W";}
-/*    e    */ if (kC ==  69 && cC == 101) { shiftRouter(keyInfo);lastKey="e";}/*    E    */ if (kC ==  69 && cC ==  69) { shiftRouter(keyInfo);lastKey="E";}
-/*    r    */ if (kC ==  82 && cC == 114) { shiftRouter(keyInfo);lastKey="r";}/*    R    */ if (kC ==  82 && cC ==  82) { shiftRouter(keyInfo);lastKey="R";}
-/*    t    */ if (kC ==  84 && cC == 116) { shiftRouter(keyInfo);lastKey="t";}/*    T    */ if (kC ==  84 && cC ==  84) { shiftRouter(keyInfo);lastKey="T";}
-/*    y    */ if (kC ==  89 && cC == 121) { shiftRouter(keyInfo);lastKey="y";}/*    Y    */ if (kC ==  89 && cC ==  89) { shiftRouter(keyInfo);lastKey="Y";}
-/*    u    */ if (kC ==  85 && cC == 117) { shiftRouter(keyInfo);lastKey="u";}/*    U    */ if (kC ==  85 && cC ==  85) { shiftRouter(keyInfo);lastKey="U";}
-/*    i    */ if (kC ==  73 && cC == 105) { shiftRouter(keyInfo);lastKey="i";}/*    I    */ if (kC ==  73 && cC ==  73) { shiftRouter(keyInfo);lastKey="I";}
-/*    o    */ if (kC ==  79 && cC == 111) { shiftRouter(keyInfo);lastKey="o";}/*    O    */ if (kC ==  79 && cC ==  79) { shiftRouter(keyInfo);lastKey="O";}
-/*    p    */ if (kC ==  80 && cC == 112) { shiftRouter(keyInfo);lastKey="p";}/*    P    */ if (kC ==  80 && cC ==  80) { shiftRouter(keyInfo);lastKey="P";}
+/*    q    */ if (kC ==  81 && cC == 113) { fMan(keyInfo);lastKey="q";}/*    Q    */ if (kC ==  81 && cC ==  81) { fMan(keyInfo);lastKey="Q";}
+/*    w    */ if (kC ==  87 && cC == 119) { fMan(keyInfo);lastKey="w";}/*    W    */ if (kC ==  87 && cC ==  87) { fMan(keyInfo);lastKey="W";}
+/*    e    */ if (kC ==  69 && cC == 101) { fMan(keyInfo);lastKey="e";}/*    E    */ if (kC ==  69 && cC ==  69) { fMan(keyInfo);lastKey="E";}
+/*    r    */ if (kC ==  82 && cC == 114) { fMan(keyInfo);lastKey="r";}/*    R    */ if (kC ==  82 && cC ==  82) { fMan(keyInfo);lastKey="R";}
+/*    t    */ if (kC ==  84 && cC == 116) { fMan(keyInfo);lastKey="t";}/*    T    */ if (kC ==  84 && cC ==  84) { fMan(keyInfo);lastKey="T";}
+/*    y    */ if (kC ==  89 && cC == 121) { fMan(keyInfo);lastKey="y";}/*    Y    */ if (kC ==  89 && cC ==  89) { fMan(keyInfo);lastKey="Y";}
+/*    u    */ if (kC ==  85 && cC == 117) { fMan(keyInfo);lastKey="u";}/*    U    */ if (kC ==  85 && cC ==  85) { fMan(keyInfo);lastKey="U";}
+/*    i    */ if (kC ==  73 && cC == 105) { fMan(keyInfo);lastKey="i";}/*    I    */ if (kC ==  73 && cC ==  73) { fMan(keyInfo);lastKey="I";}
+/*    o    */ if (kC ==  79 && cC == 111) { fMan(keyInfo);lastKey="o";}/*    O    */ if (kC ==  79 && cC ==  79) { fMan(keyInfo);lastKey="O";}
+/*    p    */ if (kC ==  80 && cC == 112) { fMan(keyInfo);lastKey="p";}/*    P    */ if (kC ==  80 && cC ==  80) { fMan(keyInfo);lastKey="P";}
 /*    [    */ if (kC == 219 && cC ==  91) { lessG(e);            lastKey="[";}/*    {    */ if (kC == 219 && cC == 123) { oneLessG(e);         lastKey="{";}
 /*    ]    */ if (kC == 221 && cC ==  93) { moreG(e);            lastKey="]";}/*    }    */ if (kC == 221 && cC == 125) { oneMoreG(e);         lastKey="}";}
 /*    \    */ if (kC == 220 && cC ==  92) { focusNextColour();  lastKey="\\";}/*    |    */ if (kC == 220 && cC == 124) { firstLastColour();   lastKey="|";}
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    a    */ if (kC ==  65 && cC ==  97) { shiftRouter(keyInfo);lastKey="a";}/*    A    */ if (kC ==  65 && cC ==  65) { shiftRouter(keyInfo);lastKey="A";}
-/*    s    */ if (kC ==  83 && cC == 115) { shiftRouter(keyInfo);lastKey="s";}/*    S    */ if (kC ==  83 && cC ==  83) { shiftRouter(keyInfo);lastKey="S";}
-/*    d    */ if (kC ==  68 && cC == 100) { shiftRouter(keyInfo);lastKey="d";}/*    D    */ if (kC ==  68 && cC ==  68) { shiftRouter(keyInfo);lastKey="D";}
-/*    f    */ if (kC ==  70 && cC == 102) { shiftRouter(keyInfo);lastKey="f";}/*    F    */ if (kC ==  70 && cC ==  70) { shiftRouter(keyInfo);lastKey="F";}
-/*    g    */ if (kC ==  71 && cC == 103) { shiftRouter(keyInfo);lastKey="g";}/*    G    */ if (kC ==  71 && cC ==  71) { shiftRouter(keyInfo);lastKey="G";}
-/*    h    */ if (kC ==  72 && cC == 104) { shiftRouter(keyInfo);lastKey="h";}/*    H    */ if (kC ==  72 && cC ==  72) { shiftRouter(keyInfo);lastKey="H";}
-/*    j    */ if (kC ==  74 && cC == 106) { shiftRouter(keyInfo);lastKey="j";}/*    J    */ if (kC ==  74 && cC ==  74) { shiftRouter(keyInfo);lastKey="J";}
-/*    k    */ if (kC ==  75 && cC == 107) { shiftRouter(keyInfo);lastKey="k";}/*    K    */ if (kC ==  75 && cC ==  75) { shiftRouter(keyInfo);lastKey="K";}
-/*    l    */ if (kC ==  76 && cC == 108) { shiftRouter(keyInfo);lastKey="l";}/*    L    */ if (kC ==  76 && cC ==  76) { shiftRouter(keyInfo);lastKey="L";}
+/*    a    */ if (kC ==  65 && cC ==  97) { fMan(keyInfo);lastKey="a";}/*    A    */ if (kC ==  65 && cC ==  65) { fMan(keyInfo);lastKey="A";}
+/*    s    */ if (kC ==  83 && cC == 115) { fMan(keyInfo);lastKey="s";}/*    S    */ if (kC ==  83 && cC ==  83) { fMan(keyInfo);lastKey="S";}
+/*    d    */ if (kC ==  68 && cC == 100) { fMan(keyInfo);lastKey="d";}/*    D    */ if (kC ==  68 && cC ==  68) { fMan(keyInfo);lastKey="D";}
+/*    f    */ if (kC ==  70 && cC == 102) { fMan(keyInfo);lastKey="f";}/*    F    */ if (kC ==  70 && cC ==  70) { fMan(keyInfo);lastKey="F";}
+/*    g    */ if (kC ==  71 && cC == 103) { fMan(keyInfo);lastKey="g";}/*    G    */ if (kC ==  71 && cC ==  71) { fMan(keyInfo);lastKey="G";}
+/*    h    */ if (kC ==  72 && cC == 104) { fMan(keyInfo);lastKey="h";}/*    H    */ if (kC ==  72 && cC ==  72) { fMan(keyInfo);lastKey="H";}
+/*    j    */ if (kC ==  74 && cC == 106) { fMan(keyInfo);lastKey="j";}/*    J    */ if (kC ==  74 && cC ==  74) { fMan(keyInfo);lastKey="J";}
+/*    k    */ if (kC ==  75 && cC == 107) { fMan(keyInfo);lastKey="k";}/*    K    */ if (kC ==  75 && cC ==  75) { fMan(keyInfo);lastKey="K";}
+/*    l    */ if (kC ==  76 && cC == 108) { fMan(keyInfo);lastKey="l";}/*    L    */ if (kC ==  76 && cC ==  76) { fMan(keyInfo);lastKey="L";}
 /*    ;    */ if (kC ==  59 && cC ==  59) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'auto', block:'center'});} lastKey = ";";}/*    :    */ if (kC ==  59 && cC ==  58) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'auto', inline: 'center'});} lastKey = ":";}
 /*    '    */ if (kC == 222 && cC ==  39) { if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'auto', block:'center', inline: 'center'});} lastKey = "'"; }/*    "    */ if (kC == 222 && cC ==34){ if (coinFocus!=null) {coinFocus.scrollIntoView({behavior:'auto', block:'center', inline: 'center'});} lastKey = '"'; }
 /*                                                                                                                                                    */
 /******************************************************************************************************************************************************/
 /*                                                                                                                                                    */
-/*    z    */ if (kC ==  90 && cC == 122) { shiftRouter(keyInfo);lastKey="z";}/*    Z    */ if (kC ==  90 && cC ==  90) { shiftRouter(keyInfo);lastKey="Z";}
-/*    x    */ if (kC ==  88 && cC == 120) { shiftRouter(keyInfo);lastKey="x";}/*    X    */ if (kC ==  88 && cC ==  88) { shiftRouter(keyInfo);lastKey="X";}
-/*    c    */ if (kC ==  67 && cC ==  99) { shiftRouter(keyInfo);lastKey="c";}/*    C    */ if (kC ==  67 && cC ==  67) { shiftRouter(keyInfo);lastKey="C";}
-/*    v    */ if (kC ==  86 && cC == 118) { shiftRouter(keyInfo);lastKey="v";}/*    V    */ if (kC ==  86 && cC ==  86) { shiftRouter(keyInfo);lastKey="V";}
-/*    b    */ if (kC ==  66 && cC ==  98) { shiftRouter(keyInfo);lastKey="b";}/*    B    */ if (kC ==  66 && cC ==  66) { shiftRouter(keyInfo);lastKey="B";}
-/*    n    */ if (kC ==  78 && cC == 110) { shiftRouter(keyInfo);lastKey="n";}/*    N    */ if (kC ==  78 && cC ==  78) { shiftRouter(keyInfo);lastKey="N";}
-/*    m    */ if (kC ==  77 && cC == 109) { shiftRouter(keyInfo);lastKey="m";}/*    M    */ if (kC ==  77 && cC ==  77) { shiftRouter(keyInfo);lastKey="M";}
+/*    z    */ if (kC ==  90 && cC == 122) { fMan(keyInfo);lastKey="z";}/*    Z    */ if (kC ==  90 && cC ==  90) { fMan(keyInfo);lastKey="Z";}
+/*    x    */ if (kC ==  88 && cC == 120) { fMan(keyInfo);lastKey="x";}/*    X    */ if (kC ==  88 && cC ==  88) { fMan(keyInfo);lastKey="X";}
+/*    c    */ if (kC ==  67 && cC ==  99) { fMan(keyInfo);lastKey="c";}/*    C    */ if (kC ==  67 && cC ==  67) { fMan(keyInfo);lastKey="C";}
+/*    v    */ if (kC ==  86 && cC == 118) { fMan(keyInfo);lastKey="v";}/*    V    */ if (kC ==  86 && cC ==  86) { fMan(keyInfo);lastKey="V";}
+/*    b    */ if (kC ==  66 && cC ==  98) { fMan(keyInfo);lastKey="b";}/*    B    */ if (kC ==  66 && cC ==  66) { fMan(keyInfo);lastKey="B";}
+/*    n    */ if (kC ==  78 && cC == 110) { fMan(keyInfo);lastKey="n";}/*    N    */ if (kC ==  78 && cC ==  78) { fMan(keyInfo);lastKey="N";}
+/*    m    */ if (kC ==  77 && cC == 109) { fMan(keyInfo);lastKey="m";}/*    M    */ if (kC ==  77 && cC ==  77) { fMan(keyInfo);lastKey="M";}
 /*    ,    */ if (kC == 188 && cC ==  44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}lastKey = ",";}/*    <    */ if (kC == 188 && cC ==  60) {setupLeft();  lastKey = "<";}
 /*    .    */ if (kC == 190 && cC ==  46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}lastKey = ".";}/*    >    */ if (kC == 190 && cC ==  62) {setupRight(); lastKey = ">";}
-/*    /    */ if (kC == 191 && cC ==  47) { event.preventDefault(); mouseIncrementCycle(); lastKey = "/";}/*    ?    */ if (kC == 191 && cC ==  63) { 
+/*    /    */ if (kC == 191 && cC ==  47) { event.preventDefault();
+ui.cursorShutoff.click();
+//mouseIncrementCycle();
+lastKey = "/";}/*    ?    */ if (kC == 191 && cC ==  63) { 
                  if ( grid0Viz == "true") {
                       grid0Viz = "false";
 localStorage.setItem("grid0Viz", "false");
 } else {              grid0Viz = "true";
 localStorage.setItem("grid0Viz", "true"); }
 Z();                      
-
 lastKey = "?";
 }
-
-
 /*                                                                                                                                                    */
 
-
-
 handleBuzz();
-
-
 
        if (lastFlow == "global") {
 reflowGlobal(rev,0)
@@ -452,12 +443,14 @@ drawSiteMap();
 
 edgeDetect.style.display= "none";
 
-if (hotDog) { return; }
 
 let e = event, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
 let keyInfo = [e,kC,cC,es,ec,ea];
 
 if (es) { shiftHold = true; } else { shiftHold = false; }
+
+
+if (hotDog) { return; }
 
 
 /* THIS SETS UP THE CURSOR THINGY */

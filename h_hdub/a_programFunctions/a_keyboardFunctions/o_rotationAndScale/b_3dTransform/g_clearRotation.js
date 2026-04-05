@@ -1,6 +1,14 @@
 function clearRotation() {
 if (coinFocus!=null) {
 
+if (Cur.style.display == "block") {
+coinFocus.lastElementChild.style.transformOrigin  = `${parseInt(Cur.style.left) - parseInt(coinFocus.style.left) + "px"} ${parseInt(Cur.style.top) - parseInt(coinFocus.style.top) + "px"}`;
+coinFocus.firstElementChild.style.transformOrigin = `${parseInt(Cur.style.left) - parseInt(coinFocus.style.left) + "px"} ${parseInt(Cur.style.top) - parseInt(coinFocus.style.top) + "px"}`;
+} else if (Cur.style.display == "none") {
+coinFocus.lastElementChild.style.transformOrigin  = "center";
+coinFocus.firstElementChild.style.transformOrigin = "center";
+}
+
 coinFocus.lastElementChild.dataset.perspective = "1536px";
 coinFocus.lastElementChild.dataset.rotateX     =   "0deg";
 coinFocus.lastElementChild.dataset.rotateY     =   "0deg";

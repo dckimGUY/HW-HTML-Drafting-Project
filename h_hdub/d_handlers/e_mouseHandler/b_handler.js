@@ -1108,8 +1108,6 @@ copyToClipboard(coinFocus.lastElementChild.firstElementChild.nextElementSibling.
 
 if (mode==0) { curFocus=0; modeRouter(event,1); }
 
-interfaceLayer.style.display = "none";
-
 if (mouseIsDogged==false) {
 
 const ctrl  = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
@@ -1287,7 +1285,7 @@ coinFocus.lastElementChild.lastElementChild.previousElementSibling.focus();
 } else if (event.target.dataset.coinTrip&& shift&&!alt) {
 try { cutOutImage(); } catch {}
 } else if (event.target.dataset.coinTrip&&!shift&& alt) {
-applyImageBack();
+
 } else if (event.target==document.documentElement) {
 mousePlaceCursor(mouseInfo);
 

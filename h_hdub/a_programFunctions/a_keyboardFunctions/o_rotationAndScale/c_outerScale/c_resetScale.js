@@ -1,19 +1,23 @@
 function resetScale() {
 
-//if (lastKey!="e") {
 if (coinFocus!=null) {
-const newScale = 1;
-coinFocus.lastElementChild.style.scale   = newScale;
-coinFocus.lastElementChild.dataset.scale = newScale;
-/*
-if (coinFocus.lastElementChild.lastElementChild.src!=""&&coinFocus.lastElementChild.lastElementChild.naturalWidth&&coinFocus.lastElementChild.lastElementChild.naturalHeight) {
-coinFocus.style.width  = parseInt(coinFocus.lastElementChild.lastElementChild.naturalWidth) + "px";
-coinFocus.style.height = parseInt(coinFocus.lastElementChild.lastElementChild.naturalHeight) + "px";
-}
-*/
+
+if (Cur.style.display == "block") {
+coinFocus.lastElementChild.style.transformOrigin  = `${parseInt(Cur.style.left) - parseInt(coinFocus.style.left) + "px"} ${parseInt(Cur.style.top) - parseInt(coinFocus.style.top) + "px"}`;
+coinFocus.firstElementChild.style.transformOrigin = `${parseInt(Cur.style.left) - parseInt(coinFocus.style.left) + "px"} ${parseInt(Cur.style.top) - parseInt(coinFocus.style.top) + "px"}`;
+} else if (Cur.style.display == "none") {
+coinFocus.lastElementChild.style.transformOrigin  = "center";
+coinFocus.firstElementChild.style.transformOrigin = "center";
 }
 
-//} else if (lastKey=="e") {
-//}
+const newScale = 1;
+
+coinFocus.lastElementChild.style.scale    = newScale;
+coinFocus.lastElementChild.dataset.scale  = newScale;
+
+coinFocus.firstElementChild.style.scale   = newScale;
+coinFocus.firstElementChild.dataset.scale = newScale;
+
+}
 
 }

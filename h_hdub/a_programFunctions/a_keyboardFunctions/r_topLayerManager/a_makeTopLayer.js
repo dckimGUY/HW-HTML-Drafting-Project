@@ -87,7 +87,6 @@ restorePointerEventsNone();
 
 spaceViewOn();
 removePointerEventsNone();
-interfaceLayer.style.display = "none";
 
 }
 
@@ -105,7 +104,6 @@ spaceViewOff();
 restorePointerEventsNone();
 spaceViewOn();
 removePointerEventsNone();
-interfaceLayer.style.display = "none";
 }
 
 

@@ -131,30 +131,30 @@ newCoin.img.style.display = '';
 
 /* Initialize from the template. */
 
-div.style.background              = template.defaultIMG.background              ;
-div.style.backgroundColor         = template.defaultIMG.backgroundColor         ;
-div.style.color                   = template.defaultIMG.color                   ;
-div.style.textShadow              = template.defaultIMG.textShadow              ;
+div.style.background              = template.default.background              ;
+div.style.backgroundColor         = template.default.backgroundColor         ;
+div.style.color                   = template.default.color                   ;
+div.style.textShadow              = template.default.textShadow              ;
 
-div.style.textAlign               = template.defaultIMG.textAlign               ;
-div.style.textIndent              = template.defaultIMG.textIndent              ;
-div.style.fontSize                = template.defaultIMG.fontSize                ;
-div.style.fontStyle               = template.defaultIMG.fontStyle               ;
-div.style.fontWeight              = template.defaultIMG.fontWeight              ;
-div.style.fontVariant             = template.defaultIMG.fontVariant             ;
+div.style.textAlign               = template.default.textAlign               ;
+div.style.textIndent              = template.default.textIndent              ;
+div.style.fontSize                = template.default.fontSize                ;
+div.style.fontStyle               = template.default.fontStyle               ;
+div.style.fontWeight              = template.default.fontWeight              ;
+div.style.fontVariant             = template.default.fontVariant             ;
 
-div.style.lineHeight              = template.defaultIMG.lineHeight              ; 
-div.style.wordSpacing             = template.defaultIMG.wordSpacing             ; 
-div.style.letterSpacing           = template.defaultIMG.letterSpacing           ; 
+div.style.lineHeight              = template.default.lineHeight              ; 
+div.style.wordSpacing             = template.default.wordSpacing             ; 
+div.style.letterSpacing           = template.default.letterSpacing           ; 
 
-div.style.textTransform           = template.defaultIMG.textTransform           ;
-div.style.direction               = template.defaultIMG.direction               ;
-div.style.opacity                 = template.defaultIMG.opacity                 ;
+div.style.textTransform           = template.default.textTransform           ;
+div.style.direction               = template.default.direction               ;
+div.style.opacity                 = template.default.opacity                 ;
 
-div.style.paddingLeft             = template.defaultIMG.paddingLeft             ;
-div.style.paddingRight            = template.defaultIMG.paddingRight            ;
-div.style.paddingTop              = template.defaultIMG.paddingTop              ;
-div.style.paddingBottom           = template.defaultIMG.paddingBottom           ;
+div.style.paddingLeft             = template.default.paddingLeft             ;
+div.style.paddingRight            = template.default.paddingRight            ;
+div.style.paddingTop              = template.default.paddingTop              ;
+div.style.paddingBottom           = template.default.paddingBottom           ;
 
 
 div.innerHTML = img.outerHTML;

@@ -1254,20 +1254,25 @@ ${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replac
       go.disp.show["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display = "block"; } catch { }; } return 0; }; }
       go.disp.hide = {}; for (let i = 1; i < 21; i++) {
       go.disp.hide["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display =  "none"; } catch { }; } return 0; }; }
-      go.show      = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.show["LVL" + i](); }; return 0; }
-                     for (r of levelArray) { go.disp.show["LVL" + r](); }; return 0; };
-      go.hide      = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.hide["LVL" + i](); }; return 0; }
-                     for (r of levelArray) { go.disp.hide["LVL" + r](); }; return 0; };
-`;
-} else {
-scriptStarter += `
-      go.show    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } };
-      go.hide    = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } };
-
-      go.fadeIn  = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } };
-      go.fadeOut = function(input) { let array = input ? input : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } };
+      go.styleLevels   = function(style, value, levelArray) { let array = levelArray ? levelArray : Array.from({length: 20}, (_, i) => i + 1);
+                        for (let r of array) { for (let id of go.disp.ids["LVL" + r]) { document.getElementById(id).style[style] = value; } } return 0; }
+      go.showLevels    = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.show["LVL" + i](); }; return 0; } for (r of levelArray) { go.disp.show["LVL" + r](); }; return 0; };
+      go.hideLevels    = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.hide["LVL" + i](); }; return 0; } for (r of levelArray) { go.disp.hide["LVL" + r](); }; return 0; };
+      go.fadeInLevels  = function(levelArray) { let array = levelArray ? levelArray : Array.from({length: 20}, (_, i) => i + 1);
+                        for (let r of array) { for (let id of go.disp.ids["LVL" + r]) { document.getElementById(id).style.opacity = "1"; } } return 0; }
+      go.fadeOutLevels = function(levelArray) { let array = levelArray ? levelArray : Array.from({length: 20}, (_, i) => i + 1);
+                        for (let r of array) { for (let id of go.disp.ids["LVL" + r]) { document.getElementById(id).style.opacity = "0"; } } return 0; }
 `;
 }
+
+scriptStarter += `
+      go.style       = function(style, value, idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style[style] = value; } return 0; }
+      go.show        = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } return 0; }
+      go.hide        = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } return 0; }
+      go.fadeIn      = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } return 0; }
+      go.fadeOut     = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } return 0; }
+`;
+
 
 
 
@@ -1651,7 +1656,10 @@ scriptStarter += `
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
 let extract = "";
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
+if (eventRoll[k] == "click") {
 extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
+}
 scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
 }

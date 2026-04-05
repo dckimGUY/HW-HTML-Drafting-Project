@@ -30,10 +30,6 @@ edgeDetect.style.opacity         =               "0.25";
 edgeDetect.style.display         =               "none"; 
 edgeDetect.style.zIndex          =         "2000000000"; 
 
-var   interfaceLayer    ; interfaceLayer     = document.getElementById("interfaceLayer");
-interfaceLayer.innerHTML = defaultUI;
-interfaceLayer.style.display = "none";
-
 const HWworld = true;
 var layerName = "LVL 1";
 

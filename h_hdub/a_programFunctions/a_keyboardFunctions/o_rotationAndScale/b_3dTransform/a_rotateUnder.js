@@ -1,6 +1,14 @@
 function rotateUnder() {
 if (coinFocus!=null) {
 
+if (Cur.style.display == "block") {
+coinFocus.lastElementChild.style.transformOrigin  = `${parseInt(Cur.style.left) - parseInt(coinFocus.style.left) + "px"} ${parseInt(Cur.style.top) - parseInt(coinFocus.style.top) + "px"}`;
+coinFocus.firstElementChild.style.transformOrigin = `${parseInt(Cur.style.left) - parseInt(coinFocus.style.left) + "px"} ${parseInt(Cur.style.top) - parseInt(coinFocus.style.top) + "px"}`;
+} else if (Cur.style.display == "none") {
+coinFocus.lastElementChild.style.transformOrigin  = "center";
+coinFocus.firstElementChild.style.transformOrigin = "center";
+}
+
 const perspective =  parseInt(coinFocus.lastElementChild.dataset.perspective   );
 const rotateX     =  parseInt(coinFocus.lastElementChild.dataset.rotateX       );
 const rotateY     =  parseInt(coinFocus.lastElementChild.dataset.rotateY       );
