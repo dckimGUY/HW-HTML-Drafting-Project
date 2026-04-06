@@ -1827,13 +1827,48 @@ let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}
 
 
 
+
+
+
+
 if (window.b64Crusher) {
 try {
 content = b64Crusher.crushOnlyB64(content);
 } catch (e) {
-if (!(e instanceof RangeError)) throw e;
+if (e instanceof RangeError) {
+const assetMap = new Map();
+let assetId = 0;
+const b64Regex = /data:image\/(png|gif);base64,[A-Za-z0-9+/=]+/g;
+const matches = content.match(b64Regex);
+if (matches) {
+matches.forEach(m => {
+if (!assetMap.has(m)) assetMap.set(m, `B64_ASSET_${assetId++}`);
+});
+let assetDefs = '\n<style id="wasm-crusher-assets">\n:root {\n';
+assetMap.forEach((id, raw) => {
+assetDefs += `  --${id}: url('${raw}');\n`;
+});
+assetDefs += '}\n</style>\n';
+assetMap.forEach((id, raw) => {
+const replacement = `var(--${id})`;
+[`url("${raw}")`, `url('${raw}')`, `url(${raw})`].forEach(w => {
+content = content.split(w).join(replacement);
+});
+});
+const headPos = content.indexOf("</head>");
+content = headPos !== -1 ? content.slice(0, headPos) + assetDefs + content.slice(headPos) : assetDefs + content;
+}
+} else {
+throw e;
 }
 }
+}
+
+
+
+
+
+
 
 
 
