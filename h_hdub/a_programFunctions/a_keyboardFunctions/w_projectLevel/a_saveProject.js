@@ -1,4 +1,4 @@
-async function saveProject() { // Added 'async' here
+async function saveProject(pullFile) {
     /* MAKE SURE THE ARRANGEMENT IS 'FULL-UP' */
     if (coinFocus != null) { topLayer[topLayer.a_currentLayer].e_coinFocus = coinFocus.id; } else { topLayer[topLayer.a_currentLayer].e_coinFocus = null; }
     if (coinFocus1 != null) { topLayer[topLayer.a_currentLayer].f_coinFocus = coinFocus1.id; } else { topLayer[topLayer.a_currentLayer].f_coinFocus = null; }
@@ -57,4 +57,5 @@ async function saveProject() { // Added 'async' here
 
     a.click();
     URL.revokeObjectURL(url);
+    return 0;
 }

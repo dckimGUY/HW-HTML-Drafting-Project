@@ -31,7 +31,7 @@ spellcheck="false">h20w20w20w20w20w20h50w50w50h40w20w30w40w10</textarea>
 
 
 
-<button id="hdubSheetTemplate1x" class="button_ button_hdubSheetTemplate1x" title="SAVE: Base Image Sheet\n(This is part of a\nmulti-step process.\nFor more information\nuse the W? below.)"></button>
+<button id="hdubSheetTemplate1x" class="button_ button_hdubSheetTemplate1x drag-button" draggable="true" title="SAVE: Base Image Sheet\n(This is part of a\nmulti-step process.\nFor more information\nuse the W? below.)"></button>
 <input id="hdubSheetTemplate4x" class="button_ button_hdubSheetTemplate4x" type="range" min="1" max="20" step="1" value="10" title="hdubEntryFactor">
 
 

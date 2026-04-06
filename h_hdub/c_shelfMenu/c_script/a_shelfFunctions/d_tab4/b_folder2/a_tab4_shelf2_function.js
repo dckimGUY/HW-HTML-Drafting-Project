@@ -457,24 +457,8 @@ let fileHeader = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="index, follow">
-<meta name="handheldfriendly" content="true">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description"         content="{{description}}">
-<meta property="og:description"  content="{{description}}">
-<meta name="geo.position"  content="43.658497;-79.347015">
-<meta name="geo.region"    content="CA-ON">
-<meta name="geo.placename" content="Toronto">
-                             <title>{{title}}</title>
-<meta property="og:title"  content="{{title}}">
-<meta property="og:type"   content="website">
-
-<meta property="og:image"  content="<<insert URL>>">
-<meta property="og:url"    content="<<insert URL>>">
-<link rel="canonical"         href="<<insert URL>>">
-<link rel="stylesheet"        href="<<insert URL>>"/>
-
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" >
+<meta name="description" content="{{description}}">
+<title>{{title}}</title>
 `;
 
 let fileFooter = `
@@ -1816,11 +1800,11 @@ stylesIncluded = stylePosition + styleEtc;
 stylesIncluded = stylePosition;
 }
 
-
-
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
+if (window.b64Crusher) { content = b64Crusher.crushOnlyB64(content); }
 
 if (dragging == true) {
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
+
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -1828,11 +1812,9 @@ return content;
 }
 
 
-
-
 if (openInNewWindow) {
 const newWindow = window.open();
-newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter);
+newWindow.document.write(content);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -1842,7 +1824,7 @@ return;
 
 
 
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter, false, false, false);
+saveHTMLparticle(rename, content, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
