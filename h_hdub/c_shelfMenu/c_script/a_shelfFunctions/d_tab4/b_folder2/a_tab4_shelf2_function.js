@@ -1825,7 +1825,18 @@ stylesIncluded = stylePosition;
 
 let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
 
-try { content = b64Crusher.crushOnlyB64(content); } catch { }
+
+
+if (window.b64Crusher) {
+try {
+content = b64Crusher.crushOnlyB64(content);
+} catch (e) {
+if (!(e instanceof RangeError)) throw e;
+}
+}
+
+
+
 
 if (dragging == true) {
 
