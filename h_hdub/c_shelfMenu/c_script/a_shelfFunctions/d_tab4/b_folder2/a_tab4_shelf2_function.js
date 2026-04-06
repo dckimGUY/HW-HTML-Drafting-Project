@@ -739,14 +739,12 @@ let idRoll = [];
 for (let j = 0; j < doc.body.children.length; j++) {
 
 if (doc.body.children[j].dataset.json || doc.body.children[j].dataset.addScript) {
+try {
 doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
+} catch {};
+} else if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 0) {
+doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = `<div>${doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML}</div>`;
 }
-
-
-
-
-
-
 idRoll.push(doc.body.children[j].id);
 if (
 (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children &&
@@ -760,31 +758,51 @@ continue;
 
 
 
+
+
+
+
+
+
 if (doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length >= 1) {
+
 const wrapping = document.createElement("div");
 wrapping.innerHTML = doc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML;
 otherString = wrapping.innerHTML;
 let otherParser = new DOMParser();
 let otherDoc = otherParser.parseFromString(otherString, 'text/html');
 let otherCleanDOM = document.createElement("div");
-for (let j = 0; j < otherDoc.body.children.length; j++) {
 
+
+
+for (let j = 0; j < otherDoc.body.children.length; j++) {
 
 if (otherDoc.body.children[j].dataset.json || otherDoc.body.children[j].dataset.addScript) {
 try {
 otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = "<div></div>";
 } catch {};
+} else if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 0) {
+otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML = `<div>${otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.innerHTML}</div>`;
+}
+idRoll.push(otherDoc.body.children[j].id);
+
+
+/*
+if (
+(otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children &&
+ otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.childElementCount == 0) ||
+!otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children ||
+!otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children[0].dataset ||
+!otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children[0].dataset.coinTrip
+) {
+continue;
 }
 
 
+*/
 
 
 
-
-
-
-
-idRoll.push(otherDoc.body.children[j].id);
 let otherInner;
        if (otherDoc.body.children[j].lastElementChild.lastElementChild.previousElementSibling.children.length == 1) {
 
@@ -1617,10 +1635,12 @@ for (c of topLayer[h].b_content.children) {
 
 
 let extract = "";
+try {
 extract = c.lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
 if (eventRoll[k] == "click") {
 extract = c.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
 }
+} catch { };
 scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
 }
@@ -1652,11 +1672,14 @@ scriptStarter += `
 
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
+
 let extract = "";
+try {
 extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.getAttribute("on" + eventRoll[k]);
 if (eventRoll[k] == "click") {
 extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("on" + eventRoll[k]);
 }
+} catch { };
 scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
 `;
 }
@@ -1801,7 +1824,8 @@ stylesIncluded = stylePosition;
 }
 
 let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
-if (window.b64Crusher) { content = b64Crusher.crushOnlyB64(content); }
+
+try { content = b64Crusher.crushOnlyB64(content); } catch { }
 
 if (dragging == true) {
 
@@ -1813,13 +1837,22 @@ return content;
 
 
 if (openInNewWindow) {
-const newWindow = window.open();
+if (typeof event !== 'undefined') event.preventDefault();
+setTimeout(() => {
+const newWindow = window.open('', '_blank');
+if (newWindow) {
 newWindow.document.write(content);
+newWindow.document.close();
+newWindow.focus();
+}
+}, 0);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
 }
+
+
 
 
 
