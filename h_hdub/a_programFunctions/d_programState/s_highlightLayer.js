@@ -29,7 +29,7 @@ const styleLastLast = [ "backgroundColor", "padding", "color", "textShadow", "fo
 
 for (y of styleFirst   ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].style[y]; }
 for (y of styleLast    ) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.style[y]; }
-for (y of styleLastLast) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.lastElementChild.previousElementSibling.style[y]; }
+for (y of styleLastLast) { programState.dat[topLayer[layerArray[j]].b_content.children[i].id].style[y] = topLayer[layerArray[j]].b_content.children[i].lastElementChild.firstElementChild.style[y]; }
 
 
 

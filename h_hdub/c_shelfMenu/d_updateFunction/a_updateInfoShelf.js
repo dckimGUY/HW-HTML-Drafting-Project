@@ -75,7 +75,7 @@ document.getElementById("filterBlur").value       =       0;
 
 
 
-if (coinFocus != null) { document.getElementById("classListEntry").value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.classList.toString(); }
+if (coinFocus != null) { document.getElementById("classListEntry").value = coinFocus.lastElementChild.firstElementChild.classList.toString(); }
 
 
 
@@ -128,17 +128,17 @@ ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
 if (coinFocus!=null) {
 
 if (
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "BUTTON"
+coinFocus.lastElementChild.firstElementChild.firstElementChild &&
+coinFocus.lastElementChild.firstElementChild.firstElementChild.tagName == "BUTTON"
 ) {
-ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.getAttribute("onclick");
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.firstElementChild.firstElementChild.getAttribute("onclick");
 } else {
-ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onclick");
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.firstElementChild.getAttribute("onclick");
 }
 
 
-ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseover");
-ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.getAttribute("onmouseout");
+ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.firstElementChild.getAttribute("onmouseover");
+ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.firstElementChild.getAttribute("onmouseout");
 
 }
 
@@ -176,13 +176,13 @@ ui.partText.ref.firstElementChild.value  = "";
 if (coinFocus!=null) {
 
 if (
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild &&
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == "IMG"
+coinFocus.lastElementChild.firstElementChild.firstElementChild &&
+coinFocus.lastElementChild.firstElementChild.firstElementChild.tagName == "IMG"
 ) {
-ui.partText.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.src;
+ui.partText.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.firstElementChild.firstElementChild.src;
 }
 
-ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML;
+ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.firstElementChild.innerHTML;
 }
 
 ui.partText.ref.firstElementChild.nextElementSibling.setAttribute("onfocus", "this.select()");

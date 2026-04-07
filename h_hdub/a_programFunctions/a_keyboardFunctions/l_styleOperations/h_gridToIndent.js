@@ -28,24 +28,24 @@ groupAction = coinTrip.sel2;
 
 
 
-       if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textIndent==T+"px") {
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textIndent = "inherit";
+       if (coinFocus.lastElementChild.firstElementChild.style.textIndent==T+"px") {
+coinFocus.lastElementChild.firstElementChild.style.textIndent = "inherit";
 
 
 
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.textIndent = "inherit";
+groupAction[j].lastElementChild.firstElementChild.style.textIndent = "inherit";
 } }
 
 
 
 } else {
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textIndent = T + "px";
+coinFocus.lastElementChild.firstElementChild.style.textIndent = T + "px";
 
 
 
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.textIndent = T + "px";
+groupAction[j].lastElementChild.firstElementChild.style.textIndent = T + "px";
 } }
 
 

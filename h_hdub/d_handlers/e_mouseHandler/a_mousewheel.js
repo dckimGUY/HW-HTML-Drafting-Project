@@ -20,7 +20,7 @@ document.addEventListener("mousewheel", (event) => {
 
 
 if (coinFocus != null) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling = coinFocus.lastElementChild.lastElementChild.previousElementSibling;
+coinFocus.lastElementChild.firstElementChild = coinFocus.lastElementChild.firstElementChild;
 }
 
 
@@ -696,23 +696,23 @@ boxShadowTuner();
 styleMenu.indentLine.mousewheel = function() {
 if (!event.shiftKey) {
 let upSize = 0.05;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = "0em";
+if (coinFocus.lastElementChild.firstElementChild.style.textIndent == "") {
+coinFocus.lastElementChild.firstElementChild.style.textIndent = "0em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent) + upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.textIndent = parseFloat(coinFocus.lastElementChild.firstElementChild.style.textIndent) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent) - upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.textIndent = parseFloat(coinFocus.lastElementChild.firstElementChild.style.textIndent) - upSize + "em";
 }
 } else if (event.shiftKey) {
 let upSize = 0.01;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = "1em";
+if (coinFocus.lastElementChild.firstElementChild.style.lineHeight == "") {
+coinFocus.lastElementChild.firstElementChild.style.lineHeight = "1em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight) + upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.lineHeight) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight) - upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.lineHeight) - upSize + "em";
 }
 }
 
@@ -728,23 +728,23 @@ styleMenu.charWord.mousewheel = function() {
 
 if (!event.shiftKey) {
 let upSize = 0.001;
-if (!coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = "0em";
+if (!coinFocus.lastElementChild.firstElementChild.style.letterSpacing) {
+coinFocus.lastElementChild.firstElementChild.style.letterSpacing = "0em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) + upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.letterSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.letterSpacing) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) - upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.letterSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.letterSpacing) - upSize + "em";
 }
 } else if (event.shiftKey) {
 let upSize = 0.02;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = "1em";
+if (coinFocus.lastElementChild.firstElementChild.style.wordSpacing == "") {
+coinFocus.lastElementChild.firstElementChild.style.wordSpacing = "1em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing) + upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.wordSpacing) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing) - upSize + "em";
+coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.wordSpacing) - upSize + "em";
 }
 }
 
@@ -760,9 +760,9 @@ styleMenu.fontSize.mousewheel = function() {
 let upSize = 1;
 if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize) + upSize + "px";
+coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) + upSize + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize) - upSize + "px";
+coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) - upSize + "px";
 }
 }
 
@@ -818,25 +818,25 @@ evaluateOutline();
 
 styleMenu.padding.mousewheel = function() {
 let change = 1;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = 0 + "px";
+if (coinFocus.lastElementChild.firstElementChild.style.padding == "") {
+coinFocus.lastElementChild.firstElementChild.style.padding = 0 + "px";
 }
 if (event.ctrlKey) { change = 5; }
 if (!event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft)  + change + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight) + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft)  + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingRight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingRight) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingLeft)  - change + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingRight) - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft)  - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingRight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingRight) - change + "px";
 }
 } else if ( event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop    = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop)    + change + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom) + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingTop    = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop)    + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingBottom = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingBottom) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop    = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingTop)    - change + "px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.paddingBottom) - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingTop    = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop)    - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingBottom = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingBottom) - change + "px";
 }
 }
 

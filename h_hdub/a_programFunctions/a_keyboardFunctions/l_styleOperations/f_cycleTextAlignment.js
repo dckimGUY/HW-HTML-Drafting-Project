@@ -19,25 +19,25 @@ groupAction = coinTrip.sel1;
 groupAction = coinTrip.sel2;
 }
 
-       if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign=="left") {
-           coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign="center";
+       if (coinFocus.lastElementChild.firstElementChild.style.textAlign=="left") {
+           coinFocus.lastElementChild.firstElementChild.style.textAlign="center";
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.textAlign = "center";
+groupAction[j].lastElementChild.firstElementChild.style.textAlign = "center";
 } }
-} else if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign=="center") {
-           coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign="right";
+} else if (coinFocus.lastElementChild.firstElementChild.style.textAlign=="center") {
+           coinFocus.lastElementChild.firstElementChild.style.textAlign="right";
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.textAlign = "right";
+groupAction[j].lastElementChild.firstElementChild.style.textAlign = "right";
 } }
-} else if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign=="right") {
-           coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign="justify";
+} else if (coinFocus.lastElementChild.firstElementChild.style.textAlign=="right") {
+           coinFocus.lastElementChild.firstElementChild.style.textAlign="justify";
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.textAlign = "justify";
+groupAction[j].lastElementChild.firstElementChild.style.textAlign = "justify";
 } }
-} else if (coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign=="justify") {
-           coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.textAlign="left";
+} else if (coinFocus.lastElementChild.firstElementChild.style.textAlign=="justify") {
+           coinFocus.lastElementChild.firstElementChild.style.textAlign="left";
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.textAlign = "left";
+groupAction[j].lastElementChild.firstElementChild.style.textAlign = "left";
 } }
 }
 }

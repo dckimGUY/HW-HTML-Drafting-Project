@@ -11,5 +11,5 @@ hauptMode = 1;
 }
 ui.textEntry.ref.value = "";
 drawButton7();
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute("onclick", `try { go.anim.all.resume(); } catch { }`);
+coinFocus.lastElementChild.firstElementChild.firstElementChild.setAttribute("onclick", `try { go.anim.all.resume(); } catch { }`);
 }

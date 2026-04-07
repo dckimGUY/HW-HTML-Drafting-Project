@@ -16,7 +16,7 @@ coinFocus.dataset.notes  = `{
 }`;
 coinFocus.id = coinFocus.id.replace(/coin/g, idPrefix);
 coinFocus.name = idPrefix;
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = popString;
+coinFocus.lastElementChild.firstElementChild.innerHTML = popString;
 }
 
 function popStyle() { popInsert("style",`<div style="width: 100%; height:100%; padding: 0px; margin: 0px; border: 0px; font-size: inherit; background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAMAAAAYoR5yAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAC9JREFUCJlj4IEDBh5uGAAzgUJQJpgHZkKU8GBlItRimsANN4Ebjwk8aLahmwAEAHGSBxOB+ZD4AAAAAElFTkSuQmCC'); background-size: 20px 32px;"><textarea name="styleBrick" oninput="this.nextElementSibling.innerHTML = this.value;" style="width: 100%; height: 100%; padding: 0px; margin: 0px; border: 0px; resize:none; font-size: inherit; background-color: rgba(255,255,255,0.8);"></textarea><style></style></div>`); }

@@ -19,7 +19,7 @@ customPromptEntryField.focus();
 
 
 if (customPromptEntryField.value.endsWith("\n")) {
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.backgroundColor = customPromptEntryField.value;
+coinFocus.lastElementChild.firstElementChild.backgroundColor = customPromptEntryField.value;
 customPromptBox.remove();
 };
 

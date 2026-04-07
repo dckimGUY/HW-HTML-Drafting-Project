@@ -21,7 +21,7 @@ tripRef[j].firstChild.innerText = "\n" + tripRef[j].dataset.jsName;
 for (let j = 0; j < tripRef.length; j++) {
 if (tripRef[j]) {
 
-if (!tripRef[j].lastElementChild.firstElementChild.nextElementSibling.innerHTML.toString().includes("=")) {
+if (!tripRef[j].lastElementChild.firstElementChild.innerHTML.toString().includes("=")) {
      if (j==0) {spreadReference(tripRef[j],hold.q);}
 else if (j==1) {spreadReference(tripRef[j],hold.w);}
 else if (j==2) {spreadReference(tripRef[j],hold.e);}

@@ -317,7 +317,7 @@ drawFury(true);
 hotDog = true; event.preventDefault(); spaceViewOn([e,32,32,es,ec,ea]); removePointerEventsNone();
 
 if (coinFocus != null &&
-    coinFocus.lastElementChild.lastElementChild.previousElementSibling
+    coinFocus.lastElementChild.firstElementChild
 ) {
 if (ui.folder52.ref.style.display == "block" &&
     ui.tab5Wrapper.ref.style.display  == "block") {

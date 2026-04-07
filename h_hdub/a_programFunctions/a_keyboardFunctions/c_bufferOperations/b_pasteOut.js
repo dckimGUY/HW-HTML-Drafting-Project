@@ -157,9 +157,7 @@ newCoin.firstElementChild.innerText   =                     "";
 
 newCoin.anchor = newCoin.firstElementChild;
 newCoin.main   = newCoin.lastElementChild;
-newCoin.button = newCoin.lastElementChild.firstElementChild;
-newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
-newCoin.img    = newCoin.lastElementChild.lastElementChild;
+newCoin.div    = newCoin.lastElementChild.firstElementChild;
 
 
 

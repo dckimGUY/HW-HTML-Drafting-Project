@@ -27,6 +27,4 @@ alt    = keyInfo[5];
 /*    n    */ if (kC ==  78 && cC == 110) { insertNewWindow(keyInfo);    }/*    N    */ if (kC ==  78 && cC ==  78) { insertNewWindow(keyInfo);    }
 /*    o    */ if (kC ==  79 && cC == 111) { insertNewWindow(keyInfo);    }/*    O    */ if (kC ==  79 && cC ==  79) { insertNewWindow(keyInfo);    }
 }
-
-utilityLayer0.lastElementChild.firstElementChild.style.zIndex = 0;
 }

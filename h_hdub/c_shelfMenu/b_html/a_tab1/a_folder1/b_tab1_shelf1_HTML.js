@@ -27,7 +27,7 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <div      id="partText"                           class="textarea_ input_partText  dckimPixelMono" placeholder="empty" spellcheck="false">
 <textarea id="partNotes"     name="partNotes"     class="codeInputs" spellcheck="false" title="notes(JSON)" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.dataset.notes = ui.partText.ref.firstElementChild.value;  }; updateInfoShelf();"></textarea>
 <textarea id="partOnInput"   name="partOnInput"   class="codeInputs" spellcheck="false" title="base64 maybe" readonly></textarea>
-<textarea id="partInnerHTML" name="partInnerHTML" class="codeInputs" spellcheck="false" title="innerHTML"   oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.partText.ref.lastElementChild.value; }"></textarea>
+<textarea id="partInnerHTML" name="partInnerHTML" class="codeInputs" spellcheck="false" title="innerHTML"   oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.innerHTML = ui.partText.ref.lastElementChild.value; }"></textarea>
 </div>
 
 
@@ -616,9 +616,9 @@ margin              :         0px;
 
 
 <div      id="partCode"                       class="textarea_ input_partCode  dckimPixelMono hidden" placeholder="empty" spellcheck="false">
-<textarea id="onclick"     name="onclick"     class="codeInputs" spellcheck="false" title="onclick"     oninput="if (curFocus==0&&coinFocus!=null) { if ( coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild && coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.tagName == 'BUTTON') { coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } else { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } }"></textarea>
-<textarea id="onmouseover" name="onmouseover" class="codeInputs" spellcheck="false" title="onmouseover" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onmouseover', ui.partCode.ref.firstElementChild.nextElementSibling.value); }"></textarea>
-<textarea id="onmouseout"  name="onmouseout"  class="codeInputs" spellcheck="false" title="onmouseout"  oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.lastElementChild.previousElementSibling.setAttribute('onmouseout', ui.partCode.ref.lastElementChild.value); }"></textarea>
+<textarea id="onclick"     name="onclick"     class="codeInputs" spellcheck="false" title="onclick"     oninput="if (curFocus==0&&coinFocus!=null) { if ( coinFocus.lastElementChild.firstElementChild.firstElementChild && coinFocus.lastElementChild.firstElementChild.firstElementChild.tagName == 'BUTTON') { coinFocus.lastElementChild.firstElementChild.firstElementChild.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } else { coinFocus.lastElementChild.firstElementChild.setAttribute('onclick', ui.partCode.ref.firstElementChild.value); } }"></textarea>
+<textarea id="onmouseover" name="onmouseover" class="codeInputs" spellcheck="false" title="onmouseover" oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.setAttribute('onmouseover', ui.partCode.ref.firstElementChild.nextElementSibling.value); }"></textarea>
+<textarea id="onmouseout"  name="onmouseout"  class="codeInputs" spellcheck="false" title="onmouseout"  oninput="if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.setAttribute('onmouseout', ui.partCode.ref.lastElementChild.value); }"></textarea>
 </div>
 
 

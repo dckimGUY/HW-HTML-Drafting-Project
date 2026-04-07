@@ -779,14 +779,14 @@ if (newHeight > 0 && newWidth > 0) {
 if (hauptMode==1) {
 hauptMode=0;
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
+coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
+coinFocus.lastElementChild.firstElementChild.style.fontSize = "32px";
 coinFocus.firstElementChild.style.zIndex = "0";
 hauptMode=1;
 } else {
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
+coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
+coinFocus.lastElementChild.firstElementChild.style.fontSize = "32px";
 coinFocus.firstElementChild.style.zIndex = "0";
 }
 utilityLayer0.lastElementChild.style.top      = rowTop     + window.scrollY + hdubTopOffset + "px";
@@ -1244,15 +1244,15 @@ localStorage.setItem("hdubSelected", ui.hdub.selected);
 
        if ( event.shiftKey && !event.ctrlKey && coinFocus != null) {
 if (name != "hdubX") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubCode.ref.value;
+coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubCode.ref.value;
 } else if (name == "hdubX") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
+coinFocus.lastElementChild.firstElementChild.innerHTML = "";
 }
 } else if (!event.shiftKey &&  event.ctrlKey && name != "hdubX") {
 if (hauptMode==1) {
 hauptMode=0;
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
 coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.style.left   = window.scrollX + "px";
 coinFocus.dataset.left = window.scrollX + "px";
@@ -1261,14 +1261,14 @@ coinFocus.dataset.top  = window.scrollY + "px";
 hauptMode=1;
 } else {
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
 coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.style.left   = window.scrollX + "px";
 coinFocus.dataset.left = window.scrollX + "px";
 coinFocus.style.top    = window.scrollY + "px";
 coinFocus.dataset.top  = window.scrollY + "px";
 }
-utilityLayer0.lastElementChild.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubCode.ref.value;
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.innerHTML = ui.hdubCode.ref.value;
 }
 
 

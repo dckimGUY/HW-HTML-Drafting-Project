@@ -83,9 +83,9 @@ const itemButton = document.createElement("button");
       itemButton.classList = "coinItemList";
       itemButton.dataset.scroll = "false";
 try {
-if (utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild &&
-    utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild.dataset &&
-    utilityLayer0.children[j].lastElementChild.lastElementChild.previousElementSibling.firstChild.dataset.coinTrip) {
+if (utilityLayer0.children[j].lastElementChild.firstElementChild.firstChild &&
+    utilityLayer0.children[j].lastElementChild.firstElementChild.firstChild.dataset &&
+    utilityLayer0.children[j].lastElementChild.firstElementChild.firstChild.dataset.coinTrip) {
       itemButton.style.textDecorationLine="underline";
 }
 } catch {  }
@@ -485,7 +485,7 @@ ui.showNames.click               = function() { if (drawPartNames=="false") { dr
 ui.partNext.click                = function() { focusNext(); if (coinFocus!=null) { coinFocus.scrollIntoView({ behavior :'smooth', block : 'center', inline: 'center' }); };     updateInfoShelf(); redraw(); };
 
 ui.partText.input                = function() { };
-ui.partStyle.input               = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.nextElementSibling.style = ui.partStyle.ref.value; } };
+ui.partStyle.input               = function() { if (curFocus==0&&coinFocus!=null) { coinFocus.lastElementChild.firstElementChild.style = ui.partStyle.ref.value; } };
 ui.partCode.input                = function() { };
 
 
@@ -758,7 +758,7 @@ kC = 99; cC = 51;
 boxShadowTuner();
 }
 }; /*                                                */
-             styleMenu.indentLine.click = function() { coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = ""; coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = ""; }; /*                                                */
+             styleMenu.indentLine.click = function() { coinFocus.lastElementChild.firstElementChild.style.textIndent = ""; coinFocus.lastElementChild.firstElementChild.style.lineHeight = ""; }; /*                                                */
              styleMenu.fontShadow.click = function() {
        if (coinFocus != null) {
        if (!event.shiftKey) {
@@ -800,17 +800,17 @@ coinFocus.lastElementChild.style.overflow="hidden";
 }; /*                                                */
                styleMenu.fontSize.click = function() {                        }; /*                                                */
           styleMenu.textAlignLeft.click = function() {
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign == "left") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "justify";
+if (coinFocus.lastElementChild.firstElementChild.style.textAlign == "left") {
+coinFocus.lastElementChild.firstElementChild.style.textAlign = "justify";
 } else {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "left";
+coinFocus.lastElementChild.firstElementChild.style.textAlign = "left";
 }
 
 }; /*                                                */
         styleMenu.textAlignCenter.click = function() {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "center";}; /*                                                */
+coinFocus.lastElementChild.firstElementChild.style.textAlign = "center";}; /*                                                */
          styleMenu.textAlignRight.click = function() {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textAlign = "right";}; /*                                                */
+coinFocus.lastElementChild.firstElementChild.style.textAlign = "right";}; /*                                                */
 
 
 
@@ -837,7 +837,7 @@ evaluateOutline();
 }; /*                                                */
 
 
-                styleMenu.padding.click = function() { coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "0px";                       }; /*                                                */
+                styleMenu.padding.click = function() { coinFocus.lastElementChild.firstElementChild.style.padding = "0px";                       }; /*                                                */
 
 
                 styleMenu.opacity.click = function() {
@@ -877,12 +877,12 @@ coinFocus.lastElementChild.style.opacity = 0;
 
           styleMenu.styleFG.input = function() {
 if (coinFocus != null) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.color = styleMenu.styleFG.ref.value
+coinFocus.lastElementChild.firstElementChild.style.color = styleMenu.styleFG.ref.value
 }
 }; /*                                                */
           styleMenu.styleBG.input = function() {
 if (coinFocus != null) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.backgroundColor = styleMenu.styleBG.ref.value
+coinFocus.lastElementChild.firstElementChild.style.backgroundColor = styleMenu.styleBG.ref.value
 }
 }; /*                                                */
           styleMenu.styleOL.input = function() {

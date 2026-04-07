@@ -356,12 +356,12 @@ infoMessage(`
 
 function infoMessage(message) {
 insertNewCoin([null,78,78]);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = message;
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = "32px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.padding = "32px";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontFamily = "dckimPixelMono"
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.overflow = "scroll";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.contentEditable = "true";
+coinFocus.lastElementChild.firstElementChild.innerHTML = message;
+coinFocus.lastElementChild.firstElementChild.style.fontSize = "32px";
+coinFocus.lastElementChild.firstElementChild.style.padding = "32px";
+coinFocus.lastElementChild.firstElementChild.style.fontFamily = "dckimPixelMono"
+coinFocus.lastElementChild.firstElementChild.style.overflow = "scroll";
+coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
 coinFocus.style.width = "1536px";
 coinFocus.style.height = "1536px";
 coinFocus.dataset.width = "1536px";
@@ -536,8 +536,8 @@ if (event.shiftKey) {
 anim.appendChild(script);
 }
 randomDiv.appendChild(anim);
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.appendChild(randomDiv);
+coinFocus.lastElementChild.firstElementChild.innerHTML = "";
+coinFocus.lastElementChild.firstElementChild.appendChild(randomDiv);
 frameCounter++;
 
 

@@ -474,8 +474,8 @@ pulledText.value = blankSpaces;
 
 for (let j = 0; j < dragPullArray.length; j++) {
        if (dragPullArray[j].startsWith("backgroundColor")) {
-pulledText.style.color       = dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor;
-pulledText.value            += `${event.target.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor.toString()}`;
+pulledText.style.color       = dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.style.backgroundColor;
+pulledText.value            += `${event.target.lastElementChild.firstElementChild.style.backgroundColor.toString()}`;
 pulledText.value += '\n';
 
 
@@ -509,36 +509,14 @@ try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElemen
 pulledText.value += '";\n';
 
 
-} else if (dragPullArray[j].startsWith("button.style.")) {
+} else if (dragPullArray[j].startsWith("div.style.")) {
 try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.style[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
 pulledText.value += '";\n';
-} else if (dragPullArray[j].startsWith("button.dataset.")) {
+} else if (dragPullArray[j].startsWith("div.dataset.")) {
 try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.dataset[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
 pulledText.value += '";\n';
-} else if (dragPullArray[j].startsWith("button.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
-pulledText.value += '";\n';
-
-
-} else if (dragPullArray[j].startsWith("div.style.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.nextElementSibling.style[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
-pulledText.value += '";\n';
-} else if (dragPullArray[j].startsWith("div.dataset.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.nextElementSibling.dataset[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
-pulledText.value += '";\n';
 } else if (dragPullArray[j].startsWith("div.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.nextElementSibling[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
-pulledText.value += '";\n';
-
-
-} else if (dragPullArray[j].startsWith("img.style.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.lastElementChild.style[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
-pulledText.value += '";\n';
-} else if (dragPullArray[j].startsWith("img.dataset.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.lastElementChild.dataset[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
-pulledText.value += '";\n';
-} else if (dragPullArray[j].startsWith("img.")) {
-try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.lastElementChild[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
+try{ pulledText.value       += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
 pulledText.value += '";\n';
 
 
@@ -1097,7 +1075,7 @@ clipList += coinTrip[setName][j].id +'"\n];';
 }
 copyToClipboard(clipList);
 } else if ( event.shiftKey&& event.ctrlKey) {
-copyToClipboard(coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerHTML);
+copyToClipboard(coinFocus.lastElementChild.firstElementChild.innerHTML);
 }
 }
 
@@ -1272,13 +1250,13 @@ eM = originalEM;
 
 hotDog = true; event.preventDefault(); spaceViewOn([event,32,32,event.shiftKey,event.ctrlKey,event.altKey]); removePointerEventsNone();
 if (coinFocus != null &&
-    coinFocus.lastElementChild.lastElementChild.previousElementSibling
+    coinFocus.lastElementChild.firstElementChild
 ) {
 if (ui.folder52.ref.style.display == "block" &&
     ui.tab5Wrapper.ref.style.display  == "block") {
 coinFocus.firstElementChild.style.zIndex = "0";
 }
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.focus();
+coinFocus.lastElementChild.firstElementChild.focus();
 }
 
 

@@ -17,7 +17,7 @@ for (y of style) {
 const value  = stateHolder[index].dat[d].style[y];
 for (r of styleFirst   ) { if (y == r ) { target.style[y] = value; } }
 for (r of styleLast    ) { if (y == r ) { target.lastElementChild.style[y] = value; } }
-for (r of styleLastLast) { if (y == r ) { target.lastElementChild.lastElementChild.previousElementSibling.style[y] = value; } }
+for (r of styleLastLast) { if (y == r ) { target.lastElementChild.firstElementChild.style[y] = value; } }
 if (y == "transform") { target.firstElementChild.style[y] = value; }
 } catch {  }
 }

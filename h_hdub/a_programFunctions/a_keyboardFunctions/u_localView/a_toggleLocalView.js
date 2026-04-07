@@ -42,7 +42,7 @@ coinIdArray.push(coinFocus.id);
 localViewReturn = topLayer.a_currentLayer;	
 topLayer.localView.b_content.innerHTML = '';
 insertNewDuplicate([event,68,68,,,]);
-coinFocus1.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
+coinFocus1.lastElementChild.firstElementChild.innerHTML = "";
 
 
 
@@ -54,7 +54,7 @@ guideLayer(["",77,77,,,]);
 if(rev==1){focusPrevious()}else{focusNext()}
 makeTopLayer("localView");
 pasteSingle([event,80,112,,,]);
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML=="") {
+if (coinFocus.lastElementChild.firstElementChild.innerHTML=="") {
 deleteCoin([event,88,120,,,]);
 singlePasteBuffer.value.pop();
 } else {
@@ -103,17 +103,17 @@ restorePointerEventsNone();
 }, 1);
 makeTopLayer(localViewReturn);
 localViewReturn = null;
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = localViewString;
+coinFocus.lastElementChild.firstElementChild.innerHTML = localViewString;
 coinFocus.style.boxShadow = "";
-for (let j = 0; j < coinFocus.lastElementChild.lastElementChild.previousElementSibling.children.length; j++) {
-let part = coinFocus.lastElementChild.lastElementChild.previousElementSibling.children[j];
+for (let j = 0; j < coinFocus.lastElementChild.firstElementChild.children.length; j++) {
+let part = coinFocus.lastElementChild.firstElementChild.children[j];
 part.style.left   = parseInt(part.style.left) - parseInt(coinFocus.style.left) + "px";
 part.style.top    = parseInt(part.style.top)  - parseInt(coinFocus.style.top)  + "px";
 part.dataset.left = part.style.left;
 part.dataset.top  = part.style.top ;
 }
 coinFocus.id = coinIdArray.pop();
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild && coinFocus.id == coinFocus.lastElementChild.lastElementChild.previousElementSibling.firstElementChild.id) {
+if (coinFocus.lastElementChild.firstElementChild.firstElementChild && coinFocus.id == coinFocus.lastElementChild.firstElementChild.firstElementChild.id) {
 coinFocus.id = "wrapper_" + coinFocus.id;
 }
 

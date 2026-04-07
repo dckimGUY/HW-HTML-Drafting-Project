@@ -21,7 +21,7 @@ promptDefaultText = coinFocus.dataset.fileInclude == "" ? "" : coinFocus.dataset
 
 result = prompt("enter PHP reference for div: ", promptDefaultText);
 if (result!=null) {
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.innerText = `<?php include "./include/${result}"; ?>`;
+coinFocus.lastElementChild.firstElementChild.innerText = `<?php include "./include/${result}"; ?>`;
 coinFocus.dataset.fileInclude = result;
 
 }

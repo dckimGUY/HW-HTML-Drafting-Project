@@ -27,8 +27,6 @@ spaceViewOn();
 removePointerEventsNone();
 
 for (let j = 0; j < utilityLayer0.children.length; j++) {
-utilityLayer0.children[j].lastElementChild.firstElementChild.style.display = "none";
-utilityLayer0.children[j].lastElementChild.firstElementChild.innerText = "";
 newCoin.div.appendChild(utilityLayer0.children[j]);
 }
 

@@ -2,7 +2,7 @@ const colourPicker = document.createElement("input");
 colourPicker.type = "color";
 colourPicker.style.display = "none";
 document.body.appendChild(colourPicker);
-colourPicker.onchange = function () { coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.color = colourPicker.value; }
+colourPicker.onchange = function () { coinFocus.lastElementChild.firstElementChild.style.color = colourPicker.value; }
 
 function enterForegroundColour(keyInfo) {
 const
@@ -31,20 +31,20 @@ groupAction = coinTrip.sel2;
 
 
 
-result = prompt("enter new font colour (tp for transparent): ", coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.color);
+result = prompt("enter new font colour (tp for transparent): ", coinFocus.lastElementChild.firstElementChild.style.color);
 if (result!=null) {
 if (result=="tp"||result=="transparent") {
 
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.color = "transparent";
+coinFocus.lastElementChild.firstElementChild.style.color = "transparent";
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.color = "transparent";
+groupAction[j].lastElementChild.firstElementChild.style.color = "transparent";
 } }
 
 } else {
 
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.color = result.toLowerCase();
+coinFocus.lastElementChild.firstElementChild.style.color = result.toLowerCase();
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.color = result.toLowerCase();
+groupAction[j].lastElementChild.firstElementChild.style.color = result.toLowerCase();
 } }
 
 }

@@ -17,14 +17,10 @@ newCoin          = document.createElement("div"),
 anchor           = document.createElement("a"),
 main             = document.createElement("div"),
 
-button      = document.createElement("button"),
-div         = document.createElement("div"),
-img         = document.createElement("img");
+div         = document.createElement("div");
 
          anchor.dataset.name  = `anchor`;
-          button.dataset.name = `button`;
              div.dataset.name = `div`;
-             img.dataset.name = `img`;
           main.dataset.name   = `main`;
 
        anchor.style = `position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};             `;
@@ -37,11 +33,9 @@ anchor.innerText      =       "";
 
 main.style = `position:absolute;z-index:100;overflow: hidden;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`;
 
-button.style = buttonInitialStyle;
 div.style = `position:absolute;z-index:200;left:0;top:0;width: 100%;height: 100%;box-sizing: border-box;border:none;text-align:justify;pointer-events:none;background-color:transparent;`;
 
-img.style = `position:absolute;display:none;z-index:100;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;background-color:${noImageColour};`;
-img.alt = ``;
+
 div.style.color  = `rgba(0,0,0,1)`;
 div.innerText    = ``;
 
@@ -56,9 +50,7 @@ main.style.scale                   =        "1";
 main.style.transformOrigin         =   "center";
 main.style.transform               =      "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
 
-main.appendChild(button);
 main.appendChild(div);
-main.appendChild(img);
 
 newCoin.id                            =      newId;
 newCoin.dataset.jsName                =      newId;
@@ -340,9 +332,7 @@ newCoin.appendChild(main);
 
 newCoin.anchor = newCoin.firstElementChild;
 newCoin.main   = newCoin.lastElementChild;
-newCoin.button = newCoin.lastElementChild.firstElementChild;
-newCoin.div    = newCoin.lastElementChild.firstElementChild.nextElementSibling;
-newCoin.img    = newCoin.lastElementChild.lastElementChild;
+newCoin.div    = newCoin.lastElementChild.firstElementChild;
 
 newCoin.div.style.fontFamily = "inherit";
 

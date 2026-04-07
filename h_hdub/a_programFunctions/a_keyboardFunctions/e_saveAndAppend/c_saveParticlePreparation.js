@@ -57,14 +57,14 @@ let fileContents = "";
 
 for (let j = 0; j < utilityLayer0.children.length; j++) {
 if (utilityLayer0.children[j].dataset.fileInclude&&utilityLayer0.children[j].dataset.fileInclude!=""&&utilityLayer0.children[j].dataset.fileInclude!="undefined"&&phpSub) {
-const swap = utilityLayer0.children[j].lastElementChild.firstElementChild.nextElementSibling.innerHTML;
+const swap = utilityLayer0.children[j].lastElementChild.firstElementChild.innerHTML;
 const filepath = utilityLayer0.children[j].dataset.fileInclude.split("@")[0].split(".")[0];
 
 phpPaths[phpPaths.length] = '_' + filename + '["_' + filepath + '"]    =   _' + filepath + ';' ;
 
-utilityLayer0.children[j].lastElementChild.firstElementChild.nextElementSibling.innerText = `phpStart include "./a_include/${filepath}.${utilityLayer0.children[j].dataset.fileInclude.split(".")[utilityLayer0.children[j].dataset.fileInclude.split(".").length - 1]}"; phpEnd`;
+utilityLayer0.children[j].lastElementChild.firstElementChild.innerText = `phpStart include "./a_include/${filepath}.${utilityLayer0.children[j].dataset.fileInclude.split(".")[utilityLayer0.children[j].dataset.fileInclude.split(".").length - 1]}"; phpEnd`;
 fileContents += utilityLayer0.children[j].outerHTML;
-utilityLayer0.children[j].lastElementChild.firstElementChild.nextElementSibling.innerHTML = swap;
+utilityLayer0.children[j].lastElementChild.firstElementChild.innerHTML = swap;
 } else {
 fileContents += utilityLayer0.children[j].outerHTML;
 }

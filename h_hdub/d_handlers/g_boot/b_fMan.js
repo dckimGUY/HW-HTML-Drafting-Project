@@ -138,36 +138,36 @@ hold[letter].value = null;
 
 
 if (coinFocus != null) {
-       if (kC ==  81 && cC ==  81){ui.hdubQ.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubQ.value', ui.hdubQ.value);
-} else if (kC ==  87 && cC ==  87){ui.hdubW.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubW.value', ui.hdubW.value);
-} else if (kC ==  69 && cC ==  69){ui.hdubE.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubE.value', ui.hdubE.value);
-} else if (kC ==  82 && cC ==  82){ui.hdubR.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubR.value', ui.hdubR.value);
-} else if (kC ==  84 && cC ==  84){ui.hdubT.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubT.value', ui.hdubT.value);
-} else if (kC ==  89 && cC ==  89){ui.hdubY.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubY.value', ui.hdubY.value);
-} else if (kC ==  85 && cC ==  85){ui.hdubU.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubU.value', ui.hdubU.value);
-} else if (kC ==  73 && cC ==  73){ui.hdubI.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubI.value', ui.hdubI.value);
-} else if (kC ==  79 && cC ==  79){ui.hdubO.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubO.value', ui.hdubO.value);
-} else if (kC ==  80 && cC ==  80){ui.hdubP.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubP.value', ui.hdubP.value);
-} else if (kC ==  65 && cC ==  65){ui.hdubA.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubA.value', ui.hdubA.value);
-} else if (kC ==  83 && cC ==  83){ui.hdubS.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubS.value', ui.hdubS.value);
-} else if (kC ==  68 && cC ==  68){ui.hdubD.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubD.value', ui.hdubD.value);
-} else if (kC ==  70 && cC ==  70){ui.hdubF.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubF.value', ui.hdubF.value);
-} else if (kC ==  71 && cC ==  71){ui.hdubG.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubG.value', ui.hdubG.value);
-} else if (kC ==  72 && cC ==  72){ui.hdubH.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubH.value', ui.hdubH.value);
-} else if (kC ==  74 && cC ==  74){ui.hdubJ.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubJ.value', ui.hdubJ.value);
-} else if (kC ==  75 && cC ==  75){ui.hdubK.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubK.value', ui.hdubK.value);
-} else if (kC ==  76 && cC ==  76){ui.hdubL.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubL.value', ui.hdubL.value);
-} else if (kC ==  90 && cC ==  90){ui.hdubZ.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubZ.value', ui.hdubZ.value);
-} else if (kC ==  67 && cC ==  67){ui.hdubC.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubC.value', ui.hdubC.value);
-} else if (kC ==  86 && cC ==  86){ui.hdubV.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubV.value', ui.hdubV.value);
-} else if (kC ==  66 && cC ==  66){ui.hdubB.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubB.value', ui.hdubB.value);
-} else if (kC ==  78 && cC ==  78){ui.hdubN.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubN.value', ui.hdubN.value);
-} else if (kC ==  77 && cC ==  77){ui.hdubM.value = coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML; localStorage.setItem('hdubM.value', ui.hdubM.value);
+       if (kC ==  81 && cC ==  81){ui.hdubQ.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubQ.value', ui.hdubQ.value);
+} else if (kC ==  87 && cC ==  87){ui.hdubW.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubW.value', ui.hdubW.value);
+} else if (kC ==  69 && cC ==  69){ui.hdubE.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubE.value', ui.hdubE.value);
+} else if (kC ==  82 && cC ==  82){ui.hdubR.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubR.value', ui.hdubR.value);
+} else if (kC ==  84 && cC ==  84){ui.hdubT.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubT.value', ui.hdubT.value);
+} else if (kC ==  89 && cC ==  89){ui.hdubY.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubY.value', ui.hdubY.value);
+} else if (kC ==  85 && cC ==  85){ui.hdubU.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubU.value', ui.hdubU.value);
+} else if (kC ==  73 && cC ==  73){ui.hdubI.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubI.value', ui.hdubI.value);
+} else if (kC ==  79 && cC ==  79){ui.hdubO.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubO.value', ui.hdubO.value);
+} else if (kC ==  80 && cC ==  80){ui.hdubP.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubP.value', ui.hdubP.value);
+} else if (kC ==  65 && cC ==  65){ui.hdubA.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubA.value', ui.hdubA.value);
+} else if (kC ==  83 && cC ==  83){ui.hdubS.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubS.value', ui.hdubS.value);
+} else if (kC ==  68 && cC ==  68){ui.hdubD.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubD.value', ui.hdubD.value);
+} else if (kC ==  70 && cC ==  70){ui.hdubF.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubF.value', ui.hdubF.value);
+} else if (kC ==  71 && cC ==  71){ui.hdubG.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubG.value', ui.hdubG.value);
+} else if (kC ==  72 && cC ==  72){ui.hdubH.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubH.value', ui.hdubH.value);
+} else if (kC ==  74 && cC ==  74){ui.hdubJ.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubJ.value', ui.hdubJ.value);
+} else if (kC ==  75 && cC ==  75){ui.hdubK.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubK.value', ui.hdubK.value);
+} else if (kC ==  76 && cC ==  76){ui.hdubL.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubL.value', ui.hdubL.value);
+} else if (kC ==  90 && cC ==  90){ui.hdubZ.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubZ.value', ui.hdubZ.value);
+} else if (kC ==  67 && cC ==  67){ui.hdubC.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubC.value', ui.hdubC.value);
+} else if (kC ==  86 && cC ==  86){ui.hdubV.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubV.value', ui.hdubV.value);
+} else if (kC ==  66 && cC ==  66){ui.hdubB.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubB.value', ui.hdubB.value);
+} else if (kC ==  78 && cC ==  78){ui.hdubN.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubN.value', ui.hdubN.value);
+} else if (kC ==  77 && cC ==  77){ui.hdubM.value = coinFocus.lastElementChild.firstElementChild.innerHTML; localStorage.setItem('hdubM.value', ui.hdubM.value);
 }
 }
 
 
-//} else if (kC ==  88 && cC ==  88){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubX.value;
+//} else if (kC ==  88 && cC ==  88){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubX.value;
 
 
 charM=0;charQ1=0;charQ2=0;charF=0;
@@ -203,32 +203,32 @@ pasteAfter=1;
 }
 
 if (coinFocus != null) {
-       if (kC ==  81 && cC ==  81){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubQ.value;
-} else if (kC ==  87 && cC ==  87){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubW.value;
-} else if (kC ==  69 && cC ==  69){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubE.value;
-} else if (kC ==  82 && cC ==  82){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubR.value;
-} else if (kC ==  84 && cC ==  84){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubT.value;
-} else if (kC ==  89 && cC ==  89){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubY.value;
-} else if (kC ==  85 && cC ==  85){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubU.value;
-} else if (kC ==  73 && cC ==  73){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubI.value;
-} else if (kC ==  79 && cC ==  79){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubO.value;
-} else if (kC ==  80 && cC ==  80){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubP.value;
-} else if (kC ==  65 && cC ==  65){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubA.value;
-} else if (kC ==  83 && cC ==  83){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubS.value;
-} else if (kC ==  68 && cC ==  68){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubD.value;
-} else if (kC ==  70 && cC ==  70){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubF.value;
-} else if (kC ==  71 && cC ==  71){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubG.value;
-} else if (kC ==  72 && cC ==  72){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubH.value;
-} else if (kC ==  74 && cC ==  74){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubJ.value;
-} else if (kC ==  75 && cC ==  75){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubK.value;
-} else if (kC ==  76 && cC ==  76){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubL.value;
-} else if (kC ==  90 && cC ==  90){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubZ.value;
-} else if (kC ==  67 && cC ==  67){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubC.value;
-} else if (kC ==  86 && cC ==  86){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubV.value;
-} else if (kC ==  66 && cC ==  66){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubB.value;
-} else if (kC ==  78 && cC ==  78){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubN.value;
-} else if (kC ==  77 && cC ==  77){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = ui.hdubM.value;
-} else if (kC ==  88 && cC ==  88){coinFocus.lastElementChild.lastElementChild.previousElementSibling.innerHTML = "";
+       if (kC ==  81 && cC ==  81){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubQ.value;
+} else if (kC ==  87 && cC ==  87){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubW.value;
+} else if (kC ==  69 && cC ==  69){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubE.value;
+} else if (kC ==  82 && cC ==  82){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubR.value;
+} else if (kC ==  84 && cC ==  84){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubT.value;
+} else if (kC ==  89 && cC ==  89){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubY.value;
+} else if (kC ==  85 && cC ==  85){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubU.value;
+} else if (kC ==  73 && cC ==  73){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubI.value;
+} else if (kC ==  79 && cC ==  79){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubO.value;
+} else if (kC ==  80 && cC ==  80){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubP.value;
+} else if (kC ==  65 && cC ==  65){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubA.value;
+} else if (kC ==  83 && cC ==  83){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubS.value;
+} else if (kC ==  68 && cC ==  68){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubD.value;
+} else if (kC ==  70 && cC ==  70){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubF.value;
+} else if (kC ==  71 && cC ==  71){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubG.value;
+} else if (kC ==  72 && cC ==  72){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubH.value;
+} else if (kC ==  74 && cC ==  74){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubJ.value;
+} else if (kC ==  75 && cC ==  75){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubK.value;
+} else if (kC ==  76 && cC ==  76){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubL.value;
+} else if (kC ==  90 && cC ==  90){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubZ.value;
+} else if (kC ==  67 && cC ==  67){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubC.value;
+} else if (kC ==  86 && cC ==  86){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubV.value;
+} else if (kC ==  66 && cC ==  66){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubB.value;
+} else if (kC ==  78 && cC ==  78){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubN.value;
+} else if (kC ==  77 && cC ==  77){coinFocus.lastElementChild.firstElementChild.innerHTML = ui.hdubM.value;
+} else if (kC ==  88 && cC ==  88){coinFocus.lastElementChild.firstElementChild.innerHTML = "";
 }
 }
 

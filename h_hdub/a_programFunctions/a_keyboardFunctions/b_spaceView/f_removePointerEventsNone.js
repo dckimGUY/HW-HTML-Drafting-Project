@@ -21,19 +21,9 @@ if (utilityLayer0.children[j].lastElementChild&&utilityLayer0.children[j].lastEl
 utilityLayer0.children[j].lastElementChild.firstElementChild.style.pointerEvents = "";
 }
 
-if (utilityLayer0.children[j].lastElementChild&&utilityLayer0.children[j].lastElementChild.lastElementChild) {
-utilityLayer0.children[j].lastElementChild.lastElementChild.style.pointerEvents = "";
-}
-
-if (utilityLayer0.children[j].lastElementChild&&utilityLayer0.children[j].lastElementChild.firstElementChild&&utilityLayer0.children[j].lastElementChild.firstElementChild.nextElementSibling) {
-utilityLayer0.children[j].lastElementChild.firstElementChild.nextElementSibling.style.pointerEvents = "";
-}
-
-
 utilityLayer0.children[j].style.pointerEvents = "";
 
 }
 }
-
 
 }

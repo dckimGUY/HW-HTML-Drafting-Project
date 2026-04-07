@@ -4,7 +4,7 @@ backgroundColourPicker.type = "color";
 backgroundColourPicker.style.display = "none";
 document.body.appendChild(backgroundColourPicker);
 backgroundColourPicker.onchange = function () {
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = backgroundColourPicker.value;
+coinFocus.lastElementChild.firstElementChild.style.backgroundColor = backgroundColourPicker.value;
 
 }
 
@@ -33,20 +33,20 @@ groupAction = coinTrip.sel2;
 }
 
 
-result = prompt("enter new background-colour (tp for transparent): ", coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor);
+result = prompt("enter new background-colour (tp for transparent): ", coinFocus.lastElementChild.firstElementChild.style.backgroundColor);
 if (result!=null) {
 if (result=="tp"||result=="transparent") {
 
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = "transparent";
+coinFocus.lastElementChild.firstElementChild.style.backgroundColor = "transparent";
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = "transparent";
+groupAction[j].lastElementChild.firstElementChild.style.backgroundColor = "transparent";
 } }
 
 } else {
 
-coinFocus.lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = result.toLowerCase();
+coinFocus.lastElementChild.firstElementChild.style.backgroundColor = result.toLowerCase();
 if (shift) { for (let j = 0; j < groupAction.length; j++) {
-groupAction[j].lastElementChild.firstElementChild.nextElementSibling.style.backgroundColor = result.toLowerCase();
+groupAction[j].lastElementChild.firstElementChild.style.backgroundColor = result.toLowerCase();
 } }
 
 }

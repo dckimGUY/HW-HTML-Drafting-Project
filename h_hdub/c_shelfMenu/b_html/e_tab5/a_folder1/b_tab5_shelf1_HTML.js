@@ -31,5 +31,5 @@ shelfMenuHTML.tab5.folder1.HTML = `
 <button id="backdropFilter" class="button_ backdropFilter" onclick="updateFilter('drop');" title="put a new backdrop filter"></button>
 <button id="setFilter" class="button_ setFilter" onclick="updateFilter('set');" title="set this on the part"></button>
 
-<textarea id="classListEntry" class="classListEntry dckimPixelMono" title="this is not animated yet" oninput="event.stopPropagation(); const target = coinFocus.lastElementChild.lastElementChild.previousElementSibling; try { target.classList = ''; const className = document.getElementById('classListEntry').value.trim().split(' '); for (t of className) { target.classList.add(t); } } catch {  };" title="NOTE: This is NOT working\n(yet)"></textarea>
+<textarea id="classListEntry" class="classListEntry dckimPixelMono" title="this is not animated yet" oninput="event.stopPropagation(); const target = coinFocus.lastElementChild.firstElementChild; try { target.classList = ''; const className = document.getElementById('classListEntry').value.trim().split(' '); for (t of className) { target.classList.add(t); } } catch {  };" title="NOTE: This is NOT working\n(yet)"></textarea>
 `;
