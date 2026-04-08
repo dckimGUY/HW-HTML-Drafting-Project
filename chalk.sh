@@ -22,6 +22,7 @@ echo '<div id="mouseIconLayer"          ></div>' >> workingVersion.html;
 echo '<div id="interfaceShelf"          ></div>' >> workingVersion.html;
 echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> workingVersion.html;
 echo '<div id="scripts">' >> workingVersion.html;
+echo '<script src="fflate.js"></script>' >> workingVersion.html;
 
 find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' >> chalk_tmp_filenames; 
 find h_hdub -type f | sed '/js\.swp/d' | sed -n '/\.js/p' | sed 's/^/echo ?v=$(date -r /' | sed 's/$/ +"%Y%m%d%H%M%S") >> chalk_tmp_versions;/' > chalk_tmp_versionControl; 
@@ -114,6 +115,7 @@ echo '<div id="interfaceShelf"          ></div>' >> index.html;
 echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> index.html;
 echo '<div id="scripts">' >> index.html;
 # New Split-File model for index.html
+echo '<script src="fflate.js"></script>' >> index.html;
 echo -n '<script src="bundle.js?v=' >> index.html;
 echo -n $(date +%s%3N) >> index.html;
 echo '"></script>' >> index.html;
@@ -142,6 +144,9 @@ echo '<div id="mouseIconLayer"          ></div>' >> hdubPixelArtEdition.html;
 echo '<div id="interfaceShelf"          ></div>' >> hdubPixelArtEdition.html;
 echo '<div id="documentSizingBlock" style="position: absolute; top: 10000000px; left: 10000000px; width: 1px; height: 1px;"></div>' >> hdubPixelArtEdition.html;
 echo '<div id="scripts">' >> hdubPixelArtEdition.html;
+echo '<script>' >> hdubPixelArtEdition.html;
+cat fflate.js >> hdubPixelArtEdition.html;
+echo '</script>' >> hdubPixelArtEdition.html;
 echo '<script>' >> hdubPixelArtEdition.html;
 cat ./bundle.js >> hdubPixelArtEdition.html;
 echo '</script>' >> hdubPixelArtEdition.html;

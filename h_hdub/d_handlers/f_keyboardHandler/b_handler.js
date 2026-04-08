@@ -1,38 +1,61 @@
 window.onkeydown = e => {
     if ((e.ctrlKey || e.metaKey) && e.key === 's') {
         e.preventDefault();
+document.getElementById("levelBar").style.display = "none";
+animatorBar.style.display = "none";
+localStorage.setItem("levelBar", document.getElementById("levelBar").style.display);
+        // Branch A: Pre-zipped version available
         if (document.querySelector('script[src^="bundle.js"]')) {
             const link = document.createElement('a');
             link.href = './hdubPixelArtEdition.zip'; 
             link.download = 'hdubPixelArtEdition.zip';
             link.click();
         }
+        // Branch B: Standalone mode - Zip the current page
         else {
+            // UI Feedback
+            document.body.style.cursor = 'wait';
+
             const doctype = "<!DOCTYPE html>\n";
-            const htmlSource = doctype + document.documentElement.outerHTML;
-            const fileBytes = fflate.strToU8(htmlSource);
-            const zip = new fflate.AsyncZip();
-            const zippedFile = new fflate.AsyncZipDeflate("index.html", { level: 6 });
-            zip.add(zippedFile);
-            const chunks = [];
-            zip.ondata = (err, chunk, final) => {
-                if (err) return console.error(err);
-                chunks.push(chunk);
-                if (final) {
-                    const blob = new Blob(chunks, { type: 'application/zip' });
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = 'hdubPixelArtEdition.zip';
-                    link.click();
-                    setTimeout(() => URL.revokeObjectURL(url), 2000);
-                }
-            };
-            zippedFile.push(fileBytes, true);
-            zip.end();
+            let htmlSource = doctype + document.documentElement.outerHTML;
+
+            // --- Whitespace Optimization ---
+            // Only collapses excessive whitespace/indentation 
+            // Browser formatting handles restoring this for view
+            htmlSource = htmlSource
+                .replace(/>\s+</g, '><')        // Remove whitespace between tags
+                .replace(/\s{2,}/g, ' ')        // Collapse multiple spaces/tabs to one
+                .replace(/\n\s+/g, '\n');       // Remove leading indentation on newlines
+
+            // High-speed native conversion
+            const encoder = new TextEncoder();
+            const fileBytes = encoder.encode(htmlSource);
+
+            // Zip the content using Web Workers at Level 6
+            fflate.zip({
+                "hdubPixelArtEdition.html": [fileBytes, { level: 6 }]
+            }, (err, data) => {
+                document.body.style.cursor = 'default';
+
+                if (err) return console.error("Zipping failed:", err);
+
+                const blob = new Blob([data], { type: 'application/zip' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'hdubPixelArtEdition.zip';
+                link.click();
+
+                // Cleanup
+                setTimeout(() => URL.revokeObjectURL(url), 2000);
+            });
         }
     }
 };
+
+
+
+
 
 
 
