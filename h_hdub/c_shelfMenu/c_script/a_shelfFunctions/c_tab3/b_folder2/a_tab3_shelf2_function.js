@@ -92,7 +92,7 @@ ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 buttonCode += `
 </style>
 </button>`;
-utilityLayer0.children[j].div.innerHTML = buttonCode;
+utilityLayer0.children[j].lastElementChild.lastElementChild.innerHTML = buttonCode;
 buttonCode = "";
 }
 }

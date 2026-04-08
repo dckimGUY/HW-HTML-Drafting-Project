@@ -810,7 +810,7 @@ utilityLayer0.lastElementChild.dataset.coinTrip    = "2";
 } catch { }
 
 try {
-utilityLayer0.lastElementChild.div.innerHTML  = ui["hdub" + nextLetter].value;
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.innerHTML  = ui["hdub" + nextLetter].value;
 } catch { }
 
 }

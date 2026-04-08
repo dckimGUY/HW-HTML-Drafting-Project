@@ -332,9 +332,9 @@ newCoin.appendChild(main);
 
 newCoin.anchor = newCoin.firstElementChild;
 newCoin.main   = newCoin.lastElementChild;
-newCoin.div    = newCoin.lastElementChild.firstElementChild;
+newCoin.lastElementChild.firstElementChild    = newCoin.lastElementChild.firstElementChild;
 
-newCoin.div.style.fontFamily = "inherit";
+newCoin.lastElementChild.firstElementChild.style.fontFamily = "inherit";
 
 /* Initialize from the template. */
 
@@ -364,7 +364,7 @@ div.style.paddingTop              = template.default.paddingTop              ;
 div.style.paddingBottom           = template.default.paddingBottom           ;
 
 div.innerHTML = '<p style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></p>';
-newCoin.div.setAttribute("contenteditable", true);
+newCoin.lastElementChild.firstElementChild.setAttribute("contenteditable", true);
 
 if (hauptMode==0) {
 utilityLayer0.appendChild(newCoin);

@@ -37,7 +37,7 @@ function readCoins() {
             const btn = el.main.firstElementChild;
             if (btn) {
                 el.button = btn;
-                el.div = btn.nextElementSibling;
+                el.lastElementChild.firstElementChild = btn.nextElementSibling;
             }
             el.img = el.main.lastElementChild;
         }

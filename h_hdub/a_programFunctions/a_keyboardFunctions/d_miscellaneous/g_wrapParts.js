@@ -51,7 +51,7 @@ function wrapParts() {
     newCoin.firstElementChild.style.pointerEvents = "none";
     
     // 5. Inject everything back in one shot
-    newCoin.div.appendChild(fragment);
+    newCoin.lastElementChild.firstElementChild.appendChild(fragment);
     utilityLayer0.appendChild(newCoin);
 
     // 6. Global Refresh (Only once!)

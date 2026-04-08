@@ -282,7 +282,7 @@ newCoin.lastElementChild.style.transform           =    coinFocus.lastElementChi
 
 newCoin.anchor = newCoin.firstElementChild;
 newCoin.main   = newCoin.lastElementChild;
-newCoin.div    = newCoin.lastElementChild.firstElementChild;
+newCoin.lastElementChild.firstElementChild    = newCoin.lastElementChild.firstElementChild;
 
 utilityLayer0.appendChild(newCoin);
 

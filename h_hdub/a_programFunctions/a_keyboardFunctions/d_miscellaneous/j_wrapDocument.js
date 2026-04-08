@@ -18,7 +18,7 @@ removePointerEventsNone();
 for (let j = 0; j < utilityLayer0.children.length; j++) {
 }
 
-newCoin.div.innerHTML = utilityLayer0.innerHTML;
+newCoin.lastElementChild.firstElementChild.innerHTML = utilityLayer0.innerHTML;
 
 utilityLayer0.innerHTML = "";
 
@@ -36,11 +36,11 @@ newCoin.dataset.height = furthest[3][0] - least[3][0] + "px";
 newCoin.dataset.wrapper = "true";
 newCoin.firstElementChild.style.pointerEvents = "none";
 
-for (let j = 0; j < newCoin.div.children.length; j++) {
-newCoin.div.children[j].style.left   = parseInt(newCoin.div.children[j].style.left) - least[3][1] + "px";
-newCoin.div.children[j].dataset.left = parseInt(newCoin.div.children[j].style.left) - least[3][1] + "px";
-newCoin.div.children[j].style.top    = parseInt(newCoin.div.children[j].style.top ) - least[3][0] + "px";
-newCoin.div.children[j].dataset.top  = parseInt(newCoin.div.children[j].style.top ) - least[3][0] + "px";
+for (let j = 0; j < newCoin.lastElementChild.firstElementChild.children.length; j++) {
+newCoin.lastElementChild.firstElementChild.children[j].style.left   = parseInt(newCoin.lastElementChild.firstElementChild.children[j].style.left) - least[3][1] + "px";
+newCoin.lastElementChild.firstElementChild.children[j].dataset.left = parseInt(newCoin.lastElementChild.firstElementChild.children[j].style.left) - least[3][1] + "px";
+newCoin.lastElementChild.firstElementChild.children[j].style.top    = parseInt(newCoin.lastElementChild.firstElementChild.children[j].style.top ) - least[3][0] + "px";
+newCoin.lastElementChild.firstElementChild.children[j].dataset.top  = parseInt(newCoin.lastElementChild.firstElementChild.children[j].style.top ) - least[3][0] + "px";
 }
 
 recoverColouration();

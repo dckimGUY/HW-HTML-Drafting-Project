@@ -155,12 +155,6 @@ newCoin.firstElementChild.innerText   = newCoin.dataset.jsName;
 newCoin.firstElementChild.innerText   =                     "";
 }
 
-newCoin.anchor = newCoin.firstElementChild;
-newCoin.main   = newCoin.lastElementChild;
-newCoin.div    = newCoin.lastElementChild.firstElementChild;
-
-
-
 
 
 

@@ -50,26 +50,24 @@ utilityLayer0.lastElementChild.style.width    =  "750px";
 utilityLayer0.lastElementChild.dataset.width  =  "750px";
 utilityLayer0.lastElementChild.style.height   =   height;
 utilityLayer0.lastElementChild.dataset.height =   height;
-utilityLayer0.lastElementChild.div.innerHTML = `<${tag} style="margin: 0px; border: 0px; padding: 0px; width: 100%; height: calc(100% - 32px); outline-offset: -3px; outline: 3px dashed ${colour};"${inner}</${tag}>`;
-utilityLayer0.lastElementChild.div.style.fontSize = "32px";
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.innerHTML = `<${tag} style="margin: 0px; border: 0px; padding: 0px; width: 100%; height: calc(100% - 32px); outline-offset: -3px; outline: 3px dashed ${colour};"${inner}</${tag}>`;
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.style.fontSize = "32px";
 
-utilityLayer0.lastElementChild.div.style.backgroundColor = colour;
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.style.backgroundColor = colour;
 utilityLayer0.lastElementChild.anchor.style.zIndex = "0";
-utilityLayer0.lastElementChild.div.style.padding     = "16px";
-utilityLayer0.lastElementChild.div.style.paddingLeft = "100px";
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.style.padding     = "16px";
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.style.paddingLeft = "100px";
 utilityLayer0.lastElementChild.lastElementChild.style.outlineOffset = "-4px";
 utilityLayer0.lastElementChild.dataset.fury = type;
 utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace("coin", type);
 utilityLayer0.lastElementChild.anchor.style.borderRadius  = "24px";
-utilityLayer0.lastElementChild.main.style.borderRadius  = "24px";
-utilityLayer0.lastElementChild.div.style.borderRadius  = "24px";
+utilityLayer0.lastElementChild.lastElementChild.style.borderRadius  = "24px";
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.style.borderRadius  = "24px";
 utilityLayer0.lastElementChild.style.borderRadius  = "24px";
 utilityLayer0.lastElementChild.lastElementChild.style.borderRadius  = "16px";
 utilityLayer0.lastElementChild.lastElementChild.style.outlineOffset = `-12px`;
 utilityLayer0.lastElementChild.lastElementChild.style.outline = `12px double ${colour}`;
-utilityLayer0.lastElementChild.div.style.color = `black`;
-utilityLayer0.lastElementChild.img.outerHTML = `<div><span style="position: absolute; bottom: 8px; right: 16px; font-family: monospace; font-size: 32px; font-weight: bold; color: rgb(127,127.127) + ')'};">${type.toUpperCase()}</span></div>`
-
+utilityLayer0.lastElementChild.lastElementChild.firstElementChild.style.color = `black`;
 }
 
 
