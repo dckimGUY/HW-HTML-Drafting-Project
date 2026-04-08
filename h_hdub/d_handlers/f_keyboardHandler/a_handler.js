@@ -1,3 +1,33 @@
+
+
+
+window.onkeydown = e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        if (document.querySelector('script[src^="bundle.js"]')) {
+            e.preventDefault();
+            const link = document.createElement('a');
+            // This 'type' force-tells the browser it's a file, not a webpage
+            link.href = './hdubPixelArtEdition.html';
+            link.type = 'application/octet-stream'; 
+            link.download = 'hdubPixelArtEdition.html';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
 /* This tells us if the spacebar is being held down */
 
 const spacebar = {};
