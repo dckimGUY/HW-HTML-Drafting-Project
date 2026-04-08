@@ -703,26 +703,37 @@ drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))))
 
 
 function drawCell(string, colour) {
-const array = cropObject(100, 180, makeObject(clean(string)));
-let drawing = document.createElement("canvas");
-    drawing.width  = 100;
+    const array = cropObject(100, 180, makeObject(clean(string)));
+    const drawing = document.createElement("canvas");
+    drawing.width = 100;
     drawing.height = 180;
-let ctx = drawing.getContext("2d");
-ctx.lineWidth = 4;
-ctx.strokeStyle = colour;
-ctx.clearRect(0, 0, 100, 180);
-let rowStart = 0;
-let shadeNumber = 0;
-for (j = 0; j < array.length; j++) {
-let columnStart = 0;
-for (i = 0; i < array[j].column.length; i++) {
-ctx.strokeRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
-columnStart += array[j].column[i].width;
+    
+    const ctx = drawing.getContext("2d", { alpha: true });
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = colour;
+    
+    // Using a single path for all rectangles is significantly faster than individual strokeRect calls
+    ctx.beginPath();
+    
+    let rowStart = 0;
+    for (let j = 0; j < array.length; j++) {
+        const row = array[j];
+        const rowHeight = row.rowHeight;
+        const columns = row.column;
+        let columnStart = 0;
+        
+        for (let i = 0; i < columns.length; i++) {
+            const colWidth = columns[i].width;
+            ctx.rect(columnStart, rowStart, colWidth, rowHeight);
+            columnStart += colWidth;
+        }
+        rowStart += rowHeight;
+    }
+    
+    ctx.stroke(); // Batched draw call
+    return drawing.toDataURL("image/png");
 }
-rowStart += array[j].rowHeight;
-}
-return drawing.toDataURL("image/png");
-}
+
 
 
 

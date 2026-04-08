@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ASCII-Anim Console</title>
+<meta charset="UTF-8">
+<style>
+    html, body { overflow: hidden; background: #000; margin: 0; padding: 0; }
+    canvas { image-rendering: pixelated; position: absolute; top: 0; left: 0; cursor: none; }
+</style>
+</head>
+<body>
+<script>
+// --- CONFIGURATION ---
+const cols = 80, rows = 40, totalFrames = 64;
+var frames = [], currentFrame = 0, key = "A", mouseX = 0, mouseY = 0;
+var cw, ch, offsetX, offsetY; 
+var showPalette = false, spacePressed = false;
+
+// --- PALETTES ---
+const palettes = [
+    { fg: "#fff", bg: "#111" }, { fg: "#0f0", bg: "#020" }, { fg: "#f80", bg: "#210" }, { fg: "#0ff", bg: "#012" },
+    { fg: "#f0f", bg: "#202" }, { fg: "#ff0", bg: "#220" }, { fg: "#fff", bg: "#00f" }, { fg: "#f00", bg: "#100" },
+    { fg: "#888", bg: "#222" }, { fg: "#fff", bg: "#444" }, { fg: "#000", bg: "#fff" }, { fg: "#000", bg: "#0f0" },
+    { fg: "#00f", bg: "#ff0" }, { fg: "#fef", bg: "#424" }, { fg: "#cfc", bg: "#242" }, { fg: "#ccf", bg: "#224" }
+];
+
+var activePalette = palettes[0];
+const saved = localStorage.getItem("activePalette");
+if (saved) { try { activePalette = JSON.parse(saved); } catch(e) { activePalette = palettes[0]; } }
+
+function init() {
+    frames = Array.from({ length: totalFrames }, () => 
+        Array.from({ length: cols }, () => Array(rows).fill(" "))
+    );
+}
+init();
+
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+document.body.append(canvas);
+
+function redraw() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    let tCw = canvas.width / cols;
+    let tCh = tCw * 2; 
+    if (tCh * rows > canvas.height) { ch = canvas.height / rows; cw = ch / 2; } 
+    else { cw = tCw; ch = tCh; }
+
+    offsetX = (canvas.width - (cols * cw)) / 2;
+    offsetY = (canvas.height - (rows * ch)) / 2;
+
+    ctx.fillStyle = "#000"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = activePalette.bg; ctx.fillRect(offsetX, offsetY, cols * cw, rows * ch);
+    
+    ctx.font = `${ch}px monospace`;
+    ctx.textBaseline = "top"; ctx.textAlign = "center";
+
+    ctx.globalAlpha = 0.15;
+    ctx.fillStyle = "#ff4444"; drawFrameData(frames[(currentFrame - 1 + totalFrames) % totalFrames]);
+    ctx.fillStyle = "#4444ff"; drawFrameData(frames[(currentFrame + 1) % totalFrames]);
+
+    ctx.globalAlpha = 1.0; ctx.fillStyle = activePalette.fg;
+    drawFrameData(frames[currentFrame]);
+
+    if (showPalette) drawHorizontalPalette();
+    drawOverlayCursor();
+}
+
+function drawHorizontalPalette() {
+    const swatchW = cw * 5, swatchH = ch * 5; 
+    const startX = offsetX, startY = offsetY + (ch * 17.5); 
+    palettes.forEach((p, i) => {
+        let px = startX + (i * swatchW);
+        ctx.fillStyle = p.bg; ctx.fillRect(px, startY, swatchW, swatchH);
+        ctx.fillStyle = p.fg; ctx.font = `${swatchH / 2}px monospace`;
+        ctx.fillText(key, px + swatchW / 2, startY + swatchH / 4);
+        if (mouseX >= px && mouseX < px + swatchW && mouseY >= startY && mouseY < startY + swatchH) {
+            // Thick selection border for palette
+            ctx.strokeStyle = activePalette.fg; 
+            ctx.lineWidth = Math.max(2, ch * 0.05); 
+            ctx.strokeRect(px + 1, startY + 1, swatchW - 2, swatchH - 2);
+        }
+    });
+}
+
+function drawOverlayCursor() {
+    ctx.globalAlpha = 1.0; 
+    ctx.strokeStyle = activePalette.fg; 
+    
+    // SCALE-INDEPENDENT LINE WIDTH
+    // This ensures the cursor border is always thick enough to see, 
+    // even when zoomed way out.
+    ctx.lineWidth = Math.max(1.5, ch * 0.04); 
+
+    let k = Math.floor((mouseX - offsetX) / cw), j = Math.floor((mouseY - offsetY) / ch);
+    if (k >= 0 && k < cols && j >= 0 && j < rows) {
+        let gx = k * cw + offsetX, gy = j * ch + offsetY;
+        ctx.strokeRect(gx, gy, cw, ch);
+        ctx.font = `${ch}px monospace`; 
+        ctx.globalAlpha = 0.5; 
+        ctx.fillStyle = activePalette.fg;
+        ctx.fillText(key, gx + cw / 2, gy);
+    }
+}
+
+function drawFrameData(data) {
+    for(let k = 0; k < cols; k++) 
+        for(let j = 0; j < rows; j++) 
+            if(data[k][j] !== " ") ctx.fillText(data[k][j], (k * cw) + cw/2 + offsetX, j * ch + offsetY);
+}
+
+window.onmousemove = e => { 
+    mouseX = e.clientX; mouseY = e.clientY; 
+    if(e.buttons && !showPalette) paint(e); 
+    redraw(); 
+};
+
+window.onmousedown = e => {
+    if (showPalette) {
+        const swatchW = cw * 5, swatchH = ch * 5, startX = offsetX, startY = offsetY + (ch * 17.5);
+        let i = Math.floor((e.clientX - startX) / swatchW);
+        let isInsideY = e.clientY >= startY && e.clientY < startY + swatchH;
+        if (i >= 0 && i < 16 && isInsideY) {
+            activePalette = palettes[i];
+            localStorage.setItem("activePalette", JSON.stringify(activePalette));
+        }
+        redraw();
+    } else {
+        paint(e);
+    }
+};
+
+function paint(e) {
+    let k = Math.floor((e.clientX - offsetX) / cw);
+    let j = Math.floor((e.clientY - offsetY) / ch);
+    if(k >= 0 && k < cols && j >= 0 && j < rows) {
+        if (e.buttons === 4) {
+            frames[currentFrame][k][j] = " ";
+        } else if (e.buttons === 1 || e.buttons === 2) {
+            frames[currentFrame][k][j] = key;
+        }
+        redraw();
+    }
+}
+
+window.oncontextmenu = e => e.preventDefault();
+document.onkeydown = e => {
+    if (e.code === "Space") {
+        if (!spacePressed) { e.preventDefault(); spacePressed = true; showPalette = true; redraw(); }
+        return;
+    }
+    if (showPalette) return;
+    if(e.key === "ArrowRight") { currentFrame = (currentFrame + 1) % totalFrames; redraw(); }
+    if(e.key === "ArrowLeft") { currentFrame = (currentFrame - 1 + totalFrames) % totalFrames; redraw(); }
+    if(e.key === "Backspace" || e.key === "Escape") { frames[currentFrame] = Array.from({length:cols},()=>Array(rows).fill(" ")); redraw(); }
+    if(e.key === "Enter") navigator.clipboard.writeText(JSON.stringify(frames));
+};
+document.onkeyup = e => { if (e.code === "Space") { spacePressed = false; showPalette = false; redraw(); } };
+document.onkeypress = e => { 
+    if(e.key.length === 1 && !e.ctrlKey && e.keyCode !== 13 && e.code !== "Space") { key = e.key; redraw(); } 
+};
+document.onpaste = e => {
+    e.preventDefault();
+    try {
+        const data = JSON.parse(e.clipboardData.getData("text/plain"));
+        if (Array.isArray(data) && data.length === totalFrames) { frames = data; redraw(); }
+    } catch(err) {}
+};
+window.onresize = redraw;
+redraw();
+</script>
+</body>
+</html>

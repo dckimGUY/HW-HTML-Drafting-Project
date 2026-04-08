@@ -1,4 +1,5 @@
 const animatorInclusion = `
+window.addEventListener('keydown', e => e.key === 'Escape' && window.close());
 
 let lastAction = "";
 const animBar = document.createElement('div');

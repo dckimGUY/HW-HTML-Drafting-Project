@@ -1,22 +1,40 @@
-
-
-
 window.onkeydown = e => {
     if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
         if (document.querySelector('script[src^="bundle.js"]')) {
-            e.preventDefault();
             const link = document.createElement('a');
-            // This 'type' force-tells the browser it's a file, not a webpage
-            link.href = './hdubPixelArtEdition.html';
-            link.type = 'application/octet-stream'; 
-            link.download = 'hdubPixelArtEdition.html';
-            
-            document.body.appendChild(link);
+            link.href = './hdubPixelArtEdition.zip'; 
+            link.download = 'hdubPixelArtEdition.zip';
             link.click();
-            document.body.removeChild(link);
+        }
+        else {
+            const doctype = "<!DOCTYPE html>\n";
+            const htmlSource = doctype + document.documentElement.outerHTML;
+            const fileBytes = fflate.strToU8(htmlSource);
+            const zip = new fflate.AsyncZip();
+            const zippedFile = new fflate.AsyncZipDeflate("index.html", { level: 6 });
+            zip.add(zippedFile);
+            const chunks = [];
+            zip.ondata = (err, chunk, final) => {
+                if (err) return console.error(err);
+                chunks.push(chunk);
+                if (final) {
+                    const blob = new Blob(chunks, { type: 'application/zip' });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'hdubPixelArtEdition.zip';
+                    link.click();
+                    setTimeout(() => URL.revokeObjectURL(url), 2000);
+                }
+            };
+            zippedFile.push(fileBytes, true);
+            zip.end();
         }
     }
 };
+
+
 
 
 
