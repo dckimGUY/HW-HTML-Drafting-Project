@@ -1,69 +1,43 @@
-function saveHTMLparticle(rename, fileInputString, codePrep, js, phpSub) {
+async function saveHTMLparticle(rename, fileInputString, codePrep, js, phpSub) {
+    // 1. Capture the "now" state immediately
+    const parts = Array.from(utilityLayer0.children);
+    const num = parts.length;
+    const isTxt = (event && event.ctrlKey);
+    const cleanName = filename.replace(/ /g, '-');
 
-let fileExtension = ".html";
-if (event && event.ctrlKey) fileExtension = ".txt";
+    // 2. Wrap the heavy lifting in a Promise so it doesn't "block"
+    const generateFile = () => new Promise((resolve) => {
+        setTimeout(() => {
+            let fileExtension = isTxt ? ".txt" : ".html";
+            if (phpSub) fileExtension = ".php";
 
-const numberOfElements = utilityLayer0.children.length;
+            // The "Heavy Lift": Moving this to a timeout keeps the UI responsive
+            const filesave = fileInputString || parts.map(el => el.outerHTML).join("\n\n");
 
-const date       =    new Date()                                      ;
-const year       =    date.getFullYear()                              ;
-const month      =    date.getMonth().toString().padStart(2,"0")      ;
-const day        =    date.getDate().toString().padStart(2,"0")       ;
-const hour       =    date.getHours().toString().padStart(2,"0")      ;
-const minute     =    date.getMinutes().toString().padStart(2,"0")    ;
-const second     =    date.getSeconds().toString().padStart(2,"0")    ;
+            const d = new Date();
+            const dateSuffix = `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, "0")}-${d.getDate().toString().padStart(2, "0")}-T${d.getHours().toString().padStart(2, "0")}-${d.getMinutes().toString().padStart(2, "0")}-${d.getSeconds().toString().padStart(2, "0")}`;
+            
+            const typeTag = codePrep ? "_CODE-PREP_" : "";
+            const finalName = `${cleanName}${typeTag}@_${dateSuffix}_${num}pcs${fileExtension}`;
 
-const dateSuffix =    `${year}-${month}-${day}-T${hour}-${minute}-${second}`
+            resolve({ content: filesave, name: finalName });
+        }, 0); 
+    });
 
-let filesave = "";
+    // 3. Execute without locking the UI
+    const fileData = await generateFile();
 
-for (let j = 0; j < utilityLayer0.children.length; j++) {
-filesave += utilityLayer0.children[j].outerHTML + "\n\n";
-}
-
-if (fileInputString) { filesave = fileInputString; }
-
-const blob = new Blob([filesave], { type:'text/html' });
-const url = URL.createObjectURL(blob);
-const a = document.createElement('a');
-a.href = url;
-
-
-
-if (rename==0&&filename!=defaultFilename) {
-filename = filename.replace(/ /g, '-');
-if (codePrep==true) {
-a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-} else {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-}
-} else {
-
-
-if (codePrep==true) {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-} else {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-}
-}
-
-if (js==true) {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-}
-
-
-
-a.click();
-URL.revokeObjectURL(url);
-Z();
-
+    // 4. Trigger the download
+    const blob = new Blob([fileData.content], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileData.name;
+    
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    
+    URL.revokeObjectURL(url);
+    Z(); // Reset the Z-order visualization if needed
 }

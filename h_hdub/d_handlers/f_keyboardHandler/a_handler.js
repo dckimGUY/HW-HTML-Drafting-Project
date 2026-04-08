@@ -145,6 +145,7 @@ if (hotDog) { return; }
 /**************************************************************************/
 /*                                                                        */
 /*   tab   */ if (kC ==   9)              {
+lastKey = "tab";
 if (!event.ctrlKey) {
 event.preventDefault();
 toggleLocalView();

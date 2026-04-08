@@ -1,18 +1,29 @@
 function floorTripartiteZ() {
-if (coinFocus!=null) {
-       if (coinFocus.dataset.coinTrip==Ts0) {
-if (parseInt(coinFocus.style.zIndex) != findZextrema().lowestSel0Z) {
-coinFocus.style.zIndex = findZextrema().lowestSel0Z - internalStep;
-}
-} else if (coinFocus.dataset.coinTrip==Ts1) {
-if (parseInt(coinFocus.style.zIndex) != findZextrema().lowestSel1Z) {
-coinFocus.style.zIndex = findZextrema().lowestSel1Z - internalStep;
-}
-} else if (coinFocus.dataset.coinTrip==Ts2) {
-if (parseInt(coinFocus.style.zIndex) != findZextrema().lowestSel2Z) {
-coinFocus.style.zIndex = findZextrema().lowestSel2Z - internalStep;
-}
-}
-}
-manageTripartiteZ();
+    if (!coinFocus) {
+        manageTripartiteZ();
+        return;
+    }
+
+    const trip = coinFocus.dataset.coinTrip;
+    const currentZ = parseInt(coinFocus.style.zIndex) || 0;
+    
+    // 1. Run the heavy extrema search only ONCE
+    const extrema = findZextrema();
+    
+    // 2. Look up the specific floor for this trip
+    const tripFloors = {
+        [Ts0]: extrema.lowestSel0Z,
+        [Ts1]: extrema.lowestSel1Z,
+        [Ts2]: extrema.lowestSel2Z
+    };
+
+    const targetLow = tripFloors[trip];
+
+    // 3. Only floor it if it's not already at the bottom of its trip
+    if (targetLow !== undefined && currentZ !== targetLow) {
+        coinFocus.style.zIndex = targetLow - internalStep;
+    }
+
+    // 4. Trigger the optimized tripartite sort
+    manageTripartiteZ();
 }

@@ -193,6 +193,7 @@ thePhantomLair.style.opacity = parseFloat(localStorage.getItem("thePhantomLairOp
 
 const localView = document.createElement("div");
 
+var localViewReturn = null; 
 
 
 var topLayer = 
@@ -613,185 +614,126 @@ if (localStorage.getItem("visualGridThickness3")) { visualGridThickness3 = parse
      if (localStorage.getItem("visualGridSize3")) {      visualGridSize3 =      parseInt(localStorage.getItem("visualGridSize3")); ui.coin23538.ref.value =    visualGridSize3;   }
 
 
-
-
-
-if (localStorage.getItem("K")) { K = localStorage.getItem("K"); ui.coin53526.ref.value = K; }
+if (localStorage.getItem("K")) { 
+    K = localStorage.getItem("K"); 
+    ui.coin53526.ref.value = K; 
+}
 
 /* Initialize the grid. */
-document.documentElement.style.backgroundColor=L;
-const V=document.createElement("canvas");
-const F=document.createElement("textarea");
+document.documentElement.style.backgroundColor = L;
+const V = document.createElement("canvas");
+const F = document.createElement("textarea");
 F.name = "spaceBarRetainer";
+
 {
-const s=`position:fixed;left:0;top:0;pointer-events:none;`;
-V.style=s;
-V.style.opacity=K;
-F.style=s+`background-color:transparent;color:transparent;border:0;margin:0;padding:0;resize:none;user-select:none;width:${window.innerWidth + "px"};height:${window.innerHeight + "px"};`;
-F.readOnly=true;
-F.tabIndex=-1;
+    const s = `position:fixed;left:0;top:0;pointer-events:none;`;
+    V.style = s;
+    V.style.opacity = K;
+    F.style = s + `background-color:transparent;color:transparent;border:0;margin:0;padding:0;resize:none;user-select:none;width:${window.innerWidth}px;height:${window.innerHeight}px;`;
+    F.readOnly = true;
+    F.tabIndex = -1;
 }
 gridLayer.appendChild(V);
 gridLayer.appendChild(F);
 
-function Z(){
+function Z() {
+    const vWidth = window.innerWidth;
+    const vHeight = window.innerHeight;
 
-if (window.innerWidth  > 3500) { V.width  = 0; return 0; }
-if (window.innerHeight > 3500) { V.height = 0; return 0; }
+    if (vWidth > 3500 || vHeight > 3500) { V.width = 0; return 0; }
+    if (K == 0) return;
 
-if (K == 0) return;
+    // Sync dimensions once
+    F.style.width = `${vWidth}px`;
+    F.style.height = `${vHeight}px`;
+    V.width = vWidth;
+    V.height = vHeight;
 
+    const Y = V.getContext("2d");
+    const sX = window.scrollX;
+    const sY = window.scrollY;
 
+    // Helper to draw grids without repeating code
+    function drawGrid(size, color, thickness) {
+        if (size < 8 || gW == 0) return;
+        Y.strokeStyle = color;
+        Y.lineWidth = thickness;
+        Y.beginPath();
+        
+        const offsetX = size - (sX % size);
+        const offsetY = size - (sY % size);
 
-F.style.width=`${window.innerWidth}px`;
-F.style.height=`${window.innerHeight}px`;
-V.width=window.innerWidth;
-V.height=window.innerHeight;
+        for (let x = offsetX; x < vWidth; x += size) {
+            Y.moveTo(x, 0);
+            Y.lineTo(x, vHeight);
+        }
+        for (let y = offsetY; y < vHeight; y += size) {
+            Y.moveTo(0, y);
+            Y.lineTo(vWidth, y);
+        }
+        Y.stroke();
+    }
 
-W=T-(window.scrollY%T);
-X=T-(window.scrollX%T);
-Y=V.getContext("2d");
+    if (grid1Viz == "true") drawGrid(visualGridSize1, visualGridColour1, visualGridThickness1);
+    if (grid2Viz == "true") drawGrid(visualGridSize2, visualGridColour2, visualGridThickness2);
+    if (grid3Viz == "true") drawGrid(visualGridSize3, visualGridColour3, visualGridThickness3);
+    if (grid0Viz == "true") drawGrid(T, U, gW);
 
-Y.strokeStyle=U;
-Y.lineWidth=gW;
+    // Crosshair / Origin Lines
+    Y.beginPath();
+    Y.strokeStyle = bU;
+    Y.lineWidth = bW;
+    Y.moveTo(0, -sY);
+    Y.lineTo(vWidth, -sY);
+    Y.moveTo(-sX, 0);
+    Y.lineTo(-sX, vHeight);
+    Y.stroke();
 
+    V.style.opacity = K;
 
+    // Buoy Points with Visibility Check
+    if (topLayer.buoyHide == "false") {
+        try {
+            const buoyValues = Object.values(topLayer.buoyPoint);
+            Y.fillStyle = visualGridColour3;
+            Y.font = "400 96px dckimPixelMono";
+            Y.textBaseline = "top";
+            
+            for (let j = 0; j < buoyValues.length; j++) {
+                const bX = Math.floor(buoyValues[j].location[0] - sX + 20);
+                const bY = Math.floor(buoyValues[j].location[1] - sY + 1);
+                
+                // Only draw text if it's on screen (approximate bounds)
+                if (bX > -500 && bX < vWidth && bY > -100 && bY < vHeight) {
+                    Y.fillText(buoyValues[j].name, bX, bY);
+                }
+            }
+        } catch (e) {}
+    }
 
+    // UI Overlay Text
+    if (gW != 0) {
+        Y.fillStyle = U;
+        Y.font = "400 32px dckimPixelMono";
+        Y.textBaseline = "top";
+        const uiText = `${layerName} ${vWidth}x${vHeight} KEY:${T.toString().padStart(4, ' ')} MOUSE:${mouseIncrement.toString().padStart(3, ' ')} Z:${(pageEchelon / 100000000).toString().padStart(3, ' ')}`;
+        Y.fillText(uiText, 16, 16);
 
-
-
-
-if (grid1Viz=="true") {
-W=visualGridSize1-(window.scrollY%visualGridSize1);
-X=visualGridSize1-(window.scrollX%visualGridSize1);
-Y.strokeStyle=visualGridColour1;
-Y.beginPath(); Y.lineWidth=visualGridThickness1;
-                            if (visualGridSize1>=8&&gW!=0) {
-for(let k=0;k<parseInt(V.height/visualGridSize1)+1;k++){
-                  Y.moveTo(0,W+(visualGridSize1*k));
-            Y.lineTo(V.width,W+(visualGridSize1*k))};
- for(let k=0;k<parseInt(V.width/visualGridSize1)+1;k++){
-                    Y.moveTo(X+(visualGridSize1*k),0);
-                    Y.lineTo(X+(visualGridSize1*k),V.height)}; } Y.stroke();
+        Y.font = "400 64px dckimPixelMono";
+        Y.fillText("\nلَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰه", 768, 16);
+    }
 }
-
-if (grid2Viz=="true") {
-W=visualGridSize2-(window.scrollY%visualGridSize2);
-X=visualGridSize2-(window.scrollX%visualGridSize2);
-Y.strokeStyle=visualGridColour2;
-Y.beginPath(); Y.lineWidth=visualGridThickness2;
-                            if (visualGridSize2>=8&&gW!=0) {
-for(let k=0;k<parseInt(V.height/visualGridSize2)+1;k++){
-                  Y.moveTo(0,W+(visualGridSize2*k));
-            Y.lineTo(V.width,W+(visualGridSize2*k))};
- for(let k=0;k<parseInt(V.width/visualGridSize2)+1;k++){
-                    Y.moveTo(X+(visualGridSize2*k),0);
-                    Y.lineTo(X+(visualGridSize2*k),V.height)}; } Y.stroke();
-}
-
-if (grid3Viz=="true") {
-W=visualGridSize3-(window.scrollY%visualGridSize3);
-X=visualGridSize3-(window.scrollX%visualGridSize3);
-Y.strokeStyle=visualGridColour3;
-Y.beginPath(); Y.lineWidth=visualGridThickness3;
-                            if (visualGridSize3>=8&&gW!=0) {
-for(let k=0;k<parseInt(V.height/visualGridSize3)+1;k++){
-                  Y.moveTo(0,W+(visualGridSize3*k));
-            Y.lineTo(V.width,W+(visualGridSize3*k))};
- for(let k=0;k<parseInt(V.width/visualGridSize3)+1;k++){
-                    Y.moveTo(X+(visualGridSize3*k),0);
-                    Y.lineTo(X+(visualGridSize3*k),V.height)}; } Y.stroke();
-}
-
-W=T-(window.scrollY%T);
-X=T-(window.scrollX%T);
-
-Y.strokeStyle=U;
-Y.lineWidth=gW;
-if (grid0Viz=="true") {Y.beginPath();if (T>=8&&gW!=0) {
-for(let k=0;k<parseInt(V.height/T)+1;k++){ Y.moveTo(0,W+(T*k)); Y.lineTo(V.width,W+(T*k))};
-for(let k=0;k<parseInt(V.width/T)+1;k++){ Y.moveTo(X+(T*k),0); Y.lineTo(X+(T*k),V.height)};
-}Y.stroke();}
-
-
-
-
-W=T-(window.scrollY%T);
-X=T-(window.scrollX%T);
-
-
-
-
-
-
-
-
-Y.beginPath();
-Y.strokeStyle=bU;
-Y.lineWidth=bW;
-Y.moveTo(0,-window.pageYOffset);
-Y.lineTo(V.width,-window.pageYOffset);
-Y.moveTo(-window.pageXOffset,0);
-Y.lineTo(-window.pageXOffset,V.height);
-Y.stroke();
-V.style.opacity=K;
-
-
-
-if (topLayer.buoyHide == "false") {
-
-try {
-const buoyValues = Object.values(topLayer.buoyPoint);
-for (let j = 0; j < buoyValues.length; j++) {
-Y.fillStyle = visualGridColour3;
-Y.font = "400 96px dckimPixelMono";
-Y.textBaseline="top";
-Y.fillText(`${buoyValues[j].name}`,Math.floor((buoyValues[j].location[0] - window.scrollX + 20)),Math.floor((buoyValues[j].location[1] - window.scrollY + 1)));
-}
-} catch {}
-
-}
-
-
-
-
-
-
-
-
-
-Y.beginPath();
-Y.fillStyle=U;
-Y.font=bF;
-Y.font = "400 32px dckimPixelMono";
-Y.textBaseline="top";
-
-if (gW!=0) {
-Y.fillText(`${layerName} ${window.innerWidth}x${window.innerHeight} KEY:${T.toString().padStart(' ',4)} MOUSE:${mouseIncrement.toString().padStart(' ',3)} Z:${(pageEchelon / 100000000).toString().padStart(' ',3)}`,16,16);
-Y.font=bFarr;
-Y.font = "400 64px dckimPixelMono";
-//Y.fillText(`${visualFlowIndicator()}`,0,0);
-Y.fillText(`
-
-لَا إِلَٰهَ إِلَّا ٱللَّٰهُ مُحَمَّدٌ رَسُولُ ٱللَّٰه
-`,768,16);
-Y.stroke();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-};
 
 Z();
+
+
+
+
+
+
+
+
+
 
 
 

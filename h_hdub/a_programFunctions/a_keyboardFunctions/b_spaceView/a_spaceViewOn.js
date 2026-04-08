@@ -30,6 +30,9 @@ utilityLayer1.style.display = "none";
 utilityLayer0.style.opacity = "1.0";
 visualizationsLayer.style.display= "none";
 gridLayer.style.display      = "none";
+
+if (lastKey != "tab") {
 document.documentElement.style.backgroundColor = finishedBackgroundColour;
+}
 
 }

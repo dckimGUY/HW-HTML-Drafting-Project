@@ -1,59 +1,47 @@
 function findZextrema() {
+    const children = utilityLayer0.children;
+    const len = children.length;
 
-let lowestGlobalZ      = pageEchelon + 100000000,
-    lowestSel0Z        = pageEchelon + 100000000,
-    lowestSel1Z        = pageEchelon + 100000000,
-    lowestSel2Z        = pageEchelon + 100000000,
+    // 1. Initial State
+    const result = {
+        lowestGlobalZ:  pageEchelon + 100000000,
+        lowestSel0Z:    pageEchelon + 100000000,
+        lowestSel1Z:    pageEchelon + 100000000,
+        lowestSel2Z:    pageEchelon + 100000000,
+        highestGlobalZ: 0,
+        highestSel0Z:   0,
+        highestSel1Z:   0,
+        highestSel2Z:   0
+    };
 
-    highestGlobalZ     =            0,
-    highestSel0Z       =            0;
-    highestSel1Z       =            0;
-    highestSel2Z       =            0;
+    if (len === 0) {
+        // Fallback for empty layer
+        for (let key in result) result[key] = pageEchelon;
+        return result;
+    }
 
-if (utilityLayer0.children.length > 0) {
+    // 2. SINGLE PASS TARGETED LOOP
+    for (let j = 0; j < len; j++) {
+        const el = children[j];
+        const nextZ = parseInt(el.style.zIndex) || 0;
+        const trip = el.dataset.coinTrip;
 
-for (let j = 0; j < utilityLayer0.children.length; j++) {
+        // Global check (Every part hits this)
+        if (nextZ > result.highestGlobalZ) result.highestGlobalZ = nextZ;
+        if (nextZ < result.lowestGlobalZ)  result.lowestGlobalZ  = nextZ;
 
-const nextZ = parseInt(utilityLayer0.children[j].style.zIndex);
+        // Targeted Trip check (Only check the trip the part actually belongs to)
+        if (trip == Ts0) {
+            if (nextZ > result.highestSel0Z) result.highestSel0Z = nextZ;
+            if (nextZ < result.lowestSel0Z)  result.lowestSel0Z  = nextZ;
+        } else if (trip == Ts1) {
+            if (nextZ > result.highestSel1Z) result.highestSel1Z = nextZ;
+            if (nextZ < result.lowestSel1Z)  result.lowestSel1Z  = nextZ;
+        } else if (trip == Ts2) {
+            if (nextZ > result.highestSel2Z) result.highestSel2Z = nextZ;
+            if (nextZ < result.lowestSel2Z)  result.lowestSel2Z  = nextZ;
+        }
+    }
 
-if (nextZ > highestGlobalZ)   { highestGlobalZ   = nextZ; }
-if (nextZ > highestSel0Z)     { highestSel0Z     = nextZ; }
-if (nextZ > highestSel1Z)     { highestSel1Z     = nextZ; }
-if (nextZ > highestSel2Z)     { highestSel2Z     = nextZ; }
-
-if (nextZ < lowestGlobalZ)    { lowestGlobalZ    = nextZ; }
-if (nextZ < lowestSel0Z)      { lowestSel0Z      = nextZ; }
-if (nextZ < lowestSel1Z)      { lowestSel1Z      = nextZ; }
-if (nextZ < lowestSel2Z)      { lowestSel2Z      = nextZ; }
-
-}
-
-return ({
-"lowestGlobalZ"   : lowestGlobalZ    ,
-"lowestSel0Z"     : lowestSel0Z      ,
-"lowestSel1Z"     : lowestSel1Z      ,
-"lowestSel2Z"     : lowestSel2Z      ,
-
-"highestGlobalZ"  : highestGlobalZ   ,
-"highestSel0Z"    : highestSel0Z     ,
-"highestSel1Z"    : highestSel1Z     ,
-"highestSel2Z"    : highestSel2Z
-});
-
-} else {
-
-return ({
-"lowestGlobalZ"   : pageEchelon,
-"lowestSel0Z"     : pageEchelon,
-"lowestSel1Z"     : pageEchelon,
-"lowestSel2Z"     : pageEchelon,
-
-"highestGlobalZ"  : pageEchelon,
-"highestSel0Z"    : pageEchelon,
-"highestSel1Z"    : pageEchelon,
-"highestSel2Z"    : pageEchelon
-});
-
-}
-
+    return result;
 }

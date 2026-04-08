@@ -47,11 +47,11 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    T    */ if (kC ==  84 && cC ==  84) { modeRouter(e,8); if (lastKey=="T") { assignAllColours(); }                                                         }
 /*    Y    */ if (kC ==  89 && cC ==  89) { isolateGroup();                                                                                                    }
 /*    U    */ if (kC ==  85 && cC ==  85) { duplicateU();                                                                                                      }
-/*    I    */ if (kC ==  73 && cC ==  73) {                                 aioNRouter(keyInfo);                                                               } 
-/*    O    */ if (kC ==  79 && cC ==  79) {                                 aioNRouter(keyInfo);                                                               }
+/*    I    */ if (kC ==  73 && cC ==  73) { aioNRouter(keyInfo);                                                                                               } 
+/*    O    */ if (kC ==  79 && cC ==  79) { aioNRouter(keyInfo);                                                                                               }
 /*    P    */ if (kC ==  80 && cC ==  80) { duplicateP();                                                                                                      }
-/*    A    */ if (kC ==  65 && cC ==  65) {                                 aioNRouter(keyInfo);                                                               }
-/*    S    */ if (kC ==  83 && cC ==  83) {                                 deMinimis(false, lastFactor);                                                      }
+/*    A    */ if (kC ==  65 && cC ==  65) { aioNRouter(keyInfo);                                                                                               }
+/*    S    */ if (kC ==  83 && cC ==  83) { deMinimis(false, lastFactor);                                                                                      }
 /*    D    */ if (kC ==  68 && cC ==  68) { insertNewDuplicate(keyInfo);                                                                                       }
 /*    F    */ if (kC ==  70 && cC ==  70) { styleKey = "f"; gridToFontSize(keyInfo); lastKey = "f";                                                            }
 /*    G    */ if (kC ==  71 && cC ==  71) { curFocus=0; modeRouter(e,1);                                                                                       }
@@ -64,32 +64,32 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /*    C    */ if (kC ==  67 && cC ==  67) { coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
 /*    V    */ if (kC ==  86 && cC ==  86) { lastFlow="colour"; reflowPerTrip(); zBuzz("V");                                                                    }
 /*    B    */ if (kC ==  66 && cC ==  66) { combineStates();                                                                                                   }
-/*    N    */ if (kC ==  78 && cC ==  78) {                                 aioNRouter(keyInfo);                                                               }
+/*    N    */ if (kC ==  78 && cC ==  78) { aioNRouter(keyInfo);                                                                                               }
 /*    M    */ if (kC ==  77 && cC ==  77) { gridArray();                                                                                                       }
 /*                                                                                                                                                            */
 /**************************************************************************************************************************************************************/
 /*                                                                                                                                                            */
 /*    q    */ if (kC ==  81 && cC == 113) { unwrapParts();                                                                                                     }
 /*    w    */ if (kC ==  87 && cC == 119) { flipWindowEdge(); modeRouter(e,0);                                                                                 }
-/*    e    */ if (kC ==  69 && cC == 101) {                                                                              flipEdge(); modeRouter(e,5);          }
+/*    e    */ if (kC ==  69 && cC == 101) { flipEdge(); modeRouter(e,5);                                                                                       }
 /*    r    */ if (kC ==  82 && cC == 114) { removeCoin();                                                                                                      }
 /*    t    */ if (kC ==  84 && cC == 116) { modeRouter(e,8); if (lastKey=="t") { swapColours(); }                                                              }
 /*    y    */ if (kC ==  89 && cC == 121) { isolateSingle();                                                                                                   }
 /*    u    */ if (kC ==  85 && cC == 117) { restoreSingle();                                                                                                   }
-/*    i    */ if (kC ==  73 && cC == 105) {                          aioNRouter(keyInfo);                                                                      }
-/*    o    */ if (kC ==  79 && cC == 111) {                          aioNRouter(keyInfo);                                                                      }
-/*    p    */ if (kC ==  80 && cC == 112) {                          pasteSingle(keyInfo);                                                                     }
-/*    a    */ if (kC ==  65 && cC ==  97) {                          aioNRouter(keyInfo);                                                                      }
-/*    s    */ if (kC ==  83 && cC == 115) {                                    saveProject();                                                                  }
-/*    d    */ if (kC ==  68 && cC == 100) {                                                                                     modeRouter(e,6);               }
+/*    i    */ if (kC ==  73 && cC == 105) { aioNRouter(keyInfo);                                                                                               }
+/*    o    */ if (kC ==  79 && cC == 111) { aioNRouter(keyInfo);                                                                                               }
+/*    p    */ if (kC ==  80 && cC == 112) { pasteSingle(keyInfo);                                                                                              }
+/*    a    */ if (kC ==  65 && cC ==  97) { aioNRouter(keyInfo);                                                                                               }
+/*    s    */ if (kC ==  83 && cC == 115) { saveProject();                                                                                                     }
+/*    d    */ if (kC ==  68 && cC == 100) { modeRouter(e,6);                                                                                                   }
 /*    f    */ if (kC ==  70 && cC == 102) { charQ1=0;charQ2=0;charM=0;charF=1;                                                                                 }
-/*    g    */ if (kC ==  71 && cC == 103) {                                                                              curFocus=0; modeRouter(e,1);          }
+/*    g    */ if (kC ==  71 && cC == 103) { curFocus=0; modeRouter(e,1);                                                                                       }
 /*    h    */ if (kC ==  72 && cC == 104) { hjklRouter(keyInfo);                                                                                               }
 /*    j    */ if (kC ==  74 && cC == 106) { hjklRouter(keyInfo);                                                                                               }
 /*    k    */ if (kC ==  75 && cC == 107) { hjklRouter(keyInfo);                                                                                               }
 /*    l    */ if (kC ==  76 && cC == 108) { hjklRouter(keyInfo);                                                                                               }
 /*    z    */ if (kC ==  90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9); zBuzz("z");                                                                     }
-/*    x    */ if (kC ==  88 && cC == 120) {                          deleteCoin(keyInfo);                                                                      }
+/*    x    */ if (kC ==  88 && cC == 120) { deleteCoin(keyInfo);                                                                                               }
 /*    c    */ if (kC ==  67 && cC ==  99) { cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'});                 }
 /*    v    */ if (kC ==  86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); zBuzz("v");                                                              }
 /*    b    */ if (kC ==  66 && cC ==  98) { severState();                                                                                                      }

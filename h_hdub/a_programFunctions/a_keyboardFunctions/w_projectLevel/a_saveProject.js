@@ -1,14 +1,21 @@
 async function saveProject(pullFile) {
-    /* MAKE SURE THE ARRANGEMENT IS 'FULL-UP' */
-    if (coinFocus != null) { topLayer[topLayer.a_currentLayer].e_coinFocus = coinFocus.id; } else { topLayer[topLayer.a_currentLayer].e_coinFocus = null; }
-    if (coinFocus1 != null) { topLayer[topLayer.a_currentLayer].f_coinFocus = coinFocus1.id; } else { topLayer[topLayer.a_currentLayer].f_coinFocus = null; }
-    topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
-    topLayer[topLayer.a_currentLayer].filename = filename;
-    topLayer[topLayer.a_currentLayer].echelon = pageEchelon / 100000000;
+    // 1. UNIFY STATE (Only if necessary)
+    if (topLayer.a_currentLayer === "localView") toggleLocalView();
 
+    // Cache current layer reference to stop property lookups
+    const curName = topLayer.a_currentLayer;
+    const curLayer = topLayer[curName];
+
+    // Batch update current layer data
+    curLayer.e_coinFocus = coinFocus ? coinFocus.id : null;
+    curLayer.f_coinFocus = coinFocus1 ? coinFocus1.id : null;
+    curLayer.b_content.innerHTML = utilityLayer0.innerHTML;
+    curLayer.filename = filename;
+    curLayer.echelon = pageEchelon / 100000000;
+
+    // Sync Buffers and Themes
     saveTheme("currentTheme");
     topLayer.projectThemes = userCustomTheme;
-
     topLayer.singlePasteBuffer = singlePasteBuffer;
     topLayer.singleRestoreBuffer = singleRestoreBuffer;
     topLayer.multiplePasteBuffer = multiplePasteBuffer;
@@ -16,46 +23,46 @@ async function saveProject(pullFile) {
     topLayer.sel1PasteBuffer = sel1PasteBuffer;
     topLayer.sel2PasteBuffer = sel2PasteBuffer;
     topLayer.hold = hold;
-
     topLayer.hwString = ui.hwString;
 
+    // 2. OPTIMIZED UI DATA CAPTURE
     topLayer.capitals = {};
-    ui.idNames.forEach((name) => {
-        topLayer.capitals[name] = {};
-        topLayer.capitals[name].value = ui[name].value.toString();
-        topLayer.capitals[name].title = ui[name].title.toString();
-        topLayer.capitals[name].colour = ui[name].colour.toString();
+    const idNames = ui.idNames;
+    for (let i = 0; i < idNames.length; i++) {
+        const name = idNames[i];
+        const source = ui[name];
+        topLayer.capitals[name] = {
+            value: source.value.toString(),
+            title: source.title.toString(),
+            colour: source.colour.toString()
+        };
+    }
+
+    // 3. FAST STRINGIFY
+    // Replaced the 'instanceof Element' check with a faster check
+    const json = JSON.stringify(topLayer, (key, value) => {
+        return (value && value.outerHTML) ? value.outerHTML : value;
     });
 
-    let json = JSON.stringify(topLayer, (key, value) => {
-        if (value instanceof Element) { return value.outerHTML; }
-        return value;
-    }, 0);
-
-    // --- COMPRESSION START ---
-    // Convert string to stream, pipe through GZIP, and collect into a blob
+    // 4. COMPRESSION (Your logic is already the fastest native way)
     const stream = new Blob([json]).stream().pipeThrough(new CompressionStream('gzip'));
-    const compressedResponse = new Response(stream);
-    const compressedBlob = await compressedResponse.blob();
-    // --- COMPRESSION END ---
+    const compressedBlob = await new Response(stream).blob();
 
-    const date = new Date();
-    const year = date.getFullYear();
-    const month = date.getMonth().toString().padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
-    const hour = date.getHours().toString().padStart(2, "0");
-    const minute = date.getMinutes().toString().padStart(2, "0");
-    const second = date.getSeconds().toString().padStart(2, "0");
-    const dateSuffix = `${year}-${month}-${day}-T${hour}-${minute}-${second}`;
+    // 5. CLEAN DATE GENERATION
+    const d = new Date();
+    const dateSuffix = d.toISOString().replace(/[:.]/g, '-').split('T');
+    const finalDate = `${dateSuffix[0]}-T${dateSuffix[1].slice(0, 8)}`;
 
+    // 6. DOWNLOAD TRIGGER
     const url = URL.createObjectURL(compressedBlob);
     const a = document.createElement('a');
     a.href = url;
-    
-    // Note: I added '.gz' to the extension so you know it's compressed
-    a.download = "HDUB_Project_" + topLayer.aa_project_name + "@_" + dateSuffix + ".json.gz";
+    a.download = `HDUB_Project_${topLayer.aa_project_name}@_${finalDate}.json.gz`;
 
+    document.body.appendChild(a); // Append for browser compatibility
     a.click();
+    document.body.removeChild(a);
+    
     URL.revokeObjectURL(url);
     return 0;
 }

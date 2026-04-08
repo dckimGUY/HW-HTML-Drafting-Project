@@ -1,65 +1,63 @@
 function wrapParts() {
-if (coinFocus != null && utilityLayer0.children.length>1) {
+    const children = utilityLayer0.children;
+    if (!coinFocus || children.length <= 1) return;
 
-const group = coinFocus.dataset.coinTrip;
+    const group = coinFocus.dataset.coinTrip;
+    const originalX = window.scrollX;
+    const originalY = window.scrollY;
 
-let originalScrollX = window.scrollX;
-let originalScrollY = window.scrollY;
+    // 1. Calculate extents ONCE
+    const furthest = findFurthestExtent();
+    const least = findLeastExtent();
+    const rankMap = { [Ts0]: 0, [Ts1]: 1, [Ts2]: 2 };
+    const rank = rankMap[group] ?? 0;
 
-const newCoin = insertNewCoin([null,78,78,false,false,false]);
+    const minX = least[rank][1];
+    const minY = least[rank][0];
+    const width = furthest[rank][1] - least[3][1];
+    const height = furthest[rank][0] - least[3][0];
 
-newCoin.remove();
+    // 2. Prepare the Wrapper
+    const newCoin = insertNewCoin([null, 78, 78, false, false, false]);
+    newCoin.remove(); // Pull it out of DOM to work on it off-screen
 
-const furthest = findFurthestExtent();
-const least    = findLeastExtent()   ;
-let   rank;
-       if (group == Ts0) {
-               rank = 0;
-} else if (group == Ts1) {
-               rank = 1;
-} else if (group == Ts2) {
-               rank = 2;
-}
+    // 3. Batch move children into Fragment
+    const fragment = document.createDocumentFragment();
+    const partsArray = Array.from(children);
+    
+    partsArray.forEach(child => {
+        const s = child.style;
+        const ds = child.dataset;
+        
+        // Calculate new relative positions before appending
+        const newL = (parseInt(s.left) || 0) - minX + "px";
+        const newT = (parseInt(s.top) || 0) - minY + "px";
+        
+        s.left = ds.left = newL;
+        s.top = ds.top = newT;
+        
+        fragment.appendChild(child);
+    });
 
+    // 4. Finalize Wrapper Styles
+    const ns = newCoin.style;
+    const nd = newCoin.dataset;
+    ns.left = nd.left = minX + "px";
+    ns.top = nd.top = minY + "px";
+    ns.width = nd.width = width + "px";
+    ns.height = nd.height = height + "px";
+    
+    newCoin.anchor.style.zIndex = 0;
+    newCoin.firstElementChild.style.pointerEvents = "none";
+    
+    // 5. Inject everything back in one shot
+    newCoin.div.appendChild(fragment);
+    utilityLayer0.appendChild(newCoin);
 
-readCoins();
-spaceViewOn();
-removePointerEventsNone();
-
-for (let j = 0; j < utilityLayer0.children.length; j++) {
-newCoin.div.appendChild(utilityLayer0.children[j]);
-}
-
-utilityLayer0.appendChild(newCoin);
-
-newCoin.anchor.style.zIndex = 0;
-newCoin.style.left     =    least[rank][1] + "px";
-newCoin.dataset.left   =    least[rank][1] + "px";
-newCoin.style.top      =    least[rank][0] + "px";
-newCoin.dataset.top    =    least[rank][0] + "px";
-newCoin.style.width    = furthest[rank][1] - least[3][1] + "px";
-newCoin.dataset.width  = furthest[rank][1] - least[3][1] + "px";
-newCoin.style.height   = furthest[rank][0] - least[3][0] + "px";
-newCoin.dataset.height = furthest[rank][0] - least[3][0] + "px";
-newCoin.firstElementChild.style.pointerEvents = "none";
-
-for (let j = 0; j < newCoin.div.children.length; j++) {
-newCoin.div.children[j].style.left   = parseInt(newCoin.div.children[j].style.left) - least[rank][1] + "px";
-newCoin.div.children[j].dataset.left = parseInt(newCoin.div.children[j].style.left) - least[rank][1] + "px";
-newCoin.div.children[j].style.top    = parseInt(newCoin.div.children[j].style.top ) - least[rank][0] + "px";
-newCoin.div.children[j].dataset.top  = parseInt(newCoin.div.children[j].style.top ) - least[rank][0] + "px";
-}
-
-recoverColouration();
-readCoins();
-restorePointerEventsNone();
-spaceViewOff();
-
-window.scrollTo(originalScrollX,originalScrollY);
-
-Z();
-
-}
-
-
+    // 6. Global Refresh (Only once!)
+    readCoins();
+    recoverColouration();
+    restorePointerEventsNone();
+    window.scrollTo(originalX, originalY);
+    Z();
 }

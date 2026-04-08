@@ -1,47 +1,43 @@
-function setCoinTrip(e,cycle) {
-if (e.target != Cur&&coinFocus!=null) {
-let trip = Ts2;
-if (coinFocus1 != null) {trip = coinFocus1.dataset.coinTrip;}
-if (cycle) {
-       if (coinFocus.dataset.coinTrip==Ts0) {trip=Ts1;
-} else if (coinFocus.dataset.coinTrip==Ts1) {trip=Ts2;
-} else if (coinFocus.dataset.coinTrip==Ts2) {trip=Ts0;
-}
-}
-let   swap0 = new Array(),      swap1 = new Array(),      swap2 = new Array();
-for (let j = 0; j < coinTrip.sel0.length; j++) { if (coinFocus != coinTrip.sel0[j]) { swap0[swap0.length] = coinTrip.sel0[j]; } }
-for (let j = 0; j < coinTrip.sel1.length; j++) { if (coinFocus != coinTrip.sel1[j]) { swap1[swap1.length] = coinTrip.sel1[j]; } }
-for (let j = 0; j < coinTrip.sel2.length; j++) { if (coinFocus != coinTrip.sel2[j]) { swap2[swap2.length] = coinTrip.sel2[j]; } }
-coinTrip.sel0 = swap0; coinTrip.sel1 = swap1; coinTrip.sel2 = swap2;
-       if (trip==Ts1) {
-coinTrip.sel1[coinTrip.sel1.length] = coinFocus; 
-coinFocus.dataset.coinTrip      = Tm1; 
-coinFocus.firstElementChild.style.fontFamily      = Es1;
-coinFocus.firstElementChild.style.color           = Fs1;
-coinFocus.firstElementChild.style.textAlign       = Gs2;
-coinFocus.firstElementChild.style.backgroundColor = Bs1; 
-coinFocus.firstElementChild.style.opacity         = Os1;
-//coinFocus.style.outlineColor                      = Cs1;
-} else if (trip==Ts0) {
-coinTrip.sel0[coinTrip.sel0.length] = coinFocus; 
-coinFocus.dataset.coinTrip      = Tm0; 
-coinFocus.firstElementChild.style.fontFamily      = Es0;
-coinFocus.firstElementChild.style.color           = Fs0;
-coinFocus.firstElementChild.style.textAlign       = Gs2;
-coinFocus.firstElementChild.style.backgroundColor = Bs0; 
-coinFocus.firstElementChild.style.opacity         = Os0;
-//coinFocus.style.outlineColor                      = Cs0;
-} else if (trip==Ts2) {
-coinTrip.sel2[coinTrip.sel2.length] = coinFocus; 
-coinFocus.dataset.coinTrip      = Tm2; 
-coinFocus.firstElementChild.style.fontFamily      = Es2;
-coinFocus.firstElementChild.style.color           = Fs2;
-coinFocus.firstElementChild.style.textAlign       = Gs2;
-coinFocus.firstElementChild.style.backgroundColor = Bs2; 
-coinFocus.firstElementChild.style.opacity         = Os2;
-//coinFocus.style.outlineColor                      = Cs2;
-}
-}
+function setCoinTrip(e, cycle) {
+    if (e.target == Cur || coinFocus == null) return;
 
+    // 1. Determine target trip
+    let trip = coinFocus1 != null ? coinFocus1.dataset.coinTrip : Ts2;
+    if (cycle) {
+        const currentTrip = coinFocus.dataset.coinTrip;
+        if (currentTrip == Ts0) trip = Ts1;
+        else if (currentTrip == Ts1) trip = Ts2;
+        else if (currentTrip == Ts2) trip = Ts0;
+    }
 
+    // 2. Optimized Removal: Use .filter() instead of manual loops
+    // This is faster and much cleaner
+    coinTrip.sel0 = coinTrip.sel0.filter(item => item !== coinFocus);
+    coinTrip.sel1 = coinTrip.sel1.filter(item => item !== coinFocus);
+    coinTrip.sel2 = coinTrip.sel2.filter(item => item !== coinFocus);
+
+    // 3. Batch Update Style Data
+    // We map the Trip ID to the variables (Ts0 -> Tm0, Fs0, etc.)
+    const config = {
+        [Ts0]: { sel: coinTrip.sel0, tm: Tm0, es: Es0, fs: Fs0, bs: Bs0, os: Os0 },
+        [Ts1]: { sel: coinTrip.sel1, tm: Tm1, es: Es1, fs: Fs1, bs: Bs1, os: Os1 },
+        [Ts2]: { sel: coinTrip.sel2, tm: Tm2, es: Es2, fs: Fs2, bs: Bs2, os: Os2 }
+    };
+
+    const c = config[trip];
+    if (c) {
+        // Add to array
+        c.sel.push(coinFocus);
+
+        // Update Dataset
+        coinFocus.dataset.coinTrip = c.tm;
+
+        // Update Styles in one pass
+        const s = coinFocus.firstElementChild.style;
+        s.fontFamily = c.es;
+        s.color = c.fs;
+        s.textAlign = Gs2;
+        s.backgroundColor = c.bs;
+        s.opacity = c.os;
+    }
 }

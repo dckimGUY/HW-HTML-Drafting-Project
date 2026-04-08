@@ -79,6 +79,9 @@ collection = "";
 
 function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag) {
 
+if (topLayer.a_currentLayer == "localView") { toggleLocalView(); }
+
+
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
 const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
@@ -272,13 +275,13 @@ const serializeRecursive = (el) => {
     const level1 = level0.lastElementChild;
     const level2 = level1 ? level1.lastElementChild : null;
 
-    const soul = (level2 && level2.children.length === 1) ? level2.firstElementChild : null;
-    const isAtomic = soul && !soul.dataset.coinTrip;
+    const guts = (level2 && level2.children.length === 1) ? level2.firstElementChild : null;
+    const isAtomic = guts && !guts.dataset.coinTrip;
 
     let final;
 
     if (isAtomic) {
-        final = soul.cloneNode(true);
+        final = guts.cloneNode(true);
         const oldInnerID = final.id;
         const masterID   = level0.id;
         if (oldInnerID && oldInnerID !== "" && oldInnerID !== masterID) {
@@ -328,8 +331,65 @@ const serializeRecursive = (el) => {
         nest.outerHTML = serializeRecursive(nest); 
     });
 
-    stylePosition += `\n.${final.id} { position:${final.style.position}; left:${final.style.left}; top:${final.style.top}; width:${final.style.width}; height:${final.style.height}; z-index:${final.style.zIndex}; transform:${final.style.transform}; }`;
-    styleEtc      += `\n.${final.id} { filter:${final.style.filter}; background-color:${final.style.backgroundColor}; color:${final.style.color}; padding:${final.style.padding}; }`;
+// 1. Array of all the style names you are using
+const styleKeys = [
+    'position', 'left', 'top', 'width', 'height', 'zIndex', 'transform', 
+    'transformOrigin', 'backgroundSize', 'overflow', 'opacity', 'filter', 
+    'backdropFilter', 'userSelect', 'outline', 'outlineOffset', 'borderRadius', 
+    'boxShadow', 'color', 'background', 'backgroundColor', 'fontSize', 
+    'fontVariant', 'fontStyle', 'fontWeight', 'fontFamily', 'textShadow', 
+    'textAlign', 'wordSpacing', 'letterSpacing', 'lineHeight', 'textIndent', 'padding'
+];
+
+// 2. Loop to find the largest padding
+let maxPadding = 0;
+styleKeys.forEach(key => {
+    const val = (final.style[key] ?? "").toString().length;
+    if (val > maxPadding) maxPadding = val;
+});
+
+// 3. Your original arrangement with the dynamic padding
+stylePosition += `
+.${final.id} {
+    position:         ${final.style.position.toString().padStart(maxPadding, ' ')};
+    left:             ${final.style.left.toString().padStart(maxPadding, ' ')};
+    top:              ${final.style.top.toString().padStart(maxPadding, ' ')};
+    width:            ${final.style.width.toString().padStart(maxPadding, ' ')};
+    height:           ${final.style.height.toString().padStart(maxPadding, ' ')};
+    z-index:          ${final.style.zIndex.toString().padStart(maxPadding, ' ')};
+    transform:        ${final.style.transform.toString().padStart(maxPadding, ' ')};
+    transform-origin: ${final.style.transformOrigin.toString().padStart(maxPadding, ' ')};
+    background-size:  ${final.style.backgroundSize.toString().padStart(maxPadding, ' ')};
+    overflow:         ${final.style.overflow.toString().padStart(maxPadding, ' ')};
+    opacity:          ${final.style.opacity.toString().padStart(maxPadding, ' ')};
+}`;
+
+styleEtc += `
+.${final.id} {
+    filter:           ${final.style.filter.toString().padStart(maxPadding, ' ')};
+    backdrop-filter:  ${final.style.backdropFilter.toString().padStart(maxPadding, ' ')};
+    user-select:      ${final.style.userSelect.toString().padStart(maxPadding, ' ')};
+    outline:          ${final.style.outline.toString().padStart(maxPadding, ' ')};
+    outline-offset:   ${final.style.outlineOffset.toString().padStart(maxPadding, ' ')};
+    border-radius:    ${final.style.borderRadius.toString().padStart(maxPadding, ' ')};
+    box-shadow:       ${final.style.boxShadow.toString().padStart(maxPadding, ' ')};
+    color:            ${final.style.color.toString().padStart(maxPadding, ' ')};
+    background:       ${final.style.background.toString().padStart(maxPadding, ' ')};
+    background-color: ${final.style.backgroundColor.toString().padStart(maxPadding, ' ')};
+    font-size:        ${final.style.fontSize.toString().padStart(maxPadding, ' ')};
+    font-variant:     ${final.style.fontVariant.toString().padStart(maxPadding, ' ')};
+    font-style:       ${final.style.fontStyle.toString().padStart(maxPadding, ' ')};
+    font-weight:      ${final.style.fontWeight.toString().padStart(maxPadding, ' ')};
+    font-family:      ${final.style.fontFamily.toString().padStart(maxPadding, ' ')};
+    text-shadow:      ${final.style.textShadow.toString().padStart(maxPadding, ' ')};
+    text-align:       ${final.style.textAlign.toString().padStart(maxPadding, ' ')};
+    word-spacing:     ${final.style.wordSpacing.toString().padStart(maxPadding, ' ')};
+    letter-spacing:   ${final.style.letterSpacing.toString().padStart(maxPadding, ' ')};
+    line-height:      ${final.style.lineHeight.toString().padStart(maxPadding, ' ')};
+    text-indent:      ${final.style.textIndent.toString().padStart(maxPadding, ' ')};
+    padding:          ${final.style.padding.toString().padStart(maxPadding, ' ')};
+}`;
+
 
     final.removeAttribute('style');
     return final.outerHTML;
