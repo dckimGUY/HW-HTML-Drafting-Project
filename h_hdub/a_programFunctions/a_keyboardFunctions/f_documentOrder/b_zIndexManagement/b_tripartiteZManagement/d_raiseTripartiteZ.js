@@ -1,30 +1,12 @@
 function raiseTripartiteZ() {
-    if (!coinFocus) {
-        manageTripartiteZ();
-        return;
-    }
-
-    const trip = coinFocus.dataset.coinTrip;
-    const currentZ = parseInt(coinFocus.style.zIndex) || 0;
-    
-    // 1. Run the heavy extrema search only ONCE
-    const extrema = findZextrema();
-    
-    // 2. Look up the specific ceiling for this trip
-    const tripHeads = {
-        [Ts0]: extrema.highestSel0Z,
-        [Ts1]: extrema.highestSel1Z,
-        [Ts2]: extrema.highestSel2Z
-    };
-
-    const targetHigh = tripHeads[trip];
-
-    // 3. Only raise if there's room to grow within the trip
-    if (targetHigh !== undefined && currentZ < targetHigh) {
-        // Use cached currentZ for math to avoid a second DOM read
-        coinFocus.style.zIndex = currentZ + internalStep + 1;
-    }
-
-    // 4. Trigger the optimized sort
-    manageTripartiteZ();
+if (coinFocus!=null) {
+       if (coinFocus.dataset.coinTrip==Ts0) {
+if (parseInt(coinFocus.style.zIndex) < findZextrema().highestSel0Z) { coinFocus.style.zIndex = parseInt(coinFocus.style.zIndex) + internalStep + 1; }
+} else if (coinFocus.dataset.coinTrip==Ts1) {
+if (parseInt(coinFocus.style.zIndex) < findZextrema().highestSel1Z) { coinFocus.style.zIndex = parseInt(coinFocus.style.zIndex) + internalStep + 1; }
+} else if (coinFocus.dataset.coinTrip==Ts2) {
+if (parseInt(coinFocus.style.zIndex) < findZextrema().highestSel2Z) { coinFocus.style.zIndex = parseInt(coinFocus.style.zIndex) + internalStep + 1; }
+}
+}
+manageTripartiteZ();
 }
