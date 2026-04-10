@@ -1,15 +1,10 @@
-var   utilityLayer0     ; utilityLayer0      = document.getElementById("utilityLayer0");
-var   utilityLayer1     ; utilityLayer1      = document.getElementById("utilityLayer1");
-
-
+var utilityLayer0 ; utilityLayer0 = document.getElementById("utilityLayer0");
+var utilityLayer1 ; utilityLayer1 = document.getElementById("utilityLayer1");
 function loadReferenceData() {
-
 try {
 let finished = 0;
-
 for (let j = 0; j < window.parents.length; j++) {
 if (finished!=1) {
-
 for (let i = 0; i < window.parents[j].children.length; i++) {
 if (!window.parents[j].children[i].closed) {
 window.hold = window.parents[j].children[i].hold;
@@ -19,13 +14,10 @@ finished = 1;
 }
 }
 }
-
 }
-
 window.helpMenuOverlay.style.display = window.opener.helpMenuOverlay.style.display;
 window.filename = window.opener.filename;
 window.pageEchelon = window.opener.pageEchelon;
-
 if (finished==1) {
 return (1);
 } else {
@@ -34,5 +26,4 @@ return (0);
 } catch {
 return (0);
 }
-
 }

@@ -1,9 +1,1 @@
-function viewImageSheet(sheetName) {
-let ctx = Picture.getContext("2d");
-Picture.style.display="block";
-Picture.width  = sheetImages[sheetName].img.width;
-Picture.height = sheetImages[sheetName].img.height;
-Picture.style.width  = sheetImages[sheetName].img.width  + "px";
-Picture.style.height = sheetImages[sheetName].img.height + "px";
-ctx.drawImage(sheetImages[sheetName].img, 0, 0, sheetImages[sheetName].img.width, sheetImages[sheetName].img.height);
-}
+function viewImageSheet(n){const s=sheetImages[n].img,c=Picture.getContext("2d");Picture.style.display="block";Picture.width=Picture.style.width=s.width;Picture.height=Picture.style.height=s.height;Picture.style.width+="px";Picture.style.height+="px";c.drawImage(s,0,0,s.width,s.height)}

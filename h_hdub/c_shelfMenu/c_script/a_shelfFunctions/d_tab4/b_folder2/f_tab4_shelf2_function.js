@@ -77,7 +77,7 @@ collection = "";
 
 
 
-function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag) {
+async function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag) {
 
 if (topLayer.a_currentLayer == "localView") { toggleLocalView(); }
 
@@ -1083,38 +1083,11 @@ let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}
 
 
 
-if (window.b64unique) {
-try {
-content = b64unique.uniquifyOnlyB64(content);
-} catch (e) {
-if (e instanceof RangeError) {
-const assetMap = new Map();
-let assetId = 0;
-const b64Regex = /data:image\/(png|gif);base64,[A-Za-z0-9+/=]+/g;
-const matches = content.match(b64Regex);
-if (matches) {
-matches.forEach(m => {
-if (!assetMap.has(m)) assetMap.set(m, `uniq64_${assetId++}`);
-});
-let assetDefs = '\n<style id="b64s">\n:root {\n';
-assetMap.forEach((id, raw) => {
-assetDefs += `  --${id}: url('${raw}');\n`;
-});
-assetDefs += '}\n</style>\n';
-assetMap.forEach((id, raw) => {
-const replacement = `var(--${id})`;
-[`url("${raw}")`, `url('${raw}')`, `url(${raw})`].forEach(w => {
-content = content.split(w).join(replacement);
-});
-});
-const headPos = content.indexOf("</head>");
-content = headPos !== -1 ? content.slice(0, headPos) + assetDefs + content.slice(headPos) : assetDefs + content;
-}
-} else {
-throw e;
-}
-}
-}
+
+// No try/catch here anymore. If it fails, we want the error in the console.
+content = await SquareAtlas(content);
+
+
 
 
 

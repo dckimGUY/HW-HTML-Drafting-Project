@@ -1,0 +1,2099 @@
+function enterNewPartFromMouseInput(mouseInfo) {
+
+const newXvalue = parseInt(P.style.left) > parseInt(S.style.left) ? parseInt(S.style.left) + O/2 : parseInt(P.style.left) + O/2;
+const newYvalue = parseInt(P.style.top)  > parseInt(S.style.top)  ? parseInt(S.style.top)  + O/2 : parseInt(P.style.top)  + O/2;
+const newWidth  = Math.abs(parseInt(P.style.left) - parseInt(S.style.left));
+const newHeight = Math.abs(parseInt(P.style.top)  - parseInt(S.style.top));
+
+if (
+(newWidth >= edgeQ*2 &&
+ newHeight>=edgeQ*2) &&
+(newWidth >= mouseIncrement  &&
+newHeight >= mouseIncrement) &&
+(mousedown.lastButton == 0 ||
+ mousedown.lastButton == 1)
+) {
+
+
+
+insertNewCoin([null,78,78,true,false,false]);
+
+for (w of ["style", "dataset"]) {
+coinFocus[w].left   = newXvalue + "px";
+coinFocus[w].top    = newYvalue + "px";
+coinFocus[w].width  = newWidth  + "px";
+coinFocus[w].height = newHeight + "px";
+}
+
+
+} else {
+
+rdots();
+
+}
+
+
+}
+let mode0 = {};
+mode0.mousemove = function(event,ctrl,shift,M) { };
+mode0.mousedown = function(event,ctrl,shift,M) { };
+mode0.mouseup = function(event,ctrl,shift,M) { };
+mode0.mouseclick = function(event,ctrl,shift,M) { };
+mode0.dblclick = function(event,ctrl,shift,M) { };
+if (localStorage.getItem("animatorTiming")) {
+document.getElementById("animationTiming").value = localStorage.getItem("animatorTiming");
+}
+if (localStorage.getItem("stateTiming")) {
+document.getElementById("stateTiming").innerText = parseInt(localStorage.getItem("stateTiming"));
+}
+if (localStorage.getItem("navUpscale")) {
+document.getElementById("navUpscale").innerText = localStorage.getItem("navUpscale");
+}
+document.addEventListener("mousewheel", (event) => {
+if (coinFocus != null) {
+coinFocus.lastElementChild.firstElementChild = coinFocus.lastElementChild.firstElementChild;
+}
+for (let j = 1; j < 21; j++) {
+if (event.target.id == `LVL${j}`) {
+event.preventDefault(); event.stopPropagation();
+ if (event.wheelDelta > 0) {
+layerRight();
+} else if (event.wheelDelta < 0) {
+layerLeft();
+}
+loadSidebar1();
+}
+}
+[
+"popStyle1",
+"popStyle2",
+"popStyle3",
+"activeStateEdit",
+"statename",
+"stateFrame",
+"firstFrame",
+"stateFrameLeft",
+"stateFrameRight",
+"lastFrame",
+"stateCodeCopy",
+"codeOutput",
+"folder51",
+"stateDel",
+"stateIns",
+"animatorBar",
+"frameNumber1",
+"frameBackward",
+"frameForward",
+"skipBack",
+"skipAhead",
+"skipToStart",
+"skipToEnd",
+"leftBumper",
+"rightBumper"
+].forEach((name) => {
+if (event.target.id == name) {
+event.preventDefault();
+event.stopPropagation();
+if (!event.shiftKey) {
+ if (event.wheelDelta > 0) { nextState();
+} else if (event.wheelDelta < 0) { previousState();
+}
+} else {
+ if (event.wheelDelta > 0) { for (let j = 0; j < 5; j++) { nextState(); };
+} else if (event.wheelDelta < 0) { for (let j = 0; j < 5; j++) { previousState(); };
+}
+}
+return;
+}
+});
+if (event.target.id == "stateTiming") {
+event.preventDefault();
+event.stopPropagation();
+let increment = event.shiftKey && !event.ctrlKey ? 100 : 10;
+if (event.ctrlKey) { increment = 1; }
+if (event.wheelDelta > 0) {
+document.getElementById("stateTiming").innerText = parseInt(document.getElementById("stateTiming").innerText) + increment;
+} else if (event.wheelDelta < 0) {
+document.getElementById("stateTiming").innerText = parseInt(document.getElementById("stateTiming").innerText) - increment;
+}
+if (parseInt(document.getElementById("stateTiming").innerText) < 0) { document.getElementById("stateTiming").innerText = 0; }
+localStorage.setItem("stateTiming", parseInt(document.getElementById("stateTiming").innerText));
+return;
+}
+if (localStorage.getItem("stateTiming")) {
+document.getElementById("stateTiming").innerText = localStorage.getItem("stateTiming");
+}
+if (event.target.id == "hdubOverlay" || (event.target.dataset && event.target.dataset.hdubOverlay == "scroll")) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+ui.hdubSheetTemplate4x.ref.value++;displayDemo();
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': buzzWord(0,"10x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '2': buzzWord(0, "8x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+}
+} else if (event.wheelDelta < 0) {
+ui.hdubSheetTemplate4x.ref.value--;displayDemo();
+switch (document.getElementById("hdubSheetTemplate4x").value) {
+case '1': buzzWord(0,"10x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '2': buzzWord(0, "8x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
+}
+}
+} else if (event.target == document.getElementById("siteMapCanvas")) {
+event.preventDefault();
+event.stopPropagation();
+ if (event.wheelDelta > 0) {
+zoomSiteMapIn();
+} else if (event.wheelDelta < 0) {
+zoomSiteMapOut();
+}
+drawSiteMap();
+} else if (event.target == document.getElementById("navUpscale")) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+document.getElementById("navUpscale").innerText = parseInt(document.getElementById("navUpscale").innerText) + 1;
+} else if (event.wheelDelta < 0) {
+document.getElementById("navUpscale").innerText = parseInt(document.getElementById("navUpscale").innerText) - 1;
+}
+if (parseInt(document.getElementById("navUpscale").innerText) < 1) {
+document.getElementById("navUpscale").innerText = 1;
+}
+if (parseInt(document.getElementById("navUpscale").innerText) > 100) {
+document.getElementById("navUpscale").innerText = 100;
+}
+localStorage.setItem("navUpscale", document.getElementById("navUpscale").innerText);
+} else if (event.target == document.getElementById("partY")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) + mouseIncrement);
+} if (ui.partY.ref.value < mouseIncrement)
+ { ui.partY.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) + T);
+} if (ui.partY.ref.value < T)
+ { ui.partY.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) + 2);
+} if (ui.partY.ref.value < 2)
+ { ui.partY.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) + 1);
+} if (ui.partY.ref.value < 1)
+ { ui.partY.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.top = parseInt(ui.partY.ref.value) + "px";
+coinFocus.dataset.top = parseInt(ui.partY.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("partX")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) + mouseIncrement);
+} if (ui.partX.ref.value < mouseIncrement)
+ { ui.partX.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) + T);
+} if (ui.partX.ref.value < T)
+ { ui.partX.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) + 2);
+} if (ui.partX.ref.value < 2)
+ { ui.partX.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) + 1);
+} if (ui.partX.ref.value < 1)
+ { ui.partX.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.left = parseInt(ui.partX.ref.value) + "px";
+coinFocus.dataset.left = parseInt(ui.partX.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("partW")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) + mouseIncrement);
+} if (ui.partW.ref.value < mouseIncrement)
+ { ui.partW.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) + T);
+} if (ui.partW.ref.value < T)
+ { ui.partW.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) + 2);
+} if (ui.partW.ref.value < 2)
+ { ui.partW.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) + 1);
+} if (ui.partW.ref.value < 1)
+ { ui.partW.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.width = parseInt(ui.partW.ref.value) + "px";
+coinFocus.dataset.width = parseInt(ui.partW.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("partH")) {
+event.preventDefault(); event.stopPropagation();
+if ( event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - mouseIncrement);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) + mouseIncrement);
+} if (ui.partH.ref.value < mouseIncrement)
+ { ui.partH.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - T);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) + T);
+} if (ui.partH.ref.value < T)
+ { ui.partH.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - 2);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) + 2);
+} if (ui.partH.ref.value < 2)
+ { ui.partH.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - 1);
+} else if (event.wheelDelta < 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) + 1);
+} if (ui.partH.ref.value < 1)
+ { ui.partH.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.height = parseInt(ui.partH.ref.value) + "px";
+coinFocus.dataset.height =parseInt(ui.partH.ref.value) + "px";
+updateInfoShelf();redraw();
+}
+} else if (event.target == document.getElementById("levelNotes")) {
+event.preventDefault(); event.stopPropagation();
+} else if (event.target.dataset.scroll && event.target.dataset.scroll == "false" ||
+ event.target == document.getElementById("itemSystem") ||
+ event.target == document.getElementById("sidebar")) {
+event.preventDefault(); event.stopPropagation();
+ if ( event.shiftKey) {
+ if (event.wheelDelta > 0) {
+ focusPrevious(); updateInfoShelf(); redraw();
+} else if (event.wheelDelta < 0) {
+ focusNext(); updateInfoShelf(); redraw();
+}
+} else if (!event.shiftKey) {
+ if (event.wheelDelta > 0) {
+ focusPrevious(true); updateInfoShelf(); redraw();
+} else if (event.wheelDelta < 0) {
+ focusNext(true); updateInfoShelf(); redraw();
+}
+}
+loadSidebar1();
+} else if (event.target == document.getElementById("phantomLair") || event.target == document.getElementById("phantomFlip") || (event.target.dataset && event.target.dataset.lair == "true")) {
+event.preventDefault(); event.stopPropagation();
+ if (event.wheelDelta > 0) {
+thePhantomLair.style.opacity = parseFloat(thePhantomLair.style.opacity) + 0.01;
+} else if (event.wheelDelta < 0) {
+thePhantomLair.style.opacity = parseFloat(thePhantomLair.style.opacity) - 0.01;
+}
+if (thePhantomLair.style.opacity < 0.00) {
+thePhantomLair.style.opacity = 0.00;
+}
+if (thePhantomLair.style.opacity > 0.35) {
+thePhantomLair.style.opacity = 0.35;
+}
+localStorage.setItem("thePhantomLairOpacity", thePhantomLair.style.opacity);
+} else if (
+event.target == document.getElementById("pageDescription") ||
+event.target == document.getElementById("projectName") ||
+event.target == document.getElementById("coin49592") ||
+event.target == document.getElementById("coin54398") ||
+event.target == document.getElementById("coin77155") ||
+event.target == document.getElementById("coin59760") ||
+event.target == document.getElementById("coin64291") ||
+event.target == document.getElementById("coin70038") ||
+event.target == document.getElementById("coin77671") ||
+event.target == document.getElementById("folder12") ||
+event.target == document.getElementById("setLayer1") ||
+event.target == document.getElementById("setLayer2") ||
+event.target == document.getElementById("setLayer3") ||
+event.target == document.getElementById("setLayer4") ||
+event.target == document.getElementById("setLayer5") ||
+event.target == document.getElementById("setLayer6") ||
+event.target == document.getElementById("setLayer7") ||
+event.target == document.getElementById("setLayer8") ||
+event.target == document.getElementById("setLayer9") ||
+event.target == document.getElementById("setLayer10") ||
+event.target == document.getElementById("setLayer11") ||
+event.target == document.getElementById("setLayer12") ||
+event.target == document.getElementById("setLayer13") ||
+event.target == document.getElementById("setLayer14") ||
+event.target == document.getElementById("setLayer15") ||
+event.target == document.getElementById("setLayer16") ||
+event.target == document.getElementById("setLayer17") ||
+event.target == document.getElementById("setLayer18") ||
+event.target == document.getElementById("setLayer19") ||
+event.target == document.getElementById("setLayer20") ||
+event.target == document.getElementById("setLayer21") ||
+event.target == document.getElementById("setLayer22") ||
+event.target == document.getElementById("setLayer23") ||
+event.target == document.getElementById("setLayer24") ||
+event.target == document.getElementById("setLayer25")
+) {
+event.preventDefault(); event.stopPropagation();
+ if (event.wheelDelta > 0) {
+layerRight();
+} else if (event.wheelDelta < 0) {
+layerLeft();
+}
+loadSidebar1();
+} else if (
+event.target == document.getElementById("clipCSS") ||
+event.target == document.getElementById("clipHTML") ||
+event.target == document.getElementById("clipCODE") ||
+event.target == document.getElementById("save200") ||
+event.target == document.getElementById("save300") ||
+event.target == document.getElementById("save500") ||
+event.target == document.getElementById("save800") ||
+event.target == document.getElementById("save1000") ||
+event.target == document.getElementById("save1200") ||
+event.target == document.getElementById("save1500") ||
+event.target == document.getElementById("save1800") ||
+event.target == document.getElementById("textFlow") ||
+event.target == document.getElementById("header0") ||
+event.target == document.getElementById("header1") ||
+event.target == document.getElementById("header2") ||
+event.target == document.getElementById("header3") ||
+event.target == document.getElementById("header4") ||
+event.target == document.getElementById("footer0") ||
+event.target == document.getElementById("footer1") ||
+event.target == document.getElementById("footer2") ||
+event.target == document.getElementById("footer3") ||
+event.target == document.getElementById("footer4") ||
+event.target == document.getElementById("folder42")
+) {
+event.preventDefault();
+event.stopPropagation();
+ if (event.wheelDelta < 0) {
+switch (lastFactor) {
+case "1" : lastFactor = "(100/320)" ; break;
+case "(100/320)" : lastFactor = "(100/500)" ; break;
+case "(100/500)" : lastFactor = "(100/768)" ; break;
+case "(100/768)" : lastFactor = "(100/1000)"; break;
+case "(100/1000)": lastFactor = "(100/1280)"; break;
+case "(100/1280)": lastFactor = "(100/1536)"; break;
+case "(100/1536)": lastFactor = "(100/2000)"; break;
+default : lastFactor = "(100/2000)"; break;
+}
+} else if (event.wheelDelta > 0) {
+switch (lastFactor) {
+case "(100/320)" : lastFactor = "1" ; break;
+case "(100/500)" : lastFactor = "(100/320)" ; break;
+case "(100/768)" : lastFactor = "(100/500)" ; break;
+case "(100/1000)": lastFactor = "(100/768)" ; break;
+case "(100/1280)": lastFactor = "(100/1000)"; break;
+case "(100/1536)": lastFactor = "(100/1280)"; break;
+case "(100/2000)": lastFactor = "(100/1536)"; break;
+default : lastFactor = "1" ; break;
+}
+}
+localStorage.setItem("lastFactor", lastFactor);
+updateInfoShelf();
+} else if (
+event.target == document.getElementById("headerText") ||
+event.target == document.getElementById("footerText")
+) {
+event.preventDefault();
+event.stopPropagation();
+} else if (
+event.target == document.getElementById("readButtonBack") ||
+event.target == document.getElementById("folder31") ||
+event.target == document.getElementById("navPoint1") ||
+event.target == document.getElementById("navPoint2") ||
+event.target == document.getElementById("navPoint3") ||
+event.target == document.getElementById("navPoint4") ||
+event.target == document.getElementById("navPoint5") ||
+event.target == document.getElementById("navPoint6") ||
+event.target == document.getElementById("navPoint7") ||
+event.target == document.getElementById("navPoint8") ||
+event.target == document.getElementById("navPoint9") ||
+event.target == document.getElementById("buttonScale").children[0] ||
+event.target == document.getElementById("buttonScale").children[1] ||
+event.target == document.getElementById("buttonScale").children[2] ||
+event.target == document.getElementById("buttonScale").children[3] ||
+event.target == document.getElementById("buttonScale").children[4] ||
+event.target == document.getElementById("buttonScale").children[5] ||
+event.target == document.getElementById("buttonScale").children[6] ||
+event.target == document.getElementById("buttonScale").children[7] ||
+event.target == document.getElementById("buttonScale").children[8] ||
+event.target == document.getElementById("buttonScale").children[9] ||
+event.target == document.getElementById("buttonScale").children[10] ||
+event.target == document.getElementById("buttonScale").children[11] ||
+event.target == document.getElementById("buttonScale").children[12] ||
+event.target == document.getElementById("buttonScale").children[13] ||
+event.target == document.getElementById("buttonScale").children[14] ||
+event.target == document.getElementById("buttonScale").children[15] ||
+event.target == document.getElementById("buttonScale").children[16] ||
+event.target == document.getElementById("buttonScale").children[17] ||
+event.target == document.getElementById("buttonScale").children[18] ||
+event.target == document.getElementById("popColours") ||
+event.target == document.getElementById("popButton") ||
+event.target == document.getElementById("ringButton") ||
+event.target == document.getElementById("yourButtonIsHere").firstElementChild
+) {
+event.preventDefault(); event.stopPropagation();
+ if (event.wheelDelta > 0) {
+cycleColoursForward();
+drawButton7();
+} else if (event.wheelDelta < 0) {
+cycleColoursBackward();
+drawButton7();
+}
+} else if (event.target == document.getElementById("animatorDiv")) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+document.getElementById("animationTiming").value = parseInt(parseInt(document.getElementById("animationTiming").value) + 5);
+} else if (event.wheelDelta < 0) {
+document.getElementById("animationTiming").value -= 5;
+}
+if (document.getElementById("animationTiming").value < 5) {
+document.getElementById("animationTiming").value = 5;
+}
+setupTheAnimator();
+localStorage.setItem("animatorTiming", document.getElementById("animationTiming").value)
+} else if (event.target == ui.frameNumber.ref) {
+event.preventDefault();
+event.stopPropagation();
+if (event.wheelDelta > 0) {
+ui.frameNumber.ref.value = parseInt(ui.frameNumber.ref.value) + 1;
+} else if (event.wheelDelta < 0) {
+ui.frameNumber.ref.value = parseInt(ui.frameNumber.ref.value) - 1;
+}
+if (ui.frameNumber.ref.value > imageRollArray.length) {
+ui.frameNumber.ref.value = imageRollArray.length;
+}
+if (ui.frameNumber.ref.value < 1) {
+ui.frameNumber.ref.value = 1;
+}
+setupTheAnimator();
+}
+[
+ "styleFG",
+ "styleBG",
+ "styleOL",
+ "shadowRadius7",
+ "shadowRadius8",
+ "shadowRadius9",
+ "shadowRadius4",
+ "shadowRadius5",
+ "shadowRadius6",
+ "shadowRadius1",
+ "shadowRadius2",
+ "shadowRadius3",
+ "indentLine",
+ "fontShadow",
+ "charWord",
+ "fontSize",
+ "textAlignLeft",
+ "textAlignCenter",
+ "textAlignRight",
+ "outlineSize",
+ "outlineStyle",
+ "padding",
+ "opacity"
+].forEach((name) => {
+if (event.target == styleMenu[name].ref) {
+event.preventDefault();
+event.stopPropagation();
+if (coinFocus != null) {
+styleMenu[name].mousewheel();
+}
+}
+});
+if (event.buttons===4) {
+event.preventDefault();
+}
+}, { passive: false });
+/* THIS ENDS THE MOUSEWHEEL */
+styleMenu.styleFG.mousewheel = function() { }
+styleMenu.styleBG.mousewheel = function() { }
+styleMenu.styleOL.mousewheel = function() { }
+styleMenu.shadowRadius7.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius8.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius9.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius4.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius5.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius6.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius1.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius2.mousewheel = function() { shadowRadiusWheel(); }
+styleMenu.shadowRadius3.mousewheel = function() { shadowRadiusWheel(); }
+function shadowRadiusWheel() {
+if (event.wheelDelta < 0) {
+ if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "r";
+kC = 109; cC = 45;
+borderRadiusTuner();
+} else if ( event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 109; cC = 45;
+boxShadowTuner();
+} else if (!event.shiftKey && event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 111; cC = 47;
+boxShadowTuner();
+} else if (!event.shiftKey && !event.ctrlKey && event.altKey) {
+styleKey = "u";
+kC = 96; cC = 48;
+boxShadowTuner();
+}
+} else if (event.wheelDelta > 0) {
+ if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "r";
+kC = 107; cC = 43;
+borderRadiusTuner();
+} else if ( event.shiftKey && !event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 107; cC = 43;
+boxShadowTuner();
+} else if (!event.shiftKey && event.ctrlKey && !event.altKey) {
+styleKey = "u";
+kC = 106; cC = 42;
+boxShadowTuner();
+} else if (!event.shiftKey && !event.ctrlKey && event.altKey) {
+styleKey = "u";
+kC = 110; cC = 46;
+boxShadowTuner();
+}
+}
+}
+styleMenu.indentLine.mousewheel = function() {
+if (!event.shiftKey) {
+let upSize = 0.05;
+if (coinFocus.lastElementChild.firstElementChild.style.textIndent == "") {
+coinFocus.lastElementChild.firstElementChild.style.textIndent = "0em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.textIndent = parseFloat(coinFocus.lastElementChild.firstElementChild.style.textIndent) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.textIndent = parseFloat(coinFocus.lastElementChild.firstElementChild.style.textIndent) - upSize + "em";
+}
+} else if (event.shiftKey) {
+let upSize = 0.01;
+if (coinFocus.lastElementChild.firstElementChild.style.lineHeight == "") {
+coinFocus.lastElementChild.firstElementChild.style.lineHeight = "1em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.lineHeight) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.lineHeight) - upSize + "em";
+}
+}
+}
+styleMenu.fontShadow.mousewheel = function() { }
+styleMenu.charWord.mousewheel = function() {
+if (!event.shiftKey) {
+let upSize = 0.001;
+if (!coinFocus.lastElementChild.firstElementChild.style.letterSpacing) {
+coinFocus.lastElementChild.firstElementChild.style.letterSpacing = "0em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.letterSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.letterSpacing) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.letterSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.letterSpacing) - upSize + "em";
+}
+} else if (event.shiftKey) {
+let upSize = 0.02;
+if (coinFocus.lastElementChild.firstElementChild.style.wordSpacing == "") {
+coinFocus.lastElementChild.firstElementChild.style.wordSpacing = "1em";
+}
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.wordSpacing) + upSize + "em";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.wordSpacing) - upSize + "em";
+}
+}
+}
+styleMenu.fontSize.mousewheel = function() {
+let upSize = 1;
+if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) + upSize + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) - upSize + "px";
+}
+}
+styleMenu.textAlignLeft.mousewheel = function() { }
+styleMenu.textAlignCenter.mousewheel = function() { }
+styleMenu.textAlignRight.mousewheel = function() { }
+styleMenu.outlineSize.mousewheel = function() {
+let change = 0.5;
+if (coinFocus.lastElementChild.style.outline == "") {
+coinFocus.lastElementChild.style.outline = "black solid 2px";
+}
+if (!coinFocus.lastElementChild.style.outlineOffset || coinFocus.lastElementChild.style.outlineOffset == "") {
+coinFocus.lastElementChild.style.outlineOffset = "0px";
+}
+if (event.ctrlKey) { change = 0.1; }
+if (!event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.style.outlineWidth = parseFloat(coinFocus.lastElementChild.style.outlineWidth) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.style.outlineWidth = parseFloat(coinFocus.lastElementChild.style.outlineWidth) - change + "px";
+}
+} else if ( event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.style.outlineOffset = parseFloat(coinFocus.lastElementChild.style.outlineOffset) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.style.outlineOffset = parseFloat(coinFocus.lastElementChild.style.outlineOffset) - change + "px";
+}
+}
+}
+styleMenu.outlineStyle.mousewheel = function() {
+const part = coinFocus.lastElementChild;
+function evaluateOutline() {
+part.style.outlineStyle = `${outlineStyleArray[outlineTunedStyle]}`;
+}
+if (event.wheelDelta > 0) {
+outlineTunedStyle -= 1;
+if (outlineTunedStyle < 0) { outlineTunedStyle = outlineStyleArray.length - 1; }
+evaluateOutline();
+} else if (event.wheelDelta <= 0) {
+outlineTunedStyle += 1;
+if (outlineTunedStyle > outlineStyleArray.length - 1) { outlineTunedStyle = 0; }
+evaluateOutline();
+}
+}
+styleMenu.padding.mousewheel = function() {
+let change = 1;
+if (coinFocus.lastElementChild.firstElementChild.style.padding == "") {
+coinFocus.lastElementChild.firstElementChild.style.padding = 0 + "px";
+}
+if (event.ctrlKey) { change = 5; }
+if (!event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.paddingLeft = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft) + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingRight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingRight) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.paddingLeft = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft) - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingRight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingRight) - change + "px";
+}
+} else if ( event.shiftKey) {
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.firstElementChild.style.paddingTop = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop) + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingBottom = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingBottom) + change + "px";
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.firstElementChild.style.paddingTop = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop) - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingBottom = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingBottom) - change + "px";
+}
+}
+}
+styleMenu.opacity.mousewheel = function() {
+let change = 0.05;
+if (coinFocus.lastElementChild.style.opacity == "") {
+coinFocus.lastElementChild.style.opacity = 1;
+}
+if (event.shiftKey) { change = 0.01; } else if (event.ctrlKey) { change = 0.1; }
+if (event.wheelDelta > 0) {
+coinFocus.lastElementChild.style.opacity = parseFloat(coinFocus.lastElementChild.style.opacity) + change;
+} else if (event.wheelDelta <= 0) {
+coinFocus.lastElementChild.style.opacity = parseFloat(coinFocus.lastElementChild.style.opacity) - change;
+}
+}
+let mouseDeltaX = 0,
+ mouseDeltaY = 0;
+let mousemoveTarget=null;
+document.addEventListener("mousemove", (event) => {
+if (event.target.dataset&&event.target.dataset.coinTrip) {
+mousemoveTarget=event.target;
+} else {
+mousemoveTarget=null;
+}
+/* basically seems to be working okay */
+if (mousedown.hold==true && event.target.id.toString() == "siteMapCanvas") {
+drawSiteMap();
+const menuScale = parseFloat(document.getElementById("menuWrapper").style.transform.replace(/scale\(/g,"").replace(/\)/g,""));
+const zoomFactor = parseFloat(document.getElementById("siteMapWrapper").style.transform.replace(/scale\(/g,"").replace(/\)/g,""));
+/* EXTRA CHEESY METHOD: JUST PICK NUMBERS */
+/* THIS MAKES THE VIEW-FINDER TRACK GOOD */
+let trackFactor = 2.25;
+switch (parseInt(Math.floor(parseFloat(ui.menuWrapper.ref.style.transform.slice(6,-1)) * 4))) {
+case 1: trackFactor = 120.00 ; break;
+case 2: trackFactor = 33.60 ; break;
+case 3: trackFactor = 20.85 ; break;
+case 4: trackFactor = 11.50 ; break;
+case 5: trackFactor = 8.00 ; break;
+case 6: trackFactor = 5.80 ; break;
+case 7: trackFactor = 4.15 ; break;
+case 8: trackFactor = 3.35 ; break;
+case 9: trackFactor = 2.68 ; break;
+case 10: trackFactor = 2.28 ; break;
+case 11: trackFactor = 1.98 ; break;
+case 12: trackFactor = 1.60 ; break;
+case 13: trackFactor = 1.395 ; break;
+case 14: trackFactor = 1.22 ; break;
+case 15: trackFactor = 1.075 ; break;
+case 16: trackFactor = 0.925 ; break;
+case 17: trackFactor = 0.80 ; break;
+case 18: trackFactor = 0.73 ; break;
+case 19: trackFactor = 0.667 ; break;
+case 20: trackFactor = 0.61 ; break;
+case 21: trackFactor = 0.55 ; break;
+case 22: trackFactor = 0.515 ; break;
+case 23: trackFactor = 0.462 ; break;
+case 24: trackFactor = 0.43 ; break;
+case 25: trackFactor = 0.392 ; break;
+case 26: trackFactor = 0.36 ; break;
+case 27: trackFactor = 0.345 ; break;
+case 28: trackFactor = 0.315 ; break;
+case 29: trackFactor = 0.290 ; break;
+case 30: trackFactor = 0.268 ; break;
+case 31: trackFactor = 0.259 ; break;
+case 32: trackFactor = 0.25 ; break;
+case 33: trackFactor = 0.235 ; break;
+}
+const factor = trackFactor * menuScale / zoomFactor;
+mouseX = mousedown.scrollX + ((mousedown.clientX - event.clientX) * factor);
+mouseY = mousedown.scrollY + ((mousedown.clientY - event.clientY) * factor);
+quarterMouseX = mousedown.scrollX + ((mousedown.clientX - event.clientX) * factor) / 4;
+quarterMouseY = mousedown.scrollY + ((mousedown.clientY - event.clientY) * factor) / 4;
+if (event.buttons===4) {
+event.preventDefault();
+if (!event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
+} else if (!event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
+}
+topLayer.lastScroll = { left: window.scrollX, top: window.scrollY, behavior: "auto"};
+localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
+return;
+}
+}
+if (mouseIsDogged==true) {
+if (mousedown.hold==true) {
+drawSiteMap();
+mouseX = mousedown.scrollX + mousedown.clientX - event.clientX;
+mouseY = mousedown.scrollY + mousedown.clientY - event.clientY;
+quarterMouseX = mousedown.scrollX + (mousedown.clientX - event.clientX) / 4;
+quarterMouseY = mousedown.scrollY + (mousedown.clientY - event.clientY) / 4;
+if (event.buttons===4) {
+event.preventDefault();
+if (!event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
+} else if (!event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
+}
+topLayer.lastScroll = { left: window.scrollX, top: window.scrollY, behavior: "auto"};
+localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
+return;
+}
+}
+}
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const e = event;
+const mouseInfo = [e,ctrl,shift,alt];
+if (mousedown.hold==true) {
+drawSiteMap();
+mouseDeltaX = event.pageX - mousedown.pageX;
+mouseDeltaY = event.pageY - mousedown.pageY;
+mouseX = mousedown.scrollX + mousedown.clientX - event.clientX;
+mouseY = mousedown.scrollY + mousedown.clientY - event.clientY;
+quarterMouseX = mousedown.scrollX + (mousedown.clientX - event.clientX) / 4;
+quarterMouseY = mousedown.scrollY + (mousedown.clientY - event.clientY) / 4;
+if (event.buttons===4) {
+event.preventDefault();
+position1X = Math.floor(mouseX/mouseIncrement)*mouseIncrement;
+position1Y = Math.floor(mouseY/mouseIncrement)*mouseIncrement;
+position2X = Math.floor(mouseX/visualGridSize2)*visualGridSize2;
+position2Y = Math.floor(mouseY/visualGridSize2)*visualGridSize2;
+if (!event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: position1X, top: position1Y, behavior: "auto"});
+} else if (!event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: position2X, top: position2Y, behavior: "auto"});
+} else if ( event.ctrlKey&& event.shiftKey) {
+window.scrollTo({ left: quarterMouseX, top: quarterMouseY, behavior: "auto"});
+} else if ( event.ctrlKey&&!event.shiftKey) {
+window.scrollTo({ left: mouseX, top: mouseY, behavior: "auto"});
+}
+topLayer.lastScroll = { left: window.scrollX, top: window.scrollY, behavior: "auto"};
+localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
+return;
+}
+}
+if (mousedown.hold == false && hotDog == false) {
+if (!ctrl && !shift && !alt) {
+let found = false;
+for (let j = 0; j < utilityLayer0.children.length; j++) {
+if (event.target == utilityLayer0.children[j]) {
+found = true;
+/* THESE HAVE BEEN ADAPTED TO ALIGN WITH THE VISUALS AND THE KEYBOARD ACTION */
+if (mode==1) {
+ if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize; } //4
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nResize; } //8
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.sResize; } //2
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize; } //6
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
+}
+} else if (mode==5) {
+if (eM==0) {
+ if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //7
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //4
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.sResize; } //1
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //8
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.sResize; } //2
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize; } //9
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize; } //6
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
+}
+} else if (eM==1) {
+ if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize; } //4
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.wResize; } //1
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nResize; } //8
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //2
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nResize; } //9
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //6
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //3
+}
+}
+} else if (mode==6) {
+ if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //4
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //8
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //2
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //6
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
+}
+} else {
+utilityLayer0.children[j].style.cursor = cursor.grab;
+}
+} else {
+utilityLayer0.children[j].style.cursor = cursor.crosshair;
+}
+}
+} else {
+/*
+if (mode!=8) {
+ if ( ctrl && !shift && !alt) {
+event.target.style.cursor = cursor.copy;
+} else if (!ctrl && shift && !alt) {
+event.target.style.cursor = cursor.move;
+} else if (!ctrl && !shift && alt) {
+event.target.style.cursor = cursor.move;
+} else if ( ctrl && shift && !alt) {
+event.target.style.cursor = cursor.crosshair;
+} else if ( ctrl && !shift && alt) {
+event.target.style.cursor = cursor.grab;
+} else if (!ctrl && shift && alt) {
+event.target.style.cursor = cursor.grab;
+} else if ( ctrl && shift && alt) {
+event.target.style.cursor = cursor.grab;
+} else {
+event.target.style.cursor = cursor.grab;
+}
+} else {
+event.target.style.cursor = cursor.cell;
+}
+*/
+}
+utilityLayer0.style.cursor = "crosshair";
+}
+mode1.mousemove(mouseInfo);
+switch (mode) {
+case 0: mode0.mousemove(mouseInfo); break;
+case 2: mode2.mousemove(mouseInfo); break;
+case 3: mode3.mousemove(mouseInfo); break;
+case 4: mode4.mousemove(mouseInfo); break;
+case 5: mode5.mousemove(mouseInfo); break;
+case 6: mode6.mousemove(mouseInfo); break;
+case 7: mode7.mousemove(mouseInfo); break;
+case 8: mode8.mousemove(mouseInfo); break;
+case 9: mode9.mousemove(mouseInfo); break;
+}
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+if (mousedown.hold==false) {
+/*
+if (event.target.dataset.coinTrip) {
+ if (event.target.dataset.coinTrip==Ts0||
+ event.target.dataset.coinTrip==Ts1||
+ event.target.dataset.coinTrip==Ts2) {
+edgeDetect.style.left = `${parseInt(event.target.style.left) + edgeQ + "px"}` ;
+edgeDetect.style.top = `${parseInt(event.target.style.top) + edgeQ + "px"}` ;
+edgeDetect.style.width = `${parseFloat(event.target.style.width) * parseFloat(event.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+edgeDetect.style.height = `${parseFloat(event.target.style.height) * parseFloat(event.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+edgeDetect.style.zIndex = `${parseInt(event.target.style.zIndex) + 1}` ;
+edgeDetect.style.display= "block";
+} else {
+edgeDetect.style.display= "none";
+}
+} else {
+edgeDetect.style.display= "none";
+}
+} else {
+if (mousedown.hold==true) {
+if (mousedown.target!=null&&mousedown.target.dataset.coinTrip) {
+ if (mousedown.target.dataset.coinTrip==Ts0||
+ mousedown.target.dataset.coinTrip==Ts1||
+ mousedown.target.dataset.coinTrip==Ts2) {
+edgeDetect.style.left = `${parseInt(mousedown.target.style.left) + edgeQ + "px"}` ;
+edgeDetect.style.top = `${parseInt(mousedown.target.style.top) + edgeQ + "px"}` ;
+edgeDetect.style.width = `${parseFloat(mousedown.target.style.width) * parseFloat(mousedown.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+edgeDetect.style.height = `${parseFloat(mousedown.target.style.height) * parseFloat(mousedown.target.dataset.scale) - (edgeQ * 2) + "px"}` ;
+edgeDetect.style.zIndex = `${parseInt(mousedown.target.style.zIndex) + 1}` ;
+edgeDetect.style.display= "block";
+} else {
+}
+} else {
+}
+}
+*/
+}
+redraw();
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+} else if (mouseIsDogged==true) {
+if (event.target.dataset.coinTrip) {
+ if (event.target.dataset.coinTrip==Ts0||
+ event.target.dataset.coinTrip==Ts1||
+ event.target.dataset.coinTrip==Ts2) {
+pulledText.style.left = `${event.target.style.left}` ;
+pulledText.style.top = `${event.target.style.top}` ;
+pulledText.style.width = `${parseFloat(event.target.style.width) * parseFloat(event.target.dataset.scale) + "px"}` ;
+pulledText.style.height = `${parseFloat(event.target.style.height) * parseFloat(event.target.dataset.scale) + "px"}` ;
+pulledText.style.zIndex = `${parseInt(event.target.style.zIndex) + 1}` ;
+if (event.target.dataset.wrapper=="true") {event.target.style.pointerEvents="none";}
+if (event.target.dataset.dragPull) {
+let dragPullArray = event.target.dataset.dragPull.split(",");
+/*
+for (let j = 0; j < dragPullArray.length; j++) {
+dragPullArray[j] = dragPullArray[j].trim();
+}
+*/
+pulledText.value = blankSpaces;
+for (let j = 0; j < dragPullArray.length; j++) {
+ if (dragPullArray[j].startsWith("backgroundColor")) {
+pulledText.style.color = dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.style.backgroundColor;
+pulledText.value += `${event.target.lastElementChild.firstElementChild.style.backgroundColor.toString()}`;
+pulledText.value += '\n';
+} else if (dragPullArray[j].startsWith("style.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.style[`${dragPullArray[j].split(".")[1]}`]; }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("dataset.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.dataset[`${dragPullArray[j].split(".")[1]}`]; }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("anchor.style.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.firstElementChild.style[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("anchor.dataset.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.firstElementChild.dataset[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("anchor.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.firstElementChild[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("main.style.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.lastElementChild.style[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("main.dataset.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.lastElementChild.dataset[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("main.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.lastElementChild[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("div.style.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.style[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("div.dataset.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild.dataset[`${dragPullArray[j].split(".")[2]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else if (dragPullArray[j].startsWith("div.")) {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target.lastElementChild.firstElementChild[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
+pulledText.value += '";\n';
+} else {
+try{ pulledText.value += dragPullArray[j] + '="' + event.target[`${dragPullArray[j].split(".")[1]}`].toString(); }catch{}
+pulledText.value += '";\n';
+}
+}
+}
+pulledText.value += blankSpaces;
+pulledText.value = pulledText.value.replace(/("")/g,'"');
+pulledText.style.display= "block";
+}
+}
+}
+updateInfoShelf();
+});
+let
+mousedown = {};
+mousedown.hold = false;
+mousedown.modeNumber = 0;
+mousedown.button = 0;
+mousedown.button0 = false;
+mousedown.button1 = false;
+mousedown.button2 = false;
+mousedown.ctrl = 0;
+mousedown.shift = 0;
+mousedown.alt = 0;
+mousedown.meta = 0;
+mousedown.pageX = 0;
+mousedown.pageY = 0;
+mousedown.clientX = 0;
+mousedown.clientY = 0;
+mousedown.scrollX = 0;
+mousedown.scrollY = 0;
+mousedown.tripSet = null;
+mousedown.target = null;
+mousedown.targetRegion = 5;
+/* This puts the information from the mousedown event into data so that we can refer to it later in our conditions. */
+document.addEventListener("mousedown", (event) => {
+drawSiteMap();
+switch (event.button) {
+case 0: mousedown.button0 = true; break;
+case 1: mousedown.button1 = true; break;
+case 2: mousedown.button2 = true; break;
+}
+if (splashScreen.style.display != "none") {
+for (let j = 100; j >= 0; j--) {
+if (j == 100) {
+setTimeout(() => { splashScreen.style.display = "none"; }, 150);
+} else {
+setTimeout(() => {
+splashScreen.style.opacity = j / 100;
+splashScreen.style.transform = `scale(${100 / j})`;
+}, (100 - j) * 2);
+}
+}
+}
+mousedown.clientX = event.clientX;
+mousedown.clientY = event.clientY;
+mousedown.scrollX = window.scrollX;
+mousedown.scrollY = window.scrollY;
+if (event.button===1) {
+event.preventDefault();
+}
+if (event.button!=2) {
+mousedown.hold = true;
+} else {
+mousedown.hold=false;
+}
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+mouseGiveFocus(mouseInfo);
+mousedown.modeNumber = mode;
+mousedown.lastButton = mousedown.button;
+mousedown.button = event.button;
+mousedown.ctrl = event.ctrlKey;
+mousedown.shift = event.shiftKey;
+mousedown.alt = event.altKey;
+mousedown.meta = event.metaKey;
+mousedown.pageX = event.pageX;
+mousedown.pageY = event.pageY;
+mousedown.tripSet = event.target.dataset.tripSet;
+if (event.target.dataset.coinTrip==Ts0||event.target.dataset.coinTrip==Ts1||event.target.dataset.coinTrip==Ts2) {
+mousedown.target = event.target;
+} else {
+if (!alt&&ctrl&&shift&&mode==8) {
+modeRouter(event,1);
+}
+}
+if (event.target.dataset.coinTrip==Ts0||event.target.dataset.coinTrip==Ts1||event.target.dataset.coinTrip==Ts2) {
+if (hotDog==false) {
+if (!ctrl && !shift) {
+ if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { mousedown.targetRegion = 7; }
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 4; }
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { mousedown.targetRegion = 1; }
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { mousedown.targetRegion = 8; }
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 5; event.target.style.cursor= cursor.grabbing; }
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { mousedown.targetRegion = 2; }
+}
+else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
+ if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { mousedown.targetRegion = 9; }
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { mousedown.targetRegion = 6; }
+else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { mousedown.targetRegion = 3; }
+}
+} else {
+if (mode!=8) {
+ if ( ctrl && !shift && !alt) {
+event.target.style.cursor = cursor.copy;
+} else if (!ctrl && shift && !alt) {
+event.target.style.cursor = cursor.move;
+} else if (!ctrl && !shift && alt) {
+event.target.style.cursor = cursor.move;
+} else if ( ctrl && shift && !alt) {
+event.target.style.cursor = cursor.grab;
+} else if ( ctrl && !shift && alt) {
+event.target.style.cursor = cursor.grab;
+} else if (!ctrl && shift && alt) {
+event.target.style.cursor = cursor.grab;
+} else if ( ctrl && shift && alt) {
+event.target.style.cursor = cursor.grab;
+} else {
+event.target.style.cursor = cursor.grab;
+}
+} else {
+event.target.style.cursor = cursor.cell;
+}
+}
+}
+utilityLayer0.style.cursor = "crosshair";
+}
+if (!alt&&ctrl&&!shift&&mode!=8) {
+if (event.target.dataset.coinTrip) {
+insertNewDuplicate([event,68,68,shift,ctrl,false]);
+}
+focusFlip();
+}
+switch (mode) {
+case 0: mode0.mousedown(mouseInfo); break;
+case 1: mode1.mousedown(mouseInfo); break;
+case 2: mode2.mousedown(mouseInfo); break;
+case 3: mode3.mousedown(mouseInfo); break;
+case 4: mode4.mousedown(mouseInfo); break;
+case 5: mode5.mousedown(mouseInfo); break;
+case 6: mode6.mousedown(mouseInfo); break;
+case 7: mode7.mousedown(mouseInfo); break;
+case 8: mode8.mousedown(mouseInfo); break;
+case 9: mode9.mousedown(mouseInfo); break;
+}
+}
+redraw();
+});
+let mouseupTarget = null;
+document.addEventListener("mouseup", (event) => {
+activeUpdate();
+if (event.target.dataset&&event.target.dataset.coinTrip) {
+mouseupTarget=event.target;
+} else {
+mouseupTarget=null;
+}
+switch (event.button) {
+case 0: mousedown.button0 = false; break;
+case 1: mousedown.button1 = false; break;
+case 2: mousedown.button2 = false; break;
+}
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+if (hotDog==false) {
+if (!ctrl && !shift && !alt) {
+if (coinFocus!=null) {
+coinFocus.style.cursor = cursor.grab;
+}
+}
+}
+mousedown.hold = false;
+mousedown.pageX = 0;
+mousedown.pageY = 0;
+if (mouseIsDogged==false) {
+if (mousedown.button==1&&event.button==1&&mousedown.target==event.target) {
+mouseGiveFocus(mouseInfo);
+//deleteCoin([,88,88,,]);
+//edgeDetect.style.display= "none";
+}
+mode1.mouseup(mouseInfo);
+switch (mode) {
+case 0: mode0.mouseup(mouseInfo);break;
+case 2: mode2.mouseup(mouseInfo);break;
+case 3: mode3.mouseup(mouseInfo);break;
+case 4: mode4.mouseup(mouseInfo);break;
+case 5: mode5.mouseup(mouseInfo);break;
+case 6: mode6.mouseup(mouseInfo);break;
+case 7: mode7.mouseup(mouseInfo);break;
+case 8: mode8.mouseup(mouseInfo);break;
+case 9: mode9.mouseup(mouseInfo);break;
+}
+mousedown.target = null;
+}
+if (!event.target.dataset.coinTrip) {
+//edgeDetect.style.display= "none";
+}
+redraw();
+});
+document.addEventListener("click", (event) => {
+if (mouseIsDogged==false) {
+ if (lastFlow == "global") {
+reflowGlobal(rev,0)
+} else if (lastFlow == "colour") {
+reflowPerTrip();
+}
+}
+drawSiteMap();
+loadSidebar1();
+updateInfoShelf();
+if (coinFocus!=null&&drawPartNames=="true"&&event.target&&event.target.dataset&&event.target.dataset.coinTrip) {
+/* COPY VARIOUS STUFF TO THE CLIPBOARD IF ENABLED */
+ if (!event.shiftKey&&!event.ctrlKey) {
+/* copyToClipboard(coinFocus.id); */
+} else if ( event.shiftKey&&!event.ctrlKey) {
+let setName = "sel0";
+ if (coinFocus.dataset.coinTrip=="0") {
+setName = "sel0";
+} else if (coinFocus.dataset.coinTrip=="1") {
+setName = "sel1";
+} else if (coinFocus.dataset.coinTrip=="2") {
+setName = "sel2";
+}
+let variableName = "n" + Date.now();
+let clipList =
+`const ${variableName} =
+[
+"`;
+for ( let j = 0; j < coinTrip[setName].length; j++) {
+if (j != coinTrip[setName].length - 1) {
+clipList += coinTrip[setName][j].id + '",\n"';
+} else {
+clipList += coinTrip[setName][j].id +'"\n];';
+}
+}
+copyToClipboard(clipList);
+} else if ( event.shiftKey&& event.ctrlKey) {
+copyToClipboard(coinFocus.lastElementChild.firstElementChild.innerHTML);
+}
+}
+if (mode==0) { curFocus=0; modeRouter(event,1); }
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+if (!ctrl&&!shift) {
+mouseGiveFocus(mouseInfo);
+}
+if ((event.target==document.documentElement&&curFocus==1)&&Math.abs(mouseDeltaX)<32&&Math.abs(mouseDeltaY)<32) {
+mousePlaceCursor(mouseInfo);
+}
+switch (mode) {
+case 0: mode0.mouseclick(mouseInfo);break;
+case 1: mode1.mouseclick(mouseInfo);break;
+case 2: mode2.mouseclick(mouseInfo);break;
+case 3: mode3.mouseclick(mouseInfo);break;
+case 4: mode4.mouseclick(mouseInfo);break;
+case 5: mode5.mouseclick(mouseInfo);break;
+case 6: mode6.mouseclick(mouseInfo);break;
+case 7: mode7.mouseclick(mouseInfo);break;
+case 8: mode8.mouseclick(mouseInfo);break;
+case 9: mode9.mouseclick(mouseInfo);break;
+}
+mouseDeltaX = 0;
+mouseDeltaY = 0;
+redraw();
+}
+});
+document.addEventListener("dblclick", (event) => {
+if (mouseIsDogged==true) {
+if (event.target === document.documentElement) {
+if (ui.folder52.ref.style.display == "none" ||
+ ui.tab5Wrapper.ref.style.display == "none") {
+hdubDemo.style.opacity = 0;
+}
+if (mode==0) { curFocus=0; modeRouter(event,1); }
+hotDog = false;
+spaceViewOff([event,32,32,event.shiftKey,event.ctrlKey,event.altKey]);
+restorePointerEventsNone();
+helpMenuOverlay.style.display="none";
+F.focus();
+return;
+}
+}
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+ if (event.target.dataset.coinTrip&&!shift&&!alt) {
+/* TUCK THE EDGE INWARD TO THE NEAREST MOUSE GRID STEP */
+const originalEM = eM;
+const originalT = T;
+T = mouseIncrement;
+switch (mousedown.targetRegion) {
+case 1:
+eM = 0; extendEdge(['',74,106]); //j bottom down
+eM = 0; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',76,108]); //l right right
+redraw(); return;
+case 2:
+eM = 0; extendEdge(['',74,106]); //j bottom down
+eM = 0; extendEdge(['',75,107]); //k bottom up
+redraw(); return;
+case 6:
+eM = 0; extendEdge(['',76,108]); //l right right
+eM = 0; extendEdge(['',72,104]); //h right left
+redraw(); return;
+case 3:
+eM = 0; extendEdge(['',76,108]); //l right right
+eM = 0; extendEdge(['',72,104]); //h right left
+eM = 0; extendEdge(['',74,106]); //j bottom down
+eM = 0; extendEdge(['',75,107]); //k bottom up
+redraw(); return;
+case 8:
+eM = 1; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',74,106]); //j bottom down
+redraw(); return;
+case 4:
+eM = 1; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',76,108]); //l right right
+redraw(); return;
+case 7:
+eM = 1; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',74,106]); //j bottom down
+eM = 1; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',76,108]); //l right right
+redraw(); return;
+case 9:
+eM = 0; extendEdge(['',76,108]); //l right right
+eM = 0; extendEdge(['',72,104]); //h right left
+eM = 1; extendEdge(['',75,107]); //k bottom up
+eM = 1; extendEdge(['',74,106]); //j bottom down
+redraw(); return;
+}
+T = originalT ;
+eM = originalEM;
+//insertNewDuplicate([,68,100,,,]);
+hotDog = true; event.preventDefault(); spaceViewOn([event,32,32,event.shiftKey,event.ctrlKey,event.altKey]); removePointerEventsNone();
+if (coinFocus != null &&
+ coinFocus.lastElementChild.firstElementChild
+) {
+if (ui.folder52.ref.style.display == "block" &&
+ ui.tab5Wrapper.ref.style.display == "block") {
+coinFocus.firstElementChild.style.zIndex = "0";
+}
+coinFocus.lastElementChild.firstElementChild.focus();
+}
+} else if (event.target.dataset.coinTrip&& shift&&!alt) {
+try { cutOutImage(); } catch {}
+} else if (event.target.dataset.coinTrip&&!shift&& alt) {
+} else if (event.target==document.documentElement) {
+mousePlaceCursor(mouseInfo);
+curFocus=1;
+modeRouter(event,1);
+if (coinFocus!=null) {
+coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
+}
+recoverColouration();
+}
+switch (mode) {
+case 0: mode0.dblclick(mouseInfo);break;
+case 1: mode1.dblclick(mouseInfo);break;
+case 2: mode2.dblclick(mouseInfo);break;
+case 3: mode3.dblclick(mouseInfo);break;
+case 4: mode4.dblclick(mouseInfo);break;
+case 5: mode5.dblclick(mouseInfo);break;
+case 6: mode6.dblclick(mouseInfo);break;
+case 7: mode7.dblclick(mouseInfo);break;
+case 8: mode8.dblclick(mouseInfo);break;
+case 9: mode9.dblclick(mouseInfo);break;
+}
+redraw();
+}
+});
+/* Scraps the dots if the mouse leaves the browser window. */
+document.addEventListener("mouseleave", (event) => {
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+rdots();
+redraw();
+}
+});
+/* This gives the change of colouration and other styles on mouse over. */
+document.addEventListener("mouseover", (event) => {
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+switch (mode) {
+//case 0: mode0.mouseover(mouseInfo); break;
+//case 1: mode1.mouseover(mouseInfo); break;
+//case 2: mode2.mouseover(mouseInfo); break;
+//case 3: mode3.mouseover(mouseInfo); break;
+//case 4: mode4.mouseover(mouseInfo); break;
+//case 5: mode5.mouseover(mouseInfo); break;
+//case 6: mode6.mouseover(mouseInfo); break;
+//case 7: mode7.mouseover(mouseInfo); break;
+case 8: mode8.mouseover(mouseInfo); break;
+//case 9: mode9.mouseover(mouseInfo); break;
+}
+redraw();
+}
+});
+document.addEventListener("mouseout", (event) => {
+if (mouseIsDogged==false) {
+const ctrl = event.ctrlKey, shift = event.shiftKey, alt = event.altKey;
+const mouseInfo = [event,ctrl,shift,alt];
+redraw();
+}
+//edgeDetect.style.display = "none";
+});
+setTimeout(() => { loadSidebar1(); }, 200);
+let mode1 = {};
+mode1.mousemove = function(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2], alt=mouseInfo[3];
+let gridFactor = mouseIncrement;
+ if (mouseDeltaX < 0) {
+Xmove = -(Math.ceil(parseInt(mousedown.pageX)/mouseIncrement)*mouseIncrement - Math.ceil(parseInt(event.pageX)/mouseIncrement)*mouseIncrement);
+} else if (mouseDeltaX >= 0) {
+Xmove = Math.floor(parseInt(event.pageX)/mouseIncrement)*mouseIncrement - Math.floor(parseInt(mousedown.pageX)/mouseIncrement)*mouseIncrement;
+}
+ if (mouseDeltaY < 0) {
+Ymove = -(Math.ceil(parseInt(mousedown.pageY)/mouseIncrement)*mouseIncrement - Math.ceil(parseInt(event.pageY)/mouseIncrement)*mouseIncrement);
+} else if (mouseDeltaY >= 0) {
+Ymove = Math.floor(parseInt(event.pageY)/mouseIncrement)*mouseIncrement - Math.floor(parseInt(mousedown.pageY)/mouseIncrement)*mouseIncrement;
+}
+if ((ctrl&&shift&&mode!=8)||(mousedown.target==null&&mousedown.hold==true&&mousedown.button==0)) { dot(); } else { rdots(); }
+const gridSpotLeft = (event.pageX%mouseIncrement)>(mouseIncrement/2) ? Math.ceil(event.pageX/mouseIncrement)*mouseIncrement-(O/2) : Math.floor(event.pageX/mouseIncrement)*mouseIncrement-(O/2);
+const gridSpotTop = (event.pageY%mouseIncrement)>(mouseIncrement/2) ? Math.ceil(event.pageY/mouseIncrement)*mouseIncrement-(O/2) : Math.floor(event.pageY/mouseIncrement)*mouseIncrement-(O/2);
+if (!mousedown.hold) { P.style.left = gridSpotLeft + "px"; P.style.top = gridSpotTop + "px"; }
+Q.style.left = gridSpotLeft + "px"; Q.style.top = P.style.top ;
+R.style.left = P.style.left ; R.style.top = gridSpotTop + "px";
+S.style.left = gridSpotLeft + "px"; S.style.top = gridSpotTop + "px";
+if (mousedown.target!=null) {
+ if (!alt&&ctrl&&!shift&&mode!=8) {
+ if (mousedown.target.dataset.coinTrip==Ts0) {
+for (j=0;j<coinTrip.sel0.length;j++) {
+coinTrip.sel0[j].style.left = coinTrip.sel0[j].dataset.left;
+coinTrip.sel0[j].style.top = coinTrip.sel0[j].dataset.top ;
+}
+} else if (mousedown.target.dataset.coinTrip==Ts1) {
+for (j=0;j<coinTrip.sel1.length;j++) {
+coinTrip.sel1[j].style.left = coinTrip.sel1[j].dataset.left;
+coinTrip.sel1[j].style.top = coinTrip.sel1[j].dataset.top ;
+}
+} else if (mousedown.target.dataset.coinTrip==Ts2) {
+for (j=0;j<coinTrip.sel2.length;j++) {
+coinTrip.sel2[j].style.left = coinTrip.sel2[j].dataset.left;
+coinTrip.sel2[j].style.top = coinTrip.sel2[j].dataset.top ;
+}
+}
+if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (!alt&&!ctrl&&!shift&&(mousedown.button==0||mousedown.button==1)) {
+if (mode==1) {
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+}
+} else if (mode==5) {
+if (eM==0) {
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+}
+} else if (eM==1) {
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+}
+}
+} else if (mode==6) {
+if (mousedown.targetRegion==7) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+} else if (mousedown.targetRegion==8) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==9) {
+	if (parseInt(mousedown.target.dataset.height)-Ymove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.top)+Ymove>=0) {
+	mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px";
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) - Ymove + "px";
+	} else {
+	mousedown.target.style.top = 0;
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + parseInt(mousedown.target.dataset.top) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==4) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==5) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==6) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==1) {
+	if (parseInt(mousedown.target.dataset.width)-Xmove>=edgeQ*2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) {
+	mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px";
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) - Xmove + "px";
+	} else {
+	mousedown.target.style.left = 0;
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + parseInt(mousedown.target.dataset.left) + "px";
+	}
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+} else if (mousedown.targetRegion==2) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mousedown.targetRegion==3) {
+	if (parseInt(mousedown.target.dataset.width)+Xmove>=mouseIncrement) {
+	mousedown.target.style.width = parseInt(mousedown.target.dataset.width) + Xmove + "px";
+	} else {
+	mousedown.target.style.width = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.width)<edgeQ*2) {
+	mousedown.target.style.width = edgeQ*2 + "px";
+	}
+	if (parseInt(mousedown.target.dataset.height)+Ymove>=mouseIncrement) {
+	mousedown.target.style.height = parseInt(mousedown.target.dataset.height) + Ymove + "px";
+	} else {
+	mousedown.target.style.height = mouseIncrement + "px";
+	}
+	if (parseInt(mousedown.target.style.height)<edgeQ*2) {
+	mousedown.target.style.height = edgeQ*2 + "px";
+	}
+}
+} else if (mode==8) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+} else if (mode==9) {
+	if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { mousedown.target.style.left = parseInt(mousedown.target.dataset.left) + Xmove + "px"; } else { mousedown.target.style.left = 0; }
+	if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { mousedown.target.style.top = parseInt(mousedown.target.dataset.top) + Ymove + "px"; } else { mousedown.target.style.top = 0; }
+}
+} else if (!alt&&!ctrl&&shift&&mode!=8&&mousedown.button==0) {
+ if (mousedown.target.dataset.coinTrip==Ts0) {
+for (j=0;j<coinTrip.sel0.length;j++) {
+if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { coinTrip.sel0[j].style.left = parseInt(coinTrip.sel0[j].dataset.left) + Xmove + "px"; }
+if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { coinTrip.sel0[j].style.top = parseInt(coinTrip.sel0[j].dataset.top ) + Ymove + "px"; }
+}
+} else if (mousedown.target.dataset.coinTrip==Ts1) {
+for (j=0;j<coinTrip.sel1.length;j++) {
+if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { coinTrip.sel1[j].style.left = parseInt(coinTrip.sel1[j].dataset.left) + Xmove + "px"; }
+if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { coinTrip.sel1[j].style.top = parseInt(coinTrip.sel1[j].dataset.top ) + Ymove + "px"; }
+}
+} else if (mousedown.target.dataset.coinTrip==Ts2) {
+for (j=0;j<coinTrip.sel2.length;j++) {
+if (parseInt(mousedown.target.dataset.left)+Xmove>=0) { coinTrip.sel2[j].style.left = parseInt(coinTrip.sel2[j].dataset.left) + Xmove + "px"; }
+if (parseInt(mousedown.target.dataset.top)+ Ymove>=0) { coinTrip.sel2[j].style.top = parseInt(coinTrip.sel2[j].dataset.top ) + Ymove + "px"; }
+}
+}
+}
+}
+};
+mode1.mousedown = function(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2], alt=mouseInfo[3];
+};
+mode1.mouseup = function(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2], alt=mouseInfo[3];
+if (((!alt&&ctrl&&mousedown.shift&&shift&&mode!=8)||(mousedown.target==null))&&event.button==0) {
+enterNewPartFromMouseInput(mouseInfo);
+}
+if (mousedown.target!=null) {
+ if (!alt&&!shift) {
+mousedown.target.dataset.left = mousedown.target.style.left;
+mousedown.target.dataset.top = mousedown.target.style.top ;
+mousedown.target.dataset.width = mousedown.target.style.width ;
+mousedown.target.dataset.height = mousedown.target.style.height;
+} else if (!alt&&shift&&mode!=8) {
+ if (mousedown.target.dataset.coinTrip==Ts0) {
+for (j=0;j<coinTrip.sel0.length;j++) {
+coinTrip.sel0[j].dataset.left = coinTrip.sel0[j].style.left;
+coinTrip.sel0[j].dataset.top = coinTrip.sel0[j].style.top ;
+}
+} else if (mousedown.target.dataset.coinTrip==Ts1) {
+for (j=0;j<coinTrip.sel1.length;j++) {
+coinTrip.sel1[j].dataset.left = coinTrip.sel1[j].style.left;
+coinTrip.sel1[j].dataset.top = coinTrip.sel1[j].style.top ;
+}
+} else if (mousedown.target.dataset.coinTrip==Ts2) {
+for (j=0;j<coinTrip.sel2.length;j++) {
+coinTrip.sel2[j].dataset.left = coinTrip.sel2[j].style.left;
+coinTrip.sel2[j].dataset.top = coinTrip.sel2[j].style.top ;
+}
+}
+}
+}
+};
+mode1.mouseclick = function(mouseInfo) { };
+mode1.dblclick = function(mouseInfo) { };
+function mouseGiveFocus(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
+if (event.target.dataset.coinTrip==Ts0||event.target.dataset.coinTrip==Ts1||event.target.dataset.coinTrip==Ts2) {
+if (coinFocus!=null) {
+curFocus=0;
+coinFocus.style.outline = fA;
+coinFocus.style.outlineOffset = fAO;
+       if (coinFocus.dataset.coinTrip==Ts0) { coinFocus.firstElementChild.style.color = Fs0; coinFocus.style.outlineColor = Cs0; coinFocus.firstElementChild.style.backgroundColor = Bs0; coinFocus.firstElementChild.style.opacity = Os0;
+} else if (coinFocus.dataset.coinTrip==Ts1) { coinFocus.firstElementChild.style.color = Fs1; coinFocus.style.outlineColor = Cs1; coinFocus.firstElementChild.style.backgroundColor = Bs1; coinFocus.firstElementChild.style.opacity = Os1;
+} else if (coinFocus.dataset.coinTrip==Ts2) { coinFocus.firstElementChild.style.color = Fs2; coinFocus.style.outlineColor = Cs2; coinFocus.firstElementChild.style.backgroundColor = Bs2; coinFocus.firstElementChild.style.opacity = Os2;
+}
+
+coinFocus1=coinFocus;
+coinFocus = event.target;
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+
+}
+}
+return (1);
+}let mode2 = {};
+mode2.mousemove = function(event,ctrl,shift,M) { };
+mode2.mousedown = function(event,ctrl,shift,M) { };
+mode2.mouseup = function(event,ctrl,shift,M) { };
+mode2.mouseclick = function(event,ctrl,shift,M) { };
+mode2.dblclick = function(event,ctrl,shift,M) { };
+function mousePlaceCursor(mouseInfo) {
+if (Cur.style.display!="none") {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
+let newCursorX=0,
+    newCursorY=0;
+if (event.pageX%mouseIncrement< mouseIncrement/2) { newCursorX=Math.floor(event.pageX/mouseIncrement)*mouseIncrement; } else if (event.pageX%mouseIncrement>=mouseIncrement/2) { newCursorX=Math.ceil(event.pageX/mouseIncrement)*mouseIncrement; }
+if (event.pageY%mouseIncrement< mouseIncrement/2) { newCursorY=Math.floor(event.pageY/mouseIncrement)*mouseIncrement; } else if (event.pageY%mouseIncrement>=mouseIncrement/2) { newCursorY=Math.ceil(event.pageY/mouseIncrement)*mouseIncrement; }
+  Cur.style.left = newCursorX + "px";
+Cur.dataset.left = newCursorX + "px";
+  Cur.style.top  = newCursorY + "px";
+Cur.dataset.top  = newCursorY + "px";
+return (1);
+}
+}
+let mode3 = {};
+mode3.mousemove = function(event,ctrl,shift,M) { };
+mode3.mousedown = function(event,ctrl,shift,M) { };
+mode3.mouseup = function(event,ctrl,shift,M) { };
+mode3.mouseclick = function(event,ctrl,shift,M) { };
+mode3.dblclick = function(event,ctrl,shift,M) { };
+let mode4 = {};
+mode4.mousemove = function(event,ctrl,shift,M) {
+const lO = O * 2;
+/* Coin insertion visual dots. */
+if (mode==4) {
+if (!(mousedown.hold)) {
+P.style.left=(event.pageX%M)>(M/E) ? event.pageX + (M - event.pageX%M) - O/2 : event.pageX - (event.pageX%M) - O/2;
+P.style.top=(event.pageY%M)>(M/E) ? event.pageY + (M - event.pageY%M) - O/2 : event.pageY - (event.pageY%M) - O/2;
+}
+S.style.left=(event.pageX%M)>(M/E) ? event.pageX + (M - event.pageX%M) - O/2 : event.pageX - (event.pageX%M) - O/2;
+S.style.top=(event.pageY%M)>(M/E) ? event.pageY + (M - event.pageY%M) - O/2 : event.pageY - (event.pageY%M) - O/2;
+Q.style.left=S.style.left;Q.style.top=P.style.top;
+R.style.left=P.style.left;R.style.top=S.style.top;
+}
+if (event.target == document.documentElement || event.target != document.body) {
+/* Translation */
+if (mode==1) {
+if (mousedown.target) {
+mousedown.target.style.left = (event.pageX%M)>(M/E) ? event.pageX - event.pageX%M : event.pageX - event.pageX%M;
+mousedown.target.style.top = (event.pageY%M)>(M/E) ? event.pageY - event.pageY%M : event.pageY - event.pageY%M;
+}
+}
+}
+};
+mode4.mousedown = function(event,ctrl,shift,M) { };
+mode4.mouseup = function(event,ctrl,shift,M) { };
+mode4.mouseclick = function(event,ctrl,shift,M) { };
+mode4.dblclick = function(event,ctrl,shift,M) { };
+let mode5 = {};
+mode5.mousemove = function(event,ctrl,shift) { };
+mode5.mousedown = function(event,ctrl,shift) { };
+mode5.mouseup = function(event,ctrl,shift) { };
+mode5.mouseclick = function(event,ctrl,shift) { };
+mode5.dblclick = function(event,ctrl,shift) { };
+let mode6 = {};
+mode6.mousemove = function(event,ctrl,shift) { };
+mode6.mousedown = function(event,ctrl,shift) { };
+mode6.mouseup = function(event,ctrl,shift) { };
+mode6.mouseclick = function(event,ctrl,shift) { };
+mode6.dblclick = function(event,ctrl,shift) { };let mode7 = {};
+mode7.mousemove = function(event,ctrl,shift) { };
+mode7.mousedown = function(event,ctrl,shift) { };
+mode7.mouseup = function(event,ctrl,shift) { };
+mode7.mouseclick = function(event,ctrl,shift) { };
+mode7.dblclick = function(event,ctrl,shift) { };let mode8 = {};
+mode8.mousemove = function(mouseInfo) {
+const target=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
+};
+mode8.mousedown = function(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
+let newTrip = null;
+ if ( ctrl&& shift) { newTrip = Ts0;
+} else if (!ctrl&& shift) { newTrip = Ts1;
+} else if ( ctrl&&!shift) { newTrip = Ts2;
+}
+if (newTrip!=null) {
+if (event.target.dataset.coinTrip==Ts0||
+ event.target.dataset.coinTrip==Ts1||
+ event.target.dataset.coinTrip==Ts2) {
+event.target.style.outline = fA;
+event.target.style.outlineOffset = fAO;
+if (event.target.dataset.coinTrip!=newTrip) {
+ event.target.dataset.coinTrip= newTrip;
+ if (event.target.dataset.coinTrip==Ts0) { event.target.firstElementChild.style.color = Fs0; event.target.style.outlineColor = Cs0; event.target.firstElementChild.style.backgroundColor = Bs0; event.target.firstElementChild.style.opacity = Os0;
+} else if (event.target.dataset.coinTrip==Ts1) { event.target.firstElementChild.style.color = Fs1; event.target.style.outlineColor = Cs1; event.target.firstElementChild.style.backgroundColor = Bs1; event.target.firstElementChild.style.opacity = Os1;
+} else if (event.target.dataset.coinTrip==Ts2) { event.target.firstElementChild.style.color = Fs2; event.target.style.outlineColor = Cs2; event.target.firstElementChild.style.backgroundColor = Bs2; event.target.firstElementChild.style.opacity = Os2;
+}
+readCoins();
+recoverColouration();
+if (coinFocus!=null) {
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+}
+}
+}
+}
+};
+mode8.mouseclick = function(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
+};
+mode8.mouseup = function(mouseInfo) { };
+mode8.dblclick = function(mouseInfo) { };
+mode8.mouseover = function(mouseInfo) {
+const event=mouseInfo[0], ctrl=mouseInfo[1], shift=mouseInfo[2];
+if (mousedown.hold) {
+let newTrip = null;
+ if ( ctrl&& shift) { newTrip = Ts0;
+} else if (!ctrl&& shift) { newTrip = Ts1;
+} else if ( ctrl&&!shift) { newTrip = Ts2;
+}
+if (newTrip!=null) {
+if (event.target.dataset.coinTrip==Ts0||
+ event.target.dataset.coinTrip==Ts1||
+ event.target.dataset.coinTrip==Ts2) {
+event.target.style.outline = fA;
+event.target.style.outlineOffset = fAO;
+if (event.target.dataset.coinTrip!=newTrip) {
+ event.target.dataset.coinTrip= newTrip;
+ if (event.target.dataset.coinTrip==Ts0) { event.target.firstElementChild.style.color = Fs0; event.target.style.outlineColor = Cs0; event.target.firstElementChild.style.backgroundColor = Bs0; event.target.firstElementChild.style.opacity = Os0;
+} else if (event.target.dataset.coinTrip==Ts1) { event.target.firstElementChild.style.color = Fs1; event.target.style.outlineColor = Cs1; event.target.firstElementChild.style.backgroundColor = Bs1; event.target.firstElementChild.style.opacity = Os1;
+} else if (event.target.dataset.coinTrip==Ts2) { event.target.firstElementChild.style.color = Fs2; event.target.style.outlineColor = Cs2; event.target.firstElementChild.style.backgroundColor = Bs2; event.target.firstElementChild.style.opacity = Os2;
+}
+readCoins();
+recoverColouration();
+if (coinFocus!=null) {
+coinFocus.style.outline = fB;
+coinFocus.style.outlineOffset = fBO;
+}
+}
+}
+}
+}
+};
+let mode9 = {};
+mode9.mousemove = function(event,ctrl,shift) { };
+mode9.mousedown = function(event,ctrl,shift) { };
+mode9.mouseup = function(event,ctrl,shift) { };
+mode9.mouseclick = function(event,ctrl,shift) { };
+mode9.dblclick = function(event,ctrl,shift) { };

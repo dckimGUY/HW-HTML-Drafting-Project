@@ -1,36 +1,20 @@
 if (localStorage.getItem("animatorTiming")) {
 document.getElementById("animationTiming").value = localStorage.getItem("animatorTiming");
 }
-
-
 if (localStorage.getItem("stateTiming")) {
 document.getElementById("stateTiming").innerText = parseInt(localStorage.getItem("stateTiming"));
 }
-
-
-
 if (localStorage.getItem("navUpscale")) {
 document.getElementById("navUpscale").innerText = localStorage.getItem("navUpscale");
 }
-
-
-
-
 document.addEventListener("mousewheel", (event) => {
-
-
 if (coinFocus != null) {
 coinFocus.lastElementChild.firstElementChild = coinFocus.lastElementChild.firstElementChild;
 }
-
-
-
-
-
 for (let j = 1; j < 21; j++) {
 if (event.target.id == `LVL${j}`) {
 event.preventDefault(); event.stopPropagation();
-       if (event.wheelDelta > 0) {
+ if (event.wheelDelta > 0) {
 layerRight();
 } else if (event.wheelDelta < 0) {
 layerLeft();
@@ -38,13 +22,6 @@ layerLeft();
 loadSidebar1();
 }
 }
-
-
-
-
-
-
-
 [
 "popStyle1",
 "popStyle2",
@@ -71,27 +48,22 @@ loadSidebar1();
 "skipToEnd",
 "leftBumper",
 "rightBumper"
-
 ].forEach((name) => {
 if (event.target.id == name) {
 event.preventDefault();
 event.stopPropagation();
 if (!event.shiftKey) {
-       if (event.wheelDelta > 0) { nextState();
+ if (event.wheelDelta > 0) { nextState();
 } else if (event.wheelDelta < 0) { previousState();
 }
 } else {
-       if (event.wheelDelta > 0) { for (let j = 0; j < 5; j++) { nextState(); };
+ if (event.wheelDelta > 0) { for (let j = 0; j < 5; j++) { nextState(); };
 } else if (event.wheelDelta < 0) { for (let j = 0; j < 5; j++) { previousState(); };
 }
 }
 return;
 }
 });
-
-
-
-
 if (event.target.id == "stateTiming") {
 event.preventDefault();
 event.stopPropagation();
@@ -106,21 +78,9 @@ if (parseInt(document.getElementById("stateTiming").innerText) < 0) { document.g
 localStorage.setItem("stateTiming", parseInt(document.getElementById("stateTiming").innerText));
 return;
 }
-
-
-
 if (localStorage.getItem("stateTiming")) {
 document.getElementById("stateTiming").innerText = localStorage.getItem("stateTiming");
 }
-
-
-
-
-
-
-
-
-
 if (event.target.id == "hdubOverlay" || (event.target.dataset && event.target.dataset.hdubOverlay == "scroll")) {
 event.preventDefault();
 event.stopPropagation();
@@ -141,43 +101,15 @@ case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,30
 case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
 }
 }
-
-
-
-
-
-
-
-
 } else if (event.target == document.getElementById("siteMapCanvas")) {
-
-
-
 event.preventDefault();
 event.stopPropagation();
-
-       if (event.wheelDelta > 0) {
+ if (event.wheelDelta > 0) {
 zoomSiteMapIn();
 } else if (event.wheelDelta < 0) {
 zoomSiteMapOut();
 }
-
 drawSiteMap();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 } else if (event.target == document.getElementById("navUpscale")) {
 event.preventDefault();
 event.stopPropagation();
@@ -192,181 +124,165 @@ document.getElementById("navUpscale").innerText = 1;
 if (parseInt(document.getElementById("navUpscale").innerText) > 100) {
 document.getElementById("navUpscale").innerText = 100;
 }
-
 localStorage.setItem("navUpscale", document.getElementById("navUpscale").innerText);
-
-
-
-
-
-
-
 } else if (event.target == document.getElementById("partY")) {
 event.preventDefault(); event.stopPropagation();
 if ( event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) - mouseIncrement);
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - mouseIncrement);
 } else if (event.wheelDelta < 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) + mouseIncrement);
-}                              if (ui.partY.ref.value  < mouseIncrement)
-                                 { ui.partY.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) - T);
+ parseInt(parseInt(ui.partY.ref.value) + mouseIncrement);
+} if (ui.partY.ref.value < mouseIncrement)
+ { ui.partY.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - T);
 } else if (event.wheelDelta < 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) + T);
-}                              if (ui.partY.ref.value  < T)
-                                 { ui.partY.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) - 2);
+ parseInt(parseInt(ui.partY.ref.value) + T);
+} if (ui.partY.ref.value < T)
+ { ui.partY.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - 2);
 } else if (event.wheelDelta < 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) + 2);
-}                              if (ui.partY.ref.value  < 2)
-                                 { ui.partY.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) - 1);
+ parseInt(parseInt(ui.partY.ref.value) + 2);
+} if (ui.partY.ref.value < 2)
+ { ui.partY.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partY.ref.value =
+ parseInt(parseInt(ui.partY.ref.value) - 1);
 } else if (event.wheelDelta < 0) { ui.partY.ref.value =
-                 parseInt(parseInt(ui.partY.ref.value) + 1);
-}                              if (ui.partY.ref.value  < 1)
-                                 { ui.partY.ref.value  = 1; } } if (coinFocus!=null) {
-coinFocus.style.top =     parseInt(ui.partY.ref.value) + "px";
-coinFocus.dataset.top =   parseInt(ui.partY.ref.value) + "px";
+ parseInt(parseInt(ui.partY.ref.value) + 1);
+} if (ui.partY.ref.value < 1)
+ { ui.partY.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.top = parseInt(ui.partY.ref.value) + "px";
+coinFocus.dataset.top = parseInt(ui.partY.ref.value) + "px";
 updateInfoShelf();redraw();
 }
 } else if (event.target == document.getElementById("partX")) {
 event.preventDefault(); event.stopPropagation();
 if ( event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) - mouseIncrement);
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - mouseIncrement);
 } else if (event.wheelDelta < 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) + mouseIncrement);
-}                              if (ui.partX.ref.value  < mouseIncrement)
-                                 { ui.partX.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) - T);
+ parseInt(parseInt(ui.partX.ref.value) + mouseIncrement);
+} if (ui.partX.ref.value < mouseIncrement)
+ { ui.partX.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - T);
 } else if (event.wheelDelta < 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) + T);
-}                              if (ui.partX.ref.value  < T)
-                                 { ui.partX.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) - 2);
+ parseInt(parseInt(ui.partX.ref.value) + T);
+} if (ui.partX.ref.value < T)
+ { ui.partX.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - 2);
 } else if (event.wheelDelta < 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) + 2);
-}                              if (ui.partX.ref.value  < 2)
-                                 { ui.partX.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) - 1);
+ parseInt(parseInt(ui.partX.ref.value) + 2);
+} if (ui.partX.ref.value < 2)
+ { ui.partX.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partX.ref.value =
+ parseInt(parseInt(ui.partX.ref.value) - 1);
 } else if (event.wheelDelta < 0) { ui.partX.ref.value =
-                 parseInt(parseInt(ui.partX.ref.value) + 1);
-}                              if (ui.partX.ref.value  < 1)
-                                 { ui.partX.ref.value  = 1; } } if (coinFocus!=null) {
-coinFocus.style.left =    parseInt(ui.partX.ref.value) + "px";
-coinFocus.dataset.left =  parseInt(ui.partX.ref.value) + "px";
+ parseInt(parseInt(ui.partX.ref.value) + 1);
+} if (ui.partX.ref.value < 1)
+ { ui.partX.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.left = parseInt(ui.partX.ref.value) + "px";
+coinFocus.dataset.left = parseInt(ui.partX.ref.value) + "px";
 updateInfoShelf();redraw();
 }
 } else if (event.target == document.getElementById("partW")) {
 event.preventDefault(); event.stopPropagation();
 if ( event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) - mouseIncrement);
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - mouseIncrement);
 } else if (event.wheelDelta < 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) + mouseIncrement);
-}                              if (ui.partW.ref.value  < mouseIncrement)
-                                 { ui.partW.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) - T);
+ parseInt(parseInt(ui.partW.ref.value) + mouseIncrement);
+} if (ui.partW.ref.value < mouseIncrement)
+ { ui.partW.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - T);
 } else if (event.wheelDelta < 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) + T);
-}                              if (ui.partW.ref.value  < T)
-                                 { ui.partW.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) - 2);
+ parseInt(parseInt(ui.partW.ref.value) + T);
+} if (ui.partW.ref.value < T)
+ { ui.partW.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - 2);
 } else if (event.wheelDelta < 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) + 2);
-}                              if (ui.partW.ref.value  < 2)
-                                 { ui.partW.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) - 1);
+ parseInt(parseInt(ui.partW.ref.value) + 2);
+} if (ui.partW.ref.value < 2)
+ { ui.partW.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partW.ref.value =
+ parseInt(parseInt(ui.partW.ref.value) - 1);
 } else if (event.wheelDelta < 0) { ui.partW.ref.value =
-                 parseInt(parseInt(ui.partW.ref.value) + 1);
-}                              if (ui.partW.ref.value  < 1)
-                                 { ui.partW.ref.value  = 1; } } if (coinFocus!=null) {
-coinFocus.style.width =   parseInt(ui.partW.ref.value) + "px";
+ parseInt(parseInt(ui.partW.ref.value) + 1);
+} if (ui.partW.ref.value < 1)
+ { ui.partW.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.width = parseInt(ui.partW.ref.value) + "px";
 coinFocus.dataset.width = parseInt(ui.partW.ref.value) + "px";
 updateInfoShelf();redraw();
 }
 } else if (event.target == document.getElementById("partH")) {
 event.preventDefault(); event.stopPropagation();
 if ( event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) - mouseIncrement);
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - mouseIncrement);
 } else if (event.wheelDelta < 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) + mouseIncrement);
-}                              if (ui.partH.ref.value  < mouseIncrement)
-                                 { ui.partH.ref.value  = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) - T);
+ parseInt(parseInt(ui.partH.ref.value) + mouseIncrement);
+} if (ui.partH.ref.value < mouseIncrement)
+ { ui.partH.ref.value = mouseIncrement; } } else if (!event.shiftKey&& event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - T);
 } else if (event.wheelDelta < 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) + T);
-}                              if (ui.partH.ref.value  < T)
-                                 { ui.partH.ref.value  = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) - 2);
+ parseInt(parseInt(ui.partH.ref.value) + T);
+} if (ui.partH.ref.value < T)
+ { ui.partH.ref.value = T; } } else if (!event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - 2);
 } else if (event.wheelDelta < 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) + 2);
-}                              if (ui.partH.ref.value  < 2)
-                                 { ui.partH.ref.value  = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
-       if (event.wheelDelta > 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) - 1);
+ parseInt(parseInt(ui.partH.ref.value) + 2);
+} if (ui.partH.ref.value < 2)
+ { ui.partH.ref.value = 2; } } else if ( event.shiftKey&&!event.ctrlKey) {
+ if (event.wheelDelta > 0) { ui.partH.ref.value =
+ parseInt(parseInt(ui.partH.ref.value) - 1);
 } else if (event.wheelDelta < 0) { ui.partH.ref.value =
-                 parseInt(parseInt(ui.partH.ref.value) + 1);
-}                              if (ui.partH.ref.value  < 1)
-                                 { ui.partH.ref.value  = 1; } } if (coinFocus!=null) {
-coinFocus.style.height =  parseInt(ui.partH.ref.value) + "px";
+ parseInt(parseInt(ui.partH.ref.value) + 1);
+} if (ui.partH.ref.value < 1)
+ { ui.partH.ref.value = 1; } } if (coinFocus!=null) {
+coinFocus.style.height = parseInt(ui.partH.ref.value) + "px";
 coinFocus.dataset.height =parseInt(ui.partH.ref.value) + "px";
 updateInfoShelf();redraw();
 }
 } else if (event.target == document.getElementById("levelNotes")) {
 event.preventDefault(); event.stopPropagation();
-
 } else if (event.target.dataset.scroll && event.target.dataset.scroll == "false" ||
-           event.target == document.getElementById("itemSystem") ||
-           event.target == document.getElementById("sidebar")) {
+ event.target == document.getElementById("itemSystem") ||
+ event.target == document.getElementById("sidebar")) {
 event.preventDefault(); event.stopPropagation();
-       if ( event.shiftKey) {
-       if (event.wheelDelta > 0) {
- focusPrevious(); updateInfoShelf(); redraw(); 
+ if ( event.shiftKey) {
+ if (event.wheelDelta > 0) {
+ focusPrevious(); updateInfoShelf(); redraw();
 } else if (event.wheelDelta < 0) {
- focusNext(); updateInfoShelf(); redraw(); 
+ focusNext(); updateInfoShelf(); redraw();
 }
 } else if (!event.shiftKey) {
-       if (event.wheelDelta > 0) {
- focusPrevious(true); updateInfoShelf(); redraw(); 
+ if (event.wheelDelta > 0) {
+ focusPrevious(true); updateInfoShelf(); redraw();
 } else if (event.wheelDelta < 0) {
- focusNext(true); updateInfoShelf(); redraw(); 
+ focusNext(true); updateInfoShelf(); redraw();
 }
 }
-
-
 loadSidebar1();
-
-
 } else if (event.target == document.getElementById("phantomLair") || event.target == document.getElementById("phantomFlip") || (event.target.dataset && event.target.dataset.lair == "true")) {
 event.preventDefault(); event.stopPropagation();
-       if (event.wheelDelta > 0) {
+ if (event.wheelDelta > 0) {
 thePhantomLair.style.opacity = parseFloat(thePhantomLair.style.opacity) + 0.01;
 } else if (event.wheelDelta < 0) {
 thePhantomLair.style.opacity = parseFloat(thePhantomLair.style.opacity) - 0.01;
 }
-
 if (thePhantomLair.style.opacity < 0.00) {
 thePhantomLair.style.opacity = 0.00;
 }
 if (thePhantomLair.style.opacity > 0.35) {
 thePhantomLair.style.opacity = 0.35;
 }
-
 localStorage.setItem("thePhantomLairOpacity", thePhantomLair.style.opacity);
-
 } else if (
 event.target == document.getElementById("pageDescription") ||
 event.target == document.getElementById("projectName") ||
@@ -405,17 +321,12 @@ event.target == document.getElementById("setLayer24") ||
 event.target == document.getElementById("setLayer25")
 ) {
 event.preventDefault(); event.stopPropagation();
-       if (event.wheelDelta > 0) {
+ if (event.wheelDelta > 0) {
 layerRight();
 } else if (event.wheelDelta < 0) {
 layerLeft();
 }
 loadSidebar1();
-
-
-
-
-
 } else if (
 event.target == document.getElementById("clipCSS") ||
 event.target == document.getElementById("clipHTML") ||
@@ -443,27 +354,27 @@ event.target == document.getElementById("folder42")
 ) {
 event.preventDefault();
 event.stopPropagation();
-       if (event.wheelDelta < 0) {
+ if (event.wheelDelta < 0) {
 switch (lastFactor) {
-case         "1" : lastFactor = "(100/320)" ; break;
+case "1" : lastFactor = "(100/320)" ; break;
 case "(100/320)" : lastFactor = "(100/500)" ; break;
 case "(100/500)" : lastFactor = "(100/768)" ; break;
 case "(100/768)" : lastFactor = "(100/1000)"; break;
 case "(100/1000)": lastFactor = "(100/1280)"; break;
 case "(100/1280)": lastFactor = "(100/1536)"; break;
 case "(100/1536)": lastFactor = "(100/2000)"; break;
-default          : lastFactor = "(100/2000)"; break;
+default : lastFactor = "(100/2000)"; break;
 }
 } else if (event.wheelDelta > 0) {
 switch (lastFactor) {
-case "(100/320)" : lastFactor =         "1" ; break;
+case "(100/320)" : lastFactor = "1" ; break;
 case "(100/500)" : lastFactor = "(100/320)" ; break;
 case "(100/768)" : lastFactor = "(100/500)" ; break;
 case "(100/1000)": lastFactor = "(100/768)" ; break;
 case "(100/1280)": lastFactor = "(100/1000)"; break;
 case "(100/1536)": lastFactor = "(100/1280)"; break;
 case "(100/2000)": lastFactor = "(100/1536)"; break;
-default          : lastFactor =         "1" ; break;
+default : lastFactor = "1" ; break;
 }
 }
 localStorage.setItem("lastFactor", lastFactor);
@@ -511,7 +422,7 @@ event.target == document.getElementById("ringButton") ||
 event.target == document.getElementById("yourButtonIsHere").firstElementChild
 ) {
 event.preventDefault(); event.stopPropagation();
-       if (event.wheelDelta > 0) {
+ if (event.wheelDelta > 0) {
 cycleColoursForward();
 drawButton7();
 } else if (event.wheelDelta < 0) {
@@ -547,55 +458,31 @@ ui.frameNumber.ref.value = 1;
 }
 setupTheAnimator();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [
-    "styleFG",
-    "styleBG",
-    "styleOL",
-    "shadowRadius7",
-    "shadowRadius8",
-    "shadowRadius9",
-    "shadowRadius4",
-    "shadowRadius5",
-    "shadowRadius6",
-    "shadowRadius1",
-    "shadowRadius2",
-    "shadowRadius3",
-    "indentLine",
-    "fontShadow",
-    "charWord",
-    "fontSize",
-    "textAlignLeft",
-    "textAlignCenter",
-    "textAlignRight",
-    "outlineSize",
-    "outlineStyle",
-    "padding",
-    "opacity"
+ "styleFG",
+ "styleBG",
+ "styleOL",
+ "shadowRadius7",
+ "shadowRadius8",
+ "shadowRadius9",
+ "shadowRadius4",
+ "shadowRadius5",
+ "shadowRadius6",
+ "shadowRadius1",
+ "shadowRadius2",
+ "shadowRadius3",
+ "indentLine",
+ "fontShadow",
+ "charWord",
+ "fontSize",
+ "textAlignLeft",
+ "textAlignCenter",
+ "textAlignRight",
+ "outlineSize",
+ "outlineStyle",
+ "padding",
+ "opacity"
 ].forEach((name) => {
-
 if (event.target == styleMenu[name].ref) {
 event.preventDefault();
 event.stopPropagation();
@@ -603,35 +490,15 @@ if (coinFocus != null) {
 styleMenu[name].mousewheel();
 }
 }
-
 });
-
-
-
 if (event.buttons===4) {
 event.preventDefault();
 }
-
 }, { passive: false });
-
 /* THIS ENDS THE MOUSEWHEEL */
-
-
-
-
-styleMenu.styleFG.mousewheel = function() {  }
-styleMenu.styleBG.mousewheel = function() {  }
-styleMenu.styleOL.mousewheel = function() {  }
-
-
-
-
-
-
-
-
-
-
+styleMenu.styleFG.mousewheel = function() { }
+styleMenu.styleBG.mousewheel = function() { }
+styleMenu.styleOL.mousewheel = function() { }
 styleMenu.shadowRadius7.mousewheel = function() { shadowRadiusWheel(); }
 styleMenu.shadowRadius8.mousewheel = function() { shadowRadiusWheel(); }
 styleMenu.shadowRadius9.mousewheel = function() { shadowRadiusWheel(); }
@@ -641,11 +508,9 @@ styleMenu.shadowRadius6.mousewheel = function() { shadowRadiusWheel(); }
 styleMenu.shadowRadius1.mousewheel = function() { shadowRadiusWheel(); }
 styleMenu.shadowRadius2.mousewheel = function() { shadowRadiusWheel(); }
 styleMenu.shadowRadius3.mousewheel = function() { shadowRadiusWheel(); }
-
-
 function shadowRadiusWheel() {
 if (event.wheelDelta < 0) {
-       if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+ if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
 styleKey = "r";
 kC = 109; cC = 45;
 borderRadiusTuner();
@@ -653,17 +518,17 @@ borderRadiusTuner();
 styleKey = "u";
 kC = 109; cC = 45;
 boxShadowTuner();
-} else if (!event.shiftKey &&  event.ctrlKey && !event.altKey) {
+} else if (!event.shiftKey && event.ctrlKey && !event.altKey) {
 styleKey = "u";
 kC = 111; cC = 47;
 boxShadowTuner();
-} else if (!event.shiftKey && !event.ctrlKey &&  event.altKey) {
+} else if (!event.shiftKey && !event.ctrlKey && event.altKey) {
 styleKey = "u";
 kC = 96; cC = 48;
 boxShadowTuner();
 }
 } else if (event.wheelDelta > 0) {
-       if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
+ if (!event.shiftKey && !event.ctrlKey && !event.altKey) {
 styleKey = "r";
 kC = 107; cC = 43;
 borderRadiusTuner();
@@ -671,28 +536,17 @@ borderRadiusTuner();
 styleKey = "u";
 kC = 107; cC = 43;
 boxShadowTuner();
-} else if (!event.shiftKey &&  event.ctrlKey && !event.altKey) {
+} else if (!event.shiftKey && event.ctrlKey && !event.altKey) {
 styleKey = "u";
 kC = 106; cC = 42;
 boxShadowTuner();
-} else if (!event.shiftKey && !event.ctrlKey &&  event.altKey) {
+} else if (!event.shiftKey && !event.ctrlKey && event.altKey) {
 styleKey = "u";
 kC = 110; cC = 46;
 boxShadowTuner();
 }
 }
 }
-
-
-
-
-
-
-
-
-
-
-
 styleMenu.indentLine.mousewheel = function() {
 if (!event.shiftKey) {
 let upSize = 0.05;
@@ -715,17 +569,9 @@ coinFocus.lastElementChild.firstElementChild.style.lineHeight = parseFloat(coinF
 coinFocus.lastElementChild.firstElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.lineHeight) - upSize + "em";
 }
 }
-
 }
-
-styleMenu.fontShadow.mousewheel = function() {  }
-
-
-
-
-
-styleMenu.charWord.mousewheel = function() { 
-
+styleMenu.fontShadow.mousewheel = function() { }
+styleMenu.charWord.mousewheel = function() {
 if (!event.shiftKey) {
 let upSize = 0.001;
 if (!coinFocus.lastElementChild.firstElementChild.style.letterSpacing) {
@@ -747,15 +593,7 @@ coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coin
 coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.firstElementChild.style.wordSpacing) - upSize + "em";
 }
 }
-
-
-
 }
-
-
-
-
-
 styleMenu.fontSize.mousewheel = function() {
 let upSize = 1;
 if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
@@ -765,12 +603,9 @@ coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFoc
 coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) - upSize + "px";
 }
 }
-
-styleMenu.textAlignLeft.mousewheel = function() {  }
-styleMenu.textAlignCenter.mousewheel = function() {  }
-styleMenu.textAlignRight.mousewheel = function() {  }
-
-
+styleMenu.textAlignLeft.mousewheel = function() { }
+styleMenu.textAlignCenter.mousewheel = function() { }
+styleMenu.textAlignRight.mousewheel = function() { }
 styleMenu.outlineSize.mousewheel = function() {
 let change = 0.5;
 if (coinFocus.lastElementChild.style.outline == "") {
@@ -794,16 +629,12 @@ coinFocus.lastElementChild.style.outlineOffset = parseFloat(coinFocus.lastElemen
 }
 }
 }
-
-
 styleMenu.outlineStyle.mousewheel = function() {
 const part = coinFocus.lastElementChild;
 function evaluateOutline() {
 part.style.outlineStyle = `${outlineStyleArray[outlineTunedStyle]}`;
 }
-
 if (event.wheelDelta > 0) {
-
 outlineTunedStyle -= 1;
 if (outlineTunedStyle < 0) { outlineTunedStyle = outlineStyleArray.length - 1; }
 evaluateOutline();
@@ -812,10 +643,7 @@ outlineTunedStyle += 1;
 if (outlineTunedStyle > outlineStyleArray.length - 1) { outlineTunedStyle = 0; }
 evaluateOutline();
 }
-
-
 }
-
 styleMenu.padding.mousewheel = function() {
 let change = 1;
 if (coinFocus.lastElementChild.firstElementChild.style.padding == "") {
@@ -824,28 +652,22 @@ coinFocus.lastElementChild.firstElementChild.style.padding = 0 + "px";
 if (event.ctrlKey) { change = 5; }
 if (!event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.firstElementChild.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft)  + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingLeft = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft) + change + "px";
 coinFocus.lastElementChild.firstElementChild.style.paddingRight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingRight) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.firstElementChild.style.paddingLeft  = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft)  - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingLeft = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingLeft) - change + "px";
 coinFocus.lastElementChild.firstElementChild.style.paddingRight = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingRight) - change + "px";
 }
 } else if ( event.shiftKey) {
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.firstElementChild.style.paddingTop    = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop)    + change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingTop = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop) + change + "px";
 coinFocus.lastElementChild.firstElementChild.style.paddingBottom = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingBottom) + change + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.firstElementChild.style.paddingTop    = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop)    - change + "px";
+coinFocus.lastElementChild.firstElementChild.style.paddingTop = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingTop) - change + "px";
 coinFocus.lastElementChild.firstElementChild.style.paddingBottom = parseFloat(coinFocus.lastElementChild.firstElementChild.style.paddingBottom) - change + "px";
 }
 }
-
-
-
 }
-
-
-
 styleMenu.opacity.mousewheel = function() {
 let change = 0.05;
 if (coinFocus.lastElementChild.style.opacity == "") {
@@ -858,27 +680,3 @@ coinFocus.lastElementChild.style.opacity = parseFloat(coinFocus.lastElementChild
 coinFocus.lastElementChild.style.opacity = parseFloat(coinFocus.lastElementChild.style.opacity) - change;
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

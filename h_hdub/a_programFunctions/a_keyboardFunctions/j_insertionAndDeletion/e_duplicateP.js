@@ -1,0 +1,1 @@
+function duplicateP(){pasteSingle();insertNewDuplicate(['',68,68]);deleteCoin(['',88,120]);if(coinFocus){const s=coinFocus.style,d=coinFocus.dataset,w=parseInt(s.width)||0,h=parseInt(s.height)||0;s.left=d.left=window.scrollX+(window.innerWidth/2)-(w/2)+"px";s.top=d.top=window.scrollY+(window.innerHeight/2)-(h/2)+"px"}}

@@ -1,63 +1,11 @@
-function wrapParts() {
-    const children = utilityLayer0.children;
-    if (!coinFocus || children.length <= 1) return;
+function findFurthestExtent(){const f=[[0,0],[0,0],[0,0],[0,0]],t=[coinTrip.sel0,coinTrip.sel1,coinTrip.sel2,utilityLayer0.children];t.forEach((c,i)=>{for(let j=0;j<c.length;j++){const o=c[j],s=o.style,z=parseFloat(o.dataset.scale)||1,h=parseInt(s.top)+parseInt(s.height)*z,w=parseInt(s.left)+parseInt(s.width)*z;if(h>f[i][0])f[i][0]=h;if(w>f[i][1])f[i][1]=w}});return f}
 
-    const group = coinFocus.dataset.coinTrip;
-    const originalX = window.scrollX;
-    const originalY = window.scrollY;
+function findLeastExtent(){const f=[[9e9,9e9],[9e9,9e9],[9e9,9e9],[9e9,9e9]],t=[coinTrip.sel0,coinTrip.sel1,coinTrip.sel2,utilityLayer0.children];t.forEach((c,i)=>{for(let j=0;j<c.length;j++){const s=c[j].style,y=parseInt(s.top),l=parseInt(s.left);if(y<f[i][0])f[i][0]=y;if(l<f[i][1])f[i][1]=l}});return f}
 
-    // 1. Calculate extents ONCE
-    const furthest = findFurthestExtent();
-    const least = findLeastExtent();
-    const rankMap = { [Ts0]: 0, [Ts1]: 1, [Ts2]: 2 };
-    const rank = rankMap[group] ?? 0;
+function wrapParts(){const c=utilityLayer0.children;if(!coinFocus||c.length<=1)return;const g=coinFocus.dataset.coinTrip,oX=window.scrollX,oY=window.scrollY,f=findFurthestExtent(),l=findLeastExtent(),r={[Ts0]:0,[Ts1]:1,[Ts2]:2}[g]??0,mX=l[r][1],mY=l[r][0],w=f[r][1]-l[3][1],h=f[r][0]-l[3][0],n=insertNewCoin([null,78,78,!1,!1,!1]);n.remove();const fr=document.createDocumentFragment();Array.from(c).forEach(ch=>{const s=ch.style,d=ch.dataset;s.left=d.left=(parseInt(s.left)||0)-mX+"px";s.top=d.top=(parseInt(s.top)||0)-mY+"px";fr.appendChild(ch)});const ns=n.style,nd=n.dataset;ns.left=nd.left=mX+"px";ns.top=nd.top=mY+"px";ns.width=nd.width=w+"px";ns.height=nd.height=h+"px";n.anchor.style.zIndex=0;n.firstElementChild.style.pointerEvents="none";n.div.appendChild(fr);utilityLayer0.appendChild(n);readCoins();recoverColouration();restorePointerEventsNone();window.scrollTo(oX,oY);Z()}
 
-    const minX = least[rank][1];
-    const minY = least[rank][0];
-    const width = furthest[rank][1] - least[3][1];
-    const height = furthest[rank][0] - least[3][0];
+function _uw(a){if(!coinFocus)return;const l=coinFocus.lastElementChild;if(!l||!l.firstElementChild)return;const f=l.firstElementChild,ch=f.children;if(!ch.length||!ch[0].dataset||!ch[0].dataset.coinTrip)return;const s=coinFocus.style,v=parseInt(s.width),h=parseInt(s.height);if(a){const fw=v<h?v:h,cx=parseInt(s.left)+v/2,cy=parseInt(s.top)+h/2;buzzWord(2,"q",fw,window["coinColour"+coinFocus.dataset.coinTrip],80,80,25,"center",cx,cy)}for(let j=0;j<ch.length;j++){const cs=ch[j].style,cd=ch[j].dataset;cs.left=cd.left=parseInt(cs.left)+parseInt(s.left)+"px";cs.top=cd.top=parseInt(cs.top)+parseInt(s.top)+"px"}if(f.lastElementChild?.tagName=="SCRIPT")f.lastElementChild.remove();const htm=f.innerHTML;coinFocus.remove();utilityLayer0.innerHTML+=htm;coinFocus=utilityLayer0.lastElementChild;readCoins();restorePointerEventsNone();spaceViewOff();Z();recoverColouration()}
+function unwrapParts(){_uw(1)}
+function unwrapPartsAlways(){_uw(0)}
 
-    // 2. Prepare the Wrapper
-    const newCoin = insertNewCoin([null, 78, 78, false, false, false]);
-    newCoin.remove(); // Pull it out of DOM to work on it off-screen
-
-    // 3. Batch move children into Fragment
-    const fragment = document.createDocumentFragment();
-    const partsArray = Array.from(children);
-    
-    partsArray.forEach(child => {
-        const s = child.style;
-        const ds = child.dataset;
-        
-        // Calculate new relative positions before appending
-        const newL = (parseInt(s.left) || 0) - minX + "px";
-        const newT = (parseInt(s.top) || 0) - minY + "px";
-        
-        s.left = ds.left = newL;
-        s.top = ds.top = newT;
-        
-        fragment.appendChild(child);
-    });
-
-    // 4. Finalize Wrapper Styles
-    const ns = newCoin.style;
-    const nd = newCoin.dataset;
-    ns.left = nd.left = minX + "px";
-    ns.top = nd.top = minY + "px";
-    ns.width = nd.width = width + "px";
-    ns.height = nd.height = height + "px";
-    
-    newCoin.anchor.style.zIndex = 0;
-    newCoin.firstElementChild.style.pointerEvents = "none";
-    
-    // 5. Inject everything back in one shot
-    newCoin.lastElementChild.firstElementChild.appendChild(fragment);
-    utilityLayer0.appendChild(newCoin);
-
-    // 6. Global Refresh (Only once!)
-    readCoins();
-    recoverColouration();
-    restorePointerEventsNone();
-    window.scrollTo(originalX, originalY);
-    Z();
-}
+function wrapDocument(){if(utilityLayer0.children.length>1){const oX=window.scrollX,oY=window.scrollY,n=insertNewCoin([null,78,78,!1,!1,!1]);n.remove();const f=findFurthestExtent(),l=findLeastExtent();readCoins();spaceViewOn();removePointerEventsNone();const h=utilityLayer0.innerHTML;utilityLayer0.innerHTML="";n.div.innerHTML=h;utilityLayer0.appendChild(n);const mX=l[3][1],mY=l[3][0],w=f[3][1]-mX,hg=f[3][0]-mY,ns=n.style,nd=n.dataset;ns.left=nd.left=mX+"px";ns.top=nd.top=mY+"px";ns.width=nd.width=w+"px";ns.height=nd.height=hg+"px";nd.wrapper="true";n.anchor.style.zIndex=0;n.firstElementChild.style.pointerEvents="none";Array.from(n.div.children).forEach(c=>{const cs=c.style,cd=c.dataset;cs.left=cd.left=parseInt(cs.left)-mX+"px";cs.top=cd.top=parseInt(cs.top)-mY+"px"});recoverColouration();readCoins();restorePointerEventsNone();spaceViewOff();window.scrollTo(oX,oY);Z();const s=coinFocus.style,v=parseInt(s.width),hF=parseInt(s.height),fw=v<hF?v:hF,cx=parseInt(s.left)+v/2,cy=parseInt(s.top)+hF/2;buzzWord(2,"Q",fw,window["coinColour"+coinFocus.dataset.coinTrip],80,80,25,"center",cx,cy)}}

@@ -1,23 +1,33 @@
 function flipPhantomLair() {
 if (utilityLayer0.children.length != 0 || thePhantomLair.children.length != 0) {
-let middleman = document.createElement("div");
-middleman.innerHTML      = thePhantomLair.innerHTML;
-thePhantomLair.innerHTML = utilityLayer0.innerHTML;
-utilityLayer0.innerHTML  = middleman.innerHTML;
-singlePasteBuffer.value = [];
-for (let j = 0; j < thePhantomLair.children.length; j++) {
-singlePasteBuffer.value[j] = thePhantomLair.children[j];
-}
+/* Use DocumentFragment to move nodes safely without destroying them */
+let fragmentA = document.createDocumentFragment();
+let fragmentB = document.createDocumentFragment();
+
+while (utilityLayer0.firstChild) fragmentA.appendChild(utilityLayer0.firstChild);
+while (thePhantomLair.firstChild) fragmentB.appendChild(thePhantomLair.firstChild);
+
+utilityLayer0.appendChild(fragmentB);
+thePhantomLair.appendChild(fragmentA);
+
+/* Re-populate buffer with the actual live nodes */
+singlePasteBuffer.value = Array.from(thePhantomLair.children);
+
 if (utilityLayer0.children.length != 0) {
 coinFocus = utilityLayer0.children[0];
 }
-readCoins(); recoverColouration();
 
+readCoins(); 
+recoverColouration();
 
-buzzWord(2,"flip phantomLair",64,document.getElementById("coin72275").value,1000,400,100,"bottom",window.scrollX + window.innerWidth / 2,window.scrollY + window.innerHeight - 32);
+const textCol = document.getElementById("coin72275").value;
+const centerX = window.scrollX + window.innerWidth / 2;
+const centerY = window.scrollY + window.innerHeight - 32;
+
+buzzWord(2, "flip phantomLair", 64, textCol, 1000, 400, 100, "bottom", centerX, centerY);
 
 if (lastFlow == "colour") reflowPerTrip();
-if (lastFlow == "global") reflowGlobal(rev,0);
+if (lastFlow == "global") reflowGlobal(rev, 0);
 
 focusFirst();
 redraw();
@@ -26,6 +36,7 @@ loadSidebar1();
 updateInfoShelf();
 }
 }
+
 
 
 
