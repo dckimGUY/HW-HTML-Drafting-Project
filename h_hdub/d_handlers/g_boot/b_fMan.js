@@ -47,7 +47,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /* J */ if (kC == 74 && cC == 74) { hjklRouter(keyInfo); }
 /* K */ if (kC == 75 && cC == 75) { hjklRouter(keyInfo); }
 /* L */ if (kC == 76 && cC == 76) { hjklRouter(keyInfo); }
-/* Z */ if (kC == 90 && cC == 90) { manageTripartiteZ(0); modeRouter(e,9); zBuzz("Z"); }
+/* Z */ if (kC == 90 && cC == 90) { manageTripartiteZ(0); modeRouter(e, 9); zBuzz("Z"); }
 /* X */ if (kC == 88 && cC == 88) { groupToPhantomLair(); }
 /* C */ if (kC == 67 && cC == 67) { coinToCursor(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'}); }
 /* V */ if (kC == 86 && cC == 86) { lastFlow="colour"; reflowPerTrip(); flowVis(); }
@@ -76,7 +76,7 @@ if (charM==0&&charQ1==0&&yank==0&&charF==0) {
 /* j */ if (kC == 74 && cC == 106) { hjklRouter(keyInfo); }
 /* k */ if (kC == 75 && cC == 107) { hjklRouter(keyInfo); }
 /* l */ if (kC == 76 && cC == 108) { hjklRouter(keyInfo); }
-/* z */ if (kC == 90 && cC == 122) { manageGlobalZ(0); modeRouter(e,9); zBuzz("z"); }
+/* z */ if (kC == 90 && cC == 122) { manageGlobalZ(0); modeRouter(e, 9); zBuzz("z"); }
 /* x */ if (kC == 88 && cC == 120) { deleteCoin(keyInfo); }
 /* c */ if (kC == 67 && cC == 99) { cursorToCoin(keyInfo); Cur.scrollIntoView({behavior:'smooth', block: 'center', inline: 'center'}); }
 /* v */ if (kC == 86 && cC == 118) { lastFlow = "global"; reflowGlobal(rev,0); flowVis(); }

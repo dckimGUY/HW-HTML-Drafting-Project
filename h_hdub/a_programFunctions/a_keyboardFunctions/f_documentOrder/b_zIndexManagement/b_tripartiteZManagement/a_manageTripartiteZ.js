@@ -4,6 +4,10 @@
 function manageTripartiteZ() {
 if (utilityLayer0.children.length > 1) {
 
+// Prime the history with the current state before any changes occur
+Array.from(utilityLayer0.children).forEach(el => {
+    omni(el, { "zIndex": el.style.zIndex });
+});
 
 const aa = utilityLayer0.children;
 let   az = Array.from(aa);
@@ -71,6 +75,12 @@ if (coinTrip.sel2[i].id==zz[j].id) {
 coinTrip.sel2[i].style.zIndex = pageEchelon + (tricolourEchelon * 3) + (internalStep * increment);
 increment++;
 } } }
+
+setTimeout(() => {
+    Array.from(utilityLayer0.children).forEach(el => {
+        omni(el, { "zIndex": el.style.zIndex });
+    });
+}, 0);
 
 return (1);
 } else {

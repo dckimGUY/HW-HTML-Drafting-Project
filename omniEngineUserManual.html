@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me">
+<head>
+    <!-- Standard Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omni Engine Technical Manual | Software Documentation</title>
+    <meta name="description" content="Technical documentation and source code for the omni style management engine. A unified system for style retrieval, modification, and history tracking.">
+    <meta name="keywords" content="omni Engine, JavaScript, Software Manual, CSS Management, Undo Redo Engine, North York Software">
+    <meta name="author" content="omni Project">
+    <meta name="robots" content="index, follow">
+
+    <!-- Geographic / Location Metadata -->
+    <meta name="geo.region" content="CA-ON">
+    <meta name="geo.placename" content="North York">
+    <meta name="geo.position" content="43.7615;-79.4111">
+    <meta name="ICBM" content="43.7615, -79.4111">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="omni Engine Technical Manual">
+    <meta property="og:description" content="Unified system to get, set, increase, decrease, undo, and redo element styles. Source code included.">
+    <meta property="og:site_name" content="omni Engine Project">
+    <meta property="og:locale" content="en_CA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="omni Engine Technical Manual">
+    <meta name="twitter:description" content="A complete technical reference for the omni style management system with embedded source code.">
+
+    <!-- Schema Metadata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "omni Engine Technical Manual",
+      "description": "Technical documentation for the omni visual style controller, containing embedded minified software.",
+      "articleSection": "Software Documentation",
+      "contentLocation": {
+        "@type": "Place",
+        "name": "North York, Ontario, Canada"
+      },
+      "about": {
+        "@type": "SoftwareSourceCode",
+        "name": "omni Engine",
+        "programmingLanguage": "JavaScript",
+        "codeSampleType": "Minified"
+      }
+    }
+    </script>
+
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; color: #222; max-width: 950px; margin: 40px auto; padding: 20px; background: #fff; }
+        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; font-size: 24px; }
+        h2 { margin-top: 30px; font-size: 20px; color: #000; border-left: 5px solid #ccc; padding-left: 10px; }
+        .box { border: 1px solid #000; padding: 15px; margin: 20px 0; background: #f9f9f9; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { text-align: left; padding: 10px; border: 1px solid #ddd; }
+        th { background: #f2f2f2; }
+        code { font-family: monospace; background: #eee; padding: 2px 4px; font-weight: bold; }
+        .code-block { font-family: monospace; background: #000; color: #0f0; padding: 15px; overflow-x: auto; white-space: pre; font-size: 11px; cursor: pointer; transition: background 0.2s; border: 2px solid #333; border-radius: 4px; }
+        .code-block.success { background: #32CD32 !important; color: #000 !important; }
+    </style>
+</head>
+<body>
+
+    <h1>omni Engine Technical Manual</h1>
+
+    <div class="box">
+        <strong>Description:</strong> This function manages visual properties for elements. It processes requests to <strong>get</strong> values, <strong>set</strong> specific values, <strong>increase</strong> or <strong>decrease</strong> numerical values, and <strong>undo</strong> or <strong>redo</strong> changes. It identifies elements automatically by name and ignores invalid data.
+    </div>
+
+    <h2>1. Input Targets</h2>
+    <p>The target identifies which element or collection is affected.</p>
+    <ul>
+        <li><strong>Single Target:</strong> Use a name in quotes (e.g., <code>"box1"</code>) or a direct object reference.</li>
+        <li><strong>Group Target:</strong> Use an array containing names or references (e.g., <code>["b1", "b2"]</code>).</li>
+    </ul>
+
+    <h2>2. Single Element Examples</h2>
+    <table>
+        <thead><tr><th>Objective</th><th>Example Code</th><th>Result</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Get</strong> value</td><td><code>omni("box1", {"width"})</code></td><td>Returns single value.</td></tr>
+            <tr><td><strong>Set</strong> value</td><td><code>omni("box1", {"opacity": "0.5"})</code></td><td>Sets exact transparency.</td></tr>
+            <tr><td><strong>Increase</strong></td><td><code>omni("box1", {"left": "+=10"})</code></td><td>Adds 10 units.</td></tr>
+            <tr><td><strong>Decrease</strong></td><td><code>omni("box1", {"left": "-=10"})</code></td><td>Subtracts 10 units.</td></tr>
+            <tr><td><strong>Undo</strong></td><td><code>omni("box1").undo()</code></td><td>Reverts last change.</td></tr>
+            <tr><td><strong>Redo</strong></td><td><code>omni("box1").redo()</code></td><td>Restores undone change.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>3. Group Element Examples</h2>
+    <table>
+        <thead><tr><th>Objective</th><th>Example Code</th><th>Result</th></tr></thead>
+        <tbody>
+            <tr><td>Group <strong>Get</strong></td><td><code>omni(["b1", "b2"], {"width"})</code></td><td>Returns array of values.</td></tr>
+            <tr><td>Group <strong>Set</strong></td><td><code>omni(["b1", "b2"], {"opacity": "0.5"})</code></td><td>Sets all listed elements.</td></tr>
+            <tr><td>Group <strong>Increase</strong></td><td><code>omni(["b1", "b2"], {"left": "+=10"})</code></td><td>Increases all elements.</td></tr>
+            <tr><td>Group <strong>Decrease</strong></td><td><code>omni(["b1", "b2"], {"left": "-=10"})</code></td><td>Decreases all elements.</td></tr>
+            <tr><td>Group <strong>Undo</strong></td><td><code>omni(["b1", "b2"]).undo()</code></td><td>Reverts the entire collection.</td></tr>
+            <tr><td>Group <strong>Redo</strong></td><td><code>omni(["b1", "b2"]).redo()</code></td><td>Restores the entire collection.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>4. Automatic Processing Rules</h2>
+    <ul>
+        <li><strong>Data Symmetry:</strong> If an array is provided as a target, an array is returned for <strong>get</strong> requests.</li>
+        <li><strong>Unit Handling:</strong> The function identifies existing units (px, em, %) and maintains them automatically.</li>
+        <li><strong>Memory:</strong> Each element remembers 500 changes. A new change deletes <strong>redo</strong> paths.</li>
+        <li><strong>Stability:</strong> If instructions are not clear, no action is taken.</li>
+    </ul>
+
+    <h2>5. This is the omni function right here. Click to copy:</h2>
+    <div class="code-block" id="copyBox" onclick="copyCode()">const omni=(function(){const h=new WeakMap(),U=['px','em','rem','%','vh','vw','vmin','vmax','ch','ex','pt','pc','in','cm','mm','deg','rad','grad','turn','s','ms'],M={top:"px",left:"px",width:"px",height:"px",fontSize:"px",opacity:"",zIndex:""},D={fontSize:"16px",opacity:"1",top:"0px",left:"0px",zIndex:"1"};return function(t,o){const isA=Array.isArray(t),targets=(isA?t:[t]).map(x=>typeof x==='string'?document.getElementById(x):x).filter(x=>x&&x.style);if(!targets.length)return{undo:function(){return this},redo:function(){return this},set:function(){return this}};const ctrl={undo:()=>{targets.forEach(e=>{const s=h.get(e);if(!s)return;if(s.i===s.s.length-1){let cur={};for(let k in s.s[s.i].n)cur[k]=e.style[k]||D[k]||"0";s.s.push({p:cur,n:cur})}if(s.i>=0){const p=s.s[s.i--].p;for(let k in p)e.style[k]=p[k]}});return ctrl},redo:()=>{targets.forEach(e=>{const s=h.get(e);if(s&&s.i<s.s.length-1){const n=s.s[++s.i].n;for(let k in n)e.style[k]=n[k]}});return ctrl},set:(n)=>{targets.forEach(e=>{if(!h.has(e))h.set(e,{s:[],i:-1});const t=h.get(e);let st={},p={},f=!1;for(let k in n){let v=n[k];if(v==null)continue;let s=String(v).replace(/\s+/g,''),u=e.style[k]||D[k]||"0",g=s.includes('+=')||s.includes('-='),K=!g&&(/^[a-z\-]+$/i.test(s)||s.startsWith('#')||s.startsWith('rgb')||s.startsWith('hsl')),m=parseFloat(u)||0,d=parseFloat(g?s.replace(/[+=-]/g,''):s);if(isNaN(d)&&!K)continue;let r;if(K)r=v;else{let l=g?m+(s.includes('-=')?-d:d):d;const getU=(x)=>{let y=String(x).match(/[a-z%]+$/i);return(y&&U.includes(y[0].toLowerCase()))?y[0].toLowerCase():""};let q=getU(s)||getU(u)||M[k]||"";r=(k==='opacity'||k==='zIndex')?l:Math.round(l)+q}p[k]=u;st[k]=r;f=!0}if(f){t.s=t.s.slice(0,t.i+1);t.s.push({p,n:st});t.i++;if(t.s.length>500){t.s.shift();t.i--}Object.assign(e.style,st)}});return ctrl}};if(typeof o==='string'){const res=targets.map(e=>e.style[o]||D[o]||"0");return isA?res:res}return(o&&typeof o==='object')?ctrl.set(o):ctrl}})();
+</div>
+
+    <script>
+        function copyCode() {
+            const box = document.getElementById('copyBox');
+            const text = box.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                box.classList.add('success');
+                setTimeout(() => box.classList.remove('success'), 1000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -601,6 +601,9 @@ if (go.elm[id].dat.notes.initialDisplay &&
 ) { go.elm[id].ref.style.display = "none";
     go.elm[id].ref.style.opacity =    "0";
     go.elm[id].ref.style.zIndex  =    "0"; }
+if (go.elm[id].dat.notes.pointerEvents &&
+    go.elm[id].dat.notes.pointerEvents == "none"
+) { go.elm[id].ref.style.pointerEvents = "none"; }
 
 /*** SET UP FOR AUDIO DATA ***/
 if (go.elm[id].ref.tagName == "AUDIO") {

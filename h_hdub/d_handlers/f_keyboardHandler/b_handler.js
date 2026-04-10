@@ -75,6 +75,31 @@ if (event.key==='F5'){ event.preventDefault(); }
 var kC = 0, cC = 0;
 var shiftHold = false;
 document.addEventListener("keydown", (event) => {
+
+
+
+if (event.ctrlKey && (kC == 90 || event.key.toLowerCase() === 'z')) { 
+    event.preventDefault(); 
+    event.stopImmediatePropagation(); 
+    if (event.shiftKey) { globalUndo(); } else { singleUndo(); };
+    redraw();
+    return; 
+}
+
+if (event.ctrlKey && (kC == 89 || event.key.toLowerCase() === 'y')) { 
+    event.preventDefault(); 
+    event.stopImmediatePropagation(); 
+    if (event.shiftKey) { globalRedo(); } else { singleRedo(); };
+    redraw();
+    return; 
+}
+
+
+
+
+
+
+
 drawSiteMap();
 if (splashScreenVisible==true) {
 splashScreen.remove();

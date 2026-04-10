@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me">
+<head>
+    <!-- Standard Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map3d Engine Technical Manual | Software Documentation</title>
+    <meta name="description" content="Technical documentation and source code for the map3d transformation engine. A unified system for 3D positioning, rotation, scaling, and skewing.">
+    <meta name="keywords" content="map3d Engine, JavaScript, 3D Matrix, Software Manual, CSS 3D, GPU Acceleration, North York Software">
+    <meta name="author" content="map3d Project">
+    <meta name="robots" content="index, follow">
+
+    <!-- Geographic / Location Metadata -->
+    <meta name="geo.region" content="CA-ON">
+    <meta name="geo.placename" content="North York">
+    <meta name="geo.position" content="43.7615;-79.4111">
+    <meta name="ICBM" content="43.7615, -79.4111">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="map3d Engine Technical Manual">
+    <meta property="og:description" content="Hardware-accelerated system to calculate and apply 3D matrix transformations. Source code included.">
+    <meta property="og:site_name" content="map3d Engine Project">
+    <meta property="og:locale" content="en_CA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="map3d Engine Technical Manual">
+    <meta name="twitter:description" content="A complete technical reference for the map3d transformation system with embedded source code.">
+
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; color: #222; max-width: 950px; margin: 40px auto; padding: 20px; background: #fff; }
+        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; font-size: 24px; }
+        h2 { margin-top: 30px; font-size: 20px; color: #000; border-left: 5px solid #ccc; padding-left: 10px; }
+        .box { border: 1px solid #000; padding: 15px; margin: 20px 0; background: #f9f9f9; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { text-align: left; padding: 10px; border: 1px solid #ddd; }
+        th { background: #f2f2f2; }
+        code { font-family: monospace; background: #eee; padding: 2px 4px; font-weight: bold; }
+        .code-block { font-family: monospace; background: #000; color: #0f0; padding: 15px; overflow-x: auto; white-space: pre; font-size: 11px; cursor: pointer; transition: background 0.2s; border: 2px solid #333; border-radius: 4px; }
+        .code-block.success { background: #32CD32 !important; color: #000 !important; }
+    </style>
+</head>
+<body>
+
+    <h1>map3d Engine Technical Manual</h1>
+
+    <div class="box">
+        <strong>Description:</strong> This function manages 3D space for elements. It processes requests to <strong>position</strong>, <strong>rotate</strong>, <strong>scale</strong>, and <strong>skew</strong> objects by calculating a unified 16-number matrix. It updates elements immediately and ignores invalid or crashing data through built-in safety guards.
+    </div>
+
+    <h2>1. Input Targets</h2>
+    <p>The input identifies the element to be moved and the specific settings for that movement.</p>
+    <ul>
+        <li><strong>The Target:</strong> An HTML object reference (e.g., <code>coinFocus</code>). Use <code>null</code> to just return the text string.</li>
+        <li><strong>The Settings:</strong> An object containing movement labels (e.g., <code>{z: 45}</code>).</li>
+    </ul>
+
+    <h2>2. Movement Examples</h2>
+    <table>
+        <thead><tr><th>Objective</th><th>Example Code</th><th>Result</th></tr></thead>
+        <tbody>
+            <tr><td><strong>Reset</strong> object</td><td><code>map3d(el)</code></td><td>Snaps back to flat identity.</td></tr>
+            <tr><td><strong>Rotate</strong> Spin</td><td><code>map3d(el, {"z": 90})</code></td><td>Spins element 90 degrees.</td></tr>
+            <tr><td><strong>Rotate</strong> Tilt</td><td><code>map3d(el, {"x": 45})</code></td><td>Tilts element forward.</td></tr>
+            <tr><td><strong>Scale</strong> Width</td><td><code>map3d(el, {"sx": 2})</code></td><td>Stretches width by 2x.</td></tr>
+            <tr><td><strong>Translate</strong> Depth</td><td><code>map3d(el, {"tz": 100})</code></td><td>Moves 100px into depth.</td></tr>
+            <tr><td><strong>Skew</strong> Lean</td><td><code>map3d(el, {"kX": 30})</code></td><td>Leans element horizontally.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>3. Accepted Settings Labels</h2>
+    <table>
+        <thead><tr><th>Label</th><th>Description</th><th>Identity Default</th></tr></thead>
+        <tbody>
+            <tr><td><code>x, y, z</code></td><td>Rotation (Tilt, Turn, Spin)</td><td>0 (Degrees)</td></tr>
+            <tr><td><code>tx, ty, tz</code></td><td>Movement (X, Y, Depth)</td><td>0 (Pixels)</td></tr>
+            <tr><td><code>sx, sy</code></td><td>Size (Width, Height)</td><td>1 (Multiplier)</td></tr>
+            <tr><td><code>kX, kY</code></td><td>Skew (Horizontal, Vertical)</td><td>0 (Degrees)</td></tr>
+            <tr><td><code>p</code></td><td>Perspective (Distortion distance)</td><td>1536 (Pixels)</td></tr>
+        </tbody>
+    </table>
+
+    <h2>4. Automatic Safety Guards</h2>
+    <ul>
+        <li><strong>Memory:</strong> If settings are missing, the function reads the current values from the element automatically.</li>
+        <li><strong>Scale Floor:</strong> Size is limited to 0.001 to prevent the object from vanishing or crashing.</li>
+        <li><strong>Mirroring:</strong> Negative scale values (e.g., -1) are fully supported for mirroring and flipping.</li>
+        <li><strong>Stability:</strong> Perspective and Skew are capped to prevent mathematical errors (division by zero).</li>
+    </ul>
+
+    <h2>5. This is the map3d function right here. Click to copy:</h2>
+    <div class="code-block" id="copyBox" onclick="copyCode()">function map3d(e,p={}){const d=e?.dataset||{},r=Math.PI/180,f={x:0,y:0,z:0,tx:0,ty:0,tz:0,sx:1,sy:1,kX:0,kY:0,p:1536},v={};for(let k in f){let l=p[k]??parseFloat(d[k])??f[k];if(k==='sx'||k==='sy'){const s=l<0?-1:1;let m=Math.abs(l);if(m<1e-3)m=1e-3;if(m>1e3)m=1e3;l=m*s}if(k==='p')l=Math.max(1,Math.min(99999,l));if(k==='kX'||k==='kY')l=Math.max(-89.9,Math.min(89.9,l));if(k.startsWith('t'))l=Math.max(-1e6,Math.min(1e6,l));v[k]=l}const a=v.x*r,b=v.y*r,c=v.z*r,h=v.kX*r,i=v.kY*r,cX=Math.cos(a),sX=Math.sin(a),cY=Math.cos(b),sY=Math.sin(b),cZ=Math.cos(c),sZ=Math.sin(c),tX=Math.tan(h),tY=Math.tan(i),m=[(cY*cZ)*v.sx,(cY*sZ+tY)*v.sy,-sY,0,(sX*sY*cZ-cX*sZ+tX)*v.sx,(sX*sY*sZ+cX*cZ)*v.sy,sX*cY,0,(cX*sY*cZ+sX*sZ)*v.sx,(cX*sY*sZ-sX*cZ)*v.sy,cX*cY,-1/v.p,v.tx,v.ty,v.tz,1],s=`matrix3d(${m.map(n=>Math.round(n*1e6)/1e6).join(',')})`;return e?.style&&(e.style.transform=s),s}</div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('copyBox').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const box = document.getElementById('copyBox');
+                box.classList.add('success');
+                const oldText = box.innerText;
+                box.innerText = "COPIED TO CLIPBOARD";
+                setTimeout(() => {
+                    box.classList.remove('success');
+                    box.innerText = oldText;
+                }, 1000);
+            });
+        }
+    </script>
+
+</body>
+</html>

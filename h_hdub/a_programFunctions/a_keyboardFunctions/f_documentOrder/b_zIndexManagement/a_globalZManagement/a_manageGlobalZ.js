@@ -4,6 +4,9 @@
 function manageGlobalZ() {
 if (utilityLayer0.children.length > 1) {
 
+// Pre-capture the current state so omni has a baseline to undo back to
+const baseline = Array.from(utilityLayer0.children);
+baseline.forEach(el => omni(el, {"zIndex": el.style.zIndex}));
 
 const aa = utilityLayer0.children;
 let   az = Array.from(aa);
@@ -58,6 +61,13 @@ if (utilityLayer0.children[i].id==zz[j].id) {
 utilityLayer0.children[i].style.zIndex = pageEchelon + (tricolourEchelon * 1) + (internalStep * increment);
 increment++;
 } } }
+
+// Log the new state into history
+setTimeout(() => {
+    Array.from(utilityLayer0.children).forEach(el => {
+        omni(el, { "zIndex": el.style.zIndex });
+    });
+}, 0);
 
 return (1);
 } else {

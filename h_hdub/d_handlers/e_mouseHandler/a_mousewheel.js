@@ -594,15 +594,21 @@ coinFocus.lastElementChild.firstElementChild.style.wordSpacing = parseFloat(coin
 }
 }
 }
+
+
 styleMenu.fontSize.mousewheel = function() {
-let upSize = 1;
-if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
-if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) + upSize + "px";
-} else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.firstElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.firstElementChild.style.fontSize) - upSize + "px";
+    let upSize = event.shiftKey ? 0.1 : 1;
+    let target = coinFocus.lastElementChild.lastElementChild;
+    let currentSize = parseFloat(target.style.fontSize) || 16;
+    if (event.wheelDelta > 0) {
+        target.style.fontSize = (currentSize + upSize) + "px";
+    } else {
+        target.style.fontSize = (currentSize - upSize) + "px";
+    }
 }
-}
+
+
+
 styleMenu.textAlignLeft.mousewheel = function() { }
 styleMenu.textAlignCenter.mousewheel = function() { }
 styleMenu.textAlignRight.mousewheel = function() { }

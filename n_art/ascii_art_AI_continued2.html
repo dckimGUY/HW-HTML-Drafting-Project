@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>ASCII-Anim</title><meta charset="UTF-8"><style>html,body{overflow:hidden;background:#000;margin:0;padding:0}canvas{image-rendering:pixelated;position:absolute;top:0;left:0;cursor:none}</style></head><body><script>
+const cols=80,rows=40;var totalFrames=1,frames=[],h=[],r=[],currentFrame=0,key="A",mouseX=0,mouseY=0,cw,ch,offsetX,offsetY,showPalette=false,tabPressed=false,startX=-1,startY=-1,lastX=-1,lastY=-1,isLine=false,isBox=false,isCirc=false,isDrawing=false,playing=false,playDir=1,playInt,fps=10;
+const palettes=[{fg:"#b2b2b2",bg:"#2e2e2e"},{fg:"#9fb29f",bg:"#2d362d"},{fg:"#a29bb2",bg:"#2f2b38"},{fg:"#b29f9f",bg:"#382b2b"},{fg:"#b2ad9f",bg:"#33312a"},{fg:"#9fb29f",bg:"#2a3333"},{fg:"#7da1c4",bg:"#1b365d"},{fg:"#94a596",bg:"#1d4289"},{fg:"#d6d2c4",bg:"#4a453a"},{fg:"#b2b2b2",bg:"#3d3d3d"},{fg:"#94a596",bg:"#2b2b2b"},{fg:"#c4c4c4",bg:"#444444"},{fg:"#b0b0b0",bg:"#222222"},{fg:"#90a4ae",bg:"#263238"},{fg:"#a1887f",bg:"#3e2723"},{fg:"#9e9e9e",bg:"#212121"}];
+var activePalette=palettes;const saved=localStorage.getItem("activePalette");if(saved){try{activePalette=JSON.parse(saved)}catch(e){activePalette=palettes}}
+function init(){frames=Array.from({length:totalFrames},()=>Array.from({length:cols},()=>Array(rows).fill(" ")));h=[];r=[];}init();
+const canvas=document.createElement("canvas"),ctx=canvas.getContext("2d");document.body.append(canvas);
+function save(){h.push(JSON.stringify(frames));if(h.length>50)h.shift();r=[]}
+function undo(){if(h.length){r.push(JSON.stringify(frames));frames=JSON.parse(h.pop());totalFrames=frames.length;redraw()}}
+function redo(){if(r.length){h.push(JSON.stringify(frames));frames=JSON.parse(r.pop());totalFrames=frames.length;redraw()}}
+function getPre(fIdx){let s="";for(let y=0;y<rows;y++){for(let x=0;x<cols;x++)s+=frames[fIdx][x][y];s+="\n"}return s}
+function togglePlay(dir){if(playing&&playDir===dir){playing=false;clearInterval(playInt);redraw();return}if(!playing){if(dir===1&&currentFrame===totalFrames-1)currentFrame=0;if(dir===-1&&currentFrame===0)currentFrame=totalFrames-1}playing=true;playDir=dir;resetInterval()}
+function resetInterval(){clearInterval(playInt);if(playing)playInt=setInterval(()=>{let n=currentFrame+playDir;if(n>=totalFrames||n<0){playing=false;clearInterval(playInt);redraw();return}currentFrame=n;redraw()},1000/fps)}
+function redraw(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;let tCw=canvas.width/cols,tCh=tCw*2;if(tCh*rows>canvas.height){ch=canvas.height/rows;cw=ch/2}else{cw=tCw;ch=tCh}offsetX=(canvas.width-(cols*cw))/2;offsetY=(canvas.height-(rows*ch))/2;ctx.fillStyle="#000";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle=activePalette.bg;ctx.fillRect(offsetX,offsetY,cols*cw,rows*ch);ctx.font=`${ch}px monospace`;ctx.textBaseline="top";ctx.textAlign="center";ctx.globalAlpha=0.25;ctx.fillStyle="#ff6666";if(currentFrame>0)drawFD(frames[currentFrame-1]);ctx.fillStyle="#6666ff";if(currentFrame<totalFrames-1)drawFD(frames[currentFrame+1]);ctx.globalAlpha=1;ctx.fillStyle=activePalette.fg;if(frames[currentFrame])drawFD(frames[currentFrame]);if(isDrawing&&(isLine||isBox||isCirc))drawPrev();if(showPalette)drawPal();drawCur();drawInfo()}
+function drawInfo(){const txt=`ins/del: ${currentFrame+1}/${totalFrames}${playing?(playDir>0?">":"<"):""} FPS: ${fps}`;ctx.font=`${ch}px monospace`;const tw=ctx.measureText(txt).width;ctx.globalAlpha=0.2;ctx.fillStyle="#000";ctx.fillRect(offsetX,offsetY+rows*ch-ch,tw+4,ch);ctx.globalAlpha=0.3;ctx.fillStyle=activePalette.fg;ctx.textAlign="left";ctx.textBaseline="bottom";ctx.fillText(txt,offsetX+2,offsetY+rows*ch)}
+function drawPal(){const sw=cw*5,sh=ch*5,sx=offsetX,sy=offsetY+(ch*17.5);palettes.forEach((p,i)=>{let px=sx+(i*sw);ctx.fillStyle=p.bg;ctx.fillRect(px,sy,sw,sh);ctx.fillStyle=p.fg;ctx.font=`${sh/2}px monospace`;ctx.fillText(key,px+sw/2,sy+sh/4);if(mouseX>=px&&mouseX<px+sw&&mouseY>=sy&&mouseY<sy+sh){ctx.strokeStyle=activePalette.fg;ctx.lineWidth=Math.max(2,ch*.05);ctx.strokeRect(px+1,sy+1,sw-2,sh-2)}})}
+function drawCur(){ctx.globalAlpha=1;ctx.strokeStyle=activePalette.fg;ctx.lineWidth=Math.max(1.5,ch*.04);let k=Math.floor((mouseX-offsetX)/cw),j=Math.floor((mouseY-offsetY)/ch);if(k>=0&&k<cols&&j>=0&&j<rows){let gx=k*cw+offsetX,gy=j*ch+offsetY;ctx.textBaseline="top";ctx.strokeRect(gx,gy,cw,ch);ctx.font=`${ch}px monospace`;ctx.globalAlpha=.5;ctx.fillStyle=activePalette.fg;ctx.fillText(key,gx+cw/2,gy)}}
+function drawFD(d){for(let k=0;k<cols;k++)for(let j=0;j<rows;j++)if(d[k][j]!==" ")ctx.fillText(d[k][j],(k*cw)+cw/2+offsetX,j*ch+offsetY)}
+function drawPrev(){ctx.globalAlpha=.4;ctx.fillStyle=activePalette.fg;let k=Math.floor((mouseX-offsetX)/cw),j=Math.floor((mouseY-offsetY)/ch);let pts=[],c=ctx.buttons===2||ctx.buttons===4?" ":key;if(isLine)pts=getB(startX,startY,k,j);else if(isBox)pts=getBox(startX,startY,k,j);else if(isCirc)pts=getE(startX,startY,k,j);pts.forEach(p=>ctx.fillText(c,(p.x*cw)+cw/2+offsetX,p.y*ch+offsetY))}
+function getB(x0,y0,x1,y1){let pts=[],dx=Math.abs(x1-x0),dy=Math.abs(y1-y0),sx=x0<x1?1:-1,sy=y0<y1?1:-1,err=dx-dy;while(1){pts.push({x:x0,y:y0});if(x0===x1&&y0===y1)break;let e2=2*err;if(e2>-dy){err-=dy;x0+=sx}if(e2<dx){err+=dx;y0+=sy}}return pts}
+function getBox(x0,y0,x1,y1){let pts=[],minX=Math.min(x0,x1),maxX=Math.max(x0,x1),minY=Math.min(y0,y1),maxY=Math.max(y0,y1);for(let x=minX;x<=maxX;x++)for(let y=minY;y<=maxY;y++)pts.push({x,y});return pts}
+function getE(x0,y0,x1,y1){let pts=[],xL=Math.min(x0,x1),xR=Math.max(x0,x1),yT=Math.min(y0,y1),yB=Math.max(y0,y1),xc=(xL+xR)/2,yc=(yT+yB)/2,rx=(xR-xL)/2,ry=(yB-yT)/2;for(let x=xL;x<=xR;x++)for(let y=yT;y<=yB;y++){let dx=(x-xc)/(rx||.5),dy=(y-yc)/(ry||.5);if(dx*dx+dy*dy<=1.1)pts.push({x,y})}return pts}
+function floodFill(x,y,tC,nC){if(tC===nC||frames[currentFrame][x][y]!==tC)return;save();let s=[[x,y]];while(s.length){let[cx,cy]=s.pop();if(frames[currentFrame][cx][cy]===tC){frames[currentFrame][cx][cy]=nC;if(cx>0)s.push([cx-1,cy]);if(cx+1<cols)s.push([cx+1,cy]);if(cy>0)s.push([cx,cy-1]);if(cy+1<rows)s.push([cx,cy+1])}}lastX=lastY=-1}
+window.onwheel=e=>{if(e.ctrlKey)return;currentFrame=Math.max(0,Math.min(totalFrames-1,currentFrame+(e.deltaY<0?1:-1)));redraw()};
+window.onmousemove=e=>{mouseX=e.clientX;mouseY=e.clientY;if(e.buttons&&!showPalette){if(!isDrawing){save();isDrawing=true}if(e.altKey)return;let s=e.shiftKey,c=e.ctrlKey;isCirc=(s&&c);isBox=(c&&!s);isLine=(s&&!c);if(!isCirc&&!isBox&&!isLine)paint(e)}redraw()};
+window.onmousedown=e=>{let k=Math.floor((e.clientX-offsetX)/cw),j=Math.floor((e.clientY-offsetY)/ch);if(showPalette){const sw=cw*5,sh=ch*5,sx=offsetX,sy=offsetY+(ch*17.5);let i=Math.floor((e.clientX-sx)/sw);if(i>=0&&i<16&&e.clientY>=sy&&e.clientY<sy+sh){activePalette=palettes[i];localStorage.setItem("activePalette",JSON.stringify(activePalette))}}else{startX=k;startY=j;if(e.altKey){if(k>=0&&k<cols&&j>=0&&j<rows){let fC=(e.buttons===2||e.buttons===4)?" ":key;floodFill(k,j,frames[currentFrame][k][j],fC)}}else if(e.shiftKey&&!e.ctrlKey&&lastX!==-1){save();let c=(e.buttons===2||e.buttons===4)?" ":key;getB(lastX,lastY,k,j).forEach(p=>{if(p.x>=0&&p.x<cols&&p.y>=0&&p.y<rows)frames[currentFrame][p.x][p.y]=c})}else{save();isDrawing=true;let s=e.shiftKey,c=e.ctrlKey;isCirc=(s&&c);isBox=(c&&!s);isLine=(s&&!c);if(!isCirc&&!isBox&&!isLine)paint(e)}}redraw()};
+window.onmouseup=e=>{let k=Math.floor((e.clientX-offsetX)/cw),j=Math.floor((e.clientY-offsetY)/ch);if(isDrawing&&(isLine||isBox||isCirc)){let pts=[],char=(e.buttons===2||e.buttons===4)?" ":key;if(isLine)pts=getB(startX,startY,k,j);else if(isBox)pts=getBox(startX,startY,k,j);else if(isCirc)pts=getE(startX,startY,k,j);pts.forEach(p=>{if(p.x>=0&&p.x<cols&&p.y>=0&&p.y<rows)frames[currentFrame][p.x][p.y]=char});if(isBox||isCirc)lastX=lastY=-1;else{lastX=k;lastY=j}}else{lastX=k;lastY=j}isLine=isBox=isCirc=isDrawing=false;redraw()};
+function paint(e){let k=Math.floor((e.clientX-offsetX)/cw),j=Math.floor((e.clientY-offsetY)/ch);if(k>=0&&k<cols&&j>=0&&j<rows){let char=(e.buttons===2||e.buttons===4)?" ":key;frames[currentFrame][k][j]=char;redraw()}}
+window.oncontextmenu=e=>e.preventDefault();
+document.onkeydown=e=>{
+if(e.key==="Tab"&&!e.ctrlKey&&!e.altKey){e.preventDefault();if(!tabPressed){tabPressed=true;showPalette=true;redraw()}return}
+if(e.code==="Space"){e.preventDefault();togglePlay(1);return}
+if(e.key==="Backspace"){e.preventDefault();togglePlay(-1);return}
+if(e.key==="PageUp"){e.preventDefault();fps=Math.min(60,fps+1);if(playing)resetInterval();redraw();return}
+if(e.key==="PageDown"){e.preventDefault();fps=Math.max(1,fps-1);if(playing)resetInterval();redraw();return}
+if(e.ctrlKey&&e.key.toLowerCase()==="z"){e.preventDefault();if(e.shiftKey)redo();else undo()}
+if(e.ctrlKey&&e.key.toLowerCase()==="y"){e.preventDefault();redo()}
+if(showPalette)return;
+if(e.key==="ArrowRight"){currentFrame=Math.min(totalFrames-1,currentFrame+1);redraw()}
+if(e.key==="ArrowLeft"){currentFrame=Math.max(0,currentFrame-1);redraw()}
+if(e.key==="ArrowUp"){let n=((Math.floor((currentFrame+1)/5)+1)*5)-1;if(n>=totalFrames)n=totalFrames-1;currentFrame=n;redraw()}
+if(e.key==="ArrowDown"){let n=((Math.ceil((currentFrame+1)/5)-1)*5)-1;if(n<0)n=0;currentFrame=n;redraw()}
+if(e.key==="Home"){currentFrame=0;redraw()}
+if(e.key==="End"){currentFrame=totalFrames-1;redraw()}
+if(e.key==="Insert"){save();let f=e.shiftKey?JSON.parse(JSON.stringify(frames[currentFrame])):Array.from({length:cols},()=>Array(rows).fill(" "));frames.splice(currentFrame+1,0,f);totalFrames=frames.length;currentFrame++;redraw()}
+if(e.key==="Delete"){if(totalFrames>1){save();frames.splice(currentFrame,1);totalFrames=frames.length;currentFrame=Math.min(totalFrames-1,currentFrame);redraw()}}
+if(e.key.toLowerCase()==="d"){save();let f=JSON.parse(JSON.stringify(frames[currentFrame]));frames.splice(currentFrame+1,0,f);totalFrames=frames.length;currentFrame++;redraw()}
+if(e.key==="Escape"){save();frames[currentFrame]=Array.from({length:cols},()=>Array(rows).fill(" "));redraw()}
+if(e.key==="Enter"){
+    if(e.shiftKey){
+        const fStr = btoa(JSON.stringify(frames));
+        const particle = `<div><pre style="font-family:monospace;font-size:inherit;letter-spacing:inherit;word-spacing:inherit;line-height:inherit;margin:0;" data-f='${fStr}' data-fps="${fps}">${getPre(0)}</pre><script>(function(){const el=document.currentScript.previousElementSibling;const f=JSON.parse(atob(el.dataset.f));let i=0,tmr;const run=()=>{clearInterval(tmr);tmr=setInterval(()=>{i=(i+1)%f.length;el.textContent=f[i].map(c=>c.join('')).join('\\n')},1000/parseInt(el.dataset.fps))};run();})()<\/script></div>`;
+        navigator.clipboard.writeText(particle);
+    } else {
+        navigator.clipboard.writeText(getPre(currentFrame));
+    }
+}};
+document.onkeyup=e=>{if(e.key==="Tab"){tabPressed=false;showPalette=false;redraw()}if(isDrawing)redraw()};
+document.onkeypress=e=>{if(e.key.length===1&&!e.ctrlKey&&!e.altKey&&e.keyCode!==13&&e.key!=="Tab"&&e.code!=="Space"){key=e.key;redraw()}};
+document.onpaste=e=>{e.preventDefault();try{const d=JSON.parse(e.clipboardData.getData("text/plain"));if(Array.isArray(d)){save();frames=d;totalFrames=d.length;redraw()}}catch(err){}};
+window.onresize=redraw;redraw();
+</script></body></html>

@@ -495,6 +495,23 @@ case 9: mode9.mousedown(mouseInfo); break;
 redraw();
 });
 let mouseupTarget = null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("mouseup", (event) => {
 activeUpdate();
 if (event.target.dataset&&event.target.dataset.coinTrip) {
@@ -537,13 +554,82 @@ case 7: mode7.mouseup(mouseInfo);break;
 case 8: mode8.mouseup(mouseInfo);break;
 case 9: mode9.mouseup(mouseInfo);break;
 }
+
+
+
+
+if (mousedown.target && mousedown.target.dataset && mousedown.target.dataset.coinTrip) {
+    const el = mousedown.target;
+    const s = el.style;
+    const d = el.dataset;
+
+    // Get the current value and flip it. 
+    // If it's "1" (or empty), make it "0.99". Otherwise, make it "1".
+    const currentFlood = s.floodOpacity || "1";
+    const nextFlood = (currentFlood === "1") ? "0.99" : "1";
+
+    // This forced change ensures Omni records the 'Before' and 'After'
+    omni(el).set({
+        "left": s.left,
+        "top": s.top,
+        "width": s.width,
+        "height": s.height,
+        "floodOpacity": nextFlood
+    });
+
+    // Dataset sync for your movement math
+    d.left = s.left;
+    d.top = s.top;
+    d.width = s.width;
+    d.height = s.height;
+}
+
+
+
+
+
+
+
 mousedown.target = null;
 }
 if (!event.target.dataset.coinTrip) {
 //edgeDetect.style.display= "none";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 redraw();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("click", (event) => {
 if (mouseIsDogged==false) {
  if (lastFlow == "global") {
