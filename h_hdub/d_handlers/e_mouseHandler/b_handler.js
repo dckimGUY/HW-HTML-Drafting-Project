@@ -12,44 +12,29 @@ if (mousedown.hold==true && event.target.id.toString() == "siteMapCanvas") {
 drawSiteMap();
 const menuScale = parseFloat(document.getElementById("menuWrapper").style.transform.replace(/scale\(/g,"").replace(/\)/g,""));
 const zoomFactor = parseFloat(document.getElementById("siteMapWrapper").style.transform.replace(/scale\(/g,"").replace(/\)/g,""));
+
+
+
+
+
 /* EXTRA CHEESY METHOD: JUST PICK NUMBERS */
 /* THIS MAKES THE VIEW-FINDER TRACK GOOD */
-let trackFactor = 2.25;
-switch (parseInt(Math.floor(parseFloat(ui.menuWrapper.ref.style.transform.slice(6,-1)) * 4))) {
-case 1: trackFactor = 120.00 ; break;
-case 2: trackFactor = 33.60 ; break;
-case 3: trackFactor = 20.85 ; break;
-case 4: trackFactor = 11.50 ; break;
-case 5: trackFactor = 8.00 ; break;
-case 6: trackFactor = 5.80 ; break;
-case 7: trackFactor = 4.15 ; break;
-case 8: trackFactor = 3.35 ; break;
-case 9: trackFactor = 2.68 ; break;
-case 10: trackFactor = 2.28 ; break;
-case 11: trackFactor = 1.98 ; break;
-case 12: trackFactor = 1.60 ; break;
-case 13: trackFactor = 1.395 ; break;
-case 14: trackFactor = 1.22 ; break;
-case 15: trackFactor = 1.075 ; break;
-case 16: trackFactor = 0.925 ; break;
-case 17: trackFactor = 0.80 ; break;
-case 18: trackFactor = 0.73 ; break;
-case 19: trackFactor = 0.667 ; break;
-case 20: trackFactor = 0.61 ; break;
-case 21: trackFactor = 0.55 ; break;
-case 22: trackFactor = 0.515 ; break;
-case 23: trackFactor = 0.462 ; break;
-case 24: trackFactor = 0.43 ; break;
-case 25: trackFactor = 0.392 ; break;
-case 26: trackFactor = 0.36 ; break;
-case 27: trackFactor = 0.345 ; break;
-case 28: trackFactor = 0.315 ; break;
-case 29: trackFactor = 0.290 ; break;
-case 30: trackFactor = 0.268 ; break;
-case 31: trackFactor = 0.259 ; break;
-case 32: trackFactor = 0.25 ; break;
-case 33: trackFactor = 0.235 ; break;
-}
+const index = parseInt(Math.floor(parseFloat(ui.menuWrapper.ref.style.transform.slice(6,-1)) * 4));
+
+const factors = {
+  1: 120.0, 2: 33.6, 3: 20.85, 4: 11.5, 5: 8.0, 6: 5.8, 7: 4.15, 8: 3.35, 9: 2.68, 10: 2.28,
+  11: 1.98, 12: 1.6, 13: 1.395, 14: 1.22, 15: 1.075, 16: 0.925, 17: 0.8, 18: 0.73, 19: 0.667, 20: 0.61,
+  21: 0.55, 22: 0.515, 23: 0.462, 24: 0.43, 25: 0.392, 26: 0.36, 27: 0.345, 28: 0.315, 29: 0.29, 30: 0.268,
+  31: 0.259, 32: 0.25, 33: 0.235
+};
+
+let trackFactor = factors[index] ?? 2.25;
+
+
+
+
+
+
 const factor = trackFactor * menuScale / zoomFactor;
 mouseX = mousedown.scrollX + ((mousedown.clientX - event.clientX) * factor);
 mouseY = mousedown.scrollY + ((mousedown.clientY - event.clientY) * factor);
@@ -119,113 +104,78 @@ localStorage.setItem("lastScroll", JSON.stringify(topLayer.lastScroll));
 return;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
 if (mousedown.hold == false && hotDog == false) {
-if (!ctrl && !shift && !alt) {
-let found = false;
-for (let j = 0; j < utilityLayer0.children.length; j++) {
-if (event.target == utilityLayer0.children[j]) {
-found = true;
-/* THESE HAVE BEEN ADAPTED TO ALIGN WITH THE VISUALS AND THE KEYBOARD ACTION */
-if (mode==1) {
- if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize; } //4
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
+    if (!ctrl && !shift && !alt) {
+        let found = false;
+        for (let j = 0; j < utilityLayer0.children.length; j++) {
+            if (event.target == utilityLayer0.children[j]) {
+                found = true;
+                const t = event.target;
+                const left = parseInt(t.style.left);
+                const top = parseInt(t.style.top);
+                const w = parseInt(t.style.width);
+                const h = parseInt(t.style.height);
+
+                // Identify 3x3 Grid Position
+                const col = event.pageX <= left + edgeQ ? 0 : (event.pageX <= left + w - edgeQ ? 1 : 2);
+                const row = event.pageY <= top + edgeQ ? 0 : (event.pageY <= top + h - edgeQ ? 1 : 2);
+
+                const layouts = {
+                    "m1": [
+                        [cursor.nwResize, cursor.nResize, cursor.neResize],
+                        [cursor.wResize,  cursor.grab,    cursor.eResize],
+                        [cursor.swResize, cursor.sResize, cursor.seResize]
+                    ],
+                    "m5e0": [
+                        [cursor.grab,    cursor.grab,    cursor.eResize],
+                        [cursor.grab,    cursor.grab,    cursor.eResize],
+                        [cursor.sResize, cursor.sResize, cursor.seResize]
+                    ],
+                    "m5e1": [
+                        [cursor.nwResize, cursor.nResize, cursor.nResize],
+                        [cursor.wResize,  cursor.grab,    cursor.grab],
+                        [cursor.wResize,  cursor.grab,    cursor.grab]
+                    ],
+                    "m6": [
+                        [cursor.nwResize, cursor.grab,    cursor.neResize],
+                        [cursor.grab,    cursor.grab,    cursor.grab],
+                        [cursor.swResize, cursor.grab,    cursor.seResize]
+                    ]
+                };
+
+                const key = mode == 1 ? "m1" : (mode == 5 ? `m5e${eM}` : (mode == 6 ? "m6" : null));
+                t.style.cursor = (key && layouts[key]) ? layouts[key][row][col] : cursor.grab;
+            }
+        }
+        if (!found) utilityLayer0.style.cursor = "crosshair";
+    }
+    utilityLayer0.style.cursor = "crosshair";
 }
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nResize; } //8
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.sResize; } //2
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize; } //6
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
-}
-} else if (mode==5) {
-if (eM==0) {
- if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //7
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //4
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.sResize; } //1
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //8
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.sResize; } //2
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize; } //9
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.eResize; } //6
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
-}
-} else if (eM==1) {
- if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.wResize; } //4
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.wResize; } //1
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nResize; } //8
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //2
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nResize; } //9
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //6
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //3
-}
-}
-} else if (mode==6) {
- if (event.pageX <= (parseInt(event.target.style.left) + (edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.nwResize; } //7
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //4
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.swResize; } //1
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) - edgeQ))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //8
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //5
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //2
-}
-else if (event.pageX <= (parseInt(event.target.style.left) + (parseInt(event.target.style.width) *3/3))) {
- if (event.pageY <= (parseInt(event.target.style.top) + (edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.neResize; } //9
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height) - edgeQ))) { utilityLayer0.children[j].style.cursor = cursor.grab; } //6
-else if (event.pageY <= (parseInt(event.target.style.top) + (parseInt(event.target.style.height)*3/3))) { utilityLayer0.children[j].style.cursor = cursor.seResize; } //3
-}
-} else {
-utilityLayer0.children[j].style.cursor = cursor.grab;
-}
-} else {
-utilityLayer0.children[j].style.cursor = cursor.crosshair;
-}
-}
-} else {
-/*
-if (mode!=8) {
- if ( ctrl && !shift && !alt) {
-event.target.style.cursor = cursor.copy;
-} else if (!ctrl && shift && !alt) {
-event.target.style.cursor = cursor.move;
-} else if (!ctrl && !shift && alt) {
-event.target.style.cursor = cursor.move;
-} else if ( ctrl && shift && !alt) {
-event.target.style.cursor = cursor.crosshair;
-} else if ( ctrl && !shift && alt) {
-event.target.style.cursor = cursor.grab;
-} else if (!ctrl && shift && alt) {
-event.target.style.cursor = cursor.grab;
-} else if ( ctrl && shift && alt) {
-event.target.style.cursor = cursor.grab;
-} else {
-event.target.style.cursor = cursor.grab;
-}
-} else {
-event.target.style.cursor = cursor.cell;
-}
-*/
-}
-utilityLayer0.style.cursor = "crosshair";
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 mode1.mousemove(mouseInfo);
 switch (mode) {
 case 0: mode0.mousemove(mouseInfo); break;
@@ -376,6 +326,10 @@ mousedown.scrollY = 0;
 mousedown.tripSet = null;
 mousedown.target = null;
 mousedown.targetRegion = 5;
+
+
+
+
 /* This puts the information from the mousedown event into data so that we can refer to it later in our conditions. */
 document.addEventListener("mousedown", (event) => {
 drawSiteMap();

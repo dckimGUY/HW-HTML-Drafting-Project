@@ -92,24 +92,63 @@ displayDemo();
 
 
 
+ui.hdubPartDesignations.input = function() {
+  const ref = ui.hdubPartDesignations.ref;
+  let input = ref.value;
+  if (input === "") return;
 
-/*
-document.getElementById("hdubOverlay");
-*/
+  // 1. Handle command characters (Exact match from the other box)
+  if (/[\n\*\?\/\+<>\[\] ]/.test(input)) {
+    ref.value = clean(input);
+    const cleaned = ref.value;
 
+    if (input.includes("\n")) {
+      const syntaxObject = cropObject(100, 180, makeObject(cleaned));
+      enterFromSyntax(syntaxObject);
+      coinFocus.focus();
+      ref.blur();
+      demoTime(1.5);
+      redraw();
+    } else if (/[<>]/.test(input)) {
+      input.includes("<") ? layerLeft() : layerRight();
+      updateInfoShelf();
+      redraw();
+    } else if (/[\[\]]/.test(input)) {
+      let tempRef = ui.hdubSheetTemplate4x.ref;
+      let val = parseInt(tempRef.value);
+      if (input.includes("[") && val > 0) tempRef.value = val - 1;
+      if (input.includes("]") && val < 20) tempRef.value = val + 1;
+    } else if (input.includes(" ")) {
+      saveSyntaxImage();
+    }
+  }
 
+  // 2. Handle Letter triggers (lowercase a-z logic)
+  for (let k = 0; k < letters.length; k++) {
+    if (input.includes(letters[k])) {
+      ref.value = clean(ref.value);
+      switchString("hwSel_" + letters[k]);
+      break;
+    }
+  }
 
+  // 3. Part Designation Specific Logic (A-Z filtering)
+  // Strips everything that isn't uppercase A-Z for the part name
+  ref.value = ref.value.replace(/[^A-Z]/g, "");
+  const finalValue = ref.value;
 
+  // 4. Storage and Sync
+  localStorage.setItem("hdubPartDesignations", finalValue);
 
-
-
-
-ui.hdubPartDesignations.input         = function() {
-ui.hdubPartDesignations.ref.value = ui.hdubPartDesignations.ref.value.replace(/[^A-Z]/g, "");
-localStorage.setItem("hdubPartDesignations", ui.hdubPartDesignations.ref.value);
-ui.hwString[ui.hwString.currentSel].part = ui.hdubPartDesignations.ref.value;
-localStorage.setItem("hwString",JSON.stringify(ui.hwString));
-loadLetterInputs();
+  const current = ui.hwString.currentSel;
+  ui.hwString[current].part = finalValue;
+  
+  // Also sync the string logic to ensure the canvas reflects the state
+  ui.hwString[current].string = finalValue;
+  
+  localStorage.setItem("hwString", JSON.stringify(ui.hwString));
+  
+  loadLetterInputs();
 };
 
 
@@ -126,124 +165,97 @@ loadLetterInputs();
 
 
 
+ui.hdubSingleEntry.input = function() {
+  const ref = ui.hdubSingleEntry.ref;
+  let input = ref.value;
+  if (input === "") return;
 
-ui.hdubSingleEntry.input         = function() {
-let input = ui.hdubSingleEntry.ref.value;
+  // Handle Command Triggers
+  if (/[\n\*\?\/\+<>\[\] ]/.test(input)) {
+    ref.value = clean(input);
+    const cleaned = ref.value;
 
-                  if (input.endsWith("\n") ||
-                      input.includes("\n")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-let syntaxObject = cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value)));
-enterFromSyntax(syntaxObject);
-coinFocus.focus();
-ui.hdubSingleEntry.ref.blur();
-demoTime(1.5);
-redraw();
-           } else if (input.endsWith( "*") ||
-                      input.includes( "*") ||
-                      input.endsWith( "?") ||
-                      input.includes( "?")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-           } else if (input.endsWith( "/") ||
-                      input.includes( "/")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-           } else if (input.endsWith("+") ||
-                      input.includes("+")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-           } else if (input.endsWith("<") ||
-                      input.includes("<")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-layerLeft();updateInfoShelf();redraw();
-           } else if (input.endsWith(">") ||
-                      input.includes(">")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-layerRight();updateInfoShelf();redraw();
-           } else if (input.endsWith("[") ||
-                      input.includes("[")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-if (ui.hdubSheetTemplate4x.ref.value > 0) {
-ui.hdubSheetTemplate4x.ref.value--;
-}
-           } else if (input.endsWith("]") ||
-                      input.includes("]")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-if (ui.hdubSheetTemplate4x.ref.value < 20) {
-ui.hdubSheetTemplate4x.ref.value++;
-}
-           } else if (input.endsWith(" ") ||
-                      input.includes(" ")) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-saveSyntaxImage();
-}
+    if (input.includes("\n")) {
+      const syntaxObject = cropObject(100, 180, makeObject(cleaned));
+      enterFromSyntax(syntaxObject);
+      coinFocus.focus();
+      ref.blur();
+      demoTime(1.5);
+      redraw();
+    } else if (input.includes("*") || input.includes("?") || input.includes("/") || input.includes("+")) {
+      // Logic for these characters simply cleans the input in the original
+    } else if (/[<>]/.test(input)) {
+      input.includes("<") ? layerLeft() : layerRight();
+      updateInfoShelf();
+      redraw();
+    } else if (/[\[\]]/.test(input)) {
+      let val = parseInt(ui.hdubSheetTemplate4x.ref.value);
+      if (input.includes("[") && val > 0) ui.hdubSheetTemplate4x.ref.value = val - 1;
+      if (input.includes("]") && val < 20) ui.hdubSheetTemplate4x.ref.value = val + 1;
+    } else if (input.includes(" ")) {
+      saveSyntaxImage();
+    }
+  }
 
+  // Handle Letter Triggers
+  for (let k = 0; k < letters.length; k++) {
+    if (input.includes(letters[k])) {
+      ref.value = clean(ref.value);
+      switchString("hwSel_" + letters[k]);
+      break;
+    }
+  }
 
+  // Final Formatting and Drawing
+  ref.value = ref.value.replace(/\./g, "h").replace(/-/g, "w");
+  if (ref.value != "") {
+    drawArray(cropObject(100, 180, makeObject(clean(ref.value))));
+  }
 
+  localStorage.setItem("hdubSingleEntry", ref.value);
+  displayDemo();
 
-letters.forEach((letter) => {
-if (input.includes(letter)) {
-ui.hdubSingleEntry.ref.value = clean(ui.hdubSingleEntry.ref.value);
-switchString("hwSel_" + letter);
-}
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ui.hdubSingleEntry.ref.value = ui.hdubSingleEntry.ref.value.replace(/\./g, "h").replace(/-/g, "w");
-if (ui.hdubSingleEntry.ref.value != "") {
-drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
-}
-localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
-displayDemo();
-
-ui.hwString[ui.hwString.currentSel].string = ui.hdubSingleEntry.ref.value;
-ui[ui.hwString.currentSel].img.src = drawCell(ui.hwString[ui.hwString.currentSel].string, ui.hwString[ui.hwString.currentSel].colour)
-localStorage.setItem("hwString",JSON.stringify(ui.hwString));
-
+  const current = ui.hwString.currentSel;
+  ui.hwString[current].string = ref.value;
+  ui[current].img.src = drawCell(ref.value, ui.hwString[current].colour);
+  localStorage.setItem("hwString", JSON.stringify(ui.hwString));
 };
-
-
-ui.hwString.hwSel_a.string = "h20w20w20w20w20w20h50w50w50h40w20w30w40w10";
 
 function drawAllCells() {
-["hwSel_a", "hwSel_b", "hwSel_c", "hwSel_d", "hwSel_e", "hwSel_f", "hwSel_g", "hwSel_i", "hwSel_j", "hwSel_k", "hwSel_l", "hwSel_m", "hwSel_n", "hwSel_o", "hwSel_p", "hwSel_q", "hwSel_r", "hwSel_s", "hwSel_t", "hwSel_u", "hwSel_v", "hwSel_x", "hwSel_y", "hwSel_z"].forEach((name) => {
-if (ui.hwString[name].string != "") {
-ui[name].img.src = drawCell(ui.hwString[name].string,ui.hwString[name].colour);
+  const cellNames = ["hwSel_a", "hwSel_b", "hwSel_c", "hwSel_d", "hwSel_e", "hwSel_f", "hwSel_g", "hwSel_i", "hwSel_j", "hwSel_k", "hwSel_l", "hwSel_m", "hwSel_n", "hwSel_o", "hwSel_p", "hwSel_q", "hwSel_r", "hwSel_s", "hwSel_t", "hwSel_u", "hwSel_v", "hwSel_x", "hwSel_y", "hwSel_z"];
+  for (let k = 0; k < cellNames.length; k++) {
+    const name = cellNames[k];
+    if (ui.hwString[name].string != "") {
+      ui[name].img.src = drawCell(ui.hwString[name].string, ui.hwString[name].colour);
+    }
+  }
 }
-});
 
-
-
-
-
+// Initialization and LocalStorage Load
+if (localStorage.getItem("hwString")) {
+  ui.hwString = JSON.parse(localStorage.getItem("hwString"));
 }
 
 drawAllCells();
 
 
-if (localStorage.getItem("hwString")) {
-
-hwString = JSON.parse(localStorage.getItem("hwString"));
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -429,190 +441,209 @@ loadLetterInputs();
 
 
 /* display the demo */
-ui.hdubSheetTemplate4x.input     = function() {
-switch (document.getElementById("hdubSheetTemplate4x").value) {
-case '1': buzzWord(0,"10x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
-case '2': buzzWord(0, "8x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
-case '3': buzzWord(0, "6x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
-case '4': buzzWord(0, "5x",512,document.getElementById("coin72275").value,400,300,100,"center"); break;
-}
-displayDemo();
+ui.hdubSheetTemplate4x.input = function() {
+  const val = document.getElementById("hdubSheetTemplate4x").value;
+  const coinVal = document.getElementById("coin72275").value;
+  
+  // Simplified scale mapping
+  const labels = { '1': "10x", '2': "8x", '3': "6x", '4': "5x" };
+  if (labels[val]) {
+    buzzWord(0, labels[val], 512, coinVal, 400, 300, 100, "center");
+  }
+  
+  displayDemo();
 };
 
 /* fade the demo out */
-ui.hdubSheetTemplate4x.change    = function() {
-demoTime(1.5);
+ui.hdubSheetTemplate4x.change = function() {
+  demoTime(1.5);
 };
 
-
 function displayDemo() {
-localStorage.setItem("hdubEntryFactor", ui.hdubSheetTemplate4x.ref.value);
-drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
-hdubDemo.style.opacity = 1;
-if (Picture.style.display == "block") {
-let pictureScale = 1;
-switch (document.getElementById("hdubSheetTemplate4x").value) {
-case '1': pictureScale = 10; break;
-case '2': pictureScale =  8; break;
-case '3': pictureScale =  6; break;
-case '4': pictureScale =  5; break;
+  const entryFactor = ui.hdubSheetTemplate4x.ref.value;
+  localStorage.setItem("hdubEntryFactor", entryFactor);
+  
+  // Draw the preview based on current syntax
+  drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+  hdubDemo.style.opacity = 1;
+
+  if (Picture.style.display === "block") {
+    const scaleMap = { '1': 10, '2': 8, '3': 6, '4': 5 };
+    const pictureScale = scaleMap[entryFactor] || 1;
+    Picture.style.transform = "scale(" + pictureScale + ")";
+  }
 }
-Picture.style.transform = "scale(" + pictureScale + ")";
-}
-}
-
-
-
-
-
-
-
-
-
 
 function demoTime(max) {
-drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
-for (let j = 100; j >= 0; j--) {
-setTimeout(() => { hdubDemo.style.opacity =  j / 100; },   (100 - j) * max);
+  // Refresh the demo draw once before fading
+  drawDemo(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
+  
+  // Use a single transition for the fade instead of 100 timeouts
+  hdubDemo.style.transition = "opacity " + (max / 100) + "s linear";
+  hdubDemo.style.opacity = 0;
+  
+  // Clean up transition after it finishes to prevent logic conflicts elsewhere
+  setTimeout(() => {
+    hdubDemo.style.transition = "";
+  }, max * 10);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function drawArray(array) {
+  let ctx = ui.hdubCanvas.ref.getContext("2d");
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgb(16,28,82)";
+  ctx.fillStyle = "rgb(16,28,82)";
+  ctx.fillRect(0, 0, ui.hdubCanvas.ref.width, ui.hdubCanvas.ref.height);
+
+  rowStart = 0;
+  shadeNumber = 0;
+
+  const overlay = document.getElementById("hdubOverlay");
+  overlay.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+
+  for (let j = 0; j < array.length; j++) {
+    columnStart = 0;
+    for (let i = 0; i < array[j].column.length; i++) {
+      ctx.fillStyle = shadeArray[shadeNumber];
+      shadeNumber++;
+      if (shadeNumber > 3) shadeNumber = 0;
+
+      const newButton = document.createElement("button");
+      newButton.classList = "overlayButton dckimPixelMono";
+      newButton.style.left = columnStart + "px";
+      newButton.style.top = rowStart + "px";
+      newButton.style.width = array[j].column[i].width + "px";
+      newButton.style.height = array[j].rowHeight + "px";
+
+      let fontSizeValue = (array[j].column[i].width < array[j].rowHeight) ? array[j].column[i].width : array[j].rowHeight;
+      newButton.style.fontSize = fontSizeValue + "px";
+      
+      newButton.style.color = "black";
+      newButton.dataset.hdubOverlay = "scroll";
+      newButton.setAttribute("onclick", "this.innerText = ui[ui.hdub.selected].letter; if (ui[ui.hdub.selected].colour == 'hdubPink') { this.style.backgroundColor = coinColour1; } else if (ui[ui.hdub.selected].colour == 'hdubGrey') { this.style.backgroundColor = coinColour0; }  else if (ui[ui.hdub.selected].colour == 'hdubBlue') { this.style.backgroundColor = coinColour2; }; evaluateLetterInputs();");
+
+      fragment.appendChild(newButton);
+
+      ctx.clearRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
+      ctx.fillRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
+      ctx.strokeRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
+      columnStart += array[j].column[i].width;
+    }
+    rowStart += array[j].rowHeight;
+  }
+  overlay.appendChild(fragment);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function clean(string) {
-if (string == "") return "";
-let newString = string;
-/* preparing the raw string */
-/* remove anything preceding the first 'h' */
-newString = newString.replace(/^[^h]*/g, "");
-/* remove any embedded syntax chunk */
-newString = newString.replace(/([hw]0)[^hw]*([hw])/g, "$1$2");
-newString = newString.replace(/([hw])[^hw0123456789]*([hw])/g, "$1$2");
-newString = newString.replace(/([hw][123456789][0123456789]*)[^hw0123456789][^hw]*([hw])/g, "$1$2");
-/* remove anything after the last valid numeral */
-newString = newString.replace(/([hw]0)[^hw]*$/g, "$1");
-newString = newString.replace(/([hw])[^hw0123456789]*$/g, "$1");
-newString = newString.replace(/(w[123456789][0123456789]*)[^hw0123456789]*$/g, "$1");
-/* complete abbreviations in the string */
-/* fill the middle    */
-newString = newString.replace(/hh/g, "h0w0h");
-newString = newString.replace(/hh/g, "h0w0h");
-newString = newString.replace(/ww/g, "w0w"  );
-newString = newString.replace(/ww/g, "w0w"  );
-newString = newString.replace(/hw/g, "h0w"  );
-newString = newString.replace(/wh/g, "w0h"  );
-/* fill the beginning */
-newString = newString.replace(/^w/g, "h0w");
-newString = newString.replace(/^([^hw]*)$/g, "h$1w0");
-newString = newString.replace(/^([^hw]*)w/g, "h$1w");
-newString = newString.replace(/^([^hw]*)w$/g, "h$1w0");
-/* fill the end       */
-newString = newString.replace(/h$/g, "h0w0");
-newString = newString.replace(/h([^hw]*)$/g, "h$1w0");
-newString = newString.replace(/w$/g, "w0");
-return newString;
+  if (string == "") return "";
+  let newString = string;
+  newString = newString.replace(/^[^h]*/g, "");
+  newString = newString.replace(/([hw]0)[^hw]*([hw])/g, "$1$2");
+  newString = newString.replace(/([hw])[^hw0123456789]*([hw])/g, "$1$2");
+  newString = newString.replace(/([hw][123456789][0123456789]*)[^hw0123456789][^hw]*([hw])/g, "$1$2");
+  newString = newString.replace(/([hw]0)[^hw]*$/g, "$1");
+  newString = newString.replace(/([hw])[^hw0123456789]*$/g, "$1");
+  newString = newString.replace(/(w[123456789][0123456789]*)[^hw0123456789]*$/g, "$1");
+
+  const abbrev = [/hh/g, /ww/g, /hw/g, /wh/g];
+  const replace = ["h0w0h", "w0w", "h0w", "w0h"];
+  for (let k = 0; k < abbrev.length; k++) {
+    while (newString.match(abbrev[k])) {
+      newString = newString.replace(abbrev[k], replace[k]);
+    }
+  }
+
+  newString = newString.replace(/^w/g, "h0w");
+  newString = newString.replace(/^([^hw]*)$/g, "h$1w0");
+  newString = newString.replace(/^([^hw]*)w/g, "h$1w");
+  newString = newString.replace(/^([^hw]*)w$/g, "h$1w0");
+  newString = newString.replace(/h$/g, "h0w0");
+  newString = newString.replace(/h([^hw]*)$/g, "h$1w0");
+  newString = newString.replace(/w$/g, "w0");
+  return newString;
 }
-
-
-
 
 function makeObject(string) {
-let newString = string.replace(/^h/g, "");
-let newArray = newString.split("h");
-let rowArray = [];
-for (j = 0; j < newArray.length; j++) {
-let numberArray = newArray[j].split("w");
-/* set as integers */
-for (i = 0; i < numberArray.length; i++) {
-numberArray[i] = parseInt(numberArray[i]);
+  let newString = string.replace(/^h/g, "");
+  let newArray = newString.split("h");
+  let rowArray = [];
+  for (let j = 0; j < newArray.length; j++) {
+    let numberArray = newArray[j].split("w");
+    rowArray.push([]);
+    rowArray[j].rowHeight = parseInt(numberArray.shift());
+    rowArray[j].column = [];
+    for (let i = 0; i < numberArray.length; i++) {
+      rowArray[j].column[i] = {};
+      rowArray[j].column[i].width = parseInt(numberArray[i]);
+    }
+  }
+  return rowArray;
 }
-rowArray.push([]);
-rowArray[j].rowHeight = numberArray.shift();
-rowArray[j].column = [];
-for (i = 0; i < numberArray.length; i++) {
-/* set up with object for extension */
-rowArray[j].column[i] = {};
-rowArray[j].column[i].width = numberArray[i];
-}
-}
-return rowArray;
-}
-
-
-
 
 function cropObject(widthCrop, heightCrop, array) {
-let newObject = array;
-let rowStart = 0;
-for (let j = 0; j < newObject.length; j++) {
-let columnStart = 0;
-for (i = 0; i < newObject[j].column.length; i++) {
-       if (columnStart > widthCrop) {
-newObject[j].column[i].pop();
-} else if (columnStart + newObject[j].column[i].width > widthCrop) {
-newObject[j].column[i].width = widthCrop - columnStart;
-columnStart += newObject[j].column[i].width;
-} else {
-columnStart += newObject[j].column[i].width;
-/* this condition was used to fill it
-if (i == (newObject[j].column.length - 1) && columnStart < widthCrop) {
-newObject[j].column[i + 1] = {};
-newObject[j].column[i + 1].width = widthCrop - columnStart;
+  let newObject = array;
+  rowStart = 0;
+  for (let j = 0; j < newObject.length; j++) {
+    columnStart = 0;
+    for (let i = 0; i < newObject[j].column.length; i++) {
+      if (columnStart > widthCrop) {
+        newObject[j].column.splice(i, 1);
+        i--;
+      } else if (columnStart + newObject[j].column[i].width > widthCrop) {
+        newObject[j].column[i].width = widthCrop - columnStart;
+        columnStart += newObject[j].column[i].width;
+      } else {
+        columnStart += newObject[j].column[i].width;
+      }
+    }
+    if (rowStart > heightCrop) {
+      newObject.splice(j, 1);
+      j--;
+    } else if (rowStart + newObject[j].rowHeight > heightCrop) {
+      newObject[j].rowHeight = heightCrop - rowStart;
+      rowStart += newObject[j].rowHeight;
+    } else {
+      rowStart += newObject[j].rowHeight;
+    }
+  }
+  return newObject;
 }
-*/
-}
-}
-       if (rowStart > heightCrop) {
-newObject[j].pop();
-} else if (rowStart + newObject[j].rowHeight > heightCrop) {
-newObject[j].rowHeight = heightCrop - rowStart;
-rowStart += newObject[j].rowHeight;
-} else {
-rowStart += newObject[j].rowHeight;
-/* this condition was used to fill it
-if (j == (newObject.length - 1) && rowStart < heightCrop) {
-newObject.push([]);
-newObject[j + 1].rowHeight = heightCrop - rowStart;
-newObject[j + 1].column = [];
-newObject[j + 1].column[0] = {};
-newObject[j + 1].column[0].width = widthCrop;
-}
-*/
-}
-}
-return newObject;
-}
-
-
-
 
 function reString(array) {
-let string = "";
-for (let j = 0; j < array.length; j++) {
-string += "h" + array[j].rowHeight;
-for (i = 0; i < array[j].column.length; i++) {
-string += "w" + array[j].column[i].width;
+  let string = "";
+  for (let j = 0; j < array.length; j++) {
+    string += "h" + array[j].rowHeight;
+    for (let i = 0; i < array[j].column.length; i++) {
+      string += "w" + array[j].column[i].width;
+    }
+  }
+  return string;
 }
-}
-return string;
-}
-
-
-
 
 function presentString(string) {
-return string.replace(/h/g, "\nh").replace(/^\n/g, "");
+  return string.replace(/h/g, "\nh").replace(/^\n/g, "");
 }
+
+
+
+
+
+
+
 
 
 
@@ -627,51 +658,110 @@ const shadeArray = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function drawArray(array) {
-let ctx = ui.hdubCanvas.ref.getContext("2d");
-ctx.lineWidth = 2;
-ctx.strokeStyle = "rgb(16,28,82)";
-ctx.fillStyle   = "rgb(16,28,82)";
-ctx.fillRect(0, 0, ui.hdubCanvas.ref.width, ui.hdubCanvas.ref.height);
-let rowStart = 0;
-let shadeNumber = 0;
+  const canvasRef = ui.hdubCanvas.ref;
+  const ctx = canvasRef.getContext("2d");
+  const overlay = document.getElementById("hdubOverlay");
+  const fragment = document.createDocumentFragment(); // Optimizes DOM performance
 
+  // Reset overlay
+  overlay.innerHTML = "";
 
-const overlay = document.getElementById("hdubOverlay");
-      overlay.innerHTML = "";
+  // Initial Canvas setup
+  ctx.lineWidth = 2;
+  const defaultColor = "rgb(16,28,82)";
+  ctx.strokeStyle = defaultColor;
+  ctx.fillStyle = defaultColor;
+  ctx.fillRect(0, 0, canvasRef.width, canvasRef.height);
 
+  let rowStart = 0;
+  let shadeNumber = 0;
 
-for (j = 0; j < array.length; j++) {
-let columnStart = 0;
-for (i = 0; i < array[j].column.length; i++) {
-ctx.fillStyle = shadeArray[shadeNumber];
-shadeNumber++;
-if (shadeNumber > 3) shadeNumber = 0;
+  for (let j = 0; j < array.length; j++) {
+    const row = array[j];
+    const rowHeight = row.rowHeight;
+    let columnStart = 0;
 
-const newButton = document.createElement("button");
-      newButton.classList = "overlayButton dckimPixelMono";
-      newButton.style.left            = columnStart + "px";
-      newButton.style.top             = rowStart    + "px";
-      newButton.style.width           = array[j].column[i].width + "px";
-if (array[j].column[i].width < array[j].rowHeight) {
-      newButton.style.fontSize        = array[j].column[i].width + "px";
-} else {
-      newButton.style.fontSize        = array[j].rowHeight + "px";
-}
-      newButton.style.height          = array[j].rowHeight + "px";
-      newButton.style.color           = "black";
-      newButton.dataset.hdubOverlay   = "scroll";
+    for (let i = 0; i < row.column.length; i++) {
+      const col = row.column[i];
+      const colWidth = col.width;
+
+      // Canvas Drawing
+      ctx.fillStyle = shadeArray[shadeNumber];
+      ctx.clearRect(columnStart, rowStart, colWidth, rowHeight);
+      ctx.fillRect(columnStart, rowStart, colWidth, rowHeight);
+      ctx.strokeRect(columnStart, rowStart, colWidth, rowHeight);
+
+      // Button Creation
+      const newButton = document.createElement("button");
+      newButton.className = "overlayButton dckimPixelMono";
+
+      // Style batching for speed
+      const s = newButton.style;
+      s.left = columnStart + "px";
+      s.top = rowStart + "px";
+      s.width = colWidth + "px";
+      s.height = rowHeight + "px";
+      s.fontSize = (colWidth < rowHeight ? colWidth : rowHeight) + "px";
+      s.color = "black";
+
+      newButton.dataset.hdubOverlay = "scroll";
       newButton.setAttribute("onclick", "this.innerText = ui[ui.hdub.selected].letter; if (ui[ui.hdub.selected].colour == 'hdubPink') { this.style.backgroundColor = coinColour1; } else if (ui[ui.hdub.selected].colour == 'hdubGrey') { this.style.backgroundColor = coinColour0; }  else if (ui[ui.hdub.selected].colour == 'hdubBlue') { this.style.backgroundColor = coinColour2; }; evaluateLetterInputs();");
-      overlay.appendChild(newButton);
 
-ctx.clearRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
-ctx.fillRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
-ctx.strokeRect(columnStart, rowStart, array[j].column[i].width, array[j].rowHeight);
-columnStart += array[j].column[i].width;
+      fragment.appendChild(newButton);
+
+      columnStart += colWidth;
+      shadeNumber = (shadeNumber + 1) % 4; // Cycles 0, 1, 2, 3
+    }
+    rowStart += rowHeight;
+  }
+
+  // Batch-adds all buttons at once to prevent page flickering
+  overlay.appendChild(fragment);
 }
-rowStart += array[j].rowHeight;
-}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
 
@@ -759,89 +849,94 @@ const hdubLeftOffset = 0;
 
 
 
-
 function enterFromSyntax(syntaxObject) {
-const serial = parseInt(parseInt(Date.now().toString().slice(-4)) + "0");
-let sequence = 0;
+  const serial = parseInt(Date.now().toString().slice(-4) + "0");
+  let sequence = 0;
 
-const hdub = syntaxObject;
-const entryFactor = ui.hdubSheetTemplate4x.ref.value;
-localStorage.setItem("hdubEntryFactor", entryFactor);
-let rowStart = 0;
+  const hdub = syntaxObject;
+  const entryFactor = ui.hdubSheetTemplate4x.ref.value;
+  localStorage.setItem("hdubEntryFactor", entryFactor);
+  
+  let rowStart = 0;
+  let parts = document.getElementById("hdubPartDesignations").value.split("");
 
-let parts   = document.getElementById("hdubPartDesignations").value.split("");
+  for (let j = 0; j < hdub.length; j++) {
+    let columnStart = 0;
+    let rowHeight = hdub[j].rowHeight;
 
-for (j = 0; j < hdub.length; j++) {
+    for (let i = 0; i < hdub[j].column.length; i++) {
+      let nextLetter = parts.shift();
+      let colWidth = hdub[j].column[i].width;
 
+      if (nextLetter !== "X") {
+        let newHeight  = rowHeight   * entryFactor;
+        let newWidth   = colWidth    * entryFactor;
+        let rowTop     = rowStart    * entryFactor;
+        let columnLeft = columnStart * entryFactor;
 
-let columnStart = 0;
-for (i = 0; i < hdub[j].column.length; i++) {
+        if (newHeight > 0 && newWidth > 0) {
+          // Handle Coin Insertion
+          if (hauptMode == 1) {
+            hauptMode = 0;
+            insertNewCoin([null, 78, 78, false, false, false]);
+            const input = coinFocus.lastElementChild.firstElementChild;
+            input.contentEditable = "true";
+            input.style.fontSize = "32px";
+            coinFocus.firstElementChild.style.zIndex = "0";
+            hauptMode = 1;
+          } else {
+            insertNewCoin([null, 78, 78, false, false, false]);
+            const input = coinFocus.lastElementChild.firstElementChild;
+            input.contentEditable = "true";
+            input.style.fontSize = "32px";
+            coinFocus.firstElementChild.style.zIndex = "0";
+          }
 
+          // Reference the newly created element
+          let lastCoin = utilityLayer0.lastElementChild;
+          let coinStyle = lastCoin.style;
+          let calcTop = rowTop + window.scrollY + hdubTopOffset;
+          let calcLeft = columnLeft + window.scrollX + hdubLeftOffset;
 
-let nextLetter = parts.shift();
+          // Apply coordinates and dimensions
+          coinStyle.top    = calcTop + "px";
+          coinStyle.left   = calcLeft + "px";
+          coinStyle.width  = newWidth + "px";
+          coinStyle.height = newHeight + "px";
 
-if (nextLetter != "X") {
+          // Update Datasets
+          lastCoin.dataset.top    = calcTop + "px";
+          lastCoin.dataset.left   = calcLeft + "px";
+          lastCoin.dataset.width  = newWidth + "px";
+          lastCoin.dataset.height = newHeight + "px";
+          lastCoin.id             = "hdub" + (serial + sequence);
 
-let newHeight  = hdub[j].rowHeight       * entryFactor;
-let newWidth   = hdub[j].column[i].width * entryFactor;
-let rowTop     = rowStart                * entryFactor;
-let columnLeft = columnStart             * entryFactor;
-if (newHeight > 0 && newWidth > 0) {
-if (hauptMode==1) {
-hauptMode=0;
-insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
-coinFocus.lastElementChild.firstElementChild.style.fontSize = "32px";
-coinFocus.firstElementChild.style.zIndex = "0";
-hauptMode=1;
-} else {
-insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
-coinFocus.lastElementChild.firstElementChild.style.fontSize = "32px";
-coinFocus.firstElementChild.style.zIndex = "0";
+          // Apply Logic/Colours from UI object
+          try {
+            let config = ui["hdub" + nextLetter];
+            if (config.colour == "hdubPink") {
+              lastCoin.dataset.coinTrip = "1";
+            } else if (config.colour == "hdubGrey") {
+              lastCoin.dataset.coinTrip = "0";
+            } else if (config.colour == "hdubBlue") {
+              lastCoin.dataset.coinTrip = "2";
+            }
+            // Set Inner HTML value
+            lastCoin.lastElementChild.firstElementChild.innerHTML = config.value;
+          } catch (e) { 
+            /* Silently catch missing ui definitions */ 
+          }
+        }
+        sequence++;
+      }
+      columnStart += colWidth;
+    }
+    rowStart += rowHeight;
+  }
+
+  readCoins();
+  recoverColouration();
 }
-utilityLayer0.lastElementChild.style.top      = rowTop     + window.scrollY + hdubTopOffset + "px";
-utilityLayer0.lastElementChild.dataset.top    = rowTop     + window.scrollY + hdubTopOffset + "px";
-utilityLayer0.lastElementChild.style.left     = columnLeft + window.scrollX + hdubLeftOffset + "px";
-utilityLayer0.lastElementChild.dataset.left   = columnLeft + window.scrollX + hdubLeftOffset + "px";
-utilityLayer0.lastElementChild.style.width    = newWidth   + "px";
-utilityLayer0.lastElementChild.dataset.width  = newWidth   + "px";
-utilityLayer0.lastElementChild.style.height   = newHeight  + "px";
-utilityLayer0.lastElementChild.dataset.height = newHeight  + "px";
-utilityLayer0.lastElementChild.id             = "hdub" + (serial + sequence);
-
-try {
-       if (ui["hdub" + nextLetter].colour == "hdubPink") {
-utilityLayer0.lastElementChild.dataset.coinTrip    = "1";
-} else if (ui["hdub" + nextLetter].colour == "hdubGrey") {
-utilityLayer0.lastElementChild.dataset.coinTrip    = "0";
-} else if (ui["hdub" + nextLetter].colour == "hdubBlue") {
-utilityLayer0.lastElementChild.dataset.coinTrip    = "2";
-}
-} catch { }
-
-try {
-utilityLayer0.lastElementChild.lastElementChild.firstElementChild.innerHTML  = ui["hdub" + nextLetter].value;
-} catch { }
-
-}
-
-
-
-
-sequence++;
-
-}
-columnStart += hdub[j].column[i].width;
-}
-rowStart += hdub[j].rowHeight;
-}
-
-readCoins();
-recoverColouration();
-}
-
-
 
 
 
@@ -864,13 +959,31 @@ recoverColouration();
 
 
 function saveSyntaxImage() {
-const syntax = reString(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))));
-const dataURL = hdubCanvas.toDataURL('image/png');
-const link = document.createElement('a');
-link.href = dataURL;
-link.download = 'SHAPE_HDUB_' + syntax + '.png';
-link.click();
+  // Process the syntax string once and store it
+  const rawValue = ui.hdubSingleEntry.ref.value;
+  const syntax = reString(cropObject(100, 180, makeObject(clean(rawValue))));
+  
+  // Ensure we are referencing the actual canvas element
+  const canvasElement = ui.hdubCanvas.ref; 
+  const dataURL = canvasElement.toDataURL('image/png');
+  
+  // Trigger download
+  const link = document.createElement('a');
+  link.href = dataURL;
+  link.download = 'SHAPE_HDUB_' + syntax + '.png';
+  
+  // Append/Remove is safer in some browsers to ensure the click triggers
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
+
+
+
+
+
+
+
 
 
 
@@ -900,48 +1013,54 @@ input.remove();
 
 
 
-
 function manufactureTemplate(array) {
-let factor = ui.hdubSheetTemplate4x.ref.value;
-let canvas = document.createElement("canvas");
-let ctx = canvas.getContext("2d");
-canvas.width  = 100 * factor;
-canvas.height = 180 * factor;
-ctx.lineWidth = 2;
-ctx.strokeStyle = "red";
-let rowStart = 0;
-for (j = 0; j < array.length; j++) {
-let columnStart = 0;
-for (i = 0; i < array[j].column.length; i++) {
-ctx.strokeRect(columnStart * factor, rowStart * factor, array[j].column[i].width * factor, array[j].rowHeight * factor);
-columnStart += array[j].column[i].width;
+  const factor = ui.hdubSheetTemplate4x.ref.value;
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  
+  canvas.width  = 100 * factor;
+  canvas.height = 180 * factor;
+  
+  // 1. Check for Picture Layer first
+  // If a picture is displayed, it clears the wireframe anyway, 
+  // so we skip the loops for efficiency.
+  if (Picture.style.display == "block") {
+    ctx.drawImage(Picture, 0, 0, canvas.width, canvas.height);
+  } else {
+    // 2. Draw Wireframe Grid
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "red";
+    let rowStart = 0;
+    
+    for (let j = 0; j < array.length; j++) {
+      let columnStart = 0;
+      let rowHeight = array[j].rowHeight;
+      
+      for (let i = 0; i < array[j].column.length; i++) {
+        let colWidth = array[j].column[i].width;
+        ctx.strokeRect(columnStart * factor, rowStart * factor, colWidth * factor, rowHeight * factor);
+        columnStart += colWidth;
+      }
+      rowStart += rowHeight;
+    }
+
+    // 3. Right-side border line
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.moveTo(canvas.width, 0);
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.stroke();
+  }
+
+  // 4. Export logic
+  const datePrefix = Date.now().toString().slice(-6);
+  const syntax = reString(array);
+  const link = document.createElement('a');
+  
+  link.href = canvas.toDataURL('image/png');
+  link.download = "TEMPL_" + datePrefix + "_HDUB_" + factor + "_tmpl_" + syntax + ".png";
+  link.click();
 }
-rowStart += array[j].rowHeight;
-}
-
-ctx.strokeStyle = "black";
-ctx.beginPath();
-ctx.moveTo(canvas.width, 0);
-ctx.lineTo(canvas.width, canvas.height);
-ctx.stroke();
-
-if (Picture.style.display == "block") {
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.drawImage(Picture, 0,0);
-}
-
-const datePrefix = Date.now().toString().slice(-6);
-const syntax = reString(array);
-const dataURL = canvas.toDataURL('image/png');
-const link = document.createElement('a');
-link.href = dataURL;
-link.download = "TEMPL_" + datePrefix + `_HDUB_${factor}_tmpl_` + syntax + '.png';
-link.click();
-}
-
-
-
-
 
 
 
@@ -956,75 +1075,79 @@ link.click();
 
 const hdubDemo = document.createElement("canvas");
 {
-const s=`position:fixed;left:0;top:0;pointer-events:none; border:none;`;
-hdubDemo.style = s;
-hdubDemo.style.opacity = 1;
-hdubDemo.style.zIndex  = 100;
+  const s = `position:fixed;left:0;top:0;pointer-events:none; border:none;`;
+  hdubDemo.style = s;
+  hdubDemo.style.opacity = visualOpacity; // Using your global variable
+  hdubDemo.style.zIndex = 100;
+  hdubDemo.style.top = hdubTopOffset + "px";
+  hdubDemo.style.left = hdubLeftOffset + "px";
 }
 document.body.appendChild(hdubDemo);
-hdubDemo.width      = 100 * ui.hdubSheetTemplate4x.ref.value;
-hdubDemo.height     = 180 * ui.hdubSheetTemplate4x.ref.value;
-hdubDemo.style.top  = hdubTopOffset  + "px";
-hdubDemo.style.left = hdubLeftOffset + "px";
-hdubDemo.style.opacity = visualOpacity;
 
+function drawDemo(array) {
+  let nominalFactor = parseInt(ui.hdubSheetTemplate4x.ref.value);
+  let factor = nominalFactor;
 
-function drawDemo(array){
-let factor = ui.hdubSheetTemplate4x.ref.value;
-let nominalFactor = factor;
-if (Picture.style.display == "block") {
-switch (document.getElementById("hdubSheetTemplate4x").value) {
-case '1': factor = factor * 10; break;
-case '2': factor = factor *  8; break;
-case '3': factor = factor *  6; break;
-case '4': factor = factor *  5; break;
+  // Handle the exponential scaling if Picture is active
+  if (Picture.style.display == "block") {
+    const multiMap = { '1': 10, '2': 8, '3': 6, '4': 5 };
+    const multiplier = multiMap[nominalFactor] || 1;
+    factor = nominalFactor * multiplier;
+  }
+
+  // Update canvas size
+  hdubDemo.width = 100 * factor;
+  hdubDemo.height = 180 * factor;
+
+  const ctx = hdubDemo.getContext("2d");
+  ctx.clearRect(0, 0, hdubDemo.width, hdubDemo.height);
+  ctx.font = "400 32px dckimPixelMono";
+  ctx.textAlign = "start";
+  ctx.textBaseline = "top";
+
+  // Configuration based on Scale
+  if (nominalFactor > 4) {
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "lime";
+    ctx.fillStyle = "lime";
+    ctx.fillText("x " + nominalFactor, 16, 16);
+    ctx.fillStyle = "rgba(0,0,31,0.25)";
+  } else {
+    ctx.lineWidth = 4;
+    const isPic = Picture.style.display == "block";
+    ctx.strokeStyle = isPic ? "cyan" : "darkorange";
+    ctx.fillStyle = isPic ? "cyan" : "darkorange";
+    ctx.fillText("x " + nominalFactor + " [pixelArt]", 16, 16);
+    ctx.fillStyle = "rgba(31,0,31,0.35)";
+  }
+
+  // Render Grid
+  const fillStyle = ctx.fillStyle; // Store the transparency color
+  const strokeStyle = ctx.strokeStyle; // Store the line color
+  let rowStart = 0;
+
+  for (let j = 0; j < array.length; j++) {
+    const rowHeight = array[j].rowHeight;
+    let columnStart = 0;
+
+    for (let i = 0; i < array[j].column.length; i++) {
+      const colWidth = array[j].column[i].width;
+      const x = columnStart * factor;
+      const y = rowStart * factor;
+      const w = colWidth * factor;
+      const h = rowHeight * factor;
+
+      ctx.fillStyle = fillStyle;
+      ctx.fillRect(x, y, w, h);
+      
+      ctx.strokeStyle = strokeStyle;
+      ctx.strokeRect(x, y, w, h);
+
+      columnStart += colWidth;
+    }
+    rowStart += rowHeight;
+  }
 }
-}
-
-hdubDemo.width  = 100 * factor;
-hdubDemo.height = 180 * factor;
-
-let ctx = hdubDemo.getContext("2d");
-ctx.clearRect(0,0,hdubDemo.width,hdubDemo.height);
-ctx.fillStyle = "lime";
-ctx.font = "400 32px dckimPixelMono";
-ctx.textAlign = "start";
-ctx.textBaseline = "top";
-
-if (nominalFactor > 4) {
-ctx.lineWidth = 2;
-ctx.strokeStyle = "lime";
-ctx.fillStyle   = "lime";
-ctx.fillText("x " + nominalFactor, 16,16);
-ctx.fillStyle = "rgba(0,0,31,0.25)";
-} else {
-ctx.lineWidth = 4;
-if (Picture.style.display == "block") {
-ctx.strokeStyle = "cyan";
-ctx.fillStyle   = "cyan";
-} else {
-ctx.strokeStyle = "darkorange";
-ctx.fillStyle   = "darkorange";
-}
-ctx.fillText("x " + nominalFactor + " [pixelArt]", 16,16);
-ctx.fillStyle = "rgba(31,0,31,0.35)";
-}
-
-let rowStart = 0;
-for (j = 0; j < array.length; j++) {
-let columnStart = 0;
-for (i = 0; i < array[j].column.length; i++) {
-ctx.fillRect(columnStart * factor, rowStart * factor, array[j].column[i].width * factor, array[j].rowHeight * factor);
-ctx.strokeRect(columnStart * factor, rowStart * factor, array[j].column[i].width * factor, array[j].rowHeight * factor);
-columnStart += array[j].column[i].width;
-}
-rowStart += array[j].rowHeight;
-}
-}
-
-
-
-
 
 
 

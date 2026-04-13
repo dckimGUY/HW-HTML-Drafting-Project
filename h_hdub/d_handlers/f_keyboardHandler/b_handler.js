@@ -45,6 +45,10 @@ localStorage.setItem("levelBar", document.getElementById("levelBar").style.displ
  }
  }
 };
+
+
+
+
 /* This tells us if the spacebar is being held down */
 const spacebar = {};
  spacebar.hold = false;
@@ -74,25 +78,62 @@ if (event.key==='F5'){ event.preventDefault(); }
 /* The mode indicator. */
 var kC = 0, cC = 0;
 var shiftHold = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("keydown", (event) => {
+    const key = event.key.toLowerCase();
+
+    // 1. Ctrl + Z (Undo / Global Undo)
+    if (event.ctrlKey && key === 'z') { 
+        event.preventDefault(); 
+        event.stopImmediatePropagation(); 
+        if (event.shiftKey) { globalUndo(); } else { singleUndo(); };
+        redraw();
+        return; 
+    }
+
+    // 2. Ctrl + Y (Redo / Global Redo)
+    if (event.ctrlKey && key === 'y') { 
+        event.preventDefault(); 
+        event.stopImmediatePropagation(); 
+        if (event.shiftKey) { globalRedo(); } else { singleRedo(); };
+        redraw();
+        return; 
+    }
+
+    // 3. Ctrl + R (Single Undo ONLY)
+    // If Shift is NOT pressed, override and undo.
+    // If Shift IS pressed, do nothing (allows browser Hard Reload).
+    if (event.ctrlKey && key === 'r' && !event.shiftKey) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        singleRedo();
+        redraw();
+        return;
+    }
+}, true);
 
 
 
-if (event.ctrlKey && (kC == 90 || event.key.toLowerCase() === 'z')) { 
-    event.preventDefault(); 
-    event.stopImmediatePropagation(); 
-    if (event.shiftKey) { globalUndo(); } else { singleUndo(); };
-    redraw();
-    return; 
-}
-
-if (event.ctrlKey && (kC == 89 || event.key.toLowerCase() === 'y')) { 
-    event.preventDefault(); 
-    event.stopImmediatePropagation(); 
-    if (event.shiftKey) { globalRedo(); } else { singleRedo(); };
-    redraw();
-    return; 
-}
 
 
 
@@ -100,6 +141,16 @@ if (event.ctrlKey && (kC == 89 || event.key.toLowerCase() === 'y')) {
 
 
 
+
+
+
+
+
+
+
+
+
+document.addEventListener("keydown", (event) => {
 drawSiteMap();
 if (splashScreenVisible==true) {
 splashScreen.remove();
@@ -173,7 +224,13 @@ flipPhantomLair();
 /**************************************************************************/
 /* */
 /* F1 */ if (kC == 112) { programManual("index"); }
-/* F2 */ if (kC == 113) { }
+/* F2 */ if (kC == 113) {
+if (!event.shiftKey) {
+flipWindowEdge(); modeRouter(e,0);
+} else if (event.shiftKey) {
+copyOpenerContents(keyInfo);
+}
+}
 /* F3 */ if (kC == 114) { }
 /* F4 */ if (kC == 115) { }
 /* */
@@ -251,15 +308,21 @@ toggleActiveStateEdit();
 /*right arr*/ if (kC == 39) { event.preventDefault(); scrollRouter(keyInfo); }
 /* */
 /* space */ if (kC == 32&&!es) {
+lastKey = "space";
+
 spacebar.hold = true;
 event.preventDefault();
 spaceViewOn([e,32,32,es,ec,ea]);
 removePointerEventsNone();
 } else if (kC==32&&es) {
-event.preventDefault();
-tabSelector(4);
-folder4Selector(1);
-document.getElementById("hdubSingleEntry").focus();
+
+
+
+/* RETAIN SPACE FOR THE CONTEXT TYPE MENU THINGY */
+
+
+
+
 }
 setTimeout(() => {
 loadSidebar1();
@@ -346,23 +409,23 @@ buzzWord(0,'ENTER',256,'magenta',400,200,25);
 /* */
 /******************************************************************************************************************************************************/
 /* */
-/* q */ if (kC == 81 && cC == 113) { fMan(keyInfo);lastKey="q";}/* Q */ if (kC == 81 && cC == 81) { fMan(keyInfo);lastKey="Q";}
-/* w */ if (kC == 87 && cC == 119) { fMan(keyInfo);lastKey="w";}/* W */ if (kC == 87 && cC == 87) { fMan(keyInfo);lastKey="W";}
-/* e */ if (kC == 69 && cC == 101) { fMan(keyInfo);lastKey="e";}/* E */ if (kC == 69 && cC == 69) { fMan(keyInfo);lastKey="E";}
-/* r */ if (kC == 82 && cC == 114) { fMan(keyInfo);lastKey="r";}/* R */ if (kC == 82 && cC == 82) { fMan(keyInfo);lastKey="R";}
-/* t */ if (kC == 84 && cC == 116) { fMan(keyInfo);lastKey="t";}/* T */ if (kC == 84 && cC == 84) { fMan(keyInfo);lastKey="T";}
-/* y */ if (kC == 89 && cC == 121) { fMan(keyInfo);lastKey="y";}/* Y */ if (kC == 89 && cC == 89) { fMan(keyInfo);lastKey="Y";}
-/* u */ if (kC == 85 && cC == 117) { fMan(keyInfo);lastKey="u";}/* U */ if (kC == 85 && cC == 85) { fMan(keyInfo);lastKey="U";}
-/* i */ if (kC == 73 && cC == 105) { fMan(keyInfo);lastKey="i";}/* I */ if (kC == 73 && cC == 73) { fMan(keyInfo);lastKey="I";}
-/* o */ if (kC == 79 && cC == 111) { fMan(keyInfo);lastKey="o";}/* O */ if (kC == 79 && cC == 79) { fMan(keyInfo);lastKey="O";}
-/* p */ if (kC == 80 && cC == 112) { fMan(keyInfo);lastKey="p";}/* P */ if (kC == 80 && cC == 80) { fMan(keyInfo);lastKey="P";}
-/* [ */ if (kC == 219 && cC == 91) { lessG(e); lastKey="[";}/* { */ if (kC == 219 && cC == 123) { oneLessG(e); lastKey="{";}
-/* ] */ if (kC == 221 && cC == 93) { moreG(e); lastKey="]";}/* } */ if (kC == 221 && cC == 125) { oneMoreG(e); lastKey="}";}
+/* q */ if (kC == 81 && cC == 113) { fMan(keyInfo);lastKey="q";}/* Q */ if (kC ==  81 && cC == 81) { fMan(keyInfo);lastKey="Q";}
+/* w */ if (kC == 87 && cC == 119) { fMan(keyInfo);lastKey="w";}/* W */ if (kC ==  87 && cC == 87) { fMan(keyInfo);lastKey="W";}
+/* e */ if (kC == 69 && cC == 101) { fMan(keyInfo);lastKey="e";}/* E */ if (kC ==  69 && cC == 69) { fMan(keyInfo);lastKey="E";}
+/* r */ if (kC == 82 && cC == 114) { fMan(keyInfo);lastKey="r";}/* R */ if (kC ==  82 && cC == 82) { fMan(keyInfo);lastKey="R";}
+/* t */ if (kC == 84 && cC == 116) { fMan(keyInfo);lastKey="t";}/* T */ if (kC ==  84 && cC == 84) { fMan(keyInfo);lastKey="T";}
+/* y */ if (kC == 89 && cC == 121) { fMan(keyInfo);lastKey="y";}/* Y */ if (kC ==  89 && cC == 89) { fMan(keyInfo);lastKey="Y";}
+/* u */ if (kC == 85 && cC == 117) { fMan(keyInfo);lastKey="u";}/* U */ if (kC ==  85 && cC == 85) { fMan(keyInfo);lastKey="U";}
+/* i */ if (kC == 73 && cC == 105) { fMan(keyInfo);lastKey="i";}/* I */ if (kC ==  73 && cC == 73) { fMan(keyInfo);lastKey="I";}
+/* o */ if (kC == 79 && cC == 111) { fMan(keyInfo);lastKey="o";}/* O */ if (kC ==  79 && cC == 79) { fMan(keyInfo);lastKey="O";}
+/* p */ if (kC == 80 && cC == 112) { fMan(keyInfo);lastKey="p";}/* P */ if (kC ==  80 && cC == 80) { fMan(keyInfo);lastKey="P";}
+/* [ */ if (kC == 219 && cC == 91) { lessG(e); lastKey="[";}    /* { */ if (kC == 219 && cC == 123) { setupLeft(); lastKey="{";}
+/* ] */ if (kC == 221 && cC == 93) { moreG(e); lastKey="]";}    /* } */ if (kC == 221 && cC == 125){ setupRight(); lastKey="}";}
 /* \ */ if (kC == 220 && cC == 92) { focusNextColour(); lastKey="\\";}/* | */ if (kC == 220 && cC == 124) { firstLastColour(); lastKey="|";}
 /* */
 /******************************************************************************************************************************************************/
 /* */
-/* a */ if (kC == 65 && cC == 97) { fMan(keyInfo);lastKey="a";}/* A */ if (kC == 65 && cC == 65) { fMan(keyInfo);lastKey="A";}
+/* a */ if (kC == 65 && cC ==  97) { fMan(keyInfo);lastKey="a";}/* A */ if (kC == 65 && cC == 65) { fMan(keyInfo);lastKey="A";}
 /* s */ if (kC == 83 && cC == 115) { fMan(keyInfo);lastKey="s";}/* S */ if (kC == 83 && cC == 83) { fMan(keyInfo);lastKey="S";}
 /* d */ if (kC == 68 && cC == 100) { fMan(keyInfo);lastKey="d";}/* D */ if (kC == 68 && cC == 68) { fMan(keyInfo);lastKey="D";}
 /* f */ if (kC == 70 && cC == 102) { fMan(keyInfo);lastKey="f";}/* F */ if (kC == 70 && cC == 70) { fMan(keyInfo);lastKey="F";}
@@ -383,8 +446,8 @@ buzzWord(0,'ENTER',256,'magenta',400,200,25);
 /* b */ if (kC == 66 && cC == 98) { fMan(keyInfo);lastKey="b";}/* B */ if (kC == 66 && cC == 66) { fMan(keyInfo);lastKey="B";}
 /* n */ if (kC == 78 && cC == 110) { fMan(keyInfo);lastKey="n";}/* N */ if (kC == 78 && cC == 78) { fMan(keyInfo);lastKey="N";}
 /* m */ if (kC == 77 && cC == 109) { fMan(keyInfo);lastKey="m";}/* M */ if (kC == 77 && cC == 77) { fMan(keyInfo);lastKey="M";}
-/* , */ if (kC == 188 && cC == 44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}lastKey = ",";}/* < */ if (kC == 188 && cC == 60) {setupLeft(); lastKey = "<";}
-/* . */ if (kC == 190 && cC == 46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}lastKey = ".";}/* > */ if (kC == 190 && cC == 62) {setupRight(); lastKey = ">";}
+/* , */ if (kC == 188 && cC == 44) {if(rev==1){focusNext(true)}else{focusPrevious(true)}lastKey = ",";}/* < */ if (kC == 188 && cC == 60) { layerLeft(); lastKey = "<";}
+/* . */ if (kC == 190 && cC == 46) {if(rev==1){focusPrevious(true)}else{focusNext(true)}lastKey = ".";}/* > */ if (kC == 190 && cC == 62) { layerRight(); lastKey = ">";}
 /* / */ if (kC == 191 && cC == 47) { event.preventDefault();
 ui.cursorShutoff.click();
 //mouseIncrementCycle();

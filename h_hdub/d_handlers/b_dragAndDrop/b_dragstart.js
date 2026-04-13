@@ -1,3 +1,7 @@
+
+
+var globalContent = "";
+
 var dragging = false;
 document.body.addEventListener('dragstart', (e) => {
 dragging = true;
@@ -15,22 +19,26 @@ graphic = true;
 return 0;
 }
 });
+
+/*
  if (graphic) return 0;
  let name = "blank.txt";
  let content = "no content";
  switch (btn.id) {
- case "save200" : content = deMinimis(false, "1", null, null, null, null, true); name = filename; break;
- case "save300" : content = deMinimis(false, "(100/320)", null, null, null, null, true); name = filename; break;
- case "save500" : content = deMinimis(false, "(100/500)", null, null, null, null, true); name = filename; break;
- case "save800" : content = deMinimis(false, "(100/768)", null, null, null, null, true); name = filename; break;
- case "save1000" : content = deMinimis(false, "(100/1000)", null, null, null, null, true); name = filename; break;
- case "save1200" : content = deMinimis(false, "(100/1280)", null, null, null, null, true); name = filename; break;
- case "save1500" : content = deMinimis(false, "(100/1536)", null, null, null, null, true); name = filename; break;
- case "save1800" : content = deMinimis(false, "(100/2000)", null, null, null, null, true); name = filename; break;
- case "coin77155": content = deMinimis(false, lastFactor, null, null, null, null, true); name = filename; break;
+ case "save200"  : content = globalContent; name = filename; break;
+ case "save300"  : content = globalContent; name = filename; break;
+ case "save500"  : content = globalContent; name = filename; break;
+ case "save800"  : content = globalContent; name = filename; break;
+ case "save1000" : content = globalContent; name = filename; break;
+ case "save1200" : content = globalContent; name = filename; break;
+ case "save1500" : content = globalContent; name = filename; break;
+ case "save1800" : content = globalContent; name = filename; break;
+ case "coin77155": content = globalContent; name = filename; break;
  default: return;
  }
  name = name + ".html";
  const data = `text/plain:${name}:data:text/plain;base64,${btoa(unescape(encodeURIComponent(content)))}`;
  e.dataTransfer.setData('DownloadURL', data);
+*/
+
 });

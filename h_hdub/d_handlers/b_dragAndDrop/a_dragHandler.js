@@ -642,6 +642,8 @@ reader.onload = evt => {
 const img = new Image();
 img.onload = () => {
 img.loading = "lazy";
+img.style.width  = "100%";
+img.style.height = "100%";
 insertNewCoin(["",78,78,true,false,false]);
 utilityLayer0.lastElementChild.style.height = img.naturalHeight + "px";
 utilityLayer0.lastElementChild.style.width = img.naturalWidth + "px";

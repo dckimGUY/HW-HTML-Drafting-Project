@@ -19,7 +19,7 @@ edgeDetect.style.opacity = "0.25";
 edgeDetect.style.display = "none";
 edgeDetect.style.zIndex = "2000000000";
 const HWworld = true;
-var layerName = "LVL 1";
+var layerName = "1";
 var useCustomCursors = false;
 /* Not sure why I can't get these to work yet... Oops... */
 /* I guess we'll just be using the defaults for now, but those are actually doing a lot better than we can. */

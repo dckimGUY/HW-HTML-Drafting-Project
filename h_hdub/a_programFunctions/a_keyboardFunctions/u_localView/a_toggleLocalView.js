@@ -1,5 +1,10 @@
 const coinIdArray = [];
 
+
+
+var localFirst = "";
+
+
 function toggleLocalView() {
 
 
@@ -19,6 +24,9 @@ coinFocus = originalFocus;
 if (topLayer.a_currentLayer != "localView") {
 
 if (coinFocus!=null) {
+
+localFirst = coinFocus.id;
+
 
 let colourInput = "";
 switch (coinFocus.dataset.coinTrip) {
@@ -129,6 +137,9 @@ parseInt(coinFocus.style.top ) + parseInt(coinFocus.style.height) / 2
 ];
 buzzWord(1,"TAB",96,textColour,80,80,25,"center",coinCentre[0],coinCentre[1]);
 }
+
+
+setTimeout(() => { focusSet(document.getElementById(localFirst)); }, 0);
 
 }
 

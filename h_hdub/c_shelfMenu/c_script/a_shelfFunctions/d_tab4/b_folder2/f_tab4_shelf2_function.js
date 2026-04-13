@@ -70,6 +70,20 @@ collection = "";
 
 
 
+function redness(id) {
+document.getElementById("save200" ).style.backgroundColor = "transparent";
+document.getElementById("save300" ).style.backgroundColor = "transparent";
+document.getElementById("save500" ).style.backgroundColor = "transparent";
+document.getElementById("save800" ).style.backgroundColor = "transparent";
+document.getElementById("save1000").style.backgroundColor = "transparent";
+document.getElementById("save1200").style.backgroundColor = "transparent";
+document.getElementById("save1500").style.backgroundColor = "transparent";
+document.getElementById("save1800").style.backgroundColor = "transparent";
+document.getElementById(id).style.backgroundColor = "rgba(255,0,255,0.35)";
+}
+
+
+
 
 
 
@@ -154,9 +168,9 @@ event.target.id == "save500"  ||
 event.target.id == "save800"  ||
 event.target.id == "save1000" ||
 event.target.id == "save1200" ||
-event.target.id == "save1500"
+event.target.id == "save1500" ||
+event.target.id == "save1800"
 ) {
-
 if ( event.shiftKey) {                          string = "";
        if (coinFocus.dataset.coinTrip == "0") { string = "";
          for (let j = 0; j < coinTrip.sel0.length; j++)    {
@@ -172,6 +186,10 @@ if ( event.shiftKey) {                          string = "";
 }
 }
 }
+
+
+
+
 
 
 
@@ -265,7 +283,19 @@ let idRoll = [];
 
 
 
-/* --- COMPLETE PROCESSING BLOCK: DUP-FIXED --- */
+
+
+
+/* --- FINAL BROWSER REGIMENT: HARDENED & RECURSIVE --- */
+
+// 1. Setup global references into a config object
+const config = {
+    doc: doc,
+    parser: parser,
+    styleFirst: styleFirst,
+    styleLast: styleLast,
+    styleLastLast: styleLastLast
+};
 
 let otherCleanDOM = "";
 idRoll = []; 
@@ -275,20 +305,19 @@ const serializeRecursive = (el) => {
     const level1 = level0.lastElementChild;
     const level2 = level1 ? level1.lastElementChild : null;
 
+    // Strict Triad Regiment
     const guts = (level2 && level2.children.length === 1) ? level2.firstElementChild : null;
     const isAtomic = guts && !guts.dataset.coinTrip;
 
     let final;
+    const masterID = level0.id;
+    let oldInnerID = "";
 
     if (isAtomic) {
         final = guts.cloneNode(true);
-        const oldInnerID = final.id;
-        const masterID   = level0.id;
-        if (oldInnerID && oldInnerID !== "" && oldInnerID !== masterID) {
-            let idRegex = new RegExp(oldInnerID, "g");
-            final.innerHTML = final.innerHTML.replace(idRegex, masterID);
-        }
+        oldInnerID = final.id;
 
+        // BUBBLE DATA: Level 0, 1, 2 datasets move to the final atomic leaf
         const keys = ["notes", "json", "audio", "state"];
         [level0, level1, level2].forEach(source => {
             if (!source) return;
@@ -299,104 +328,67 @@ const serializeRecursive = (el) => {
             });
         });
 
-        for (let y of styleFirst)    { final.style[y] = level0.style[y]; }
-        for (let y of styleLast)     { final.style[y] = level1.style[y]; }
-        for (let y of styleLastLast) { final.style[y] = level2.style[y]; }
+        for (let y of config.styleFirst)    { final.style[y] = level0.style[y]; }
+        for (let y of config.styleLast)     { final.style[y] = level1.style[y]; }
+        for (let y of config.styleLastLast) { final.style[y] = level2.style[y]; }
     } else {
         final = document.createElement("div");
         final.innerHTML = level2 ? level2.innerHTML : (level1 ? level1.innerHTML : "");
+        
         const keys = ["notes", "json", "audio", "state"];
         keys.forEach(key => {
             if (level0.dataset[key] !== undefined) {
                 final.dataset[key] = level0.dataset[key];
             }
         });
-        for (let y of styleFirst)    { final.style[y] = level0.style[y]; }
-        if (level1) { for (let y of styleLast)     { final.style[y] = level1.style[y]; } }
-        if (level2) { for (let y of styleLastLast) { final.style[y] = level2.style[y]; } }
+        for (let y of config.styleFirst)    { final.style[y] = level0.style[y]; }
+        if (level1) { for (let y of config.styleLast)     { final.style[y] = level1.style[y]; } }
+        if (level2) { for (let y of config.styleLastLast) { final.style[y] = level2.style[y]; } }
     }
 
-    final.id = level0.id;
-
-    // --- DUPLICATION FIX ---
-    // Only push to idRoll if the ID is not already present
-    if (!idRoll.includes(final.id)) {
-        idRoll.push(final.id);
-    }
-
-    final.classList.add('trs', final.id);
-
+    // --- RECURSION TRIGGER ---
     const nested = final.querySelectorAll('[data-coin-trip]');
     nested.forEach(nest => {
         nest.outerHTML = serializeRecursive(nest); 
     });
 
-// 1. Array of all the style names you are using
-const styleKeys = [
-    'position', 'left', 'top', 'width', 'height', 'zIndex', 'transform', 
-    'transformOrigin', 'backgroundSize', 'overflow', 'opacity', 'filter', 
-    'backdropFilter', 'userSelect', 'outline', 'outlineOffset', 'borderRadius', 
-    'boxShadow', 'color', 'background', 'backgroundColor', 'fontSize', 
-    'fontVariant', 'fontStyle', 'fontWeight', 'fontFamily', 'textShadow', 
-    'textAlign', 'wordSpacing', 'letterSpacing', 'lineHeight', 'textIndent', 'padding'
-];
+    // --- HARDENED ID REPLACEMENT ---
+    if (oldInnerID && oldInnerID !== "" && oldInnerID !== masterID) {
+        // Escape special characters (like dots) for Regex literal matching
+        const escapedID = oldInnerID.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        
+        // Match id="", #id, or ="id" (aria-controls/for) + Negative Lookahead for collisions
+        let idRegex = new RegExp(`(id=['"]|#|=["'])${escapedID}(?![a-zA-Z0-9_-])`, "g");
+        
+        final.innerHTML = final.innerHTML.replace(idRegex, (match, prefix) => {
+            return prefix + masterID;
+        });
+        if (final.id === oldInnerID) final.id = masterID;
+    }
 
-// 2. Loop to find the largest padding
-let maxPadding = 0;
-styleKeys.forEach(key => {
-    const val = (final.style[key] ?? "").toString().length;
-    if (val > maxPadding) maxPadding = val;
-});
+    final.id = level0.id;
+    if (!idRoll.includes(final.id)) { idRoll.push(final.id); }
+    final.classList.add('trs', final.id);
 
-// 3. Your original arrangement with the dynamic padding
-stylePosition += `
-.${final.id} {
-    position:         ${final.style.position.toString().padStart(maxPadding, ' ')};
-    left:             ${final.style.left.toString().padStart(maxPadding, ' ')};
-    top:              ${final.style.top.toString().padStart(maxPadding, ' ')};
-    width:            ${final.style.width.toString().padStart(maxPadding, ' ')};
-    height:           ${final.style.height.toString().padStart(maxPadding, ' ')};
-    z-index:          ${final.style.zIndex.toString().padStart(maxPadding, ' ')};
-    transform:        ${final.style.transform.toString().padStart(maxPadding, ' ')};
-    transform-origin: ${final.style.transformOrigin.toString().padStart(maxPadding, ' ')};
-    background-size:  ${final.style.backgroundSize.toString().padStart(maxPadding, ' ')};
-    overflow:         ${final.style.overflow.toString().padStart(maxPadding, ' ')};
-    opacity:          ${final.style.opacity.toString().padStart(maxPadding, ' ')};
-}`;
+    // --- CONDENSED STYLE LOGIC ---
+    const posKeys = ['position', 'left', 'top', 'width', 'height', 'zIndex', 'transform', 'transformOrigin', 'backgroundSize', 'overflow', 'opacity'];
+    const etcKeys = ['filter', 'backdropFilter', 'userSelect', 'outline', 'outlineOffset', 'borderRadius', 'boxShadow', 'color', 'background', 'backgroundColor', 'fontSize', 'fontVariant', 'fontStyle', 'fontWeight', 'fontFamily', 'textShadow', 'textAlign', 'wordSpacing', 'letterSpacing', 'lineHeight', 'textIndent', 'padding'];
+    
+    const allKeys = [...posKeys, ...etcKeys];
+    let maxPadding = Math.max(...allKeys.map(k => (final.style[k] ?? "").toString().length));
 
-styleEtc += `
-.${final.id} {
-    filter:           ${final.style.filter.toString().padStart(maxPadding, ' ')};
-    backdrop-filter:  ${final.style.backdropFilter.toString().padStart(maxPadding, ' ')};
-    user-select:      ${final.style.userSelect.toString().padStart(maxPadding, ' ')};
-    outline:          ${final.style.outline.toString().padStart(maxPadding, ' ')};
-    outline-offset:   ${final.style.outlineOffset.toString().padStart(maxPadding, ' ')};
-    border-radius:    ${final.style.borderRadius.toString().padStart(maxPadding, ' ')};
-    box-shadow:       ${final.style.boxShadow.toString().padStart(maxPadding, ' ')};
-    color:            ${final.style.color.toString().padStart(maxPadding, ' ')};
-    background:       ${final.style.background.toString().padStart(maxPadding, ' ')};
-    background-color: ${final.style.backgroundColor.toString().padStart(maxPadding, ' ')};
-    font-size:        ${final.style.fontSize.toString().padStart(maxPadding, ' ')};
-    font-variant:     ${final.style.fontVariant.toString().padStart(maxPadding, ' ')};
-    font-style:       ${final.style.fontStyle.toString().padStart(maxPadding, ' ')};
-    font-weight:      ${final.style.fontWeight.toString().padStart(maxPadding, ' ')};
-    font-family:      ${final.style.fontFamily.toString().padStart(maxPadding, ' ')};
-    text-shadow:      ${final.style.textShadow.toString().padStart(maxPadding, ' ')};
-    text-align:       ${final.style.textAlign.toString().padStart(maxPadding, ' ')};
-    word-spacing:     ${final.style.wordSpacing.toString().padStart(maxPadding, ' ')};
-    letter-spacing:   ${final.style.letterSpacing.toString().padStart(maxPadding, ' ')};
-    line-height:      ${final.style.lineHeight.toString().padStart(maxPadding, ' ')};
-    text-indent:      ${final.style.textIndent.toString().padStart(maxPadding, ' ')};
-    padding:          ${final.style.padding.toString().padStart(maxPadding, ' ')};
-}`;
+    const buildRule = (keys) => `\n.${final.id} {${keys.map(k => `\n    ${k.replace(/[A-Z]/g, m => "-" + m.toLowerCase()).padEnd(18)}: ${(final.style[k] ?? "").toString().padStart(maxPadding, ' ')};`).join('')}\n}`;
 
+    stylePosition += buildRule(posKeys);
+    styleEtc      += buildRule(etcKeys);
 
     final.removeAttribute('style');
     return final.outerHTML;
 };
 
-for (let j = 0; j < doc.body.children.length; j++) {
-    const rootNode = doc.body.children[j];
+// Main Execution
+for (let j = 0; j < config.doc.body.children.length; j++) {
+    const rootNode = config.doc.body.children[j];
     if (rootNode.dataset.coinTrip || rootNode.querySelector('[data-coin-trip]')) {
         otherCleanDOM += serializeRecursive(rootNode) + "\n";
     }
@@ -406,22 +398,7 @@ string = otherCleanDOM;
 const attributesToScrub = [/data-(angle|children|coinTrip|dragPull|finishedOutline|height|jsName|left|outlineColour|parent|scale|top|width|flow)="[^"]*"/g, /contenteditable="[^"]*"/g];
 attributesToScrub.forEach(reg => { string = string.replace(reg, ""); });
 
-doc = parser.parseFromString(string, 'text/html');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+doc = config.parser.parseFromString(string, 'text/html');
 
 
 
@@ -891,9 +868,11 @@ for (c of topLayer[h].b_content.children) {
 
 let extract = "";
 try {
-extract = c.lastElementChild.getAttribute("on" + eventRoll[k]);
+extract = c.lastElementChild.lastElementChild.getAttribute("on" + eventRoll[k]);
 if (eventRoll[k] == "click") {
-extract = c.lastElementChild.firstElementChild.getAttribute("on" + eventRoll[k]);
+try {
+extract = c.lastElementChild.lastElementChild.firstElementChild.getAttribute("on" + eventRoll[k]);
+} catch { };
 }
 } catch { };
 scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
@@ -930,9 +909,11 @@ for (let j = 0; j < idRoll.length; j++) {
 
 let extract = "";
 try {
-extract = document.getElementById(idRoll[j]).lastElementChild.getAttribute("on" + eventRoll[k]);
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.getAttribute("on" + eventRoll[k]);
 if (eventRoll[k] == "click") {
-extract = document.getElementById(idRoll[j]).lastElementChild.firstElementChild.getAttribute("on" + eventRoll[k]);
+try {
+extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.firstElementChild.getAttribute("on" + eventRoll[k]);
+} catch { };
 }
 } catch { };
 scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
@@ -1032,14 +1013,8 @@ scriptStarter += animatorInclusion;
 
 
 
-
-
+string = string.replace(/\s+on\w+="[^"]*"/gi, "");
 string = string.replace(/\[object HTMLDivElement\]/g, "");
-
-
-
-
-
 
 
 
@@ -1081,34 +1056,7 @@ stylesIncluded = stylePosition;
 let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
 
 
-
-
-
-
-
-
-// No try/catch here anymore. If it fails, we want the error in the console.
 content = await SquareAtlas(content);
-
-
-
-
-
-
-
-
-
-
-
-
-
-if (dragging == true) {
-
-restorePointerEventsNone();
-spaceViewOff();
-Z();
-return content;
-}
 
 
 if (openInNewWindow) {
@@ -1128,13 +1076,11 @@ return;
 }
 
 
-
-
-
-
 saveHTMLparticle(rename, content, false, false, false);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
 return;
+
+
 }
