@@ -433,24 +433,25 @@ if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "mouseover"
 
 
 
+
+
+
 const lvlRoll = {};
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
-
-
-
 if (topLayer[i].b_content.children[j].dataset.addScript) {
 addToScript += "\n" + topLayer[i].b_content.children[j].dataset.addScript;
 topLayer[i].b_content.children[j].remove();
 continue;
 }
-
-
-
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
 }
 }
+
+
+
+
 
 
 
