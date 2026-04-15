@@ -1014,52 +1014,41 @@ input.remove();
 
 
 function manufactureTemplate(array) {
-  const factor = ui.hdubSheetTemplate4x.ref.value;
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-  
-  canvas.width  = 100 * factor;
-  canvas.height = 180 * factor;
-  
-  // 1. Check for Picture Layer first
-  // If a picture is displayed, it clears the wireframe anyway, 
-  // so we skip the loops for efficiency.
-  if (Picture.style.display == "block") {
-    ctx.drawImage(Picture, 0, 0, canvas.width, canvas.height);
-  } else {
-    // 2. Draw Wireframe Grid
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = "red";
-    let rowStart = 0;
-    
-    for (let j = 0; j < array.length; j++) {
-      let columnStart = 0;
-      let rowHeight = array[j].rowHeight;
-      
-      for (let i = 0; i < array[j].column.length; i++) {
-        let colWidth = array[j].column[i].width;
-        ctx.strokeRect(columnStart * factor, rowStart * factor, colWidth * factor, rowHeight * factor);
-        columnStart += colWidth;
-      }
-      rowStart += rowHeight;
-    }
+let factor = ui.hdubSheetTemplate4x.ref.value;
+let canvas = document.createElement("canvas");
+let ctx = canvas.getContext("2d");
+canvas.width  = 100 * factor;
+canvas.height = 180 * factor;
+ctx.lineWidth = 2;
+ctx.strokeStyle = "red";
+let rowStart = 0;
+for (j = 0; j < array.length; j++) {
+let columnStart = 0;
+for (i = 0; i < array[j].column.length; i++) {
+ctx.strokeRect(columnStart * factor, rowStart * factor, array[j].column[i].width * factor, array[j].rowHeight * factor);
+columnStart += array[j].column[i].width;
+}
+rowStart += array[j].rowHeight;
+}
 
-    // 3. Right-side border line
-    ctx.strokeStyle = "black";
-    ctx.beginPath();
-    ctx.moveTo(canvas.width, 0);
-    ctx.lineTo(canvas.width, canvas.height);
-    ctx.stroke();
-  }
+ctx.strokeStyle = "black";
+ctx.beginPath();
+ctx.moveTo(canvas.width, 0);
+ctx.lineTo(canvas.width, canvas.height);
+ctx.stroke();
 
-  // 4. Export logic
-  const datePrefix = Date.now().toString().slice(-6);
-  const syntax = reString(array);
-  const link = document.createElement('a');
-  
-  link.href = canvas.toDataURL('image/png');
-  link.download = "TEMPL_" + datePrefix + "_HDUB_" + factor + "_tmpl_" + syntax + ".png";
-  link.click();
+if (Picture.style.display == "block") {
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.drawImage(Picture, 0,0);
+}
+
+const datePrefix = Date.now().toString().slice(-6);
+const syntax = reString(array);
+const dataURL = canvas.toDataURL('image/png');
+const link = document.createElement('a');
+link.href = dataURL;
+link.download = "TEMPL_" + datePrefix + `_HDUB_${factor}_tmpl_` + syntax + '.png';
+link.click();
 }
 
 

@@ -1,4 +1,4 @@
-document.addEventListener("mousewheel", (event) => {
+document.addEventListener("wheel", (event) => {
     const wheelUp = event.wheelDelta > 0;
 
     if (coinFocus != null) {

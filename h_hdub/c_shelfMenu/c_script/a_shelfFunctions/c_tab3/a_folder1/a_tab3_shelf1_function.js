@@ -684,7 +684,7 @@ setTimeout(() => {
 ui.buttonTooltip.ref.value = "";
 ui.textEntry.ref.value = alphabet[j] + k;
 drawButton7();
-let navLinkEntry = `(function() { window.scrollTo({ left: locX * j, top: locY * k, behavior: 'smooth' }); })();`;
+let navLinkEntry = `(function() { window.scrollTo({ left: ${locX * j}, top: ${locY * k}, behavior: 'smooth' }); })();`;
 let lastId = "";
 if (coinFocus != null) {
 lastId = coinFocus.id.toString();

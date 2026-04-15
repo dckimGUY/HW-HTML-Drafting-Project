@@ -550,7 +550,7 @@ go.xqn.grp   = {};
 go.xqn.all   = [];
 go.xqn.style = [ "filter",  "scale", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
-go.ids.forEach((id) => {
+go.ids.forEach(async (id) => {
 go.elm[id]      = {};
 go.elm[id].func = {};
 go.elm[id].dat = {};
@@ -568,8 +568,14 @@ go.xqn.grp[id] = go.elm[id].xqn = from ; }
 go.xqn.nom[go.xqn.nom.length] = id; }
 
 /*** SET UP FOR DATA ***/
-for (t of dat) {  if (go.elm[id].ref.dataset[t])                {
-          const from = go.elm[id].ref.dataset[t];                
+for (t of ["notes"]) {  if (go.elm[id].ref.dataset[t])          {
+             const from = go.elm[id].ref.dataset[t];
+    try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from); }
+  catch { go.dat[t][id] = go.elm[id].dat[t] =            from ; }
+          go.dat[t].nom[go.dat[t].nom.length] = id; }           }
+
+for (t of ["json"]) {  if (go.elm[id].ref.dataset[t])           {
+             const from = go.elm[id].ref.dataset[t];
     try { go.dat[t][id] = go.elm[id].dat[t] = JSON.parse(from); }
   catch { go.dat[t][id] = go.elm[id].dat[t] =            from ; }
           go.dat[t].nom[go.dat[t].nom.length] = id; }           }
