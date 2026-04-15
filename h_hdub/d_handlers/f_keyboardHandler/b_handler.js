@@ -461,7 +461,6 @@ Z();
 lastKey = "?";
 }
 /* */
-handleBuzz();
  if (lastFlow == "global") {
 reflowGlobal(rev,0)
 } else if (lastFlow == "colour") {
