@@ -1,36 +1,32 @@
 function flowVis() {
-    if (utilityLayer0.children.length === 0) return;
+    const children = utilityLayer0.children;
+    const len = children.length;
+    if (len === 0) return;
 
-    // Determine character once per call
+    // 1. Initial setup outside the loop
     const text = (lastFlow === "global") ? "v" : "V";
+    
+    // 2. Pre-calculate all data to avoid "Layout Thrashing" inside the timeouts
+    const buzzData = Array.from(children).map(el => {
+        const s = el.style;
+        const w = parseInt(s.width) || 0;
+        const h = parseInt(s.height) || 0;
+        const l = parseInt(s.left) || 0;
+        const t = parseInt(s.top) || 0;
+        
+        return {
+            colour: window["coinColour" + el.dataset.coinTrip],
+            size: Math.min(w, h),
+            cX: l + (w / 2),
+            cY: t + (h / 2)
+        };
+    });
 
-    // Small delay to ensure utilityLayer0 has settled
-    setTimeout(() => {
-        // Convert to array to freeze the snapshot of elements
-        const nodes = Array.from(utilityLayer0.children);
-
-        nodes.forEach((node, index) => {
-            setTimeout(() => {
-                const ds = node.dataset;
-                const style = node.style;
-                const textColour = window["coinColour" + ds.coinTrip];
-
-                // Extract and parse numeric values once
-                const w = parseInt(style.width) || 0;
-                const h = parseInt(style.height) || 0;
-                const l = parseInt(style.left) || 0;
-                const t = parseInt(style.top) || 0;
-
-                // Determine font size (shortest side)
-                const fontWidth = Math.min(w, h);
-
-                // Calculate center points
-                const centerX = l + (w / 2);
-                const centerY = t + (h / 2);
-
-                // Trigger buzzWord with captured values
-                buzzWord(1, text, fontWidth, textColour, 20, 20, 10, "center", centerX, centerY, null, true);
-            }, index * 80);
-        });
-    }, 20);
+    // 3. Batch the buzz calls
+    // We use a small delay multiplier (60ms) but the math is already done
+    buzzData.forEach((data, j) => {
+        setTimeout(() => {
+            buzzWord(1, text, data.size, data.colour, 20, 20, 10, "center", data.cX, data.cY, null, true);
+        }, j * 60);
+    });
 }
