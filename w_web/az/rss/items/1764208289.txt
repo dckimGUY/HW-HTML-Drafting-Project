@@ -1,7 +1,0 @@
-<item>
-<title>Yadda-saxla</title>
-<link>https://dckim.com/hdub/w_web/az/articles/Yadda-saxla.html</link>
-<description>Toronto şəhərinə bir əvvəl əvvəl əlavə, North York Yonge Street, bu HTML Drafting Project reklam üçün onların ictimai imza-posting board istifadə etmək üçün imkan verir.</description>
-<pubDate>Wed, 26 Nov 2025 20:51:29 -0500</pubDate>
-<guid>Wed, 26 Nov 2025 20:51:29 -0500</guid>
-</item>

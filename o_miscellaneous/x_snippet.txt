@@ -1,1 +1,0 @@
-const targetButtonId = (Array.from(element.querySelectorAll("[id]")).map(e => e.id).find(id => /^button\d{13}$/.test(id))) || "";

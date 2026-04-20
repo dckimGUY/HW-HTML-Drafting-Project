@@ -467,7 +467,7 @@ let mouseupTarget = null;
 
 
 document.addEventListener("mouseup", (event) => {
-activeUpdate();
+
 if (event.target.dataset&&event.target.dataset.coinTrip) {
 mouseupTarget=event.target;
 } else {
@@ -557,15 +557,7 @@ if (!event.target.dataset.coinTrip) {
 
 
 
-
-
-
-
-
-
-
-
-
+activeUpdate();
 
 
 redraw();
@@ -585,6 +577,7 @@ redraw();
 
 
 document.addEventListener("click", (event) => {
+activeUpdate();
 if (mouseIsDogged==false) {
  if (lastFlow == "global") {
 reflowGlobal(rev,0)
@@ -652,6 +645,15 @@ mouseDeltaY = 0;
 redraw();
 }
 });
+
+
+
+
+
+
+
+
+
 document.addEventListener("dblclick", (event) => {
 if (mouseIsDogged==true) {
 if (event.target === document.documentElement) {

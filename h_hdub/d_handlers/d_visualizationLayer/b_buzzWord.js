@@ -17,7 +17,9 @@ function buzz(method, text, fontSize, colour, delay, speed, chop, sweepTo, left,
     // Preserved lastKey logic
     if ((text === "x" && lastKey !== "x") || (text === "p" && lastKey !== "p")) return;
 
-    let lefting = -window.scrollX, topping = -window.scrollY;
+    // Updated: Defaults to 0, 0 to ensure screen centering when no position is passed
+    let lefting = 0, topping = 0;
+
     if (left && top) {
         lefting = left - (window.innerWidth / 2) - window.scrollX;
         topping = top - (window.innerHeight / 2) - window.scrollY;
@@ -43,7 +45,7 @@ function buzz(method, text, fontSize, colour, delay, speed, chop, sweepTo, left,
         pointerEvents: "none", userSelect: "none", backgroundColor: "transparent", border: "0px",
         fontFamily: "dckimPixelMono", fontSize: (fontSize * 0.75) + "px", lineHeight: "1",
         color: colour, overflow: "visible", width: window.innerWidth + "px", height: window.innerHeight + "px",
-        position: "fixed", left: lefting + "px", top: topping + "px", zIndex: "999999999", transformOrigin: origin
+        position: "fixed", left: lefting + "px", top: topping + "px", zIndex: "9999999999", transformOrigin: origin
     });
 
     let lateDelay = 0;

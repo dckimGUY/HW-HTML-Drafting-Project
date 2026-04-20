@@ -696,23 +696,23 @@ boxShadowTuner();
 styleMenu.indentLine.mousewheel = function() {
 if (!event.shiftKey) {
 let upSize = 0.05;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = "0em";
+if (coinFocus.lastElementChild.lastElementChild.style.textIndent == "") {
+coinFocus.lastElementChild.lastElementChild.style.textIndent = "0em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.style.textIndent) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.textIndent) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.textIndent = parseFloat(coinFocus.lastElementChild.lastElementChild.style.textIndent) - upSize + "em";
 }
 } else if (event.shiftKey) {
 let upSize = 0.01;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = "1em";
+if (coinFocus.lastElementChild.lastElementChild.style.lineHeight == "") {
+coinFocus.lastElementChild.lastElementChild.style.lineHeight = "1em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.style.lineHeight) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.lineHeight) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.lineHeight = parseFloat(coinFocus.lastElementChild.lastElementChild.style.lineHeight) - upSize + "em";
 }
 }
 
@@ -728,23 +728,23 @@ styleMenu.charWord.mousewheel = function() {
 
 if (!event.shiftKey) {
 let upSize = 0.001;
-if (!coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = "0em";
+if (!coinFocus.lastElementChild.lastElementChild.style.letterSpacing) {
+coinFocus.lastElementChild.lastElementChild.style.letterSpacing = "0.05em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.style.letterSpacing) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.letterSpacing) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.letterSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.style.letterSpacing) - upSize + "em";
 }
 } else if (event.shiftKey) {
 let upSize = 0.02;
-if (coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing == "") {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = "1em";
+if (coinFocus.lastElementChild.lastElementChild.style.wordSpacing == "") {
+coinFocus.lastElementChild.lastElementChild.style.wordSpacing = "0.25em";
 }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing) + upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.style.wordSpacing) + upSize + "em";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.wordSpacing) - upSize + "em";
+coinFocus.lastElementChild.lastElementChild.style.wordSpacing = parseFloat(coinFocus.lastElementChild.lastElementChild.style.wordSpacing) - upSize + "em";
 }
 }
 
@@ -760,9 +760,12 @@ styleMenu.fontSize.mousewheel = function() {
 let upSize = 1;
 if (event.shiftKey) { upSize = 0.1; } else if (event.ctrlKey) { upSize = 10; }
 if (event.wheelDelta > 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize) + upSize + "px";
+coinFocus.lastElementChild.lastElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.style.fontSize) + upSize + "px";
 } else if (event.wheelDelta <= 0) {
-coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.previousElementSibling.style.fontSize) - upSize + "px";
+coinFocus.lastElementChild.lastElementChild.style.fontSize = parseFloat(coinFocus.lastElementChild.lastElementChild.style.fontSize) - upSize + "px";
+}
+if (coinFocus.lastElementChild.lastElementChild.style.fontSize == "") {
+coinFocus.lastElementChild.lastElementChild.style.fontSize = "16px";
 }
 }
 

@@ -1,138 +1,281 @@
-// 1. GLOBAL STATE & SELECTORS (Cached once to stop DOM thrashing)
-let layerIsDirty = false;
 
-// Event listeners to flag when the HTML actually needs to be backed up
-window.addEventListener('mouseup', () => { layerIsDirty = true; });
-window.addEventListener('keyup', () => { layerIsDirty = true; });
 
-const infoFields = {
-    useAllLayers: document.getElementById("useAllLayers"),
-    headerText:   document.getElementById("headerText"),
-    footerText:   document.getElementById("footerText"),
-    accumCount:   document.getElementById("accumulatorCount"),
-    filename:     document.getElementById("coin77671"),
-    partY:        document.getElementById("partY"),
-    partX:        document.getElementById("partX"),
-    partW:        document.getElementById("partW"),
-    partH:        document.getElementById("partH"),
-    partNom:      document.getElementById("partNom"),
-    partText:     document.getElementById("partText"),
-    classList:    document.getElementById("classListEntry"),
-    filter: {
-        b: document.getElementById("filterBrightness"),
-        c: document.getElementById("filterContrast"),
-        i: document.getElementById("filterIntensity"),
-        g: document.getElementById("filterGrayscale"),
-        a: document.getElementById("filterAntique"),
-        inv: document.getElementById("filterInvert"),
-        o: document.getElementById("filterOpacity"),
-        bl: document.getElementById("filterBlur")
-    }
-};
+
+if (localStorage.getItem("useAllLayers")) {
+if (localStorage.getItem("useAllLayers") == "false") {
+useAllLayers = false;
+} else if (localStorage.getItem("useAllLayers") == "true") {
+useAllLayers = true;
+}
+}
+
+
+
+
+
+
 
 function updateInfoShelf() {
-    // 2. LAYER SYNC (The "Heavy" part - now only runs when dirty)
-    if (layerIsDirty) {
-        topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
-        layerIsDirty = false;
-    }
 
-    // 3. UI VISUALS (Use All Layers toggle)
-    const ualStyle = infoFields.useAllLayers.style;
-    if (useAllLayers) {
-        ualStyle.outline = "2px dashed lime";
-        ualStyle.backgroundColor = "rgba(255,0,0,0.35)";
-    } else {
-        ualStyle.outline = "";
-        ualStyle.backgroundColor = "transparent";
-    }
 
-    // 4. COIN FOCUS LOGIC
-    if (coinFocus != null) {
-        const style = coinFocus.style;
-        const innerPart = coinFocus.lastElementChild?.firstElementChild;
 
-        // Filter parsing (Fast replacement for the loop)
-        if (style.filter && style.filter !== "none") {
-            let filt = style.filter.replace(/[^ 0-9.]/g, "").split(" ");
-            const f = infoFields.filter;
-            f.b.value   = filt[0] || 0;
-            f.c.value   = filt[1] || 0;
-            f.i.value   = filt[2] || 0;
-            f.g.value   = filt[3] || 0;
-            f.a.value   = filt[4] || 0;
-            f.inv.value = filt[5] || 0;
-            f.o.value   = filt[6] || 0;
-            f.bl.value  = filt[7] || 0;
-        }
 
-        // Class List and Tooltips
-        infoFields.classList.value = innerPart?.classList.toString() || "";
-        if (ui.buttonLink.ref.value === "") {
-            ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
-        }
 
-        // Part Code Attributes
-        if (innerPart) {
-            const clickable = (innerPart.firstElementChild?.tagName === "BUTTON") ? innerPart.firstElementChild : innerPart;
-            ui.partCode.ref.firstElementChild.value = clickable.getAttribute("onclick") || "";
-            ui.partCode.ref.firstElementChild.nextElementSibling.value = innerPart.getAttribute("onmouseover") || "";
-            ui.partCode.ref.lastElementChild.value = innerPart.getAttribute("onmouseout") || "";
 
-            // Part Text and Images
-            if (innerPart.firstElementChild?.tagName === "IMG") {
-                ui.partText.ref.firstElementChild.nextElementSibling.value = innerPart.firstElementChild.src;
-            }
-            ui.partText.ref.lastElementChild.value = innerPart.innerHTML;
-        }
 
-        // Notes Data
-        ui.partText.ref.firstElementChild.value = coinFocus.dataset.notes || "";
-        
-        // Coordinates and IDs
-        if (curFocus === 0) {
-            infoFields.partY.value = parseInt(style.top) || 0;
-            infoFields.partX.value = parseInt(style.left) || 0;
-            infoFields.partW.value = parseInt(style.width) || 0;
-            infoFields.partH.value = parseInt(style.height) || 0;
-            infoFields.partNom.value = coinFocus.id || "";
-            infoFields.partText.value = coinFocus.dataset.notes || "";
-        }
-    } else if (curFocus === 1 && typeof Cur !== 'undefined') {
-        infoFields.partY.value = parseInt(Cur.style.top);
-        infoFields.partX.value = parseInt(Cur.style.left);
-        infoFields.partW.value = 64;
-        infoFields.partH.value = 64;
-        infoFields.partNom.value = "specialCursor";
-        infoFields.partText.value = `What does that special cursor even do?`;
-    }
-
-    // 5. GLOBAL UI UPDATES
-    updateState();
-
-    // Save Factor Outlines
-    [200, 300, 500, 800, 1000, 1200, 1500, 1800].forEach(num => {
-        ui[`save${num}`].ref.style.outline = "";
-    });
-    const factorMap = { "1": "200", "(100/500)": "500", "(100/768)": "800", "(100/1000)": "1000", "(100/1280)": "1200", "(100/1536)": "1500", "(100/2000)": "1800" };
-    const targetKey = `save${factorMap[lastFactor] || "300"}`;
-    ui[targetKey].ref.style.outline = "4px dotted lime";
-
-    // Textarea / Input syncing
-    infoFields.headerText.value = fileHeader;
-    infoFields.footerText.value = fileFooter;
-    infoFields.filename.value   = filename;
-    ui.snapGridIncrement.ref.value = T;
-
-    const currentLayerData = topLayer[topLayer.a_currentLayer];
-    ui.levelNotes.ref.value  = currentLayerData.h_notes;
-    ui.pageDescription.ref.value = currentLayerData.d_description;
-    ui.projectName.ref.value = topLayer.aa_project_name;
-
-    // Accumulator and Validation
-    infoFields.accumCount.innerText = topLayer.programStateAccumulator?.length || "0";
-    ui.partText.ref.style.outline = "";
-    try { JSON.parse(ui.partText.ref.value); } catch { ui.partText.ref.style.outline = "2px dashed red"; }
-
-    highlightLayer();
+if (useAllLayers) {
+document.getElementById("useAllLayers").style.outline = "2px dashed lime";
+document.getElementById("useAllLayers").style.backgroundColor = "rgba(255,0,0,0.35)";
+} else {
+document.getElementById("useAllLayers").style.outline = "";
+document.getElementById("useAllLayers").style.backgroundColor = "transparent";
 }
+
+
+
+
+
+
+
+
+
+
+
+if (coinFocus != null && coinFocus.style.filter != "none") {
+
+
+let filt = coinFocus.style.filter.replace(/[^ 0-9.]/g, "").split(" ");
+document.getElementById("filterBrightness").value = filt[0];
+document.getElementById("filterContrast").value   = filt[1];
+document.getElementById("filterIntensity").value  = filt[2];
+document.getElementById("filterGrayscale").value  = filt[3];
+document.getElementById("filterAntique").value    = filt[4];
+document.getElementById("filterInvert").value     = filt[5];
+document.getElementById("filterOpacity").value    = filt[6];
+if (filt.length == 8) {
+document.getElementById("filterBlur").value       = filt[7];
+} else {
+document.getElementById("filterBlur").value       =       0;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (coinFocus != null) { document.getElementById("classListEntry").value = coinFocus.lastElementChild.firstElementChild.classList.toString(); }
+
+
+
+
+updateState();
+
+
+
+
+
+
+
+[
+"save200",
+"save300",
+"save500",
+"save800",
+"save1000",
+"save1200",
+"save1500",
+"save1800"
+].forEach((save) => {
+ui[save].ref.style.outline = "";
+});
+
+switch (lastFactor) {
+case         "1" :  ui.save200.ref.style.outline = "4px dotted lime"; break;
+case "(100/500)" :  ui.save500.ref.style.outline = "4px dotted lime"; break;
+case "(100/768)" :  ui.save800.ref.style.outline = "4px dotted lime"; break;
+case "(100/1000)": ui.save1000.ref.style.outline = "4px dotted lime"; break;
+case "(100/1280)": ui.save1200.ref.style.outline = "4px dotted lime"; break;
+case "(100/1536)": ui.save1500.ref.style.outline = "4px dotted lime"; break;
+case "(100/2000)": ui.save1800.ref.style.outline = "4px dotted lime"; break;
+default          :  ui.save300.ref.style.outline = "4px dotted lime"; break;
+}
+
+
+document.getElementById("headerText").value = fileHeader;
+document.getElementById("footerText").value = fileFooter;
+
+
+if (coinFocus!=null) {
+
+if (ui.buttonLink.ref.value=="") {
+
+ui.buttonTooltip.ref.value = "GOTO >> " + coinFocus.id;
+
+}
+
+if (coinFocus!=null) {
+
+if (
+coinFocus.lastElementChild.firstElementChild.firstElementChild &&
+coinFocus.lastElementChild.firstElementChild.firstElementChild.tagName == "BUTTON"
+) {
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.firstElementChild.firstElementChild.getAttribute("onclick");
+} else {
+ui.partCode.ref.firstElementChild.value = coinFocus.lastElementChild.firstElementChild.getAttribute("onclick");
+}
+
+
+ui.partCode.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.firstElementChild.getAttribute("onmouseover");
+ui.partCode.ref.lastElementChild.value = coinFocus.lastElementChild.firstElementChild.getAttribute("onmouseout");
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+topLayer[topLayer.a_currentLayer].b_content.innerHTML = utilityLayer0.innerHTML;
+
+ui.snapGridIncrement.ref.value = T;
+
+if (coinFocus!=null&&coinFocus.dataset.notes) {
+ui.partText.ref.firstElementChild.value  = coinFocus.dataset.notes;
+} else {
+ui.partText.ref.firstElementChild.value  = "";
+}
+
+if (coinFocus!=null) {
+
+if (
+coinFocus.lastElementChild.firstElementChild.firstElementChild &&
+coinFocus.lastElementChild.firstElementChild.firstElementChild.tagName == "IMG"
+) {
+ui.partText.ref.firstElementChild.nextElementSibling.value = coinFocus.lastElementChild.firstElementChild.firstElementChild.src;
+}
+
+ui.partText.ref.lastElementChild.value   = coinFocus.lastElementChild.firstElementChild.innerHTML;
+}
+
+ui.partText.ref.firstElementChild.nextElementSibling.setAttribute("onfocus", "this.select()");
+
+
+
+ui.partText.ref.style.outline = "";
+try {
+JSON.parse(ui.partText.ref.value);
+} catch {
+ui.partText.ref.style.outline = "2px dashed red";
+}
+
+let filenameEntryLayers = document.getElementById("coin77671");
+filenameEntryLayers.value = filename;
+
+ui.levelNotes.ref.value  = topLayer[topLayer.a_currentLayer].h_notes;
+ui.pageDescription.ref.value  = topLayer[topLayer.a_currentLayer].d_description;
+ui.projectName.ref.value = topLayer.aa_project_name;
+
+let partY     = document.getElementById("partY"    ),
+    partX     = document.getElementById("partX"    ),
+    partW     = document.getElementById("partW"    ),
+    partH     = document.getElementById("partH"    ),
+    partNom   = document.getElementById("partNom"  ),
+    partText  = document.getElementById("partText" );
+
+
+
+if (coinFocus != null && curFocus == 0) {
+
+partY.value = parseInt(coinFocus.style.top)    ;
+partX.value = parseInt(coinFocus.style.left)   ;
+partW.value = parseInt(coinFocus.style.width)  ;
+partH.value = parseInt(coinFocus.style.height) ;
+
+if (coinFocus.id) {
+partNom.value = coinFocus.id;
+} else {
+partNom.value = "";
+}
+
+if (coinFocus.dataset.notes) {
+partText.value = coinFocus.dataset.notes;
+} else {
+coinFocus.dataset.notes = "";
+}
+
+} else if (curFocus==1) {
+
+partY.value    = parseInt(Cur.style.top) ;
+partX.value   = parseInt(Cur.style.left);
+partW.value  = 64                      ;
+partH.value = 64                      ;
+partNom.value   = "specialCursor"         ;
+partText.value  = `What does that special cursor even do?`;
+
+}
+
+
+
+
+
+
+
+
+
+try {
+document.getElementById("accumulatorCount").innerText = topLayer.programStateAccumulator.length;
+} catch {
+document.getElementById("accumulatorCount").innerText = "0";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+highlightLayer();
+
+}
+
+
+
+
+

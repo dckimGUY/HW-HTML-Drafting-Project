@@ -285,7 +285,6 @@ let idRoll = [];
 
 
 
-
 /* --- FINAL BROWSER REGIMENT: HARDENED & RECURSIVE --- */
 
 // 1. Setup global references into a config object
@@ -317,6 +316,11 @@ const serializeRecursive = (el) => {
         final = guts.cloneNode(true);
         oldInnerID = final.id;
 
+        // --- NEW: MAINTAIN CLASSES FROM LEVEL 2 ---
+        if (level2 && level2.classList.length > 0) {
+            final.classList.add(...level2.classList);
+        }
+
         // BUBBLE DATA: Level 0, 1, 2 datasets move to the final atomic leaf
         const keys = ["notes", "json", "audio", "state"];
         [level0, level1, level2].forEach(source => {
@@ -335,6 +339,11 @@ const serializeRecursive = (el) => {
         final = document.createElement("div");
         final.innerHTML = level2 ? level2.innerHTML : (level1 ? level1.innerHTML : "");
         
+        // --- NEW: MAINTAIN CLASSES FROM LEVEL 2 ---
+        if (level2 && level2.classList.length > 0) {
+            final.classList.add(...level2.classList);
+        }
+
         const keys = ["notes", "json", "audio", "state"];
         keys.forEach(key => {
             if (level0.dataset[key] !== undefined) {
@@ -399,7 +408,6 @@ const attributesToScrub = [/data-(angle|children|coinTrip|dragPull|finishedOutli
 attributesToScrub.forEach(reg => { string = string.replace(reg, ""); });
 
 doc = config.parser.parseFromString(string, 'text/html');
-
 
 
 

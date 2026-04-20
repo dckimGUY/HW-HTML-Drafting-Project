@@ -50,10 +50,6 @@ document.addEventListener('drop', async (e) => {
  coinFocus = utilityLayer0.firstElementChild;
  pageEchelon = Math.floor(utilityLayer0.firstElementChild.style.zIndex / 100000000) * 100000000;
  }
- if (coinFocus != null) {
- coinFocus.style.outline = fB;
- coinFocus.style.outlineOffset = fBO;
- }
  curFocus = (coinFocus == null) ? 1 : 0;
  makeTopLayer(topLayer.a_currentLayer);
  // Restore Buffers
@@ -103,6 +99,11 @@ const dropText = e.dataTransfer.getData("text").trim();
 const numberOfParts = utilityLayer0.children.length;
 const file = e.dataTransfer.files[0];
 if (!file) return;
+
+
+
+
+
 if (file.name.toLowerCase().endsWith('.css')) {
 hauptModeOriginalState = hauptMode;
 hauptMode = 0;
@@ -113,10 +114,23 @@ hauptMode = hauptModeOriginalState;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.firstElementChild.value = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.firstElementChild.innerText = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.lastElementChild.value = evt.target.result;
+utilityLayer0.lastElementChild.style.height   = "256px";
+utilityLayer0.lastElementChild.style.width    = "256px";
+utilityLayer0.lastElementChild.dataset.height = "256px";
+utilityLayer0.lastElementChild.dataset.width  = "256px";
+utilityLayer0.lastElementChild.style.left     = Math.floor(parseInt(e.pageX)/T) * T + "px";
+utilityLayer0.lastElementChild.style.top      = Math.floor(parseInt(e.pageY)/T) * T + "px";
+utilityLayer0.lastElementChild.dataset.left   = Math.floor(parseInt(e.pageX)/T) * T + "px";
+utilityLayer0.lastElementChild.dataset.top    = Math.floor(parseInt(e.pageY)/T) * T + "px";
+utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "style");
 };
 reader.readAsText(file);
 return 0;
 }
+
+
+
+
 if (file.name.toLowerCase().endsWith('.json')) {
 hauptModeOriginalState = hauptMode;
 hauptMode = 0;
@@ -127,10 +141,23 @@ hauptMode = hauptModeOriginalState;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.firstElementChild.value = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.firstElementChild.innerText = evt.target.result;
 utilityLayer0.lastElementChild.dataset.json = JSON.stringify(JSON.parse(evt.target.result));
+utilityLayer0.lastElementChild.style.height   = "256px";
+utilityLayer0.lastElementChild.style.width    = "256px";
+utilityLayer0.lastElementChild.dataset.height = "256px";
+utilityLayer0.lastElementChild.dataset.width  = "256px";
+utilityLayer0.lastElementChild.style.left     = Math.floor(parseInt(e.pageX)/T) * T + "px";
+utilityLayer0.lastElementChild.style.top      = Math.floor(parseInt(e.pageY)/T) * T + "px";
+utilityLayer0.lastElementChild.dataset.left   = Math.floor(parseInt(e.pageX)/T) * T + "px";
+utilityLayer0.lastElementChild.dataset.top    = Math.floor(parseInt(e.pageY)/T) * T + "px";
+utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "json");
 };
 reader.readAsText(file);
 return 0;
 }
+
+
+
+
 if (file.name.toLowerCase().endsWith('.js')) {
 hauptModeOriginalState = hauptMode;
 hauptMode = 0;
@@ -141,10 +168,24 @@ hauptMode = hauptModeOriginalState;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.firstElementChild.value = evt.target.result;
 utilityLayer0.lastElementChild.lastElementChild.firstElementChild.firstElementChild.innerText = evt.target.result;
 utilityLayer0.lastElementChild.dataset.addScript = evt.target.result;
+utilityLayer0.lastElementChild.style.height   = "256px";
+utilityLayer0.lastElementChild.style.width    = "256px";
+utilityLayer0.lastElementChild.dataset.height = "256px";
+utilityLayer0.lastElementChild.dataset.width  = "256px";
+utilityLayer0.lastElementChild.style.left     = Math.floor(parseInt(e.pageX)/T) * T + "px";
+utilityLayer0.lastElementChild.style.top      = Math.floor(parseInt(e.pageY)/T) * T + "px";
+utilityLayer0.lastElementChild.dataset.left   = Math.floor(parseInt(e.pageX)/T) * T + "px";
+utilityLayer0.lastElementChild.dataset.top    = Math.floor(parseInt(e.pageY)/T) * T + "px";
+utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "script");
 };
 reader.readAsText(file);
 return 0;
 }
+
+
+
+
+
 if (!file.type.startsWith("image/")&&!file.type.startsWith("audio/")&&!file.type.startsWith("video/")) {
 const reader = new FileReader();
 reader.onload = evt => {
@@ -165,8 +206,6 @@ readCoins();
 recoverColouration();
 if (utilityLayer0.children.length>0) {
 coinFocus = utilityLayer0.lastElementChild;
-coinFocus.style.outline = fB;
-coinFocus.style.outlineOffset = fBO;
 }
 } else {
 /* This puts a textual or HTML file into the div. */
@@ -174,8 +213,6 @@ e.target.lastElementChild.firstElementChild.innerHTML = reader.result.toString()
 e.target.dataset.fileInclude = `${file.name}`;
 coinFocus = e.target;
 recoverColouration();
-coinFocus.style.outline = fB;
-coinFocus.style.outlineOffset = fBO;
 }
 };
 reader.readAsText(file);
@@ -718,9 +755,9 @@ audio.style.margin = "0";
 audio.style.padding = "0";
 audio.style.border = "0";
 audio.controls="true";
-utilityLayer0.lastElementChild.style.height = "64";
+utilityLayer0.lastElementChild.style.height = "64px";
 utilityLayer0.lastElementChild.style.width = "256px";
-utilityLayer0.lastElementChild.dataset.height = "64";
+utilityLayer0.lastElementChild.dataset.height = "64px";
 utilityLayer0.lastElementChild.dataset.width = "256px";
 utilityLayer0.lastElementChild.style.left = Math.floor(parseInt(e.pageX)/T) * T + "px";
 utilityLayer0.lastElementChild.style.top = Math.floor(parseInt(e.pageY)/T) * T + "px";

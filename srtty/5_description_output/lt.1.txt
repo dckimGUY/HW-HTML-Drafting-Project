@@ -1,1 +1,0 @@
-Studijoje pateikiamas vaizdo klipo perrašymo rankiniu būdu metodas, siekiant sutvirtinti antraštės vertimo vamzdyną naudojant LibrePlayer (argos translate). @ info: whatsthis Čia pamoka apie mano kitų vadovėlių gamybą. Naudota programinė įranga yra prieinama GitHub saugyklA HTML Drafting projekto. Dabar aš žinau, kad aš atėjau visą ratą. Aš jau padariau pamoka apie mokymo.

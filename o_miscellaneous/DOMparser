@@ -1,4 +1,0 @@
-const parser = new DOMParser();
-const doc = parser.parseFromString(htmlText, 'text/html');
-
-console.log(doc.body)
