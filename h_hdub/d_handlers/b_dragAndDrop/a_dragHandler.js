@@ -1,3 +1,11 @@
+
+const go = {};
+      go.playAudio = function (trackName) { let player = new Audio(); player.src = document.getElementById(trackName).lastElementChild.firstElementChild.firstElementChild.dataset.audio; player.play(); }
+
+
+
+
+
 /* FIND THIS STRING TO CONTINUE */
 //if (file.name.toLowerCase().endsWith('.css')) {
 // 1. ALLOW THE DRAG: This prevents the browser from opening the file as a new tab
@@ -740,7 +748,7 @@ if (mouseCover.dataset &&
 mouseCover.dataset.coinTrip &&
 mouseCover.lastElementChild.firstElementChild.firstElementChild.tagName == "BUTTON") {
 mouseCover.lastElementChild.firstElementChild.firstElementChild.dataset.audio = evt.target.result;
-mouseCover.lastElementChild.firstElementChild.firstElementChild.setAttribute("onclick", "let player = new Audio(); player.src = this.dataset.audio; player.play();");
+mouseCover.lastElementChild.firstElementChild.firstElementChild.setAttribute("onclick", `go.playAudio("${mouseCover.id}");`);
 } else {
 insertNewCoin(["",78,78,true,false,false]);
 hauptMode = hauptModeOriginalState;

@@ -470,6 +470,8 @@ const go           = {};
       go.vwFactor  = ${factor};
       go.elm       = {};
       go.dat       = {};
+      go.aud       = [];
+      go.img       = [];
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
@@ -558,7 +560,7 @@ go.xqn.grp   = {};
 go.xqn.all   = [];
 go.xqn.style = [ "filter",  "scale", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
-go.ids.forEach(async (id) => {
+go.ids.forEach((id) => {
 go.elm[id]      = {};
 go.elm[id].func = {};
 go.elm[id].dat = {};
@@ -597,14 +599,18 @@ if (go.elm[id].dat.notes.pointerEvents &&
     go.elm[id].dat.notes.pointerEvents == "none"
 ) { go.elm[id].ref.style.pointerEvents = "none"; }
 
+
+
+
+
 /*** SET UP FOR AUDIO DATA ***/
 if (go.elm[id].ref.tagName == "AUDIO") {
 const audio = new Audio();
   audio.src = go.elm[id].ref.src;
-         if (!go.elm[id].aud) {
-              go.elm[id].aud = []; }
+         if (!go.elm[id].aud) { go.elm[id].aud = []; }
               go.elm[id].aud.push(audio);
               go.aud[id] = audio; }
+
   if (go.elm[id].ref.dataset.audio) {
 const audio = new Audio();
   audio.src = go.elm[id].ref.dataset.audio;
@@ -625,6 +631,10 @@ const audio = new Audio();
          if (!go.elm[id].aud) {
               go.elm[id].aud = []; }
               go.elm[id].aud.push(audio); } }
+
+
+
+
 
 /*** SET UP FOR IMAGE DATA ***/
 let num = 0;
