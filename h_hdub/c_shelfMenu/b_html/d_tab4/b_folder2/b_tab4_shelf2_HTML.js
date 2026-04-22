@@ -1,31 +1,13 @@
 shelfMenuHTML.tab4.folder2.HTML = `
-<button   id="clipCSS"   onclick="
-if ( event.altKey) {
-copyToClipboard(deMinimis(false,false,'','','parts' )[0]);
-} else {
-copyToClipboard(deMinimis(false,false,'','','parts' )[0] + deMinimis(false,false,'','','parts')[1]);
-}
-buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
-" class="button_ button_clip button_clipCSS"  title="CLIPBOARD:\n+SHIFT for Colour Group\n+ALT for Position Only"></button>
 
-<button   id="clipHTML"  onclick="
-copyToClipboard(deMinimis(false,false,'','','parts')[2]);
-buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
-" class="button_ button_clip button_clipHTML" title="CLIPBOARD:\n+SHIFT for Colour Group"></button>
-
-<button   id="clipCODE"  onclick="
-copyToClipboard(deMinimis(false,false,'','','parts')[3]);
-buzzWord(0,'COPY',96,'magenta',200,200,25,'top','','',event);
-" class="button_ button_clip button_clipCODE" title="CLIPBOARD:\n+SHIFT for Colour Group"></button>
-
-<button   id="save200"   class="button_ button_save200  drag-button" draggable="tru" title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
-<button   id="save300"   class="button_ button_save300  drag-button" draggable="tru" title="This One Uses Your Window Width"></button>
+<button   id="save200"   class="button_ button_save200  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
+<button   id="save300"   class="button_ button_save300  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
 <button   id="save500"   class="button_ button_save500  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save800"   class="button_ button_save800  drag-button" draggable="tru" title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
-<button   id="save1000"  class="button_ button_save1000 drag-button" draggable="tru" title="set metric in tab 2-1"></button>
-<button   id="save1200"  class="button_ button_save1200 drag-button" draggable="tru" title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
-<button   id="save1500"  class="button_ button_save1500 drag-button" draggable="tru" title="+SHIFT for colour group\n+CTRL to save .txt\n+ALT for minimal style"></button>
-<button   id="save1800"  class="button_ button_save1800 drag-button" draggable="tru" title="set metric in tab 2-1"></button>
+<button   id="save800"   class="button_ button_save800  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
+<button   id="save1000"  class="button_ button_save1000 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
+<button   id="save1200"  class="button_ button_save1200 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
+<button   id="save1500"  class="button_ button_save1500 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
+<button   id="save1800"  class="button_ button_save1800 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
 
 <button   id="textFlow"  onclick="cookieCutterSave();" class="button_ button_clip button_textFlow" title="AUTO-SAVE SLICES SEQUENTIALLY\n(an empty slice stops the process)\n(parts register in at top left only)"></button>
 

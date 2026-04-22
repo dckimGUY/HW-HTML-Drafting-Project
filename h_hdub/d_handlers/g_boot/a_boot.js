@@ -908,11 +908,11 @@ document.documentElement.click();
 /* Completion Message */
 console.log(
 `%c${document.querySelector('meta[name="last-build"]').content}
-%chdub
+%chdub 
 %c[ Pixel Art Edition ]
  it's all i know...
 `,
-'color: rgb( 77,136,255); font-size: 24px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;',
-'color: rgb( 77,136,255); font-size: 120px; font-family: dckimPixelMono; text-shadow: 0px 3.5px 0px lime, 3.5px 0px 0px magenta, 3.5px 3.5px 0px magenta;',
-'color: rgb( 77,136,255); font-size: 24px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;',
+'color: #00a1ee; font-size: 24px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;',
+'color: #00a1ee; font-size: 120px; font-family: dckimPixelMono; text-shadow: 0px 3.5px 0px lime, 3.5px 0px 0px magenta, 3.5px 3.5px 0px magenta;',
+'color: #00a1ee; font-size: 24px; font-family: dckimPixelMono; text-shadow: 0px 1px 0px lime, 1px 0px 0px magenta, 1px 1px 0px magenta;',
 );

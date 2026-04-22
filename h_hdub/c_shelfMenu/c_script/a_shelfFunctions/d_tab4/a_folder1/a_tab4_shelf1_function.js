@@ -143,9 +143,6 @@ ui.hdubPartDesignations.input = function() {
   const current = ui.hwString.currentSel;
   ui.hwString[current].part = finalValue;
   
-  // Also sync the string logic to ensure the canvas reflects the state
-  ui.hwString[current].string = finalValue;
-  
   localStorage.setItem("hwString", JSON.stringify(ui.hwString));
   
   loadLetterInputs();
@@ -1236,40 +1233,388 @@ ui[name].colour  = "hdubBlue";
 /* HERE ARE SOME DEFAULT EXAMPLE CONTENTS FOR THE ARRAY OF INSERTION HTML */
 
 /* THIS ONE IS ALWAYS PUT IN, IN CASE OF NO CONTENTS */
-ui.hdubO.title = "default";
-ui.hdubO.value = '<div style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;"></div>';
 
-ui.hdubA.title = '            '; ui.hdubA.value = '';
-ui.hdubB.title = 'button input'; ui.hdubB.value = '<input type="button" name="button" style="width: 100%; height: 100%;" value="">';
-ui.hdubC.title = 'HTML canvas '; ui.hdubC.value = `<canvas style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;"></canvas><!-- NORMALLY THE HTML CANVAS ELEMENT IS USED IN THE 'ABSTRACT SENSE' WITHOUT PLACING IT INTO THE PAGE, BUT FOR TESTING PURPOSES IT CAN BE CONVENIENT -->`;
-ui.hdubD.title = 'colour input'; ui.hdubD.value = '<input type="color" name="colour" value="#AAAAAA" style="width: 100%; height: 100%; margin: 0; border: 0; padding: 0;">';
-ui.hdubE.title = '            '; ui.hdubE.value = '';
-ui.hdubF.title = 'form        '; ui.hdubF.value = `<form name="form" style="width: 100%; height: 100%;">
-<!-- THERE IS NOTHING YOU CAN WRITE THAT WILL MAKE THIS 'FIT', EVER, OTHER THAN REMOVING THE DEFAULT STYLING -->
-<input type="value"  name="value1" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value1">
-<input type="value"  name="value2" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value2">
-<input type="value"  name="value3" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value3">
-<input type="value"  name="value4" style="width: 100%; height: 20%; margin: 0; border: 0; padding: 0;" value="" placeholder="value4">
-<input type="button" name="button" style="width: 100%; height: 20%;" value="">
-</form>`;
-ui.hdubG.title = '            '; ui.hdubG.value = '';
-ui.hdubH.title = 'header 1'    ; ui.hdubH.value = '<h1 style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed red;" contenteditable="true"></h1>';
-ui.hdubI.title = 'iframe      '; ui.hdubI.value = '<iframe src="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;"></iframe>';
-ui.hdubJ.title = '            '; ui.hdubJ.value = '';
-ui.hdubK.title = '            '; ui.hdubK.value = '';
-ui.hdubL.title = 'ordered list'; ui.hdubL.value = '<ol style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed purple;" contenteditable="true"><li></li></ol>';
-ui.hdubM.title = 'marquee     '; ui.hdubM.value = '<marquee direction="left" scrollamount="4" behavior="scroll" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;" onmouseover="this.stop();" onmouseout="this.start();" contenteditable="true">default</marquee>';
-ui.hdubN.title = 'number input'; ui.hdubN.value = '<input type="number" name="number" min="" max="" step="" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
-ui.hdubP.title = 'paragraph'   ; ui.hdubP.value = '<p style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed green;" contenteditable="true"></p>';
-ui.hdubQ.title = 'blockquote'  ; ui.hdubQ.value = '<blockquote style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed magenta;" contenteditable="true"></blockquote>';
-ui.hdubR.title = 'radio button'; ui.hdubR.value = '<input type="radio" name="radio" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
-ui.hdubS.title = 'slider range'; ui.hdubS.value = '<input type="range" name="range" min="" max="" step="" value="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
-ui.hdubT.title = 'textarea    '; ui.hdubT.value = '<textarea name="textarea" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;"></textarea>';
-ui.hdubU.title = 'unordered list'; ui.hdubU.value = '<ul style="margin: 0px; width: 100%; height: 100%; outline-offset: -3px; outline: 3px dashed purple;" contenteditable="true"><li></li></ul>';
-ui.hdubV.title = 'value input '; ui.hdubV.value = '<input type="value" name="value" value="" placeholder="" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
-ui.hdubW.title = '            '; ui.hdubW.value = '';
-ui.hdubY.title = 'checkbox    '; ui.hdubY.value = '<input type="checkbox" name="checkbox" style="width: 100%; height: 100%; margin: 0px; border: 0px; padding: 0px;">';
-ui.hdubZ.title = '            '; ui.hdubZ.value = '';
+
+ui.hdubA.title = 'div         '; ui.hdubA.value = `<div>
+  <div id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <div> tag is a generic block-level container used to group elements for layout.
+      FUNCTIONAL CONTEXT: It creates an organizational boundary to manage multiple elements as a single unit.
+      NAVIGATION: The 'id' attribute provides a unique identifier for CSS, JavaScript, or anchor link targeting.
+    -->
+    The div element defines a logical section or container within an HTML document.
+  </div>
+</div>`;
+
+ui.hdubB.title = 'span        '; ui.hdubB.value = `<div>
+  <span id="" style="width: 100%; height: 100%; min-height: 1px; display: inline-block; margin: 0; padding: 0; box-sizing: border-box; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <span> is an inline container used to mark up a part of a text or a document.
+      FUNCTIONAL CONTEXT: It is used to group elements for styling purposes (using class or id) or for scripting, without providing any structural meaning.
+      NAVIGATION: The 'id' attribute creates a unique identifier that allows the element to be targeted by links, scripts, or styles.
+    -->
+    The span element is an inline container for phrasing content.
+  </span>
+</div>`;
+
+ui.hdubC.title = 'section     '; ui.hdubC.value = `<div>
+  <section id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <section> element represents a standalone, thematic grouping of content, typically with a heading.
+      FUNCTIONAL CONTEXT: It provides semantic meaning to the document structure, identifying a specific area related to a single topic.
+      NAVIGATION: The 'id' attribute allows this specific section to be targeted by navigation links or scripts.
+    -->
+    <header>
+      <h2>Section Heading</h2>
+    </header>
+    <p>The section element groups related content together under a specific theme or topic.</p>
+  </section>
+</div>`;
+
+
+ui.hdubD.title = 'article     '; ui.hdubD.value = `<div>
+  <article id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <article> element represents a complete, self-contained composition that is independently distributable or reusable.
+      FUNCTIONAL CONTEXT: It is used for content like blog posts, news reports, or forum posts that make sense on their own outside of the page context.
+      NAVIGATION: The 'id' attribute provides a unique anchor for linking directly to this specific piece of content.
+    -->
+    <header>
+      <h1>Article Title</h1>
+      <p>A brief summary or byline for the content.</p>
+    </header>
+    <p>The introductory section provides the initial context and states the primary topic of the article.</p>
+    <p>The body contains the main findings, data, or arguments, organized into logical paragraphs.</p>
+    <footer>
+      <p>The footer contains supplementary information such as author credits, dates, or concluding remarks.</p>
+    </footer>
+  </article>
+</div>`;
+
+
+ui.hdubE.title = 'main        '; ui.hdubE.value = `<div>
+  <main id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <main> tag defines the dominant content of the <body>. It should contain content unique to the document and exclude repeated elements like sidebars or navigation.
+      FUNCTIONAL CONTEXT: It acts as the primary container for the page's central topic, establishing a clear information hierarchy for browsers and assistive technologies.
+      NAVIGATION: Assigning an 'id' allows for "Skip to Main Content" links, improving accessibility and direct navigation.
+    -->
+    <h1>Primary Page Content</h1>
+    <article>
+      <p>The main element contains the central information or functional parts of the page that are unique to this specific document.</p>
+    </article>
+  </main>
+</div>`;
+
+
+ui.hdubF.title = 'aside       '; ui.hdubF.value = `<div>
+  <aside id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <aside> element contains content that is tangentially related to the main content, such as sidebars, callouts, or pull-quotes.
+      FUNCTIONAL CONTEXT: It provides supplementary information that can be considered separate from the primary flow of the document.
+      NAVIGATION: The 'id' attribute allows this specific sidebar or note to be referenced by internal links or citations.
+    -->
+    <h3>Supplemental Information</h3>
+    <p>The aside element is used for content like related links, glossaries, or additional notes that complement the surrounding text.</p>
+  </aside>
+</div>`;
+
+
+ui.hdubG.title = 'header      '; ui.hdubG.value = `<div>
+  <header id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <header> element is a container for introductory content, typically including headings, logos, or navigation sets.
+      FUNCTIONAL CONTEXT: It serves as the top-level identifying section for a document or a nested section.
+      NAVIGATION: Assigning an 'id' allows for "Back to Top" links or direct navigation to the beginning of a specific section.
+    -->
+    <h1>Document Title</h1>
+    <nav>Home | About | Contact</nav>
+  </header>
+</div>`;
+
+
+ui.hdubH.title = 'footer      '; ui.hdubH.value = `<div>
+  <footer id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <footer> element provides a concluding section for its nearest sectioning content or sectioning root element.
+      FUNCTIONAL CONTEXT: It typically contains metadata such as copyright information, contact details, site maps, or legal links.
+      NAVIGATION: The 'id' attribute enables direct linking to contact or legal information located at the bottom of the page.
+    -->
+    <p>&copy; 2024 Company Name. All rights reserved.</p>
+    <p>Contact information and site metadata.</p>
+  </footer>
+</div>`;
+
+
+ui.hdubI.title = 'nav         '; ui.hdubI.value = `<div>
+  <nav id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <nav> element defines a section of a page that contains links to other pages or to parts within the page.
+      FUNCTIONAL CONTEXT: It identifies major blocks of navigation links, assisting screen readers and search engines in identifying site structure.
+      INTERNAL LINKING: Navigation links use the 'href' attribute to target 'id' attributes elsewhere on the page. Using <a href="#target_id"> directs the browser to the element with the corresponding ID.
+    -->
+    <ul>
+      <li><a href="#id_of_another_part">Link to Page Section</a></li>
+    </ul>
+  </nav>
+</div>`;
+
+
+ui.hdubJ.title = 'paragraph   '; ui.hdubJ.value = `<div>
+  <p id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <p> element represents a paragraph of text. It is a block-level element that typically adds vertical spacing between blocks of prose.
+      FUNCTIONAL CONTEXT: It is used to group related sentences together to form a cohesive unit of information or a single point of discussion.
+      NAVIGATION: The 'id' attribute allows for direct linking to a specific paragraph within a larger body of text.
+    -->
+    The paragraph element is used to organize text into distinct blocks, improving readability and structure within a document.
+  </p>
+</div>`;
+
+
+ui.hdubK.title = 'blockquote  '; ui.hdubK.value = `<div>
+  <blockquote id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <blockquote> element represents a section that is quoted from another source. It is typically rendered with indentation.
+      FUNCTIONAL CONTEXT: It is used to separate and identify content attributed to an external source, often including a citation.
+      NAVIGATION: The 'id' attribute provides a specific anchor to link directly to this quoted material.
+    -->
+    "The blockquote element is used to indicate that the enclosed text is an extended quotation from another source."
+    <cite>— Source Name</cite>
+  </blockquote>
+</div>`;
+
+
+ui.hdubL.title = 'pre         '; ui.hdubL.value = `<div>
+  <pre id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+<!-- 
+  HTML CONTEXT: The <pre> element represents preformatted text which is to be presented exactly as written in the HTML file.
+  FUNCTIONAL CONTEXT: Whitespace, tabs, and line breaks are preserved, and text is typically displayed in a fixed-width font.
+  NAVIGATION: The 'id' attribute allows for direct linking to this specific block of preformatted text or code.
+-->
+This text 
+  preserves 
+    original spacing.
+  </pre>
+</div>`;
+
+
+ui.hdubM.title = 'code        '; ui.hdubM.value = `<div>
+  <code id="" style="width: 100%; height: 100%; min-height: 1px; display: inline-block; margin: 0; padding: 0; box-sizing: border-box; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <code> element is used to define a fragment of computer code.
+      FUNCTIONAL CONTEXT: It marks up short fragments of computer-readable text, such as variable names, function calls, or file paths, typically rendering them in a monospaced font.
+      NAVIGATION: The 'id' attribute enables direct linking to a specific code snippet or technical reference point.
+    -->
+    function example() { return true; }
+  </code>
+</div>`;
+
+
+ui.hdubN.title = 'ul          '; ui.hdubN.value = `<div>
+  <ul id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0 0 0 4em; box-sizing: border-box; list-style-position: outside; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <ul> element represents an unordered list of items, typically rendered with bullets.
+      FUNCTIONAL CONTEXT: It is used to group related items where the specific order or sequence does not change the meaning of the content.
+      NAVIGATION: The 'id' attribute allows the entire list to be targeted by internal links or scripts.
+    -->
+    <li>List item one.</li>
+    <li>List item two.</li>
+    <li>List item three.</li>
+  </ul>
+</div>`;
+
+
+ui.hdubO.title = 'default     '; ui.hdubO.value = `<div id="" style="width: 100%; height: 100%; outline-offset: -2px; outline: 2px dashed blue;">
+  <!-- PURPOSE: This is the default element used as a standard starting component. The 'id' attribute is used for identification within the system. -->
+  Default
+</div>`;
+
+
+ui.hdubP.title = 'ol          '; ui.hdubP.value = `<div>
+  <ol id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0 0 0 4em; box-sizing: border-box; list-style-position: outside; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <ol> element represents an ordered list of items, typically rendered with numbers.
+      FUNCTIONAL CONTEXT: It is used for content where the sequence is significant, such as step-by-step procedures, rankings, or chronological events.
+      NAVIGATION: The 'id' attribute allows for direct linking to the start of a specific sequence or procedure.
+    -->
+    <li>Step one.</li>
+    <li>Step two.</li>
+    <li>Step three.</li>
+  </ol>
+</div>`;
+
+
+ui.hdubQ.title = 'li          '; ui.hdubQ.value = `<div>
+  <li id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <li> element defines an individual item within an ordered (<ol>) or unordered (<ul>) list.
+      FUNCTIONAL CONTEXT: It represents a single entry or data point within a parent list container.
+      NAVIGATION: The 'id' attribute allows for direct linking to a specific item or step within a list.
+    -->
+    List item content.
+  </li>
+</div>`;
+
+
+ui.hdubR.title = 'dl          '; ui.hdubR.value = `<div>
+  <dl id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <dl> element defines a description list, used to group terms with their associated descriptions.
+      FUNCTIONAL CONTEXT: It is used for glossaries, metadata, or any list of key-value pairs where specific terms require definition or explanation.
+      NAVIGATION: The 'id' attribute allows the entire description list or glossary to be targeted by internal links.
+    -->
+    <dt>Term</dt>
+    <dd>The definition or description of the term.</dd>
+    <dt>Term</dt>
+    <dd>The definition or description of the term.</dd>
+  </dl>
+</div>`;
+
+
+ui.hdubS.title = 'dt          '; ui.hdubS.value = `<div>
+  <dt id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <dt> element specifies a term in a description or definition list (<dl>).
+      FUNCTIONAL CONTEXT: It represents the "key" or name part of a term-description pairing, preceding the <dd> element.
+      NAVIGATION: A unique 'id' on the term allows for direct linking to this specific definition within a list.
+    -->
+    Term
+  </dt>
+</div>`;
+
+
+ui.hdubT.title = 'dd          '; ui.hdubT.value = `<div>
+  <dd id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <dd> element provides the description, definition, or value for the preceding <dt> in a description list.
+      FUNCTIONAL CONTEXT: It contains the data or explanation corresponding to a specific term, typically indented by default in browsers.
+      NAVIGATION: The 'id' attribute allows for direct linking to this specific explanation or definition.
+    -->
+    Definition or description text.
+  </dd>
+</div>`;
+
+
+ui.hdubU.title = 'table builder'; ui.hdubU.value = `<div>
+  <!-- 
+    PURPOSE: This micro-program makes it possible to build custom data grids that dynamically fill the height of the parent container. 
+    LITERARY CONTEXT: A table makes a Comparative Matrix. 
+    INSTRUCTIONS: Select dimensions, alignment, and optional headers, then click 'Build Table'. 
+  -->
+  <div style="width: 100%; height: 100%; min-height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000; color: #0ff; font-family: monospace; border: 2px dashed #444; box-sizing: border-box; padding: 10px;">
+    <div style="margin-bottom: 8px;">
+      R: <input type="number" value="5" style="width: 35px; background: #222; color: #0ff; border: 1px solid #0ff; text-align: center;">
+      C: <input type="number" value="5" style="width: 35px; background: #222; color: #0ff; border: 1px solid #0ff; text-align: center;">
+      ALIGN: <select style="background: #222; color: #0ff; border: 1px solid #0ff; font-family: inherit;">
+        <option value="left">LEFT</option>
+        <option value="center" selected>CENTER</option>
+        <option value="right">RIGHT</option>
+      </select>
+    </div>
+    <div style="margin-bottom: 8px; font-size: 10px;">
+      <input type="checkbox"> TOP HEADER
+      <input type="checkbox"> LEFT HEADER
+    </div>
+    <button onclick="
+      /* Traversing from the button up to the container, then down to the input rows */
+      const btn = this;
+      const checkRow = btn.previousElementSibling;
+      const inputRow = checkRow.previousElementSibling;
+      
+      const r = parseInt(inputRow.children[0].value);
+      const c = parseInt(inputRow.children[1].value);
+      const a = inputRow.children[2].value;
+      const tH = checkRow.children[0].checked;
+      const lH = checkRow.children[1].checked;
+      
+      let tableHtml = '<div style=\\'width:100%; height:100%; display:block; box-sizing:border-box;\\'><table style=\\'width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; text-align: ' + a + ';\\' contenteditable=\\'true\\'>';
+      
+      for(let i=0; i<r; i++){
+        tableHtml += '<tr style=\\'height: ' + (100/r) + '%;\\'>';
+        for(let j=0; j<c; j++){
+          let isTopLeft = (tH && lH && i === 0 && j === 0);
+          let isTopLabel = (tH && i === 0 && !isTopLeft);
+          let isLeftLabel = (lH && j === 0 && !isTopLeft);
+          let tag = (isTopLeft || isTopLabel || isLeftLabel) ? 'th' : 'td';
+          let content = isTopLeft ? 'TITLE' : (isTopLabel ? 'LABEL ' + (lH ? j : j + 1) : (isLeftLabel ? 'LABEL ' + (tH ? i : i + 1) : (tH ? i : i + 1) + ':' + (lH ? j : j + 1)));
+          tableHtml += '<' + tag + ' style=\\'border: 1px solid #666; padding: 4px; overflow: hidden; font-weight: ' + (tag === 'th' ? 'bold' : 'normal') + ';\\'>' + content + '</' + tag + '>';
+        }
+        tableHtml += '</tr>';
+      }
+      tableHtml += '</table></div>';
+      btn.parentElement.parentElement.innerHTML = tableHtml;
+    " style="cursor: pointer; background: #0ff; color: #000; border: none; padding: 5px 15px; font-weight: bold; font-family: inherit;">BUILD TABLE</button>
+  </div>
+</div>`;
+
+
+
+
+
+
+ui.hdubV.title = 'tr          '; ui.hdubV.value = `<div>
+  <tr id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: table-row; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <tr> element defines a row of cells in a table.
+      FUNCTIONAL CONTEXT: It acts as a container for table header (<th>) or table data (<td>) elements, organizing them into a single horizontal line.
+      NAVIGATION: An 'id' attribute allows for direct linking or programmatic access to a specific record or row within the table.
+    -->
+    <td>Data Cell</td><td>Data Cell</td><td>Data Cell</td>
+  </tr>
+</div>`;
+
+
+ui.hdubW.title = 'td          '; ui.hdubW.value = `<div>
+  <td id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; border: 1px solid; box-sizing: border-box; display: table-cell; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <td> element defines a standard data cell within an HTML table.
+      FUNCTIONAL CONTEXT: It contains data and is used as a child of a <tr> element to represent an individual unit of information.
+      NAVIGATION: The 'id' attribute allows for direct linking or referencing of a specific data point within a table grid.
+    -->
+    Data Point
+  </td>
+</div>`;
+
+
+ui.hdubX.title = 'form        '; ui.hdubX.value = `<div>
+  <form id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; line-height: normal;">
+    <!-- 
+      HTML CONTEXT: The <form> element represents a document section containing interactive controls for submitting information to a web server.
+      FUNCTIONAL CONTEXT: It serves as a container for input elements, such as text fields, checkboxes, and buttons, allowing for structured data collection.
+      NAVIGATION: The 'id' attribute allows for direct linking to the input section or for targeting by scripts and labels.
+    -->
+    <label>Input Label:</label>
+    <input type="text" placeholder="Entry field">
+  </form>
+</div>`;
+
+
+ui.hdubY.title = 'fieldset    '; ui.hdubY.value = `<div>
+  <fieldset id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; line-height: normal;">
+    <!-- 
+      HTML CONTEXT: The <fieldset> element is used to group several controls and labels within a web form.
+      FUNCTIONAL CONTEXT: It provides a logical grouping of related form elements, making the form easier to understand and more accessible.
+      NAVIGATION: The 'id' attribute allows for direct linking to a specific grouping or category of form inputs.
+    -->
+    <legend>Group Label</legend>
+    <p>This area contains a set of related form controls.</p>
+  </fieldset>
+</div>`;
+
+
+ui.hdubZ.title = 'details     '; ui.hdubZ.value = `<div>
+  <details id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; line-height: normal;" contenteditable="true">
+    <!-- 
+      HTML CONTEXT: The <details> element creates an interactive disclosure widget that the user can open or close.
+      FUNCTIONAL CONTEXT: It is used to hide additional information or technical details that are not required for the primary viewing of the document.
+      NAVIGATION: The 'id' attribute allows for direct linking to this specific widget, enabling the browser to navigate to its location on the page.
+    -->
+    <summary>Expand for more information</summary>
+    <p>This section contains additional content that is hidden by default and revealed upon user interaction.</p>
+  </details>
+</div>`;
+
 
 
 

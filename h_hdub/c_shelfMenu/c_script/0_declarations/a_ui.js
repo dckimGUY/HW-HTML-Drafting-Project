@@ -348,6 +348,63 @@ ui[name].ref.style.outline = "";
 ui[name].ref.style.zIndex = 100;
 });
 
+
+
+ui.hwString.hwSel_a.string = "h20w100h10w100h90w70w30h40w50w50h20w100";
+ui.hwString.hwSel_b.string = "h40w100h80w50w50h40w33w33w34h20w100";
+ui.hwString.hwSel_c.string = "h80w100h60w50w50h20w25w25w25w25h20w100";
+ui.hwString.hwSel_d.string = "h40w50w50h40w50w50h40w50w50h40w50w50h20w100";
+ui.hwString.hwSel_e.string = "h30w100h120w80w20h30w100";
+ui.hwString.hwSel_f.string = "h50w50w50h50w50w50h50w50w50h30w100";
+ui.hwString.hwSel_g.string = "h15w100h15w100h120w30w40w30h30w100";
+ui.hwString.hwSel_i.string = "h60w100h60w100h60w100";
+ui.hwString.hwSel_j.string = "h20w20w20w20w20w20h140w100h20w100";
+ui.hwString.hwSel_k.string = "h90w50w50h90w50w50";
+ui.hwString.hwSel_l.string = "h30w100h30w100h30w100h30w100h30w100h30w100";
+ui.hwString.hwSel_m.string = "h180w30w70";
+ui.hwString.hwSel_n.string = "h45w25w25w25w25h45w25w25w25w25h45w25w25w25w25h45w25w25w25w25";
+ui.hwString.hwSel_o.string = "h60w100h60w100h60w100";
+ui.hwString.hwSel_p.string = "h20w100h140w70w30h20w100";
+ui.hwString.hwSel_q.string = "h90w100h90w100";
+ui.hwString.hwSel_r.string = "h30w100h120w20w20w20w20w20h30w100";
+ui.hwString.hwSel_s.string = "h180w50w50";
+ui.hwString.hwSel_t.string = "h20w100h20w100h100w100h20w100h20w100";
+ui.hwString.hwSel_u.string = "h180w100";
+ui.hwString.hwSel_v.string = "h40w100h100w100h40w100";
+ui.hwString.hwSel_x.string = "h60w50w50h60w50w50h60w50w50";
+ui.hwString.hwSel_y.string = "h90w100h90w50w50";
+ui.hwString.hwSel_z.string = "h30w100h120w100h30w100";
+
+ui.hwString.hwSel_a.part = "GIEFDCHZ";
+ui.hwString.hwSel_b.part = "KLMNPQH";
+ui.hwString.hwSel_c.part = "UYXVWRTO";
+ui.hwString.hwSel_d.part = "JBXABOZH";
+ui.hwString.hwSel_e.part = "GECFZH";
+ui.hwString.hwSel_f.part = "XYZUVMH";
+ui.hwString.hwSel_g.part = "GIEDFH";
+ui.hwString.hwSel_i.part = "DCL";
+ui.hwString.hwSel_j.part = "STNMUKH";
+ui.hwString.hwSel_k.part = "EFDC";
+ui.hwString.hwSel_l.part = "GIMLXPH";
+ui.hwString.hwSel_m.part = "RML";
+ui.hwString.hwSel_n.part = "NPQSNPQSNPQSNPQ";
+ui.hwString.hwSel_o.part = "OOO";
+ui.hwString.hwSel_p.part = "GEFH";
+ui.hwString.hwSel_q.part = "AB";
+ui.hwString.hwSel_r.part = "GRSTXMH";
+ui.hwString.hwSel_s.part = "DD";
+ui.hwString.hwSel_t.part = "GIXZH";
+ui.hwString.hwSel_u.part = "U";
+ui.hwString.hwSel_v.part = "GVH";
+ui.hwString.hwSel_x.part = "YXYXYX";
+ui.hwString.hwSel_y.part = "YAX";
+ui.hwString.hwSel_z.part = "GZH";
+
+
+
+
+
+
 ["hwSel_a", "hwSel_d", "hwSel_g", "hwSel_k", "hwSel_n", "hwSel_q", "hwSel_t", "hwSel_x"].forEach((name) => { ui.hwString[name].colour = "mediumspringgreen"; });
 ["hwSel_b", "hwSel_e", "hwSel_i", "hwSel_l", "hwSel_o", "hwSel_r", "hwSel_u", "hwSel_y"].forEach((name) => { ui.hwString[name].colour = "lawngreen"; });
 ["hwSel_c", "hwSel_f", "hwSel_j", "hwSel_m", "hwSel_p", "hwSel_s", "hwSel_v", "hwSel_z"].forEach((name) => { ui.hwString[name].colour = "greenyellow"; });

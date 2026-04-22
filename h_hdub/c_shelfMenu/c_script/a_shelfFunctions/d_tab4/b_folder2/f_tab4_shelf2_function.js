@@ -199,7 +199,7 @@ if (layerRef) string = layerRef;
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: filter, scale, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
+  transition-property: visibility, filter, scale, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
   transition-delay: 0ms;
@@ -448,12 +448,13 @@ const lvlRoll = {};
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
+
 if (topLayer[i].b_content.children[j].dataset.addScript) {
 addToScript += "\n" + topLayer[i].b_content.children[j].dataset.addScript;
-topLayer[i].b_content.children[j].remove();
-continue;
-}
+} else {
 lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j].id);
+}
+
 }
 }
 
@@ -490,6 +491,16 @@ ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace
 /**************************************/
 /**************************************/
 
+/*
+
+  1 (function() {
+  2 let state = (this.lastState === 0) ? 1 : 0;
+  3 go.xqn.grp['state58519'].rate.set(1000);
+  4 go.setState(go.xqn.grp['state58519'][state]);
+  5 this.lastState = state;
+  6 }).call(go);
+
+*/
 
 
 
@@ -500,40 +511,52 @@ ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace
 
 
 
-if (useAllLayers == true) {
+
 scriptStarter += `
-      go.disp      = {};
-      go.disp.ids  =
-${JSON.stringify(lvlRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
-      go.disp.show = {}; for (let i = 1; i < 21; i++) {
-      go.disp.show["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display = "block"; } catch { }; } return 0; }; }
-      go.disp.hide = {}; for (let i = 1; i < 21; i++) {
-      go.disp.hide["LVL" + i] = function() { for (g of go.disp.ids["LVL" + i]) { try { document.getElementById(g).style.display =  "none"; } catch { }; } return 0; }; }
-      go.styleLevels   = function(style, value, levelArray) { let array = levelArray ? levelArray : Array.from({length: 20}, (_, i) => i + 1);
-                        for (let r of array) { for (let id of go.disp.ids["LVL" + r]) { document.getElementById(id).style[style] = value; } } return 0; }
-      go.showLevels    = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.show["LVL" + i](); }; return 0; } for (r of levelArray) { go.disp.show["LVL" + r](); }; return 0; };
-      go.hideLevels    = function(levelArray) { if (!levelArray) { for (let i = 1; i < 21; i++) { go.disp.hide["LVL" + i](); }; return 0; } for (r of levelArray) { go.disp.hide["LVL" + r](); }; return 0; };
-      go.fadeInLevels  = function(levelArray) { let array = levelArray ? levelArray : Array.from({length: 20}, (_, i) => i + 1);
-                        for (let r of array) { for (let id of go.disp.ids["LVL" + r]) { document.getElementById(id).style.opacity = "1"; } } return 0; }
-      go.fadeOutLevels = function(levelArray) { let array = levelArray ? levelArray : Array.from({length: 20}, (_, i) => i + 1);
-                        for (let r of array) { for (let id of go.disp.ids["LVL" + r]) { document.getElementById(id).style.opacity = "0"; } } return 0; }
+go.disp = {};
+go.disp.ids = ${JSON.stringify(lvlRoll).replace('["', '[\n"').replace('"]', '"\n]').replace(/",/g, '",\n')};
+
+go.fadeIn = function(input) { let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) { let process = (id) => { let el = document.getElementById(id); if (el) { el.style.opacity = "1"; el.style.visibility = "visible"; } };
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { process(id); } } catch { } } else { process(item); } } return 0; };
+
+go.fadeOut = function(input) { let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) { let process = (id) => { let el = document.getElementById(id); if (el) { el.style.opacity = "0"; el.style.visibility = "hidden"; } };
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { process(id); } } catch { } } else { process(item); } } return 0; };
+
+go.show = function(input) { 
+let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) {
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { let el = document.getElementById(id); if (el) { el.style.display = "block"; } } } catch { } } 
+else { let el = document.getElementById(item); if (el) { el.style.display = "block"; } } } return 0; };
+
+go.hide = function(input) { 
+let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) {
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { let el = document.getElementById(id); if (el) { el.style.display = "none"; } } } catch { } } 
+else { let el = document.getElementById(item); if (el) { el.style.display = "none"; } } } return 0; };
+
+go.style = function(prop, value, input) { let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) { let process = (id) => { let el = document.getElementById(id); if (el) { el.style[prop] = value; } };
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { process(id); } } catch { } } else { process(item); } } return 0; };
+
+go.addClass = function(className, input) { let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) { let process = (id) => { let el = document.getElementById(id); if (el) { el.classList.add(className); } };
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { process(id); } } catch { } } else { process(item); } } return 0; };
+
+go.removeClass = function(className, input) { let array = input ? (Array.isArray(input) ? input : [input]) : go.ids;
+for (let item of array) { let process = (id) => { let el = document.getElementById(id); if (el) { el.classList.remove(className); } };
+if (typeof item === 'number') { try { for (let id of go.disp.ids["LVL" + item]) { process(id); } } catch { } } else { process(item); } } return 0; };
+
+go.cycle = function(stateName, rate) {
+let frm=go.xqn.grp[stateName].length;
+let state=(go.lastState+1)%frm||0;
+if(rate)go.xqn.grp[stateName].rate.set(rate);
+go.setState(go.xqn.grp[stateName][state]);
+go.lastState=state;
+};
+
 `;
-}
-
-scriptStarter += `
-      go.style       = function(style, value, idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style[style] = value; } return 0; }
-      go.show        = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.display = "block"; } return 0; }
-      go.hide        = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.display =  "none"; } return 0; }
-      go.fadeIn      = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "1"; } return 0; }
-      go.fadeOut     = function(idArray) { let array = idArray ? idArray : go.ids; for (f of array) { document.getElementById(f).style.opacity =     "0"; } return 0; }
-`;
-
-
-
-
-
-
-
 
 
 

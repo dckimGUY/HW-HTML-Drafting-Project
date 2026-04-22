@@ -220,7 +220,7 @@ shelfMenuHTML.tab4.folderSelectors.HTML  +
 
 
 <div id="sidebar4" class="sidebar4">
-<button id="sidebarOpener4" class="sidebarOpener4" onclick="toggleSidebar4();" title="Use f + [A-Z] output\n or m + [A-Z] capture\nand shift + space to\naccess HDUB, then\nuse [a-z] to move\n(not h or w)."></button>
+<button id="sidebarOpener4" class="sidebarOpener4" onclick="toggleSidebar4();" title="Use f + [A-Z] output\n or m + [A-Z] capture\nand shift + M to\naccess HDUB, then\nuse [a-z] to move\n(not h or w)."></button>
 <div id="fMan" class="fMan">
 
 

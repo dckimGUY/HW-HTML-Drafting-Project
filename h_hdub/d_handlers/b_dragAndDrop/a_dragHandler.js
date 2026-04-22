@@ -1,4 +1,65 @@
 
+function csvToTable(csvString) {
+  const lines = csvString.trim().split('\n');
+  const rowHeight = 100 / lines.length;
+  let tableRows = "";
+  lines.forEach(line => {
+    const cells = line.split(',').map(cell => 
+      `<td style="border:1px solid #666; padding:4px; overflow:hidden; vertical-align:middle; box-sizing:border-box;">${cell.trim()}</td>`
+    ).join('');
+
+    tableRows += `<tr style="height:${rowHeight}%;">${cells}</tr>`;
+  });
+  return `
+<div style="width:100%; height:100%; display:block; box-sizing:border-box;">
+  <table style="width:100%; height:100%; border-collapse:collapse; table-layout:fixed;">
+    ${tableRows}
+  </table>
+</div>`.trim();
+}
+
+function tsvToTable(tsvString) {
+  const lines = tsvString.trim().split('\n');
+  const rowHeight = 100 / lines.length;
+  let tableRows = "";
+  lines.forEach(line => {
+    const cells = line.split('\t').map(cell => 
+      `<td style="border:1px solid #666; padding:4px; overflow:hidden; vertical-align:middle; box-sizing:border-box;">${cell.trim()}</td>`
+    ).join('');
+    tableRows += `<tr style="height:${rowHeight}%;">${cells}</tr>`;
+  });
+  return `
+<div style="width:100%; height:100%; display:block; box-sizing:border-box;">
+  <table style="width:100%; height:100%; border-collapse:collapse; table-layout:fixed;">
+    ${tableRows}
+  </table>
+</div>`.trim();
+}
+
+function mdToHtml(mdString) {
+  let html = mdString.trim();
+  html = html.replace(/\!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="width:100%; height:auto; display:block;">');
+  html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:inherit; text-decoration:underline;">$1</a>');
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  const lines = html.split('\n');
+  const structuredHtml = lines.map(line => {
+    const content = line.trim();
+    if (!content) return '';
+    if (content.startsWith('### ')) return `<h3>${content.slice(4)}</h3>`;
+    if (content.startsWith('## ')) return `<h2>${content.slice(3)}</h2>`;
+    if (content.startsWith('# ')) return `<h1>${content.slice(2)}</h1>`;
+    return `<p style="width:100%; height:auto; display:block;">${content}</p>`;
+  }).filter(l => l !== '').join('\n  ');
+  return `
+<div style="width:100%; height:100%; overflow:auto; box-sizing:border-box; line-height:normal;">
+  ${structuredHtml}
+</div>`.trim();
+}
+
+
+
+
 const go = {};
       go.playAudio = function (trackName) { let player = new Audio(); player.src = document.getElementById(trackName).lastElementChild.firstElementChild.firstElementChild.dataset.audio; player.play(); }
 
