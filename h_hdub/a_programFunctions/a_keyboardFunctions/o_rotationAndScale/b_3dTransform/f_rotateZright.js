@@ -20,11 +20,7 @@ newRotateZ = rotateZ + rotationStep;
 if (!rotationStep) {
 newRotateZ = rotateZ + ZrotationStep;
 }
-       if (newRotateZ>=360) {
-newRotateZ -= 360;
-} else if (newRotateZ<0) {
-newRotateZ += 360;
-}
+
 coinFocus.lastElementChild.dataset.rotateZ = newRotateZ;
 coinFocus.lastElementChild.style.transform = "perspective(" + perspective + "px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) rotateZ(" + newRotateZ + "deg) translateZ(" + translateZ + "px)"; 
 coinFocus.firstElementChild.style.transform = "perspective(" + perspective + "px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) rotateZ(" + newRotateZ + "deg) translateZ(" + translateZ + "px)"; 

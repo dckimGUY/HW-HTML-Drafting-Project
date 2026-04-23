@@ -1,6 +1,24 @@
 # [OPEN THE PROGRAM HERE](https://dckimguy.github.io/HW-HTML-Drafting-Project/)
 
-The latest update gives an appended version for all '.js' files and all image references (for the shelf menu). This is good all-around. The user now has an up-to-date program, because we re-load any new file version, on a per-file basis. The '.js' files break the program up into tiny chunks, so it's fairly efficient. This is also done for the images in the menu (which is injected).
+April 23rd, 2026:
+
+Wow, almost all of the documentation and 'helpful' stuff that I wrote has quickly become outdated. Most of it doesn't really apply anymore, and the best source of information is the keymap found on the F1 key in the program. Even the YouTube videos are not fully accurate anymore. I changed the 'RU' to being 'RW' for example. If you didn't know what it was before, I suppose that doesn't matter.
+I really should try my best to spruce up the documentation and give some explanation of the potential usages for the various program components. The more I worked on the keybindings, the tighter knit the interactions between the available functions became. Hopefully you will agree with my selections there.
+Choosing the final program components has been fairly straight forward, having done all of the programming up front. It's like choosing from a buffet dinner if you do it that way.
+Following the optimization stage, I broke a lot of things. Most things weren't immediately obvious. Patching and reversion has caught most of the flailing code.
+I'd like to throw in some more 'goodies', and pre-prep for the defaults though, I am sure that you will come up with better arrangements than I will.
+
+Most of what follows here, and especially anything found at dckim.org is very much out of date, but, I have left it on there for now. You can get a bit of a peek back in time, and see where the project has come from, before reaching it's current stage. There were even some trades-level gawkers poking fun in some mastodon 'ribbing'. They seemed to all believe that the project was at the 'fully-complete' stage, and did not understand the actual development process which was happening. I found that to be quite amusing, and must admit that I deliberately 'played it up'.
+
+'Well, why would you put everything on the key? And why would you use the CAPS lock as a mode?'
+
+How else would I test everything from scratch with no IDE to speak of? So, it became an improptu IDE of itself. It's very curious how the program somehow solved it's own quandaries as it snowballed along the path. I worked just enough in the back end to get the advertisement system happening. Clearly the way forward is in the back end codework. That's pretty obvious now that the front end code has become all but played out.
+
+My preference has been to keep the work on the user's machine as far as possible. That way, if it is a matter of keeping the outfile as a single file, then it's good. If the user wishes to upload somewhere, all the same. Maybe better to break it up with minimal sources at that point. Certainly though, it must remain as a choice.
+
+Clearly, if there is a back end integration suited, it should not overwhelm the process, or eliminate any beneficial selections in the outcomes. I am not entirely familiar with the common practice as relates to the back end but, I assume that I have already reduced the parts to a condition which is nearly ready for the transfer.
+
+I think I'll leave this old stuff in here for now:
 
 # HW HTML Drafting Project
 

@@ -1,6 +1,22 @@
 shelfMenuHTML.tab4.folder2.style = `
 <style>
 
+.saveZip {
+position: absolute;
+border: none;
+margin: none;
+padding: none;
+background-color: transparent;
+border-radius: 0px;
+left:   30px;
+top:   76px;
+width:  160px;
+height: 22px;
+}
+.saveZip:hover  { background-color: rgba(255,255,  0,0.5); }
+.saveZip:active { background-color: rgba(255,0  ,255,0.5); }
+
+
 .button_clip:hover  { background-color: rgba(  0,255,  0,0.35); }
 .button_clip:active { background-color: rgba(255,  0,255,0.35); }
 

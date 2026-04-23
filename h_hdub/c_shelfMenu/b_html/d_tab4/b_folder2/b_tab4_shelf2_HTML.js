@@ -1,5 +1,7 @@
 shelfMenuHTML.tab4.folder2.HTML = `
 
+<button id="saveZip" class="button_ saveZip" onclick="buzzWord(0,'zip',96,'yellow',200,200,25,'top','','',event);" title="not working yet"></button>
+
 <button   id="save200"   class="button_ button_save200  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
 <button   id="save300"   class="button_ button_save300  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
 <button   id="save500"   class="button_ button_save500  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>

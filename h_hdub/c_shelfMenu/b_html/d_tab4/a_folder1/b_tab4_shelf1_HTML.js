@@ -1,5 +1,9 @@
 shelfMenuHTML.tab4.folder1.HTML = `
 
+
+<button id="saveZip" class="button_ saveZip" onclick="buzzWord(0,'zip',96,'yellow',200,200,25,'top','','',event);" title="not working yet"></button>
+
+
 <button id="saveBlank" class="button_ saveBlank" onclick="manufactureTemplate(cropObject(100, 180, makeObject(clean('h180w100')))); buzzWord(0,'SAVED',96,'yellow',200,200,25,'top','','',event);" title="SAVE: Blank Template\nAt This Scale Factor"></button>
 <button id="HDUBinfo"  class="button_ HDUBinfo"  onclick="programManual('information-for-button-crafting');" title="PROGRAM USER MANUAL:\nInformation For Button Crafting"></button>
 
