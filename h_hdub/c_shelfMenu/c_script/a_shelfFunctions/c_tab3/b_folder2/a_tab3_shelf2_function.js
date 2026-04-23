@@ -361,7 +361,6 @@ coinFocus.lastElementChild.firstElementChild.style.fontSize = "32px";
 coinFocus.lastElementChild.firstElementChild.style.padding = "32px";
 coinFocus.lastElementChild.firstElementChild.style.fontFamily = "dckimPixelMono"
 coinFocus.lastElementChild.firstElementChild.style.overflow = "scroll";
-coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
 coinFocus.style.width = "1536px";
 coinFocus.style.height = "1536px";
 coinFocus.dataset.width = "1536px";

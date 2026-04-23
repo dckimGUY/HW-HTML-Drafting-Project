@@ -6,7 +6,7 @@ shelfMenuHTML.tab4.folder1.HTML = `
 
 
 <textarea id="hdubSingleEntry" class="textarea_ input_hdubSingleEntry dckimPixelMono" placeholder="empty"
-title="HDUB MANUAL ENTRY:\nTIP: Use NUMPAD with dot and dash\nthey replace the h and w.\nabc Changes the Slot.\nENTER inserts the shapes to HTML.\nSPACE saves a Shape-Key\nQuick-Access to this input\nusing SHIFT+SPACE\nESC returns to the workspace.\n< > Changes the Level
+title="HDUB MANUAL ENTRY:\nTIP: Use NUMPAD with dot and dash\nthey replace the h and w.\nabc Changes the Slot.\nENTER inserts the shapes to HTML.\nSPACE saves a Shape-Key\nQuick-Access to this input\nusing SHIFT+M\nESC returns to the workspace.\n< > Changes the Level
 [ ] Changes the Scale"
 spellcheck="false">h20w20w20w20w20w20h50w50w50h40w20w30w40w10</textarea>
 

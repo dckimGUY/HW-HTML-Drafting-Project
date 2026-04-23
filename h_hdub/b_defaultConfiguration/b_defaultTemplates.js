@@ -37,6 +37,5 @@ template.default.outlineOffset          = "0px";
 template.default.boxShadow              = ""; 
 template.default.overflow               = "hidden";
 template.default.userSelect             = "none";
-template.default.anchorPosition         = ""; 
-template.default.contentEditable        = "true";
+template.default.anchorPosition         = "";
 template.default.transform              = ""; 

@@ -1,4 +1,9 @@
 function insertNewWindow(keyInfo,refresh) {
+
+document.getElementById("levelBar").style.display = "none";
+animatorBar.style.display = "none";
+localStorage.setItem("levelBar", document.getElementById("levelBar").style.display);
+
 const
 e = keyInfo[0],
 kC = keyInfo[1],

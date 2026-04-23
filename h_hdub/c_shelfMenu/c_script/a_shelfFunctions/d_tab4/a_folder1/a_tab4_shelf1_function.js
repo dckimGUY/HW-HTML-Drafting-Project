@@ -877,14 +877,12 @@ function enterFromSyntax(syntaxObject) {
             hauptMode = 0;
             insertNewCoin([null, 78, 78, false, false, false]);
             const input = coinFocus.lastElementChild.firstElementChild;
-            input.contentEditable = "true";
             input.style.fontSize = "32px";
             coinFocus.firstElementChild.style.zIndex = "0";
             hauptMode = 1;
           } else {
             insertNewCoin([null, 78, 78, false, false, false]);
             const input = coinFocus.lastElementChild.firstElementChild;
-            input.contentEditable = "true";
             input.style.fontSize = "32px";
             coinFocus.firstElementChild.style.zIndex = "0";
           }
@@ -1720,7 +1718,6 @@ coinFocus.lastElementChild.firstElementChild.innerHTML = "";
 if (hauptMode==1) {
 hauptMode=0;
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
 coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.style.left   = window.scrollX + "px";
 coinFocus.dataset.left = window.scrollX + "px";
@@ -1729,7 +1726,6 @@ coinFocus.dataset.top  = window.scrollY + "px";
 hauptMode=1;
 } else {
 insertNewCoin([null,78,78,false,false,false]);
-coinFocus.lastElementChild.firstElementChild.contentEditable = "true";
 coinFocus.firstElementChild.style.zIndex = "0";
 coinFocus.style.left   = window.scrollX + "px";
 coinFocus.dataset.left = window.scrollX + "px";

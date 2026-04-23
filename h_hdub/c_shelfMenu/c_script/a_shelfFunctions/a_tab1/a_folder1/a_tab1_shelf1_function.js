@@ -20,12 +20,6 @@ coinFocus = utilityLayer0.children[0];
 readCoins(); 
 recoverColouration();
 
-const textCol = document.getElementById("coin72275").value;
-const centerX = window.scrollX + window.innerWidth / 2;
-const centerY = window.scrollY + window.innerHeight - 32;
-
-buzzWord(2, "flip phantomLair", 64, textCol, 1000, 400, 100, "bottom", centerX, centerY);
-
 if (lastFlow == "colour") reflowPerTrip();
 if (lastFlow == "global") reflowGlobal(rev, 0);
 

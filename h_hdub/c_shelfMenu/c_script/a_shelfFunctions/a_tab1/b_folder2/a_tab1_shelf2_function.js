@@ -34,11 +34,11 @@ ui.setLayer17.click              = function() { if (!event.shiftKey && !event.ct
 ui.setLayer18.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("s_layer18");buzzWord(0,'<sup>18</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer18"); } else if (!event.shiftKey &&  event.ctrlKey) { copyStateCode("s_layer18"); } };
 ui.setLayer19.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("t_layer19");buzzWord(0,'<sup>19</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer19"); } else if (!event.shiftKey &&  event.ctrlKey) { copyStateCode("t_layer19"); } };
 ui.setLayer20.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("u_layer20");buzzWord(0,'<sup>20</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer20"); } else if (!event.shiftKey &&  event.ctrlKey) { copyStateCode("u_layer20"); } };
-ui.setLayer21.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("v_layer21");buzzWord(0,'<sup>21</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer21"); } else if (!event.shiftKey &&  event.ctrlKey) {} };
-ui.setLayer22.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("w_layer22");buzzWord(0,'<sup>22</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer22"); } else if (!event.shiftKey &&  event.ctrlKey) {} };
-ui.setLayer23.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("x_layer23");buzzWord(0,'<sup>23</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer23"); } else if (!event.shiftKey &&  event.ctrlKey) {} };
-ui.setLayer24.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("y_layer24");buzzWord(0,'<sup>24</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer24"); } else if (!event.shiftKey &&  event.ctrlKey) {} };
-ui.setLayer25.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("z_layer25");buzzWord(0,'<sup>25</sup>',192,'magenta',200,200,25,'top','','',event);} else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer25"); } else if (!event.shiftKey &&  event.ctrlKey) {} };
+ui.setLayer21.click              = function() { };
+ui.setLayer22.click              = function() { };
+ui.setLayer23.click              = function() { };
+ui.setLayer24.click              = function() { };
+ui.setLayer25.click              = function() { };
 
 
 ui.LVL1.click               = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("b_layer1" ); } else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer1" ); } else if (!event.shiftKey &&  event.ctrlKey) { copyStateCode("b_layer1" ); } };
@@ -62,41 +62,5 @@ ui.LVL18.click              = function() { if (!event.shiftKey && !event.ctrlKey
 ui.LVL19.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("t_layer19"); } else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer19"); } else if (!event.shiftKey &&  event.ctrlKey) { copyStateCode("t_layer19"); } };
 ui.LVL20.click              = function() { if (!event.shiftKey && !event.ctrlKey) { changeLayer("u_layer20"); } else if ( event.shiftKey && !event.ctrlKey) { pushState("setLayer20"); } else if (!event.shiftKey &&  event.ctrlKey) { copyStateCode("u_layer20"); } };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-THIS IS SOME PREPARATORY WORK TO COPY A FILE INFORMATION
-
-
-
-let nameList = topLayer[layerArray[j]].filename + " =\n[";
-for (let i = 0; i < topLayer[layerArray[j]].b_content.children.length; i++) {
-nameList += '\n"' + topLayer[layerArray[j]].b_content.children[i].id + '"';
-if (i != topLayer[layerArray[j]].b_content.children.length - 1) {
-nameList += ',';
-}
-}
-nameList += "\n];";
-*/
 
 

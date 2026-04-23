@@ -223,7 +223,7 @@ flipPhantomLair();
 /* */
 /**************************************************************************/
 /* */
-/* F1 */ if (kC == 112) { programManual("index"); }
+/* F1 */ if (kC == 112) { openKeymap(); / *programManual("index"); */ }
 /* F2 */ if (kC == 113) {
 if (!event.shiftKey) {
 flipWindowEdge(); modeRouter(e,0);
