@@ -159,6 +159,7 @@ kC = event.keyCode;
 let e = event, cC=0, es=event.shiftKey, ec=event.ctrlKey, ea=event.altKey;
 let keyInfo = [e,kC,cC,es,ec,ea];
 if (es) { shiftHold = true; } else { shiftHold = false; }
+
 /* THIS SETS UP THE CURSOR THINGY */
 if (mousemoveTarget!=null) {
 if (mode!=8) {

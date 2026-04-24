@@ -1,15 +1,16 @@
 shelfMenuHTML.tab4.folder2.HTML = `
 
-<button id="saveZip" class="button_ saveZip" onclick="buzzWord(0,'zip',96,'yellow',200,200,25,'top','','',event);" title="not working yet"></button>
+<button id="saveZip" class="button_ saveZip" onclick="zipSave(); buzzWord(0,'zip',96,'magenta',200,200,25,'top','','',event);" title="zip the file in a\ntight package with\nsources."></button>
 
-<button   id="save200"   class="button_ button_save200  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save300"   class="button_ button_save300  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save500"   class="button_ button_save500  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save800"   class="button_ button_save800  drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save1000"  class="button_ button_save1000 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save1200"  class="button_ button_save1200 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save1500"  class="button_ button_save1500 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
-<button   id="save1800"  class="button_ button_save1800 drag-button" draggable="tru" title="SHIFT + ENTER\nOPEN in WINDOW"></button>
+<button   id="save200"   class="button_ button_save200  drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save300"   class="button_ button_save300  drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save500"   class="button_ button_save500  drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save800"   class="button_ button_save800  drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save1000"  class="button_ button_save1000 drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save1200"  class="button_ button_save1200 drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save1500"  class="button_ button_save1500 drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+<button   id="save1800"  class="button_ button_save1800 drag-button" draggable="tru" title="+shift : no datetime\n+ctrl  : save .txt"></button>
+
 
 <button   id="textFlow"  onclick="cookieCutterSave();" class="button_ button_clip button_textFlow" title="AUTO-SAVE SLICES SEQUENTIALLY\n(an empty slice stops the process)\n(parts register in at top left only)"></button>
 

@@ -85,13 +85,13 @@ document.getElementById(id).style.backgroundColor = "rgba(255,0,255,0.35)";
 
 
 
+async function zipSave() { deMinimis(true, null, null, null, null, null, null, event, true); };
 
 
 
 
 
-
-async function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag) {
+async function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag, event, zipThisFile) {
 
 if (topLayer.a_currentLayer == "localView") { toggleLocalView(); }
 
@@ -127,8 +127,8 @@ spaceViewOff();
 Z();
 return;
 }
-
-saveHTMLparticle(rename, fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter, false, false, false);
+  
+saveHTMLparticle(rename,      fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g,          ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter,      false,     false,    event);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -158,7 +158,7 @@ string = tempString;
 
 
 
-if (coinFocus != null) {
+if (coinFocus != null && event) {
 if (
 typeAlone == "parts" ||
 typeAlone == "flow"  ||
@@ -171,7 +171,7 @@ event.target.id == "save1200" ||
 event.target.id == "save1500" ||
 event.target.id == "save1800"
 ) {
-if ( event.shiftKey) {                          string = "";
+if (event.shiftKey) {                          string = "";
        if (coinFocus.dataset.coinTrip == "0") { string = "";
          for (let j = 0; j < coinTrip.sel0.length; j++)    {
                    string += coinTrip.sel0[j].outerHTML;   }
@@ -1080,8 +1080,8 @@ string = string.replace(/ class="[^"]*"/g, "");
 string = string.replace(/ data-notes="[^"]*"/g, "");
 string = string.replace(/ >/g, ">");
 
-if (event.ctrlKey) {
-saveHTMLparticle(rename, string, false, false, false);
+if (event && event.ctrlKey) {
+saveHTMLparticle(rename, string, false, false, false, event);
 }
 
 restorePointerEventsNone();
@@ -1095,16 +1095,195 @@ return string;
 
 
 let stylesIncluded = "";
-       if (!event.altKey) {
+       if (!event || !event.altKey) {
 stylesIncluded = stylePosition + styleEtc;
-} else if ( event.altKey) {
+} else if (event && event.altKey) {
 stylesIncluded = stylePosition;
 }
 
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' + "\n" + string + "\n\n\n" + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
 
 
-content = await SquareAtlas(content);
+
+
+
+
+
+
+
+
+
+
+
+/* --- PREPARE INITIAL CONTENT --- */
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) 
+    + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
+    + "\n" + string + "\n\n\n" 
+    + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
+
+/* --- THE CALL SITE --- */
+const result = await SquareAtlas(content);
+content = result.html; 
+
+
+
+if (zipThisFile) {
+
+
+saveModularZip(result.html, result.atlases, filename);
+
+/* --- COORDINATOR FUNCTION --- */
+function saveModularZip(processedHTML, atlasArray, filename) {
+    const folder = filename || 'dbn13_project';
+    const zipData = {};
+
+    // 1. DEDUPLICATED MEDIA EXTRACTION
+    const mediaRegex = /data:(audio|video|image)\/([a-zA-Z0-9]+);base64,([A-Za-z0-9+/=]+)/g;
+    let finalHTML = processedHTML;
+    
+    // We use a Map to ensure each unique base64 string only gets saved ONCE
+    const uniqueMediaMap = new Map(); // Key: Base64 data, Value: { type, ext, path }
+    let counts = { audio: 0, video: 0, image: 0 };
+
+    // Pass 1: Identify unique items and convert to binary
+    let match;
+    while ((match = mediaRegex.exec(processedHTML)) !== null) {
+        const fullMatch = match[0];
+        const type = match[1];
+        const extension = match[2];
+        const b64Data = match[3];
+
+        /* --- SPECIAL CASE FOR IMG TAGS --- */
+        // Check if this specific base64 instance exists inside an <img> tag src
+        const isInsideImgTag = processedHTML.includes(`src="${fullMatch}"`);
+
+        // If it's a PNG but NOT in an <img> tag, we skip it (it's reserved for the Atlas)
+        if (type === 'image' && extension === 'png' && !isInsideImgTag) continue;
+
+        // If it IS in an <img> tag and it's a PNG, we only process it if it's NOT in the atlasArray
+        if (isInsideImgTag && extension === 'png') {
+            const isAtlas = atlasArray.some(atlasB64 => atlasB64.includes(b64Data));
+            if (isAtlas) continue;
+        }
+
+        if (!uniqueMediaMap.has(b64Data)) {
+            const relativePath = `${type}/${counts[type]}.${extension}`;
+            counts[type]++;
+            
+            // Convert to binary only once
+            const bin = atob(b64Data);
+            const u8 = new Uint8Array(bin.length);
+            for (let j = 0; j < bin.length; j++) u8[j] = bin.charCodeAt(j);
+            
+            uniqueMediaMap.set(b64Data, { 
+                path: relativePath, 
+                fullMatch: fullMatch,
+                data: u8 
+            });
+            
+            // Add the unique file to zipData
+            zipData[`${folder}/${relativePath}`] = u8;
+        }
+    }
+
+    // Pass 2: Global Atomic Replacement in HTML
+    for (const [b64, info] of uniqueMediaMap) {
+        // Replace every instance of this specific base64 string with its unique path
+        finalHTML = finalHTML.split(info.fullMatch).join(info.path);
+    }
+
+    // 2. CLEAN EXTRACTION (Styles & Scripts)
+    const parser = new DOMParser();
+    const tempDoc = parser.parseFromString(finalHTML, 'text/html');
+    
+    let extractedInternalCSS = "";
+    tempDoc.querySelectorAll('style').forEach(s => {
+        if (s.id !== 'atlas-core') extractedInternalCSS += s.textContent + "\n";
+        s.remove();
+    });
+    tempDoc.querySelectorAll('script').forEach(s => s.remove());
+    const domGuts = tempDoc.body.innerHTML;
+
+    // 3. ATLAS CSS ASSEMBLY
+    let atlasRootCSS = ':root {\n';
+    atlasArray.forEach((_, i) => {
+        atlasRootCSS += `  --ATLAS${i}: url('atlases/${i}.png');\n`;
+    });
+    atlasRootCSS += '}\n\n';
+
+    // 4. HTML ASSEMBLY
+    const zipHTML = fileHeader.replace(/{{title}}/g, folder)
+        .replace(/{{description}}/g, ui.pageDescription.ref.value) 
+        + '\n<link rel="stylesheet" href="style.css">\n</head>\n<body>' 
+        + "\n" + domGuts + "\n\n\n" 
+        + '<script src="script.js"></script>' 
+        + fileFooter;
+
+    // 5. PACKET ASSIGNMENT
+    zipData[`${folder}/index.html`] = fflate.strToU8(zipHTML);
+    zipData[`${folder}/style.css`] = fflate.strToU8(atlasRootCSS + extractedInternalCSS);
+    zipData[`${folder}/script.js`] = fflate.strToU8(scriptStarter);
+
+    // 6. ATLAS FOLDER PACKETS
+    atlasArray.forEach((b64, i) => {
+        const parts = b64.split(',');
+        const bin = atob(parts[1] || parts[0]);
+        const u8 = new Uint8Array(bin.length);
+        for (let j = 0; j < bin.length; j++) u8[j] = bin.charCodeAt(j);
+        zipData[`${folder}/atlases/${i}.png`] = u8;
+    });
+
+    // 7. GENERATE & DOWNLOAD
+    const zipped = fflate.zipSync(zipData);
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([zipped], { type: 'application/zip' }));
+    link.download = `${folder}.zip`;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+}
+
+restorePointerEventsNone();
+spaceViewOff();
+Z();
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if (openInNewWindow) {
@@ -1124,7 +1303,7 @@ return;
 }
 
 
-saveHTMLparticle(rename, content, false, false, false);
+saveHTMLparticle(rename, content, false, false, false, event);
 restorePointerEventsNone();
 spaceViewOff();
 Z();

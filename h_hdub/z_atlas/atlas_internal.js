@@ -1,10 +1,11 @@
 async function SquareAtlas(content) {
     const HARD_MAX = 4096;
-    const b64Regex = /data:image\/(?:png|gif);base64,[A-Za-z0-9+/=]+/g;
+    // Modified Regex: Uses negative lookbehind to ignore any PNG preceded by src=" or src='
+    const b64Regex = /(?<!src=["'])data:image\/png;base64,[A-Za-z0-9+/=]+/g;
     
     // 1. DEDUPLICATION: Get unique original sources only
     const uniqueMatches = [...new Set(content.match(b64Regex) || [])];
-    if (!uniqueMatches.length) return content;
+    if (!uniqueMatches.length) return { html: content, atlases: [] };
 
     const images = [];
     for (const src of uniqueMatches) {
@@ -87,7 +88,6 @@ async function SquareAtlas(content) {
         
         const replacement = `var(--ATLAS${l.idx}); background-size: ${szX}% ${szY}%; background-position: ${pX} ${pY}`;
         
-        // Split/Join bypasses "Regex too large" errors for massive strings
         const targets = [
             `url("${src}")`, `url('${src}')`, `url(${src})`,
             `URL("${src}")`, `URL('${src}')`, `URL(${src})`
@@ -104,7 +104,13 @@ async function SquareAtlas(content) {
 
     const headTag = "</head>";
     const headIndex = finalBody.toLowerCase().indexOf(headTag);
-    return headIndex !== -1 
+    
+    const finalHTML = headIndex !== -1 
         ? finalBody.slice(0, headIndex) + atlasStyles + finalBody.slice(headIndex)
         : atlasStyles + finalBody;
+
+    return {
+        html: finalHTML,
+        atlases: atlasStore
+    };
 }

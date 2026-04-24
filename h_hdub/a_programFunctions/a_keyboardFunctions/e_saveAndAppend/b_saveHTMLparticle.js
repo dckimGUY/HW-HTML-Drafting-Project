@@ -1,7 +1,7 @@
-async function saveHTMLparticle(rename, fileInputString, codePrep, js, phpSub) {
+async function saveHTMLparticle(rename, fileInputString, codePrep, js, phpSub, event) {
 
 let fileExtension = ".html";
-if (event && event.ctrlKey) fileExtension = ".txt";
+if (event && event.ctrlKey) { fileExtension = ".txt"; };
 
 const numberOfElements = utilityLayer0.children.length;
 
@@ -29,38 +29,9 @@ const a = document.createElement('a');
 a.href = url;
 
 
-
-if (rename==0&&filename!=defaultFilename) {
-filename = filename.replace(/ /g, '-');
-if (codePrep==true) {
-a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-} else {
-filename = filename.replace(/ /g, '-');
 a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-}
-} else {
 
-
-if (codePrep==true) {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "_CODE-PREP_" + "@" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-} else {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-}
-}
-
-if (js==true) {
-filename = filename.replace(/ /g, '-');
-a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + fileExtension;
-if (phpSub) { a.download = filename + "@_" + dateSuffix + "_" + numberOfElements + "pcs" + ".php"; };
-}
-
-
+if (event && event.shiftKey) { a.download = filename + fileExtension; };
 
 a.click();
 URL.revokeObjectURL(url);

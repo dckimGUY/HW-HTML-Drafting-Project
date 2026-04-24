@@ -4,7 +4,7 @@ ui.pageDescription.input         = function() { topLayer[topLayer.a_currentLayer
 
 ui.projectName.input             = function() { topLayer.aa_project_name = ui.projectName.ref.value; };
 
-ui.coin77155.click               = function() { deMinimis(true); layerRight(); buzzWord(0,'SAVE',128,'magenta',200,200,25,'top','','',event); };
+ui.coin77155.click               = function() { deMinimis(true, null, null, null, null, null, null, event); layerRight(); buzzWord(0,'SAVE',128,'magenta',200,200,25,'top','','',event); };
 ui.coin59760.click               = function() { layerLeft();  };
 ui.coin64291.click               = function() { layerRight(); };
 ui.coin70038.click               = function() { navigator.clipboard.writeText(utilityLayer0.innerHTML); };

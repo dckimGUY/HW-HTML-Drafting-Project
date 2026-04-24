@@ -3,9 +3,13 @@
 April 23rd, 2026:
 
 Wow, almost all of the documentation and 'helpful' stuff that I wrote has quickly become outdated. Most of it doesn't really apply anymore, and the best source of information is the keymap found on the F1 key in the program. Even the YouTube videos are not fully accurate anymore. I changed the 'RU' to being 'RW' for example. If you didn't know what it was before, I suppose that doesn't matter.
+
 I really should try my best to spruce up the documentation and give some explanation of the potential usages for the various program components. The more I worked on the keybindings, the tighter knit the interactions between the available functions became. Hopefully you will agree with my selections there.
+
 Choosing the final program components has been fairly straight forward, having done all of the programming up front. It's like choosing from a buffet dinner if you do it that way.
+
 Following the optimization stage, I broke a lot of things. Most things weren't immediately obvious. Patching and reversion has caught most of the flailing code.
+
 I'd like to throw in some more 'goodies', and pre-prep for the defaults though, I am sure that you will come up with better arrangements than I will.
 
 Most of what follows here, and especially anything found at dckim.org is very much out of date, but, I have left it on there for now. You can get a bit of a peek back in time, and see where the project has come from, before reaching it's current stage. There were even some trades-level gawkers poking fun in some mastodon 'ribbing'. They seemed to all believe that the project was at the 'fully-complete' stage, and did not understand the actual development process which was happening. I found that to be quite amusing, and must admit that I deliberately 'played it up'.

@@ -16,7 +16,7 @@ function manageTripartiteZ() {
 
     // 2. NATIVE SORT (Z -> Left -> Top -> Original)
     az.sort((a, b) => {
-        const p1 = b.z - a.z;      // Z High to Low
+        const p1 = a.z - b.z;      // FIXED: Low to High (Stops the reversal loop)
         const p2 = a.l - b.l;      // Left to Right
         const p3 = a.t - b.t;      // Top to Bottom
         const p4 = a.doc - b.doc;  // Original Document Order
@@ -24,9 +24,11 @@ function manageTripartiteZ() {
     });
 
     // 3. HANDLE REVERSAL
+/*
     if (lastKey === "z" && kC == 90 && cC == 122) {
         az.reverse();
     }
+*/
 
     // 4. BATCHED TRIPARTITE Z-INDEX UPDATE
     // We use counters for each trip so we only loop ONCE

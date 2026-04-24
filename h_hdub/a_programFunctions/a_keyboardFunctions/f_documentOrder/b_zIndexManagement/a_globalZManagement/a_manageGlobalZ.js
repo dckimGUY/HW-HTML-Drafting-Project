@@ -14,9 +14,9 @@ function manageGlobalZ() {
     }));
 
     // 2. NATIVE SORT (Z -> Left -> Top -> Original)
-    // Complexity: n log n (Millions of times faster than before)
+    // Fixed p1 to stop the constant reversal loop
     az.sort((a, b) => {
-        const p1 = b.z - a.z;      // Z High to Low
+        const p1 = a.z - b.z;      // Low to High (Stops the ping-pong reversal)
         const p2 = a.l - b.l;      // Left to Right
         const p3 = a.t - b.t;      // Top to Bottom
         const p4 = a.doc - b.doc;  // Original Document Order
@@ -24,12 +24,13 @@ function manageGlobalZ() {
     });
 
     // 3. HANDLE REVERSAL
+/*
     if (lastKey === "Z" && kC == 90 && cC == 90) {
         az.reverse();
     }
+*/
 
     // 4. BATCHED Z-INDEX UPDATE
-    // Instead of looping through children to find IDs, we use the sorted array directly
     const baseZ = pageEchelon + (tricolourEchelon * 1);
     
     for (let j = 0; j < az.length; j++) {
@@ -37,8 +38,6 @@ function manageGlobalZ() {
         const newZ = baseZ + (internalStep * j);
         
         el.style.zIndex = newZ;
-        // Optional: sync to dataset if your other scripts need it
-        // el.dataset.zIndex = newZ; 
     }
 
     return 1;
