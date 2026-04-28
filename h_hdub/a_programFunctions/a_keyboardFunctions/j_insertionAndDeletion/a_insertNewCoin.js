@@ -1,1 +1,91 @@
-function insertNewCoin(A){const[B,C,D,E,F,G]=A,H=Date.now().toString(),I='coin'+H.slice(-5);let J=document.createElement("div"),K=document.createElement("a"),L=document.createElement("div"),M=document.createElement("div");K.dataset.name=`anchor`,M.dataset.name=`div`,L.dataset.name=`main`,K.style=`position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};`,K.innerText=showPartName?I:"",L.style=`position:absolute;z-index:100;overflow:hidden;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`,M.style=`position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;box-sizing:border-box;border:none;text-align:justify;pointer-events:none;background-color:transparent;color:rgba(0,0,0,1);`,L.dataset.perspective="1536px",L.dataset.rotateX=L.dataset.rotateY=L.dataset.rotateZ=L.dataset.translateZ="0",L.dataset.scale=L.style.scale="1",L.style.transformOrigin="center",L.style.transform="perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)",L.appendChild(M),J.id=J.dataset.jsName=I,J.dataset.dragPull="backgroundColor",J.dataset.parent=J.dataset.children=J.dataset.json=J.dataset.addScript=J.dataset.state="",J.dataset.finishedOutline="none",J.dataset.outlineColour="grey",J.dataset.notes='{\n"initialDisplay":"block",\n"pointerEvents":"auto",\n"notes":"Written notes."\n}',J.style.filter=J.style.backdropFilter="none",J.style.outlineOffset="-"+Ws2,J.style.position="absolute",J.style.transformOrigin="top left",J.style.transform="scale(1)";const N=findZextrema();J.style.zIndex=utilityLayer0.children.length?N.highestGlobalZ:N.highestGlobalZ+tricolourEchelon;const O=(curFocus==1)?(coinFocus?.dataset.coinTrip||Ts2):(coinFocus?.dataset.coinTrip||Ts2);J.dataset.coinTrip=O;const P={[Ts0]:{f:Es0,c:Fs0,b:Bs0,o:Os0},[Ts1]:{f:Es1,c:Fs1,b:Bs1,o:Os1},[Ts2]:{f:Es2,c:Fs2,b:Bs2,o:Os2}},Q=P[O]||P[Ts2];K.style.fontFamily=Q.f,K.style.color=Q.c,K.style.textAlign=Gs2,K.style.backgroundColor=Q.b,K.style.opacity=Q.o,J.style.userSelect="none";if(coinFocus){let R=1;coinFocus.dataset.scale&&(R=parseFloat(coinFocus.dataset.scale));const S=coinFocus.dataset,TL=parseInt(S.left),TT=parseInt(S.top),TW=parseInt(S.width),TH=parseInt(S.height),visW=TW*R,visH=TH*R,X=(Y,Z)=>{const _=J.style,aa=parseInt(_.width),ab=parseInt(_.height),ac=Math.min(aa,ab),ad=parseInt(_.left)+aa/2,ae=parseInt(_.top)+ab/2;"D"!==Y&&(eM=Z,modeRouter(B,5)),buzzWord(1,Y,ac,window["coinColour"+J.dataset.coinTrip],80,80,25,"center",ad,ae)};73==C&&105==D&&(J.style.left=TL-T+"px",J.style.top=TT+"px",J.style.width=T+"px",J.style.height=visH+"px",X("i",1)),73==C&&73==D&&(J.style.left=window.scrollX+"px",J.style.top=TT+"px",J.style.width=T+"px",J.style.height=visH+"px",X("I",0)),79==C&&111==D&&(J.style.left=TL+"px",J.style.top=TT+visH+"px",J.style.width=visW+"px",J.style.height=T+"px",X("o",0)),79==C&&79==D&&(J.style.left=TL+"px",J.style.top=TT-T+"px",J.style.width=visW+"px",J.style.height=T+"px",X("O",1)),65==C&&97==D&&(J.style.left=TL+visW+"px",J.style.top=TT+"px",J.style.width=T+"px",J.style.height=visH+"px",X("a",0)),65==C&&65==D&&(J.style.left=(window.scrollX+window.innerWidth-T)+"px",J.style.top=TT+"px",J.style.width=T+"px",J.style.height=visH+"px",X("A",1)),68==C&&68==D&&(J.style.left=TL+"px",J.style.top=TT+"px",J.style.width=TW+"px",J.style.height=TH+"px",X("D"))}if(78==C&&78==D){const af=T*Math.ceil(2*edgeQ/T);J.style.width=J.style.height=af+"px",J.style.left=window.scrollX+window.innerWidth/2-af/2+"px",J.style.top=window.scrollY+window.innerHeight/2-af/2+"px"}if(78==C&&78==D||null!=coinFocus){const ag=J.style,ah=J.dataset;if(ah.left=parseInt(ag.left)+"px",ah.top=parseInt(ag.top)+"px",ah.width=parseInt(ag.width)+"px",ah.height=parseInt(ag.height)+"px",ah.scale="1",ah.angle="0",parseInt(ag.left)>=0&&parseInt(ag.top)>=0){if(coinTrip["sel"+ah.coinTrip.slice(-1)].push(J),J.appendChild(K),J.appendChild(L),J.anchor=K,J.main=L,J.div=M,M.style.fontFamily="inherit",M.innerHTML='<p style="width:100%;height:100%;outline-offset:-2px;outline:2px dashed blue;"></p>',0==hauptMode&&utilityLayer0.appendChild(J),coinFocus){const ai=coinFocus.style,aj=coinFocus.dataset.coinTrip,ak={[Ts0]:[Cs0,Ws0,Ss0],[Ts1]:[Cs1,Ws1,Ss1],[Ts2]:[Cs2,Ws2,Ss2]}[aj];ak&&([ai.outlineColor,ai.outlineWidth,ai.outlineStyle]=ak)}return coinFocus1=coinFocus,coinFocus=J,curFocus=0,setTimeout(()=>{J.style.floodOpacity="1",L.style.floodOpacity="1",omni(J).set({floodOpacity:"1"}),omni([L,L.firstElementChild]).set({floodOpacity:"1"})},0),J}}}
+function insertNewCoin(A) {
+  const [B, C, D, E, F, G] = A, 
+        H = Date.now().toString(), 
+        I = 'coin' + H.slice(-5);
+  
+  let J = document.createElement("div"),
+      K = document.createElement("a"),
+      L = document.createElement("div"),
+      M = document.createElement("div");
+
+  K.dataset.name = `anchor`, M.dataset.name = `div`, L.dataset.name = `main`;
+  K.style = `position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};`;
+  K.innerText = showPartName ? I : "";
+  L.style = `position:absolute;z-index:100;overflow:hidden;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`;
+  M.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;box-sizing:border-box;border:none;text-align:justify;pointer-events:none;background-color:transparent;color:rgba(0,0,0,1);`;
+  
+  L.dataset.perspective = "1536px";
+  L.dataset.rotateX = L.dataset.rotateY = L.dataset.rotateZ = L.dataset.translateZ = "0";
+  L.dataset.scale = L.style.scale = "1";
+  L.style.transformOrigin = "center";
+  L.style.transform = "perspective(1536px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0deg)";
+  L.appendChild(M);
+  
+  J.id = J.dataset.jsName = I;
+  J.dataset.dragPull = "backgroundColor";
+  J.dataset.parent = J.dataset.children = J.dataset.json = J.dataset.addScript = J.dataset.state = "";
+  J.dataset.finishedOutline = "none";
+  J.dataset.outlineColour = "grey";
+  J.dataset.notes = '{\n"initialDisplay":"block",\n"pointerEvents":"auto",\n"notes":"Written notes."\n}';
+  J.style.filter = J.style.backdropFilter = "none";
+  J.style.outlineOffset = "-" + Ws2;
+  J.style.position = "absolute";
+  J.style.transformOrigin = "top left";
+  J.style.transform = "scale(1)";
+
+  const N = findZextrema();
+  J.style.zIndex = utilityLayer0.children.length ? N.highestGlobalZ : N.highestGlobalZ + tricolourEchelon;
+
+  const O = (curFocus == 1) ? (coinFocus?.dataset.coinTrip || Ts2) : (coinFocus?.dataset.coinTrip || Ts2);
+  J.dataset.coinTrip = O;
+
+  const P = {
+    [Ts0]: { f: Es0, c: Fs0, b: Bs0, o: Os0 },
+    [Ts1]: { f: Es1, c: Fs1, b: Bs1, o: Os1 },
+    [Ts2]: { f: Es2, c: Fs2, b: Bs2, o: Os2 }
+  }, Q = P[O] || P[Ts2];
+
+  K.style.fontFamily = Q.f, K.style.color = Q.c, K.style.textAlign = Gs2, K.style.backgroundColor = Q.b, K.style.opacity = Q.o, J.style.userSelect = "none";
+
+  if (coinFocus) {
+    let R = 1;
+    coinFocus.dataset.scale && (R = parseFloat(coinFocus.dataset.scale));
+    const S = coinFocus.dataset,
+          TL = parseInt(S.left),
+          TT = parseInt(S.top),
+          TW = parseInt(S.width),
+          TH = parseInt(S.height),
+          visW = TW * R,
+          visH = TH * R,
+          X = (Y, Z) => {
+            const _ = J.style, aa = parseInt(_.width), ab = parseInt(_.height), ac = Math.min(aa, ab), ad = parseInt(_.left) + aa / 2, ae = parseInt(_.top) + ab / 2;
+            "D" !== Y && (eM = Z, modeRouter(B, 5)), buzzWord(1, Y, ac, window["coinColour" + J.dataset.coinTrip], 80, 80, 25, "center", ad, ae)
+          };
+    
+    if (73 == C && 105 == D) (J.style.left = TL - T + "px", J.style.top = TT + "px", J.style.width = T + "px", J.style.height = visH + "px", X("i", 1));
+    if (73 == C && 73 == D) (J.style.left = window.scrollX + "px", J.style.top = TT + "px", J.style.width = T + "px", J.style.height = visH + "px", X("I", 0));
+    if (79 == C && 111 == D) (J.style.left = TL + "px", J.style.top = TT + visH + "px", J.style.width = visW + "px", J.style.height = T + "px", X("o", 0));
+    if (79 == C && 79 == D) (J.style.left = TL + "px", J.style.top = TT - T + "px", J.style.width = visW + "px", J.style.height = T + "px", X("O", 1));
+    if (65 == C && 97 == D) (J.style.left = TL + visW + "px", J.style.top = TT + "px", J.style.width = T + "px", J.style.height = visH + "px", X("a", 0));
+    if (65 == C && 65 == D) (J.style.left = (window.scrollX + window.innerWidth - T) + "px", J.style.top = TT + "px", J.style.width = T + "px", J.style.height = visH + "px", X("A", 1));
+    if (68 == C && 68 == D) (J.style.left = TL + "px", J.style.top = TT + "px", J.style.width = TW + "px", J.style.height = TH + "px", X("D"));
+  }
+
+  if (78 == C && 78 == D) {
+    const af = T * Math.ceil(2 * edgeQ / T);
+    J.style.width = J.style.height = af + "px", J.style.left = window.scrollX + window.innerWidth / 2 - af / 2 + "px", J.style.top = window.scrollY + window.innerHeight / 2 - af / 2 + "px"
+  }
+
+  if (78 == C && 78 == D || null != coinFocus) {
+    const ag = J.style, ah = J.dataset;
+    if (ah.left = parseInt(ag.left) + "px", ah.top = parseInt(ag.top) + "px", ah.width = parseInt(ag.width) + "px", ah.height = parseInt(ag.height) + "px", ah.scale = "1", ah.angle = "0", parseInt(ag.left) >= 0 && parseInt(ag.top) >= 0) {
+      if (coinTrip["sel" + ah.coinTrip.slice(-1)].push(J), J.appendChild(K), J.appendChild(L), J.anchor = K, J.main = L, J.div = M, M.style.fontFamily = "inherit", M.innerHTML = '<div><div id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">The div element defines a logical section or container within an HTML document.</div></div>', 0 == hauptMode && utilityLayer0.appendChild(J), coinFocus) {
+        const ai = coinFocus.style, aj = coinFocus.dataset.coinTrip, ak = { [Ts0]: [Cs0, Ws0, Ss0], [Ts1]: [Cs1, Ws1, Ss1], [Ts2]: [Cs2, Ws2, Ss2] }[aj];
+        ak && ([ai.outlineColor, ai.outlineWidth, ai.outlineStyle] = ak)
+      }
+      return coinFocus1 = coinFocus, coinFocus = J, curFocus = 0, setTimeout(() => {
+        J.style.floodOpacity = "1", L.style.floodOpacity = "1", omni(J).set({ floodOpacity: "1" }), omni([L, L.firstElementChild]).set({ floodOpacity: "1" })
+      }, 0), J
+    }
+  }
+}

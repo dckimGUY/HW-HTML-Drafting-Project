@@ -368,64 +368,10 @@ var mode = 0;
 
 
 
-/* This is included here as a reference to the syntax for setting up the dragText interface. */
-/* This will determine, from the part, what text will be dragged out if 'mouse-dog'.         */
-/* It is unfortunate that a method did not seem apparent but, the syntax is minimal.         */
-/* This is the beginning of what must appear on the outer div dataset.dragPull               */
-/* The expression must be followed with '= "' and ended suitably                             */
-/* ... this will be done automatically by using the dataset.dragPull value.                  */
-/* It will not be interpreted directly but, rather will gain access through condition.       */
-/* See code at /2_drag...                                                                    */
 
 
 
-/*
 
-
-To these must be added the 'finishing touch' to
-define what will be accessed.
-
-"div." is the one that will be generally used.
-
-
-It is only necessary to complete this by adding the property name only.
-If there is no such property name, you may cause an error.
-
-
-The main outer 'div' gets these:
-"style."
-"dataset."
-
-This is the 'utility' 'div'.
-"utility.style."
-"utility.dataset."
-"utility."
-
-This is the 'anchor' which contains the next three items listed here.
-"anchor.style."
-"anchor.dataset."
-"anchor."
-
-This is a 'button', it has nicely centered text.
-"button.style."
-"button.dataset."
-"button."
-
-This is the 'div' which most things go into.
-"div.style."
-"div.dataset."
-"div."
-
-This is the 'img' which is behind everything.
-"img.style."
-"img.dataset."
-"img."
-
-This is a 'catch-all' which goes to the outer 'div'.
-Do not enter this as the dataset.dragPull value.
-"= "
-
-*/
 
 
 

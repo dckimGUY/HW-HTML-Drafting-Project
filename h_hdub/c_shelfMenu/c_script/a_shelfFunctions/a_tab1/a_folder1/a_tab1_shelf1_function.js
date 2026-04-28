@@ -856,26 +856,7 @@ coinFocus.lastElementChild.style.opacity = 0;
 
 }; /*                                                */
 
-       styleMenu.shadowRadius7.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius8.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius9.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius4.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius5.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius6.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius1.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius2.dblclick = function() {                        }; /*                                                */
-       styleMenu.shadowRadius3.dblclick = function() {                        }; /*                                                */
-          styleMenu.indentLine.dblclick = function() {                        }; /*                                                */
-          styleMenu.fontShadow.dblclick = function() {                        }; /*                                                */
-            styleMenu.charWord.dblclick = function() {                        }; /*                                                */
-            styleMenu.fontSize.dblclick = function() {                        }; /*                                                */
-       styleMenu.textAlignLeft.dblclick = function() {                        }; /*                                                */
-     styleMenu.textAlignCenter.dblclick = function() {                        }; /*                                                */
-      styleMenu.textAlignRight.dblclick = function() {                        }; /*                                                */
-         styleMenu.outlineSize.dblclick = function() {                        }; /*                                                */
-        styleMenu.outlineStyle.dblclick = function() {                        }; /*                                                */
-             styleMenu.padding.dblclick = function() {                        }; /*                                                */
-             styleMenu.opacity.dblclick = function() {                        }; /*                                                */
+
 
 
 
@@ -899,26 +880,6 @@ coinFocus.lastElementChild.style.outlineColor = styleMenu.styleOL.ref.value
 
 
 
-          styleMenu.shadowRadius7.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius8.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius9.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius4.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius5.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius6.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius1.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius2.input = function() {                        }; /*                                                */
-          styleMenu.shadowRadius3.input = function() {                        }; /*                                                */
-             styleMenu.indentLine.input = function() {                        }; /*                                                */
-             styleMenu.fontShadow.input = function() {                        }; /*                                                */
-               styleMenu.charWord.input = function() {                        }; /*                                                */
-               styleMenu.fontSize.input = function() {                        }; /*                                                */
-          styleMenu.textAlignLeft.input = function() {                        }; /*                                                */
-        styleMenu.textAlignCenter.input = function() {                        }; /*                                                */
-         styleMenu.textAlignRight.input = function() {                        }; /*                                                */
-            styleMenu.outlineSize.input = function() {                        }; /*                                                */
-           styleMenu.outlineStyle.input = function() {                        }; /*                                                */
-                styleMenu.padding.input = function() {                        }; /*                                                */
-                styleMenu.opacity.input = function() {                        }; /*                                                */
 
 
 
@@ -948,30 +909,6 @@ switch (event.target) {
              case styleMenu.opacity.ref:               styleMenu.opacity.click(); break;
 }});
 
-/*** THIS SETS UP EVENT DELEGATION FOR "DBLCLICK" EVENT ***/
-document.addEventListener("dblclick", function() {
-switch (event.target) {
-       case styleMenu.shadowRadius7.ref:      styleMenu.shadowRadius7.dblclick(); break;
-       case styleMenu.shadowRadius8.ref:      styleMenu.shadowRadius8.dblclick(); break;
-       case styleMenu.shadowRadius9.ref:      styleMenu.shadowRadius9.dblclick(); break;
-       case styleMenu.shadowRadius4.ref:      styleMenu.shadowRadius4.dblclick(); break;
-       case styleMenu.shadowRadius5.ref:      styleMenu.shadowRadius5.dblclick(); break;
-       case styleMenu.shadowRadius6.ref:      styleMenu.shadowRadius6.dblclick(); break;
-       case styleMenu.shadowRadius1.ref:      styleMenu.shadowRadius1.dblclick(); break;
-       case styleMenu.shadowRadius2.ref:      styleMenu.shadowRadius2.dblclick(); break;
-       case styleMenu.shadowRadius3.ref:      styleMenu.shadowRadius3.dblclick(); break;
-          case styleMenu.indentLine.ref:         styleMenu.indentLine.dblclick(); break;
-          case styleMenu.fontShadow.ref:         styleMenu.fontShadow.dblclick(); break;
-            case styleMenu.charWord.ref:           styleMenu.charWord.dblclick(); break;
-            case styleMenu.fontSize.ref:           styleMenu.fontSize.dblclick(); break;
-       case styleMenu.textAlignLeft.ref:      styleMenu.textAlignLeft.dblclick(); break;
-     case styleMenu.textAlignCenter.ref:    styleMenu.textAlignCenter.dblclick(); break;
-      case styleMenu.textAlignRight.ref:     styleMenu.textAlignRight.dblclick(); break;
-         case styleMenu.outlineSize.ref:        styleMenu.outlineSize.dblclick(); break;
-        case styleMenu.outlineStyle.ref:       styleMenu.outlineStyle.dblclick(); break;
-             case styleMenu.padding.ref:            styleMenu.padding.dblclick(); break;
-             case styleMenu.opacity.ref:            styleMenu.opacity.dblclick(); break;
-}});
 
 /*** THIS SETS UP EVENT DELEGATION FOR "INPUT" EVENT ***/
 document.addEventListener("input", function() {
