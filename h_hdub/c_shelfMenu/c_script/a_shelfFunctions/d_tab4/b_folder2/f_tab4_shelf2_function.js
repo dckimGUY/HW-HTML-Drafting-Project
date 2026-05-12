@@ -897,46 +897,45 @@ scriptStarter += `
 
 if (useAllLayers) {
 
+
+//topLayer[h].b_content.querySelector("#yourElementId")
+
 let num = 0;
+
 for (h of levelName) {
 num++;
 if (topLayer[h].b_content.children.length == 0) continue;
-
 scriptStarter += `
 /*** LVL${num} ***/
 
 `;
-
-
-
 for (let k = 0; k < eventRoll.length; k++) {
+for (let j = 0; j < idRoll.length; j++) {
 
-for (c of topLayer[h].b_content.children) {
-
+if (topLayer[h].b_content.querySelector('#' + idRoll[j]) == null) continue;
 
 let extract = "";
 try {
-extract = c.lastElementChild.lastElementChild.getAttribute("on" + eventRoll[k]);
+extract = topLayer[h].b_content.querySelector('#' + idRoll[j]).lastElementChild.lastElementChild.getAttribute("on" + eventRoll[k]);
 if (eventRoll[k] == "click") {
 try {
-extract = c.lastElementChild.lastElementChild.firstElementChild.getAttribute("on" + eventRoll[k]);
+extract = topLayer[h].b_content.querySelector('#' + idRoll[j]).lastElementChild.lastElementChild.firstElementChild.getAttribute("on" + eventRoll[k]);
 } catch { };
 }
 } catch { };
-scriptStarter += `${("go.elm." + c.id + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
+scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} };
 `;
 }
 scriptStarter += `
 `;
 }
 
-
-
-
-
-
-
 }
+
+
+
+
+
 
 
 
@@ -951,10 +950,8 @@ scriptStarter += `
 
 
 
-
 for (let k = 0; k < eventRoll.length; k++) {
 for (let j = 0; j < idRoll.length; j++) {
-
 let extract = "";
 try {
 extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.getAttribute("on" + eventRoll[k]);
@@ -964,15 +961,12 @@ extract = document.getElementById(idRoll[j]).lastElementChild.lastElementChild.f
 } catch { };
 }
 } catch { };
-scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} }; /*  */
+scriptStarter += `${("go.elm." + idRoll[j] + ".func." + eventRoll[k]).padStart(32, " ")} = function() { ${extract} };
 `;
 }
 scriptStarter += `
 `;
 }
-
-
-
 
 }
 

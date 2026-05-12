@@ -79,7 +79,7 @@ function insertNewCoin(A) {
   if (78 == C && 78 == D || null != coinFocus) {
     const ag = J.style, ah = J.dataset;
     if (ah.left = parseInt(ag.left) + "px", ah.top = parseInt(ag.top) + "px", ah.width = parseInt(ag.width) + "px", ah.height = parseInt(ag.height) + "px", ah.scale = "1", ah.angle = "0", parseInt(ag.left) >= 0 && parseInt(ag.top) >= 0) {
-      if (coinTrip["sel" + ah.coinTrip.slice(-1)].push(J), J.appendChild(K), J.appendChild(L), J.anchor = K, J.main = L, J.div = M, M.style.fontFamily = "inherit", M.innerHTML = '<div><div id="" style="width: 100%; height: 100%; min-height: 1px; margin: 0; padding: 0; box-sizing: border-box; display: inline-block; overflow: hidden; line-height: normal;" contenteditable="true">The div element defines a logical section or container within an HTML document.</div></div>', 0 == hauptMode && utilityLayer0.appendChild(J), coinFocus) {
+      if (coinTrip["sel" + ah.coinTrip.slice(-1)].push(J), J.appendChild(K), J.appendChild(L), J.anchor = K, J.main = L, J.div = M, M.style.fontFamily = "inherit", M.innerHTML = ui[ui.hdub.selected].value, 0 == hauptMode && utilityLayer0.appendChild(J), coinFocus) {
         const ai = coinFocus.style, aj = coinFocus.dataset.coinTrip, ak = { [Ts0]: [Cs0, Ws0, Ss0], [Ts1]: [Cs1, Ws1, Ss1], [Ts2]: [Cs2, Ws2, Ss2] }[aj];
         ak && ([ai.outlineColor, ai.outlineWidth, ai.outlineStyle] = ak)
       }

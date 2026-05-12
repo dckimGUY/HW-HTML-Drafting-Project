@@ -6,7 +6,10 @@
   <meta name="mobile-web-app-capable" content="yes">					
   <meta name="handheldfriendly" content="true">					
   <meta name="author" content="dckimGUY Mohammed David">
+
+  <link rel="me" href="https://mastodon.social/@NathanMurdock">
   <link rel="me" href="https://mastodon.social/@dckim">		
+
   <link rel="canonical" href="https://dckim.com/hdub/index.html">
   <meta name="description" content="DCKIM HTML DRAFTING PROJECT is Top-Notch, Open-Source, and Canadian. Hands-on, in-action: It's the best way to learn about HTML. Writing your own website is easy now! So, focus on the artistic and written aspects. Those are more important anyhow!">
 
