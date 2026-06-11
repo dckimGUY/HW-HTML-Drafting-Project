@@ -1,3 +1,6 @@
+var globalVariableValue =   [];
+var globalVariableIndex =    0;
+
 var lastFactor = "1";
 var useAllLayers = false;
 if (localStorage.getItem("lastFactor")) { lastFactor = localStorage.getItem("lastFactor"); }
@@ -85,13 +88,50 @@ document.getElementById(id).style.backgroundColor = "rgba(255,0,255,0.35)";
 
 
 
-async function zipSave() { deMinimis(true, null, null, null, null, null, null, event, true); };
 
 
 
 
 
-async function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag, event, zipThisFile) {
+async function zipSave() {
+const whatLayerAreWeIn = topLayer.a_currentLayer.toString();
+globalVariableValue = [];
+makeTopLayer("b_layer1");
+for (let f = 0; f < 20; f++) {
+await deMinimis(true  , null  , null    , null           , null     , null    , null, event, 1        );
+}
+const masterFiles = {};
+for (let i = 0; i < globalVariableValue.length; i++) {
+    const fileContainer = globalVariableValue[i]; 
+    for (const [filePath, objectData] of Object.entries(fileContainer)) {
+        const keys = Object.keys(objectData);
+        const length = keys.length;
+        const uint8 = new Uint8Array(length);
+        for (let j = 0; j < length; j++) {
+            uint8[j] = objectData[j];
+        }
+        masterFiles[filePath] = uint8;
+    }
+}
+const zipped = fflate.zipSync(masterFiles);
+const link = document.createElement('a');
+link.href = URL.createObjectURL(new Blob([zipped], { type: 'application/zip' }));
+link.download = `${document.getElementById('projectName').value}.zip`;
+link.click();
+setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+makeTopLayer(whatLayerAreWeIn);
+restorePointerEventsNone();
+spaceViewOff();
+Z();
+};
+
+
+
+
+
+
+
+            async function deMinimis(header, factor, eventArg, openInNewWindow, typeAlone, layerRef, drag, event, zipThisFile) {
 
 if (topLayer.a_currentLayer == "localView") { toggleLocalView(); }
 
@@ -118,7 +158,7 @@ localStorage.setItem("lastFactor", "(100/320)");
 }
 
 
-if (utilityLayer0.children.length == 0) {
+if (utilityLayer0.children.length == 0 && (zipThisFile != 1) && (zipThisFile != 0)) {
 if (openInNewWindow) {
 const newWindow = window.open();
 newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter);
@@ -1120,14 +1160,14 @@ content = result.html;
 
 
 
-if (zipThisFile) {
+if ((zipThisFile == 0) || (zipThisFile == 1)) {
 
 
 saveModularZip(result.html, result.atlases, filename);
 
 /* --- COORDINATOR FUNCTION --- */
 function saveModularZip(processedHTML, atlasArray, filename) {
-    const folder = filename || 'dbn13_project';
+    const folder = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
     const zipData = {};
 
     // 1. DEDUPLICATED MEDIA EXTRACTION
@@ -1212,10 +1252,18 @@ function saveModularZip(processedHTML, atlasArray, filename) {
         + '<script src="script.js"></script>' 
         + fileFooter;
 
+
+
+
+
     // 5. PACKET ASSIGNMENT
     zipData[`${folder}/index.html`] = fflate.strToU8(zipHTML);
     zipData[`${folder}/style.css`] = fflate.strToU8(atlasRootCSS + extractedInternalCSS);
     zipData[`${folder}/script.js`] = fflate.strToU8(scriptStarter);
+
+
+
+
 
     // 6. ATLAS FOLDER PACKETS
     atlasArray.forEach((b64, i) => {
@@ -1226,6 +1274,10 @@ function saveModularZip(processedHTML, atlasArray, filename) {
         zipData[`${folder}/atlases/${i}.png`] = u8;
     });
 
+
+
+if (zipThisFile == 0) {
+
     // 7. GENERATE & DOWNLOAD
     const zipped = fflate.zipSync(zipData);
     const link = document.createElement('a');
@@ -1233,6 +1285,18 @@ function saveModularZip(processedHTML, atlasArray, filename) {
     link.download = `${folder}.zip`;
     link.click();
     setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+} else if (zipThisFile == 1) {
+
+if (utilityLayer0.children.length != 0) {
+globalVariableValue[globalVariableValue.length] = zipData;
+}
+layerRight();
+
+}
+
+
+
+
 }
 
 restorePointerEventsNone();

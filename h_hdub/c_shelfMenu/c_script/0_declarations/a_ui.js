@@ -14,8 +14,8 @@ if (localStorage.getItem("levelBar")) {
 document.getElementById("levelBar").style.display = localStorage.getItem("levelBar");
 animatorBar.style.display = localStorage.getItem("levelBar");
 } else {
-document.getElementById("levelBar").style.display = "block";
-animatorBar.style.display = "block";
+document.getElementById("levelBar").style.display = "none";
+animatorBar.style.display = "none";
 
 }
 

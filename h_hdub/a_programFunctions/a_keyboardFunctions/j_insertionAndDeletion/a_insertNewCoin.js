@@ -11,7 +11,7 @@ function insertNewCoin(A) {
   K.dataset.name = `anchor`, M.dataset.name = `div`, L.dataset.name = `main`;
   K.style = `position:absolute;z-index:1;left:0;top:0;width:100%;height:100%;border:0px;margin:0px;pointer-events:none;font-size:${utilityDivFontSize};`;
   K.innerText = showPartName ? I : "";
-  L.style = `position:absolute;z-index:100;overflow:hidden;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`;
+  L.style = `position:absolute;z-index:100;overflow:visible;left:0;top:0;width:100%;height:100%;border:none;margin:none;pointer-events:none;`;
   M.style = `position:absolute;z-index:200;left:0;top:0;width:100%;height:100%;box-sizing:border-box;border:none;text-align:justify;pointer-events:none;background-color:transparent;color:rgba(0,0,0,1);`;
   
   L.dataset.perspective = "1536px";
