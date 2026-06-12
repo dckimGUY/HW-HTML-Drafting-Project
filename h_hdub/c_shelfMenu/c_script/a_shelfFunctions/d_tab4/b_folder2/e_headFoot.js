@@ -2,8 +2,24 @@ const header1 = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="index, follow">
+<meta name="handheldfriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="{{description}}">
+
+<!-- Universal Open Graph Package -->
+<meta property="og:title" content="{{title}}">
+<meta property="og:type" content="website">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="assets/og-{{title}}.png">
+
+<!-- Regional Validation (Toronto, ON, CA) -->
+<meta name="geo.position" content="43.658497;-79.347015">
+<meta name="geo.region" content="CA-ON">
+<meta name="geo.placename" content="Toronto">
+
 <title>{{title}}</title>
+
 `;
 const header2 = `<!DOCTYPE html>
 <html>
@@ -154,16 +170,67 @@ const header4 = `
 
 
 
-const footer1 = `
+const footer1 = `<!-- Native Middle-Mouse Grab & Scroll (1:1 Panning) Engine -->
+<script>
+(function() {
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    // Listen globally for mouse down triggers
+    window.addEventListener('mousedown', (e) => {
+        // 1 represents the Middle Mouse Button (Scroll Wheel click)
+        if (e.button !== 1) return; 
+
+        // Prevent the browser's default autoscroll icon from appearing
+        e.preventDefault(); 
+        
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        
+        // Track the current scrolling coordinates of the viewport window
+        scrollLeft = window.scrollX || window.pageXOffset;
+        scrollTop = window.scrollY || window.pageYOffset;
+        
+        // Visual indicator: change cursor to a clenched grab hand
+        document.body.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none'; // Prevent accidental text highlighting
+    });
+
+    // Listen globally for movement updates
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        // Calculate the physical distance moved from the original click point
+        const distanceX = e.clientX - startX;
+        const distanceY = e.clientY - startY;
+        
+        // Move the viewport window dynamically on a perfect 1-to-1 ratio match
+        window.scrollTo(scrollLeft - distanceX, scrollTop - distanceY);
+    });
+
+    // Clean up drag events when the mouse button is released or leaves the screen
+    const stopDragging = (e) => {
+        if (e && e.button === 1) {
+            isDragging = false;
+            document.body.style.cursor = 'default';
+            document.body.style.userSelect = '';
+        } else if (!e) { // Handles mouseleave scenarios where no button code is present
+            isDragging = false;
+            document.body.style.cursor = 'default';
+            document.body.style.userSelect = '';
+        }
+    };
+
+    window.addEventListener('mouseup', stopDragging);
+    window.addEventListener('mouseleave', () => stopDragging(null));
+})();
+</script>
 </body>
 </html>
 `;
+
 const footer2 = `
-<footer>
-<p><small>
-&copy; Copyright Your Website Name
-</small</p>
-</footer>
 </body>
 </html>
 `;
@@ -200,7 +267,7 @@ const footer4 = `
 
 
 
-
+/* The following header only represents the default, while the ones above are representing some button accessible defaults. The headers and footers are maintained on a per page basis within the program context. */
 
 
 
@@ -209,13 +276,85 @@ let fileHeader = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="index, follow">
+<meta name="handheldfriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="{{description}}">
+
+<!-- Universal Open Graph Package -->
+<meta property="og:title" content="{{title}}">
+<meta property="og:type" content="website">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="assets/og-{{title}}.png">
+
+<!-- Regional Validation (Toronto, ON, CA) -->
+<meta name="geo.position" content="43.658497;-79.347015">
+<meta name="geo.region" content="CA-ON">
+<meta name="geo.placename" content="Toronto">
+
 <title>{{title}}</title>
+
 `;
 
-let fileFooter = `
+let fileFooter = `<!-- Native Middle-Mouse Grab & Scroll (1:1 Panning) Engine -->
+<script>
+(function() {
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    // Listen globally for mouse down triggers
+    window.addEventListener('mousedown', (e) => {
+        // 1 represents the Middle Mouse Button (Scroll Wheel click)
+        if (e.button !== 1) return; 
+
+        // Prevent the browser's default autoscroll icon from appearing
+        e.preventDefault(); 
+        
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        
+        // Track the current scrolling coordinates of the viewport window
+        scrollLeft = window.scrollX || window.pageXOffset;
+        scrollTop = window.scrollY || window.pageYOffset;
+        
+        // Visual indicator: change cursor to a clenched grab hand
+        document.body.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none'; // Prevent accidental text highlighting
+    });
+
+    // Listen globally for movement updates
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        // Calculate the physical distance moved from the original click point
+        const distanceX = e.clientX - startX;
+        const distanceY = e.clientY - startY;
+        
+        // Move the viewport window dynamically on a perfect 1-to-1 ratio match
+        window.scrollTo(scrollLeft - distanceX, scrollTop - distanceY);
+    });
+
+    // Clean up drag events when the mouse button is released or leaves the screen
+    const stopDragging = (e) => {
+        if (e && e.button === 1) {
+            isDragging = false;
+            document.body.style.cursor = 'default';
+            document.body.style.userSelect = '';
+        } else if (!e) { // Handles mouseleave scenarios where no button code is present
+            isDragging = false;
+            document.body.style.cursor = 'default';
+            document.body.style.userSelect = '';
+        }
+    };
+
+    window.addEventListener('mouseup', stopDragging);
+    window.addEventListener('mouseleave', () => stopDragging(null));
+})();
+</script>
 </body>
 </html>
+
 `;
 
 if (localStorage.getItem('fileHeader')) {

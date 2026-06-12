@@ -93,37 +93,336 @@ document.getElementById(id).style.backgroundColor = "rgba(255,0,255,0.35)";
 
 
 
-async function zipSave() {
-const whatLayerAreWeIn = topLayer.a_currentLayer.toString();
-globalVariableValue = [];
-makeTopLayer("b_layer1");
-for (let f = 0; f < 20; f++) {
-await deMinimis(true  , null  , null    , null           , null     , null    , null, event, 1        );
-}
-const masterFiles = {};
-for (let i = 0; i < globalVariableValue.length; i++) {
-    const fileContainer = globalVariableValue[i]; 
-    for (const [filePath, objectData] of Object.entries(fileContainer)) {
-        const keys = Object.keys(objectData);
-        const length = keys.length;
-        const uint8 = new Uint8Array(length);
-        for (let j = 0; j < length; j++) {
-            uint8[j] = objectData[j];
+
+
+
+
+
+
+
+
+
+
+
+
+function generateSiteMetadataIndexAndImages() {
+    const baseProjectFolder = topLayer.aa_project_name || 'dbn13_project';
+    const currentDateStr = new Date().toISOString().split('T');
+
+    // The complete list of your 25 layer keys
+    const layerKeys = [
+        "b_layer1", "c_layer2", "d_layer3", "e_layer4", "f_layer5", 
+        "g_layer6", "h_layer7", "i_layer8", "j_layer9", "k_layer10", 
+        "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15", 
+        "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20", 
+        "v_layer21", "w_layer22", "x_layer23", "y_layer24", "z_layer25"
+    ];
+
+    // FILTER STATE: Only include layers that have active DOM children
+    const activeLayers = layerKeys.map(key => topLayer[key]).filter(layer => {
+        if (!layer) return false;
+        const targetDOMElement = layer.b_content; 
+        if (!targetDOMElement || !targetDOMElement.children || targetDOMElement.children.length === 0) {
+            return false;
         }
-        masterFiles[filePath] = uint8;
+        return true;
+    });
+
+    const ogImagesMap = {};
+
+    // Create an offscreen canvas to render standard 1200x630 OG image files
+    const canvas = document.createElement('canvas');
+    canvas.width = 1200;
+    canvas.height = 630;
+    const ctx = canvas.getContext('2d');
+
+    // ==========================================================
+    // 1. GENERATE OR EXTRACT UNIQUE OPEN GRAPH IMAGES PER PAGE
+    // ==========================================================
+    activeLayers.forEach(layer => {
+        let displayTitle = layer.c_title || layer.filename || 'Untitled Page';
+        if (displayTitle.endsWith('.html')) {
+            displayTitle = displayTitle.slice(0, -5);
+        }
+
+        let u8Array;
+
+        // PRELIMINARY STEP CHECK: See if a custom base64 image exists on this specific layer
+        if (layer.i_ogImageBase64 && layer.i_ogImageBase64.trim() !== "") {
+            const parts = layer.i_ogImageBase64.split(',');
+            const b64DataString = parts[1] || parts[0];
+            
+            const binaryStr = atob(b64DataString);
+            u8Array = new Uint8Array(binaryStr.length);
+            for (let idx = 0; idx < binaryStr.length; idx++) {
+                u8Array[idx] = binaryStr.charCodeAt(idx);
+            }
+        } else {
+            // FALLBACK ACTIONS: Execute the pixel-text canvas rendering we devised
+            ctx.fillStyle = '#f5f5f7';
+            ctx.fillRect(0, 0, 1200, 630);
+
+            ctx.fillStyle = '#1d1d1f';
+            ctx.font = 'bold 72px dckimPixelMono';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            if (ctx.measureText(displayTitle).width > 1020) {
+                ctx.font = 'bold 48px dckimPixelMono';
+            }
+            ctx.fillText(displayTitle, 600, 315);
+
+            const dataUrl = canvas.toDataURL('image/png');
+            const b64Data = dataUrl.split(',');
+            const binaryStr = atob(b64Data[1] || b64Data[0]);
+            u8Array = new Uint8Array(binaryStr.length);
+            for (let idx = 0; idx < binaryStr.length; idx++) {
+                u8Array[idx] = binaryStr.charCodeAt(idx);
+            }
+        }
+
+        ogImagesMap[`${baseProjectFolder}/assets/og-${displayTitle}.png`] = u8Array;
+    });
+
+    // =========================================================
+    // 2. GENERATE MASTER INDEX OG IMAGE (Project Title)
+    // =========================================================
+    ctx.fillStyle = '#f5f5f7';
+    ctx.fillRect(0, 0, 1200, 630);
+    ctx.fillStyle = '#1d1d1f';
+    ctx.font = 'bold 72px dckimPixelMono';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    
+    if (ctx.measureText(baseProjectFolder).width > 1020) {
+        ctx.font = 'bold 48px dckimPixelMono';
     }
+    ctx.fillText(baseProjectFolder, 600, 315);
+
+    const indexDataUrl = canvas.toDataURL('image/png');
+    const indexB64Data = indexDataUrl.split(',');
+    const indexBinaryStr = atob(indexB64Data[1] || indexB64Data[0]);
+    const indexU8Array = new Uint8Array(indexBinaryStr.length);
+    for (let idx = 0; idx < indexBinaryStr.length; idx++) {
+        indexU8Array[idx] = indexBinaryStr.charCodeAt(idx);
+    }
+    ogImagesMap[`${baseProjectFolder}/assets/og-${baseProjectFolder}.png`] = indexU8Array;
+
+    // ==========================================================
+    // 3. GENERATE VISUAL INDEX.HTML (Minimal Cards, No Uppercase)
+    // ==========================================================
+    let indexHTML = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${baseProjectFolder} - Directory</title>
+    <meta property="og:title" content="${baseProjectFolder}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-${baseProjectFolder}.png" />
+    <meta property="og:description" content="Project workspace page file directory layout list." />
+    <style>
+        body { font-family: dckimPixelMono, monospace; background: #fdfdfd; color: #1d1d1f; margin: 0; padding: 60px 40px; text-align: center; }
+        h1 { border-bottom: 1px solid #e5e5e7; padding-bottom: 20px; margin-bottom: 50px; font-size: 32px; font-weight: bold; display: inline-block; width: 100%; max-width: 700px; letter-spacing: 0.5px; }
+        .grid-container { display: flex; flex-direction: column; align-items: center; gap: 35px; width: 100%; max-width: 700px; margin: 0 auto; }
+        .page-card { display: block; background: #f5f5f7; border: 1px solid #e5e5e7; border-radius: 8px; text-decoration: none; color: inherit; width: 100%; overflow: hidden; transition: background 0.15s ease, border-color 0.15s ease; }
+        .page-card:hover { background: #f0f0f2; border-color: #d2d2d7; }
+        .page-card img { width: 100%; height: auto; display: block; border-bottom: 1px solid #e5e5e7; image-rendering: pixelated; }
+        .card-guts { padding: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .card-title { font-size: 24px; font-weight: bold; margin: 0; color: #1d1d1f; }
+        .card-desc { font-size: 15px; color: #6e6e73; font-style: italic; margin: 0; max-width: 580px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <h1>${baseProjectFolder}</h1>
+    
+    <div class="grid-container">\n`;
+
+    activeLayers.forEach(layer => {
+        const cleanFolderUrl = `${layer.filename}/`;
+        let displayTitle = layer.c_title || layer.filename || 'Untitled Page';
+        if (displayTitle.endsWith('.html')) {
+            displayTitle = displayTitle.slice(0, -5);
+        }
+        const descText = layer.d_description || 'No description provided.';
+        const localCardImgSrc = `assets/og-${displayTitle}.png`;
+
+        indexHTML += `        <a href="${cleanFolderUrl}" class="page-card">
+            <img src="${localCardImgSrc}" alt="${displayTitle}">
+            <div class="card-guts">
+                <p class="card-title">${displayTitle}</p>
+                <p class="card-desc">${descText}</p>
+            </div>
+        </a>\n`;
+    });
+
+    indexHTML += `    </div>
+</body>
+</html>`;
+
+    // ==========================================
+    // 4. GENERATE SITEMAP XML
+    // ==========================================
+    let sitemapXML = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    sitemapXML += '<urlset xmlns="http://sitemaps.org">\n';
+    
+    sitemapXML += '  <url>\n';
+    sitemapXML += `    <loc>${baseProjectFolder}/index.html</loc>\n`;
+    sitemapXML += `    <lastmod>${currentDateStr}</lastmod>\n`;
+    sitemapXML += '    <changefreq>weekly</changefreq>\n';
+    sitemapXML += '  </url>\n';
+
+    activeLayers.forEach(layer => {
+        const relativePath = `${baseProjectFolder}/${layer.filename}.html`;
+        sitemapXML += '  <url>\n';
+        sitemapXML += `    <loc>${relativePath}</loc>\n`;
+        sitemapXML += `    <lastmod>${currentDateStr}</lastmod>\n`;
+        sitemapXML += '    <changefreq>weekly</changefreq>\n';
+        sitemapXML += '  </url>\n';
+    });
+    sitemapXML += '</urlset>';
+
+    // ==========================================
+    // 5. GENERATE RSS FEED XML
+    // ==========================================
+    let rssXML = '<?xml version="1.0" encoding="UTF-8" ?>\n';
+    rssXML += '<rss version="2.0">\n';
+    rssXML += '<channel>\n';
+    rssXML += `  <title>${baseProjectFolder}</title>\n`;
+    rssXML += `  <link>${baseProjectFolder}/index.html</link>\n`;
+    rssXML += `  <description>Project RSS update log feed</description>\n`;
+    rssXML += `  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n`;
+
+    activeLayers.forEach(layer => {
+        const relativePath = `${baseProjectFolder}/${layer.filename}.html`;
+        let displayTitle = layer.c_title || layer.filename || 'Untitled';
+        if (displayTitle.endsWith('.html')) {
+            displayTitle = displayTitle.slice(0, -5);
+        }
+        const descText = layer.d_description || 'No description provided.';
+        const imageRelativeAssetPath = `${baseProjectFolder}/assets/og-${displayTitle}.png`;
+
+        rssXML += '  <item>\n';
+        rssXML += `    <title>${displayTitle}</title>\n`;
+        rssXML += `    <link>${relativePath}</link>\n`;
+        rssXML += `    <guid isPermaLink="false">${relativePath}</guid>\n`;
+        rssXML += `    <description>${descText}</description>\n`;
+        rssXML += `    <enclosure url="${imageRelativeAssetPath}" length="0" type="image/png" />\n`;
+        rssXML += '  </item>\n';
+    });
+    rssXML += '</channel>\n</rss>';
+
+    return {
+        indexHtml: indexHTML,
+        sitemap: sitemapXML,
+        rss: rssXML,
+        imagesMap: ogImagesMap
+    };
 }
-const zipped = fflate.zipSync(masterFiles);
-const link = document.createElement('a');
-link.href = URL.createObjectURL(new Blob([zipped], { type: 'application/zip' }));
-link.download = `${document.getElementById('projectName').value}.zip`;
-link.click();
-setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-makeTopLayer(whatLayerAreWeIn);
-restorePointerEventsNone();
-spaceViewOff();
-Z();
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async function zipSave() {
+    const whatLayerAreWeIn = topLayer.a_currentLayer.toString();
+    globalVariableValue = [];
+    makeTopLayer("b_layer1");
+    
+    // Process all 20 frames natively as established in your pipeline
+    for (let f = 0; f < 20; f++) {
+        await deMinimis(true, null, null, null, null, null, null, event, 1);
+    }
+    
+    const masterFiles = {};
+    for (let i = 0; i < globalVariableValue.length; i++) {
+        const fileContainer = globalVariableValue[i]; 
+        for (const [filePath, objectData] of Object.entries(fileContainer)) {
+            const keys = Object.keys(objectData);
+            const length = keys.length;
+            const uint8 = new Uint8Array(length);
+            for (let j = 0; j < length; j++) {
+                uint8[j] = objectData[j];
+            }
+            masterFiles[filePath] = uint8;
+        }
+    }
+
+    /* ================================================================= */
+    /* METADATA INJECTION: INDEX, SITEMAP, RSS, & GENERATED IMAGES        */
+    /* ================================================================= */
+    const metaDataBundle = generateSiteMetadataIndexAndImages();
+    const targetRootFolder = topLayer.aa_project_name || 'dbn13_project';
+
+    // Pack the dynamically created metadata files directly into the root folder
+    masterFiles[`${targetRootFolder}/index.html`] = fflate.strToU8(metaDataBundle.indexHtml);
+    masterFiles[`${targetRootFolder}/sitemap.xml`] = fflate.strToU8(metaDataBundle.sitemap);
+    masterFiles[`${targetRootFolder}/feed.xml`] = fflate.strToU8(metaDataBundle.rss);
+
+    // Unpack all generated Open Graph png images directly into the archive assets map
+    for (const [imgFilePath, imgUint8Array] of Object.entries(metaDataBundle.imagesMap)) {
+        masterFiles[imgFilePath] = imgUint8Array;
+    }
+    /* ================================================================= */
+
+    // Final packaging compression sequence execution
+    const zipped = fflate.zipSync(masterFiles);
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([zipped], { type: 'application/zip' }));
+    link.download = `${document.getElementById('projectName').value}.zip`;
+    link.click();
+    
+    setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    makeTopLayer(whatLayerAreWeIn);
+    restorePointerEventsNone();
+    spaceViewOff();
+    Z();
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

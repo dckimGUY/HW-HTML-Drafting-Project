@@ -7,8 +7,81 @@ ui.projectName.input             = function() { topLayer.aa_project_name = ui.pr
 ui.coin77155.click               = function() { deMinimis(true, null, null, null, null, null, null, event); layerRight(); buzzWord(0,'SAVE',128,'magenta',200,200,25,'top','','',event); };
 ui.coin59760.click               = function() { layerLeft();  };
 ui.coin64291.click               = function() { layerRight(); };
+
+
 ui.coin70038.click               = function() { navigator.clipboard.writeText(utilityLayer0.innerHTML); };
-ui.coin49592.click               = function() { openProject(); buzzWord(0,'OPEN',128,'magenta',200,200,25,'top','','',event); };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function uploadCustomOGImage() {
+    // 1. Create a dynamic hidden file input element in memory
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/png, image/jpeg, image/webp'; // Restrict to typical image types
+
+    // 2. Setup the event listener to catch when the user selects a file
+    fileInput.onchange = function(event) {
+        const file = event.target.files[0];
+        if (!file) return; // Exit if dialogue was cancelled or empty
+
+        // 3. Instantiate a standard file reader to extract the binary contents
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const base64ResultString = e.target.result; // This holds the full 'data:image/png;base64,...' string
+            
+            // 4. DYNAMIC TARGET CHECK: Use your exact blueprint path to update the correct active layer object 🎯
+            const currentActiveLayerKey = topLayer.a_currentLayer;
+            
+            if (topLayer[currentActiveLayerKey]) {
+                // Assign the data URL string straight onto your key location property
+                topLayer[currentActiveLayerKey].i_ogImageBase64 = base64ResultString;
+                
+                // Console feedback tracking confirmation utility pass
+                console.log(`Successfully assigned custom OG image to active workspace layer: ${currentActiveLayerKey}`);
+            } else {
+                console.error("State Sync Failure: The current active layer pointer could not be resolved inside topLayer.");
+            }
+        };
+
+        // Trigger the asynchronous base64 encoder read path
+        reader.readAsDataURL(file);
+    };
+
+    // 5. Virtual Click execution triggers the native operating system file select selector window instantly
+    fileInput.click();
+}
+
+
+
+
+ui.coin49592.click               = function() { uploadCustomOGImage(); buzzWord(0,'OG-image',128,'magenta',200,200,25,'top','','',event); };
+
+
+
+
+
+
 ui.coin54398.click               = function() { saveProject(); buzzWord(0,'SAVE',128,'magenta',200,200,25,'top','','',event); };
 
 ui.coin77671.input               = function() { filename = ui.coin77671.ref.value; topLayer[topLayer.a_currentLayer].filename = filename; };
