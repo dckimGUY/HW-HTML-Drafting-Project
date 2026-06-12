@@ -21,7 +21,7 @@ F.focus();">
 
 <input id="projectName" name="projectName" class="input_ input_projectName dckimPixelMono" type="value" title="Project Name" placeholder="projectName" spellcheck="false">
 
-<button id="coin49592" class="button_ button_coin49592" title="To Open a Project:\nDrag the File to the Screen"></button>
+<button id="coin49592" class="button_ button_coin49592" title="Load OG-image for this level"></button>
 <button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
 <button id="coin77155" class="button_ drag-button button_coin77155" title="DRAG From Here TO SAVE (best option)\nClick for SEQUENTIAL SAVING OR\nclick below with +SHIFT to add to the State Accumulator" draggable="true"></button>
