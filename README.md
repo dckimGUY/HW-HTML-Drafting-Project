@@ -1,147 +1,64 @@
-# [OPEN THE PROGRAM HERE](https://dckimguy.github.io/HW-HTML-Drafting-Project/)
+# HDUB Pixel Art Edition
 
-April 23rd, 2026:
+This project is a non-corporate initiative which does not cost money, does not track you, and does not contain advertisement. The software is actually very simple and works entirely within in any web browser. There is no need to download or set up any additional software to make the program work. There are no external dependencies. HDUB Pixel Art Edition is totally free to use, forever.
 
-Wow, almost all of the documentation and 'helpful' stuff that I wrote has quickly become outdated. Most of it doesn't really apply anymore, and the best source of information is the keymap found on the F1 key in the program. Even the YouTube videos are not fully accurate anymore. I changed the 'RU' to being 'RW' for example. If you didn't know what it was before, I suppose that doesn't matter.
+## Save the program using ctrl + s
 
-I really should try my best to spruce up the documentation and give some explanation of the potential usages for the various program components. The more I worked on the keybindings, the tighter knit the interactions between the available functions became. Hopefully you will agree with my selections there.
+The following is a link where you can open the program immediately in your web browser. The next link goes to the documentation which will help you to get started using the program. Down below there is a description given which tells all about the program, and what intense capability it has.
 
-Choosing the final program components has been fairly straight forward, having done all of the programming up front. It's like choosing from a buffet dinner if you do it that way.
+[![HDUB Pixel Art Edition, Program](./images-for-readme/hdub-program-link.png)](https://dckimguy.github.io/HW-HTML-Drafting-Project/)
 
-Following the optimization stage, I broke a lot of things. Most things weren't immediately obvious. Patching and reversion has caught most of the flailing code.
+[![HDUB Pixel Art Edition, Documentation](./images-for-readme/hdub-documentation-link.png)](https://dckim.org/)
 
-I'd like to throw in some more 'goodies', and pre-prep for the defaults though, I am sure that you will come up with better arrangements than I will.
+## Here is a program description.
 
-Most of what follows here, and especially anything found at dckim.org is very much out of date, but, I have left it on there for now. You can get a bit of a peek back in time, and see where the project has come from, before reaching it's current stage. There were even some trades-level gawkers poking fun in some mastodon 'ribbing'. They seemed to all believe that the project was at the 'fully-complete' stage, and did not understand the actual development process which was happening. I found that to be quite amusing, and must admit that I deliberately 'played it up'.
+This project started as one man's learning project, aiming to learn and use javascript. After working through some early small programs, this last iteration has exceeded all expectations, and has even become a very real and useful program.
 
-'Well, why would you put everything on the key? And why would you use the CAPS lock as a mode?'
+HDUB Pixel Art Edition is a very capable graphical editor designed and developed specifically for HTML. It is nearly a 'what you see is what you get editor' but, the finished view can be easily toggled, so we still have some helpful construction and information overlays available full-time. The documentation available at dckim.org gives buttons descriptions, etc, and they will not be repeated here.
 
-How else would I test everything from scratch with no IDE to speak of? So, it became an improptu IDE of itself. It's very curious how the program somehow solved it's own quandaries as it snowballed along the path. I worked just enough in the back end to get the advertisement system happening. Clearly the way forward is in the back end codework. That's pretty obvious now that the front end code has become all but played out.
+The program features a standardized way of producing simple graphical buttons with custom text and colours. In addition to that, there is also a method given which allows the user to design completely custom HTML buttons, with the various states arranged in single image files, a lot like sprite sheets. Associated with that is a custom process which is easy to understand and implement. The process is give on the YouTube channel for this project. All of the custom button graphics are de-duplicated and amalgamated into a single sheet, just like a standard image atlas, when the file is saved as either a single vanilla HTML, with no dependencies, or the file is saved in a zip, with images etc sourced automatically.
 
-My preference has been to keep the work on the user's machine as far as possible. That way, if it is a matter of keeping the outfile as a single file, then it's good. If the user wishes to upload somewhere, all the same. Maybe better to break it up with minimal sources at that point. Certainly though, it must remain as a choice.
+## Image atlas explained in depth.
 
-Clearly, if there is a back end integration suited, it should not overwhelm the process, or eliminate any beneficial selections in the outcomes. I am not entirely familiar with the common practice as relates to the back end but, I assume that I have already reduced the parts to a condition which is nearly ready for the transfer.
+To give some insight into the de-duplication process and the anatomy of the image atlas that is produced: Imagery is de-duplicated, this means that the outgoing file(s) will contain only one reference to any image, and that will be contained in the single image atlas. The outgoing file setup will be very fast because of this setup. We have only one image atlas file, and each image in the page is a reference to a specific location on that atlas. The atlas itself if arranged in such a way that the image atlas in no larger that 4096 by 4096, and when this size is exceeded, another least power of two square atlas becomes the overflow, again not exceeding that maximum memory allotment size. The threshold was chosen to align with the typical memory maximum for mobile phones.
 
-I think I'll leave this old stuff in here for now:
+## Audio behaviour explained.
 
-# HW HTML Drafting Project
+As a sidenote, audio files are treated in an interesting way. When an audio file is dragged from the filesystem on top of a custom button, that custom button will then play the audio when clicked. This is the default behaviour, which makes it very easy to 'key-up' some cool sound-effects for you webpages/programs/games.
 
-#dckimGUY
+## Special syntax input to define HTML rectangles.
 
-__Open-Source All The Way!__
+Rectangles can be defined in a simple row/height syntax in the form: h12w6w12w8h4w6w6w4... where the letter 'h' begins the new row at a new height. The 'w' begins a new column within the row at the given width. This is a tightly packed syntax, which doesn't skip any spaces. Additionally there is another syntax which can be overlayed on top of this simple row/height description, and it will give a reference to HTML components which can be designated for that rectangular space within the description. In addtion the row/height syntax can be exported to a file which is a simple '.png' image of the layout. That file is then a shape-key for the HTML layout, and has the row/height syntax making up part of a special filename structure. The advantage to this is that many many HTML layouts can be saved as simple shape keys, and so we can build an extensive repertoire within the native file system. Because the shape-keys are '.png' we can visually see what the layouts are in the file system as 'in-system' rendered thumbnails are common for '.png'. The syntax and associated systems for using it, are built with 'blazing fast' speed in mind. It is unlikely that the user will need a faster method for inputting layout keys, and the integration with the native filing system is a real plus, allowing the user to organize their layout key however they see fit. Instead of the program becoming a completely dominating manager, it serves well with a partial 'convenience-level' manager, as there is a very capable method of lining up 24 layouts within the program context.
 
-This wiki is old, and the information is not relevant anymore...
+This level of layout management will seldom be necessary for the hobbyist. This is far more than any ordinary user would expect to require but, at the same time it remains very simple to use.
 
-[![HW HTML Drafting Project has a WIKI](./images-for-readme/h_wiki-promo.png)](https://github.com/dckimMysteryAuthor/HW-HTML-Drafting-Project/wiki/Home)
+## It's getting late, and I'm tired, so maybe I will keep updating this readme file another day...
 
-[Visit DCKIM.com](https://dckim.com/)
 
-[![HW HTML Drafting Project LOGO](./images-for-readme/a_splash-screen.png)](https://dckim.com/index.html)
 
-Here is some other information so that you know that the project has some real traction. It seems that an actual company in the United States has made some sort of assessment of the project, which was conducted in an online forum. A little bit unprofessional, but, we'll take whatever free press we can get.
 
-The interest seems to be related to 'legal sourcing':
-https://mastodon.social/@glyph/115452884322460847
-https://mastodon.social/@glyph/115452658138339709
 
-DCKIM HTML Drafting Project is advertised on Mastodon.Social since the beginning of October 2025 on 4 hour intervals and in more than 40 different languages with matched pages in-language with individual RSS feeds in-language, all with alternate-language tags for both RSS and pages. It has been thoroughly done, and this has helped to approach the goal of global HTML Drafting Domination (muhahahaha). The advertisements have been online at mastodon, and in physical locations in the City of North York with signage on the community sign-posting boards(large signs).
 
-Then here's the top linking sites for DCKIM, it's long, and that helps with brand-authority and visibility:
 
-As of 2026-01-23:
 
-Site,Linking pages,Target pages
-mastodon.social,29,6
-hli.fi,8,3
-fabrykajabo.li,7,1
-murkworks.net,7,2
-rando.social,6,4
-draconity.me,5,1
-github.com,5,1
-loud.computer,5,1
-pandapla.net,5,1
-silicon.moe,5,1
-techtett.de,5,1
-esgeroth.org,4,2
-persadon.com,4,1
-phantanews.de,4,1
-ruiguimaraes.net,4,1
-schleswig-holstein.de,4,3
-anothersuper.social,3,1
-bsky.app,3,3
-metikumity.com,3,1
-nighten.fr,3,1
-nwt.social,3,2
-oslo.town,3,1
-uninformation.org,3,1
-uvix.cc,3,1
-yumk.xyz,3,1
-ecoevo.social,2,1
-heads.social,2,1
-indiefilmmakers.social,2,1
-linux.it,2,1
-losno.co,2,1
-mastodon.nu,2,2
-meowstodon.eu,2,1
-nfdi.social,2,1
-resolutions.it,2,1
-return12.net,2,1
-sieprawski.pl,2,1
-someplace.social,2,1
-suomi.social,2,1
-yelvington.com,2,1
-2137.social,1,1
-academiccloud.social,1,1
-aleph.land,1,1
-avision-it.social,1,1
-birdbox.party,1,1
-canadiancivil.com,1,1
-critter.cafe,1,1
-danq.me,1,1
-digitalcourage.social,1,1
-evy.pet,1,1
-fedia.social,1,1
-fedica.com,1,1
-freefree.ps,1,1
-freesewing.social,1,1
-fromm.social,1,1
-gamedev.berlin,1,1
-gamedev.place,1,1
-ganyuss.com,1,1
-hachyderm.io,1,1
-hams.social,1,1
-infosec.exchange,1,1
-jmrp.io,1,1
-juuze.de,1,1
-kompektiva.org,1,1
-makearmy.io,1,1
-mastodns.net,1,1
-minidisc.tokyo,1,1
-mstdn-social.com,1,1
-mstdn.games,1,1
-mstdn.social,1,1
-mytech.nexus,1,1
-neocities.org,1,1
-neverhill.social,1,1
-notpickard.com,1,1
-ohai.social,1,1
-osumiakari.jp,1,1
-peaceful.social,1,1
-pepicrft.me,1,1
-photorat.org,1,1
-podcasts.social,1,1
-publicgood.social,1,1
-sadmin.io,1,1
-securitycafe.ca,1,1
-shuttle.eu,1,1
-snabelen.no,1,1
-stefanbohacek.online,1,1
-thebristolcable.social,1,1
-tweesecake.social,1,1
-urbanists.social,1,1
-uwa4d.com,1,1
-wake.st,1,1
-wildserver.ru,1,1
-witter.cz,1,1
 
-(That's just some of them, there are more in there, and more coming because advertisement continues until present. It's automated.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Here are some links where some tech people linked/boosted this project:
+
+[https://mastodon.social/@glyph/115452884322460847](https://mastodon.social/@glyph/115452884322460847)
+
+[https://mastodon.social/@glyph/115452658138339709](https://mastodon.social/@glyph/115452658138339709)

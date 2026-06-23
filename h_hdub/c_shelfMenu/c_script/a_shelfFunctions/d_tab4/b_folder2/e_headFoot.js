@@ -18,6 +18,11 @@ const header1 = `<!DOCTYPE html>
 <meta name="geo.region" content="CA-ON">
 <meta name="geo.placename" content="Toronto">
 
+<!-- Sitemap and RSS -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="../feed.xml" />
+
+
 <title>{{title}}</title>
 
 `;
@@ -291,6 +296,11 @@ let fileHeader = `<!DOCTYPE html>
 <meta name="geo.position" content="43.658497;-79.347015">
 <meta name="geo.region" content="CA-ON">
 <meta name="geo.placename" content="Toronto">
+
+<!-- Sitemap and RSS -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="../feed.xml" />
+
 
 <title>{{title}}</title>
 

@@ -272,7 +272,7 @@ function generateSiteMetadataIndexAndImages() {
     sitemapXML += '  </url>\n';
 
     activeLayers.forEach(layer => {
-        const relativePath = `${baseProjectFolder}/${layer.filename}.html`;
+        const relativePath = `${baseProjectFolder}/${layer.filename}/index.html`;
         sitemapXML += '  <url>\n';
         sitemapXML += `    <loc>${relativePath}</loc>\n`;
         sitemapXML += `    <lastmod>${currentDateStr}</lastmod>\n`;
@@ -293,7 +293,7 @@ function generateSiteMetadataIndexAndImages() {
     rssXML += `  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n`;
 
     activeLayers.forEach(layer => {
-        const relativePath = `${baseProjectFolder}/${layer.filename}.html`;
+        const relativePath = `${baseProjectFolder}/${layer.filename}/index.html`;
         let displayTitle = layer.c_title || layer.filename || 'Untitled';
         if (displayTitle.endsWith('.html')) {
             displayTitle = displayTitle.slice(0, -5);
@@ -369,16 +369,41 @@ async function zipSave() {
         await deMinimis(true, null, null, null, null, null, null, event, 1);
     }
     
+    // Your exact schema list of layer string names
+    const layerNames = [
+        "b_layer1", "c_layer2", "d_layer3", "e_layer4", "f_layer5",
+        "g_layer6", "h_layer7", "i_layer8", "j_layer9", "k_layer10",
+        "l_layer11", "m_layer12", "n_layer13", "o_layer14", "p_layer15",
+        "q_layer16", "r_layer17", "s_layer18", "t_layer19", "u_layer20"
+    ];
+
     const masterFiles = {};
     for (let i = 0; i < globalVariableValue.length; i++) {
         const fileContainer = globalVariableValue[i]; 
         for (const [filePath, objectData] of Object.entries(fileContainer)) {
             const keys = Object.keys(objectData);
             const length = keys.length;
-            const uint8 = new Uint8Array(length);
+            let uint8 = new Uint8Array(length);
             for (let j = 0; j < length; j++) {
                 uint8[j] = objectData[j];
             }
+
+            // 🔍 SEARCH & REPLACE FOR LEVEL FILES (Stepping up out of the subfolder using ../)
+            if (filePath.endsWith('.html') || filePath.endsWith('.js') || filePath.endsWith('.txt')) {
+                let fileText = fflate.strFromU8(uint8);
+                
+                for (let index = 0; index < 20; index++) {
+                    const levelNum = index + 1;
+                    const currentLayerName = layerNames[index];
+                    
+                    // 🚀 ADDED "../" HERE so subfolder files can step out before stepping in
+                    const targetFilename = `../${topLayer[currentLayerName].filename}/index.html`;
+                    const pattern = new RegExp(`\\{\\{lvl${levelNum}\\}\\}(?!\\})`, "g");
+                    fileText = fileText.replace(pattern, targetFilename);
+                }
+                uint8 = fflate.strToU8(fileText);
+            }
+
             masterFiles[filePath] = uint8;
         }
     }
@@ -389,10 +414,29 @@ async function zipSave() {
     const metaDataBundle = generateSiteMetadataIndexAndImages();
     const targetRootFolder = topLayer.aa_project_name || 'dbn13_project';
 
+    // Capture the metadata strings to apply the search and replace
+    let indexString = metaDataBundle.indexHtml;
+    let sitemapString = metaDataBundle.sitemap;
+    let rssString = metaDataBundle.rss;
+
+    // Loop through the 20 processed levels to swap out the template tags in metadata (Kept flat, no ../ needed here)
+    for (let index = 0; index < 20; index++) {
+        const levelNum = index + 1;
+        const currentLayerName = layerNames[index];
+        
+        // Root files look directly down into the folders
+        const targetFilename = `${topLayer[currentLayerName].filename}/index.html`;
+        const pattern = new RegExp(`\\{\\{lvl${levelNum}\\}\\}(?!\\})`, "g");
+
+        indexString = indexString.replace(pattern, targetFilename);
+        sitemapString = sitemapString.replace(pattern, targetFilename);
+        rssString = rssString.replace(pattern, targetFilename);
+    }
+
     // Pack the dynamically created metadata files directly into the root folder
-    masterFiles[`${targetRootFolder}/index.html`] = fflate.strToU8(metaDataBundle.indexHtml);
-    masterFiles[`${targetRootFolder}/sitemap.xml`] = fflate.strToU8(metaDataBundle.sitemap);
-    masterFiles[`${targetRootFolder}/feed.xml`] = fflate.strToU8(metaDataBundle.rss);
+    masterFiles[`${targetRootFolder}/index.html`] = fflate.strToU8(indexString);
+    masterFiles[`${targetRootFolder}/sitemap.xml`] = fflate.strToU8(sitemapString);
+    masterFiles[`${targetRootFolder}/feed.xml`] = fflate.strToU8(rssString);
 
     // Unpack all generated Open Graph png images directly into the archive assets map
     for (const [imgFilePath, imgUint8Array] of Object.entries(metaDataBundle.imagesMap)) {
@@ -413,6 +457,8 @@ async function zipSave() {
     spaceViewOff();
     Z();
 }
+
+
 
 
 
@@ -1456,8 +1502,6 @@ let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}
 /* --- THE CALL SITE --- */
 const result = await SquareAtlas(content);
 content = result.html; 
-
-
 
 if ((zipThisFile == 0) || (zipThisFile == 1)) {
 
