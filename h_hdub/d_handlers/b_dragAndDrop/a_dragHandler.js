@@ -256,6 +256,11 @@ return 0;
 
 
 if (!file.type.startsWith("image/")&&!file.type.startsWith("audio/")&&!file.type.startsWith("video/")) {
+
+
+
+
+
 const reader = new FileReader();
 reader.onload = evt => {
 if (!e.target.dataset.coinTrip) {
@@ -287,6 +292,14 @@ recoverColouration();
 reader.readAsText(file);
 } else {
 //if (!file.type.startsWith("image/")&&!file.type.startsWith("audio/")&&!file.type.startsWith("video/")) {
+
+
+
+
+
+
+
+
 if ( file.type.startsWith("image/")) {
 /* ONE MORE RETARDED HACK PLEASE GOD. */
 /* I DONT KNOW HOW THIS CODE WORKS. */
@@ -741,36 +754,81 @@ document.getElementById("hdubSingleEntry").focus();
 });
 }
 } else {
-hauptModeOriginalState = hauptMode;
-hauptMode = 0;
-const reader = new FileReader();
-reader.onload = evt => {
-const img = new Image();
-img.onload = () => {
-img.loading = "lazy";
-img.style.width  = "100%";
-img.style.height = "100%";
-insertNewCoin(["",78,78,true,false,false]);
-utilityLayer0.lastElementChild.style.height = img.naturalHeight + "px";
-utilityLayer0.lastElementChild.style.width = img.naturalWidth + "px";
-utilityLayer0.lastElementChild.dataset.height = utilityLayer0.lastElementChild.style.height;
-utilityLayer0.lastElementChild.dataset.width = utilityLayer0.lastElementChild.style.width;
-utilityLayer0.lastElementChild.style.left = Math.floor(parseInt(e.pageX)/T) * T + "px";
-utilityLayer0.lastElementChild.style.top = Math.floor(parseInt(e.pageY)/T) * T + "px";
-utilityLayer0.lastElementChild.dataset.left = Math.floor(parseInt(e.pageX)/T) * T + "px";
-utilityLayer0.lastElementChild.dataset.top = Math.floor(parseInt(e.pageY)/T) * T + "px";
-utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "img");
-utilityLayer0.lastElementChild.lastElementChild.firstElementChild.innerHTML = "";
-utilityLayer0.lastElementChild.lastElementChild.firstElementChild.appendChild(img);
-hauptMode = hauptModeOriginalState;
-};
-if (useBase64forImages==true) {
-img.src = evt.target.result;
-} else {
-img.src ="./" + hdub_imagePath + file.name;
-}
-};
-reader.readAsDataURL(file);
+
+
+
+
+
+
+
+
+
+
+// 1. Extract the files directly from your drag event object
+const files = e.dataTransfer.files;
+
+(async () => {
+  let cumulativeHeightOffset = 0;
+
+  // 2. Loop through the extracted files sequentially
+  for (const file of files) {
+    hauptModeOriginalState = hauptMode;
+    hauptMode = 0;
+
+    await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = evt => {
+        const img = new Image();
+        img.onload = () => {
+          img.loading = "lazy";
+          img.style.width  = "100%";
+          img.style.height = "100%";
+          
+          insertNewCoin(["",78,78,true,false,false]);
+          
+          const baseTop = Math.floor(parseInt(e.pageY)/T) * T;
+          const finalTop = baseTop + cumulativeHeightOffset;
+
+          utilityLayer0.lastElementChild.style.height = img.naturalHeight + "px";
+          utilityLayer0.lastElementChild.style.width = img.naturalWidth + "px";
+          utilityLayer0.lastElementChild.dataset.height = utilityLayer0.lastElementChild.style.height;
+          utilityLayer0.lastElementChild.dataset.width = utilityLayer0.lastElementChild.style.width;
+          
+          utilityLayer0.lastElementChild.style.left = Math.floor(parseInt(e.pageX)/T) * T + "px";
+          utilityLayer0.lastElementChild.dataset.left = Math.floor(parseInt(e.pageX)/T) * T + "px";
+          
+          utilityLayer0.lastElementChild.style.top = finalTop + "px";
+          utilityLayer0.lastElementChild.dataset.top = finalTop + "px";
+          
+          utilityLayer0.lastElementChild.id = utilityLayer0.lastElementChild.id.replace(/coin/g, "img");
+          utilityLayer0.lastElementChild.lastElementChild.firstElementChild.innerHTML = "";
+          utilityLayer0.lastElementChild.lastElementChild.firstElementChild.appendChild(img);
+          
+          cumulativeHeightOffset += img.naturalHeight;
+          hauptMode = hauptModeOriginalState;
+          
+          resolve();
+        };
+        
+        if (useBase64forImages == true) {
+          img.src = evt.target.result;
+        } else {
+          img.src = "./" + hdub_imagePath + file.name;
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+})();
+
+
+
+
+
+
+
+
+
 }
 } else if (e.altKey || e.target.parentNode != document.getElementById("hdubOverlay") || e.target != document.getElementById("hdubOverlay")) {
 /* retarded hack-job */

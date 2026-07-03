@@ -106,7 +106,22 @@ document.getElementById(id).style.backgroundColor = "rgba(255,0,255,0.35)";
 
 
 function generateSiteMetadataIndexAndImages() {
-    const baseProjectFolder = topLayer.aa_project_name || 'dbn13_project';
+
+
+
+    let baseProjectFolder;
+if (topLayer.aa_project_name.includes('/')) {
+baseProjectFolder = topLayer.aa_project_name.split('/')[1] || 'dbn13_project';
+} else {
+baseProjectFolder = topLayer.aa_project_name || 'dbn13_project';
+}
+
+
+
+let fullPathName = topLayer.aa_project_name || 'dbn13_project';
+
+
+
     const currentDateStr = new Date().toISOString().split('T');
 
     // The complete list of your 25 layer keys
@@ -218,7 +233,7 @@ function generateSiteMetadataIndexAndImages() {
     <title>${baseProjectFolder} - Directory</title>
     <meta property="og:title" content="${baseProjectFolder}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/og-${baseProjectFolder}.png" />
+    <meta property="og:image" content="https://${topLayer.aa_project_name}/assets/og-${baseProjectFolder}.png" />
     <meta property="og:description" content="Project workspace page file directory layout list." />
     <style>
         body { font-family: dckimPixelMono, monospace; background: #fdfdfd; color: #1d1d1f; margin: 0; padding: 60px 40px; text-align: center; }
@@ -263,20 +278,16 @@ function generateSiteMetadataIndexAndImages() {
     // 4. GENERATE SITEMAP XML
     // ==========================================
     let sitemapXML = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    sitemapXML += '<urlset xmlns="http://sitemaps.org">\n';
+    sitemapXML += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
     
     sitemapXML += '  <url>\n';
-    sitemapXML += `    <loc>${baseProjectFolder}/index.html</loc>\n`;
-    sitemapXML += `    <lastmod>${currentDateStr}</lastmod>\n`;
-    sitemapXML += '    <changefreq>weekly</changefreq>\n';
+    sitemapXML += `    <loc>https://${fullPathName}/index.html</loc>\n`;
     sitemapXML += '  </url>\n';
 
     activeLayers.forEach(layer => {
-        const relativePath = `${baseProjectFolder}/${layer.filename}/index.html`;
+        const relativePath = `${fullPathName}/${layer.filename}/index.html`;
         sitemapXML += '  <url>\n';
-        sitemapXML += `    <loc>${relativePath}</loc>\n`;
-        sitemapXML += `    <lastmod>${currentDateStr}</lastmod>\n`;
-        sitemapXML += '    <changefreq>weekly</changefreq>\n';
+        sitemapXML += `    <loc>https://${relativePath}</loc>\n`;
         sitemapXML += '  </url>\n';
     });
     sitemapXML += '</urlset>';
@@ -287,26 +298,26 @@ function generateSiteMetadataIndexAndImages() {
     let rssXML = '<?xml version="1.0" encoding="UTF-8" ?>\n';
     rssXML += '<rss version="2.0">\n';
     rssXML += '<channel>\n';
-    rssXML += `  <title>${baseProjectFolder}</title>\n`;
-    rssXML += `  <link>${baseProjectFolder}/index.html</link>\n`;
+    rssXML += `  <title>${fullPathName}</title>\n`;
+    rssXML += `  <link>https://${fullPathName}/index.html</link>\n`;
     rssXML += `  <description>Project RSS update log feed</description>\n`;
     rssXML += `  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n`;
 
     activeLayers.forEach(layer => {
-        const relativePath = `${baseProjectFolder}/${layer.filename}/index.html`;
+        const relativePath = `${fullPathName}/${layer.filename}/index.html`;
         let displayTitle = layer.c_title || layer.filename || 'Untitled';
         if (displayTitle.endsWith('.html')) {
             displayTitle = displayTitle.slice(0, -5);
         }
         const descText = layer.d_description || 'No description provided.';
-        const imageRelativeAssetPath = `${baseProjectFolder}/assets/og-${displayTitle}.png`;
+        const imageRelativeAssetPath = `${fullPathName}/assets/og-${displayTitle}.png`;
 
         rssXML += '  <item>\n';
         rssXML += `    <title>${displayTitle}</title>\n`;
-        rssXML += `    <link>${relativePath}</link>\n`;
-        rssXML += `    <guid isPermaLink="false">${relativePath}</guid>\n`;
+        rssXML += `    <link>https://${relativePath}</link>\n`;
+        rssXML += `    <guid isPermaLink="false">https://${relativePath}</guid>\n`;
         rssXML += `    <description>${descText}</description>\n`;
-        rssXML += `    <enclosure url="${imageRelativeAssetPath}" length="0" type="image/png" />\n`;
+        rssXML += `    <enclosure url="https://${imageRelativeAssetPath}" length="1000" type="image/png" />\n`;
         rssXML += '  </item>\n';
     });
     rssXML += '</channel>\n</rss>';
@@ -412,7 +423,26 @@ async function zipSave() {
     /* METADATA INJECTION: INDEX, SITEMAP, RSS, & GENERATED IMAGES        */
     /* ================================================================= */
     const metaDataBundle = generateSiteMetadataIndexAndImages();
-    const targetRootFolder = topLayer.aa_project_name || 'dbn13_project';
+
+
+
+
+
+
+    let targetRootFolder;
+if (topLayer.aa_project_name.includes('/')) {
+targetRootFolder = topLayer.aa_project_name.split('/')[1] || 'dbn13_project';
+} else {
+targetRootFolder = topLayer.aa_project_name || 'dbn13_project';
+}
+
+
+
+let fullPathName = topLayer.aa_project_name || 'dbn13_project';
+
+
+
+
 
     // Capture the metadata strings to apply the search and replace
     let indexString = metaDataBundle.indexHtml;
@@ -1493,24 +1523,38 @@ stylesIncluded = stylePosition;
 
 
 
+
+if ((zipThisFile == 0) || (zipThisFile == 1)) {
+
+
 /* --- PREPARE INITIAL CONTENT --- */
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) 
-    + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
+let content = "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
     + "\n" + string + "\n\n\n" 
-    + "<script>" + scriptStarter + "\n</" + "script>" + fileFooter;
+    + "<script>" + scriptStarter + "</script>";
 
 /* --- THE CALL SITE --- */
 const result = await SquareAtlas(content);
 content = result.html; 
 
-if ((zipThisFile == 0) || (zipThisFile == 1)) {
+
+
+
+
 
 
 saveModularZip(result.html, result.atlases, filename);
 
 /* --- COORDINATOR FUNCTION --- */
 function saveModularZip(processedHTML, atlasArray, filename) {
-    const folder = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
+
+let folder;
+let fullPathName = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
+
+if (topLayer.aa_project_name.includes('/')) {
+folder = topLayer.aa_project_name.split('/')[1] + '/' + filename || 'dbn13_project';
+} else {
+folder = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
+}
     const zipData = {};
 
     // 1. DEDUPLICATED MEDIA EXTRACTION
@@ -1588,25 +1632,18 @@ function saveModularZip(processedHTML, atlasArray, filename) {
     atlasRootCSS += '}\n\n';
 
     // 4. HTML ASSEMBLY
-    const zipHTML = fileHeader.replace(/{{title}}/g, folder)
-        .replace(/{{description}}/g, ui.pageDescription.ref.value) 
-        + '\n<link rel="stylesheet" href="style.css">\n</head>\n<body>' 
-        + "\n" + domGuts + "\n\n\n" 
+    let zipHTML = fileHeader.replace(/{{title}}/g, folder).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name)
+        + '\n<link rel="stylesheet" href="style.css">\n' 
+        + domGuts + "\n\n\n" 
         + '<script src="script.js"></script>' 
         + fileFooter;
 
-
-
-
+zipHTML = zipHTML.replace(/<</g, '<');
 
     // 5. PACKET ASSIGNMENT
     zipData[`${folder}/index.html`] = fflate.strToU8(zipHTML);
     zipData[`${folder}/style.css`] = fflate.strToU8(atlasRootCSS + extractedInternalCSS);
     zipData[`${folder}/script.js`] = fflate.strToU8(scriptStarter);
-
-
-
-
 
     // 6. ATLAS FOLDER PACKETS
     atlasArray.forEach((b64, i) => {
@@ -1617,7 +1654,17 @@ function saveModularZip(processedHTML, atlasArray, filename) {
         zipData[`${folder}/atlases/${i}.png`] = u8;
     });
 
-
+    // 6b. BACKGROUND IMAGE ISOLATED PACKET
+    const bgImageBase64 = topLayer[topLayer.a_currentLayer]?.backgroundImage;
+    if (bgImageBase64 && bgImageBase64.trim() !== "") {
+        const bgParts = bgImageBase64.split(',');
+        const bgBin = atob(bgParts[1] || bgParts[0]);
+        const bgU8 = new Uint8Array(bgBin.length);
+        for (let j = 0; j < bgBin.length; j++) {
+            bgU8[j] = bgBin.charCodeAt(j);
+        }
+        zipData[`${folder}/background/image.png`] = bgU8;
+    }
 
 if (zipThisFile == 0) {
 
@@ -1636,9 +1683,6 @@ globalVariableValue[globalVariableValue.length] = zipData;
 layerRight();
 
 }
-
-
-
 
 }
 
@@ -1665,6 +1709,16 @@ return 0;
 
 
 
+
+/* --- PREPARE INITIAL CONTENT --- */
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) 
+    + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
+    + "\n" + string + "\n\n\n" 
+    + "<script>" + scriptStarter + "</script>" + fileFooter;
+
+/* --- THE CALL SITE --- */
+const result = await SquareAtlas(content);
+content = result.html; 
 
 
 

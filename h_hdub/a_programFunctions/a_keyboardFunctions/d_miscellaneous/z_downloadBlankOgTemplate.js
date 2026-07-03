@@ -1,0 +1,1 @@
+function downloadBlankOgTemplate(n='blank-og-template.png'){const c=document.createElement('canvas');c.width=1200;c.height=630;const t=c.getContext('2d');t.fillStyle='#FFFFFF';t.fillRect(0,0,1200,630);c.toBlob((b)=>{if(!b)return;const a=document.createElement('a');a.download=n;a.href=URL.createObjectURL(b);a.click();URL.revokeObjectURL(a.href);},'image/png');}

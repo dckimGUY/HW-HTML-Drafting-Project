@@ -11,7 +11,7 @@ const header1 = `<!DOCTYPE html>
 <meta property="og:title" content="{{title}}">
 <meta property="og:type" content="website">
 <meta property="og:description" content="{{description}}">
-<meta property="og:image" content="assets/og-{{title}}.png">
+<meta property="og:image" content="https://{{fullPath}}/assets/og-{{title}}.png">
 
 <!-- Regional Validation (Toronto, ON, CA) -->
 <meta name="geo.position" content="43.658497;-79.347015">
@@ -19,9 +19,20 @@ const header1 = `<!DOCTYPE html>
 <meta name="geo.placename" content="Toronto">
 
 <!-- Sitemap and RSS -->
-<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="../feed.xml" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://{{fullPath}}/sitemap.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://{{fullPath}}/feed.xml" />
 
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-image: url("background/image.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: auto;
+}
+</style>
 
 <title>{{title}}</title>
 
@@ -175,7 +186,7 @@ const header4 = `
 
 
 
-const footer1 = `<!-- Native Middle-Mouse Grab & Scroll (1:1 Panning) Engine -->
+const footer1 = `<!-- middle mouse scroll -->
 <script>
 (function() {
     let isDragging = false;
@@ -277,36 +288,9 @@ const footer4 = `
 
 
 
-let fileHeader = `<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="robots" content="index, follow">
-<meta name="handheldfriendly" content="true">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="{{description}}">
+let fileHeader = header1;
 
-<!-- Universal Open Graph Package -->
-<meta property="og:title" content="{{title}}">
-<meta property="og:type" content="website">
-<meta property="og:description" content="{{description}}">
-<meta property="og:image" content="assets/og-{{title}}.png">
-
-<!-- Regional Validation (Toronto, ON, CA) -->
-<meta name="geo.position" content="43.658497;-79.347015">
-<meta name="geo.region" content="CA-ON">
-<meta name="geo.placename" content="Toronto">
-
-<!-- Sitemap and RSS -->
-<link rel="sitemap" type="application/xml" title="Sitemap" href="../sitemap.xml" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="../feed.xml" />
-
-
-<title>{{title}}</title>
-
-`;
-
-let fileFooter = `<!-- Native Middle-Mouse Grab & Scroll (1:1 Panning) Engine -->
+let fileFooter = `<!-- middle mouse scroll -->
 <script>
 (function() {
     let isDragging = false;

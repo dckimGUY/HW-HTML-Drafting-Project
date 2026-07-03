@@ -2,12 +2,14 @@ shelfMenuHTML.tab1.folder2.HTML = `
 
 
 
-<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="***finished-page background colour***" onclick="if (mode==0) { curFocus=0; modeRouter('',1); }
+<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="click: background image\n+CTRL: background colour" onclick="if (!event.ctrlKey) { uploadBackgroundImage(); } else if (event.ctrlKey) {
+if (mode==0) { curFocus=0; modeRouter('',1); }
 hotDog = false;
 spaceViewOff(['',32,32,'','','']);
 restorePointerEventsNone(); 
 helpMenuOverlay.style.display='none';
-F.focus();">
+F.focus();
+}">
 <div id="bgCover" class="bgCover"></div>
 
 
@@ -19,9 +21,9 @@ F.focus();">
 <button id="accumulatorCount" class="button_ accumulatorCount">0</button>
 
 
-<input id="projectName" name="projectName" class="input_ input_projectName dckimPixelMono" type="value" title="Project Name" placeholder="projectName" spellcheck="false">
+<input id="projectName" name="projectName" class="input_ input_projectName dckimPixelMono" type="value" title="Example: domain.com/folder" placeholder="projectName" spellcheck="false">
 
-<button id="coin49592" class="button_ button_coin49592" title="Load OG-image for this level"></button>
+<button id="coin49592" class="button_ button_coin49592" title="Load OG-image for this level\n+CTRL to save OG template"></button>
 <button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
 <button id="coin77155" class="button_ drag-button button_coin77155" title="DRAG From Here TO SAVE (best option)\nClick for SEQUENTIAL SAVING OR\nclick below with +SHIFT to add to the State Accumulator" draggable="true"></button>
