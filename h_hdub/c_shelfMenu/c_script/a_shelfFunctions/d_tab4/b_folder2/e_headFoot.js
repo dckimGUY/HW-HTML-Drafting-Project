@@ -2,25 +2,27 @@ const header1 = `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<title>{{title}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <meta name="handheldfriendly" content="true">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="{{description}}">
 
-<!-- Universal Open Graph Package -->
 <meta property="og:title" content="{{title}}">
 <meta property="og:type" content="website">
 <meta property="og:description" content="{{description}}">
-<meta property="og:image" content="https://{{fullPath}}/assets/og-{{title}}.png">
+<meta property="og:image" content="https://{{fullPath}}/link-images/{{title}}.png">
 
-<!-- Regional Validation (Toronto, ON, CA) -->
 <meta name="geo.position" content="43.658497;-79.347015">
 <meta name="geo.region" content="CA-ON">
 <meta name="geo.placename" content="Toronto">
 
-<!-- Sitemap and RSS -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://{{fullPath}}/sitemap.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://{{fullPath}}/feed.xml" />
+<link rel="canonical" href="https://{{fullPath}}/{{title}}/index.html">
+
+{{favicon}}
 
 <style>
 html, body {
@@ -33,8 +35,6 @@ html, body {
   background-size: auto;
 }
 </style>
-
-<title>{{title}}</title>
 
 `;
 const header2 = `<!DOCTYPE html>

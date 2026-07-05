@@ -163,6 +163,7 @@ var localViewReturn = null;
 var topLayer =
 {
 "aa_project_name" : "dckim.com/art",
+"favicon" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT/////AP8Aoe7FwsWLOADNfyw0AAAAEHRSTlMA////////////////////wFCLQwAAADxJREFUGJVjYIAAFhYGFMDCgirCwsLLiywC4iOLQPgIEZB+sBZkc0ACqLZQV4CFBdlaoMVQR8EANgE0AACTJQQB5YcycQAAAABJRU5ErkJggg==",
 "a_currentLayer" : "b_layer1",
 "b_layer1"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "b_layer1", "b_content" : b_layer1, "c_title" : "", "d_description" : "Page 1 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "1", "filename" : "pixel-level-1", "echelon" : 1, "header" : "", "footer" : "" },
 "c_layer2"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "c_layer2", "b_content" : c_layer2, "c_title" : "", "d_description" : "Page 2 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "2", "filename" : "pixel-level-2", "echelon" : 1, "header" : "", "footer" : "" },

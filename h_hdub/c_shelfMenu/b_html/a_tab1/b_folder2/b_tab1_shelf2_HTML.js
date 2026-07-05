@@ -2,7 +2,7 @@ shelfMenuHTML.tab1.folder2.HTML = `
 
 
 
-<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="click: background image\n+CTRL: background colour" onclick="if (!event.ctrlKey) { uploadBackgroundImage(); } else if (event.ctrlKey) {
+<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="click: background image\n+CTRL: background colour\n+SHIFT: favicon" onclick="if (!event.ctrlKey && !event.shiftKey) { uploadBackgroundImage(); } else if (!event.ctrlKey && event.shiftKey) { uploadFavicon(); } else if (event.ctrlKey && !event.shiftKey) {
 if (mode==0) { curFocus=0; modeRouter('',1); }
 hotDog = false;
 spaceViewOff(['',32,32,'','','']);

@@ -196,7 +196,7 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
             }
         }
 
-        ogImagesMap[`${baseProjectFolder}/assets/og-${displayTitle}.png`] = u8Array;
+        ogImagesMap[`${baseProjectFolder}/link-images/${displayTitle}.png`] = u8Array;
     });
 
     // =========================================================
@@ -221,7 +221,7 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
     for (let idx = 0; idx < indexBinaryStr.length; idx++) {
         indexU8Array[idx] = indexBinaryStr.charCodeAt(idx);
     }
-    ogImagesMap[`${baseProjectFolder}/assets/og-${baseProjectFolder}.png`] = indexU8Array;
+    ogImagesMap[`${baseProjectFolder}/link-images/index.png`] = indexU8Array;
 
     // ==========================================================
     // 3. GENERATE VISUAL INDEX.HTML (Minimal Cards, No Uppercase)
@@ -230,11 +230,13 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>${baseProjectFolder} - Directory</title>
+    <title>${baseProjectFolder}</title>
+    <link rel="canonical" href="https://${fullPathName}/index.html" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <meta property="og:title" content="${baseProjectFolder}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://${topLayer.aa_project_name}/assets/og-${baseProjectFolder}.png" />
-    <meta property="og:description" content="Project workspace page file directory layout list." />
+    <meta property="og:image" content="https://${topLayer.aa_project_name}/link-images/index.png" />
+    <meta property="og:description" content="${document.getElementById('levelNotes').value}" />
     <style>
         body { font-family: dckimPixelMono, monospace; background: #fdfdfd; color: #1d1d1f; margin: 0; padding: 60px 40px; text-align: center; }
         h1 { border-bottom: 1px solid #e5e5e7; padding-bottom: 20px; margin-bottom: 50px; font-size: 32px; font-weight: bold; display: inline-block; width: 100%; max-width: 700px; letter-spacing: 0.5px; }
@@ -249,7 +251,7 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 </head>
 <body>
     <h1>${baseProjectFolder}</h1>
-    
+    <p>${document.getElementById('levelNotes').value}</p>
     <div class="grid-container">\n`;
 
     activeLayers.forEach(layer => {
@@ -259,7 +261,7 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
             displayTitle = displayTitle.slice(0, -5);
         }
         const descText = layer.d_description || 'No description provided.';
-        const localCardImgSrc = `assets/og-${displayTitle}.png`;
+        const localCardImgSrc = `link-images/${displayTitle}.png`;
 
         indexHTML += `        <a href="${cleanFolderUrl}" class="page-card">
             <img src="${localCardImgSrc}" alt="${displayTitle}">
@@ -310,7 +312,7 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
             displayTitle = displayTitle.slice(0, -5);
         }
         const descText = layer.d_description || 'No description provided.';
-        const imageRelativeAssetPath = `${fullPathName}/assets/og-${displayTitle}.png`;
+        const imageRelativeAssetPath = `${fullPathName}/link-images/${displayTitle}.png`;
 
         rssXML += '  <item>\n';
         rssXML += `    <title>${displayTitle}</title>\n`;
@@ -424,25 +426,14 @@ async function zipSave() {
     /* ================================================================= */
     const metaDataBundle = generateSiteMetadataIndexAndImages();
 
-
-
-
-
-
     let targetRootFolder;
-if (topLayer.aa_project_name.includes('/')) {
-targetRootFolder = topLayer.aa_project_name.split('/')[1] || 'dbn13_project';
-} else {
-targetRootFolder = topLayer.aa_project_name || 'dbn13_project';
-}
+    if (topLayer.aa_project_name.includes('/')) {
+        targetRootFolder = topLayer.aa_project_name.split('/')[1] || 'dbn13_project';
+    } else {
+        targetRootFolder = topLayer.aa_project_name || 'dbn13_project';
+    }
 
-
-
-let fullPathName = topLayer.aa_project_name || 'dbn13_project';
-
-
-
-
+    let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 
     // Capture the metadata strings to apply the search and replace
     let indexString = metaDataBundle.indexHtml;
@@ -468,6 +459,25 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
     masterFiles[`${targetRootFolder}/sitemap.xml`] = fflate.strToU8(sitemapString);
     masterFiles[`${targetRootFolder}/feed.xml`] = fflate.strToU8(rssString);
 
+    // ==========================================
+    // EXTRACTION: PACK FAVICON FROM TOPLAYER
+    // ==========================================
+    if (topLayer.favicon && topLayer.favicon.trim() !== "") {
+        const favParts = topLayer.favicon.split(',');
+        const favB64String = favParts[1] || favParts[0];
+        
+        try {
+            const favBinaryStr = atob(favB64String);
+            const favUint8 = new Uint8Array(favBinaryStr.length);
+            for (let idx = 0; idx < favBinaryStr.length; idx++) {
+                favUint8[idx] = favBinaryStr.charCodeAt(idx);
+            }
+            masterFiles[`${targetRootFolder}/favicon.png`] = favUint8;
+        } catch (e) {
+            console.error("Failed to parse topLayer.favicon base64 string", e);
+        }
+    }
+
     // Unpack all generated Open Graph png images directly into the archive assets map
     for (const [imgFilePath, imgUint8Array] of Object.entries(metaDataBundle.imagesMap)) {
         masterFiles[imgFilePath] = imgUint8Array;
@@ -487,6 +497,7 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
     spaceViewOff();
     Z();
 }
+
 
 
 
@@ -1418,6 +1429,7 @@ window.addEventListener("scroll", (event) => {  });
 /* SET THE SCROLL LOCATION TO WHERE IT WAS WHEN THE FILE WAS SAVED */
 window.scrollTo(${window.scrollX}, ${window.scrollY});
 
+if (!go.vwFactor || go.vwFactor == null) { go.vwFactor = 1; }
 
 /*** CUSTOM ADDED SCRIPT ***/
 
@@ -1632,7 +1644,7 @@ folder = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
     atlasRootCSS += '}\n\n';
 
     // 4. HTML ASSEMBLY
-    let zipHTML = fileHeader.replace(/{{title}}/g, folder).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name)
+    let zipHTML = fileHeader.replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="https://' + topLayer.aa_project_name + '/favicon.png">').replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name)
         + '\n<link rel="stylesheet" href="style.css">\n' 
         + domGuts + "\n\n\n" 
         + '<script src="script.js"></script>' 
@@ -1711,7 +1723,7 @@ return 0;
 
 
 /* --- PREPARE INITIAL CONTENT --- */
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) 
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="' + topLayer.favicon + '">') 
     + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
     + "\n" + string + "\n\n\n" 
     + "<script>" + scriptStarter + "</script>" + fileFooter;

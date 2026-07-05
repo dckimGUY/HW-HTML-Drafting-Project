@@ -27,6 +27,25 @@ ui.coin70038.click               = function() { navigator.clipboard.writeText(ut
 
 
 
+function uploadFavicon() {
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/png, image/jpeg, image/webp';
+    fileInput.onchange = function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64ResultString = e.target.result;
+            topLayer.favicon = base64ResultString;
+        };
+        reader.readAsDataURL(file);
+    };
+    fileInput.click();
+}
+
+
+
 
 
 
@@ -34,74 +53,47 @@ ui.coin70038.click               = function() { navigator.clipboard.writeText(ut
 
 
 function uploadCustomOGImage() {
-    // 1. Create a dynamic hidden file input element in memory
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
-    fileInput.accept = 'image/png, image/jpeg, image/webp'; // Restrict to typical image types
-
-    // 2. Setup the event listener to catch when the user selects a file
+    fileInput.accept = 'image/png, image/jpeg, image/webp';
     fileInput.onchange = function(event) {
         const file = event.target.files[0];
-        if (!file) return; // Exit if dialogue was cancelled or empty
-
-        // 3. Instantiate a standard file reader to extract the binary contents
+        if (!file) return;
         const reader = new FileReader();
-        
         reader.onload = function(e) {
-            const base64ResultString = e.target.result; // This holds the full 'data:image/png;base64,...' string
-            
-            // 4. DYNAMIC TARGET CHECK: Use your exact blueprint path to update the correct active layer object 🎯
+            const base64ResultString = e.target.result;
             const currentActiveLayerKey = topLayer.a_currentLayer;
-            
             if (topLayer[currentActiveLayerKey]) {
-                // Assign the data URL string straight onto your key location property
                 topLayer[currentActiveLayerKey].i_ogImageBase64 = base64ResultString;
             } else {
             }
         };
-
-        // Trigger the asynchronous base64 encoder read path
         reader.readAsDataURL(file);
     };
-
-    // 5. Virtual Click execution triggers the native operating system file select selector window instantly
     fileInput.click();
 }
 
 
+
+
 function uploadBackgroundImage() {
-    // 1. Create a dynamic hidden file input element in memory
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
-    fileInput.accept = 'image/png, image/jpeg, image/webp'; // Restrict to typical image types
-
-    // 2. Setup the event listener to catch when the user selects a file
+    fileInput.accept = 'image/png, image/jpeg, image/webp';
     fileInput.onchange = function(event) {
         const file = event.target.files[0];
-        if (!file) return; // Exit if dialogue was cancelled or empty
-
-        // 3. Instantiate a standard file reader to extract the binary contents
+        if (!file) return;
         const reader = new FileReader();
-        
         reader.onload = function(e) {
-            const base64ResultString = e.target.result; // This holds the full 'data:image/png;base64,...' string
-            
-            // 4. DYNAMIC TARGET CHECK: Use your exact blueprint path to update the correct active layer object 🎯
+            const base64ResultString = e.target.result;
             const currentActiveLayerKey = topLayer.a_currentLayer;
-            
             if (topLayer[currentActiveLayerKey]) {
-                // Assign the data URL string straight onto your key location property
                 topLayer[currentActiveLayerKey].backgroundImage = base64ResultString;
-                
             } else {
             }
         };
-
-        // Trigger the asynchronous base64 encoder read path
         reader.readAsDataURL(file);
     };
-
-    // 5. Virtual Click execution triggers the native operating system file select selector window instantly
     fileInput.click();
 }
 
