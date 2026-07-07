@@ -2,7 +2,8 @@ function spaceViewOn() {
   mouseIsDogged = spaceView = true;
   edgeDetect.style.display = "none";
 
-  document.documentElement.style.backgroundImage = `url("${topLayer[topLayer.a_currentLayer].backgroundImage}")`;
+
+document.documentElement.style.backgroundImage = `url("${topLayer[topLayer.a_currentLayer].backgroundImage}")`;
 
   document.documentElement.style.cursor = document.body.style.cursor = "auto";
   Array.from(utilityLayer0.children).forEach(c => {
@@ -20,7 +21,7 @@ function spaceViewOff() {
   mouseIsDogged = spaceView = false;
   pulledText.style.pointerEvents = "none";
 
-  document.documentElement.style.backgroundImage = ``;
+document.documentElement.style.backgroundImage = `url("${bgImage}")`;
 
   document.documentElement.style.cursor = document.body.style.cursor = cursor.crosshair;
   const tMap = { [Ts0]: [Cs0, Ws0, Ss0], [Ts1]: [Cs1, Ws1, Ss1], [Ts2]: [Cs2, Ws2, Ss2] };

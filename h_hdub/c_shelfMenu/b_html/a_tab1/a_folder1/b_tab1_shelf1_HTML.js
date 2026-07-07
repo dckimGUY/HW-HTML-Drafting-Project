@@ -38,8 +38,8 @@ shelfMenuHTML.tab1.folder1.HTML = `
 <div id="partStyle" class="textarea_ input_partStyle dckimPixelMono hidden">
 
 
-<input id="styleFG" name="styleFG" class="input_ input_styleFG" type="color" value="#000000" onclick="paintColour(event,'FG');" title="text colour">
-<input id="styleBG" name="styleBG" class="input_ input_styleBG" type="color" value="#FFFFFF" onclick="paintColour(event,'BG');" title="background colour">
+<input id="styleFG" name="styleFG" class="input_ input_styleFG" type="color" value="#000000" onclick="if (event.ctrlKey) { event.preventDefault(); coinFocus.lastElementChild.firstElementChild.style.color = ''; } else { paintColour(event,'FG'); }" title="text colour\n+CTRL to remove">
+<input id="styleBG" name="styleBG" class="input_ input_styleBG" type="color" value="#FFFFFF" onclick="if (event.ctrlKey) { event.preventDefault(); coinFocus.lastElementChild.firstElementChild.style.backgroundColor = ''; } else { paintColour(event,'BG'); }" title="background colour\n+CTRL to remove">
 
 <input id="styleOL" name="styleOL" class="input_ input_styleOL" type="color" value="#777777" title="outline colour">
 

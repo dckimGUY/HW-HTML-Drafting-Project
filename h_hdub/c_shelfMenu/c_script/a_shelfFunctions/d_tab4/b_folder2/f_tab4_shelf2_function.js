@@ -547,7 +547,7 @@ localStorage.setItem("lastFactor", "(100/320)");
 if (utilityLayer0.children.length == 0 && (zipThisFile != 1) && (zipThisFile != 0)) {
 if (openInNewWindow) {
 const newWindow = window.open();
-newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter);
+newWindow.document.write(fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{description}}/g, ui.pageDescription.ref.value) + "<style>\n" + '\n</style>\n</head>\n<body>' + "\n" + "<script>" + "\n</" + "script>" + fileFooter);
 restorePointerEventsNone();
 spaceViewOff();
 Z();
@@ -900,6 +900,11 @@ const go           = {};
       go.aud       = [];
       go.img       = [];
       go.playAudio = function(trackName) { go.aud[trackName].play(); return 0; };
+      go.loopAudio = function(trackName) { 
+          go.aud[trackName].loop = true;
+          go.aud[trackName].play(); 
+          return 0; 
+      };
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
 `;
@@ -1644,7 +1649,13 @@ folder = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
     atlasRootCSS += '}\n\n';
 
     // 4. HTML ASSEMBLY
-    let zipHTML = fileHeader.replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="https://' + topLayer.aa_project_name + '/favicon.png">').replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name)
+    let zipHTML = fileHeader.replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="https://' + topLayer.aa_project_name + '/favicon.png">').replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name).replace(/{{background}}/g, "background/image.png")
+
+
+
+
+
+
         + '\n<link rel="stylesheet" href="style.css">\n' 
         + domGuts + "\n\n\n" 
         + '<script src="script.js"></script>' 
@@ -1723,7 +1734,7 @@ return 0;
 
 
 /* --- PREPARE INITIAL CONTENT --- */
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="' + topLayer.favicon + '">') 
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="' + topLayer.favicon + '">').replace(/{{background}}/g, topLayer[topLayer.a_currentLayer].backgroundImage) 
     + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
     + "\n" + string + "\n\n\n" 
     + "<script>" + scriptStarter + "</script>" + fileFooter;

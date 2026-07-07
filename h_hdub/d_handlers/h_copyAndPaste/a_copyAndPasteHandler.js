@@ -8,6 +8,7 @@ event.clipboardData.setData('text/plain', mousemoveTarget.lastElementChild.first
 }
 });
 document.addEventListener("paste", event => {
+/*
 if (event.target.tagName!="TEXTAREA"&&event.target.tagName!="INPUT") {
 if (hotDog) { return; }
 event.preventDefault();
@@ -22,4 +23,5 @@ mousemoveTarget.lastElementChild.firstElementChild.innerHTML = pastedText;
 }
 }
 }
+*/
 });

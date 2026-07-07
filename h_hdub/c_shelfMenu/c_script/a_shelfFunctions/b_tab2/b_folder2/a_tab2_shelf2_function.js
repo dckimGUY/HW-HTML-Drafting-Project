@@ -406,6 +406,7 @@ ui.coin59527.input              = function() {
 partsOpacity = parseFloat(ui.coin59527.ref.value);
 utilityLayer0.style.opacity=partsOpacity;
 localStorage.setItem("partsOpacity", partsOpacity);
+setBackground();
 };
 
 ui.coin17325.input              = function() { 

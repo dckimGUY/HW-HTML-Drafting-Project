@@ -1,3 +1,8 @@
+
+
+
+
+
 function makeTopLayer(chosenLayer) {
 
 const originalFocus = coinFocus;
@@ -93,6 +98,11 @@ ui.coin44038.ref.value = topLayer[topLayer.a_currentLayer].backgroundColour;
 finishedBackgroundColour = topLayer[topLayer.a_currentLayer].backgroundColour;
 ui.coin44038.ref.setAttribute('value',ui.coin44038.ref.value);
 localStorage.setItem('finishedBackgroundColour',ui.coin44038.ref.value);
+
+//document.documentElement.style.backgroundImage = `url("${bgImage}")`;
+//document.documentElement.style.backgroundImage = `url("${topLayer[topLayer.a_currentLayer].backgroundImage}")`;
+
+setBackground();
 
 if (mouseIsDogged) {
 redraw();

@@ -89,12 +89,22 @@ function uploadBackgroundImage() {
             const currentActiveLayerKey = topLayer.a_currentLayer;
             if (topLayer[currentActiveLayerKey]) {
                 topLayer[currentActiveLayerKey].backgroundImage = base64ResultString;
+
+
+//document.documentElement.style.backgroundImage = `url("${topLayer[topLayer.a_currentLayer].backgroundImage}")`;
+
+setBackground();
+
+
+
             } else {
             }
         };
         reader.readAsDataURL(file);
+
     };
     fileInput.click();
+
 }
 
 

@@ -29,7 +29,7 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background-image: url("background/image.png");
+  background-image: url( "{{background}}");
   background-repeat: repeat;
   background-position: top left;
   background-size: auto;
