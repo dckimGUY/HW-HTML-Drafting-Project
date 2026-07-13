@@ -114,7 +114,7 @@ shelfMenuHTML.tab2.folder2.HTML = `
 
 
 
-<input id="bodyFade" name="bodyFade" class="input_bodyFade" type="range" min="0.05" max="1" step="0.01" value="1" title="Fade Entire Program">
+<input id="bodyFade" name="bodyFade" class="input_bodyFade" type="range" min="0.00" max="1" step="0.01" value="0.25" title="Fade Background">
 
 
 

@@ -7,7 +7,7 @@ const setBackground = () => {
         const ctx = canvas.getContext('2d');
         canvas.width = img.width;
         canvas.height = img.height;
-        ctx.globalAlpha = document.getElementById("coin59527").value / 2;
+        ctx.globalAlpha = document.getElementById("bodyFade").value;
         ctx.drawImage(img, 0, 0);
         bgImage = canvas.toDataURL();
 

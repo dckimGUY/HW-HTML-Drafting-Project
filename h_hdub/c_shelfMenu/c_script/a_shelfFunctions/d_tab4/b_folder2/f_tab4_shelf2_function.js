@@ -871,6 +871,10 @@ if (eventArg) { eventRoll = eventArg; } else { eventRoll = ["click", "mouseover"
 
 
 const lvlRoll = {};
+
+
+if (useAllLayers) {
+
 for (i of levelName) {
 lvlRoll["LVL" + topLayer[i].g_layerTitle] = [];
 for (let j = 0; j < topLayer[i].b_content.children.length; j++) {
@@ -884,7 +888,27 @@ lvlRoll["LVL" + topLayer[i].g_layerTitle].push(topLayer[i].b_content.children[j]
 }
 }
 
+} else {
 
+
+
+
+lvlRoll["LVL" + topLayer[topLayer.a_currentLayer].g_layerTitle] = [];
+for (let j = 0; j < topLayer[topLayer.a_currentLayer].b_content.children.length; j++) {
+
+if (topLayer[topLayer.a_currentLayer].b_content.children[j].dataset.addScript) {
+addToScript += "\n" + topLayer[topLayer.a_currentLayer].b_content.children[j].dataset.addScript;
+} else {
+lvlRoll["LVL" + topLayer[topLayer.a_currentLayer].g_layerTitle].push(topLayer[topLayer.a_currentLayer].b_content.children[j].id);
+}
+
+}
+
+
+
+
+
+}
 
 
 
@@ -908,31 +932,6 @@ const go           = {};
       go.ids       =
 ${JSON.stringify(idRoll).replace('["', '[\n    "').replace('"]', '"\n]').replace(/",/g, '",\n    ')};
 `;
-
-
-
-
-
-
-/**************************************/
-/**************************************/
-/**************************************/
-/* THIS IS ONE OF THE LAST WORK AREAS */
-/**************************************/
-/**************************************/
-/**************************************/
-
-/*
-
-  1 (function() {
-  2 let state = (this.lastState === 0) ? 1 : 0;
-  3 go.xqn.grp['state58519'].rate.set(1000);
-  4 go.setState(go.xqn.grp['state58519'][state]);
-  5 this.lastState = state;
-  6 }).call(go);
-
-*/
-
 
 
 
