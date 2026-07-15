@@ -26,7 +26,7 @@ F.focus();
 <button id="coin49592" class="button_ button_coin49592" title="Load OG-image for this level\n+CTRL to save OG template"></button>
 <button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
-<button id="coin77155" class="button_ drag-button button_coin77155" title="DRAG From Here TO SAVE (best option)\nClick for SEQUENTIAL SAVING OR\nclick below with +SHIFT to add to the State Accumulator" draggable="true"></button>
+<button id="coin77155" class="button_ drag-button button_coin77155" title="Click for SEQUENTIAL SAVING OR\nclick below with +SHIFT to add to the State Accumulator" draggable="true"></button>
 
 <button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="CLIPBOARD: Minimal Without id/style/class;\n+SHIFT for Colour Group\n+CTRL to Save '.txt'.\nWorks for textual HTML stuff only,\nno images or buttons yet."></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>

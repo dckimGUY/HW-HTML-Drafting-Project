@@ -70,7 +70,7 @@
   }
   </script>
 
-<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAX0lEQVQ4je2SOwrAMAxDn0vvf2V3aAcXyx/oWkGWRHpE2NDLn1PKhvDorQAeCcGU/ArwCgujFfd1uINEQMqJCol3Tr9p3gE4NHyvH3BPod31IOkzwLcEFf5cwdhXkLoAcrsRFw24i4AAAAAASUVORK5CYII=">
+<link rel="icon" type="image/images/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT/////AP8Aoe7FwsWLOADNfyw0AAAAEHRSTlMA////////////////////wFCLQwAAADxJREFUGJVjYIAAFhYGFMDCgirCwsLLiywC4iOLQPgIEZB+sBZkc0ACqLZQV4CFBdlaoMVQR8EANgE0AACTJQQB5YcycQAAAABJRU5ErkJggg==">
 
 <style>
 html, body              { overflow: scroll; scrollbar-width: none;               }

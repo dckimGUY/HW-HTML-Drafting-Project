@@ -913,6 +913,31 @@ lvlRoll["LVL" + topLayer[topLayer.a_currentLayer].g_layerTitle].push(topLayer[to
 
 
 
+if ((zipThisFile == 0) || (zipThisFile == 1)) {
+
+addToScript += `
+
+const resize = () => {
+  const box = document.getElementById('scaleBox');
+  Object.assign(box.style, {
+    position: 'absolute',
+    top: '0px',
+    left: '0px',
+    transformOrigin: 'top left',
+    transform: \`scale(\${screen.width * (go.vwFactor / 100)})\`
+  });
+}
+window.onload = window.onorientationchange = resize;
+
+
+`
+}
+
+if (factor == null) {
+
+factor = lastFactor;
+
+}
 
 let scriptStarter = `
 
@@ -1439,12 +1464,7 @@ if (!go.vwFactor || go.vwFactor == null) { go.vwFactor = 1; }
 
 ${addToScript}
 
-
-
-
-
 go.info = function() { console.log(\`
-
 
 -----------------------------------------------
 >>>    PAGE DATA STRUCTURE LAYOUT KEYMAP    <<<
@@ -1544,9 +1564,9 @@ if ((zipThisFile == 0) || (zipThisFile == 1)) {
 
 
 /* --- PREPARE INITIAL CONTENT --- */
-let content = "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
+let content = "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body><div id="scaleBox">' 
     + "\n" + string + "\n\n\n" 
-    + "<script>" + scriptStarter + "</script>";
+    + "</div><script>" + scriptStarter + "</script>";
 
 /* --- THE CALL SITE --- */
 const result = await SquareAtlas(content);
