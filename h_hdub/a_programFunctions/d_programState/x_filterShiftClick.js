@@ -1,9 +1,12 @@
 function filterShiftClick(event,value) {
 
-let newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value}) blur(${document.getElementById("filterBlur").value}px)`;
+let dropShadow = coinFocus.lastElementChild.dataset.filter;
+if (dropShadow == null) coinFocus.lastElementChild.dataset.filter = '';
+
+let newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value}) blur(${document.getElementById("filterBlur").value}px)  ${dropShadow}`;
 
 if (document.getElementById("filterBlur").value == 0) {
-newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value})`;
+newFilter = `brightness(${document.getElementById("filterBrightness").value}) contrast(${document.getElementById("filterContrast").value}) saturate(${document.getElementById("filterIntensity").value}) grayscale(${document.getElementById("filterGrayscale").value}) sepia(${document.getElementById("filterAntique").value}) invert(${document.getElementById("filterInvert").value}) opacity(${document.getElementById("filterOpacity").value})  ${dropShadow}`;
 }
 
 if (value == "reset") {

@@ -1,6 +1,6 @@
-function saveReadyButton(width, height, repetition, upscaling) {
+function saveReadyButton(width, height, repetition, upscaling, data) {
 let repetitions = 4;
-if (event.shiftKey) repetitions = 2;
+try { if (event.shiftKey) repetitions = 2; } catch {};
 function readyButton(width, height, repetitions, upscaling) {
 const columnWidth   =  width * upscaling;
 const rowHeight     = height * upscaling;
@@ -34,10 +34,13 @@ syntax = 'h45w20w20w20w20w20h45w20w20w20w20w20h45w20w20w20w20w20h45w20w20w20w20w
 }
 const datePrefix = Date.now().toString().slice(-6);
 const dataURL = readyButton(width, height, repetitions, upscaling).toDataURL('image/png');
+const name = 'READY__HDUB_' + upscaling + '_' + repetitions + 'btn_' + syntax + '.png';
+if (data == 1) { return [name, dataURL]; };
 const link = document.createElement('a');
 link.href = dataURL;
 link.download = "READY_" + datePrefix + '_HDUB_' + upscaling + '_' + repetitions + 'btn_' + syntax + '.png';
 link.click();
+return 0;
 }
 
 
@@ -1042,7 +1045,7 @@ const syntax = reString(array);
 const dataURL = canvas.toDataURL('image/png');
 const link = document.createElement('a');
 link.href = dataURL;
-link.download = "TEMPL_" + datePrefix + `_HDUB_${factor}_tmpl_` + syntax + '.png';
+link.download = "TEMPLATE_" + datePrefix + `_HDUB_${factor}_tmpl_` + syntax + '.png';
 link.click();
 }
 

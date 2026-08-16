@@ -33,6 +33,7 @@ html, body {
   background-repeat: repeat;
   background-position: top left;
   background-size: auto;
+  background-color: {{backgroundColour}};
 }
 </style>
 

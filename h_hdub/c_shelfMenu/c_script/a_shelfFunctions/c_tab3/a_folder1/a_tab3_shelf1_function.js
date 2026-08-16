@@ -531,10 +531,10 @@ buttonHTML1 = `
 
 buttonHTML2 = `">
 <style>
-#${uniqueIdentifier}        { background-image: url("${ui.canvasOutput2.ref.toDataURL("image/png")}"); outline: none; }
-#${uniqueIdentifier}:focus  { background-image: url("${ui.canvasOutput4.ref.toDataURL("image/png")}"); outline: none; }
-#${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); outline: none; }
-#${uniqueIdentifier}:active { background-image: url("${ui.canvasOutput3.ref.toDataURL("image/png")}"); outline: none; }
+#${uniqueIdentifier}        { background-image: url("${ui.canvasOutput2.ref.toDataURL("image/png")}"); }
+#${uniqueIdentifier}:focus  { background-image: url("${ui.canvasOutput4.ref.toDataURL("image/png")}"); }
+#${uniqueIdentifier}:hover  { background-image: url("${ui.canvasOutput1.ref.toDataURL("image/png")}"); }
+#${uniqueIdentifier}:active { background-image: url("${ui.canvasOutput3.ref.toDataURL("image/png")}"); }
 </style>
 </button>`;
 

@@ -161,7 +161,7 @@ animToggle.innerText = '▼';
 Object.assign(animToggle.style, {
     position: 'fixed', bottom: '70px', right: '15px', zIndex: '10000',
     cursor: 'pointer', backgroundColor: '#222', color: '#888', border: 'none',
-    padding: '6px 14px', borderRadius: '6px 6px 0 0', fontSize: '12px'
+    padding: '6px 14px', borderRadius: '6px 6px 0 0', fontSize: '12px',  zIndex: '2147483647'
 });
 let barVisible = true;
 animToggle.onclick = () => {

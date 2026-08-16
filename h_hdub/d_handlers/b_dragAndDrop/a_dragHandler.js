@@ -355,6 +355,24 @@ drawArray(cropObject(100, 180, makeObject(clean(ui.hdubSingleEntry.ref.value))))
 localStorage.setItem("hdubSingleEntry", ui.hdubSingleEntry.ref.value);
 tabSelector(3);
 folder3Selector(2);
+
+
+
+
+
+setTimeout( () => {
+
+
+
+
+makeStarSheet(4, "btn");
+
+}, 350);
+
+
+
+
+
 } else if (file.name.includes("_2btn_")) {
 ui.templateIntake.ref.value = file.name.split("_HDUB_")[0];
 sheetImages.star.filename = ui.templateIntake.ref.value;
@@ -419,6 +437,10 @@ recoverCoinFocus();
 img.src = evt.target.result;
 };
 reader.readAsDataURL(file);
+
+
+
+
 } else if (file.name.includes("_4btn_")) {
 ui.templateIntake.ref.value = file.name.split("_HDUB_")[0];
 sheetImages.star.filename = ui.templateIntake.ref.value;
@@ -489,6 +511,10 @@ recoverCoinFocus();
 img.src = evt.target.result;
 };
 reader.readAsDataURL(file);
+
+
+
+
 } else if (file.name.includes("_6btn_")) {
 ui.templateIntake.ref.value = file.name.split("_HDUB_")[0];
 sheetImages.star.filename = ui.templateIntake.ref.value;

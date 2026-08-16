@@ -6,6 +6,9 @@ const MENU_KEYS = {
   noteKey: "note"
 };
 
+function toggleFileMenu() { document.querySelectorAll(".universal-top-bar").forEach(bar => { if (bar.style.display != "none") { bar.style.display = "none"; } else { bar.style.display = "block"; }; } ); }
+
+
 (() => {
   document.querySelectorAll(".universal-top-bar").forEach(bar => bar.remove());
 
@@ -78,14 +81,23 @@ const MENU_KEYS = {
             if (!isOpen) g.classList.add("is-open");
           };
 
+
+
+
+
           g.onmouseleave = () => {
             g.classList.remove("is-open");
           };
+
+
+
+
+
         }
       } else if (typeof i[a] === "function") {
         t.onclick = (e) => {
           i[a](e);
-          document.querySelectorAll(".menu-item-top.is-open").forEach(el => el.classList.remove("is-open"));
+          //document.querySelectorAll(".menu-item-top.is-open").forEach(el => el.classList.remove("is-open"));
         };
       }
       c.appendChild(g);

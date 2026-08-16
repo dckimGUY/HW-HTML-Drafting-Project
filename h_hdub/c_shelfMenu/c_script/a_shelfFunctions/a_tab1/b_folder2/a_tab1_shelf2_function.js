@@ -45,11 +45,9 @@ function uploadFavicon() {
 }
 
 
-
-
-
-
-
+function resetFavicon() {
+topLayer.favicon = defaultFavicon;
+}
 
 
 function uploadCustomOGImage() {
@@ -73,7 +71,10 @@ function uploadCustomOGImage() {
     fileInput.click();
 }
 
-
+function clearBackgroundImage() {
+topLayer[topLayer.a_currentLayer].backgroundImage = defaultBackground;
+setBackground();
+}
 
 
 function uploadBackgroundImage() {
@@ -89,22 +90,13 @@ function uploadBackgroundImage() {
             const currentActiveLayerKey = topLayer.a_currentLayer;
             if (topLayer[currentActiveLayerKey]) {
                 topLayer[currentActiveLayerKey].backgroundImage = base64ResultString;
-
-
-//document.documentElement.style.backgroundImage = `url("${topLayer[topLayer.a_currentLayer].backgroundImage}")`;
-
 setBackground();
-
-
-
             } else {
             }
         };
         reader.readAsDataURL(file);
-
     };
     fileInput.click();
-
 }
 
 

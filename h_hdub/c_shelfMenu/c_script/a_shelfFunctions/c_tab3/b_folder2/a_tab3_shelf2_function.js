@@ -39,13 +39,13 @@ ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 const buttonName = "button" + Date.now();
 let   buttonCode = "";
 buttonCode += `
-<button id="${buttonName}" class="pixelArt" style="position: absolute; top: 0px; left: 0px; background-color: transparent; background-size: 100% 100%; width: 100%; height: 100%; border: 0px; padding: 0px; margin: 0px;" onclick="">
+<button id="${buttonName}" class="pixelArt" style="position: absolute; top: 0px; left: 0px; background-color: transparent; background-size: 100% 100%; width: 100%; height: 100%; border: 0px; padding: 0px; margin: 0px;" onclick="sendToOpener(this);">
 <style>`;
 if (sheetImages.base.img.src&&sheetImages.base.img.width!=0&&sheetImages.base.img.height!=0) {
 viewImageSheet("base");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-#${buttonName}               { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}               { background-image: url("${imageCutter.toDataURL("image/png")}"); }`;
 baseRollArray.push(imageCutter.toDataURL("image/png"));
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
@@ -53,7 +53,7 @@ if (sheetImages.focus.img.src&&sheetImages.focus.img.width!=0&&sheetImages.focus
 viewImageSheet("focus");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-#${buttonName}:focus         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:focus         { background-image: url("${imageCutter.toDataURL("image/png")}"); }`;
 focusRollArray.push(imageCutter.toDataURL("image/png"));
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
@@ -61,7 +61,7 @@ if (sheetImages.hover.img.src&&sheetImages.hover.img.width!=0&&sheetImages.hover
 viewImageSheet("hover");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-#${buttonName}:hover         { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:hover         { background-image: url("${imageCutter.toDataURL("image/png")}"); }`;
 hoverRollArray.push(imageCutter.toDataURL("image/png"));
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
@@ -69,7 +69,7 @@ if (sheetImages.active.img.src&&sheetImages.active.img.width!=0&&sheetImages.act
 viewImageSheet("active");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-#${buttonName}:active        { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:active        { background-image: url("${imageCutter.toDataURL("image/png")}"); }`;
 activeRollArray.push(imageCutter.toDataURL("image/png"));
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
@@ -77,7 +77,7 @@ if (sheetImages.focusHover.img.src&&sheetImages.focusHover.img.width!=0&&sheetIm
 viewImageSheet("focusHover");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-#${buttonName}:focus:hover   { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:focus:hover   { background-image: url("${imageCutter.toDataURL("image/png")}"); }`;
 focusHoverRollArray.push(imageCutter.toDataURL("image/png"));
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
@@ -85,7 +85,7 @@ if (sheetImages.focusActive.img.src&&sheetImages.focusActive.img.width!=0&&sheet
 viewImageSheet("focusActive");       
 ctx.drawImage(Picture, leftOffset, topOffset, Picture.width, Picture.height);
 buttonCode += `
-#${buttonName}:focus:active  { background-image: url("${imageCutter.toDataURL("image/png")}"); outline: none; }`;
+#${buttonName}:focus:active  { background-image: url("${imageCutter.toDataURL("image/png")}"); }`;
 focusActiveRollArray.push(imageCutter.toDataURL("image/png"));
 ctx.clearRect(0,0,imageCutter.width, imageCutter.height);
 }
@@ -346,7 +346,7 @@ infoMessage(`
 <li>If you wonder why, you can't really copy the animated buttons, they won't work anymore on the second one...</li>
 <li>SAVE THE FIRST IMAGE OR USE HDUB TO SAVE THE IMAGE FOR *SHEET</li>
 <li>DRAG THE IMAGE BACK ON TO THE SCREEN AFTER YOU FINISH WORKING ON IT.</li>
-<li>IF YOU ARE DOING BUTTONS, THEN YOU PROBABLY WANT TO DRAW THE FIRST BUTTON STATE AND THEN DRAG THE FILE BACK IN TO MAKE THE DUPLICATED TEMPLATE (2, 4, or 6)</li>
+<li>IF YOU ARE DOING BUTTONS, THEN YOU PROBABLY WANT TO DRAW THE FIRST BUTTON STATE AND THEN DRAG THE FILE BACK IN TO MAKE THE DUPLICATED TEMPLATEATE (2, 4, or 6)</li>
 <li>ONCE FINISHED THE PROCESS, THE IMAGE FILE BECOMES BASICALLY INDEPENDENT AND CAN BE RE-USED TO BRING THE SAME LOW-RES CUSTOM BUTTONS BACK INTO THE PROGRAM.</li>
 <li>KEEP THE BUTTON IMAGE FILES IN A SAFE PLACE SO YOU CAN RE-USE THEM MORE EASILY... STAY ORGANIZED IF POSSIBLE. THIS WILL MAKE A MESS OF YOUR DOWNLOADS FOLDER VERY QUICKLY.</li>
 </ol>

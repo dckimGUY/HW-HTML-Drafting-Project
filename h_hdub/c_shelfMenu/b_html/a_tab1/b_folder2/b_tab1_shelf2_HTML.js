@@ -2,7 +2,7 @@ shelfMenuHTML.tab1.folder2.HTML = `
 
 
 
-<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="click: background image\n+CTRL: background colour\n+SHIFT: favicon" onclick="if (!event.ctrlKey && !event.shiftKey) { uploadBackgroundImage(); } else if (!event.ctrlKey && event.shiftKey) { uploadFavicon(); } else if (event.ctrlKey && !event.shiftKey) {
+<input id="coin44038" name="coin44038" class="input_coin44038" type="color" title="click: background colour\n+CTRL: background image\n+SHIFT: favicon" onclick="if (event.ctrlKey && !event.shiftKey) { uploadBackgroundImage(); } else if (!event.ctrlKey && event.shiftKey) { uploadFavicon(); } else if (!event.ctrlKey && !event.shiftKey) {
 if (mode==0) { curFocus=0; modeRouter('',1); }
 hotDog = false;
 spaceViewOff(['',32,32,'','','']);
@@ -23,12 +23,12 @@ F.focus();
 
 <input id="projectName" name="projectName" class="input_ input_projectName dckimPixelMono" type="value" title="Example: domain.com/folder" placeholder="projectName" spellcheck="false">
 
-<button id="coin49592" class="button_ button_coin49592" title="Load OG-image for this level\n+CTRL to save OG template"></button>
+<button id="coin49592" class="button_ button_coin49592" title="Load OG-image for this level\n+CTRL to save OG template\n1200x630"></button>
 <button id="coin54398" class="button_ button_coin54398" title="S Saves the Project\nIncludes:\nLevels\nConfigurations\nphantomLair"></button>
 
-<button id="coin77155" class="button_ drag-button button_coin77155" title="Click for SEQUENTIAL SAVING OR\nclick below with +SHIFT to add to the State Accumulator" draggable="true"></button>
+<button id="coin77155" class="button_ drag-button button_coin77155" title="Click for SEQUENTIAL SAVING OR\nclick numbers below with +SHIFT\nto add to the State Accumulator\n[for animation?]" draggable="true"></button>
 
-<button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="CLIPBOARD: Minimal Without id/style/class;\n+SHIFT for Colour Group\n+CTRL to Save '.txt'.\nWorks for textual HTML stuff only,\nno images or buttons yet."></button>
+<button id="coin59760" class="button_ button_coin59760" onclick="copyToClipboard(deMinimis(false,false,'','','flow'));" title="[defunct button]"></button>
 <button id="coin64291" class="button_ button_coin64291" title=""></button>
 <button id="coin70038" class="button_ button_coin70038" title=""></button>
 

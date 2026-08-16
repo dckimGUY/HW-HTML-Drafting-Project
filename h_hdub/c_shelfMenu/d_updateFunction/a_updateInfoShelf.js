@@ -52,11 +52,11 @@ document.getElementById("filterGrayscale").value  = filt[3];
 document.getElementById("filterAntique").value    = filt[4];
 document.getElementById("filterInvert").value     = filt[5];
 document.getElementById("filterOpacity").value    = filt[6];
-if (filt.length == 8) {
+//if (filt.length == 8 || filt.length == 9) {
 document.getElementById("filterBlur").value       = filt[7];
-} else {
-document.getElementById("filterBlur").value       =       0;
-}
+//} else {
+//document.getElementById("filterBlur").value       =       0;
+//}
 }
 
 

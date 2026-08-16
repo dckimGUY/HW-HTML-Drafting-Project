@@ -201,6 +201,40 @@ buzzWord(0,'<sup>DISABLED</sup>',96,'red',200,200,25,'top','','',event);
 document.getElementById("activeStateEdit").style.outline = "";
 document.getElementById("activeStateEdit").style.backgroundColor = "transparent";
 }
+
+
+
+
+
+/* space */ if (kC == 32&&!es) {
+event.preventDefault();
+if (hotDog) { return; }
+
+lastKey = "space";
+
+spacebar.hold = true;
+spaceViewOn([e,32,32,es,ec,ea]);
+removePointerEventsNone();
+} else if (kC==32&&es) {
+event.preventDefault();
+if (hotDog) { return; }
+
+/* RETAIN SPACE FOR THE CONTEXT TYPE MENU THINGY */
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 if (hotDog) { return; }
 /**************************************************************************/
 /**************************************************************************/
@@ -308,23 +342,7 @@ toggleActiveStateEdit();
 /* left arr*/ if (kC == 37) { event.preventDefault(); scrollRouter(keyInfo); }
 /*right arr*/ if (kC == 39) { event.preventDefault(); scrollRouter(keyInfo); }
 /* */
-/* space */ if (kC == 32&&!es) {
-lastKey = "space";
 
-spacebar.hold = true;
-event.preventDefault();
-spaceViewOn([e,32,32,es,ec,ea]);
-removePointerEventsNone();
-} else if (kC==32&&es) {
-
-
-
-/* RETAIN SPACE FOR THE CONTEXT TYPE MENU THINGY */
-
-
-
-
-}
 setTimeout(() => {
 loadSidebar1();
 updateInfoShelf();
@@ -394,7 +412,7 @@ buzzWord(0,'ENTER',256,'magenta',400,200,25);
 /* */
 /******************************************************************************************************************************************************/
 /* */
-/* ` */ if (kC == 192 && cC == 96) { toggleMenu(); lastKey = "`"; }/* ~ */ if (kC == 192 && cC == 126) { toggleMenu(); lastKey = "~";}
+/* ` */ if (kC == 192 && cC == 96) { toggleFileMenu(); lastKey = "`"; }/* ~ */ if (kC == 192 && cC == 126) { toggleMenu(); lastKey = "~";}
 /* 1 */ if (kC == 49 && cC == 49) { changeLayer("b_layer1"); lastKey = "1"; }/* ! */ if (kC == 49 && cC == 33) { changeLayer("l_layer11"); lastKey = "!";}
 /* 2 */ if (kC == 50 && cC == 50) { changeLayer("c_layer2"); lastKey = "2"; }/* @ */ if (kC == 50 && cC == 64) { changeLayer("m_layer12"); lastKey = "@";}
 /* 3 */ if (kC == 51 && cC == 51) { changeLayer("d_layer3"); lastKey = "3"; }/* # */ if (kC == 51 && cC == 35) { changeLayer("n_layer13"); lastKey = "#";}

@@ -92,6 +92,68 @@ return;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+[
+"filterBrightness",
+"filterContrast",
+"filterIntensity",
+"filterAntique",
+"filterGrayscale",
+"filterInvert",
+"filterOpacity",
+"filterBlur"
+].forEach((name) => {
+if (event.target.id == name) {
+event.preventDefault();
+event.stopPropagation();
+
+       if (event.wheelDelta > 0) { document.getElementById(name).value = parseFloat(document.getElementById(name).value) + 0.02;
+} else if (event.wheelDelta < 0) { document.getElementById(name).value = parseFloat(document.getElementById(name).value) - 0.02;
+}
+
+
+updateFilter();
+return;
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (event.target.id == "stateTiming") {
 event.preventDefault();
 event.stopPropagation();

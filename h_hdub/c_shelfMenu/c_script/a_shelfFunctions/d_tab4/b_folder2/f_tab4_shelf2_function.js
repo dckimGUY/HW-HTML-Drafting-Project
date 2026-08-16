@@ -124,7 +124,6 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 
     const currentDateStr = new Date().toISOString().split('T');
 
-    // The complete list of your 25 layer keys
     const layerKeys = [
         "b_layer1", "c_layer2", "d_layer3", "e_layer4", "f_layer5", 
         "g_layer6", "h_layer7", "i_layer8", "j_layer9", "k_layer10", 
@@ -133,7 +132,6 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
         "v_layer21", "w_layer22", "x_layer23", "y_layer24", "z_layer25"
     ];
 
-    // FILTER STATE: Only include layers that have active DOM children
     const activeLayers = layerKeys.map(key => topLayer[key]).filter(layer => {
         if (!layer) return false;
         const targetDOMElement = layer.b_content; 
@@ -145,7 +143,6 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 
     const ogImagesMap = {};
 
-    // Create an offscreen canvas to render standard 1200x630 OG image files
     const canvas = document.createElement('canvas');
     canvas.width = 1200;
     canvas.height = 630;
@@ -162,7 +159,6 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 
         let u8Array;
 
-        // PRELIMINARY STEP CHECK: See if a custom base64 image exists on this specific layer
         if (layer.i_ogImageBase64 && layer.i_ogImageBase64.trim() !== "") {
             const parts = layer.i_ogImageBase64.split(',');
             const b64DataString = parts[1] || parts[0];
@@ -173,7 +169,6 @@ let fullPathName = topLayer.aa_project_name || 'dbn13_project';
                 u8Array[idx] = binaryStr.charCodeAt(idx);
             }
         } else {
-            // FALLBACK ACTIONS: Execute the pixel-text canvas rendering we devised
             ctx.fillStyle = '#f5f5f7';
             ctx.fillRect(0, 0, 1200, 630);
 
@@ -377,12 +372,10 @@ async function zipSave() {
     globalVariableValue = [];
     makeTopLayer("b_layer1");
     
-    // Process all 20 frames natively as established in your pipeline
     for (let f = 0; f < 20; f++) {
         await deMinimis(true, null, null, null, null, null, null, event, 1);
     }
     
-    // Your exact schema list of layer string names
     const layerNames = [
         "b_layer1", "c_layer2", "d_layer3", "e_layer4", "f_layer5",
         "g_layer6", "h_layer7", "i_layer8", "j_layer9", "k_layer10",
@@ -401,7 +394,6 @@ async function zipSave() {
                 uint8[j] = objectData[j];
             }
 
-            // 🔍 SEARCH & REPLACE FOR LEVEL FILES (Stepping up out of the subfolder using ../)
             if (filePath.endsWith('.html') || filePath.endsWith('.js') || filePath.endsWith('.txt')) {
                 let fileText = fflate.strFromU8(uint8);
                 
@@ -409,7 +401,6 @@ async function zipSave() {
                     const levelNum = index + 1;
                     const currentLayerName = layerNames[index];
                     
-                    // 🚀 ADDED "../" HERE so subfolder files can step out before stepping in
                     const targetFilename = `../${topLayer[currentLayerName].filename}/index.html`;
                     const pattern = new RegExp(`\\{\\{lvl${levelNum}\\}\\}(?!\\})`, "g");
                     fileText = fileText.replace(pattern, targetFilename);
@@ -435,17 +426,14 @@ async function zipSave() {
 
     let fullPathName = topLayer.aa_project_name || 'dbn13_project';
 
-    // Capture the metadata strings to apply the search and replace
     let indexString = metaDataBundle.indexHtml;
     let sitemapString = metaDataBundle.sitemap;
     let rssString = metaDataBundle.rss;
 
-    // Loop through the 20 processed levels to swap out the template tags in metadata (Kept flat, no ../ needed here)
     for (let index = 0; index < 20; index++) {
         const levelNum = index + 1;
         const currentLayerName = layerNames[index];
         
-        // Root files look directly down into the folders
         const targetFilename = `${topLayer[currentLayerName].filename}/index.html`;
         const pattern = new RegExp(`\\{\\{lvl${levelNum}\\}\\}(?!\\})`, "g");
 
@@ -454,7 +442,6 @@ async function zipSave() {
         rssString = rssString.replace(pattern, targetFilename);
     }
 
-    // Pack the dynamically created metadata files directly into the root folder
     masterFiles[`${targetRootFolder}/index.html`] = fflate.strToU8(indexString);
     masterFiles[`${targetRootFolder}/sitemap.xml`] = fflate.strToU8(sitemapString);
     masterFiles[`${targetRootFolder}/feed.xml`] = fflate.strToU8(rssString);
@@ -478,13 +465,11 @@ async function zipSave() {
         }
     }
 
-    // Unpack all generated Open Graph png images directly into the archive assets map
     for (const [imgFilePath, imgUint8Array] of Object.entries(metaDataBundle.imagesMap)) {
         masterFiles[imgFilePath] = imgUint8Array;
     }
     /* ================================================================= */
 
-    // Final packaging compression sequence execution
     const zipped = fflate.zipSync(masterFiles);
     const link = document.createElement('a');
     link.href = URL.createObjectURL(new Blob([zipped], { type: 'application/zip' }));
@@ -524,7 +509,7 @@ if (topLayer.a_currentLayer == "localView") { toggleLocalView(); }
 
 const translateMove = [ "top", "left" ];
 const styleFirst    = [ "backdropFilter", "filter", "position", "top", "left", "width", "height", "zIndex", "userSelect" ];
-const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "overflow" ];
+const styleLast     = [ "transform", "transformOrigin", "scale", "opacity", "outline", "outlineOffset", "borderRadius", "overflow" ];
 const styleLastLast = [ "background", "backgroundColor", "backgroundSize", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 const rename = false;
 
@@ -625,7 +610,7 @@ if (layerRef) string = layerRef;
 if (!typeAlone || typeAlone == "") {
 stylePosition = `
 .trs {
-  transition-property: visibility, filter, scale, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, box-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
+  transition-property: visibility, filter, scale, top, left, width, height, z-index, transform, transform-origin, opacity, outline, outline-offset, border-radius, drop-shadow, background-color, padding, color, text-shadow, font-size, font-weight, font-style, font-variant, font-family, text-align, word-spacing, letter-spacing, line-height, text-indent;
   transition-duration: ${document.getElementById("stateTiming").innerText + "ms"};
   transition-timing-function: linear;
   transition-delay: 0ms;
@@ -633,7 +618,7 @@ stylePosition = `
 }
 .pixelArt {
 border: none; padding: none;
-margin: none; outline: none;
+margin: none;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
 background-size: 100% 100%;
@@ -807,7 +792,7 @@ const serializeRecursive = (el) => {
 
     // --- CONDENSED STYLE LOGIC ---
     const posKeys = ['position', 'left', 'top', 'width', 'height', 'zIndex', 'transform', 'transformOrigin', 'backgroundSize', 'overflow', 'opacity'];
-    const etcKeys = ['filter', 'backdropFilter', 'userSelect', 'outline', 'outlineOffset', 'borderRadius', 'boxShadow', 'color', 'background', 'backgroundColor', 'fontSize', 'fontVariant', 'fontStyle', 'fontWeight', 'fontFamily', 'textShadow', 'textAlign', 'wordSpacing', 'letterSpacing', 'lineHeight', 'textIndent', 'padding'];
+    const etcKeys = ['filter', 'backdropFilter', 'userSelect', 'outline', 'outlineOffset', 'borderRadius', 'color', 'background', 'backgroundColor', 'fontSize', 'fontVariant', 'fontStyle', 'fontWeight', 'fontFamily', 'textShadow', 'textAlign', 'wordSpacing', 'letterSpacing', 'lineHeight', 'textIndent', 'padding'];
     
     const allKeys = [...posKeys, ...etcKeys];
     let maxPadding = Math.max(...allKeys.map(k => (final.style[k] ?? "").toString().length));
@@ -919,6 +904,7 @@ addToScript += `
 
 const resize = () => {
   const box = document.getElementById('scaleBox');
+  if (go.vwFactor == 1) go.vwFactor = ${100/screen.width};
   Object.assign(box.style, {
     position: 'absolute',
     top: '0px',
@@ -1036,7 +1022,7 @@ go.xqn       = {};
 go.xqn.nom   = [];
 go.xqn.grp   = {};
 go.xqn.all   = [];
-go.xqn.style = [ "filter",  "scale", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "boxShadow", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
+go.xqn.style = [ "filter",  "scale", "top", "left", "width", "height", "zIndex", "transform", "transformOrigin", "opacity", "outline", "outlineOffset", "borderRadius", "backgroundColor", "padding", "color", "textShadow", "fontSize", "fontWeight", "fontStyle", "fontVariant", "fontFamily", "textAlign", "wordSpacing", "letterSpacing", "lineHeight", "textIndent" ];
 
 go.ids.forEach((id) => {
 go.elm[id]      = {};
@@ -1509,6 +1495,7 @@ scriptStarter += animatorInclusion;
 string = string.replace(/\s+on\w+="[^"]*"/gi, "");
 string = string.replace(/\[object HTMLDivElement\]/g, "");
 
+string = string.replace(/; outline: none; }/g, "; }");
 
 
 
@@ -1668,7 +1655,7 @@ folder = topLayer.aa_project_name + '/' + filename || 'dbn13_project';
     atlasRootCSS += '}\n\n';
 
     // 4. HTML ASSEMBLY
-    let zipHTML = fileHeader.replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="https://' + topLayer.aa_project_name + '/favicon.png">').replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name).replace(/{{background}}/g, "background/image.png")
+    let zipHTML = fileHeader.replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="https://' + topLayer.aa_project_name + '/favicon.png">').replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{fullPath}}/g, topLayer.aa_project_name).replace(/{{background}}/g, "background/image.png").replace(/{{backgroundColour}}/g, topLayer[topLayer.a_currentLayer].backgroundColour)
 
 
 
@@ -1753,7 +1740,7 @@ return 0;
 
 
 /* --- PREPARE INITIAL CONTENT --- */
-let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="' + topLayer.favicon + '">').replace(/{{background}}/g, topLayer[topLayer.a_currentLayer].backgroundImage) 
+let content = fileHeader.replace(/{{title}}/g, filename).replace(/{{description}}/g, ui.pageDescription.ref.value).replace(/{{favicon}}/g, '<link rel="icon" type="image/png" href="' + topLayer.favicon + '">').replace(/{{background}}/g, topLayer[topLayer.a_currentLayer].backgroundImage).replace(/{{backgroundColour}}/g, topLayer[topLayer.a_currentLayer].backgroundColour) 
     + "<style>\n" + stylesIncluded + '\n</style>\n</head>\n<body>' 
     + "\n" + string + "\n\n\n" 
     + "<script>" + scriptStarter + "</script>" + fileFooter;

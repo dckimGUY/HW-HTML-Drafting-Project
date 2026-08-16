@@ -90,14 +90,14 @@ shelfMenuHTML.tab1.folderSelectors.HTML  +
 </div>
 
 <div class="phantomLair dckimPixelMono" style="font-size: 8px; color: #DEFF1C44; line-height: 1.1; padding-top: 2px; text-indent: 8px;">
-<p>Using the "X" key doesn't really delete anything, it just puts it here. Using the "P" key puts it back exactly in place but, we can only get them back in exactly the order that we removed them. It is also possible to use "SHIFT + X" to remove everything. Then use "SHIFT + P" to put all of it back. This might be useful when you want to move stuff to another level.</p>
+<p>Using the "X" key doesn't really delete anything, it just puts it here. Using the "P" key puts it back exactly in place but, we can only get them back in exactly the order that we removed them. It is also possible to use "SHIFT + X" to remove a whole colour group. Use "SHIFT + P" to paste out a duplicate of the last thing that was removed. This might be useful when you want to move stuff to another level.</p>
 </div>
 
 <div id="itemSystem"  class="itemSystem"></div>
 <div id="addSystem"   class="addSystem"></div>
 
 
-<button id="phantomFlip" onclick="flipPhantomLair();" title="FLIP the phantomLair!" class="pixelArt" style="position: absolute; left: -422px; top: 179px; width: 1008px; height: 208px; transform-origin: top left; transform: scale(0.125); user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
+<button id="phantomFlip" onclick="flipPhantomLair();" title="shortcut: backspace" class="pixelArt" style="position: absolute; left: -422px; top: 179px; width: 1008px; height: 208px; transform-origin: top left; transform: scale(0.125); user-select: none; transform-origin: center center; overflow: hidden; color: black; background-color: transparent; font-size: 32px; opacity: 1; text-align: left; padding: 0px;">
 <style>
 .pixelArt           {
 image-rendering     : crisp-edges;

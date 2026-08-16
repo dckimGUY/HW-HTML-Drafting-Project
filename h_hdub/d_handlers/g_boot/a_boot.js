@@ -160,40 +160,46 @@ thePhantomLair.style.opacity = parseFloat(localStorage.getItem("thePhantomLairOp
 }
 const localView = document.createElement("div");
 var localViewReturn = null;
+
+const defaultFavicon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAFZJREFUGJVtjFEKQCEIBFeo8MO9/3WfmJbB2yDccQoARBCRGnLyq6PjbUHk6cGs6zBVs7SiO7ifh9YALqhtdD27RVIbWJweVXJtMGYlCcdBzEccdfCXD+WoAlarr4SEAAAAAElFTkSuQmCC";
+
+const defaultBackground = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT/////AP8Aoe7FwsWLOADNfyw0AAAAEHRSTlMA////////////////////wFCLQwAAABtJREFUWIXtwYEAAAAAw6D5U9/gBFUBAAAAfAMQQAAB4reL5AAAAABJRU5ErkJggg==";
+
 var topLayer =
 {
 "aa_project_name" : "dckim.com/art",
-"favicon" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT/////AP8Aoe7FwsWLOADNfyw0AAAAEHRSTlMA////////////////////wFCLQwAAADxJREFUGJVjYIAAFhYGFMDCgirCwsLLiywC4iOLQPgIEZB+sBZkc0ACqLZQV4CFBdlaoMVQR8EANgE0AACTJQQB5YcycQAAAABJRU5ErkJggg==",
+"favicon" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT2/+7/AP8Aoe7FwsWLOADSnEQEAAAAEHRSTlMA////////////////////wFCLQwAAAFZJREFUGJVtjFEKQCEIBFeo8MO9/3WfmJbB2yDccQoARBCRGnLyq6PjbUHk6cGs6zBVs7SiO7ifh9YALqhtdD27RVIbWJweVXJtMGYlCcdBzEccdfCXD+WoAlarr4SEAAAAAElFTkSuQmCC",
 "a_currentLayer" : "b_layer1",
-"b_layer1"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "b_layer1", "b_content" : b_layer1, "c_title" : "", "d_description" : "Page 1 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "1", "filename" : "pixel-level-1", "echelon" : 1, "header" : "", "footer" : "" },
-"c_layer2"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "c_layer2", "b_content" : c_layer2, "c_title" : "", "d_description" : "Page 2 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "2", "filename" : "pixel-level-2", "echelon" : 1, "header" : "", "footer" : "" },
-"d_layer3"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "d_layer3", "b_content" : d_layer3, "c_title" : "", "d_description" : "Page 3 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "3", "filename" : "pixel-level-3", "echelon" : 1, "header" : "", "footer" : "" },
-"e_layer4"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "e_layer4", "b_content" : e_layer4, "c_title" : "", "d_description" : "Page 4 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "4", "filename" : "pixel-level-4", "echelon" : 1, "header" : "", "footer" : "" },
-"f_layer5"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "f_layer5", "b_content" : f_layer5, "c_title" : "", "d_description" : "Page 5 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "5", "filename" : "pixel-level-5", "echelon" : 1, "header" : "", "footer" : "" },
-"g_layer6"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "g_layer6", "b_content" : g_layer6, "c_title" : "", "d_description" : "Page 6 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "6", "filename" : "pixel-level-6", "echelon" : 1, "header" : "", "footer" : "" },
-"h_layer7"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "h_layer7", "b_content" : h_layer7, "c_title" : "", "d_description" : "Page 7 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "7", "filename" : "pixel-level-7", "echelon" : 1, "header" : "", "footer" : "" },
-"i_layer8"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "i_layer8", "b_content" : i_layer8, "c_title" : "", "d_description" : "Page 8 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "8", "filename" : "pixel-level-8", "echelon" : 1, "header" : "", "footer" : "" },
-"j_layer9"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "j_layer9", "b_content" : j_layer9, "c_title" : "", "d_description" : "Page 9 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "9", "filename" : "pixel-level-9", "echelon" : 1, "header" : "", "footer" : "" },
-"k_layer10"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "Page 10 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "10", "filename" : "pixel-level-10", "echelon" : 1, "header" : "", "footer" : "" },
-"l_layer11"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "Page 11 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "11", "filename" : "pixel-level-11", "echelon" : 1, "header" : "", "footer" : "" },
-"m_layer12"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "Page 12 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "12", "filename" : "pixel-level-12", "echelon" : 1, "header" : "", "footer" : "" },
-"n_layer13"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "Page 13 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "13", "filename" : "pixel-level-13", "echelon" : 1, "header" : "", "footer" : "" },
-"o_layer14"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "Page 14 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "14", "filename" : "pixel-level-14", "echelon" : 1, "header" : "", "footer" : "" },
-"p_layer15"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "Page 15 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "15", "filename" : "pixel-level-15", "echelon" : 1, "header" : "", "footer" : "" },
-"q_layer16"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "Page 16 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "16", "filename" : "pixel-level-16", "echelon" : 1, "header" : "", "footer" : "" },
-"r_layer17"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "Page 17 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "17", "filename" : "pixel-level-17", "echelon" : 1, "header" : "", "footer" : "" },
-"s_layer18"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "Page 18 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "18", "filename" : "pixel-level-18", "echelon" : 1, "header" : "", "footer" : "" },
-"t_layer19"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "Page 19 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "19", "filename" : "pixel-level-19", "echelon" : 1, "header" : "", "footer" : "" },
-"u_layer20"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "Page 20 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "20", "filename" : "pixel-level-20", "echelon" : 1, "header" : "", "footer" : "" },
-"v_layer21"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"w_layer22"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"x_layer23"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"y_layer24"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"z_layer25"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
-"importer"       : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "importer" , "b_content" : importer, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "importer", "filename": "importer" , "echelon" : 1 },
-"thePhantomLair" : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "thePhantomLair", "b_content" : thePhantomLair, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "thePhantomLair", "filename" : "thePhantomLair", "echelon" : 1 },
-"localView"      : { "backgroundImage" : "", "backgroundColour" : "#FFFFFF", "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
+"b_layer1"       : { "a_name" : "b_layer1", "b_content" : b_layer1, "c_title" : "", "d_description" : "Page 1 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "1", "filename" : "pixel-level-1", "echelon" : 1, "header" : "", "footer" : "" },
+"c_layer2"       : { "a_name" : "c_layer2", "b_content" : c_layer2, "c_title" : "", "d_description" : "Page 2 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "2", "filename" : "pixel-level-2", "echelon" : 1, "header" : "", "footer" : "" },
+"d_layer3"       : { "a_name" : "d_layer3", "b_content" : d_layer3, "c_title" : "", "d_description" : "Page 3 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "3", "filename" : "pixel-level-3", "echelon" : 1, "header" : "", "footer" : "" },
+"e_layer4"       : { "a_name" : "e_layer4", "b_content" : e_layer4, "c_title" : "", "d_description" : "Page 4 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "4", "filename" : "pixel-level-4", "echelon" : 1, "header" : "", "footer" : "" },
+"f_layer5"       : { "a_name" : "f_layer5", "b_content" : f_layer5, "c_title" : "", "d_description" : "Page 5 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "5", "filename" : "pixel-level-5", "echelon" : 1, "header" : "", "footer" : "" },
+"g_layer6"       : { "a_name" : "g_layer6", "b_content" : g_layer6, "c_title" : "", "d_description" : "Page 6 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "6", "filename" : "pixel-level-6", "echelon" : 1, "header" : "", "footer" : "" },
+"h_layer7"       : { "a_name" : "h_layer7", "b_content" : h_layer7, "c_title" : "", "d_description" : "Page 7 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "7", "filename" : "pixel-level-7", "echelon" : 1, "header" : "", "footer" : "" },
+"i_layer8"       : { "a_name" : "i_layer8", "b_content" : i_layer8, "c_title" : "", "d_description" : "Page 8 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "8", "filename" : "pixel-level-8", "echelon" : 1, "header" : "", "footer" : "" },
+"j_layer9"       : { "a_name" : "j_layer9", "b_content" : j_layer9, "c_title" : "", "d_description" : "Page 9 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "9", "filename" : "pixel-level-9", "echelon" : 1, "header" : "", "footer" : "" },
+"k_layer10"      : { "a_name" : "k_layer10", "b_content" : k_layer10, "c_title" : "", "d_description" : "Page 10 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "10", "filename" : "pixel-level-10", "echelon" : 1, "header" : "", "footer" : "" },
+"l_layer11"      : { "a_name" : "l_layer11", "b_content" : l_layer11, "c_title" : "", "d_description" : "Page 11 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "11", "filename" : "pixel-level-11", "echelon" : 1, "header" : "", "footer" : "" },
+"m_layer12"      : { "a_name" : "m_layer12", "b_content" : m_layer12, "c_title" : "", "d_description" : "Page 12 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "12", "filename" : "pixel-level-12", "echelon" : 1, "header" : "", "footer" : "" },
+"n_layer13"      : { "a_name" : "n_layer13", "b_content" : n_layer13, "c_title" : "", "d_description" : "Page 13 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "13", "filename" : "pixel-level-13", "echelon" : 1, "header" : "", "footer" : "" },
+"o_layer14"      : { "a_name" : "o_layer14", "b_content" : o_layer14, "c_title" : "", "d_description" : "Page 14 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "14", "filename" : "pixel-level-14", "echelon" : 1, "header" : "", "footer" : "" },
+"p_layer15"      : { "a_name" : "p_layer15", "b_content" : p_layer15, "c_title" : "", "d_description" : "Page 15 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "15", "filename" : "pixel-level-15", "echelon" : 1, "header" : "", "footer" : "" },
+"q_layer16"      : { "a_name" : "q_layer16", "b_content" : q_layer16, "c_title" : "", "d_description" : "Page 16 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "16", "filename" : "pixel-level-16", "echelon" : 1, "header" : "", "footer" : "" },
+"r_layer17"      : { "a_name" : "r_layer17", "b_content" : r_layer17, "c_title" : "", "d_description" : "Page 17 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "17", "filename" : "pixel-level-17", "echelon" : 1, "header" : "", "footer" : "" },
+"s_layer18"      : { "a_name" : "s_layer18", "b_content" : s_layer18, "c_title" : "", "d_description" : "Page 18 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "18", "filename" : "pixel-level-18", "echelon" : 1, "header" : "", "footer" : "" },
+"t_layer19"      : { "a_name" : "t_layer19", "b_content" : t_layer19, "c_title" : "", "d_description" : "Page 19 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "19", "filename" : "pixel-level-19", "echelon" : 1, "header" : "", "footer" : "" },
+"u_layer20"      : { "a_name" : "u_layer20", "b_content" : u_layer20, "c_title" : "", "d_description" : "Page 20 of my pixel art project.", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "20", "filename" : "pixel-level-20", "echelon" : 1, "header" : "", "footer" : "" },
+"v_layer21"      : { "a_name" : "v_layer21", "b_content" : v_layer21, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 21", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"w_layer22"      : { "a_name" : "w_layer22", "b_content" : w_layer22, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 22", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"x_layer23"      : { "a_name" : "x_layer23", "b_content" : x_layer23, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 23", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"y_layer24"      : { "a_name" : "y_layer24", "b_content" : y_layer24, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 24", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"z_layer25"      : { "a_name" : "z_layer25", "b_content" : z_layer25, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "LVL 25", "filename" : "100_emptyFile", "echelon" : 1, "header" : "", "footer" : "" },
+"importer"       : { "a_name" : "importer" , "b_content" : importer, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "importer", "filename": "importer" , "echelon" : 1 },
+"thePhantomLair" : { "a_name" : "thePhantomLair", "b_content" : thePhantomLair, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "thePhantomLair", "filename" : "thePhantomLair", "echelon" : 1 },
+"localView"      : { "a_name" : "localView", "b_content" : localView, "c_title" : "", "d_description" : "", "e_coinFocus" : null, "f_coinFocus1" : null, "h_notes" : "", "g_layerTitle" : "TAB VIEW", "filename" : "100_emptyFile", "echelon" : 1 }
 };
+
 [
 "b_layer1",
 "c_layer2",
@@ -219,9 +225,17 @@ var topLayer =
 "w_layer22",
 "x_layer23",
 "y_layer24",
-"z_layer25"
+"z_layer25",
+"importer",
+"thePhantomLair",
+"localView"
 ].forEach((layerName) => {
-topLayer[layerName].backgroundImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT/////AP8Aoe7FwsWLOADNfyw0AAAAEHRSTlMA////////////////////wFCLQwAAABtJREFUWIXtwYEAAAAAw6D5U9/gBFUBAAAAfAMQQAAB4reL5AAAAABJRU5ErkJggg==";
+topLayer[layerName].backgroundColour = "#ffffff";
+topLayer[layerName].backgroundImage = defaultBackground;
+topLayer[layerName].backgroundImage1 = defaultBackground;
+topLayer[layerName].backgroundImage2 = defaultBackground;
+topLayer[layerName].backgroundImage3 = defaultBackground;
+topLayer[layerName].backgroundImage4 = defaultBackground;
 topLayer[layerName].header = header1;
 topLayer[layerName].footer = footer1;
 });
@@ -867,6 +881,7 @@ try {
 if (window.opener) {
 mode = 0;
 toggleMenu();
+toggleFileMenu();
 }
 } catch {}
 } else {

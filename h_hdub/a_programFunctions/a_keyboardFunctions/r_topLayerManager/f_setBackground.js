@@ -1,4 +1,5 @@
 var bgImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAMFBMVEUAAAAA/wAQHFK0hc0Ydb3u6jGL1u5zeXOsumpaAACkqqT/////AP8Aoe7FwsWLOADNfyw0AAAAEHRSTlMA////////////////////wFCLQwAAABtJREFUWIXtwYEAAAAAw6D5U9/gBFUBAAAAfAMQQAAB4reL5AAAAABJRU5ErkJggg==";
+
 const setBackground = () => {
     const img = new Image();
     img.src = topLayer[topLayer.a_currentLayer].backgroundImage;
