@@ -207,8 +207,10 @@ document.getElementById("activeStateEdit").style.backgroundColor = "transparent"
 
 
 /* space */ if (kC == 32&&!es) {
-event.preventDefault();
+
 if (hotDog) { return; }
+
+event.preventDefault();
 
 lastKey = "space";
 
